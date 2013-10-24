@@ -2,6 +2,7 @@
 *.rbc
 *.sassc
 .sass-cache
+config/database.yml
 capybara-*.html
 /.bundle
 /vendor/bundle
@@ -12,4 +13,3 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 **.orig
-config/database.yml
