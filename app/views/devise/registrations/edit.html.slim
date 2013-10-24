@@ -1,0 +1,32 @@
+h2
+  | #{t(".edit_devise_resource", resource_name: resource_name.to_s.humanize)}
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, :required => true, :autofocus => true
+    = f.input :email, :required => true
+    = f.input :password, :autocomplete => "off", :required => false
+    = f.input :password_confirmation, :required => false
+    = f.input :current_password, :required => true
+  = f.button :submit, t(".update")
+
+- if devise_mapping.omniauthable?
+  table.table
+    thead
+      tr
+        th = t(".provider")
+        td = t(".connect_disconnect")
+    tbody
+      - resource_class.omniauth_providers.each do |provider_name|
+        tr
+          td= provider_name.to_s.titleize
+          td
+            - provider = current_user.authorizations.provider(provider_name).first
+            = link_to t(".connect_your_provider", provider_name: provider_name.to_s.titleize), omniauth_authorize_path(resource_name, provider_name) unless provider.present?
+            = link_to t(".disconnect_from_provider", provider_name: provider_name.to_s.titleize), authorization_path(provider), method: :delete if provider.present?
+
+h3 = t(".cancel_my_account")
+p
+  | #{t(".unhappy")} #{link_to t(".cancel_my_account"), registration_path(resource_name), :data => { :confirm => t(".are_you_sure") }, :method => :delete}.
+= link_to t(".back"), :back
