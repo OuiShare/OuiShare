@@ -8,6 +8,17 @@ Bundler.require(:default, Rails.env)
 
 module OuiShare
   class Application < Rails::Application
+    # Do not generate specs for views and requests. Also, do not generate assets.
+    config.generators do |g|
+      g.javascripts false
+      g.stylesheets false
+      g.helper false
+      g.template_engine :slim
+      g.test_framework :rspec,
+        :view_specs => false,
+        :helper_specs => false
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
