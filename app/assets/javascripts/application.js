@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 
+//= require oui_share/oui_share.js
+//= require init.js
 //= require_tree ./lib
 
