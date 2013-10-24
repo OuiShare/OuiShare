@@ -37,7 +37,7 @@ gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
 gem 'turbolinks'
 #gem 'bootstrap-sass'
-#gem 'zurb-foundation'
+gem 'zurb-foundation'
 #gem 'angular-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
