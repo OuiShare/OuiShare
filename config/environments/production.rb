@@ -1,4 +1,7 @@
 OuiShare::Application.configure do
+  # Google Analytics
+  config.middleware.use Rack::GoogleAnalytics, :tracker => 'YOUR-ANALYTICS-CODE'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
