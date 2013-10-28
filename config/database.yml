@@ -4,7 +4,7 @@ development:
   database: OuiShare_development
   pool: 5
   #username: postgres
-  #password:
+  #password: password
   host: localhost
 
 test:
@@ -13,7 +13,7 @@ test:
   database: OuiShare_test
   pool: 5
   #username: postgres
-  #password:
+  #password: password
   min_messages: WARNING
   host: localhost
 
