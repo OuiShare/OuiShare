@@ -24,6 +24,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
+# Email/newsletter
+gem 'gibbon'
+
 # Frontend stuff
 gem 'jquery-rails'
 gem 'slim-rails'

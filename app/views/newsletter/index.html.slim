@@ -1,0 +1,6 @@
+h2 Newsletter
+
+.form
+  = simple_form_for :newsletter, url: new_newsletter_path do |f|
+    = f.input :email, as: :string
+    = f.submit

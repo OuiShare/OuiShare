@@ -2,6 +2,9 @@ OuiShare::Application.routes.draw do
   resources :authorizations, only: [:destroy]
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "home#index"
+
+  get 'newsletter'     => 'newsletter#index', as: 'newsletter'
+  post 'newsletter/new' => 'newsletter#new', as: 'new_newsletter'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -42,7 +45,7 @@ OuiShare::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
