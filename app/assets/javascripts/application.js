@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 
 //= require oui_share/oui_share.js
 //= require init.js
 //= require_tree ./lib
 
+
+$(function(){ $(document).foundation(); });

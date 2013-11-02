@@ -36,6 +36,7 @@ gem 'rack-google-analytics'
 
 # Assets
 gem 'sass-rails', '4.0.1'
+gem "compass-rails", "~> 2.0.alpha.0"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
 gem 'turbolinks'

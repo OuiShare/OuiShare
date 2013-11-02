@@ -1,15 +1,17 @@
 doctype html
 html
   head
-    title = page_title app_name: "OuiShare"
-    = stylesheet_link_tag "application"
-    meta[charset="utf-8"]
+    title = content_for?(:title) ? yield(:title) : "Oui Share"
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
     = yield(:meta_tags)
     = csrf_meta_tag
-    = javascript_include_tag "application"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "vendor/custom.modernizr"
   body
     = initjs_tag app_name: "OuiShare"
     = render 'layouts/flash', flash: flash if flash.present?
     = render 'layouts/header'
     = yield
     = render 'layouts/footer'
+    = javascript_include_tag "application"
