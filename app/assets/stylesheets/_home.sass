@@ -1,3 +1,5 @@
+$background: #ddd
+
 .separator
   border-top: 1px solid black
   display: block
@@ -7,7 +9,7 @@ section
   padding: 25px 0
 
   &#welcome
-    background: url('images/bg/01.png)') no-repeat #ddd
+    background: url('images/bg/01.png)') no-repeat $background
 
     .video
       width: 300px
@@ -43,7 +45,7 @@ section
       width: 100%
 
   &#hot
-    background: #c5c5c5
+    background: $background
 
     .projects
       text-align: center
@@ -69,4 +71,19 @@ section
           height: 180px
           display: block
           background: #999
-          margin-bottom: 20px
+          margin-bottom: 10px
+
+  &#articles
+    background: $background
+
+    .projects
+
+      li
+        div.project
+          height: 180px
+          display: block
+          background: #999
+          margin-bottom: 10px
+
+        div.tags
+          text-align: right
