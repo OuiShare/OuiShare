@@ -1,6 +1,7 @@
 h2 Newsletter
 
 .form
-  = simple_form_for :newsletter, url: new_newsletter_path do |f|
+  = simple_form_for :newsletter, url: newsletter_subscribe_path do |f|
+    = f.input :language, collection: @languages
     = f.input :email, as: :string
     = f.submit

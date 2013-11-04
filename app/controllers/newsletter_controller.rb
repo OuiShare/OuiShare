@@ -1,8 +1,9 @@
 class NewsletterController < ApplicationController
   def index
+    @languages = NewsletterLanguage.all.map{ |n| [n.language, n.mailchimp_id] }
   end
 
-  def new
+  def subscribe
     if Rails.env.production?
       gb = Gibbon::API.new(ENV['mailchimp_key'])
     else
@@ -10,7 +11,7 @@ class NewsletterController < ApplicationController
     end
 
     begin
-      gb.lists.subscribe({:id => 'b9d2d97e53', email: {email: params[:newsletter][:email]}})
+      gb.lists.subscribe({:id => params[:newsletter][:language], email: {email: params[:newsletter][:email]}})
     rescue Gibbon::MailChimpError => e
       redirect_to newsletter_path, notice: e.message
       return

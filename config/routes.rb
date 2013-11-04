@@ -4,7 +4,7 @@ OuiShare::Application.routes.draw do
   root :to => "home#index"
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
-  post 'newsletter/new' => 'newsletter#new', as: 'new_newsletter'
+  post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

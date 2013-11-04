@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+NewsletterLanguage.create([{language: 'English', mailchimp_id: 'b9d2d97e53'}, {language: "Français", mailchimp_id: 'de3e89d146'}])
