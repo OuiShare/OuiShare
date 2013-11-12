@@ -1,89 +1,90 @@
 $background: #ddd
 
-.separator
-  border-top: 1px solid black
-  display: block
-  margin: 30px auto
+#home
+  .separator
+    border-top: 1px solid black
+    display: block
+    margin: 30px auto
 
-section
-  padding: 25px 0
+  section
+    padding: 25px 0
 
-  &#welcome
-    background: url('images/bg/01.png)') no-repeat $background
+    &#welcome
+      background: url('images/bg/01.png)') no-repeat $background
 
-    .video
-      width: 300px
-      height: 200px
-      background: #999
-      display: block
-      margin-top: 40px
+      .video
+        width: 300px
+        height: 200px
+        background: #999
+        display: block
+        margin-top: 40px
 
 
-    .subscribe
+      .subscribe
+        text-align: center
+
+        .separator
+          width: 200px
+
+    &#about
       text-align: center
+
+      h3
+        margin-bottom: 20px
+
+      .icon
+        background: #ddd
+        width: 80px
+        height: 80px
+        display: block
+        margin: 0 auto
+
+      p
+        font-size: 0.8em
 
       .separator
-        width: 200px
+        width: 100%
 
-  &#about
-    text-align: center
+    &#hot
+      background: $background
 
-    h3
-      margin-bottom: 20px
+      .projects
+        text-align: center
 
-    .icon
-      background: #ddd
-      width: 80px
-      height: 80px
-      display: block
-      margin: 0 auto
+        li
+          div.project
+            height: 180px
+            display: block
+            background: #999
+            margin-bottom: 20px
 
-    p
-      font-size: 0.8em
+          .more
+            height: 50px
+            display: block
+            background: #999
 
-    .separator
-      width: 100%
+    &#events
 
-  &#hot
-    background: $background
+      .projects
 
-    .projects
-      text-align: center
+        li
+          div.project
+            height: 180px
+            display: block
+            background: #999
+            margin-bottom: 10px
 
-      li
-        div.project
-          height: 180px
-          display: block
-          background: #999
-          margin-bottom: 20px
+    &#articles
+      background: $background
 
-        .more
-          height: 50px
-          display: block
-          background: #999
+      .projects
 
-  &#events
+        li
+          div.project
+            height: 180px
+            display: block
+            background: #999
+            margin-bottom: 10px
 
-    .projects
-
-      li
-        div.project
-          height: 180px
-          display: block
-          background: #999
-          margin-bottom: 10px
-
-  &#articles
-    background: $background
-
-    .projects
-
-      li
-        div.project
-          height: 180px
-          display: block
-          background: #999
-          margin-bottom: 10px
-
-        div.tags
-          text-align: right
+          div.tags
+            text-align: right
