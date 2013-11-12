@@ -3,8 +3,16 @@ OuiShare::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "home#index"
 
+  resources :languages
+  resources :top_banner
+
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
+
+  get 'about' => 'about#index', as: 'about'
+  get 'team'  => 'team#index',  as: 'team'
+  get 'communities' => 'communities#index', as: 'communities'
+  get 'contact' => 'contact#index', as: 'contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
