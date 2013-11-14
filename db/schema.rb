@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131102194137) do
+ActiveRecord::Schema.define(version: 20131111120625) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +29,29 @@ ActiveRecord::Schema.define(version: 20131102194137) do
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
 
+  create_table "languages", force: true do |t|
+    t.string   "name"
+    t.string   "english_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "newsletter_languages", force: true do |t|
     t.string "language"
     t.string "mailchimp_id"
   end
+
+  create_table "top_banners", force: true do |t|
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "title2"
+    t.string   "text2"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "top_banners", ["language_id"], name: "index_top_banners_on_language_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
