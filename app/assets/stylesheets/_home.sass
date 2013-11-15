@@ -6,6 +6,9 @@ $background: #ddd
     display: block
     margin: 30px auto
 
+  h1,h2,h3,h4
+    font-weight: 200
+
   section
     padding: 25px 0
 
@@ -115,6 +118,8 @@ $background: #ddd
             width: 60%
 
     &#bepart
+      padding-bottom: 0
+
       .box
         width: 80px
         height: 80px
@@ -124,3 +129,55 @@ $background: #ddd
 
       h4
         margin-bottom: 0
+
+    &#partners
+      padding-top: 0
+      text-align: center
+
+      h3
+        margin-top: 0
+
+      ul
+        display: table
+        margin: 0 auto
+
+      li
+        margin: 0
+        padding: 0 20px
+        border-right: 1px solid black
+        height: 30px
+
+        &:last-child
+          border: 0
+
+        p
+          line-height: 30px
+
+    &#know-more
+      background: #eee
+
+  footer
+    padding-top: 20px
+    background: #ddd
+
+    li
+      list-style: none
+      a
+        color: black
+
+    .social
+      .facebook, .twitter
+        width: 200px
+        height: 100px
+        display: block
+        background: #eee
+        margin-bottom: 20px
+        padding-top: 60px
+        padding-left: 10px
+
+      a
+        width: 30px
+        height: 30px
+        display: block
+        background: #ccc
+        +border-radius(20px)
