@@ -10,7 +10,19 @@ $background: #ddd
     padding: 25px 0
 
     &#welcome
-      background: url('images/bg/01.png)') no-repeat $background
+      background: #ddd
+
+      .social
+        ul
+          li
+            float: right
+            margin-left: 0.375em
+            a
+              width: 30px
+              height: 30px
+              display: block
+              background: #ccc
+              +border-radius(20px)
 
       .video
         width: 300px
@@ -22,9 +34,6 @@ $background: #ddd
 
       .subscribe
         text-align: center
-
-        .separator
-          width: 200px
 
     &#about
       text-align: center

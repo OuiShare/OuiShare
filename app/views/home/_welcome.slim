@@ -1,5 +1,26 @@
 section#welcome
   div.row
+    div.large-9.columns
+      h1
+        | ouiShare
+        small
+          |  connecting the collaborative economy
+    div.large-2.columns
+       div.social
+         ul.inline-list
+           li
+             a.facebook href="#"
+           li
+             a.twitter href="#"
+           li
+             a.play href="#"
+
+    div.large-1.columns
+      select
+        option en
+        option es
+        option fr
+  div.row
     div.large-5.columns
       div.video
     div.large-6.columns
@@ -10,7 +31,10 @@ section#welcome
       h2 For people by people
       p tiam tempus nisi quis sem auctor, vel adipiscing mi
         ornare. Nulla facilisi. Interdum et malesuada fames
-
-      div.subscribe
-        span.separator
-        a.button href="#{newsletter_path}" Subscribe to the newsletter!
+      div.row
+        div.subscribe.large-8.large-centered.columns
+          div.row.collapse
+            div.small-10.columns
+              input type="text" placeholder="Your email here to subscribe to the newsletter"
+            div.small-2.columns
+              a.postfix href="#{newsletter_path}" Go !
