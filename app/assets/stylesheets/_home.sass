@@ -2,7 +2,7 @@ $background: #ddd
 
 #home
   .separator
-    border-top: 1px solid black
+    border-top: 1px solid #ccc
     display: block
     margin: 30px auto
 
@@ -55,7 +55,7 @@ $background: #ddd
         width: 100%
 
     &#hot
-      background: $background
+      background: #eee
 
       .projects
         text-align: center
@@ -73,6 +73,7 @@ $background: #ddd
             background: #999
 
     &#events
+      background: $background
 
       .projects
 
@@ -84,7 +85,9 @@ $background: #ddd
             margin-bottom: 10px
 
     &#articles
-      background: $background
+      .box
+        border: 1px solid #ccc
+        padding-top: 15px
 
       .projects
 
@@ -110,3 +113,14 @@ $background: #ddd
             text-align: right
             display: inline-block
             width: 60%
+
+    &#bepart
+      .box
+        width: 80px
+        height: 80px
+        float: left
+        background: #ccc
+        margin-right: 20px
+
+      h4
+        margin-bottom: 0
