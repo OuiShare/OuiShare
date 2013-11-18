@@ -2,15 +2,30 @@ $background: #ddd
 
 #home
   .separator
-    border-top: 1px solid black
+    border-top: 1px solid #ccc
     display: block
     margin: 30px auto
+
+  h1,h2,h3,h4
+    font-weight: 200
 
   section
     padding: 25px 0
 
     &#welcome
-      background: url('images/bg/01.png)') no-repeat $background
+      background: #ddd
+
+      .social
+        ul
+          li
+            float: right
+            margin-left: 0.375em
+            a
+              width: 30px
+              height: 30px
+              display: block
+              background: #ccc
+              +border-radius(20px)
 
       .video
         width: 300px
@@ -22,9 +37,6 @@ $background: #ddd
 
       .subscribe
         text-align: center
-
-        .separator
-          width: 200px
 
     &#about
       text-align: center
@@ -46,7 +58,7 @@ $background: #ddd
         width: 100%
 
     &#hot
-      background: $background
+      background: #eee
 
       .projects
         text-align: center
@@ -64,17 +76,6 @@ $background: #ddd
             background: #999
 
     &#events
-
-      .projects
-
-        li
-          div.project
-            height: 180px
-            display: block
-            background: #999
-            margin-bottom: 10px
-
-    &#articles
       background: $background
 
       .projects
@@ -86,5 +87,97 @@ $background: #ddd
             background: #999
             margin-bottom: 10px
 
+    &#articles
+      .box
+        border: 1px solid #ccc
+        padding-top: 15px
+
+      .projects
+
+        li
+          div.project
+            height: 180px
+            display: block
+            background: #999
+            margin-bottom: 10px
+
+          div.author
+            display: inline-block
+            .avatar
+              display: inline-block
+              width: 40px
+              height: 40px
+              background: #ccc
+              margin-right: 15px
+            .name
+              display: inline-block
+
           div.tags
             text-align: right
+            display: inline-block
+            width: 60%
+
+    &#bepart
+      padding-bottom: 0
+
+      .box
+        width: 80px
+        height: 80px
+        float: left
+        background: #ccc
+        margin-right: 20px
+
+      h4
+        margin-bottom: 0
+
+    &#partners
+      padding-top: 0
+      text-align: center
+
+      h3
+        margin-top: 0
+
+      ul
+        display: table
+        margin: 0 auto
+
+      li
+        margin: 0
+        padding: 0 20px
+        border-right: 1px solid black
+        height: 30px
+
+        &:last-child
+          border: 0
+
+        p
+          line-height: 30px
+
+    &#know-more
+      background: #eee
+
+  footer
+    padding-top: 20px
+    background: #ddd
+
+    li
+      list-style: none
+      a
+        color: black
+
+    .social
+      .facebook, .twitter
+        width: 200px
+        height: 100px
+        display: block
+        background: #eee
+        margin-bottom: 20px
+        padding-top: 60px
+        padding-left: 10px
+
+      a
+        width: 30px
+        height: 30px
+        display: block
+        background: #ccc
+        +border-radius(20px)
