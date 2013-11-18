@@ -6,7 +6,8 @@ OuiShare::Application.routes.draw do
   resources :languages
 
   namespace :admin do
-    resources :top_banner
+    get '/' => 'home#index'
+    resources :top_banners
   end
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'

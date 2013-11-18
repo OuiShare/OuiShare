@@ -1,10 +1,7 @@
-h1 New Top Banner
-
-= simple_form_for @top_banner, url: admin_top_banner_index_path, method: :get do |f|
+= simple_form_for [:admin, @top_banner] do |f|
   = f.input :language, collection: Language.all
   = f.input :title1
   = f.input :text1
   = f.input :title2
   = f.input :text2
   = f.submit
-

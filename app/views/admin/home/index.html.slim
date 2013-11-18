@@ -1,0 +1,21 @@
+h2 Admin index
+
+h3 Top Banner
+table
+  tr
+    th Language
+    th Title1
+    th Text1
+    th Title2
+    th Text2
+    th
+    th
+  - TopBanner.all.each do |t|
+    tr
+      td = 'English'
+      td = t.title1
+      td = t.text1
+      td = t.title2
+      td = t.text2
+      td = link_to "Edit", edit_admin_top_banner_path(t)
+      td = link_to "Remove", [:admin, t], data: { confirm: 'Are you sure?' }, method: :delete
