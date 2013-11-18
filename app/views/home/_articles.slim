@@ -2,23 +2,16 @@ section#articles
   div.row.box
     div.large-8.columns
       ul.projects.large-block-grid-2
-        li
-          p Lorem ipsum dolor sit amet
-          div.project
-          div.author
-            span.avatar
-            p.name by author
-          div.tags
-            span.label ipsum
-
-        li
-          p Lorem ipsum dolor sit amet
-          div.project
-          div.author
-            span.avatar
-            p.name by author
-          div.tags
-            span.label sit amet
+        - @feed.entries[0..1].each do |f|
+          li
+            p
+            a href="#{f.url}" = truncate(f.title, length: 70)
+            div.project
+            div.author
+              span.avatar
+              p.name = "by #{f.author}"
+            div.tags
+              span.label = f.categories.first
 
     div.large-4.columns
       h3 Our magazine articles

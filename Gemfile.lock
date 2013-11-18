@@ -56,6 +56,7 @@ GEM
       sass (~> 3.1)
     compass-rails (2.0.alpha.0)
       compass (>= 0.12.2, < 0.14)
+    curb (0.8.4)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (3.1.1)
@@ -71,6 +72,13 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    feedzirra (0.0.24)
+      activesupport (>= 2.3.8)
+      builder (>= 2.1.2)
+      curb (>= 0.2.3)
+      loofah (>= 0.3.1)
+      nokogiri (> 0.0.0)
+      sax-machine (>= 0.0.12)
     flutie (2.0.0)
     foreigner (1.6.0)
       activerecord (>= 3.0.0)
@@ -103,6 +111,8 @@ GEM
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
     machinist (2.0)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -193,6 +203,8 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    sax-machine (0.1.0)
+      nokogiri (> 0.0.0)
     sexp_processor (4.4.0)
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
@@ -254,6 +266,7 @@ DEPENDENCIES
   compass-rails (~> 2.0.alpha.0)
   devise (~> 3.1.1)
   devise-i18n
+  feedzirra
   flutie
   foreigner
   gibbon

@@ -27,6 +27,8 @@ gem 'omniauth-twitter'
 # Email/newsletter
 gem 'gibbon'
 
+gem 'feedzirra'
+
 # Frontend stuff
 gem 'jquery-rails'
 gem 'slim-rails'
