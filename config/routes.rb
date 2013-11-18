@@ -4,7 +4,10 @@ OuiShare::Application.routes.draw do
   root :to => "home#index"
 
   resources :languages
-  resources :top_banner
+
+  namespace :admin do
+    resources :top_banner
+  end
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
