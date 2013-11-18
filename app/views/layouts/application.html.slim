@@ -12,6 +12,7 @@ html
     = initjs_tag app_name: "OuiShare"
     = render 'layouts/flash', flash: flash if flash.present?
     = render 'layouts/header'
+    = render 'layouts/second_header'
     = yield
     = render 'layouts/footer'
     = javascript_include_tag "application"
