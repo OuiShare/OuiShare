@@ -2,9 +2,11 @@ class Admin::TopBannersController < ApplicationController
   inherit_resources
 
   def create
-    params[:top_banner][:language] = Language.find(params[:top_banner][:language].to_i)
+    create! { admin_home_path }
+  end
 
-    create! { root_url }
+  def edit
+    edit! { admin_home_path }
   end
 
   protected

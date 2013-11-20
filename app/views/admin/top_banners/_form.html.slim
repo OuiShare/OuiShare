@@ -1,5 +1,5 @@
-= simple_form_for [:admin, @top_banner] do |f|
-  = f.input :language, collection: Language.all
+= simple_form_for([:admin, @top_banner]) do |f|
+  = f.association :language
   = f.input :title1
   = f.input :text1
   = f.input :title2
