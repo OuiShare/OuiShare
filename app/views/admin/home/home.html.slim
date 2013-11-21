@@ -10,12 +10,17 @@ table
     th Text2
     th
     th
-  - TopBanner.all.each do |t|
-    tr
-      td = 'English'
-      td = t.title1
-      td = t.text1
-      td = t.title2
-      td = t.text2
-      td = link_to "Edit", edit_admin_top_banner_path(t)
-      td = link_to "Remove", [:admin, t], data: { confirm: 'Are you sure?' }, method: :delete
+  - Language.all.each do |l|
+    - if l.top_banner.present?
+      tr
+        td = l.name
+        td = l.top_banner.title1
+        td = l.top_banner.text1
+        td = l.top_banner.title2
+        td = l.top_banner.text2
+        td = link_to "Edit", edit_admin_top_banner_path(l.top_banner)
+        td = link_to "Remove", [:admin, l.top_banner], data: { confirm: 'Are you sure?' }, method: :delete
+    - else
+      tr
+        td = l.name
+        td colspan='6' = link_to 'Create', new_admin_top_banner_path
