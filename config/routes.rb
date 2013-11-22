@@ -3,12 +3,12 @@ OuiShare::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "home#index"
 
-  resources :languages
-
   namespace :admin do
+    resources :languages do
+      resources :top_banners
+    end
     get '/' => 'home#index'
     get 'home' => 'home#home'
-    resources :top_banners
   end
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
