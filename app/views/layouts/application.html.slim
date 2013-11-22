@@ -11,7 +11,10 @@ html
   body
     = initjs_tag app_name: "OuiShare"
     = render 'layouts/flash', flash: flash if flash.present?
-    = render 'layouts/header'
+    - if admin?
+      = render 'layouts/admin_header'
+    - else
+      = render 'layouts/header'
     = yield
     = render 'layouts/footer'
     = javascript_include_tag "application"
