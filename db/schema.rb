@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119004144) do
+ActiveRecord::Schema.define(version: 20131122174323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20131119004144) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "visible",      default: false
+    t.string   "slug"
   end
 
   create_table "newsletter_languages", force: true do |t|
@@ -72,5 +73,17 @@ ActiveRecord::Schema.define(version: 20131119004144) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "what_is_sections", force: true do |t|
+    t.text     "mission"
+    t.text     "values"
+    t.text     "history"
+    t.text     "past_projects"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "what_is_sections", ["language_id"], name: "index_what_is_sections_on_language_id", using: :btree
 
 end

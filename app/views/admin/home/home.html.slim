@@ -27,3 +27,29 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_top_banner_path(l.id)
 
+  div.large-12.columns
+    h3.subheader What is
+    table
+      tr
+        th Language
+        th Mission
+        th Values
+        th History
+        th Past projects
+        th
+        th
+      - Language.all.each do |l|
+        - if l.what_is_section.present?
+          tr
+            td = l.name
+            td = l.what_is_section.mission
+            td = l.what_is_section.values
+            td = l.what_is_section.history
+            td = l.what_is_section.past_projects
+            td = link_to "Edit", edit_admin_language_what_is_section_path(l, l.what_is_section)
+            td = link_to "Remove", [:admin, l, l.what_is_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
+

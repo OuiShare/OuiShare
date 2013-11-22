@@ -1,0 +1,8 @@
+= simple_form_for  [:admin, @what_is_section.language, @what_is_section] do |f|
+  h4 Language
+  = @what_is_section.language.name
+  = f.input :mission
+  = f.input :values
+  = f.input :history
+  = f.input :past_projects
+  = f.submit

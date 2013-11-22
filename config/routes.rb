@@ -6,6 +6,7 @@ OuiShare::Application.routes.draw do
   namespace :admin do
     resources :languages do
       resources :top_banners
+      resources :what_is_sections
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
