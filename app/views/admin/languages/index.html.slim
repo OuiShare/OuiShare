@@ -4,6 +4,7 @@ table
   tr
     th Name
     th English Name
+    th Slug
     th Visible?
     th
     th
@@ -11,7 +12,8 @@ table
     tr
       td = l.name
       td = l.english_name
+      td = l.slug
       td = l.visible
       td = link_to 'Edit', edit_admin_language_path(l)
-      td = link_to 'Remove', l, data: { confirm: 'Are you sure?' }, method: :delete
+      td = link_to 'Remove', [:admin, l], data: { confirm: 'Are you sure?' }, method: :delete
 

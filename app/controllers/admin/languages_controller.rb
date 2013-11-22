@@ -11,6 +11,6 @@ class Admin::LanguagesController < ApplicationController
 
   protected
   def permitted_params
-    params.permit(language: [:name, :english_name, :visible])
+    params.permit(language: [:name, :english_name, :slug, :visible])
   end
 end
