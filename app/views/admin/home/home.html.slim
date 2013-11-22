@@ -1,26 +1,29 @@
-h2 Home page
+div.row
+  div.large-12.columns
+    h2.subheader Home page
+  div.large-12.columns
+    h3.subheader Top Banner
+    table
+      tr
+        th Language
+        th Title1
+        th Text1
+        th Title2
+        th Text2
+        th
+        th
+      - Language.all.each do |l|
+        - if l.top_banner.present?
+          tr
+            td = l.name
+            td = l.top_banner.title1
+            td = l.top_banner.text1
+            td = l.top_banner.title2
+            td = l.top_banner.text2
+            td = link_to "Edit", edit_admin_language_top_banner_path(l, l.top_banner)
+            td = link_to "Remove", [:admin, l, l.top_banner], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_top_banner_path(l.id)
 
-h3 Top Banner
-table
-  tr
-    th Language
-    th Title1
-    th Text1
-    th Title2
-    th Text2
-    th
-    th
-  - Language.all.each do |l|
-    - if l.top_banner.present?
-      tr
-        td = l.name
-        td = l.top_banner.title1
-        td = l.top_banner.text1
-        td = l.top_banner.title2
-        td = l.top_banner.text2
-        td = link_to "Edit", edit_admin_top_banner_path(l.top_banner)
-        td = link_to "Remove", [:admin, l.top_banner], data: { confirm: 'Are you sure?' }, method: :delete
-    - else
-      tr
-        td = l.name
-        td colspan='6' = link_to 'Create', new_admin_top_banner_path
