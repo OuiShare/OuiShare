@@ -68,4 +68,3 @@ describe User do
     it{ should validate_presence_of :password }
   end
 end
-r
