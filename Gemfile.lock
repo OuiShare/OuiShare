@@ -263,7 +263,7 @@ DEPENDENCIES
   compass-rails (~> 2.0.alpha.0)
   devise (~> 3.1.1)
   devise-i18n
-  feedzirra (~> 0.3.0)
+  feedzirra
   flutie
   foreigner
   gibbon
