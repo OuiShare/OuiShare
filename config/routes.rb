@@ -21,6 +21,7 @@ OuiShare::Application.routes.draw do
   get 'team'  => 'team#index',  as: 'team'
   get 'communities' => 'communities#index', as: 'communities'
   get 'contact' => 'contact#index', as: 'contact'
+  get 'projects' => 'projects#index', as: 'projects'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
