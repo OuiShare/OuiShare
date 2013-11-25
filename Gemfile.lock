@@ -123,7 +123,6 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
-    newrelic_rpm (3.6.6.147)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
@@ -264,7 +263,7 @@ DEPENDENCIES
   compass-rails (~> 2.0.alpha.0)
   devise (~> 3.1.1)
   devise-i18n
-  feedzirra
+  feedzirra (~> 0.3.0)
   flutie
   foreigner
   gibbon
@@ -274,7 +273,6 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   machinist
-  newrelic_rpm
   omniauth
   omniauth-facebook
   omniauth-twitter
