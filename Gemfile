@@ -54,6 +54,8 @@ gem 'zurb-foundation'
   #gem 'therubyracer', platform: :ruby
 #end
 
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -72,5 +74,4 @@ end
 # Heroku
 group :production do
   gem 'rails_on_heroku'
-  gem 'newrelic_rpm'
 end
