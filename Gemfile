@@ -17,6 +17,8 @@ gem 'simple_form', '~> 3.0.0'
 # I18n
 gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'http_accept_language'
+gem 'routing-filter', '~> 0.4.0.pre'
 
 # Authentication
 gem 'devise', '~> 3.1.1'

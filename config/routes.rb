@@ -3,6 +3,8 @@ OuiShare::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => "home#index"
 
+  filter :locale, exclude: /\/auth\//
+
   namespace :admin do
     resources :languages do
       resources :top_banners

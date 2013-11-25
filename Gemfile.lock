@@ -89,6 +89,7 @@ GEM
       activesupport (>= 3.2, < 5)
     hashie (2.0.5)
     hike (1.2.3)
+    http_accept_language (2.0.0)
     httparty (0.12.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -182,6 +183,8 @@ GEM
     rake (10.1.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    routing-filter (0.4.0.pre)
+      actionpack
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -264,6 +267,7 @@ DEPENDENCIES
   flutie
   foreigner
   gibbon
+  http_accept_language
   inherited_resources (~> 1.4.1)
   initjs
   jbuilder
@@ -279,6 +283,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails-i18n
   rails_on_heroku
+  routing-filter (~> 0.4.0.pre)
   rspec-rails
   sass-rails (= 4.0.1)
   shoulda-matchers
