@@ -72,4 +72,5 @@ end
 # Heroku
 group :production do
   gem 'rails_on_heroku'
+  gem 'newrelic_rpm'
 end
