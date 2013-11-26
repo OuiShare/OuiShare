@@ -13,3 +13,4 @@ capybara-*.html
 /coverage/
 /spec/tmp/*
 **.orig
+*~
