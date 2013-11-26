@@ -8,6 +8,12 @@ $blue: #00939A
     display: block
     margin: 30px auto
 
+  .blackBlock
+    font-family: "Gandhi Sans", sans-serif
+    background: rgba(0,0,0,0.8)
+    color: white
+    padding: 10px
+
 
   section
     padding: 25px 0
@@ -18,25 +24,20 @@ $blue: #00939A
       width: 100%
       height: 100%
 
-      .topBanner
-        font-family: "Gandhi Sans", sans-serif
-        background: rgba(0,0,0,0.8)
-        color: white
-        padding: 10px
 
       h2
-        @extend .topBanner
+        @extend .blackBlock
         display: inline-block
         font-weight: 500
         text-transform: uppercase
         font-size: 1.3em
 
       p
-        @extend .topBanner
+        @extend .blackBlock
         display: inline-block
 
       .subscribe
-        @extend .topBanner
+        @extend .blackBlock
         margin-top: 40px
         padding: 10px
 
@@ -56,17 +57,46 @@ $blue: #00939A
 
 
     &#about
+      background: image-url('home/bg/about.jpg') no-repeat
+      +background-size(cover)
       text-align: center
+      padding: 40px 0
+
+      .box
+        background: white
+        padding: 10px 0
 
       h3
-        margin-bottom: 20px
+        @extend .blackBlock
+        background: black
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        display: inline-block
+        margin-bottom: 40px
+
+      h4
+        font-family: "Gandhi Sans", sans-serif
+        font-weight: 400
+        text-transform: uppercase
 
       .icon
-        background: #ddd
-        width: 80px
-        height: 80px
+        width: 171px
+        height: 131px
         display: block
         margin: 0 auto
+
+        &.activities
+          background: image-url('home/icons/activities.png') no-repeat
+
+        &.values
+          background: image-url('home/icons/values.png') no-repeat
+
+        &.teams
+          background: image-url('home/icons/teams.png') no-repeat
+
+        &.events
+          background: image-url('home/icons/events.png') no-repeat
 
       p
         font-size: 0.8em
