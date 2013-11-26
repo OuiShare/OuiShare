@@ -1,16 +1,15 @@
 section#welcome
   div.row
     div.large-5.columns
-      div.video
+      h1 <span>Oui</span>
     div.large-6.columns
       h2 = @top_banner.title1
       p = @top_banner.text1
       h2 = @top_banner.title2
       p = @top_banner.text2
-      div.row
-        div.subscribe.large-8.large-centered.columns
-          div.row.collapse
-            div.small-10.columns
-              input type="text" placeholder="Your email here to subscribe to the newsletter"
-            div.small-2.columns
-              a.postfix href="#{newsletter_path}" Go !
+      div.subscribe.large-12.columns
+        div.row.collapse
+          div.large-10.columns
+            input type="text" placeholder="Your email here to subscribe to the newsletter"
+          div.large-2.columns
+            a.postfix href="#{newsletter_path}" Go !
