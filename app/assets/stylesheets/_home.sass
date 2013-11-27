@@ -1,5 +1,6 @@
 $background: #ddd
 $blue: #00939A
+$red: #D02947
 
 #home
 
@@ -110,8 +111,7 @@ $blue: #00939A
       .separator
         width: 100%
 
-    &#hot
-      background: $blue
+    &#hot, &#events
       color: white
 
       h3
@@ -121,13 +121,7 @@ $blue: #00939A
         font-size: 1.3em
         display: inline-block
 
-      button
-        @extend .whiteBlock
-        color: $blue
-        border: 0
-        text-transform: uppercase
-
-      .projects
+      .projects, .events
         text-align: center
         font-family: "Gandhi Sans", sans-serif
 
@@ -137,7 +131,7 @@ $blue: #00939A
             text-transform: uppercase
             font-size: 1.1em
 
-          img.project
+          img.project, img.event
             width: 100%
             height: 100%
             display: block
@@ -147,17 +141,21 @@ $blue: #00939A
           float: right
           color: white
 
+
+    &#hot
+      background: $blue
+
+      button
+        @extend .whiteBlock
+        color: $blue
+        border: 0
+        text-transform: uppercase
+
     &#events
-      background: $background
+      background: $red
 
-      .projects
-
-        li
-          div.project
-            height: 180px
-            display: block
-            background: #999
-            margin-bottom: 10px
+      p.meta
+        font-size: 1em
 
     &#articles
       .box
