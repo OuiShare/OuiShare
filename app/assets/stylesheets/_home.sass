@@ -14,6 +14,12 @@ $blue: #00939A
     color: white
     padding: 10px
 
+  .whiteBlock
+    font-family: "Gandhi Sans", sans-serif
+    background: white
+    color: black
+    padding: 10px
+
 
   section
     padding: 25px 0
@@ -42,7 +48,7 @@ $blue: #00939A
         padding: 10px
 
         input
-          border: 1px solid #FFF
+          border: 1px solid white
           background: rgba(0,0,0,0.8)
           color: white
           margin: 0
@@ -51,9 +57,9 @@ $blue: #00939A
           font-family: "Gandhi Sans", sans-serif
           font-style: italic
           text-transform: uppercase
-          background: #FFF
+          background: white
           color: $blue
-          border: 1px solid #FFF
+          border: 1px solid white
 
 
     &#about
@@ -105,22 +111,41 @@ $blue: #00939A
         width: 100%
 
     &#hot
-      background: #eee
+      background: $blue
+      color: white
+
+      h3
+        @extend .whiteBlock
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        display: inline-block
+
+      button
+        @extend .whiteBlock
+        color: $blue
+        border: 0
+        text-transform: uppercase
 
       .projects
         text-align: center
+        font-family: "Gandhi Sans", sans-serif
 
         li
-          div.project
-            height: 180px
+          p
+            text-align: left
+            text-transform: uppercase
+            font-size: 1.1em
+
+          img.project
+            width: 100%
+            height: 100%
             display: block
-            background: #999
             margin-bottom: 20px
 
-          .more
-            height: 50px
-            display: block
-            background: #999
+        a.more
+          float: right
+          color: white
 
     &#events
       background: $background
