@@ -221,17 +221,59 @@ $red: #D02947
         padding: 10px
 
     &#bepart
+      background: image-url('home/bg/bepart.jpg') no-repeat
+      +background-size(cover)
+      width: 100%
+      height: 100%
       padding-bottom: 0
 
-      .box
-        width: 80px
-        height: 80px
-        float: left
-        background: #ccc
-        margin-right: 20px
+      h3
+        @extend .blackBlock
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
 
-      h4
-        margin-bottom: 0
+      p.desc
+        font-size: .9em
+
+      .part
+        background: white
+        padding: 0 10px
+        margin-bottom: 20px
+        overflow: hidden
+
+        h4
+          @extend .whiteBlock
+          font-weight: 500
+          margin-bottom: 0
+          text-transform: uppercase
+
+        p
+          font-size: .8em
+
+      .takePart, .comeTo, .donate
+        float: left
+        width: 133px
+        height: 116px
+        display: block
+
+      .takePart
+        background: image-url('home/icons/takePart.png') no-repeat
+      .comeTo
+        background: image-url('home/icons/goEvent.png') no-repeat
+      .donate
+        background: image-url('home/icons/donate.png') no-repeat
+
+      a.button
+        background: $blue
+        color: white
+        border: 0
+        font-size: 1.3em
+        text-transform: uppercase
+        font-style: italic
+        padding: 10px
+
 
     &#partners
       padding-top: 0
