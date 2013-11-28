@@ -131,7 +131,7 @@ $red: #D02947
             text-transform: uppercase
             font-size: 1.1em
 
-          img.project, img.event
+          img.project
             width: 100%
             height: 100%
             display: block
@@ -158,34 +158,67 @@ $red: #D02947
         font-size: 1em
 
     &#articles
-      .box
-        border: 1px solid #ccc
-        padding-top: 15px
 
-      .projects
+      h3
+        @extend .blackBlock
+        background: black
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.4em
+
+      .articles
 
         li
-          div.project
-            height: 180px
+          position: relative
+
+          a.title
+            text-align: left
+            text-transform: uppercase
+            font-size: 1.1em
+            color: black
             display: block
-            background: #999
-            margin-bottom: 10px
+            position: absolute
+
+          img.article
+            width: 100%
+            height: 100%
+            display: block
+            margin-bottom: 20px
+            margin-top: 30%
 
           div.author
             display: inline-block
-            .avatar
-              display: inline-block
-              width: 40px
-              height: 40px
-              background: #ccc
+            width: 70%
+
+            img.avatar
+              margin-top: 20px
               margin-right: 15px
+              float: left
             .name
+              font-size: .8em
               display: inline-block
+              margin: 20px 0 0
+            .date
+              font-size: .8em
+              color: #9A9A9A
 
           div.tags
-            text-align: right
-            display: inline-block
-            width: 60%
+            float: right
+            margin-top: 40px
+            .label
+              background: #b30769
+              color: white
+              font-size: .8em
+
+      a.button
+        background: $blue
+        color: white
+        border: 0
+        font-size: 1.3em
+        text-transform: uppercase
+        font-style: italic
+        padding: 10px
 
     &#bepart
       padding-bottom: 0

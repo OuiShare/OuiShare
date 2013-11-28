@@ -1,15 +1,15 @@
 section#articles
-  div.row.box
+  div.row
     div.large-8.columns
-      ul.projects.large-block-grid-2
+      ul.articles.large-block-grid-2
         - @feed.entries[0..1].each do |f|
           li
-            p
-            a href="#{f.url}" = truncate(f.title, length: 70)
-            div.project
+            a.title href="#{f.url}" = truncate(f.title, length: 70)
+            img.article src="http://placehold.it/300x180"
             div.author
-              span.avatar
+              img.avatar src="http://placehold.it/45x45"
               p.name = "by #{f.author}"
+              p.date = "23h41, 21/11/2013"
             div.tags
               span.label = f.categories.first
 
@@ -21,16 +21,3 @@ section#articles
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
       a.button href="http://ouishare.org" Meet our magazine!
-
-    div.large-12.columns
-      ul.inline-list
-        li
-          span.label sit amet
-        li
-          span.label sit amet
-        li
-          span.label sit amet
-        li
-          span.label sit amet
-        li
-          span.label sit amet
