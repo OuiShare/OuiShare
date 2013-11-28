@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   def index
     @feed = Feedzirra::Feed.fetch_and_parse('http://ouishare.net/feed')
 
-    @top_banner = TopBanner.by_language(I18n.locale).first
-    @what_is_section = WhatIsSection.by_language(I18n.locale).first
+    @language = Language.where(slug: I18n.locale.to_s).first
+    @top_banner = @language.top_banner
+    @what_is_section = @language.what_is_section
   end
 end
