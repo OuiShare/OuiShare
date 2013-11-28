@@ -10,10 +10,14 @@ describe WhatIsSection do
   end
 
   describe 'validations' do
-    it { should validate_presence_of :mission }
-    it { should validate_presence_of :values }
-    it { should validate_presence_of :history }
-    it { should validate_presence_of :past_projects }
+    it { should validate_presence_of :title1 }
+    it { should validate_presence_of :text1 }
+    it { should validate_presence_of :title2 }
+    it { should validate_presence_of :text2 }
+    it { should validate_presence_of :title3 }
+    it { should validate_presence_of :text3 }
+    it { should validate_presence_of :title4 }
+    it { should validate_presence_of :text4 }
   end
 
   describe 'associations' do

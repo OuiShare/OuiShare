@@ -31,9 +31,13 @@ TopBanner.blueprint do
 end
 
 WhatIsSection.blueprint do
-  mission {'To conquer the world'}
-  values {'One, two, three, four'}
-  history {'Once uppon a time...'}
-  past_projects {'OuiShare Fest, and more!'}
+  title1 {'Mission'}
+  text1 {'To conquer the world'}
+  title2 {'Values'}
+  text2 {'One, two, three, four'}
+  title3 {'history'}
+  text3 {'Once uppon a time...'}
+  title4 {'Past Projects'}
+  text4 {'OuiShare Fest, and more!'}
   language {Language.make!}
 end
