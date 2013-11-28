@@ -6,20 +6,20 @@ section#about
     div.large-3.columns
       .box
         span.icon.activities
-        h4 Activities
-        p = WhatIsSection.first.mission
+        h4 = @what_is_section.title1
+        p = @what_is_section.text1
     div.large-3.columns
       .box
         span.icon.values
-        h4 Values
-        p = WhatIsSection.first.values
+        h4 = @what_is_section.title2
+        p = @what_is_section.text2
     div.large-3.columns
       .box
         span.icon.teams
-        h4 Teams
-        p = WhatIsSection.first.history
+        h4 = @what_is_section.title3
+        p = @what_is_section.text3
     div.large-3.columns
       .box
         span.icon.events
-        h4 Events
-        p = WhatIsSection.first.past_projects
+        h4 = @what_is_section.title4
+        p = @what_is_section.text4

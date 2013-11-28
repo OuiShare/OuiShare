@@ -32,20 +32,28 @@ div.row
     table
       tr
         th Language
-        th Mission
-        th Values
-        th History
-        th Past projects
+        th Title1
+        th Text1
+        th Title2
+        th Text2
+        th Title3
+        th Text3
+        th Title4
+        th Text4
         th
         th
       - Language.all.each do |l|
         - if l.what_is_section.present?
           tr
             td = l.name
-            td = l.what_is_section.mission
-            td = l.what_is_section.values
-            td = l.what_is_section.history
-            td = l.what_is_section.past_projects
+            td = l.what_is_section.title1
+            td = l.what_is_section.text1
+            td = l.what_is_section.title2
+            td = l.what_is_section.text2
+            td = l.what_is_section.title3
+            td = l.what_is_section.text3
+            td = l.what_is_section.title4
+            td = l.what_is_section.text4
             td = link_to "Edit", edit_admin_language_what_is_section_path(l, l.what_is_section)
             td = link_to "Remove", [:admin, l, l.what_is_section], data: { confirm: 'Are you sure?' }, method: :delete
         - else
