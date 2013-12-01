@@ -1,0 +1,7 @@
+= simple_form_for  [:admin, @hot_projects_section.language, @hot_projects_section] do |f|
+  h4 Language
+  = @hot_projects_section.language.name
+  = f.input :title
+  = f.input :text
+  = f.input :link_text
+  = f.submit

@@ -60,4 +60,27 @@ div.row
           tr
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
+  div.large-12.columns
+    h3.subheader hot Projects
+    table
+      tr
+        th Language
+        th Title
+        th Text
+        th Link Text
+        th
+        th
+      - Language.all.each do |l|
+        - if l.hot_projects_section.present?
+          tr
+            td = l.name
+            td = l.hot_projects_section.title
+            td = l.hot_projects_section.text
+            td = l.hot_projects_section.link_text
+            td = link_to "Edit", edit_admin_language_hot_projects_section_path(l, l.hot_projects_section)
+            td = link_to "Remove", [:admin, l, l.hot_projects_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_hot_projects_section_path(l.id)
 

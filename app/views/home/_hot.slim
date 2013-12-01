@@ -1,11 +1,9 @@
 section#hot
   div.row
     div.large-4.columns
-      h3 Hot projects
-      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-      button.button Inspire the world!
+      h3 = @hot_projects_section.title
+      p = @hot_projects_section.text
+      button.button = @hot_projects_section.link_text
 
     div.large-8.columns
       ul.projects.large-block-grid-2

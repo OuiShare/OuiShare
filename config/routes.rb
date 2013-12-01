@@ -9,6 +9,7 @@ OuiShare::Application.routes.draw do
     resources :languages do
       resources :top_banners
       resources :what_is_sections
+      resources :hot_projects_sections
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
