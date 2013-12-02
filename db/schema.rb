@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131202115049) do
+ActiveRecord::Schema.define(version: 20131202130726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles_sections", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "link_text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "articles_sections", ["language_id"], name: "index_articles_sections_on_language_id", using: :btree
 
   create_table "authorizations", force: true do |t|
     t.integer  "user_id"
