@@ -5,16 +5,9 @@ div#contact
 
   div.row
     div.large-4.columns
-      label Name
-      input type="text" placeholder="your name"
-
-      label Email
-      input type="text" placeholder="sample@domain.com"
-
-      label Message
-      textarea placeholder="some message"
-      select
-        option en
-        option es
-        option fr
-      button.tiny.button type="button" send
+      = simple_form_for :contact, url: contact_path, method: :post do |f|
+        = f.input :name, as: :string, placeholder: 'Your name'
+        = f.input :email, as: :string, placeholder: 'sample@domain.com'
+        = f.input :message, as: :text, placeholder: 'Some message...'
+        = f.input :country, as: :country
+        = f.submit 'Send'

@@ -56,6 +56,7 @@ GEM
       sass (~> 3.1)
     compass-rails (2.0.alpha.0)
       compass (>= 0.12.2, < 0.14)
+    country_select (1.2.0)
     curb (0.8.5)
     daemons (1.1.9)
     debug_inspector (0.0.2)
@@ -263,6 +264,7 @@ DEPENDENCIES
   capybara
   coffee-rails (= 4.0.1)
   compass-rails (~> 2.0.alpha.0)
+  country_select
   devise (~> 3.1.1)
   devise-i18n
   feedzirra
