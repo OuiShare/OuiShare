@@ -4,7 +4,4 @@ $(window).load(function() {
         window.location = lingua;
     }
     $("#l18n").change(language);
-
-    language();
-
 });
