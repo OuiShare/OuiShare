@@ -11,6 +11,7 @@ OuiShare::Application.routes.draw do
       resources :what_is_sections
       resources :hot_projects_sections
       resources :events_sections
+      resources :take_part_sections
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'

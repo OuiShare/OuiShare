@@ -107,3 +107,33 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
 
+  div.large-12.columns
+    h3.subheader Take Part
+    table
+      tr
+        th Language
+        th Main title
+        th Main text
+        th Link text
+        th Title1
+        th Title2
+        th Title3
+        th
+        th
+      - Language.all.each do |l|
+        - if l.take_part_section.present?
+          tr
+            td = l.name
+            td = l.take_part_section.main_title
+            td = l.take_part_section.main_text
+            td = l.take_part_section.link_text
+            td = l.take_part_section.title1
+            td = l.take_part_section.title2
+            td = l.take_part_section.title3
+            td = link_to "Edit", edit_admin_language_take_part_section_path(l, l.take_part_section)
+            td = link_to "Remove", [:admin, l, l.take_part_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
+
