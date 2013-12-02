@@ -4,7 +4,7 @@ section#articles
       ul.articles.large-block-grid-2
         - @feed.entries[0..1].each do |f|
           li
-            a.title href="#{f.url}" = truncate(f.title, length: 70)
+            a.title href="#{f.url}" target="blank" = truncate(f.title, length: 70)
             img.article src="http://placehold.it/300x180"
             div.author
               img.avatar src="http://placehold.it/45x45"
