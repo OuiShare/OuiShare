@@ -16,6 +16,7 @@
 //= require turbolinks
 
 //= require oui_share/oui_share.js
+//= require oui_share/script.js
 //= require init.js
 //= require_tree ./lib
 
