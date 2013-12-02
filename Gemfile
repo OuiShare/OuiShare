@@ -47,6 +47,7 @@ gem 'turbolinks'
 #gem 'bootstrap-sass'
 gem 'zurb-foundation'
 #gem 'angular-rails'
+gem 'font-awesome-sass'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 #group :production do

@@ -1,7 +1,24 @@
 section#welcome
   div.row
+    div.large-4.large-offset-8.columns.social
+      a.facebook href="#"
+        i.fa.fa-facebook
+      a.twitter href="#"
+        i.fa.fa-twitter
+      a.play href="#"
+        i.fa.fa-play
+
+      select.small-2
+        option onchange="location = this.options[this.selectedIndex].value;" value="/en" en
+        option onchange="location = this.options[this.selectedIndex].value;" value="/fr" fr
+        option onchange="location = this.options[this.selectedIndex].value;" value="/es" es
+  div.separator
+  div.row
     div.large-5.columns
-      h1 <span>Oui</span>
+      h1
+        | OuiShare
+        small
+          | Connecting the colaborative economy
     div.large-6.columns
       h2 = @top_banner.title1
       p = @top_banner.text1
