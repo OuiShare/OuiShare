@@ -82,6 +82,8 @@ OuiShare::Application.routes.draw do
   get 'press' => 'press#index', as: 'press'
   get 'workus' => 'workus#index', as: 'workus'
 
+  get 'press' => 'press#index', as: 'press'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
