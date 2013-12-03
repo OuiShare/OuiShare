@@ -78,12 +78,6 @@ OuiShare::Application.routes.draw do
   get 'knowledge/groups' => 'knowledge#groups', as: 'knowledge_groups'
   get 'knowledge/ouiki' => 'knowledge#ouiki', as: 'knowledge_ouiki'
 
-  get 'getinvolved' => 'getinvolved#index', as: 'getinvolved'
-  get 'press' => 'press#index', as: 'press'
-  get 'workus' => 'workus#index', as: 'workus'
-
-  get 'press' => 'press#index', as: 'press'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
