@@ -13,12 +13,19 @@ section#welcome
         option value="#{request.protocol}#{request.host_with_port}/fr" fr
         option value="#{request.protocol}#{request.host_with_port}/es" es
   div.separator
+  div.arrows
+    div.left
+      i.fa.fa-angle-left.fa-4x
+    div.right
+      i.fa.fa-angle-right.fa-4x
   div.row
     div.large-5.columns
       h1
         | OuiShare
         small
           | Connecting the colaborative economy
+
+      div.
     div.large-6.columns
       h2 = @top_banner.title1
       div.textBlock
