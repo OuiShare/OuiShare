@@ -1,4 +1,4 @@
-class KnowledgeController < AplicationController
+class KnowledgeController < ApplicationController
   def index
   end
 
