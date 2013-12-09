@@ -9,6 +9,9 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+# Uploads
+gem 'carrierwave'
+
 # Improvements
 gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
