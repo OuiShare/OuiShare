@@ -1,5 +1,7 @@
 class AboutController < ApplicationController
   def index
+    @language = Language.where(slug: I18n.locale.to_s).first
+    @about = @language.about || About.new
   end
 
   def mission

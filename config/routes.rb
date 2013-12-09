@@ -13,9 +13,11 @@ OuiShare::Application.routes.draw do
       resources :events_sections
       resources :take_part_sections
       resources :partners
+      resources :about
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
+    get 'about' => 'home#about'
   end
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'

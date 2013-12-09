@@ -4,4 +4,7 @@ class Admin::HomeController < ApplicationController
 
   def home
   end
+
+  def about
+  end
 end
