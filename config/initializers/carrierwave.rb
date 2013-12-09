@@ -7,7 +7,7 @@ begin
       :region                 => 'sa-east-1'  # optional, defaults to 'us-east-1'
     }
     config.fog_directory  = 'ouishare'
-
+    config.fog_host  = 'http://ouishare.s3-external-3.amazonaws.com'
   end
 rescue Exception => e
   Rails.logger.warn "Error loading settings: #{e}"
