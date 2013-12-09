@@ -6,6 +6,7 @@ class Language < ActiveRecord::Base
   has_one :take_part_section
   has_one :partner
   has_one :about
+  has_many :projects
 
   validates :name, :english_name, :slug, presence: true
 end
