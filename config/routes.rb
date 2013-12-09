@@ -20,6 +20,8 @@ OuiShare::Application.routes.draw do
     get 'about' => 'home#about'
   end
 
+  resources :donations
+
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
 
