@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209100649) do
+ActiveRecord::Schema.define(version: 20131209161318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,30 @@ ActiveRecord::Schema.define(version: 20131209100649) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.text     "resume"
+    t.string   "image"
+    t.text     "info"
+    t.text     "join_us_text"
+    t.string   "service1_image"
+    t.string   "service1_link"
+    t.string   "service1_title"
+    t.string   "service2_image"
+    t.string   "service2_link"
+    t.string   "service2_title"
+    t.string   "service3_image"
+    t.string   "service3_link"
+    t.string   "service3_title"
+    t.text     "text1"
+    t.text     "text2"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["language_id"], name: "index_projects_on_language_id", using: :btree
 
   create_table "take_part_sections", force: true do |t|
     t.string   "main_title"

@@ -13,7 +13,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :service2_link
       t.string :service2_title
       t.string :service3_image
-      t.image :service3_link
+      t.string :service3_link
       t.string :service3_title
       t.text :text1
       t.text :text2
