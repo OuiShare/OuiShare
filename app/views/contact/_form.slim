@@ -1,0 +1,15 @@
+= simple_form_for :contact, url: contact_path, method: :post do |f|
+  div.row
+    div.large-6.columns
+      = f.input :name, as: :string, placeholder: 'Your name'
+    div.large-6.columns
+      = f.input :email, as: :string, placeholder: 'sample@domain.com'
+  div.row
+    div.large-6.columns
+      = f.input :country, as: :country
+  div.row
+    div.large-12.columns
+      = f.input :message, as: :text, placeholder: 'Some message...'
+  div.row
+    div.large-12.columns
+      = f.submit 'Send'
