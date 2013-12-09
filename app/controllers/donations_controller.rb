@@ -1,3 +1,4 @@
 class DonationsController < ApplicationController
-  inherit_resources
+  def index
+  end
 end
