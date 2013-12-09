@@ -14,6 +14,7 @@ OuiShare::Application.routes.draw do
       resources :take_part_sections
       resources :partners
       resources :about
+      resources :projects
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
