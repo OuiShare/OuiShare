@@ -1,9 +1,9 @@
 = simple_form_for [:admin, @partner.language, @partner] do |f|
-  = f.input :partner1
-  = f.input :partner2
-  = f.input :partner3
-  = f.input :partner4
-  = f.input :partner5
-  = f.input :partner6
-  = f.input :partner7
+  = f.input :partner1, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner2, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner3, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner4, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner5, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner6, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :partner7, as: :image_preview, input_html: {preview_version: :thumb}
   = f.submit

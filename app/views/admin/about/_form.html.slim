@@ -4,7 +4,7 @@
   = f.input :main_title
   = f.input :main_text1
   = f.input :main_text2
-  = f.input :image
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :title1
   = f.input :text1
   = f.input :title2

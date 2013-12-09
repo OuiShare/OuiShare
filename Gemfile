@@ -13,6 +13,7 @@ gem 'thin'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem "rmagick"
+gem 'simple_form_fancy_uploads'
 
 # Improvements
 gem 'jbuilder'
