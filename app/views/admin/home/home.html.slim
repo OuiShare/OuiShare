@@ -137,3 +137,35 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
 
+  div.large-12.columns
+    h3.subheader Partners
+    table
+      tr
+        th Language
+        th Partner 1
+        th Partner 2
+        th Partner 3
+        th Partner 4
+        th Partner 5
+        th Partner 6
+        th Partner 7
+        th
+        th
+      - Language.all.each do |l|
+        - if l.partner.present?
+          tr
+            td = l.name
+            td = image_tag(l.partner.partner1.thumb.url)
+            td = image_tag(l.partner.partner2.thumb.url)
+            td = image_tag(l.partner.partner3.thumb.url)
+            td = image_tag(l.partner.partner4.thumb.url)
+            td = image_tag(l.partner.partner5.thumb.url)
+            td = image_tag(l.partner.partner6.thumb.url)
+            td = image_tag(l.partner.partner7.thumb.url)
+            td = link_to "Edit", edit_admin_language_partner_path(l, l.partner)
+            td = link_to "Remove", [:admin, l, l.partner], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_partner_path(l.id)
+

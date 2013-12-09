@@ -11,6 +11,8 @@ gem 'thin'
 
 # Uploads
 gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem "rmagick"
 
 # Improvements
 gem 'jbuilder'

@@ -4,6 +4,7 @@ class Language < ActiveRecord::Base
   has_one :hot_projects_section
   has_one :events_section
   has_one :take_part_section
+  has_one :partner
 
   validates :name, :english_name, :slug, presence: true
 end

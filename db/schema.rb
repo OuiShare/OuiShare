@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209081333) do
+ActiveRecord::Schema.define(version: 20131209083115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,19 @@ ActiveRecord::Schema.define(version: 20131209081333) do
     t.string "mailchimp_id"
   end
 
+  create_table "partners", force: true do |t|
+    t.string   "partner1"
+    t.string   "partner2"
+    t.string   "partner3"
+    t.string   "partner4"
+    t.string   "partner5"
+    t.string   "partner6"
+    t.string   "partner7"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "take_part_sections", force: true do |t|
     t.string   "main_title"
     t.text     "main_text"
@@ -86,6 +99,9 @@ ActiveRecord::Schema.define(version: 20131209081333) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image1"
+    t.string   "image2"
+    t.string   "image3"
   end
 
   add_index "take_part_sections", ["language_id"], name: "index_take_part_sections_on_language_id", using: :btree
