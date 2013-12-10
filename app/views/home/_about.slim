@@ -4,27 +4,22 @@ section#about
 
   div.row
     div.large-3.columns
-      div.icon
-      h4 missions
-
-      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-        hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-        nisl, tincidunt et, mattis eget, convallis nec, purus.
-
+      .box
+        span.icon.activities
+        h4 = @what_is_section.title1
+        p = @what_is_section.text1
     div.large-3.columns
-      div.icon
-      h4 Values
-      p Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Nulla posuere. Donec vitae dolor.
-
+      .box
+        span.icon.values
+        h4 = @what_is_section.title2
+        p = @what_is_section.text2
     div.large-3.columns
-      div.icon
-      h4 History
-      p Nullam tristique diam non turpis. Cras placerat accumsan
-        nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
-
+      .box
+        span.icon.teams
+        h4 = @what_is_section.title3
+        p = @what_is_section.text3
     div.large-3.columns
-      div.icon
-      h4 Past projects
-      p Nullam tristique diam non turpis. Cras placerat accumsan
-        nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+      .box
+        span.icon.events
+        h4 = @what_is_section.title4
+        p = @what_is_section.text4

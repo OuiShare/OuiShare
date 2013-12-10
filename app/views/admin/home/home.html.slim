@@ -1,0 +1,171 @@
+div.row
+  div.large-12.columns
+    h2.subheader Home page
+  div.large-12.columns
+    h3.subheader Top Banner
+    table
+      tr
+        th Language
+        th Title1
+        th Text1
+        th Title2
+        th Text2
+        th
+        th
+      - Language.all.each do |l|
+        - if l.top_banner.present?
+          tr
+            td = l.name
+            td = l.top_banner.title1
+            td = l.top_banner.text1
+            td = l.top_banner.title2
+            td = l.top_banner.text2
+            td = link_to "Edit", edit_admin_language_top_banner_path(l, l.top_banner)
+            td = link_to "Remove", [:admin, l, l.top_banner], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_top_banner_path(l.id)
+
+  div.large-12.columns
+    h3.subheader What is
+    table
+      tr
+        th Language
+        th Title1
+        th Text1
+        th Title2
+        th Text2
+        th Title3
+        th Text3
+        th Title4
+        th Text4
+        th
+        th
+      - Language.all.each do |l|
+        - if l.what_is_section.present?
+          tr
+            td = l.name
+            td = l.what_is_section.title1
+            td = l.what_is_section.text1
+            td = l.what_is_section.title2
+            td = l.what_is_section.text2
+            td = l.what_is_section.title3
+            td = l.what_is_section.text3
+            td = l.what_is_section.title4
+            td = l.what_is_section.text4
+            td = link_to "Edit", edit_admin_language_what_is_section_path(l, l.what_is_section)
+            td = link_to "Remove", [:admin, l, l.what_is_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
+
+  div.large-12.columns
+    h3.subheader Hot Projects
+    table
+      tr
+        th Language
+        th Title
+        th Text
+        th Link Text
+        th
+        th
+      - Language.all.each do |l|
+        - if l.hot_projects_section.present?
+          tr
+            td = l.name
+            td = l.hot_projects_section.title
+            td = l.hot_projects_section.text
+            td = l.hot_projects_section.link_text
+            td = link_to "Edit", edit_admin_language_hot_projects_section_path(l, l.hot_projects_section)
+            td = link_to "Remove", [:admin, l, l.hot_projects_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_hot_projects_section_path(l.id)
+
+  div.large-12.columns
+    h3.subheader Events
+    table
+      tr
+        th Language
+        th Title
+        th Text
+        th
+        th
+      - Language.all.each do |l|
+        - if l.events_section.present?
+          tr
+            td = l.name
+            td = l.events_section.title
+            td = l.events_section.text
+            td = link_to "Edit", edit_admin_language_events_section_path(l, l.events_section)
+            td = link_to "Remove", [:admin, l, l.events_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
+
+  div.large-12.columns
+    h3.subheader Take Part
+    table
+      tr
+        th Language
+        th Main title
+        th Main text
+        th Link text
+        th Title1
+        th Title2
+        th Title3
+        th
+        th
+      - Language.all.each do |l|
+        - if l.take_part_section.present?
+          tr
+            td = l.name
+            td = l.take_part_section.main_title
+            td = l.take_part_section.main_text
+            td = l.take_part_section.link_text
+            td = l.take_part_section.title1
+            td = l.take_part_section.title2
+            td = l.take_part_section.title3
+            td = link_to "Edit", edit_admin_language_take_part_section_path(l, l.take_part_section)
+            td = link_to "Remove", [:admin, l, l.take_part_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
+
+  div.large-12.columns
+    h3.subheader Partners
+    table
+      tr
+        th Language
+        th Partner 1
+        th Partner 2
+        th Partner 3
+        th Partner 4
+        th Partner 5
+        th Partner 6
+        th Partner 7
+        th
+        th
+      - Language.all.each do |l|
+        - if l.partner.present?
+          tr
+            td = l.name
+            td = image_tag(l.partner.partner1.thumb.url)
+            td = image_tag(l.partner.partner2.thumb.url)
+            td = image_tag(l.partner.partner3.thumb.url)
+            td = image_tag(l.partner.partner4.thumb.url)
+            td = image_tag(l.partner.partner5.thumb.url)
+            td = image_tag(l.partner.partner6.thumb.url)
+            td = image_tag(l.partner.partner7.thumb.url)
+            td = link_to "Edit", edit_admin_language_partner_path(l, l.partner)
+            td = link_to "Remove", [:admin, l, l.partner], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_partner_path(l.id)
+

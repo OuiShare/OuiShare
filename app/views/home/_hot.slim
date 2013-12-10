@@ -1,37 +1,25 @@
 section#hot
   div.row
     div.large-4.columns
-      h3 Hot projects
-      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-      button.button Inspire the world!
+      h3 = @hot_projects_section.title
+      p = @hot_projects_section.text
+      button.button = @hot_projects_section.link_text
 
     div.large-8.columns
       ul.projects.large-block-grid-2
         li
-          div.project
+          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          img.project src="http://placehold.it/300x180"
           ul.large-block-grid-4
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
+            - 4.times do
+              li
+                img.people src="http://flickholdr.com/70/70/avatar"
         li
-          div.project
+          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+          img.project src="http://placehold.it/300x180"
           ul.large-block-grid-4
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
-            li
-              div.more
+            - 4.times do
+              li
+                img.people src="http://flickholdr.com/70/70/avatar"
+
+          a.more href="#" See all projects...

@@ -1,0 +1,41 @@
+div#page-workus
+  section.about
+    div.row
+      div.large-12.columns
+        h3 Work with us
+    div.row
+      div.large-6.columns
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+          hendrerit tempor tellus. Donec pretium posuere tellus.
+      div.large-6.columns
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+          hendrerit tempor tellus. Donec pretium posuere tellus.
+
+  section#banner
+    div.row
+      div.large-12.columns
+        div.banner
+
+  section#activities
+    - 5.times do
+      div.row.actvity
+        Div.large-6.columns
+          h4 Activity #1
+          p Lorem ipsum dolor sit amet, consectetuer adipiscing
+            elit. Donec hendrerit tempor tellus. Donec pretium posuere
+            tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
+            nec, purus. Cum sociis natoque penatibus et magnis dis
+        div.large-6.columns
+          div.img-sample
+
+  section#become
+    div.row
+      div.large-4.columns
+        h4 Be come a partner
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing
+          elit. Donec hendrerit tempor tellus. Donec pretium posuere
+          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
+          nec, purus. Cum sociis natoque penatibus et magnis dis
+
+      div.large-8.columns
+        = render 'contact/form'

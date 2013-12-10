@@ -1,45 +1,32 @@
 div#page-about
-  section.videos
+  section.about
     div.row
       div.large-12.columns
-        h3 About
+        h3 = @about.main_title
     div.row
-      div.large-4.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-        div.flex-video.widescreen
-          iframe width="1280" height="720" src="//www.youtube.com/embed/VbHvzKcLw1c" frameborder="0" allowfullscreen
-
-      div.large-4.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        div.flex-video.widescreen
-          iframe width="1280" height="720" src="//www.youtube.com/embed/4xt422Ln5cE" frameborder="0" allowfullscreen
-
-      div.large-4.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        div.flex-video.widescreen
-          iframe width="1280" height="720" src="//www.youtube.com/embed/RaQ1xeV9flU" frameborder="0" allowfullscreen
+      div.large-6.columns
+        p = @about.main_text1
+      div.large-6.columns
+        p = @about.main_text2
+  section#banner
+    div.row
+      div.large-12.columns
+        div.banner
 
   section.values
     div.row
       div.large-6.columns
-        h3 Missions & Visions
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        h3 = @about.title1
+        p = @about.text1
 
       div.large-6.columns
-        h3 Missions & Visions
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        h3 = @about.title2
+        p = @about.text2
 
       div.large-6.columns
-        h3 Facts & Things we do
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        h3 = @about.title3
+        p = @about.text3
 
       div.large-6.columns
-        h3 Our Values
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        h3 = @about.title4
+        p = @about.text4

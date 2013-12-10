@@ -1,55 +1,164 @@
 $background: #ddd
+$blue: #00939A
+$red: #D02947
 
 #home
+
   .separator
-    border-top: 1px solid #ccc
+    border-top: 1px solid white
     display: block
     margin: 30px auto
 
-  h1,h2,h3,h4
-    font-weight: 200
+  .blackBlock
+    font-family: "Gandhi Sans", sans-serif
+    background: rgba(0,0,0,0.8)
+    color: white
+    padding: 10px
+
+  .whiteBlock
+    font-family: "Gandhi Sans", sans-serif
+    background: white
+    color: black
+    padding: 10px
+
 
   section
     padding: 25px 0
 
     &#welcome
-      background: #ddd
+      background: image-url('home/bg/welcome.jpg') no-repeat center center
+
+      .arrows
+        .left, .right
+          cursor: pointer
+          position: absolute
+          color: white
+          display: block
+          z-index: 9999
+        .left
+          left: 12%
+        .right
+          right: 15%
 
       .social
-        ul
-          li
-            float: right
-            margin-left: 0.375em
-            a
-              width: 30px
-              height: 30px
-              display: block
-              background: #ccc
-              +border-radius(20px)
+        text-align: right
+        a
+          display: inline-block
+          border: 1px solid white
+          text-align: center
+          margin-right: 10px
+          height: 30px
+          width: 30px
+          color: white
+          line-height: 20pt
 
-      .video
-        width: 300px
-        height: 200px
-        background: #999
-        display: block
-        margin-top: 40px
+          &.facebook
+            background-color: #3c5a9a
 
+          &.twitter
+            background-color: #359bed
+
+          &.play
+            background-color: #e82d28
+
+
+        select
+          +appearance(none)
+          background: image-url('home/arrow.png') no-repeat 30px 10px transparent 
+          border: 1px solid white
+          +border-radius(none)
+          color: white
+          height: 30px
+          float: right
+          padding: 6px
+          font-size: .7em
+          text-indent: 0.01px
+          text-overflow: ""
+          
+
+      h1
+        color: white
+
+        small
+          color: white
+
+      h2
+        @extend .blackBlock
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        margin-bottom: 0
+
+      .textBlock
+        margin: 10px 0 20px 0
+        padding: 0
+        .space
+          @extend .blackBlock
+          line-height: 2em
+          padding: 3px 10px
 
       .subscribe
-        text-align: center
+        @extend .blackBlock
+        margin-top: 40px
+        padding: 10px
+
+        input
+          border: 1px solid white
+          background: rgba(0,0,0,0.8)
+          color: white
+          margin: 0
+
+        a
+          font-family: "Gandhi Sans", sans-serif
+          font-style: italic
+          text-transform: uppercase
+          background: white
+          color: $blue
+          border: 1px solid white
+
 
     &#about
+      background: image-url('home/bg/about.jpg') no-repeat
+      +background-size(cover)
       text-align: center
+      padding: 40px 0
+
+      .box
+        background: white
+        padding: 10px
 
       h3
-        margin-bottom: 20px
+        @extend .blackBlock
+        background: black
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        display: inline-block
+        margin-bottom: 40px
+
+      h4
+        font-family: "Gandhi Sans", sans-serif
+        font-weight: 400
+        text-transform: uppercase
 
       .icon
-        background: #ddd
-        width: 80px
-        height: 80px
+        width: 171px
+        height: 131px
         display: block
         margin: 0 auto
+
+        &.activities
+          background: image-url('home/icons/activities.png') no-repeat
+
+        &.values
+          background: image-url('home/icons/values.png') no-repeat
+
+        &.teams
+          background: image-url('home/icons/teams.png') no-repeat
+
+        &.events
+          background: image-url('home/icons/events.png') no-repeat
 
       p
         font-size: 0.8em
@@ -57,127 +166,193 @@ $background: #ddd
       .separator
         width: 100%
 
-    &#hot
-      background: #eee
+    &#hot, &#events
+      color: white
 
-      .projects
+      h3
+        @extend .whiteBlock
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        display: inline-block
+
+      .projects, .events
         text-align: center
+        font-family: "Gandhi Sans", sans-serif
 
         li
-          div.project
-            height: 180px
+          p
+            text-align: left
+            text-transform: uppercase
+            font-size: 1.1em
+
+          img.project
+            width: 100%
+            height: 100%
             display: block
-            background: #999
             margin-bottom: 20px
 
-          .more
-            height: 50px
-            display: block
-            background: #999
+        a.more
+          float: right
+          color: white
+
+
+    &#hot
+      background: $blue
+
+      button
+        @extend .whiteBlock
+        color: $blue
+        border: 0
+        text-transform: uppercase
 
     &#events
-      background: $background
+      background: $red
 
-      .projects
-
-        li
-          div.project
-            height: 180px
-            display: block
-            background: #999
-            margin-bottom: 10px
+      p.meta
+        font-size: 1em
 
     &#articles
-      .box
-        border: 1px solid #ccc
-        padding-top: 15px
 
-      .projects
+      h3
+        @extend .blackBlock
+        background: black
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.4em
+
+      .articles
 
         li
-          div.project
-            height: 180px
+          position: relative
+
+          a.title
+            text-align: left
+            text-transform: uppercase
+            font-size: 1.1em
+            color: black
             display: block
-            background: #999
-            margin-bottom: 10px
+            position: absolute
+
+          img.article
+            width: 100%
+            height: 100%
+            display: block
+            margin-bottom: 20px
+            margin-top: 30%
 
           div.author
             display: inline-block
-            .avatar
-              display: inline-block
-              width: 40px
-              height: 40px
-              background: #ccc
+            width: 70%
+
+            img.avatar
+              margin-top: 20px
               margin-right: 15px
+              float: left
             .name
+              font-size: .8em
               display: inline-block
+              margin: 20px 0 0
+            .date
+              font-size: .8em
+              color: #9A9A9A
 
           div.tags
-            text-align: right
-            display: inline-block
-            width: 60%
+            float: right
+            margin-top: 40px
+            .label
+              background: #b30769
+              color: white
+              font-size: .8em
+
+      a.button
+        background: $blue
+        color: white
+        border: 0
+        font-size: 1.3em
+        text-transform: uppercase
+        font-style: italic
+        padding: 10px
 
     &#bepart
+      background: image-url('home/bg/bepart.jpg') no-repeat
+      +background-size(cover)
+      width: 100%
+      height: 100%
       padding-bottom: 0
 
-      .box
-        width: 80px
-        height: 80px
-        float: left
-        background: #ccc
-        margin-right: 20px
+      h3
+        @extend .blackBlock
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
 
-      h4
-        margin-bottom: 0
+      p.desc
+        font-size: .9em
+
+      .part
+        background: white
+        padding: 0 10px
+        margin-bottom: 20px
+        overflow: hidden
+
+        h4
+          @extend .whiteBlock
+          font-weight: 500
+          margin-bottom: 0
+          text-transform: uppercase
+
+        p
+          font-size: .8em
+
+      .takePart, .comeTo, .donate
+        float: left
+        width: 133px
+        height: 116px
+        display: block
+
+      .takePart
+        background: image-url('home/icons/takePart.png') no-repeat
+      .comeTo
+        background: image-url('home/icons/goEvent.png') no-repeat
+      .donate
+        background: image-url('home/icons/donate.png') no-repeat
+
+      a.button
+        background: $blue
+        color: white
+        border: 0
+        font-size: 1.3em
+        text-transform: uppercase
+        font-style: italic
+        padding: 10px
+
 
     &#partners
-      padding-top: 0
       text-align: center
+      margin: 20px 0
 
       h3
-        margin-top: 0
+        @extend .blackBlock
+        background: black
+        display: inline-block
+        font-weight: 500
+        text-transform: uppercase
+        font-size: 1.3em
+        margin: 20px 0
 
       ul
         display: table
-        margin: 0 auto
+        margin: 20px auto
 
       li
         margin: 0
         padding: 0 20px
-        border-right: 1px solid black
-        height: 30px
-
-        &:last-child
-          border: 0
 
         p
           line-height: 30px
 
     &#know-more
       background: #eee
-
-  footer
-    padding-top: 20px
-    background: #ddd
-
-    li
-      list-style: none
-      a
-        color: black
-
-    .social
-      .facebook, .twitter
-        width: 200px
-        height: 100px
-        display: block
-        background: #eee
-        margin-bottom: 20px
-        padding-top: 60px
-        padding-left: 10px
-
-      a
-        width: 30px
-        height: 30px
-        display: block
-        background: #ccc
-        +border-radius(20px)

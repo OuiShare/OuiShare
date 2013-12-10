@@ -1,0 +1,8 @@
+= simple_form_for  [:admin, @top_banner.language, @top_banner] do |f|
+  h4 Language
+  = @top_banner.language.name
+  = f.input :title1
+  = f.input :text1
+  = f.input :title2
+  = f.input :text2
+  = f.submit

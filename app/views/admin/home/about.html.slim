@@ -1,0 +1,33 @@
+div.row
+  div.large-12.columns
+    h2.subheader Home page
+  div.large-12.columns
+    h3.subheader Top Banner
+    table
+      tr
+        th Language
+        th Main title
+        th Image
+        th Title1
+        th Title2
+        th Title3
+        th Title4
+        th
+        th
+      - Language.all.each do |l|
+        - if l.about.present?
+          tr
+            td = l.name
+            td = l.about.main_title
+            td = image_tag(l.about.image.thumb.url)
+            td = l.about.title1
+            td = l.about.title2
+            td = l.about.title3
+            td = l.about.title4
+            td = link_to "Edit", edit_admin_language_about_path(l, l.about)
+            td = link_to "Remove", [:admin, l, l.about], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_about_path(l.id)
+
