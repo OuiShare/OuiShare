@@ -1,3 +1,43 @@
+$background: #ddd
+$blue: #00939A
+$red: #D02947
+$topbar-dropdown-toggle-alpha: 0.1
+
+.top-bar
+  ul
+    &> li.has-dropdown
+      a:after
+        background: image-url('home/arrow.png') no-repeat 0px 0px transparent
+        width: 13px
+        height: 7px
+        border: none
+
+.top-bar-section
+  ul
+    li
+      &>a
+        font-size: 14px
+        font-family: "Gandhi Sans"
+        font-weight: normal
+
+  .right
+    .donate
+      margin-right: 10px
+      .button
+        background: #155d60
+
+    .get-involved
+      .button
+        background: #124e51
+
+    .button
+
+      border: none
+
+      &:hover
+        background: darken( #155d60, 10% )
+        border: none
+
 #second-header
   .social
     text-align: right
@@ -32,20 +72,3 @@
       font-size: .7em
       text-indent: 0.01px
       text-overflow: ""
-
-span.brk
-  display: block
-  clear: both
-
-.top-bar-section
-  .right
-    .donate
-      margin-right: 20px
-
-    .button
-      background: #383838
-      border: #383838
-
-      &:hover
-        background: #747474
-        border: #747474
