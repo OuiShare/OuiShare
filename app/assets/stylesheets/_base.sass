@@ -1,18 +1,38 @@
 #second-header
-  background: #ddd
+  .social
+    text-align: right
+    a
+      display: inline-block
+      border: 1px solid white
+      text-align: center
+      margin-right: 10px
+      height: 30px
+      width: 30px
+      color: white
+      line-height: 20pt
 
-  .social, .l18n
-    margin-top: 1.2em
-    ul
-      li
-        float: right
-        margin-left: 0.375em
-        a
-          width: 30px
-          height: 30px
-          display: block
-          background: #ccc
-          +border-radius(20px)
+      &.facebook
+        background-color: #3c5a9a
+
+      &.twitter
+        background-color: #359bed
+
+      &.play
+        background-color: #e82d28
+
+    select
+      +appearance(none)
+      background: image-url('home/arrow.png') no-repeat 30px 10px transparent
+      border: 1px solid white
+      +border-radius(none)
+      color: white
+      height: 30px
+      float: right
+      padding: 6px
+      font-size: .7em
+      text-indent: 0.01px
+      text-overflow: ""
+
 span.brk
   display: block
   clear: both

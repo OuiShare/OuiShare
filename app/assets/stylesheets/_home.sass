@@ -4,6 +4,22 @@ $red: #D02947
 
 #home
 
+  .orbit-bullets
+    top: 330px
+    left: 350px
+    position: absolute
+    z-index: 9999
+
+    li
+      background: none
+      border: 1px solid #FFFFFF
+      +border-radius(0)
+      display: block
+      float: left
+      height: 1.75em
+      margin-right: 6px
+      width: 1.75em
+
   .separator
     border-top: 1px solid white
     display: block
@@ -27,6 +43,16 @@ $red: #D02947
 
     &#welcome
       background: image-url('home/bg/welcome.jpg') no-repeat center center
+
+      .welcome, .jungle
+        width: 100%
+        height: 490px
+
+      .welcome
+
+
+      .jungle
+        background: image-url('home/bg/welcome_blue.jpg') no-repeat center center
 
       .arrows
         .left, .right
@@ -64,7 +90,7 @@ $red: #D02947
 
         select
           +appearance(none)
-          background: image-url('home/arrow.png') no-repeat 30px 10px transparent 
+          background: image-url('home/arrow.png') no-repeat 30px 10px transparent
           border: 1px solid white
           +border-radius(none)
           color: white
@@ -74,13 +100,15 @@ $red: #D02947
           font-size: .7em
           text-indent: 0.01px
           text-overflow: ""
-          
+
 
       h1
         color: white
 
         small
           color: white
+
+
 
       h2
         @extend .blackBlock

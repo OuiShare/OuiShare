@@ -15,7 +15,8 @@ html
       = render 'layouts/admin_header'
     - else
       = render 'layouts/header'
-      / = render 'layouts/second_header'
+      - unless params[:controller] == 'home'
+        = render 'layouts/second_header'
     = yield
     = render 'layouts/footer'
     = javascript_include_tag "application"

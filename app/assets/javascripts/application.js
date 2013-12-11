@@ -19,6 +19,3 @@
 //= require oui_share/script.js
 //= require init.js
 //= require_tree ./lib
-
-
-$(function(){ $(document).foundation(); });

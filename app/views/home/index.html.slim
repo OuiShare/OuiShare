@@ -1,5 +1,9 @@
 div#home
-  = render 'home/welcome'
+  ul#featured1 data-orbit="" data-options="animation:slide; animation_speed:1000; pause_on_hover:true; animation_speed:500; next_on_click:true; timer: false; slide_number: false;"
+    li
+      = render 'home/welcome'
+    li
+      = render 'home/welcome'
   = render 'home/about'
   = render 'home/hot'
   = render 'home/events'
