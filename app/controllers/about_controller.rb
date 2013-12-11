@@ -21,4 +21,5 @@ class AboutController < ApplicationController
 
   def advisory
   end
+
 end
