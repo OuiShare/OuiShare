@@ -1,9 +1,6 @@
-$background: #ddd
-$blue: #00939A
-$red: #D02947
-
 #home
 
+  /* Orbit modifications */
   .orbit-bullets
     top: 330px
     left: 350px
@@ -19,6 +16,23 @@ $red: #D02947
       height: 1.75em
       margin-right: 6px
       width: 1.75em
+      padding: 5px
+
+      span.block
+        background: white
+        display: block
+        width: 1em
+        height: 1em
+
+  /* .orbit-container
+  /*   .orbit-prev, .orbit-next
+  /*     background: none
+  /*     &> span
+  /*       border: none
+  /*   .orbit-prev
+  /*     span:after
+  /*       content: "<"
+  /*       display: block
 
   .separator
     border-top: 1px solid white
@@ -39,33 +53,13 @@ $red: #D02947
 
 
   section
-    padding: 25px 0
+    padding: 64px 0
 
     &#welcome
       background: image-url('home/bg/welcome.jpg') no-repeat center center
+      padding-top: 80px
 
-      .welcome, .jungle
-        width: 100%
-        height: 490px
-
-      .welcome
-
-
-      .jungle
-        background: image-url('home/bg/welcome_blue.jpg') no-repeat center center
-
-      .arrows
-        .left, .right
-          cursor: pointer
-          position: absolute
-          color: white
-          display: block
-          z-index: 9999
-        .left
-          left: 12%
-        .right
-          right: 15%
-
+        /* Topbar home */
       .social
         text-align: right
         a
@@ -110,23 +104,23 @@ $red: #D02947
         small
           color: white
 
-
-
       h2
         @extend .blackBlock
         display: inline-block
-        font-weight: 500
         text-transform: uppercase
-        font-size: 1.3em
-        margin-bottom: 0
+        margin-bottom: 7px
 
       .textBlock
-        margin: 10px 0 20px 0
         padding: 0
+
         .space
           @extend .blackBlock
           line-height: 2em
           padding: 3px 10px
+          font-size: 14px
+          white-space: pre-line
+          display: inline
+
 
       .subscribe
         @extend .blackBlock
@@ -158,15 +152,6 @@ $red: #D02947
         background: white
         padding: 10px
 
-      h3
-        @extend .blackBlock
-        background: black
-        font-weight: 500
-        text-transform: uppercase
-        font-size: 1.3em
-        display: inline-block
-        margin-bottom: 40px
-
       h4
         font-family: "Gandhi Sans", sans-serif
         font-weight: 400
@@ -186,13 +171,6 @@ $red: #D02947
 
     &#hot, &#events
       color: white
-
-      h3
-        @extend .whiteBlock
-        font-weight: 500
-        text-transform: uppercase
-        font-size: 1.3em
-        display: inline-block
 
       .projects, .events
         text-align: center
@@ -225,20 +203,18 @@ $red: #D02947
         text-transform: uppercase
 
     &#events
-      background: $red
+      background: $blue
+      border-top: 1px solid white
 
-      p.meta
-        font-size: 1em
+      p.text, p.meta
+        font-size: 14px
+        font-weight: normal
+        font-family: "Gandhi Sans"
 
     &#articles
-
-      h3
-        @extend .blackBlock
-        background: black
-        display: inline-block
-        font-weight: 500
-        text-transform: uppercase
-        font-size: 1.4em
+      background: $red
+      color: white
+      border-top: 1px solid white
 
       .articles
 
@@ -249,7 +225,7 @@ $red: #D02947
             text-align: left
             text-transform: uppercase
             font-size: 1.1em
-            color: black
+            color: white
             display: block
             position: absolute
 
@@ -269,12 +245,12 @@ $red: #D02947
               margin-right: 15px
               float: left
             .name
-              font-size: .8em
+              font-size: 12px
               display: inline-block
               margin: 20px 0 0
             .date
-              font-size: .8em
-              color: #9A9A9A
+              font-size: 12px
+              color: white
 
           div.tags
             float: right
@@ -294,27 +270,20 @@ $red: #D02947
         padding: 10px
 
     &#bepart
-      background: image-url('home/bg/bepart.jpg') no-repeat
       +background-size(cover)
       width: 100%
       height: 100%
       padding-bottom: 0
 
-      h3
-        @extend .blackBlock
-        display: inline-block
-        font-weight: 500
-        text-transform: uppercase
-        font-size: 1.3em
-
       p.desc
         font-size: .9em
 
       .part
-        background: white
+        border: 1px solid black
         padding: 0 10px
         margin-bottom: 20px
         overflow: hidden
+        font-family: "Gandhi Sans"
 
         h4
           @extend .whiteBlock
@@ -323,7 +292,7 @@ $red: #D02947
           text-transform: uppercase
 
         p
-          font-size: .8em
+          font-size: 12px
 
       .takePart, .comeTo, .donate
         float: left
@@ -351,15 +320,7 @@ $red: #D02947
     &#partners
       text-align: center
       margin: 20px 0
-
-      h3
-        @extend .blackBlock
-        background: black
-        display: inline-block
-        font-weight: 500
-        text-transform: uppercase
-        font-size: 1.3em
-        margin: 20px 0
+      border-top: 1px solid black
 
       ul
         display: table
