@@ -3,6 +3,9 @@ $blue: #00939A
 $red: #D02947
 $topbar-dropdown-toggle-alpha: 0.1
 
+body
+  font-family: "Gandhi Sans"
+
 .top-bar
   ul
     &> li.has-dropdown
@@ -41,8 +44,12 @@ $topbar-dropdown-toggle-alpha: 0.1
   font-size: 24px
 
 #second-header
+  margin-top: 90px
+  border-bottom: 1px solid black
   .social
     text-align: right
+    padding-top: 15px
+
     a
       display: inline-block
       border: 1px solid white
@@ -52,6 +59,7 @@ $topbar-dropdown-toggle-alpha: 0.1
       width: 30px
       color: white
       line-height: 20pt
+
 
       &.facebook
         background-color: #3c5a9a
@@ -64,7 +72,6 @@ $topbar-dropdown-toggle-alpha: 0.1
 
     select
       +appearance(none)
-      background: image-url('home/arrow.png') no-repeat 30px 10px transparent
       border: 1px solid white
       +border-radius(none)
       color: white
@@ -74,7 +81,15 @@ $topbar-dropdown-toggle-alpha: 0.1
       font-size: .7em
       text-indent: 0.01px
       text-overflow: ""
+      &.white
+        color: white
+        border: 1px solid white
+        background: image-url('arrow.png') no-repeat 30px 10px transparent
 
+      &.black
+        color: black
+        border: 1px solid black
+        background: image-url('arrow-black.png') no-repeat 30px 10px transparent
 h2
   font-size: 24px
   font-weight: normal
@@ -98,3 +113,6 @@ h3.subtitle
   &.white
     border: 1px solid white
     color: white
+
+p
+  font-size: 14px
