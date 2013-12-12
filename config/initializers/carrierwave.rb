@@ -4,10 +4,10 @@ begin
       :provider               => 'AWS',       # required
       :aws_access_key_id      => ENV['aws.key'],       # required
       :aws_secret_access_key  => ENV['aws.secret'],       # required
-      :region                 => 'sa-east-1'  # optional, defaults to 'us-east-1'
+      :region                 => 'sa-east-1',  # optional, defaults to 'us-east-1'
+      :endpoint               => 'http://ouishare.s3-external-3.amazonaws.com'
     }
     config.fog_directory  = 'ouishare'
-    config.fog_host  = 'http://ouishare.s3-external-3.amazonaws.com'
   end
 rescue Exception => e
   Rails.logger.warn "Error loading settings: #{e}"
