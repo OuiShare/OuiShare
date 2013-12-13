@@ -14,25 +14,40 @@ body
 
 .top-bar
   z-index: 9999
+  background-color: #06040f
+
+  .title-area
+    li.name
+      h1
+        a
+          font-size: .1em
+          text-indent: -9999
+          overflow: hidden
+          background: image-url('topbar-logo.png') no-repeat 18px 10px
+          width: 100px
+          height: 40px
+          color: black
   ul
     &> li.has-dropdown
       a:after
-        background: image-url('home/arrow.png') no-repeat 0px 0px transparent
+        background: image-url('arrow.png') no-repeat 0px 0px transparent
         width: 13px
         height: 7px
         border: none
 
 .top-bar-section
   ul
+    background-color: #06040f
     li
       &>a
         font-size: 14px
         font-family: "Gandhi Sans"
         font-weight: normal
 
-  .right
+  .left
     .donate
       margin-right: 10px
+      margin-left: 35px
       .button
         background: #155d60
 
@@ -52,6 +67,7 @@ body
 
 #second-header
   border-bottom: 1px solid black
+  padding-top: 20px
 
   .social
     text-align: right
@@ -114,3 +130,38 @@ h4
 
 p
   font-size: 14px
+
+
+/* Orbit modifications */
+.orbit-bullets
+  top: 330px
+  left: 350px
+  position: absolute
+  z-index: 10
+
+  li
+    background: none
+    border: 1px solid #FFFFFF
+    +border-radius(0)
+    display: block
+    float: left
+    height: 1.75em
+    margin-right: 6px
+    width: 1.75em
+    padding: 5px
+
+    span.block
+      background: white
+      display: block
+      width: 1em
+      height: 1em
+
+/* .orbit-container
+/*   .orbit-prev, .orbit-next
+/*     background: none
+/*     &> span
+/*       border: none
+/*   .orbit-prev
+/*     span:after
+/*       content: "<"
+/*       display: block
