@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213023855) do
+ActiveRecord::Schema.define(version: 20131213030210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,34 @@ ActiveRecord::Schema.define(version: 20131213023855) do
   end
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.string   "place"
+    t.date     "date"
+    t.time     "time"
+    t.text     "resume"
+    t.text     "info"
+    t.text     "join_us_text"
+    t.string   "service1_image"
+    t.string   "service1_link"
+    t.string   "service1_title"
+    t.string   "service2_image"
+    t.string   "service2_link"
+    t.string   "service2_title"
+    t.string   "service3_image"
+    t.string   "service3_link"
+    t.string   "service3_title"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "title2"
+    t.text     "text2"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["language_id"], name: "index_events_on_language_id", using: :btree
 
   create_table "events_sections", force: true do |t|
     t.string   "title"
