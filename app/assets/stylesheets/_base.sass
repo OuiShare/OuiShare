@@ -142,8 +142,8 @@ p
   z-index: 10
 
   li
-    background: none
-    border: 1px solid #FFFFFF
+    background: transparent
+    border: 1px solid white
     +border-radius(0)
     display: block
     float: left
@@ -151,6 +151,9 @@ p
     margin-right: 6px
     width: 1.75em
     padding: 5px
+
+    &.active
+      background: transparent
 
     span.block
       background: white
@@ -188,3 +191,13 @@ p
 
 .section
   padding: 64px 0
+
+
+footer
+  h3
+    background: url("/assets/home/logos/ouishare.png") no-repeat
+    color: white
+    height: 71px
+    overflow: hidden
+    text-indent: -9999px
+    width: 364px
