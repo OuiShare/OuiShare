@@ -6,7 +6,13 @@ $topbar-dropdown-toggle-alpha: 0.1
 body
   font-family: "Gandhi Sans"
 
+  h1,h2,h3,h4,h5
+    font-family: "Gandhi Sans", sans-serif
+    font-weight: normal
+    text-transform: uppercase
+
 .top-bar
+  z-index: 9999
   ul
     &> li.has-dropdown
       a:after
@@ -46,20 +52,20 @@ body
 #second-header
   margin-top: 90px
   border-bottom: 1px solid black
+
   .social
     text-align: right
     padding-top: 15px
 
     a
       display: inline-block
-      border: 1px solid white
       text-align: center
       margin-right: 10px
       height: 30px
       width: 30px
       color: white
-      line-height: 20pt
-
+      line-height: 23pt
+      border: 1px solid black
 
       &.facebook
         background-color: #3c5a9a
@@ -81,28 +87,17 @@ body
       font-size: .7em
       text-indent: 0.01px
       text-overflow: ""
-      &.white
-        color: white
-        border: 1px solid white
-        background: image-url('arrow.png') no-repeat 30px 10px transparent
+      color: black
+      border: 1px solid black
+      background: image-url('arrow-black.png') no-repeat 30px 10px transparent
 
-      &.black
-        color: black
-        border: 1px solid black
-        background: image-url('arrow-black.png') no-repeat 30px 10px transparent
 h2
   font-size: 24px
-  font-weight: normal
-  font-family: "Gandhi Sans"
   margin-bottom: 7px
 
 h3.subtitle
-  font-family: "Gandhi Sans", sans-serif
-
   padding: 5px 10px
   display: inline-block
-  text-transform: uppercase
-  font-weight: normal
   font-size: 24px
   margin-bottom: 30px
 
@@ -113,6 +108,9 @@ h3.subtitle
   &.white
     border: 1px solid white
     color: white
+
+h4
+  font-size: 20px
 
 p
   font-size: 14px
