@@ -13,9 +13,27 @@
 
 
   #list
+    background: $blue
+    color: white
+    border-bottom: 1px solid black
+
     .event
-      padding: 20px 0
-      border-bottom: 1px solid #ccc
+      padding: 64px 0
+      border-bottom: 1px solid white
+
+      &:last-child
+        border: none
+
+      p
+        color: white
+
+      .tags
+        .label
+          background: image-url('tag-branca.png') no-repeat right
+          color: #000000
+          font-weight: normal
+          margin: 0 10px 10px 0
+          padding-right: 20px
 
       .thumb
         width: 100%
