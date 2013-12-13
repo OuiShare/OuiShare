@@ -45,16 +45,9 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#{projects_path}" projects
           ul.dropdown
-            li
-              a href="#" OS fest
-            li
-              a href="#{team_path}" team
-            li
-              a href="#" OS labs
-            li
-              a href="#" OS jobs
-            li
-              a href="#" OS school
+            - @language.projects.each do |p|
+              li
+                = project_path(p)
             li
               a href="#{projects_path}" all projects
         li.has-dropdown
