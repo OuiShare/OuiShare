@@ -17,7 +17,7 @@ class Admin::WhatIsSectionsController < ApplicationController
 
   protected
   def permitted_params
-    params.permit(what_is_section: [:title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4, :image1, :image2, :image3, :image4])
+    params.permit(what_is_section: [:title, :title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4, :image1, :image2, :image3, :image4])
   end
 
   def build_resource
