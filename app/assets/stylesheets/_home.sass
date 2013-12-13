@@ -107,6 +107,7 @@
           background: rgba(0,0,0,0.8)
           color: white
           margin: 0
+          height: 46px
 
         a
           font-family: "Gandhi Sans", sans-serif
@@ -115,6 +116,12 @@
           background: white
           color: $blue
           border: 1px solid white
+          font-size: 24px
+          font-weight: bold
+
+        .prefix, .postfix
+          height: 46px
+          line-height: 34pt
 
 
     &#about
@@ -139,7 +146,7 @@
         margin: 0 auto
 
       p
-        font-size: 0.8em
+        font-size: 12px
 
       .separator
         width: 100%
@@ -155,7 +162,7 @@
           p
             text-align: left
             text-transform: uppercase
-            font-size: 1.1em
+            font-size: 20px
 
           img.project
             width: 100%
@@ -166,16 +173,19 @@
         a.more
           float: right
           color: white
+          font-size: 12px
+          font-style: italic
 
 
     &#hot
       background: $blue
 
-      button
-        @extend .whiteBlock
-        color: $blue
-        border: 0
-        text-transform: uppercase
+      .seta
+        background: image-url('home/hot-arrow.png') no-repeat center
+        display: block
+        height: 17px
+        margin: 20px 0
+        width: 100%
 
     &#events
       background: $blue
@@ -250,8 +260,8 @@
       height: 100%
       padding-bottom: 0
 
-      p.desc
-        font-size: .9em
+      p
+        font-size: 12px
 
       .part
         border: 1px solid black
@@ -265,9 +275,6 @@
           font-weight: 500
           margin-bottom: 0
           text-transform: uppercase
-
-        p
-          font-size: 12px
 
       .takePart, .comeTo, .donate
         float: left

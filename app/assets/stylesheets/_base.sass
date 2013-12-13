@@ -59,11 +59,24 @@ body
       border: none
 
       &:hover
-        background: darken( #155d60, 10% )
+        background: darken( #155d60, 5% )
         border: none
 
 .btn
   font-size: 24px
+  text-transform: uppercase
+  padding: 10px 20px
+  font-style: italic
+  margin-top: 20px
+  display: inline-block
+
+  &.white
+    background: white
+    color: $blue
+
+    &:hover
+      background: darken($blue, 10%)
+      color: white
 
 #second-header
   border-bottom: 1px solid black
@@ -161,15 +174,29 @@ p
       width: 1em
       height: 1em
 
-/* .orbit-container
-/*   .orbit-prev, .orbit-next
-/*     background: none
-/*     &> span
-/*       border: none
-/*   .orbit-prev
-/*     span:after
-/*       content: "<"
-/*       display: block
+.orbit-container
+  .orbit-prev, .orbit-next
+    background: none
+    &> span
+      border: none
+    &:hover
+      background: none
+  .orbit-prev
+    span
+      background: url("/assets/home/arrow-left.png") no-repeat
+      display: block
+      width: 17px
+      height: 32px
+      left: 110px
+      top: 40px
+  .orbit-next
+    span
+      background: url("/assets/home/arrow-right.png") no-repeat
+      display: block
+      width: 17px
+      height: 32px
+      left: -50px
+      top: 40px
 
 .label
   font-weight: normal
