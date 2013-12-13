@@ -1,49 +1,48 @@
 div#project
   div.row
-    div.large-6.columns
-      h1 = @project.name
+    div.large-5.columns
+      h3.subtitle = @project.name
       p = @project.resume
       - @project.tags.each do |t|
-        span.label = t.name
-    div.large-6.columns
+        span.label.blue = t.name
+    div.large-7.columns
       img.banner src="#{@project.image.url}"
+  div.info
+    div.row.section
+      div.large-4.columns
+        h3.subtitle Organizers
+        ul.large-block-grid-4
+          - 6.times do
+            li.avatar
 
-  div.row
-    div.large-4.columns
-      h3 Organizers
-      ul.large-block-grid-4
-      - 6.times do
-        li.avatar
+      div.large-8.columns
+        h3.subtitle.white Info
+        p = @project.info
 
-    div.large-8.columns
-      h3 Info
-      p = @project.info
+    .separator
 
-  div.row
-    div.large-4.columns
-      h3 Join us!
+    div.row.section
+      div.large-4.columns
+        h3.subtitle.white Join us!
 
-      p = @project.join_us_text
+        p = @project.join_us_text
 
-      button.button = @project.service1_title
-      br
-      button.button = @project.service2_title
-      br
-      button.button = @project.service3_title
+        button.button = @project.service1_title
+        br
+        button.button = @project.service2_title
+        br
+        button.button = @project.service3_title
 
+      div.large-4.columns
+        div.block
+      div.large-4.columns
+        div.block
 
-
-    div.large-4.columns
-      div.block
-    div.large-4.columns
-      div.block
-
-  div.row
+  div.row.section
     div.large-6.columns
-      H4 = @project.title1
+      h3.subtitle.black = @project.title1
       p = @project.text1
 
     div.large-6.columns
       H4 = @project.title2
       p = @project.text2
-
