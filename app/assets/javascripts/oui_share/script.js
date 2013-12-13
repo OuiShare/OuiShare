@@ -9,6 +9,7 @@ $(document).foundation('orbit', {
     prev_class: 'orbit-prev',
     timer: false
 });
+$(document).foundation();
 
 $(window).load(function() {
     function language() {
