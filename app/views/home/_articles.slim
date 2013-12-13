@@ -11,8 +11,8 @@ section#articles
               p.name = "by #{f.author}"
               p.date = "23h41, 21/11/2013"
             div.tags
-              span.label.blue = f.categories.first
-
+              - f.categories[0..2].each do |t|
+                span.label = t
     div.large-4.columns
       h3.subtitle.black Our magazine articles
       p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
