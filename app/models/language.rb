@@ -7,6 +7,7 @@ class Language < ActiveRecord::Base
   has_one :partner
   has_one :about
   has_many :projects
+  has_many :events
 
   validates :name, :english_name, :slug, presence: true
 end
