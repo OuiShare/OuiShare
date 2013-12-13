@@ -19,7 +19,10 @@ OuiShare::Application.routes.draw do
     get '/' => 'home#index'
     get 'home' => 'home#home'
     get 'about' => 'home#about'
+    get 'projects' => 'projects#index'
   end
+
+  get 'projects/:id' => 'admin/projects#show'
 
   resources :donations
 
