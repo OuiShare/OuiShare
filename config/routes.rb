@@ -15,14 +15,17 @@ OuiShare::Application.routes.draw do
       resources :partners
       resources :about
       resources :projects
+      resources :events
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
     get 'about' => 'home#about'
     get 'projects' => 'projects#index'
+    get 'events' => 'events#index'
   end
 
-  get 'projects/:id' => 'admin/projects#show'
+  get 'projects/:id' => 'admin/projects#show', as: 'project'
+  get 'events/:id' => 'admin/events#show', as: 'event'
 
   resources :donations
 
