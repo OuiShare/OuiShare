@@ -1,20 +1,14 @@
 section#list
-  - 5.times do |i|
-    div.event
+  - @language.projects.each do |p|
+    .event
       div.row
-        a href="#"
+        a href="#{project_path(p)}"
           div.large-5.columns
-            h3.subtitle.white Event #
-            p Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit. Donec hendrerit tempor tellus. Donec pretium posuere
-              tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-              nec, purus. Cum sociis natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-              vitae dolor. Nullam tristique diam non turpis. Cras placerat
-              accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+            h3.subtitle.white = p.name
+            p = p.resume
             div.tags
-              - 5.times do |i|
-                span.label.white Nullam
+              - p.tags.each do |t|
+                span.label.white = t.name
 
-          div.large-7.columns
-            div.thumb
+        div.large-7.columns
+          div.thumb
