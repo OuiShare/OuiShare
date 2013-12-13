@@ -3,6 +3,7 @@ class Admin::TopBannersController < ApplicationController
   singleton_belongs_to :language
   actions :all, except: [:show, :index]
 
+
   def create
     create! { admin_home_path }
   end
