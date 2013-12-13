@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :set_locale
+  before_filter :set_language
 
   protected
   def render_404
@@ -23,6 +24,10 @@ class ApplicationController < ActionController::Base
       new_locale = (current_user.locale if current_user) || I18n.default_locale
       redirect_to params.merge(locale: new_locale, only_path: true)
     end
+  end
+
+  def set_language
+    @language = Language.where(slug: I18n.locale.to_s).first
   end
 end
 
