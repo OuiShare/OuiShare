@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213034052) do
+ActiveRecord::Schema.define(version: 20131213121221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -249,6 +249,7 @@ ActiveRecord::Schema.define(version: 20131213034052) do
     t.string   "image2"
     t.string   "image3"
     t.string   "image4"
+    t.string   "title"
   end
 
   add_index "what_is_sections", ["language_id"], name: "index_what_is_sections_on_language_id", using: :btree
