@@ -1,0 +1,27 @@
+= simple_form_for  [:admin, @event.language, @event] do |f|
+  h4 Language
+  = @event.language.name
+  = f.input :title
+  = f.input :place
+  = f.input :date
+  = f.input :time
+  = f.input :resume
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :tag_list, as: :text
+  = f.input :info
+  = f.input :join_us_text
+  = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :service1_link
+  = f.input :service1_title
+  = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :service2_link
+  = f.input :service2_title
+  = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :service3_link
+  = f.input :service3_title
+  = f.input :title1
+  = f.input :text1
+  = f.input :title2
+  = f.input :text2
+
+  = f.submit
