@@ -19,6 +19,7 @@ gem 'simple_form_fancy_uploads'
 gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'simple_form', '~> 3.0.0'
+gem 'acts-as-taggable-on'
 
 # I18n
 gem 'rails-i18n'
