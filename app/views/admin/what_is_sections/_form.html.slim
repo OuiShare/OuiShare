@@ -1,6 +1,7 @@
 = simple_form_for  [:admin, @what_is_section.language, @what_is_section] do |f|
   h4 Language
   = @what_is_section.language.name
+  = f.input :title
   = f.input :title1
   = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :text1
