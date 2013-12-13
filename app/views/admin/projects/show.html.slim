@@ -3,8 +3,8 @@ div#project
     div.large-6.columns
       h1 = @project.name
       p = @project.resume
-      - 3.times do
-        span.label blah
+      - @project.tags.each do |t|
+        span.label = t.name
     div.large-6.columns
       img.banner src="#{@project.image.url}"
 

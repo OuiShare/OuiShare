@@ -5,4 +5,6 @@ class Project < ActiveRecord::Base
   mount_uploader :service1_image, ImageUploader
   mount_uploader :service2_image, ImageUploader
   mount_uploader :service3_image, ImageUploader
+
+  acts_as_taggable
 end
