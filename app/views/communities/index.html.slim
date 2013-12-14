@@ -1,8 +1,7 @@
 div#page-communities
   section.explain
-    div.row
+    div.row.section
       div.large-6.columns
-        h3 Communities
         p Lorem ipsum dolor sit amet, consectetuer adipiscing
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
@@ -12,7 +11,6 @@ div#page-communities
           accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 
       div.large-6.columns
-        h3 &nbsp;
         p Lorem ipsum dolor sit amet, consectetuer adipiscing
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
@@ -26,27 +24,26 @@ div#page-communities
       div.large-12.columns
         div.map
 
-  section#communities-list
+  section#communities-list.section
     div.row
       div.large-6.columns
-        h3 All Local communities
-  - 5.times do
-    div.row.community
-      div.large-6.columns
-        h4 Community Title
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit. Donec hendrerit tempor tellus. Donec pretium posuere
-        tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-        nec, purus. Cum sociis natoque penatibus et magnis dis
-        parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-        vitae dolor. Nullam tristique diam non turpis. Cras placerat
-        accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+        h3.subtitle All Local communities
+    - 5.times do
+      div.row.community
+        div.large-6.columns
+          p.title Community Title
+          p Lorem ipsum dolor sit amet, consectetuer adipiscing
+            tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
+            nec, purus. Cum sociis natoque penatibus et magnis dis
+            parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
+            vitae dolor. Nullam tristique diam non turpis. Cras placerat
+            accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
 
-      div.large-2.columns
-        button.button join
+        div.large-2.columns
+          button.btn.white join
 
-      div.large-4.columns
-        ul.large-block-grid-4
-          - 7.times do
-            li
-              div.block
+        div.large-4.columns
+          ul.large-block-grid-4
+            - 7.times do
+              li
+                div.block
