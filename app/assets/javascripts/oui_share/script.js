@@ -26,4 +26,12 @@ $(window).load(function() {
     });
 
 
+    var container = document.querySelector('.values ul');
+    var column = document.querySelector('.values ul li');
+    var msnry = new Masonry( container, column,  {
+        // options
+        columnWidth: column ,
+        itemSelector: 'li'
+    });
+
 });
