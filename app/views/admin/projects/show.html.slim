@@ -27,11 +27,14 @@ div#project
 
         p = @project.join_us_text
 
-        button.button = @project.service1_title
-        br
-        button.button = @project.service2_title
-        br
-        button.button = @project.service3_title
+      div.large-8.columns
+        ul.inline-list.buttons
+          li
+            a = @project.service1_title
+          li
+            a = @project.service2_title
+          li
+            a = @project.service3_title
 
       div.large-4.columns
         div.block
@@ -44,5 +47,5 @@ div#project
       p = @project.text1
 
     div.large-6.columns
-      H4 = @project.title2
+      h3.subtitle.black = @project.title2
       p = @project.text2
