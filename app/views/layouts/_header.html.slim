@@ -47,7 +47,7 @@ div.contain-to-grid.fixed
           ul.dropdown
             - @language.projects.each do |p|
               li
-                = project_path(p)
+                = link_to p.name, project_path(p)
             li
               a href="#{projects_path}" all projects
         li.has-dropdown
