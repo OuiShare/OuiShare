@@ -26,8 +26,8 @@ $(window).load(function() {
     });
 
 
-    var container = document.querySelector('.values ul');
-    var column = document.querySelector('.values ul li');
+    var container = document.querySelector('.more-content ul');
+    var column = document.querySelector('.more-content ul li');
     var msnry = new Masonry( container, column,  {
         // options
         columnWidth: column ,
