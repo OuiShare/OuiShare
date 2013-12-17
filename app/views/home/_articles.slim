@@ -15,10 +15,7 @@ section#articles
                 span.label = t
 
     div.large-4.columns
-      h3.subtitle.black Our magazine articles
-      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      h3.subtitle.black = @articles_section.title
+      p = @articles_section.text
 
-      a.btn.blue href="http://ouishare.org" Meet our magazine!
+      a.btn.blue href="http://ouishare.org" = @articles_section.link_text

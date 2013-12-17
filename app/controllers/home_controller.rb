@@ -8,5 +8,7 @@ class HomeController < ApplicationController
     @hot_projects_section = @language.hot_projects_section || HotProjectsSection.new
     @events_section = @language.events_section || EventsSection.new
     @take_part_section = @language.take_part_section || TakePartSection.new
+    @articles_section = @language.articles_section || ArticlesSection.new
+    @partner = @language.partner || Partner.new
   end
 end

@@ -108,6 +108,29 @@ div.row
             td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
 
   div.large-12.columns
+    h3.subheader Articles
+    table
+      tr
+        th Language
+        th Title
+        th Text
+        th Link text
+        th
+        th
+      - Language.all.each do |l|
+        - if l.articles_section.present?
+          tr
+            td = l.name
+            td = l.articles_section.title
+            td = l.articles_section.text
+            td = link_to "Edit", edit_admin_language_articles_section_path(l, l.articles_section)
+            td = link_to "Remove", [:admin, l, l.articles_section], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_articles_section_path(l.id)
+
+  div.large-12.columns
     h3.subheader Take Part
     table
       tr
