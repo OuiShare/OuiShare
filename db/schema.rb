@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213121221) do
+ActiveRecord::Schema.define(version: 20131217141621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 20131213121221) do
   end
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
+
+  create_table "community_pages", force: true do |t|
+    t.text     "main_text"
+    t.string   "image"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "main_text2"
+  end
+
+  add_index "community_pages", ["language_id"], name: "index_community_pages_on_language_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "title"

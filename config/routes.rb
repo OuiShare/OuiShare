@@ -17,10 +17,12 @@ OuiShare::Application.routes.draw do
       resources :about
       resources :projects
       resources :events
+      resources :community_pages
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
     get 'about' => 'home#about'
+    get 'community_pages' => 'home#community_pages'
     get 'projects' => 'projects#index'
     get 'events' => 'events#index'
   end

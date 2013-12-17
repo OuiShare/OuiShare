@@ -7,6 +7,7 @@ class Language < ActiveRecord::Base
   has_one :partner
   has_one :about
   has_one :articles_section
+  has_one :community_page
   has_many :projects
   has_many :events
 

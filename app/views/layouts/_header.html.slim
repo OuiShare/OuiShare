@@ -24,10 +24,10 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#{events_path}" events
           ul.dropdown
-            li
-              a href="" OuiShare fest
-            li
-              a href="" all events
+           - @language.events.each do |e|
+              li
+                = link_to e.name, event_path(e)
+
         li.has-dropdown
           a href="#{communities_path}" community
           ul.dropdown

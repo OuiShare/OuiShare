@@ -2,27 +2,17 @@ div#page-communities
   section.explain
     div.row.section
       div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-          vitae dolor. Nullam tristique diam non turpis. Cras placerat
-          accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+        p = @community_page.main_text
 
       div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-          vitae dolor. Nullam tristique diam non turpis. Cras placerat
-          accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+        h3 &nbsp;
+        p = @community_page.main_text2
 
   section#map
     div.row
       div.large-12.columns
         div.map
+          /*= @community_page.image.url*/
 
   section#communities-list.section
     div.row
