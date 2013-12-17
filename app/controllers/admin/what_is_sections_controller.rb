@@ -20,6 +20,10 @@ class Admin::WhatIsSectionsController < ApplicationController
     params.permit(what_is_section: [:title, :title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4, :image1, :image2, :image3, :image4])
   end
 
+  def resource
+    @what_is_section ||= WhatIsSection.find(params[:id])
+  end
+
   def build_resource
     @what_is_section = Language.find(params[:language_id]).build_what_is_section(permitted_params[:what_is_section])
   end

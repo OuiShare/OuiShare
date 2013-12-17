@@ -20,6 +20,10 @@ class Admin::HotProjectsSectionsController < ApplicationController
     params.permit(hot_projects_section: [:title, :text, :link_text])
   end
 
+  def resource
+    @hot_projects_section ||= HotProjectsSection.find(params[:id])
+  end
+
   def build_resource
     @hot_projects_section = Language.find(params[:language_id]).build_hot_projects_section(permitted_params[:hot_projects_section])
   end

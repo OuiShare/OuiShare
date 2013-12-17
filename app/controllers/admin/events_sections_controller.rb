@@ -20,6 +20,10 @@ class Admin::EventsSectionsController < ApplicationController
     params.permit(events_section: [:title, :text])
   end
 
+  def resource
+    @events_section ||= EventsSection.find(params[:id])
+  end
+
   def build_resource
     @events_section = Language.find(params[:language_id]).build_events_section(permitted_params[:events_section])
   end

@@ -20,6 +20,10 @@ class Admin::AboutController < ApplicationController
     params.permit(about: [:main_title, :main_text1, :main_text2, :image, :title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4])
   end
 
+  def resource
+    @about ||= About.find(params[:id])
+  end
+
   def build_resource
     @about = Language.find(params[:language_id]).build_about(permitted_params[:about])
   end

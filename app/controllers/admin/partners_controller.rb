@@ -20,6 +20,10 @@ class Admin::PartnersController < ApplicationController
     params.permit(partner: [:partner1, :partner2, :partner3, :partner4, :partner5, :partner6, :partner7])
   end
 
+  def resource
+    @partner ||= Partner.find(params[:id])
+  end
+
   def build_resource
     @partner = Language.find(params[:language_id]).build_partner(permitted_params[:partner])
   end
