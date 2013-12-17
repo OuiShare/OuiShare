@@ -45,6 +45,7 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
+gem 'flutie'
 
 # Assets
 gem 'sass-rails', '4.0.1'
