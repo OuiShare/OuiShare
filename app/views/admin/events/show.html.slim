@@ -1,7 +1,6 @@
 div#event
   div.row
     div.large-6.columns
-      h1 = @event.title
       h2 = "#{@event.place}/#{@event.date}/#{@event.time.strftime('%H:%M')}"
       p = @event.resume
       - @event.tags.each do |t|

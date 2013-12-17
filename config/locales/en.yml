@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  pages:
+    admin/projects:
+      show: "%{name}"
+    admin/events:
+      show: "%{name}"
+    projects:
+      index: "Projects"
+    about:
+      index: "About"
+      mission: "Mission"
+      vision: "Vision"
+      history: "History"
+      organization: "Organization"
+      team: "Team"
+      advisory: "Advisory"
+

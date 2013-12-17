@@ -1,7 +1,6 @@
 div#project
   div.row
     div.large-5.columns
-      h3.subtitle = @project.name
       p = @project.resume
       - @project.tags.each do |t|
         span.label.blue = t.name

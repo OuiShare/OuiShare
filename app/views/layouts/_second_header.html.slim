@@ -1,7 +1,11 @@
 div#second-header
   div.row
     div.large-8.columns
-      h3.subtitle.black get involved!
+      - if params[:id].present?
+        - name = resource.name
+        h3.subtitle.black = t("pages.#{params[:controller]}.#{params[:action]}", name: name)
+      - else
+        h3.subtitle.black = t("pages.#{params[:controller]}.#{params[:action]}")
     div.large-4.columns.social.black
       a.facebook href="#"
         i.fa.fa-facebook
