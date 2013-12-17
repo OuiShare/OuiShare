@@ -7,4 +7,8 @@ class Event < ActiveRecord::Base
   mount_uploader :service3_image, ImageUploader
 
   acts_as_taggable
+
+  def name
+    title
+  end
 end
