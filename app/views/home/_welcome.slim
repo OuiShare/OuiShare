@@ -29,7 +29,10 @@ section#welcome
         span.space = @top_banner.text2
       div.subscribe.large-12.columns
         div.row.collapse
-          div.large-10.columns
-            input type="text" placeholder="Your email here to subscribe to the newsletter"
-          div.large-2.columns
-            a.postfix href="#{newsletter_path}" Go !
+          = form_tag('/newsletter/subscribe', method: 'post')
+            div.large-10.columns
+              input type="text" id="email" name="email" placeholder="Your email here to subscribe to the newsletter"
+            div.large-2.columns
+              = submit_tag('Go!', class: 'postfix')
+
+            /*a.postfix href="#{newsletter_path}" Go !*/

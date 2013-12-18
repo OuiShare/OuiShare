@@ -38,4 +38,7 @@ en:
       advisory: "Advisory"
     communities:
       index: "Communities"
-
+  newsletter:
+    error: 'Could not subscribe to the newsletter, check your email address and try again'
+    already_registered: "This email is already registered to our newsletter"
+    successful: "Your address was successfuly registered in our newsletter!"

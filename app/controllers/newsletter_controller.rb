@@ -11,11 +11,15 @@ class NewsletterController < ApplicationController
     end
 
     begin
-      gb.lists.subscribe({:id => params[:newsletter][:language], email: {email: params[:newsletter][:email]}})
+      gb.lists.subscribe({:id => ENV['mailchimp_id'], email: {email: params[:email]}})
     rescue Gibbon::MailChimpError => e
-      redirect_to newsletter_path, notice: e.message
+      if e.code == 214
+        redirect_to root_path, notice: t('newsletter.already_registered')
+      else
+        redirect_to root_path, notice: t('newsletter.error')
+      end
       return
     end
-    redirect_to root_path
+    redirect_to root_path, notice: t('newsletter.successful')
   end
 end
