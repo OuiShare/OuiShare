@@ -21,6 +21,14 @@
 
 en:
   hello: "Hello world"
+  contact:
+    email: 'Email'
+    first_name: 'First name'
+    country: 'Country'
+    city: 'City'
+    subject: 'Subject'
+    message: 'Please, write your message...'
+    send: 'Send'
   pages:
     admin/projects:
       show: "%{name}"
