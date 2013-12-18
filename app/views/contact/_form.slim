@@ -1,7 +1,9 @@
-= simple_form_for :contact, url: contact_path, method: :post do |f|
+= simple_form_for  :contact, url: contact_path, :html => {'data-abide' => ' ' }, method: :post do |f|
   div.row
     div.large-6.columns
-      = f.input :email, as: :string, placeholder: t('contact.email'), label: false
+      .email-field
+        = f.email_field :email, as: :string, placeholder: t('contact.email'), label: false, require: true
+        small.error Name is required and must be a string.
     div.large-6.columns
       = f.input :country, as: :country, prompt: t('contact.country'), label: false
   div.row
@@ -18,4 +20,4 @@
       = f.input :message, as: :text, placeholder: t('contact.message'), label: false
   div.row
     div.large-12.columns
-      = f.submit t('contact.send')
+      = f.submit t('contact.send'), class: "btn blue"
