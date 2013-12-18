@@ -52,7 +52,7 @@ gem 'sass-rails', '4.0.1'
 gem "compass-rails", "~> 2.0.alpha.0"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
-gem 'turbolinks'
+#gem 'turbolinks'
 #gem 'bootstrap-sass'
 gem 'zurb-foundation'
 #gem 'angular-rails'

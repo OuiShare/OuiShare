@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 
 //= require oui_share/oui_share.js
 //= require oui_share/script.js
