@@ -7,40 +7,48 @@ div.contain-to-grid.fixed
     section.top-bar-section
       ul.left
         li.has-dropdown
-          a href="#{about_path}" about OuiShare
+          a href="#{about_path}" about
           ul.dropdown
             li
-              a href="#{about_mission_path}" Our mission & activities
-            li
-             a href="#{about_vision_path}" Our vision
+              a href="#{about_mission_path}" mission & activities
             li
               a href="#{about_history_path}" Our story
             li
+              a href="#{about_advisory_path}" The Collaborative Economy
+            li.has-dropdown.org
               a href="#{about_organization_path}" Organization
+              ul.dropdown
+                li
+                  a href="" Governance
+                li
+                  a href="" Our values
             li
-              a href="#{about_team_path}" OS team
+              a href="#{about_team_path}" team
             li
-              a href="#{about_advisory_path}" OS advisory board
+              a href="#{about_team_path}" Advisors
+            li
+              a href="#{about_team_path}" FAQ
+
+        li.has-dropdown
+          a href="#{communities_path}" community
+          ul.dropdown
+            li
+              a href="#{communities_mission_path}" local communities
+            li
+              a href="#{communities_communities_path}" topical groups
+            li
+              a href="#{communities_ouishare_path}" Connectors
+            li
+              a href="#{communities_live_path}" OuiShare Everywhere
+
         li.has-dropdown
           a href="#{events_path}" events
           ul.dropdown
            - @language.events.each do |e|
               li
                 = link_to e.name, event_path(e)
-
-        li.has-dropdown
-          a href="#{communities_path}" community
-          ul.dropdown
-            li
-              a href="#{communities_mission_path}" local
-            li
-              a href="#{communities_communities_path}" communities
-            li
-              a href="#{communities_ouishare_path}" OuiShare
-            li
-              a href="#{communities_live_path}" live
-            li
-              a href="#{communities_people_path}" people
+              li
+                a href="" more events
 
         li.has-dropdown
           a href="#{projects_path}" projects
@@ -48,8 +56,23 @@ div.contain-to-grid.fixed
             - @language.projects.each do |p|
               li
                 = link_to p.name, project_path(p)
+              li
+                a href="#{projects_path}" all projects
+
+        li.has-dropdown
+          a href="#{knowledge_path}" knowledge
+          ul.dropdown
             li
-              a href="#{projects_path}" all projects
+              a href="#{knowledge_research_path}" Topical Groups
+            li
+              a href="#{knowledge_expert_path}" Research & Publications
+            li
+              a href="#{knowledge_groups_path}" Co-Creation Events
+            li
+              a href="#{knowledge_ouiki_path}" Wiki
+            li
+              a href="#{knowledge_ouiki_path}" Magazine
+
         li.has-dropdown
           a href="http://ouishare.net" magazine
           ul.dropdown
@@ -61,17 +84,7 @@ div.contain-to-grid.fixed
               a href="http://ouishare.net/es" spanish
             li
               a href="http://ouishare.net/de" german
-        li.has-dropdown
-          a href="#{knowledge_path}" knowledge
-          ul.dropdown
-            li
-              a href="#{knowledge_research_path}" research & publications
-            li
-              a href="#{knowledge_expert_path}" expert
-            li
-              a href="#{knowledge_groups_path}" groups
-            li
-              a href="#{knowledge_ouiki_path}" Ouiki
+
         li.donate
           a href="#" class="button" donate
         li.get-involved
