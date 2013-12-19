@@ -31,11 +31,11 @@ section#welcome
       div.subscribe.large-12.columns
         = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
           div.row.collapse
-            div.large-10.columns
+            div.large-5.columns
               .email-field
-                input type="email" id="email" name="email" placeholder="Your email here to subscribe to the newsletter" required=""
+                input type="email" id="email" name="email" placeholder="Your email here" required=""
                 small.error Name is required and must be a string.
-            div.large-2.columns
-              = submit_tag('Go!', class: 'postfix btn white')
+            div.large-7.columns
+              = submit_tag('Subscribe to our newsletter', class: 'postfix btn white')
 
             /*a.postfix href="#{newsletter_path}" Go !*/
