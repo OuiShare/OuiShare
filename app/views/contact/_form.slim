@@ -3,7 +3,7 @@
     div.large-6.columns
       .email-field
         = f.email_field :email, as: :string, placeholder: t('contact.email'), label: false, require: true
-        small.error Name is required and must be a string.
+        small.error An email address is required.
     div.large-6.columns
       = f.input :country, as: :country, prompt: t('contact.country'), label: false
   div.row
