@@ -30,6 +30,7 @@ en:
     message: 'Please, write your message...'
     send: 'Send'
     success: 'Your email was sent!'
+    missing_fields: 'Please fill the Email, Country and First name fields.'
   pages:
     admin/projects:
       show: "%{name}"

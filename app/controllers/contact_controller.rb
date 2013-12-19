@@ -3,6 +3,10 @@ class ContactController < ApplicationController
   end
 
   def submit
+    unless params[:contact][:email].present? && params[:contact][:name].present? && params[:contact][:country].present?
+      redirect_to contact_path, alert: t('contact.missing_fields')
+      return
+    end
     countries = {'France' => 'france@ouishare.net',
                 'Germany' => 'dach@ouishare.net',
                 'Austria' => 'dach@ouishare.net',
