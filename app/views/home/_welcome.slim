@@ -8,10 +8,13 @@ section#welcome
       a.play href="#"
         i.fa.fa-play
 
-      select.small-2.white#l18n
-        option value="#{request.protocol}#{request.host_with_port}/en" en
-        option value="#{request.protocol}#{request.host_with_port}/fr" fr
-        option value="#{request.protocol}#{request.host_with_port}/es" es
+      select.small-2.black#l18n
+        - Language.visible.each do |l|
+          - if l.slug == I18n.locale.to_s
+            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+          - else
+            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
+
 
   div.separator.white
 
