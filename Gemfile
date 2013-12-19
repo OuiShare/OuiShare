@@ -73,6 +73,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry'
   gem 'awesome_print'
+  gem "letter_opener"
 end
 
 group :development do

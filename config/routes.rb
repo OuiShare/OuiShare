@@ -39,6 +39,7 @@ OuiShare::Application.routes.draw do
   get 'team'  => 'team#index',  as: 'team'
   get 'communities' => 'communities#index', as: 'communities'
   get 'contact' => 'contact#index', as: 'contact'
+  post 'contact' => 'contact#submit'
   get 'projects' => 'projects#index', as: 'projects'
   get 'events' => 'events#index', as: 'events'
 

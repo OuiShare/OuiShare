@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    addressable (2.3.5)
     arel (4.0.1)
     atomic (1.1.14)
     awesome_print (1.2.0)
@@ -133,6 +134,10 @@ GEM
     json (1.8.1)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    launchy (2.3.0)
+      addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     loofah (1.2.1)
       nokogiri (>= 1.4.4)
     machinist (2.0)
@@ -305,6 +310,7 @@ DEPENDENCIES
   initjs
   jbuilder
   jquery-rails
+  letter_opener
   machinist
   omniauth
   omniauth-facebook
