@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_filter :set_locale
   def action_missing(provider)
     omniauth = env['omniauth.auth']
     if user_signed_in?
