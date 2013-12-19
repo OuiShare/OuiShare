@@ -1,4 +1,4 @@
-class Admin::TakePartSectionsController < ApplicationController
+class Admin::TakePartSectionsController < BaseController
   inherit_resources
   singleton_belongs_to :language
   actions :all, except: [:show, :index]

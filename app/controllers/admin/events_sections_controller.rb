@@ -1,4 +1,4 @@
-class Admin::EventsSectionsController < ApplicationController
+class Admin::EventsSectionsController < BaseController
   inherit_resources
   singleton_belongs_to :language
   actions :all, except: [:show, :index]

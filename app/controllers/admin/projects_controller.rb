@@ -1,4 +1,4 @@
-class Admin::ProjectsController < ApplicationController
+class Admin::ProjectsController < BaseController
   inherit_resources
   belongs_to :language
 

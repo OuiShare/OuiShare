@@ -1,4 +1,4 @@
-class Admin::HotProjectsSectionsController < ApplicationController
+class Admin::HotProjectsSectionsController < BaseController
   inherit_resources
   singleton_belongs_to :language
   actions :all, except: [:show, :index]

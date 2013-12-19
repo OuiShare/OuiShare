@@ -1,4 +1,4 @@
-class Admin::AboutController < ApplicationController
+class Admin::AboutController < BaseController
   inherit_resources
   singleton_belongs_to :language
   actions :all, except: [:show, :index]
@@ -27,5 +27,4 @@ class Admin::AboutController < ApplicationController
   def build_resource
     @about = Language.find(params[:language_id]).build_about(permitted_params[:about])
   end
-
 end

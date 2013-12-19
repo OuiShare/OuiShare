@@ -1,4 +1,4 @@
-class Admin::LanguagesController < ApplicationController
+class Admin::LanguagesController < BaseController
   inherit_resources
 
   def update

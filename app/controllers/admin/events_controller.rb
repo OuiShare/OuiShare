@@ -1,4 +1,4 @@
-class Admin::EventsController < ApplicationController
+class Admin::EventsController < BaseController
   inherit_resources
   belongs_to :language
 

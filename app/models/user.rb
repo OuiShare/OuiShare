@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     return image if image.present?
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
   end
+
+  def admin?
+    admin
+  end
 end
 
 

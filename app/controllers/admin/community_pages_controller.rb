@@ -1,4 +1,4 @@
-class Admin::CommunityPagesController < ApplicationController
+class Admin::CommunityPagesController < BaseController
   inherit_resources
   singleton_belongs_to :language
   actions :all, except: [:show, :index]
