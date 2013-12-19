@@ -1,5 +1,5 @@
-.flash
+.flash data-alert=""
   - for key, message in flash
-    div class="#{key} wrapper"
-      div class=key
-        = message
+    div class="alert-box #{key}" data-alert=""
+      = message
+      a.close href="#" &times;

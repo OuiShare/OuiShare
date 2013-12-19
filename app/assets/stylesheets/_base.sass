@@ -12,6 +12,23 @@ body
     font-weight: normal
     text-transform: uppercase
 
+.alert-box
+  &.notice
+    +alert( $blue )
+    text-align: center
+    margin-bottom: 0
+    padding: 20px
+
+  &.alert
+    +alert( $red )
+    text-align: center
+    margin-bottom: 0
+    padding: 20px
+
+  .close
+    font-size: 2.375em
+    padding: 10px 4px 4px
+
 .top-bar
   z-index: 9999
   background-color: #06040f
