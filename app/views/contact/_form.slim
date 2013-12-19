@@ -5,10 +5,10 @@
         = f.email_field :email, as: :string, placeholder: t('contact.email'), label: false, require: true
         small.error An email address is required.
     div.large-6.columns
-      = f.input :country, as: :country, prompt: t('contact.country'), label: false
+      = f.input :country, as: :country, prompt: t('contact.country'), label: false, required: true
   div.row
     div.large-6.columns
-      = f.input :name, as: :string, placeholder: t('contact.first_name'), label: false
+      = f.input :name, as: :string, placeholder: t('contact.first_name'), label: false, required: true
     div.large-6.columns
       = f.input :city, as: :string, placeholder: t('contact.city'), label: false
   div.row
@@ -17,7 +17,7 @@
 
   div.row
     div.large-12.columns
-      = f.input :message, as: :text, placeholder: t('contact.message'), label: false
+      = f.input :message, as: :text, placeholder: t('contact.message'), label: false, required: true
   div.row
     div.large-12.columns
       = f.submit t('contact.send'), class: "btn blue"
