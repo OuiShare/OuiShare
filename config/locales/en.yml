@@ -29,6 +29,7 @@ en:
     subject: 'Subject'
     message: 'Please, write your message...'
     send: 'Send'
+    success: 'Your email was sent!'
   pages:
     admin/projects:
       show: "%{name}"
@@ -46,6 +47,8 @@ en:
       advisory: "Advisory"
     communities:
       index: "Communities"
+    contact:
+      index: 'Contact'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
