@@ -54,3 +54,5 @@ en:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
     successful: "Your address was successfuly registered in our newsletter!"
+  admin:
+    not_authorized: 'You are not allowed to do that.'

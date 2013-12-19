@@ -16,3 +16,5 @@ div.contain-to-grid.fixed
           a href="#{admin_events_path}" Events
         li
           a href="#{admin_community_pages_path}" Community
+        li.right
+          = link_to t('admin.logout'), destroy_user_session_path, method: :delete

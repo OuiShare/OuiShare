@@ -1,10 +1,12 @@
-class Admin::HomeController < BaseController
-  def index
-  end
+module Admin
+  class HomeController < BaseController
+    def index
+    end
 
-  def home
-  end
+    def home
+    end
 
-  def about
+    def about
+    end
   end
 end

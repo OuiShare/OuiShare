@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_language
 
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_home_path
+    else
+      root_path
+    end
+  end
+
   protected
   def render_404
     raise ActionController::RoutingError.new('Not Found')
