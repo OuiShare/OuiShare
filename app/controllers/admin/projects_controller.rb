@@ -6,8 +6,18 @@ module Admin
     def index
     end
 
+    def new
+      @project = Project.new(language_id: params[:language_id])
+    end
+
+    def edit
+      @project = Project.find(params[:id])
+    end
+
     def create
-      create! { admin_projects_path }
+      @project = Project.new(permitted_params[:project])
+      @project.save
+      redirect_to admin_projects_path
     end
 
     def update
@@ -25,7 +35,8 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(project: [:name, :resume, :image, :info, :join_us_text, :service1_image, :service1_link, :service1_title, :service2_image, :service2_link, :service2_title, :service3_image, :service3_link, :service3_title, :title1, :text1, :title2, :text2, :tag_list])
+      params.permit(project: [:name, :resume, :image, :info, :join_us_text, :service1_image, :service1_link, :service1_title, :service2_image, :service2_link, :service2_title, :service3_image, :service3_link, :service3_title, :title1, :text1, :title2, :text2, :tag_list, :language_id])
     end
+
   end
 end
