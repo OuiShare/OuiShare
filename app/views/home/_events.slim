@@ -8,6 +8,6 @@ section#events
         - @current_language.events.all[0..1].each do |e|
           li
             p.title = e.title
-            img.event src="#{e.image.event_thumb.url}"
+            img.event src="#{e.image.event_thumb}"
             p.meta = e.cta
 

@@ -1,6 +1,7 @@
 = simple_form_for  [:admin, @event.language, @event] do |f|
   h4 Language
   = @event.language.name
+  = f.input :visible
   = f.input :title
   = f.input :place
   = f.input :date
