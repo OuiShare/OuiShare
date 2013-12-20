@@ -1,0 +1,23 @@
+div#page-about-interna
+  section.main-content
+    div.row
+      div.large-12.columns
+        // p = @about.main_text1
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+          hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+  section#banner
+    div.row
+      div.large-12.columns
+        div.banner
+          //= image_tag(@about.image)
+          = image_tag("http://placehold.it/1800x480")
+  section#list
+    - 4.times do
+      div.row
+        div.large-6.columns
+          h4 Activity #1
+          // p = @about.main_text1
+          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+        div.large-6.columns
+          = image_tag("http://placehold.it/800x280")
