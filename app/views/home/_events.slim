@@ -5,13 +5,9 @@ section#events
       p.text = @events_section.text
     div.large-8.columns
       ul.events.large-block-grid-2
-        li
-          p.title Lorem ipsum dolor sit amet
-          img.event src="http://placehold.it/300x180"
-          p.meta Porto Alegre | 20h30 | 29/11/2013
-        li
-          p.title Lorem ipsum dolor sit amet
-          img.event src="http://placehold.it/300x180"
-          p.meta Porto Alegre | 20h30 | 29/11/2013
+        - @current_language.events.all[0..1].each do |e|
+          li
+            p.title = e.title
+            img.event src="#{e.image.event_thumb.url}"
+            p.meta = e.cta
 
-        a.more href="#" See all events...

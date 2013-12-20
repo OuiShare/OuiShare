@@ -21,9 +21,25 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [1920, 775]
   end
 
+  version :project_thumb, :if => :is_project? do
+    process :resize_to_fill => [300, 180]
+  end
+
+  version :event_thumb, :if => :is_event? do
+    process :resize_to_fill => [300, 180]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
+  end
+
+  def is_project? picture
+    model.kind_of?(Project)
+  end
+
+  def is_event? picture
+    model.kind_of?(Event)
   end
 
 end

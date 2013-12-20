@@ -7,23 +7,13 @@ section#hot
 
     div.large-8.columns
       ul.projects.large-block-grid-2
-        li
+        - @current_language.projects.all[0..1].each do |p|
+          li
+            p.title = p.name
+            img.project src="#{p.image.project_thumb}"
+            .seta
+            ul.large-block-grid-4
+              - 4.times do
+                li
+                  img.people src="http://flickholdr.com/70/70/avatar"
 
-          p.title Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          img.project src="http://placehold.it/300x180"
-          .seta
-          ul.large-block-grid-4
-            - 4.times do
-              li
-                img.people src="http://flickholdr.com/70/70/avatar"
-        li
-
-          p.title Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          img.project src="http://placehold.it/300x180"
-          .seta
-          ul.large-block-grid-4
-            - 4.times do
-              li
-                img.people src="http://flickholdr.com/70/70/avatar"
-
-          a.more href="#" See all projects...
