@@ -27,7 +27,8 @@ module Admin
     def permitted_params
       params.permit(event: [:title,
                             :place,
-                            :date,
+                            :date_start,
+                            :date_end,
                             :time,
                             :resume,
                             :image,
