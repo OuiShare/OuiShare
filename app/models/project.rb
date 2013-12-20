@@ -9,4 +9,9 @@ class Project < ActiveRecord::Base
   acts_as_taggable
 
   scope :visible, ->{ where(visible: true) }
+  scope :featured, ->{ where(featured: true).order('created_at desc').limit(2) }
+
+  def featured?
+    featured
+  end
 end

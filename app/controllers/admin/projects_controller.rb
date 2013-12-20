@@ -7,7 +7,7 @@ module Admin
     end
 
     def create
-      create! { admon_projects_path }
+      create! { admin_projects_path }
     end
 
     def update
@@ -45,7 +45,8 @@ module Admin
                               :text2,
                               :tag_list,
                               :language_id,
-                              :visible])
+                              :visible,
+                              :featured])
     end
 
   end

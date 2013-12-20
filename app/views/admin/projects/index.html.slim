@@ -11,6 +11,7 @@ div.row
           th Image
           th Resume
           th Info
+          th Featured?
           th
           th
         - l.projects.each do |p|
@@ -19,6 +20,7 @@ div.row
             td = image_tag(p.image.thumb.url)
             td = truncate(p.resume)
             td = truncate(p.info)
+            td = p.featured? ? 'Yes' : 'No'
             td = link_to "Edit", edit_admin_language_project_path(l, p)
             td = link_to "Remove", [:admin, l, p], data: { confirm: 'Are you sure?' }, method: :delete
 
