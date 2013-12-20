@@ -1,18 +1,15 @@
 div#page-communities
   section.explain
     div.row
-      div.large-6.columns
+      div.large-12.columns
         p = @community_page.main_text
-
-      div.large-6.columns
-        h3 &nbsp;
-        p = @community_page.main_text2
 
   section#map
     div.row
       div.large-12.columns
-        div.map
-          /*= @community_page.image.url*/
+        ul#inside-show data-orbit=""
+          li
+            div.map
 
   section#communities-list.section
     div.row

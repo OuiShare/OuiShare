@@ -18,11 +18,11 @@ $(window).load(function() {
     }
     $("#l18n").change(language);
 
-    $(".orbit-bullets li.active").prepend("<span class='block'></span>");
+    $(".orbit-bullets li.active").prepend("<span class='active-bullet'></span>");
 
     $("#slideshow").on("orbit:after-slide-change", function(event, orbit) {
         $(".orbit-bullets li").html("");
-        $(".orbit-bullets li.active").prepend("<span class='block'></span>");
+        $(".orbit-bullets li.active").prepend("<span class='active-bullet'></span>");
     });
 
 
