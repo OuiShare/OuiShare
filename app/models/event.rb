@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable
 
+  scope :visible, ->{ where(visible: true) }
+
   def name
     title
   end

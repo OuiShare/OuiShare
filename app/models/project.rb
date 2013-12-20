@@ -7,4 +7,6 @@ class Project < ActiveRecord::Base
   mount_uploader :service3_image, ImageUploader
 
   acts_as_taggable
+
+  scope :visible, ->{ where(visible: true) }
 end

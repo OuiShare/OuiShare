@@ -5,7 +5,7 @@ section#events
       p.text = @events_section.text
     div.large-8.columns
       ul.events.large-block-grid-2
-        - @current_language.events.all[0..1].each do |e|
+        - @current_language.events.visible[0..1].each do |e|
           li
             p.title = e.title
             img.event src="#{e.image.event_thumb}"

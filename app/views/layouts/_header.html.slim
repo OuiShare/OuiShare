@@ -44,7 +44,7 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#{events_path}" events
           ul.dropdown
-            - @current_language.events.each do |e|
+            - @current_language.events.visible.each do |e|
               li
                 = link_to e.name, event_path(e)
             li
@@ -53,7 +53,7 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#{projects_path}" projects
           ul.dropdown
-            - @current_language.projects.each do |p|
+            - @current_language.projects.visible.each do |p|
               li
                 = link_to p.name, project_path(p)
             li

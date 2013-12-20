@@ -7,7 +7,7 @@ section#hot
 
     div.large-8.columns
       ul.projects.large-block-grid-2
-        - @current_language.projects.all[0..1].each do |p|
+        - @current_language.projects.visible[0..1].each do |p|
           li
             p.title = p.name
             img.project src="#{p.image.project_thumb}"
