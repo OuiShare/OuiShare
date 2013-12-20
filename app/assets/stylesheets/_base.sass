@@ -46,14 +46,17 @@ body
           color: black
   ul
     &> li.has-dropdown
-      a:after
-        background: image-url('arrow.png') no-repeat 0px 0px transparent
-        width: 13px
-        height: 7px
-        border: none
+      a
+        text-transform: capitalize
 
-      a:hover
-        background: $blue
+        &:after
+          background: image-url('arrow.png') no-repeat 0px 0px transparent
+          width: 13px
+          height: 7px
+          border: none
+
+        &:hover
+          background: $blue
 
       .dropdown li.has-dropdown > a:after
         border: medium none
