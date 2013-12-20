@@ -2,21 +2,21 @@ div#page-team
   section.theTeam
     div.row
       div.large-4.columns
-        h3
-          | OuiShare team :
+        h3.subtitle
+          | OuiShare
           br
-            | ouiShare connectors
+            | connectors
         p Lorem ipsum dolor sit amet, consectetuer adipiscing
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
           nec, purus. Cum sociis natoque penatibus et magnis dis
           parturient montes, nascetur ridiculus mus.
 
-        a.button href="#{contact_path}" Como talk to us!
+        a.btn.blue href="#{contact_path}" Como talk to us!
 
       div.large-8.columns
         ul.large-block-grid-5
           - 20.times do
             li
               p.name The Team Member
-              div.avatar
+              = image_tag("http://placehold.it/110x110")
