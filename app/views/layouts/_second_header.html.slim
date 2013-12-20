@@ -16,4 +16,8 @@ div#second-header
 
       select.small-2.black#l18n
         - Language.visible.each do |l|
-          option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="#{l.slug == I18n.locale.to_s ? true : false}" = l.slug
+          - if l.slug == I18n.locale.to_s
+              option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+            - else
+              option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
+
