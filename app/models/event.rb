@@ -11,4 +11,8 @@ class Event < ActiveRecord::Base
   def name
     title
   end
+
+  def cta
+    "#{place} / #{date} / #{time.strftime('%H:%M')}"
+  end
 end
