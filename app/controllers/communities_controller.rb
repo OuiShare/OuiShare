@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   def index
-    @community_page = @language.community_page || CommunityPage.new
+    @community_page = @current_language.community_page || CommunityPage.new
   end
 
   def local

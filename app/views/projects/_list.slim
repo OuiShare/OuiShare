@@ -1,6 +1,6 @@
 - content_for :page_title, 'Projects'
 section#list
-  - @language.projects.each do |p|
+  - @current_language.projects.each do |p|
     .event
       div.row
         a href="#{project_path(p)}"

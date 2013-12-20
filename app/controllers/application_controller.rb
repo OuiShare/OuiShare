@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_language
-    @language = Language.where(slug: I18n.locale.to_s).first
+    @current_language = Language.where(slug: I18n.locale.to_s).first
   end
 end
 

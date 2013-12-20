@@ -6,20 +6,6 @@ module Admin
     def index
     end
 
-    def new
-      @project = Project.new(language_id: params[:language_id])
-    end
-
-    def edit
-      @project = Project.find(params[:id])
-    end
-
-    def create
-      @project = Project.new(permitted_params[:project])
-      @project.save
-      redirect_to admin_projects_path
-    end
-
     def update
       update! { admin_projects_path }
     end

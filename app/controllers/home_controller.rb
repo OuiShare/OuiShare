@@ -3,12 +3,12 @@ class HomeController < ApplicationController
   def index
     @feed = Feedzirra::Feed.fetch_and_parse('http://ouishare.net/feed')
 
-    @top_banner = @language.top_banner || TopBanner.new
-    @what_is_section = @language.what_is_section || WhatIsSection.new
-    @hot_projects_section = @language.hot_projects_section || HotProjectsSection.new
-    @events_section = @language.events_section || EventsSection.new
-    @take_part_section = @language.take_part_section || TakePartSection.new
-    @articles_section = @language.articles_section || ArticlesSection.new
-    @partner = @language.partner || Partner.new
+    @top_banner = @current_language.top_banner || TopBanner.new
+    @what_is_section = @current_language.what_is_section || WhatIsSection.new
+    @hot_projects_section = @current_language.hot_projects_section || HotProjectsSection.new
+    @events_section = @current_language.events_section || EventsSection.new
+    @take_part_section = @current_language.take_part_section || TakePartSection.new
+    @articles_section = @current_language.articles_section || ArticlesSection.new
+    @partner = @current_language.partner || Partner.new
   end
 end
