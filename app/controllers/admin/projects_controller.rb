@@ -6,6 +6,10 @@ module Admin
     def index
     end
 
+    def create
+      create! { admon_projects_path }
+    end
+
     def update
       update! { admin_projects_path }
     end
