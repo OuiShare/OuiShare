@@ -3,8 +3,12 @@ div#home
   ul#slideshow data-orbit=""
     li
       = render 'home/welcome'
-    li
-      = image_tag("home/bg/faces.jpg")
+    - if @top_banner.image1?
+      li
+        = image_tag(@top_banner.image1.top_banner.url)
+    - if @top_banner.image2?
+      li
+        = image_tag(@top_banner.image2.top_banner.url)
 
   = render 'home/about'
   = render 'home/hot'

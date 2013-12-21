@@ -37,6 +37,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [550, 250]
   end
 
+  version :partner, :inf => :is_partner? do
+    process :resize_to_fit => [200, 50]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
@@ -58,5 +62,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     ['Project', 'Event'].include?(model.class.name)
   end
 
+  def is_partner? picture
+    model.kind_of?(Partner)
+  end
 
 end

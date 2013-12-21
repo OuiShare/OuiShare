@@ -18,7 +18,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(partner: [:partner1, :partner2, :partner3, :partner4, :partner5, :partner6, :partner7])
+      params.permit(partner: [:partner1, :partner2, :partner3, :partner4, :partner5, :partner6, :partner7, :link1, :link2, :link3, :link4, :link5, :link6, :link7])
     end
 
     def resource
