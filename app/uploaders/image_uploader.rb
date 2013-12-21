@@ -25,6 +25,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [300, 180]
   end
 
+  version :project_page_thumb, :if => :is_project? do
+    process :resize_to_fill => [555, 250]
+  end
+
   version :event_thumb, :if => :is_event? do
     process :resize_to_fill => [300, 180]
   end
