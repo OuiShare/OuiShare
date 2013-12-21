@@ -29,6 +29,14 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [300, 180]
   end
 
+  version :top_image, :if => :has_top_image? do
+    process :resize_to_fill => [970, 330]
+  end
+
+  version :list_thumb, :if => :has_list_thumb? do
+    process :resize_to_fill => [550, 250]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
@@ -41,5 +49,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   def is_event? picture
     model.kind_of?(Event)
   end
+
+  def has_top_image? picture
+    ['Project', 'Event'].include?(model.class.name)
+  end
+
+  def has_list_thumb? picture
+    ['Project', 'Event'].include?(model.class.name)
+  end
+
 
 end

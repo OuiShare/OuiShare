@@ -2,7 +2,8 @@ section#slideshow
   div.row
     div.large-12.columns
       ul#slide-projects data-orbit=""
-        li
-          div.slideshow
-        li
-          div.slideshow
+        - @current_language.projects.featured.each do |p|
+          li
+            div.slideshow
+              = link_to p do
+                = image_tag p.image.top_image.url
