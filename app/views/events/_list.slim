@@ -3,7 +3,7 @@ section#list
     div.row.event
       a href="#{event_path(e)}"
         div.large-6.columns
-          h2 = e.title
+          h3.subtitle.white = e.title
           p = e.resume
           div.tags
             - e.tags.each do |t|

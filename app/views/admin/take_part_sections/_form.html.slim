@@ -1,7 +1,6 @@
 = simple_form_for  [:admin, @take_part_section.language, @take_part_section] do |f|
-  h4
-    | Language |
-    = @what_is_section.language.name
+  h4 Language
+  = @what_is_section.language.name
   = @take_part_section.language.name
   = f.input :main_title
   = f.input :main_text
