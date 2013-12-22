@@ -8,12 +8,17 @@ div.contain-to-grid.fixed
       ul
         li
           a href="#{admin_home_path}" Home
-        li
+        li.has-dropdown
           a href="#{admin_about_path}" About
+          ul.dropdown
+            li
+              a href="#{admin_missions_path}" Mission
         li
           a href="#{admin_projects_path}" Projects
         li
           a href="#{admin_events_path}" Events
+        li
+          a href="#{admin_activities_path}" Activities
         li
           a href="#{admin_community_pages_path}" Community
         li.right
