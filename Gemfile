@@ -85,4 +85,5 @@ end
 # Heroku
 group :production do
   gem 'rails_on_heroku'
+  gem 'rails_12factor'
 end
