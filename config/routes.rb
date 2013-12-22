@@ -22,6 +22,7 @@ OuiShare::Application.routes.draw do
       resources :missions
       resources :activities
       resources :timelines
+      resources :governance_pages
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
@@ -31,6 +32,7 @@ OuiShare::Application.routes.draw do
     get 'events' => 'events#index'
     get 'activities' => 'activities#index'
     get 'missions' => 'home#missions'
+    get 'governance_pages' => 'home#governance_pages'
     get 'timelines' => 'home#timelines'
   end
 
@@ -55,6 +57,7 @@ OuiShare::Application.routes.draw do
   get 'about/vision' => 'about#vision', as: 'about_vision'
   get 'about/history' => 'about#history', as: 'about_history'
   get 'about/organization' => 'about#organization', as: 'about_organization'
+  get 'about/governance' => 'about#governance', as: 'about_governance'
   get 'about/team' => 'about#team', as: 'about_team'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
 

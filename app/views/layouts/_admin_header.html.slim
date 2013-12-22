@@ -15,6 +15,8 @@ div.contain-to-grid.fixed
               a href="#{admin_missions_path}" Mission
             li
               a href="#{admin_timelines_path}" History
+            li
+              a href="#{admin_governance_pages_path}" Governance
         li
           a href="#{admin_projects_path}" Projects
         li
@@ -23,5 +25,6 @@ div.contain-to-grid.fixed
           a href="#{admin_activities_path}" Activities
         li
           a href="#{admin_community_pages_path}" Community
+
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete

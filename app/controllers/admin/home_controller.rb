@@ -11,5 +11,8 @@ module Admin
 
     def timelines
     end
+
+    def governance_pages
+    end
   end
 end
