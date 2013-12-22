@@ -1,0 +1,23 @@
+div.row
+  div.large-12.columns
+    h2.subheader Missions page
+    table
+      tr
+        th Language
+        th Text
+        th Image
+        th
+        th
+      - Language.all.each do |l|
+        - if l.mission.present?
+          tr
+            td = l.name
+            td = l.mission.text
+            td = image_tag(l.mission.image.thumb.url)
+            td = link_to "Edit", edit_admin_language_mission_path(l, l.mission)
+            td = link_to "Remove", [:admin, l, l.mission], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_mission_path(l.id)
+

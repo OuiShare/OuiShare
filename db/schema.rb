@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222133845) do
+ActiveRecord::Schema.define(version: 20131222135345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,16 @@ ActiveRecord::Schema.define(version: 20131222133845) do
     t.boolean  "visible",      default: false
     t.string   "slug"
   end
+
+  create_table "missions", force: true do |t|
+    t.text     "text"
+    t.string   "image"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "missions", ["language_id"], name: "index_missions_on_language_id", using: :btree
 
   create_table "newsletter_languages", force: true do |t|
     t.string "language"

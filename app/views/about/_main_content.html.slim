@@ -1,12 +1,10 @@
 section.main-content
   div.row
     div.large-12.columns
-      // p = @about.main_text1
-      p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-        hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+      p = @resource.text
 section#banner
   div.row
     div.large-12.columns
       div.banner
-        //= image_tag(@about.image)
-        = image_tag("http://placehold.it/1800x480")
+        = image_tag(@resource.image.top_internal.url)
+        /*= image_tag("http://placehold.it/1800x480")*/

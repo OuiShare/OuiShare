@@ -49,6 +49,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [200, 50]
   end
 
+  version :top_internal, :if => :has_top_internal? do
+    process :resize_to_fill => [1800, 480]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
@@ -74,4 +78,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     model.kind_of?(Partner)
   end
 
+  def has_top_internal? picture
+    ['Mission'].include?(model.class.name)
+  end
 end

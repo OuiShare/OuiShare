@@ -1,0 +1,6 @@
+= simple_form_for  @mission, url: admin_language_mission_path(@mission.language, @mission) do |f|
+  h4 Language
+  = @mission.language.name
+  = f.input :text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.submit
