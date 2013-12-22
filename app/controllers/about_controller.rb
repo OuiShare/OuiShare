@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
+  include AutoHtml
   def index
     @about = @current_language.about || About.new
   end
@@ -6,6 +7,7 @@ class AboutController < ApplicationController
   def mission
     @resource = @current_language.mission || Mission.new
     @list = @current_language.activities.order('created_at desc') || [Activity.new]
+    @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
   def vision

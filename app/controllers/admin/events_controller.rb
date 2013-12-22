@@ -2,6 +2,7 @@ module Admin
   class EventsController < BaseController
     inherit_resources
     belongs_to :language
+    include AutoHtml
 
     def index
     end
@@ -20,6 +21,9 @@ module Admin
 
     def show
       @event = Event.find(params[:id])
+      @event.info = auto_html(@event.info) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+      @event.text1 = auto_html(@event.text1) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+      @event.text2 = auto_html(@event.text2) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
       render 'admin/events/show'
     end
 

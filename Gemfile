@@ -46,6 +46,7 @@ gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
 gem 'flutie'
+gem 'auto_html'
 
 # Assets
 gem 'sass-rails', '4.0.1'
