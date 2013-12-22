@@ -1,10 +1,9 @@
 section#list
-  - 4.times do
+  - @list.each do |l|
     div.row
-      div.large-6.columns
-        h4 Activity #1
-        // p = @about.main_text1
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-      div.large-6.columns
-        = image_tag("http://placehold.it/800x280")
+      = link_to(l.link)
+        div.large-6.columns
+          h4 = l.name
+          p = l.text
+        div.large-6.columns
+          = image_tag(l.image.list_thumb.url)

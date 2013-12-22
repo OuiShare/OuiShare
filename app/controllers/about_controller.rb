@@ -5,6 +5,7 @@ class AboutController < ApplicationController
 
   def mission
     @resource = @current_language.mission || Mission.new
+    @list = @current_language.activities
   end
 
   def vision

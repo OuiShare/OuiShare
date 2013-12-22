@@ -1,0 +1,24 @@
+div.row
+  div.large-12.columns
+    h2.subheader Activities
+  - Language.all.each do |l|
+    div.large-12.columns
+      h3.subheader = "#{l.name} activities"
+      = link_to 'Create', new_admin_language_activity_path(l.id)
+      table
+        tr
+          th Name
+          th Text
+          th Image
+          th Link
+          th
+          th
+        - l.activities.each do |a|
+          tr
+            td = a.name
+            td = truncate(a.text)
+            td = image_tag(a.image.thumb.url)
+            td = a.link
+            td = link_to "Edit", edit_admin_language_activity_path(l, a)
+            td = link_to "Remove", [:admin, l, a], data: { confirm: 'Are you sure?' }, method: :delete
+
