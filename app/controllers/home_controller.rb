@@ -1,7 +1,11 @@
 class HomeController < ApplicationController
   require 'feedzirra'
   def index
-    @feed = Feedzirra::Feed.fetch_and_parse('http://ouishare.net/feed')
+    if @current_language.slug == 'en'
+      @feed = Feedzirra::Feed.fetch_and_parse('http://ouishare.net/feed')
+    else
+      @feed = Feedzirra::Feed.fetch_and_parse("http://ouishare.net/#{@current_language.slug}/feed")
+    end
 
     @top_banner = @current_language.top_banner || TopBanner.new
     @what_is_section = @current_language.what_is_section || WhatIsSection.new

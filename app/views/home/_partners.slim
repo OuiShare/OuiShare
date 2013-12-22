@@ -3,7 +3,7 @@ section#partners
     div.large-12.columns
       h3.subtitle.black Featured in
       ul.inline-list
-        - p = @current_language.partner
+        - p = @current_language.partner || Partner.new
         li
           = link_to p.link1
             = image_tag(p.partner1.partner.url)
