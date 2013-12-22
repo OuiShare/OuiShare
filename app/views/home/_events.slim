@@ -7,7 +7,7 @@ section#events
       ul.events.large-block-grid-2
         - @current_language.events.visible.order('date_start').next[0..1].each do |e|
           li
-            p.title = e.title
-            img.event src="#{e.image.event_thumb}"
-            p.meta = e.cta
-
+            = link_to event_path(e) do
+              p.title = e.title
+              img.event src="#{e.image.event_thumb}"
+              p.meta = e.cta
