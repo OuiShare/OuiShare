@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222142509) do
+ActiveRecord::Schema.define(version: 20131222160700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -249,6 +249,15 @@ ActiveRecord::Schema.define(version: 20131222142509) do
   end
 
   add_index "take_part_sections", ["language_id"], name: "index_take_part_sections_on_language_id", using: :btree
+
+  create_table "timelines", force: true do |t|
+    t.string   "url"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "timelines", ["language_id"], name: "index_timelines_on_language_id", using: :btree
 
   create_table "top_banners", force: true do |t|
     t.string   "title1"

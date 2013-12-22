@@ -8,5 +8,8 @@ module Admin
 
     def about
     end
+
+    def timelines
+    end
   end
 end

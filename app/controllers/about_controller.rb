@@ -12,6 +12,7 @@ class AboutController < ApplicationController
   end
 
   def history
+    @timeline = @current_language.timeline || Timeline.new
   end
 
   def organization
