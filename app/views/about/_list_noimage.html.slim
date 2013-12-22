@@ -1,0 +1,7 @@
+section#list
+  - @list.each do |l|
+    div.row
+      = link_to(l.link)
+        div.large-12.columns
+          h4 = l.name
+          p = l.text
