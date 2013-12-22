@@ -1,0 +1,24 @@
+#faq
+  .section-auto-sample-accordion
+    @include section-container($base-style: true, $section-type:accordion)
+    & > section
+      @include section($section-type:accordion, $title-selector:".title-sample", $content-selector:".content-sample")
+
+
+  section
+    padding: 64px 0
+
+  .more-content
+    background-color: $red
+    color: white
+    border-bottom: 1px solid black
+
+    .sector
+
+      h4
+        color: white
+        font-weight: normal
+        text-transform: uppercase
+
+      p
+        text-transform: uppercase
