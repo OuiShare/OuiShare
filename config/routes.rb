@@ -18,6 +18,7 @@ OuiShare::Application.routes.draw do
       resources :projects
       resources :events
       resources :community_pages
+      resources :faqs
     end
     get '/' => 'home#index'
     get 'home' => 'home#home'
@@ -42,6 +43,7 @@ OuiShare::Application.routes.draw do
   post 'contact' => 'contact#submit'
   get 'projects' => 'projects#index', as: 'projects'
   get 'events' => 'events#index', as: 'events'
+  get 'faq' => 'faqs#index', as: 'faq'
 
   get 'about/mission' => 'about#mission', as: 'about_mission'
   get 'about/vision' => 'about#vision', as: 'about_vision'
