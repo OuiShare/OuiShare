@@ -1,0 +1,7 @@
+= simple_form_for  @team_page, url: admin_language_team_page_path(@team_page.language, @team_page) do |f|
+  h4 Language
+  = @team_page.language.name
+  = f.input :title
+  = f.input :text
+  = f.input :link_text
+  = f.submit

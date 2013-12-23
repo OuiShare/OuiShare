@@ -21,9 +21,13 @@ class AboutController < ApplicationController
   end
 
   def team
+    @users = User.connectors.order('created_at')
+    @team_page = @current_language.team_page || TeamPage.new
   end
 
   def advisory
+    @users = User.advisors.order('created_at')
+    @advisors_page = @current_language.advisors_page || AdvisorsPage.new
   end
 
   def governance

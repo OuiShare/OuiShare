@@ -26,5 +26,11 @@ module Admin
 
     def faq_pages
     end
+
+    def team_pages
+    end
+
+    def advisors_pages
+    end
   end
 end

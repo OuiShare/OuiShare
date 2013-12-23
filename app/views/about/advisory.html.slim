@@ -1,1 +1,17 @@
-= render "team"
+div#page-team
+  section.theTeam
+    div.row
+      div.large-4.columns
+        h3
+          = @advisors_page.title
+        p = @advisors_page.text
+
+        a.button href="#{contact_path}" = @advisors_page.link_text
+
+      div.large-8.columns
+        ul.large-block-grid-5
+          - @users.each do |a|
+            li
+              p.name = a.name
+              div.avatar
+                = image_tag(a.avatar_url)

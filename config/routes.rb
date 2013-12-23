@@ -28,6 +28,8 @@ OuiShare::Application.routes.draw do
       resources :governance_pages
       resources :values
       resources :value_pages
+      resources :team_pages
+      resources :advisors_pages
     end
 
     resources :users
@@ -47,6 +49,8 @@ OuiShare::Application.routes.draw do
     get 'timelines' => 'home#timelines'
     get 'faq_pages' => 'home#faq_pages'
     get 'faq_questions' => 'faq_questions#index'
+    get 'team_pages' => 'home#team_pages'
+    get 'advisors_pages' => 'home#advisors_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223081525) do
+ActiveRecord::Schema.define(version: 20131223084855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20131223081525) do
   end
 
   add_index "activities", ["language_id"], name: "index_activities_on_language_id", using: :btree
+
+  create_table "advisors_pages", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.text     "link_text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "advisors_pages", ["language_id"], name: "index_advisors_pages_on_language_id", using: :btree
 
   create_table "articles_sections", force: true do |t|
     t.string   "title"
@@ -286,6 +297,17 @@ ActiveRecord::Schema.define(version: 20131223081525) do
   end
 
   add_index "take_part_sections", ["language_id"], name: "index_take_part_sections_on_language_id", using: :btree
+
+  create_table "team_pages", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "link_text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "team_pages", ["language_id"], name: "index_team_pages_on_language_id", using: :btree
 
   create_table "timelines", force: true do |t|
     t.string   "url"

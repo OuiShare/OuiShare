@@ -13,6 +13,8 @@ class Language < ActiveRecord::Base
   has_one :value_page
   has_one :timeline
   has_one :faq_page
+  has_one :team_page
+  has_one :advisors_page
   has_many :projects
   has_many :events
   has_many :activities
