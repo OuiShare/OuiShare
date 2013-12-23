@@ -16,10 +16,10 @@ div.row
             td = l.advisors_page.title
             td = l.advisors_page.text
             td = l.advisors_page.link_text
-            td = link_to "Edit", edit_admin_language_team_page_path(l, l.faq_page)
-            td = link_to "Remove", [:admin, l, l.team_page], data: { confirm: 'Are you sure?' }, method: :delete
+            td = link_to "Edit", edit_admin_language_advisors_page_path(l, l.faq_page)
+            td = link_to "Remove", [:admin, l, l.advisors_page], data: { confirm: 'Are you sure?' }, method: :delete
         - else
           tr
             td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_team_page_path(l.id)
+            td colspan='6' = link_to 'Create', new_admin_language_advisors_page_path(l.id)
 

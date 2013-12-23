@@ -1,6 +1,6 @@
 div.row
   div.large-12.columns
-    h2.subheader Advisors page
+    h2.subheader Team pages
     table
       tr
         th Language
@@ -10,16 +10,16 @@ div.row
         th
         th
       - Language.all.each do |l|
-        - if l.advisors_page.present?
+        - if l.team_page.present?
           tr
             td = l.name
-            td = l.advisors_page.title
-            td = l.advisors_page.text
-            td = l.advisors_page.link_text
-            td = link_to "Edit", edit_admin_language_advisors_page_path(l, l.advisors_page)
-            td = link_to "Remove", [:admin, l, l.advisors_page], data: { confirm: 'Are you sure?' }, method: :delete
+            td = l.team_page.title
+            td = l.team_page.text
+            td = l.team_page.link_text
+            td = link_to "Edit", edit_admin_language_team_page_path(l, l.team_page)
+            td = link_to "Remove", [:admin, l, l.team_page], data: { confirm: 'Are you sure?' }, method: :delete
         - else
           tr
             td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_advisors_page_path(l.id)
+            td colspan='6' = link_to 'Create', new_admin_language_team_page_path(l.id)
 
