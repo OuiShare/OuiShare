@@ -15,7 +15,7 @@ section#hot
               img.project src="#{p.image.project_thumb}"
             .seta
             ul.large-block-grid-4
-              - 4.times do
+              - p.users[0..4].each do |u|
                 li
-                  img.people src="http://flickholdr.com/70/70/avatar"
-
+                  = link_to u do
+                    = image_tag u.avatar_url
