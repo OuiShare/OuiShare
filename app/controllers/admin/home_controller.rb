@@ -17,5 +17,11 @@ module Admin
 
     def value_pages
     end
+
+    def governances
+    end
+
+    def values
+    end
   end
 end

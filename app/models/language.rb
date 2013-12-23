@@ -15,6 +15,9 @@ class Language < ActiveRecord::Base
   has_many :projects
   has_many :events
   has_many :activities
+  has_many :governances
+  has_many :values
+
 
   validates :name, :english_name, :slug, presence: true
 

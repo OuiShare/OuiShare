@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222225301) do
+ActiveRecord::Schema.define(version: 20131223015657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -138,6 +138,13 @@ ActiveRecord::Schema.define(version: 20131222225301) do
   end
 
   add_index "governance_pages", ["language_id"], name: "index_governance_pages_on_language_id", using: :btree
+
+  create_table "governances", force: true do |t|
+    t.string  "name"
+    t.string  "link"
+    t.text    "text"
+    t.integer "language_id"
+  end
 
   create_table "hot_projects_sections", force: true do |t|
     t.string   "title"
@@ -317,6 +324,13 @@ ActiveRecord::Schema.define(version: 20131222225301) do
   end
 
   add_index "value_pages", ["language_id"], name: "index_value_pages_on_language_id", using: :btree
+
+  create_table "values", force: true do |t|
+    t.string  "name"
+    t.string  "link"
+    t.text    "text"
+    t.integer "language_id"
+  end
 
   create_table "what_is_sections", force: true do |t|
     t.text     "text1"

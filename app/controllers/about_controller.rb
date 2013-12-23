@@ -28,13 +28,13 @@ class AboutController < ApplicationController
 
   def governance
     @resource = @current_language.governance_page || GovernancePage.new
-    # @list = @current_language.activities.order('created_at desc') || [Activity.new]
+    @list = @current_language.governances || [Governance.new]
     @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
   def value
     @resource = @current_language.value_page || ValuePage.new
-    # @list = @current_language.activities.order('created_at desc') || [Activity.new]
+    @list = @current_language.values || [Value.new]
     @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
