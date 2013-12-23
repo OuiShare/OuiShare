@@ -10,6 +10,7 @@ class Language < ActiveRecord::Base
   has_one :community_page
   has_one :mission
   has_one :governance_page
+  has_one :value_page
   has_one :timeline
   has_many :projects
   has_many :events

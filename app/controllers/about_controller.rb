@@ -32,4 +32,10 @@ class AboutController < ApplicationController
     @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
+  def value
+    @resource = @current_language.value_page || ValuePage.new
+    # @list = @current_language.activities.order('created_at desc') || [Activity.new]
+    @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+  end
+
 end
