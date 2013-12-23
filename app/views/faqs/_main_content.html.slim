@@ -1,9 +1,9 @@
 section.main-content
   div.row
     div.large-12.columns
-      p blah
+      p = @faq_page.text
 section#banner
   div.row
     div.large-12.columns
       div.banner
-        = image_tag("http://placehold.it/970x300")
+        = image_tag(@faq_page.image.top_internal)

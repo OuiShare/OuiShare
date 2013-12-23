@@ -12,6 +12,7 @@ class Language < ActiveRecord::Base
   has_one :governance_page
   has_one :value_page
   has_one :timeline
+  has_one :faq_page
   has_many :projects
   has_many :events
   has_many :activities

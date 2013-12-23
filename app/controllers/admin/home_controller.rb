@@ -23,5 +23,8 @@ module Admin
 
     def values
     end
+
+    def faq_pages
+    end
   end
 end
