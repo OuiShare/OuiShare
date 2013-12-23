@@ -315,6 +315,7 @@ ActiveRecord::Schema.define(version: 20131223015657) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+<<<<<<< HEAD
   create_table "value_pages", force: true do |t|
     t.text     "text"
     t.string   "image"
@@ -332,6 +333,8 @@ ActiveRecord::Schema.define(version: 20131223015657) do
     t.integer "language_id"
   end
 
+=======
+>>>>>>> 99dbae1... adds the FAQ link to the admin header
   create_table "what_is_sections", force: true do |t|
     t.text     "text1"
     t.text     "text2"
