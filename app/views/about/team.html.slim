@@ -7,7 +7,7 @@ div#page-team
           = @team_page.title
         p = @team_page.text
 
-        a.button href="#{contact_path}" = @team_page.link_text
+        a.btn.blue href="#{contact_path}" = @team_page.link_text
 
       div.large-8.columns
         ul.large-block-grid-5
@@ -16,4 +16,3 @@ div#page-team
               p.name = a.name
               div.avatar
                 = image_tag(a.avatar_url)
-
