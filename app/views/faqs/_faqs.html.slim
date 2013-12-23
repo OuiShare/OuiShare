@@ -2,43 +2,11 @@ section.more-content
   div.row.section
    div.large-12.columns
       .section-container.accordion.faq data-section="accordion"
-        section
-          p.title data-section-title=""
-            a href="#"
-              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                hendrerit tempor tellus. Donec pretium posuere tellus.?
-          .content data-section-content=""
-            p Content of section 1.
-        section
-          p.title data-section-title=""
-            a href="#"
-              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                hendrerit tempor tellus. Donec pretium posuere tellus.?
-          .content data-section-content=""
-            p Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit. Donec hendrerit tempor tellus. Donec pretium posuere
-              tellus. Proin quam nisl, tincidunt et, mattis eget,
-              convallis nec, purus. Cum sociis natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus
-              mus. Nulla posuere. Donec vitae dolor. Nullam tristique
-              diam non turpis. Cras placerat accumsan nulla. Nullam
-              rutrum. Nam vestibulum accumsan nisl.
+        - @faq_questions.order('created_at desc').each do |q|
+          section
+            p.title data-section-title=""
+              a href="#"
+                = q.question
+            .content data-section-content=""
+              p = q.answer
 
-            p elit. Donec hendrerit tempor tellus. Donec pretium posuere
-              tellus. Proin quam nisl, tincidunt et, mattis eget,
-              convallis nec, purus. Cum sociis natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus
-              mus. Nulla posuere. Donec vitae dolor. Nullam tristique
-              diam non turpis. Cras placerat accumsan nulla. Nullam
-              rutrum. Nam vestibulum accumsan nisl.
-
-        section
-          p.title data-section-title=""
-            a href="#"
-              | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                hendrerit tempor tellus. Donec pretium posuere tellus.?
-          .content data-section-content=""
-            p Content of section 2.
