@@ -38,6 +38,8 @@ en:
       show: "%{name}"
     projects:
       index: "Projects"
+    faqs:
+      index: "FAQ"
     about:
       index: "About"
       mission: "Mission"
@@ -46,6 +48,8 @@ en:
       organization: "Organization"
       team: "Team"
       advisory: "Advisory"
+      governance: "Governance"
+      value: 'Values'
     communities:
       index: "Communities"
     contact:
