@@ -1,20 +1,25 @@
 = simple_form_for  [:admin, @take_part_section.language, @take_part_section] do |f|
   h4 Language
-  = @what_is_section.language.name
   = @take_part_section.language.name
-  = f.input :main_title
-  = f.input :main_text
-  = f.input :link_text
-  = f.input :title1
-  = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :text1
-  = f.input :link1
-  = f.input :title2
-  = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :text2
-  = f.input :link2
-  = f.input :title3
-  = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :text3
-  = f.input :link3
+  div.row
+    div.large-12.columns
+      = f.input :main_title
+      = f.input :main_text
+      = f.input :link_text
+  div.row
+    div.large-4.columns
+      = f.input :title1
+      = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :text1
+      = f.input :link1
+    div.large-4.columns
+      = f.input :title2
+      = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :text2
+      = f.input :link2
+    div.large-4.columns
+      = f.input :title3
+      = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :text3
+      = f.input :link3
   = f.submit

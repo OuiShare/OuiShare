@@ -22,7 +22,7 @@ module Admin
     end
 
     def resource
-      @governance_page ||= Governance.find(params[:id])
+      @governance_page ||= GovernancePage.find(params[:id])
     end
 
     def build_resource

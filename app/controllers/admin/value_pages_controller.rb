@@ -22,7 +22,7 @@ module Admin
     end
 
     def resource
-      @value_page ||= Value.find(params[:id])
+      @value_page ||= ValuePage.find(params[:id])
     end
 
     def build_resource
