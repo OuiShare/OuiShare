@@ -2,12 +2,15 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  extend Enumerize
 
   has_many :authorizations, dependent: :destroy
   validates :name, presence: true
   before_validation do
     add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])
   end
+
+  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
 
   def self.new_with_session(params, session)
     super.tap do |user|

@@ -20,6 +20,7 @@ gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'simple_form', '~> 3.0.0'
 gem 'acts-as-taggable-on'
+gem 'enumerize'
 
 # I18n
 gem 'rails-i18n'
