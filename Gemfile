@@ -50,7 +50,7 @@ gem 'auto_html'
 
 # Assets
 gem 'sass-rails', '4.0.1'
-gem "compass-rails", "~> 2.0.alpha.0"
+gem "compass-rails", "~> 1.1.2"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
 #gem 'turbolinks'
