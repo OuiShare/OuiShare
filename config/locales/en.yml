@@ -38,13 +38,15 @@ en:
       show: "%{name}"
     projects:
       index: "Projects"
+    events:
+      index: "Events"
     faqs:
       index: "FAQ"
     about:
       index: "About"
       mission: "Mission"
       vision: "Vision"
-      history: "History"
+      history: "Our History"
       organization: "Organization"
       team: "Team"
       advisory: "Advisory"

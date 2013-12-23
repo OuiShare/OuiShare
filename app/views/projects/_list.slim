@@ -1,4 +1,3 @@
-- content_for :page_title, 'Projects'
 section#list
   - @current_language.projects.visible.order('created_at desc').each do |p|
     .event

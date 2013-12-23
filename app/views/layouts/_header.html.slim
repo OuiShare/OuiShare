@@ -25,7 +25,7 @@ div.contain-to-grid.fixed
             li
               a href="#{about_team_path}" team
             li
-              a href="#{about_team_path}" Advisors
+              a href="#{about_advisory_path}" Advisors
             li
               a href="#{faq_path}" FAQ
 
@@ -69,9 +69,9 @@ div.contain-to-grid.fixed
             li
               a href="#{knowledge_groups_path}" Co-Creation Events
             li
-              a href="#{knowledge_ouiki_path}" Wiki
+              a href="http://ouiki.ouishare.net/" target="blank" Wiki
             li
-              a href="#{knowledge_ouiki_path}" Magazine
+              a href="http://ouishare.net/#{@current_language.slug == 'en' ? '' : @current_language.slug}" target="blank" Magazine
 
         li.has-dropdown
           a href="http://ouishare.net" magazine
