@@ -97,4 +97,5 @@ div.contain-to-grid.fixed
             ul.dropdown
               li
                 = link_to t("edit_profile"), edit_user_registration_path
-
+              li
+                = link_to t('admin.logout'), destroy_user_session_path, method: :delete
