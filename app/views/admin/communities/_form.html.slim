@@ -1,0 +1,8 @@
+= simple_form_for  [:admin, @community.language, @community] do |f|
+  h4 Language
+  = @community.language.name
+  = f.input :name
+  = f.input :link
+  = f.input :text
+  = f.association :users, as: :check_boxes
+  = f.submit

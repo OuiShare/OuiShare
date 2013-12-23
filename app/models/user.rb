@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
   has_and_belongs_to_many :projects
+  has_and_belongs_to_many :communities
 
   validates :name, presence: true
   before_validation do

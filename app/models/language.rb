@@ -21,6 +21,7 @@ class Language < ActiveRecord::Base
   has_many :governances
   has_many :values
   has_many :faq_questions
+  has_many :communities
 
   validates :name, :english_name, :slug, presence: true
 

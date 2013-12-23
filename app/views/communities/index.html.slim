@@ -14,21 +14,19 @@ div#page-communities
     div.row
       div.large-6.columns
         h3.subtitle All Local communities
-    - 5.times do
+    - @communities.each do |c|
       div.row.community
         div.large-6.columns
-          p.title Community Title
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing
-            tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-            nec, purus. Cum sociis natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-            vitae dolor. Nullam tristique diam non turpis. Cras placerat
-            accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+          p.title = c.name
+          p = c.text
 
         div.large-2.columns
-          button.btn.white join
+          = link_to c.link do
+            button.btn.white join
 
         div.large-4.columns
           div.avatars
-            - 6.times do
+            - c.users.each do |u|
               span.block
+                = link_to u do
+                  = image_tag u.avatar_url
