@@ -7,11 +7,11 @@ div#second-header
       - else
         h3.subtitle.black = t("pages.#{params[:controller]}.#{params[:action]}")
     div.large-4.columns.social.black
-      a.facebook href="#"
+      a.facebook href="https://www.facebook.com/OuiShare"
         i.fa.fa-facebook
-      a.twitter href="#"
+      a.twitter href="https://www.twitter.com/OuiShare"
         i.fa.fa-twitter
-      a.play href="#"
+      a.play href="https://plus.google.com/+OuishareNet/"
         i.fa.fa-play
 
       select.small-2.black#l18n
@@ -20,4 +20,3 @@ div#second-header
             option value="#{url_for(locale: l.slug)}" selected="selected" = l.slug
           - else
             option value="#{url_for(locale: l.slug)}" = l.slug
-
