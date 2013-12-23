@@ -39,7 +39,7 @@ OuiShare::Application.routes.draw do
 
     get '/' => 'home#index'
     get 'home' => 'home#home'
-    get 'about' => 'home#about'
+    get 'live' => 'home#about', as: 'about'
     get 'community_pages' => 'home#community_pages'
     get 'projects' => 'projects#index'
     get 'events' => 'events#index'
@@ -67,7 +67,7 @@ OuiShare::Application.routes.draw do
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
 
-  get 'about' => 'about#index', as: 'about'
+  get 'live' => 'about#index', as: 'about'
   get 'team'  => 'team#index',  as: 'team'
   get 'communities' => 'communities#index', as: 'communities'
   get 'contact' => 'contact#index', as: 'contact'
