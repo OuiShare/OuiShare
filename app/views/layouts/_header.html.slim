@@ -89,3 +89,12 @@ div.contain-to-grid.fixed
           a href="#" class="button" donate
         li.get-involved
           a href="#" class="button" get involved !
+
+        - if user_signed_in?
+          li.has-dropdown
+            a href="#"
+              |
+            ul.dropdown
+              li
+                = link_to t("edit_profile"), edit_user_registration_path
+
