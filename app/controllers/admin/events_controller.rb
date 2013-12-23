@@ -52,7 +52,8 @@ module Admin
                             :title2,
                             :text2,
                             :tag_list,
-                            :visible])
+                            :visible,
+                            :user_ids => []])
     end
   end
 end

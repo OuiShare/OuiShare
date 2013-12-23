@@ -12,8 +12,9 @@ div#event
       div.large-4.columns
         h3.subtitle Organizers
         ul.large-block-grid-4
-          - 6.times do
-            li.avatar
+          - @event.users.each do |u|
+            = link_to u do
+              li.avatar = image_tag(u.avatar_url)
 
       div.large-8.columns
         h3.subtitle.white Info

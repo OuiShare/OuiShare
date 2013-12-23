@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   extend Enumerize
 
   has_many :authorizations, dependent: :destroy
+  has_and_belongs_to_many :events
+
   validates :name, presence: true
   before_validation do
     add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])

@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :language
+  has_and_belongs_to_many :users
 
   mount_uploader :image, ImageUploader
   mount_uploader :service1_image, ImageUploader
