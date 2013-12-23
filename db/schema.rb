@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223015657) do
+ActiveRecord::Schema.define(version: 20131223041837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,8 +121,6 @@ ActiveRecord::Schema.define(version: 20131223015657) do
 
   add_index "events_sections", ["language_id"], name: "index_events_sections_on_language_id", using: :btree
 
-<<<<<<< HEAD
-=======
   create_table "faq_pages", force: true do |t|
     t.text     "text"
     t.string   "image"
@@ -143,7 +141,6 @@ ActiveRecord::Schema.define(version: 20131223015657) do
 
   add_index "faq_questions", ["language_id"], name: "index_faq_questions_on_language_id", using: :btree
 
->>>>>>> e4859e8... adds the faq questions model, controller, views and admin
   create_table "faqs", force: true do |t|
     t.text     "question"
     t.text     "answer"
@@ -339,11 +336,9 @@ ActiveRecord::Schema.define(version: 20131223015657) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "value_pages", force: true do |t|
-    t.text     "text"
-    t.string   "image"
-    t.integer  "language_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text    "text"
+    t.string  "image"
+    t.integer "language_id"
   end
 
   add_index "value_pages", ["language_id"], name: "index_value_pages_on_language_id", using: :btree
