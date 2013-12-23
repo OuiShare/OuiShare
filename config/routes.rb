@@ -31,6 +31,8 @@ OuiShare::Application.routes.draw do
       resources :team_pages
       resources :advisors_pages
       resources :communities
+      resources :cocreation_pages
+      resources :cocreations
     end
 
     resources :users
@@ -53,6 +55,8 @@ OuiShare::Application.routes.draw do
     get 'team_pages' => 'home#team_pages'
     get 'advisors_pages' => 'home#advisors_pages'
     get 'communities' => 'communities#index'
+    get 'cocreation_pages' => 'home#cocreation_pages'
+    get 'cocreations' => 'cocreations#index'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
@@ -92,6 +96,7 @@ OuiShare::Application.routes.draw do
   get 'knowledge/expert' => 'knowledge#expert', as: 'knowledge_expert'
   get 'knowledge/groups' => 'knowledge#groups', as: 'knowledge_groups'
   get 'knowledge/ouiki' => 'knowledge#ouiki', as: 'knowledge_ouiki'
+  get 'knowledge/cocreation' => 'knowledge#cocreation', as: 'knowledge_cocreation'
 
   get 'getinvolved' => 'getinvolved#index', as: 'getinvolved'
   get 'press' => 'press#index', as: 'press'

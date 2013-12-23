@@ -32,5 +32,11 @@ module Admin
 
     def advisors_pages
     end
+
+    def cocreation_pages
+    end
+
+    def cocreations
+    end
   end
 end
