@@ -22,5 +22,5 @@
   = f.input :text1
   = f.input :title2
   = f.input :text2
-  = f.input :language_id, value: @project.language.id, as: :hidden
+  = f.association :users, as: :check_boxes
   = f.submit

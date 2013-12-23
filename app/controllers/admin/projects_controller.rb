@@ -51,7 +51,8 @@ module Admin
                               :tag_list,
                               :language_id,
                               :visible,
-                              :featured])
+                              :featured,
+                              :user_ids => []])
     end
 
   end
