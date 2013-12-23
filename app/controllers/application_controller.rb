@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << [:name, :email, :password, :password_confirmation, :bio, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :profile_type]
+    devise_parameter_sanitizer.for(:account_update) << [:name, :email, :password, :password_confirmation, :bio, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :profile_type, :tag_list]
   end
 
   def set_locale

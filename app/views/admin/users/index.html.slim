@@ -1,0 +1,15 @@
+div.row
+  div.large-12.columns
+    h2.subheader Users
+    table
+      tr
+        th Name
+        th Type
+        th Admin?
+        th
+      - User.all.each do |u|
+        tr
+          td = u.name
+          td = u.profile_type
+          td = u.admin? ? 'Yes' : 'No'
+          td = link_to "Edit", edit_admin_user_path(u)

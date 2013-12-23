@@ -29,6 +29,9 @@ OuiShare::Application.routes.draw do
       resources :values
       resources :value_pages
     end
+
+    resources :users
+
     get '/' => 'home#index'
     get 'home' => 'home#home'
     get 'about' => 'home#about'
@@ -88,5 +91,5 @@ OuiShare::Application.routes.draw do
   get 'press' => 'press#index', as: 'press'
   get 'workus' => 'workus#index', as: 'workus'
 
-  resources :users
+  get 'users/:id' => 'admin/users#show', as: 'user'
 end

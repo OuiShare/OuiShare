@@ -10,7 +10,12 @@ class User < ActiveRecord::Base
     add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])
   end
 
+  acts_as_taggable
+
   enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
+
+  scope :connectors, ->{ where(profile_type: 1) }
+  scope :advisors, ->{ where(profile_type: 2) }
 
   def self.new_with_session(params, session)
     super.tap do |user|
