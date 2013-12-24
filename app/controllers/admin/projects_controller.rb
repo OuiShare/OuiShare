@@ -13,6 +13,7 @@ module Admin
     end
 
     def update
+      params[:project][:slug] = nil
       update! { admin_projects_path }
     end
 
@@ -25,6 +26,11 @@ module Admin
       @project.info = auto_html(@project.info) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
       @project.text1 = auto_html(@project.text1) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
       @project.text2 = auto_html(@project.text2) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+
+      if request.path != "/#{@current_language.slug}#{project_path(@project)}"
+        redirect_to @project, status: :moved_permanently
+        return
+      end
 
       render 'admin/projects/show'
     end
@@ -53,6 +59,7 @@ module Admin
                               :language_id,
                               :visible,
                               :featured,
+                              :slug,
                               :user_ids => []])
     end
 
