@@ -58,6 +58,8 @@ div.contain-to-grid.fixed
                 li
                   a href="#{admin_cocreations_path}" co-creations
         li
+          = link_to 'Contact Page', admin_contact_pages_path
+        li
           = link_to "Users", admin_users_path
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete

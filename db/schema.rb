@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224184338) do
+ActiveRecord::Schema.define(version: 20131227104532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,16 @@ ActiveRecord::Schema.define(version: 20131224184338) do
   end
 
   add_index "community_pages", ["language_id"], name: "index_community_pages_on_language_id", using: :btree
+
+  create_table "contact_pages", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contact_pages", ["language_id"], name: "index_contact_pages_on_language_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "title"

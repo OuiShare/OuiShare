@@ -33,6 +33,7 @@ OuiShare::Application.routes.draw do
       resources :communities
       resources :cocreation_pages
       resources :cocreations
+      resources :contact_pages
     end
 
     resources :users
@@ -57,6 +58,7 @@ OuiShare::Application.routes.draw do
     get 'communities' => 'communities#index'
     get 'cocreation_pages' => 'home#cocreation_pages'
     get 'cocreations' => 'cocreations#index'
+    get 'contact_pages' => 'home#contact_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

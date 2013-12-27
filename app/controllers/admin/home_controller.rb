@@ -38,5 +38,8 @@ module Admin
 
     def cocreations
     end
+
+    def contact_pages
+    end
   end
 end

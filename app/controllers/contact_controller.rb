@@ -1,5 +1,6 @@
 class ContactController < ApplicationController
   def index
+    @contact_page = @current_language.contact_page || ContactPage.new
   end
 
   def submit
