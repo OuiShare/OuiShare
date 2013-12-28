@@ -93,7 +93,7 @@ div.contain-to-grid.fixed
         - if user_signed_in?
           li.has-dropdown
             a href="#"
-              = image_tag(current_user.avatar_url, :class => "current-user")
+              = image_tag(current_user.avatar_url(50), :class => "current-user")
             ul.dropdown
               li
                 = link_to t("edit_profile"), edit_user_registration_path

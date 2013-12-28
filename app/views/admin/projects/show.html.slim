@@ -13,7 +13,7 @@ div#project
         ul.large-block-grid-4
           - @project.users.each do |u|
             = link_to u do
-              li.avatar = image_tag(u.avatar_url)
+              li.avatar = image_tag(u.avatar_url(50))
 
 
       div.large-8.columns
