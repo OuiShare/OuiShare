@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
     add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])
   end
 
+  mount_uploader :image, AvatarUploader
+
   acts_as_taggable
 
   enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
@@ -26,14 +28,25 @@ class User < ActiveRecord::Base
       if auth = session[:omniauth]
         user.email = auth.info.email if auth.info.email.present?
         user.name = auth.info.name
-        user.image = auth.info.image
+        user.remote_image_url = auth.info.image
         user.authorizations.build(provider: auth.provider, uid: auth.uid)
       end
     end
   end
 
-  def avatar_url(size = 100)
-    return image if image.present?
+  def update_image(url)
+    unless self.image.present?
+      self.remote_image_url = url if url.present?
+      self.save!
+    end
+  end
+
+  def avatar_url(size = 200)
+    if size < 100
+      return image.small if image.present?
+    else
+      return image if image.present?
+    end
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
   end
 
