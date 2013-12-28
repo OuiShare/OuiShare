@@ -14,8 +14,9 @@ div#event
         h3.subtitle Organizers
         ul.large-block-grid-4
           - @event.users.each do |u|
-            = link_to u do
-              li.avatar = image_tag(u.avatar_url(50))
+            li.avatar
+              = link_to u do
+                = image_tag(u.avatar_url(60))
 
       div.large-8.columns
         h3.subtitle.white Info
