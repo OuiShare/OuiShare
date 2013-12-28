@@ -7,6 +7,7 @@
         = f.input :name, :required => true, :autofocus => true
         = f.input :email, :required => true
         = f.input :bio
+        = f.input :image, as: :image_preview, input_html: {preview_version: :small}
         = f.input :facebook_url
         = f.input :twitter_url
         = f.input :google_plus_url
