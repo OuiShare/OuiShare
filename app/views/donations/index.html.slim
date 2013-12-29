@@ -50,19 +50,21 @@ div#page-donations
                     input#value-custom name="value" type="radio"
                     input#custom.large-3 type="text" value="custom amount"
 
-
           div.row
-            section.method
+            section.methods
               div.large-12.columns
                 h5 Payment information
-                ul
-                  li.btn.white By Credit/Debit
-                  li.btn.white By paypal
-
+                ul.inline-list
+                  li.method
+                    input#credit name="method" type="radio"
+                    label.btn.white for="credit" By Credit/Debit
+                  li.method
+                    input#paypal name="method" type="radio"
+                    label.btn.white for="paypal" Paypal
 
           div.row
             div.large-12.columns
-              a.btn.white Donate now!
+              input.btn.white type="submit" value="Donate now!"
 
   section.explain
     div.row.section

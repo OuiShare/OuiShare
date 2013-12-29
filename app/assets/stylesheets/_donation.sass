@@ -31,7 +31,7 @@
       overflow: hidden
       margin-bottom: 20px
 
-      &.values
+      &.values, &.methods
 
         ul
           list-style: none
@@ -40,18 +40,21 @@
           li
             display: inline-block
             text-align: center
+            margin: 0 10px 0 0px
+            padding: 0
+            +box-sizing(border-box)
+            position: relative
 
             &.value
-              margin: 0 10px 0 0px
-              padding: 0
-              +box-sizing(border-box)
               height: 40px
-              position: relative
               width: 75px
+            &.method
+              height: 40px
+              width: 180px
 
-              &:after
-                content: ""
-                clear: both
+            &:after
+              content: ""
+              clear: both
 
             label
               display: block
@@ -73,9 +76,10 @@
             input[type="radio"]
               position: absolute
               margin: 10px
-        .btn
-          font-size: 20px
-          padding: 4px 10px
+
+          .btn
+            font-size: 20px
+            padding: 4px 10px
 
         .custom
           width: 119px !important
