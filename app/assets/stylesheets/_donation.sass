@@ -31,30 +31,72 @@
       overflow: hidden
       margin-bottom: 20px
 
-      &.values, &.periodicity
+      &.values
 
-        .inline-list
-          margin: 0px 0px 0px -27px
+        ul
+          list-style: none
+          margin-left: 0
 
+          li
+            display: inline-block
+            text-align: center
+
+            &.value
+              margin: 0 10px 0 0px
+              padding: 0
+              +box-sizing(border-box)
+              height: 40px
+              position: relative
+              width: 75px
+
+              &:after
+                content: ""
+                clear: both
+
+            label
+              display: block
+              position: absolute
+              cursor: pointer
+              font-size: 0
+              left: 1px
+              right: 1px
+              top: 1px
+              white-space: nowrap
+
+            input:checked + label
+              background: $blue
+              color: white
+
+            input:checked + #custom
+              border: 2px solid $blue
+
+            input[type="radio"]
+              position: absolute
+              margin: 10px
         .btn
           font-size: 20px
           padding: 4px 10px
 
-        input
+        .custom
+          width: 119px !important
+          text-align: left !important
+
+        #custom
+          display: inline-block
           border: 1px solid white
-          background: none
+          background: $red
           font-size: 12px
           font-style: italic
           border: 1px solid #FFFFFF
           color: #FFFFFF
-          margin-top: 12px
+          margin-left: 5px
           width: 100px
+          height: 40px
 
   .explain
     background: $blue
     padding: 64px 0
     color: white
-
 
   .box
     border: 1px solid black

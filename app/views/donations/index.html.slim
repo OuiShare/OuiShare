@@ -31,29 +31,31 @@ div#page-donations
               div.large-12.columns
                 h5 Donation
                 ul.inline-list
-                  li.btn.white 10 €
-                  li.btn.white 50 €
-                  li.btn.white 100 €
-                  li.btn.white 150 €
-                  li.btn.white 200 €
-                  li
-                    input.large-3 type="text" value="custom amount"
+                  li.value
+                    input#value-10 name="value" type="radio"
+                    label.btn.white for="value-10" 10 €
+                  li.value
+                    input#value-50 name="value" type="radio"
+                    label.btn.white for="value-50" 50 €
+                  li.value
+                    input#value-100 name="value" type="radio"
+                    label.btn.white for="value-100" 100 €
+                  li.value
+                    input#value-150 name="value" type="radio"
+                    label.btn.white for="value-150" 150 €
+                  li.value
+                    input#value-200 name="value" type="radio"
+                    label.btn.white for="value-200" 200 €
+                  li.value.custom
+                    input#value-custom name="value" type="radio"
+                    input#custom.large-3 type="text" value="custom amount"
+
 
           div.row
-            section.periodicity
-              div.large-12.columns
-                h5 How often ?
-                ul.inline-list
-                  li.btn.white one time
-                  li.btn.white monthly
-                  li.btn.white quarterly
-                  li.btn.white annual
-
-          div.row
-            section.periodicity
+            section.method
               div.large-12.columns
                 h5 Payment information
-                ul.inline-list
+                ul
                   li.btn.white By Credit/Debit
                   li.btn.white By paypal
 

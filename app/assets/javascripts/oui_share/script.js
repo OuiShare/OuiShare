@@ -34,4 +34,8 @@ $(window).load(function() {
         itemSelector: 'li'
     });
 
+    $('#custom').click(function(){
+        $('#value-custom').prop( "checked", true );
+    });
+
 });
