@@ -36,6 +36,7 @@ $(window).load(function() {
 
     $('#custom').click(function(){
         $('#value-custom').prop( "checked", true );
+        $(this).val("");
     });
 
 });
