@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :partner, :inf => :is_partner? do
-    process :resize_to_fit => [200, 50]
+    process :resize_to_fit => [115, 115]
   end
 
   version :top_internal, :if => :has_top_internal? do
