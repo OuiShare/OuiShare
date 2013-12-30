@@ -6,7 +6,7 @@ class DonationsController < ApplicationController
     if params['value'] == 'custom'
       params['value'] = params['amount']
     end
-    Paypal.sandbox!
+    Paypal.sandbox! if ENV['PAYPAL_SANDBOX'] || Raisl.env.development?
     donation = Donation.new
     payment = Payment.new(params['value'].to_i, params['currency'])
     payment.setup!(
