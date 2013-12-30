@@ -1,7 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_filter :set_locale
   def action_missing(provider)
-    omniauth = env['omniauth.auth']
+    omniauth = env['omniauth.auth'].except('extra')
     if user_signed_in?
       current_user.authorizations.where(provider: omniauth['provider'],
                                         uid:      omniauth['uid']).first_or_create
