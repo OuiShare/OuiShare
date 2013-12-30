@@ -10,9 +10,9 @@ div#page-team
         a.btn.blue href="#{contact_path}" = @team_page.link_text
 
       div.large-8.columns
-        ul.large-block-grid-5
+        ul.large-block-grid-4
           - @users.each do |a|
             li
-              p.name = a.name
+              p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
               div.avatar
-                = image_tag(a.avatar_url(50))
+                = image_tag(a.avatar_url(110))
