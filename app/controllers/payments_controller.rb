@@ -9,13 +9,13 @@ class PaymentsController < InheritedResources::Base
       payment.complete!
 
       donation.confirm!(payment.identifier)
-      redirect_to root_path, notice: "Payment done."
+      redirect_to root_path, notice: t("payment.success")
     else
       redirect_to root_path, status: :unprocessable_entity
     end
   end
 
   def cancel_callback
-    redirect_to donations_url, alert: "Payment canceled."
+    redirect_to donations_url, alert: t("payment.error")
   end
 end

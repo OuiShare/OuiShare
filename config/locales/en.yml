@@ -62,4 +62,7 @@ en:
     successful: "Your address was successfuly registered in our newsletter!"
   admin:
     not_authorized: 'You are not allowed to do that.'
+  payment:
+    success: "Thank you! Your donation was successfuly recieved."
+    error: "Error getting the payment."
 
