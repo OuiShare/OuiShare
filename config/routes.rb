@@ -105,4 +105,7 @@ OuiShare::Application.routes.draw do
   get 'workus' => 'workus#index', as: 'workus'
 
   get 'users/:id' => 'admin/users#show', as: 'user'
+  post 'donations/pay' => 'donations#pay', as: 'pay_donation'
+  get "payments/success_callback"
+  get "payments/cancel_callback"
 end

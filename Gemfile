@@ -50,6 +50,8 @@ gem 'country_select'
 gem 'flutie'
 gem 'auto_html'
 
+gem 'paypal-express'
+
 # Assets
 gem 'sass-rails', '4.0.1'
 gem "compass-rails", "~> 1.1.2"
