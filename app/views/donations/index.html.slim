@@ -13,58 +13,58 @@ div#page-donations
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
         h4 Thanks, the Team
+      = form_tag pay_donation_path
+        div.large-8.columns
+          .pink-box
+            div.row
+              .header
+                div.large-6.columns
+                  h5 Help support ouiShare!
+                div.large-6.columns
+                  select.small-2.right id="currency" name="currency"
+                    option value="USD" $
+                    option value="EUR" €
+                  p.right choose currency
 
-      div.large-8.columns
-        .pink-box
-          div.row
-            .header
-              div.large-6.columns
-                h5 Help support ouiShare!
-              div.large-6.columns
-                select.small-2.right
-                  option value="Dolar" $
-                  option value="Euro" €
-                p.right choose currency
+            div.row
+              section.values
+                div.large-12.columns
+                  h5 Donation
+                  ul.inline-list
+                    li.value
+                      input#value-10 name="value" type="radio" value="10"
+                      label.btn.white for="value-10" 10 €
+                    li.value
+                      input#value-50 name="value" type="radio" value="50"
+                      label.btn.white for="value-50" 50 €
+                    li.value
+                      input#value-100 name="value" type="radio" value="100"
+                      label.btn.white for="value-100" 100 €
+                    li.value
+                      input#value-150 name="value" type="radio" value="150"
+                      label.btn.white for="value-150" 150 €
+                    li.value
+                      input#value-200 name="value" type="radio" value="200"
+                      label.btn.white for="value-200" 200 €
+                    li.value.custom
+                      input#value-custom name="value" type="radio" value="custom"
+                      input#custom.large-3 type="text" name="amount" value="custom amount"
 
-          div.row
-            section.values
+            /*div.row*/
+              /*section.methods*/
+                /*div.large-12.columns*/
+                  /*h5 Payment information*/
+                  /*ul.inline-list*/
+                    /*li.method*/
+                      /*input#credit name="method" type="radio" value=""*/
+                      /*label.btn.white for="credit" By Credit/Debit*/
+                    /*li.method*/
+                      /*input#paypal name="method" type="radio"*/
+                      /*label.btn.white for="paypal" Paypal*/
+
+            div.row
               div.large-12.columns
-                h5 Donation
-                ul.inline-list
-                  li.value
-                    input#value-10 name="value" type="radio"
-                    label.btn.white for="value-10" 10 €
-                  li.value
-                    input#value-50 name="value" type="radio"
-                    label.btn.white for="value-50" 50 €
-                  li.value
-                    input#value-100 name="value" type="radio"
-                    label.btn.white for="value-100" 100 €
-                  li.value
-                    input#value-150 name="value" type="radio"
-                    label.btn.white for="value-150" 150 €
-                  li.value
-                    input#value-200 name="value" type="radio"
-                    label.btn.white for="value-200" 200 €
-                  li.value.custom
-                    input#value-custom name="value" type="radio"
-                    input#custom.large-3 type="text" value="custom amount"
-
-          div.row
-            section.methods
-              div.large-12.columns
-                h5 Payment information
-                ul.inline-list
-                  li.method
-                    input#credit name="method" type="radio"
-                    label.btn.white for="credit" By Credit/Debit
-                  li.method
-                    input#paypal name="method" type="radio"
-                    label.btn.white for="paypal" Paypal
-
-          div.row
-            div.large-12.columns
-              input.btn.white type="submit" value="Donate now!"
+                input.btn.white type="submit" name="commit" value="Donate now!"
 
   section.explain
     div.row.section
