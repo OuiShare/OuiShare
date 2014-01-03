@@ -53,6 +53,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [1800, 480]
   end
 
+  version :donation, :if => :is_donation_page? do
+    process :resize_to_fill => [600, 230]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
@@ -64,6 +68,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def is_event? picture
     model.kind_of?(Event)
+  end
+
+  def is_donation_page? picture
+    model.kind_of?(DonationPage)
   end
 
   def has_top_image? picture

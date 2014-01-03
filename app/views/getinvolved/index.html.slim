@@ -2,8 +2,7 @@ div#page-getinvolved
   section.about
     div.row
       div.large-12.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        = @get_involved_page.main_text
       div.large-12.columns
         div.banner
 
@@ -11,65 +10,36 @@ div#page-getinvolved
     div.row
       ul.large-block-grid-2
         li
-          h4 Join an event
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-          a.btn.white href="#" events
+          h4 = @get_involved_page.title1
+          p = @get_involved_page.text1
+          a.btn.white href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
 
         li
-          h4 Join an event
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          a.btn.white href="#" newsletter
+          h4 = @get_involved_page.title2
+          p = @get_involved_page.text2
+          a.btn.white href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
 
         li
-          h4 Join an event
-          p tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-            nec, purus. Cum sociis natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Nulla
-            posuere. Donec vitae dolor. Nullam tristique diam non
-            turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam
-            vestibulum accumsan nisl.
-          a.btn.white href="#" communities
+          h4 = @get_involved_page.title3
+          p = @get_involved_page.text3
+          a.btn.white href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
 
         li
-          h4 Join an event
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-          a.btn.white href="#" donate
+          h4 = @get_involved_page.title4
+          p = @get_involved_page.text4
+          a.btn.white href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
 
         li
-          h4 Join an event
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          a.btn.white href="#" newsletter
+          h4 = @get_involved_page.title5
+          p = @get_involved_page.text5
+          a.btn.white href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
 
         li
-          h4 Join an event
-          p tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-            nec, purus. Cum sociis natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Nulla
-            posuere. Donec vitae dolor. Nullam tristique diam non
-            turpis. Cras placerat accumsan nulla. Nullam rutrum. Nam
-            vestibulum accumsan nisl.
-          a.btn.white href="#" communities
+          h4 = @get_involved_page.title6
+          p = @get_involved_page.text6
+          a.btn.white href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
 
         li
-          h4 Join an event
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            hendrerit tempor tellus. Donec pretium posuere tellus.
-          a.btn.white href="#" donate
+          h4 = @get_involved_page.title7
+          p = @get_involved_page.text7
+          a.btn.white href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
