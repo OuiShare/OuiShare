@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230032026) do
+ActiveRecord::Schema.define(version: 20131230141557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,23 @@ ActiveRecord::Schema.define(version: 20131230032026) do
 
   add_index "contact_pages", ["language_id"], name: "index_contact_pages_on_language_id", using: :btree
 
+  create_table "donation_pages", force: true do |t|
+    t.string   "main_title"
+    t.text     "main_text"
+    t.string   "thanks_text"
+    t.string   "image1"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "image2"
+    t.string   "title2"
+    t.text     "text2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "language_id"
+  end
+
+  add_index "donation_pages", ["language_id"], name: "index_donation_pages_on_language_id", using: :btree
+
   create_table "donations", force: true do |t|
     t.string   "payer_name"
     t.string   "payment_token"
@@ -243,6 +260,44 @@ ActiveRecord::Schema.define(version: 20131230032026) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "get_involved_pages", force: true do |t|
+    t.text     "main_text"
+    t.string   "image"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "link1"
+    t.string   "link1_text"
+    t.string   "title2"
+    t.text     "text2"
+    t.string   "link2"
+    t.string   "link2_text"
+    t.string   "title3"
+    t.text     "text3"
+    t.string   "link3"
+    t.string   "link3_text"
+    t.string   "title4"
+    t.text     "text4"
+    t.string   "link4"
+    t.string   "link4_text"
+    t.string   "title5"
+    t.text     "text5"
+    t.string   "link5"
+    t.string   "link5_text"
+    t.string   "title6"
+    t.text     "text6"
+    t.string   "link6"
+    t.string   "link6_text"
+    t.string   "title7"
+    t.text     "text7"
+    t.string   "link7"
+    t.string   "link7_text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "get_involved_pages", ["language_id"], name: "index_get_involved_pages_on_language_id", using: :btree
 
   create_table "governance_pages", force: true do |t|
     t.text     "text"

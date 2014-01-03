@@ -57,8 +57,14 @@ div.contain-to-grid.fixed
               ul.dropdown
                 li
                   a href="#{admin_cocreations_path}" co-creations
-        li
-          = link_to 'Contact Page', admin_contact_pages_path
+        li.has-dropdown
+          a href="#" Pages
+          ul.dropdown
+            li
+              = link_to 'Contact Page', admin_contact_pages_path
+            li
+              = link_to 'Donation Page', admin_donation_pages_path
+
         li
           = link_to "Users", admin_users_path
         li.right

@@ -17,6 +17,8 @@ class Language < ActiveRecord::Base
   has_one :advisors_page
   has_one :cocreation_page
   has_one :contact_page
+  has_one :donation_page
+  has_one :get_involved_page
   has_many :projects
   has_many :events
   has_many :activities
