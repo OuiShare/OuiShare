@@ -56,6 +56,8 @@ en:
       index: "Communities"
     contact:
       index: 'Contact'
+    get_involved:
+      index: 'Get involved!'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
