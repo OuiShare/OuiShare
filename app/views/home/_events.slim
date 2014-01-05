@@ -2,7 +2,7 @@ section#events
   div.row
     div.large-4.columns
       h3.subtitle.white = @events_section.title
-      p.text = @events_section.text
+      p.desc = @events_section.text
     div.large-8.columns
       ul.events.large-block-grid-2
         - @current_language.events.visible.order('date_start').next[0..1].each do |e|
