@@ -17,6 +17,7 @@ footer.section
         li
           a href="#" RSS feed
 
+
     div.large-4.columns
       div.social
         a.facebook href="https://www.facebook.com/OuiShare"
@@ -33,3 +34,15 @@ footer.section
         p.opensource = link_to 'open source code by:', 'http://github.com/Ouishare/Ouishare'
         = link_to 'http://engage.is' do
           span.engage
+  div.row
+    div.subscribe.large-6.columns
+      = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+        div.row.collapse
+          div.large-5.columns
+            .email-field
+              input type="email" id="email" name="email" placeholder="Your email here" required=""
+              small.error An email address is required.
+          div.large-7.columns
+            = submit_tag('Subscribe to our newsletter', class: 'postfix btn white')
+
+          /*a.postfix href="#{newsletter_path}" Go !*/
