@@ -1,5 +1,5 @@
 section#list
-  - @current_language.events.order('created_at desc').each do |e|
+  - @current_language.events.order('date_start desc').each do |e|
     div.event
       div.row
         a href="#{event_path(e)}"

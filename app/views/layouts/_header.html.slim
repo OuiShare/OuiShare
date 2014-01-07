@@ -44,11 +44,11 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#{events_path}" events
           ul.dropdown
-            - @current_language.events.visible.each do |e|
+            - @current_language.events.visible.order('date_start desc').each do |e|
               li
                 = link_to e.name, event_path(e)
             li
-              a href="" more events
+              = link_to 'more events', events_path
 
         li.has-dropdown
           a href="#{projects_path}" projects
