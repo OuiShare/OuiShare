@@ -19,6 +19,7 @@ class AboutController < ApplicationController
   end
 
   def organization
+    @organization_page = @current_language.organization_page || OrganizationPage.new
   end
 
   def team
