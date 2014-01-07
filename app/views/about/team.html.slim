@@ -17,5 +17,5 @@ div#page-team
                 div.avatar
                   = image_tag(a.avatar_url(140))
                 div.desc
-                  p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
-                  p.position cargo
+                  p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last if a.name.split(' ').count > 1}"
+                  p.position = a.title
