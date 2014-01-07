@@ -36,6 +36,7 @@ OuiShare::Application.routes.draw do
       resources :contact_pages
       resources :donation_pages
       resources :get_involved_pages
+      resources :expert_groups_pages
     end
 
     resources :users
@@ -63,6 +64,7 @@ OuiShare::Application.routes.draw do
     get 'cocreations' => 'cocreations#index'
     get 'contact_pages' => 'home#contact_pages'
     get 'get_involved_pages' => 'home#get_involved_pages'
+    get 'expert_groups_pages' => 'home#expert_groups_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
@@ -96,6 +98,7 @@ OuiShare::Application.routes.draw do
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'
   get 'communities/live' => 'communities#live', as: 'communities_live'
   get 'communities/people' => 'communities#people', as: 'communities_people'
+  get 'communities/expert_groups' => 'communities#expert_groups', as: 'expert_groups'
 
   get 'knowledge' => 'knowledge#index', as: 'knowledge'
   get 'knowledge/research' => 'knowledge#research', as: 'knowledge_research'
