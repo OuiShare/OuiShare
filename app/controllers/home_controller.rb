@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   require 'feedzirra'
+  include AutoHtml
+
   def index
     if @current_language.slug == 'en'
       @feed = Feedzirra::Feed.fetch_and_parse('http://ouishare.net/feed')
@@ -14,5 +16,10 @@ class HomeController < ApplicationController
     @take_part_section = @current_language.take_part_section || TakePartSection.new
     @articles_section = @current_language.articles_section || ArticlesSection.new
     @partner = @current_language.partner || Partner.new
+  end
+
+  def terms
+    @terms_page = @current_language.terms_page || TermsPage.new
+    @terms_page.text = auto_html(@terms_page.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 end

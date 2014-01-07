@@ -15,7 +15,7 @@ html
       = render 'layouts/admin_header'
     - else
       = render 'layouts/header'
-      - unless params[:controller] == 'home'
+      - unless params[:controller] == 'home' && params[:action] == 'index'
         = render 'layouts/second_header'
     = yield
     = render 'layouts/footer'

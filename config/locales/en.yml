@@ -58,6 +58,8 @@ en:
       index: 'Contact'
     get_involved:
       index: 'Get involved!'
+    home:
+      terms: 'Terms & Service'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
