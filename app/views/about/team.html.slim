@@ -11,7 +11,7 @@ div#page-team
 
       div.large-8.columns
         ul.large-block-grid-2
-          - @users.each do |a|
+          - @users.order('name').each do |a|
             li
               = link_to a do
                 div.avatar
