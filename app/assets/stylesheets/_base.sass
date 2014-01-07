@@ -30,9 +30,13 @@ body
     font-size: 2.375em
     padding: 10px 4px 4px
 
+.contain-to-grid
+  border-bottom: 1px solid white
+
 .top-bar
   z-index: 9999
   background-color: #06040f
+
 
   .title-area
     li.name
@@ -130,7 +134,8 @@ body
       color: white
 
 #second-header
-  border-bottom: 1px solid black
+  background: $blue
+  border-bottom: 1px solid white
   padding-top: 20px
 
   .social
@@ -145,7 +150,7 @@ body
       width: 30px
       color: white
       line-height: 23pt
-      border: 1px solid black
+      border: 1px solid white
 
       &.facebook
         background-color: #3c5a9a
@@ -158,18 +163,16 @@ body
 
     select
       +appearance(none)
-      border: 1px solid white
       +border-radius(none)
-      color: white
       height: 30px
       float: right
       padding: 6px
       font-size: .7em
       text-indent: 0.01px
       text-overflow: ""
-      color: black
-      border: 1px solid black
-      background: image-url('arrow-black.png') no-repeat 30px 10px transparent
+      color: white
+      border: 1px solid white
+      background: image-url('arrow.png') no-repeat 30px 10px transparent
 
 h2
   font-size: 24px
@@ -277,3 +280,37 @@ p
 
 .center
   text-align: center
+
+.subscribe
+  @extend .whiteBlock
+
+  form
+    margin: 0
+
+  input
+    border: 1px solid white
+    background: rgba(0,0,0,0.1)
+    color: white
+    margin: 0
+    height: 46px
+
+  .btn
+    font-family: "Gandhi Sans", sans-serif
+    font-style: italic
+    text-transform: uppercase
+    background: white
+    color: $blue
+    border: 1px solid white
+    font-size: 14px
+    font-weight: bold
+
+    &:hover
+      background: darken($blue, 10%)
+      color: white
+
+  .prefix, .postfix
+    height: 46px
+
+  .error input:focus, input:focus
+    background: rgba(0,0,0,0.1)
+    color: white
