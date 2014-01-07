@@ -10,9 +10,11 @@ didv#page-team
         a.btn.blue href="#{contact_path}" = @advisors_page.link_text
 
       div.large-8.columns
-        ul.large-block-grid-4
+        ul.large-block-grid-2
           - @users.each do |a|
             li
-              p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
               div.avatar
                 = image_tag(a.avatar_url(110))
+              div.desc
+                p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
+                p.position cargo

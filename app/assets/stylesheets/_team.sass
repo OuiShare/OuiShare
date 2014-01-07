@@ -4,12 +4,17 @@
 
   .theTeam, .festTeam
     li
-
-      p.name
+      .avatar
+        display: inline-block
+        vertical-align: top
+      .desc
+        display: inline-block
+        clear: both
         margin-bottom: 5px
-        font-size: 14px
+        margin-left: 10px
+        font-size: 13px
 
-      .social
-        padding-top: 10px
-        display: table
-        margin: 0 auto
+        p.name
+          font-weight: bold
+          text-transform: uppercase
+          margin: 0
