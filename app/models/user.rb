@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     if size < 100
       return image.small if image.present?
     else
-      return image if image.present?
+      return image.normal if image.present?
     end
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
   end
