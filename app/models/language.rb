@@ -28,6 +28,7 @@ class Language < ActiveRecord::Base
   has_many :faq_questions
   has_many :communities
   has_many :cocreations
+  has_many :expert_groups
 
   validates :name, :english_name, :slug, presence: true
 

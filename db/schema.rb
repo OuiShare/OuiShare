@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107033603) do
+ActiveRecord::Schema.define(version: 20140107040229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,6 +220,17 @@ ActiveRecord::Schema.define(version: 20140107033603) do
   add_index "events_users", ["event_id"], name: "index_events_users_on_event_id", using: :btree
   add_index "events_users", ["user_id"], name: "index_events_users_on_user_id", using: :btree
 
+  create_table "expert_groups", force: true do |t|
+    t.string   "name"
+    t.text     "text"
+    t.string   "link"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "expert_groups", ["language_id"], name: "index_expert_groups_on_language_id", using: :btree
+
   create_table "expert_groups_pages", force: true do |t|
     t.text     "main_text"
     t.string   "image"
@@ -229,6 +240,14 @@ ActiveRecord::Schema.define(version: 20140107033603) do
   end
 
   add_index "expert_groups_pages", ["language_id"], name: "index_expert_groups_pages_on_language_id", using: :btree
+
+  create_table "expert_groups_users", force: true do |t|
+    t.integer "expert_group_id"
+    t.integer "user_id"
+  end
+
+  add_index "expert_groups_users", ["expert_group_id"], name: "index_expert_groups_users_on_expert_group_id", using: :btree
+  add_index "expert_groups_users", ["user_id"], name: "index_expert_groups_users_on_user_id", using: :btree
 
   create_table "faq_pages", force: true do |t|
     t.text     "text"

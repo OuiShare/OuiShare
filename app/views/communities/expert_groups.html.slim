@@ -11,23 +11,23 @@ div#page-expert_groups
         div.map
           = image_tag @expert_groups_page.image.top_internal
 
-  /*section#communities-list.section*/
-    /*div.row*/
-      /*div.large-6.columns*/
-        /*h3.subtitle All Local communities*/
-    /*- @communities.each do |c|*/
-      /*div.row.community*/
-        /*div.large-6.columns*/
-          /*p.title = c.name*/
-          /*p = c.text*/
+  section#expert-groups-list.section
+    div.row
+      div.large-6.columns
+        h3.subtitle All Local communities
+    - @expert_groups.each do |c|
+      div.row.community
+        div.large-6.columns
+          p.title = c.name
+          p = c.text
 
-        /*div.large-2.columns*/
-          /*= link_to c.link do*/
-            /*button.btn.white join*/
+        div.large-2.columns
+          = link_to c.link do
+            button.btn.white join
 
-        /*div.large-4.columns*/
-          /*div.avatars*/
-            /*- c.users.each do |u|*/
-              /*span.block*/
-                /*= link_to u do*/
-                  /*= image_tag u.avatar_url*/
+        div.large-4.columns
+          div.avatars
+            - c.users.each do |u|
+              span.block
+                = link_to u do
+                  = image_tag u.avatar_url(50)

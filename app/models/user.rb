@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :communities
+  has_and_belongs_to_many :expert_groups
 
   validates :name, presence: true
   before_validation do
