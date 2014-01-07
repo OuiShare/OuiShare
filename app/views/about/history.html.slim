@@ -1,3 +1,7 @@
 - content_for :page_title, 'Our History'
+section.main-content
+  div.row
+    div.large-12.columns
+      = @timeline.text
 div#page-about-internal
   iframe src="#{@timeline.url}" width='100%' height='650' frameborder='0'

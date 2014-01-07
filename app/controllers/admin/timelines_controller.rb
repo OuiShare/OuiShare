@@ -18,7 +18,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(timeline: [:url])
+      params.permit(timeline: [:url, :text])
     end
 
     def resource

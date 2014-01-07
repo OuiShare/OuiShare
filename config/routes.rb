@@ -88,7 +88,7 @@ OuiShare::Application.routes.draw do
 
   get 'about/mission' => 'about#mission', as: 'about_mission'
   get 'about/vision' => 'about#vision', as: 'about_vision'
-  get 'about/history' => 'about#history', as: 'about_history'
+  get 'about/story' => 'about#history', as: 'about_history'
   get 'about/organization' => 'about#organization', as: 'about_organization'
   get 'about/governance' => 'about#governance', as: 'about_governance'
   get 'about/value' => 'about#value', as: 'about_value'

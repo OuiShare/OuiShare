@@ -15,6 +15,7 @@ class AboutController < ApplicationController
 
   def history
     @timeline = @current_language.timeline || Timeline.new
+    @timeline.text = auto_html(@timeline.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
   def organization
@@ -43,4 +44,3 @@ class AboutController < ApplicationController
   end
 
 end
-0
