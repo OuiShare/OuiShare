@@ -13,8 +13,9 @@ div#page-team
         ul.large-block-grid-2
           - @users.each do |a|
             li
-              div.avatar
-                = image_tag(a.avatar_url(140))
-              div.desc
-                p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
-                p.position cargo
+              = link_to a do
+                div.avatar
+                  = image_tag(a.avatar_url(140))
+                div.desc
+                  p.name = "#{a.name.split(' ').first} " "#{a.name.split(' ').last}"
+                  p.position cargo
