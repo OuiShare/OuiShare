@@ -44,7 +44,7 @@ en:
       index: "FAQs"
     about:
       index: "OuiShare Live"
-      mission: "Our Mission and Activities"
+      mission: "About us"
       vision: "Vision"
       history: "Our Story"
       organization: "Organization"
@@ -59,7 +59,7 @@ en:
     get_involved:
       index: 'Get involved!'
     home:
-      terms: 'Terms & Service'
+      terms: 'Terms & Services'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
@@ -69,4 +69,6 @@ en:
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
+  registrations:
+    edit: 'Edit profile'
 
