@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113030806) do
+ActiveRecord::Schema.define(version: 20140113035909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -434,6 +434,22 @@ ActiveRecord::Schema.define(version: 20140113030806) do
     t.string   "link6"
     t.string   "link7"
   end
+
+  create_table "press_room_pages", force: true do |t|
+    t.integer  "language_id"
+    t.text     "main_text"
+    t.string   "image"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "title2"
+    t.text     "text2"
+    t.string   "title3"
+    t.text     "text3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "press_room_pages", ["language_id"], name: "index_press_room_pages_on_language_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name"

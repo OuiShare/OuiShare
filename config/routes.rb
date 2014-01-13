@@ -49,6 +49,7 @@ OuiShare::Application.routes.draw do
       resources :organization_pages
       resources :terms_pages
       resources :live_pages
+      resources :press_room_pages
     end
 
     resources :users
@@ -81,6 +82,7 @@ OuiShare::Application.routes.draw do
     get 'organization_pages' => 'home#organization_pages'
     get 'terms_pages' => 'home#terms_pages'
     get 'live_pages' => 'home#live_pages'
+    get 'press_room_pages' => 'home#press_room_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

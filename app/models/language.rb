@@ -23,6 +23,7 @@ class Language < ActiveRecord::Base
   has_one :organization_page
   has_one :terms_page
   has_one :live_page
+  has_one :press_room_page
   has_many :projects
   has_many :events
   has_many :activities
