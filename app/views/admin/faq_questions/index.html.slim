@@ -3,18 +3,19 @@ div.row
     h2.subheader FAQ Questions
   - Language.all.each do |l|
     div.large-12.columns
-      h3.subheader = "#{l.name} FAQ questions"
-      = link_to 'Create', new_admin_language_faq_question_path(l.id)
-      table
-        tr
-          th Question
-          th Answer
-          th
-          th
-        - l.faq_questions.each do |f|
+      .faq-questions
+        h3.subheader = "#{l.name} FAQ questions"
+        = link_to 'Create', new_admin_language_faq_question_path(l.id)
+        table
           tr
-            td = f.question
-            td = f.answer
-            td = link_to "Edit", edit_admin_language_faq_question_path(l, f)
-            td = link_to "Remove", [:admin, l, f], data: { confirm: 'Are you sure?' }, method: :delete
+            th Question
+            th Answer
+            th
+            th
+          - l.faq_questions.rank(:row_order).each do |f|
+            tr.sortable[data-update-path=sort_admin_language_faq_question_path(l, f)]
+              td = f.question
+              td = f.answer
+              td = link_to "Edit", edit_admin_language_faq_question_path(l, f)
+              td = link_to "Remove", [:admin, l, f], data: { confirm: 'Are you sure?' }, method: :delete
 

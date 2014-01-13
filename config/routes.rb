@@ -23,7 +23,11 @@ OuiShare::Application.routes.draw do
       resources :events
       resources :community_pages
       resources :faq_pages
-      resources :faq_questions
+      resources :faq_questions do
+        member do
+          post :sort
+        end
+      end
       resources :faqs
       resources :missions
       resources :activities

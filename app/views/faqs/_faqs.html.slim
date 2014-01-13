@@ -2,7 +2,7 @@ section.more-content
   div.row.section
    div.large-12.columns
       .section-container.accordion.faq data-section="accordion"
-        - @faq_questions.order('created_at desc').each do |q|
+        - @faq_questions.rank(:row_order).each do |q|
           section
             p.title data-section-title=""
               a href="#"

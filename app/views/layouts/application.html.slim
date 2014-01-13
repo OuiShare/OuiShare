@@ -4,7 +4,6 @@ html
     title = page_title app_name: "Oui Share"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    = javascript_include_tag "application"
     = yield(:meta_tags)
     = csrf_meta_tag
     = stylesheet_link_tag "application"
@@ -20,3 +19,5 @@ html
         = render 'layouts/second_header'
     = yield
     = render 'layouts/footer'
+    = javascript_include_tag "application"
+    = javascript_include_tag "lib/masonry.js"
