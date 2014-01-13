@@ -16,6 +16,8 @@ class CommunitiesController < ApplicationController
   end
 
   def live
+    @live_page = @current_language.live_page || LivePage.new
+    @live_page.main_text = auto_html(@live_page.main_text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
   def people

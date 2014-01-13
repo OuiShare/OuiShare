@@ -48,6 +48,7 @@ OuiShare::Application.routes.draw do
       resources :expert_groups
       resources :organization_pages
       resources :terms_pages
+      resources :live_pages
     end
 
     resources :users
@@ -79,6 +80,7 @@ OuiShare::Application.routes.draw do
     get 'expert_groups' => 'expert_groups#index'
     get 'organization_pages' => 'home#organization_pages'
     get 'terms_pages' => 'home#terms_pages'
+    get 'live_pages' => 'home#live_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
