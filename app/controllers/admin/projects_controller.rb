@@ -35,6 +35,12 @@ module Admin
       render 'admin/projects/show'
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:project][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
       params.permit(project: [:name,
@@ -60,6 +66,7 @@ module Admin
                               :visible,
                               :featured,
                               :slug,
+                              :row_order_position,
                               :user_ids => []])
     end
 

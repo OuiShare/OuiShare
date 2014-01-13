@@ -15,7 +15,11 @@ OuiShare::Application.routes.draw do
       resources :take_part_sections
       resources :partners
       resources :about
-      resources :projects
+      resources :projects do
+        member do
+          post :sort
+        end
+      end
       resources :events
       resources :community_pages
       resources :faq_pages

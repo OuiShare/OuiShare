@@ -1,5 +1,5 @@
 section#list
-  - @current_language.projects.visible.order('created_at desc').each do |p|
+  - @current_language.projects.visible.rank(:row_order).each do |p|
     .event
       div.row
         a href="#{project_path(p)}"

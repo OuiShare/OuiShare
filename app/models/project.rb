@@ -3,6 +3,9 @@ class Project < ActiveRecord::Base
   belongs_to :language
   has_and_belongs_to_many :users
 
+  include RankedModel
+  ranks :row_order
+
   friendly_id :name, use: [:slugged, :history, :finders]
 
   mount_uploader :image, ImageUploader
