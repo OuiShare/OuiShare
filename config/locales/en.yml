@@ -39,6 +39,10 @@ en:
       index: 'Get involved!'
     home:
       terms: 'Terms & Services'
+    devise/registrations:
+      edit: 'Edit profile'
+    admin/users:
+      show: 'Profile'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
@@ -48,6 +52,5 @@ en:
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
-  registrations:
-    edit: 'Edit profile'
+
 
