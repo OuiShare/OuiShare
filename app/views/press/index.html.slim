@@ -13,16 +13,13 @@ div#page-press
   section.values
     div.row.section
       div.large-6.columns
-        h4 = @press_room_page.title1
-        p = @press_room_page.text1
-
+        div.row
+          div.large-12.columns
+            h4 = @press_room_page.title1
+            p = @press_room_page.text1
+          div.large-12.columns
+            h4 = @press_room_page.title3
+            p = @press_room_page.text3
       div.large-6.columns
         h4 = @press_room_page.title2
         p = @press_room_page.text2
-
-
-  section.activities
-    div.row.section
-      div.large-12.columns
-        h4 = @press_room_page.title3
-        p = @press_room_page.text3
