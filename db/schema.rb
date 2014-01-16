@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113035909) do
+ActiveRecord::Schema.define(version: 20140116185120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,27 @@ ActiveRecord::Schema.define(version: 20140113035909) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "funded_pages", force: true do |t|
+    t.integer  "language_id"
+    t.text     "main_text"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "funded_pages", ["language_id"], name: "index_funded_pages_on_language_id", using: :btree
+
+  create_table "funding_infos", force: true do |t|
+    t.integer  "language_id"
+    t.string   "title"
+    t.text     "text"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "funding_infos", ["language_id"], name: "index_funding_infos_on_language_id", using: :btree
 
   create_table "get_involved_pages", force: true do |t|
     t.text     "main_text"

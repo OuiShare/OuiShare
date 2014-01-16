@@ -1,0 +1,7 @@
+= simple_form_for  [:admin, @funding_info.language, @funding_info] do |f|
+  h4 Language
+  = @funding_info.language.name
+  = f.input :title
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :text
+  = f.submit

@@ -44,4 +44,10 @@ class AboutController < ApplicationController
     @resource.text = auto_html(@resource.text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
+  def funded
+    @resource = @current_language.funded_page || FundedPage.new
+    @list = @current_language.funding_infos.order('created_at desc') || [FundingInfo.new]
+    @resource.main_text = auto_html(@resource.main_text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+  end
+
 end

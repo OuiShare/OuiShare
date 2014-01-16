@@ -24,6 +24,7 @@ class Language < ActiveRecord::Base
   has_one :terms_page
   has_one :live_page
   has_one :press_room_page
+  has_one :funded_page
   has_many :projects
   has_many :events
   has_many :activities
@@ -33,6 +34,7 @@ class Language < ActiveRecord::Base
   has_many :communities
   has_many :cocreations
   has_many :expert_groups
+  has_many :funding_infos
 
   validates :name, :english_name, :slug, presence: true
 

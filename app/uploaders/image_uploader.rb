@@ -79,7 +79,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def has_list_thumb? picture
-    ['Project', 'Event', 'Activity'].include?(model.class.name)
+    ['Project', 'Event', 'Activity', 'FundingInfo'].include?(model.class.name)
   end
 
   def is_partner? picture
@@ -87,6 +87,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def has_top_internal? picture
-    ['Mission', 'GovernancePage', 'ValuePage', 'FaqPage', 'CommunityPage', 'CocreationPage', 'ExpertGroupsPage', 'GetInvolvedPage', 'OrganizationPage', 'LivePage', 'PressRoomPage'].include?(model.class.name)
+    ['Mission', 'GovernancePage', 'ValuePage', 'FaqPage', 'CommunityPage', 'CocreationPage', 'ExpertGroupsPage', 'GetInvolvedPage', 'OrganizationPage', 'LivePage', 'PressRoomPage', 'FundedPage'].include?(model.class.name)
   end
 end
