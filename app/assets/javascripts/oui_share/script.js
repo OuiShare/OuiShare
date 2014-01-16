@@ -39,6 +39,10 @@ $(window).load(function() {
         $(this).val("");
     });
 
+    $('input#email').click(function(){
+        $(this).val("");
+    });
+
     $(".euro").hide();
     $("#currency").change(function() {
         if($(this).val() == "USD") {
