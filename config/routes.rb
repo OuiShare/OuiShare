@@ -111,6 +111,7 @@ OuiShare::Application.routes.draw do
   get 'about/value' => 'about#value', as: 'about_value'
   get 'about/team' => 'about#team', as: 'about_team'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
+  get 'about/how_we_are_founded' => 'about#founded', as: 'about_founded'
 
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'
