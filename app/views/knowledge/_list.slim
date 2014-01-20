@@ -1,16 +1,16 @@
 section#list
-/  - @current_language.research.visible.order('created_at desc').each do |p|
+  - @current_language.researches.order('created_at desc').each do |p|
     .event
       div.row
-        / a href="#{research_path(p)}"
+        a href="#{p.link}"
           div.large-5.columns
-            h3.subtitle.white = p.name
-            p = p.resume
+            h3.subtitle.white = p.title
+            p = p.text
             div.tags
               - p.tags.each do |t|
                 span.label.white = t.name
 
         div.large-7.columns
           div.thumb
-            = link_to p
+            = link_to p.link
               = image_tag p.image.list_thumb.url

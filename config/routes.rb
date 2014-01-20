@@ -52,6 +52,8 @@ OuiShare::Application.routes.draw do
       resources :press_room_pages
       resources :funded_pages
       resources :funding_infos
+      resources :research_pages
+      resources :researches
     end
 
     resources :users
@@ -87,6 +89,8 @@ OuiShare::Application.routes.draw do
     get 'press_room_pages' => 'home#press_room_pages'
     get 'funded_pages' => 'home#funded_pages'
     get 'funding_infos' => 'funding_infos#index'
+    get 'research_pages' => 'home#research_pages'
+    get 'researches' => 'researches#index'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
