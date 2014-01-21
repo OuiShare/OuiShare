@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120123612) do
+ActiveRecord::Schema.define(version: 20140121122135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -533,6 +533,18 @@ ActiveRecord::Schema.define(version: 20140120123612) do
 
   add_index "researches", ["language_id"], name: "index_researches_on_language_id", using: :btree
 
+  create_table "services", force: true do |t|
+    t.integer  "language_id"
+    t.string   "name"
+    t.text     "text"
+    t.string   "image"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "services", ["language_id"], name: "index_services_on_language_id", using: :btree
+
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -684,5 +696,15 @@ ActiveRecord::Schema.define(version: 20140120123612) do
   end
 
   add_index "what_is_sections", ["language_id"], name: "index_what_is_sections_on_language_id", using: :btree
+
+  create_table "workus_pages", force: true do |t|
+    t.integer  "language_id"
+    t.text     "text"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "workus_pages", ["language_id"], name: "index_workus_pages_on_language_id", using: :btree
 
 end
