@@ -31,6 +31,7 @@ en:
       advisory: "Advisory"
       governance: "Governance"
       value: 'Values'
+      funded: 'How we are funded'
     communities:
       index: "Communities"
     contact:
@@ -43,6 +44,10 @@ en:
       edit: 'Edit profile'
     admin/users:
       show: 'Profile'
+    knowledge:
+      research: 'Research and Publications'
+    workus:
+      index: 'Work with us'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
@@ -52,5 +57,8 @@ en:
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
+  workus:
+    become_a_partner: 'Become a Partner!'
+    contact_a_partner: 'Contact one of the connector teams or fill up this form.'
 
 
