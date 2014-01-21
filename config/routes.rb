@@ -54,6 +54,8 @@ OuiShare::Application.routes.draw do
       resources :funding_infos
       resources :research_pages
       resources :researches
+      resources :workus_pages
+      resources :services
     end
 
     resources :users
@@ -91,6 +93,8 @@ OuiShare::Application.routes.draw do
     get 'funding_infos' => 'funding_infos#index'
     get 'research_pages' => 'home#research_pages'
     get 'researches' => 'researches#index'
+    get 'workus_pages' => 'home#workus_pages'
+    get 'services' => 'services#index'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

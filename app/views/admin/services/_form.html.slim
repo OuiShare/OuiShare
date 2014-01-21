@@ -1,0 +1,8 @@
+= simple_form_for  [:admin, @service.language, @service] do |f|
+  h4 Language
+  = @service.language.name
+  = f.input :name
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :text
+  = f.input :link
+  = f.submit

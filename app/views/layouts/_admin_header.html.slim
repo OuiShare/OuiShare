@@ -73,6 +73,11 @@ div.contain-to-grid.fixed
               ul.dropdown
                 li
                   a href="#{admin_cocreations_path}" co-creations
+            li.has-dropdown
+              a href="#{admin_research_pages_path}" Research and Publications page
+              ul.dropdown
+                li
+                  a href="#{admin_researches_path}" Researches
         li.has-dropdown
           a href="#" Pages
           ul.dropdown
@@ -86,6 +91,11 @@ div.contain-to-grid.fixed
               = link_to 'Terms & Service', admin_terms_pages_path
             li
               = link_to 'Press Room', admin_press_room_pages_path
+            li.has-dropdown
+              a href="#{admin_workus_pages_path}" Work with us page
+              ul.dropdown
+                li
+                  a href="#{admin_services_path}" Services
 
         li
           = link_to "Users", admin_users_path

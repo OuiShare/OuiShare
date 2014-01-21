@@ -2,36 +2,30 @@ div#page-workus
   section.about
     div.row
       div.large-12.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        = @workus_page.text
 
   section#banner
     div.row
       div.large-12.columns
         div.banner
-          = image_tag(0)
+          = image_tag(@workus_page.image.top_internal)
 
   section#activities.section
-    - 5.times do
-      div.row.actvity
-        Div.large-6.columns
-          h4 Activity #1
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit. Donec hendrerit tempor tellus. Donec pretium posuere
-            tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-            nec, purus. Cum sociis natoque penatibus et magnis dis
-        div.large-6.columns
-          div.img-sample
-            = image_tag(0)
+    - @services.each do |s|
+      = link_to s.link do
+        div.row.actvity
+          div.large-6.columns
+            h4 = s.name
+            p = s.text
+          div.large-6.columns
+            div.img-sample
+              = image_tag(s.image.list_thumb)
 
   section#become
     div.row.section
       div.large-4.columns
-        h4 Be come a partner
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
+        h4 = t('workus.become_a_partner')
+        p = t('workus.contact_a_partner')
 
       div.large-8.columns
         = render 'contact/form'

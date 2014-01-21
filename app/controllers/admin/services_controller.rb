@@ -24,7 +24,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(service: [:title, :image, :text, :link, :language_id])
+      params.permit(service: [:name, :image, :text, :link, :language_id])
     end
 
   end
