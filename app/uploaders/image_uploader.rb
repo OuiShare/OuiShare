@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :top_banner, :if => :is_top_banner? do
-    process :resize_to_fill => [1920, 775]
+    process :resize_to_fill => [1920, 905]
   end
 
   version :project_thumb, :if => :is_project? do
