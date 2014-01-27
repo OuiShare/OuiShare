@@ -14,8 +14,7 @@ div#page-communities
   section#communities-list
     div.row
       - @current_language.regions.each do |r|
-        div.large-12.columns
-          h3.subtitle = r.title
+        h3.subtitle = r.title
         - r.communities.each do |c|
           div.row.community
             div.large-6.columns
@@ -33,8 +32,7 @@ div#page-communities
                     = link_to u do
                       = image_tag u.avatar_url
       - if @current_language.communities.without_region.size > 0
-        div.large-12.columns
-          h3.subtitle = t('communities.other_communities')
+        h3.subtitle = t('communities.other_communities')
         - @current_language.communities.without_region.each do |c|
           div.row.community
             div.large-6.columns
@@ -51,5 +49,3 @@ div#page-communities
                   span.block
                     = link_to u do
                       = image_tag u.avatar_url
-
-
