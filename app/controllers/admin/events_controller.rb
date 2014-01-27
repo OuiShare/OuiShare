@@ -23,9 +23,9 @@ module Admin
 
     def show
       @event = Event.find(params[:id])
-      @event.info = auto_html(@event.info) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
-      @event.text1 = auto_html(@event.text1) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
-      @event.text2 = auto_html(@event.text2) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
+      @event.info = auto_html(@event.info) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
+      @event.text1 = auto_html(@event.text1) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
+      @event.text2 = auto_html(@event.text2) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
 
       if request.path != "/#{@current_language.slug}#{event_path(@event)}"
         redirect_to @event, status: :moved_permanently
