@@ -100,7 +100,7 @@ OuiShare::Application.routes.draw do
   get 'projects/:id' => 'admin/projects#show', as: 'project'
   get 'events/:id' => 'admin/events#show', as: 'event'
 
-  resources :donations
+  resources :donations, only: [:index]
 
   get 'newsletter'     => 'newsletter#index', as: 'newsletter'
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
@@ -147,4 +147,5 @@ OuiShare::Application.routes.draw do
   post 'donations/pay' => 'donations#pay', as: 'pay_donation'
   get "payments/success_callback"
   get "payments/cancel_callback"
+  get 'donations/thank_you' => 'donations#thank_you'
 end

@@ -48,6 +48,9 @@ en:
       research: 'Research and Publications'
     workus:
       index: 'Work with us'
+    donations:
+      index: 'Donate!'
+      thank_you: 'Thank you for supporting OuiShare!'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
@@ -60,5 +63,7 @@ en:
   workus:
     become_a_partner: 'Become a Partner!'
     contact_a_partner: 'Contact one of the connector teams or fill up this form.'
+  donations:
+    thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
 
 

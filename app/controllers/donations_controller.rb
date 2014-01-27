@@ -21,4 +21,7 @@ class DonationsController < ApplicationController
 
     redirect_to payment.redirect_uri
   end
+
+  def thank_you
+  end
 end
