@@ -1,0 +1,18 @@
+div.row
+  div.large-12.columns
+    h2.subheader Regions
+  - Language.all.each do |l|
+    div.large-12.columns
+      h3.subheader = "#{l.name} regionss"
+      = link_to 'Create', new_admin_language_region_path(l.id)
+      table
+        tr
+          th Title
+          th
+          th
+        - l.regions.each do |r|
+          tr
+            td = r.title
+            td = link_to "Edit", edit_admin_language_region_path(l, r)
+            td = link_to "Remove", [:admin, l, r], data: { confirm: 'Are you sure?' }, method: :delete
+

@@ -39,6 +39,7 @@ class Language < ActiveRecord::Base
   has_many :funding_infos
   has_many :researches
   has_many :services
+  has_many :regions
 
   validates :name, :english_name, :slug, presence: true
 

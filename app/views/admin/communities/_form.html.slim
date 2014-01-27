@@ -1,6 +1,7 @@
 = simple_form_for  [:admin, @community.language, @community] do |f|
   h4 Language
   = @community.language.name
+  = f.association :region
   = f.input :name
   = f.input :link
   = f.input :text

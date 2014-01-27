@@ -56,6 +56,7 @@ OuiShare::Application.routes.draw do
       resources :researches
       resources :workus_pages
       resources :services
+      resources :regions
     end
 
     resources :users
@@ -95,6 +96,7 @@ OuiShare::Application.routes.draw do
     get 'researches' => 'researches#index'
     get 'workus_pages' => 'home#workus_pages'
     get 'services' => 'services#index'
+    get 'regions' => 'regions#index'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

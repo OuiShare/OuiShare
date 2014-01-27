@@ -13,21 +13,43 @@ div#page-communities
 
   section#communities-list
     div.row
-      div.large-6.columns
-        h3.subtitle All Local communities
-    - @communities.each do |c|
-      div.row.community
-        div.large-6.columns
-          p.title = c.name
-          p = c.text
+      - @current_language.regions.each do |r|
+        div.large-12.columns
+          h3.subtitle = r.title
+        - r.communities.each do |c|
+          div.row.community
+            div.large-6.columns
+              p.title = c.name
+              p = c.text
 
-        div.large-2.columns
-          = link_to c.link do
-            button.btn.white join
+            div.large-2.columns
+              = link_to c.link do
+                button.btn.white join
 
-        div.large-4.columns
-          div.avatars
-            - c.users.each do |u|
-              span.block
-                = link_to u do
-                  = image_tag u.avatar_url
+            div.large-4.columns
+              div.avatars
+                - c.users.each do |u|
+                  span.block
+                    = link_to u do
+                      = image_tag u.avatar_url
+      - if @current_language.communities.without_region.size > 0
+        div.large-12.columns
+          h3.subtitle = t('communities.other_communities')
+        - @current_language.communities.without_region.each do |c|
+          div.row.community
+            div.large-6.columns
+              p.title = c.name
+              p = c.text
+
+            div.large-2.columns
+              = link_to c.link do
+                button.btn.white join
+
+            div.large-4.columns
+              div.avatars
+                - c.users.each do |u|
+                  span.block
+                    = link_to u do
+                      = image_tag u.avatar_url
+
+

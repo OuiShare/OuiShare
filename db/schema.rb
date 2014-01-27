@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121122135) do
+ActiveRecord::Schema.define(version: 20140127133540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20140121122135) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "region_id"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree
@@ -510,6 +511,15 @@ ActiveRecord::Schema.define(version: 20140121122135) do
 
   add_index "projects_users", ["project_id"], name: "index_projects_users_on_project_id", using: :btree
   add_index "projects_users", ["user_id"], name: "index_projects_users_on_user_id", using: :btree
+
+  create_table "regions", force: true do |t|
+    t.integer  "language_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "regions", ["language_id"], name: "index_regions_on_language_id", using: :btree
 
   create_table "research_pages", force: true do |t|
     t.text     "main_text"

@@ -10,6 +10,7 @@ div.row
           th Name
           th Text
           th Link
+          th Region
           th
           th
         - l.communities.each do |c|
@@ -17,6 +18,7 @@ div.row
             td = c.name
             td = truncate(c.text)
             td = c.link
+            td = c.region.title if c.region.present?
             td = link_to "Edit", edit_admin_language_community_path(l, c)
             td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete
 
