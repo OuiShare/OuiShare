@@ -11,7 +11,7 @@ div#page-communities
         div.map
           = image_tag @community_page.image.top_internal
 
-  section#communities-list
+  section#communities-list.section
     div.row
       - @current_language.regions.each do |r|
         h3.subtitle = r.title
