@@ -1,13 +1,14 @@
 $(document).foundation('orbit', {
     animation: 'slide',
-    timer_speed: 10000,
+    timer_speed: 8000,
     pause_on_hover: true,
-    resume_on_mouseout: false,
+    resume_on_mouseout: true,
     animation_speed: 500,
     slide_number: false,
     next_class: 'orbit-next',
     prev_class: 'orbit-prev',
-    timer: false
+    circular: true,
+    timer: true
 });
 $(document).foundation();
 
