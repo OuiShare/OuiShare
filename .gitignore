@@ -16,3 +16,5 @@ capybara-*.html
 **.orig
 *~
 .*
+
+latest.dump
