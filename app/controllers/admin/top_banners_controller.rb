@@ -19,7 +19,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(top_banner: [:title1, :text1, :title2, :text2, :image1, :image2, :link1, :link2])
+      params.permit(top_banner: [:title1, :text1, :title2, :text2, :main_image, :image1, :image2, :link1, :link2])
     end
 
     def resource
