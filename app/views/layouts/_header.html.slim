@@ -37,7 +37,7 @@ div.contain-to-grid.fixed
         li.has-dropdown
           = link_to t('menu.events'), events_path
           ul.dropdown
-            - @current_language.events.visible.order('date_start desc').each do |e|
+            - @current_language.events.visible.next.order('date_start desc').each do |e|
               li
                 = link_to e.name, event_path(e)
             li
