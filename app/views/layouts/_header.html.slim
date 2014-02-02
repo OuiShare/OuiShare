@@ -1,6 +1,9 @@
 div.contain-to-grid.fixed
   nav.top-bar
     ul.title-area
+      li.toggle-topbar.menu-icon
+        a href="#"
+          span Menu
       li.name
         h1
           a href="#{root_path}"
@@ -78,13 +81,18 @@ div.contain-to-grid.fixed
             li
               a href="http://ouishare.net/de" = t('menu.german')
 
-        li.donate
-          = link_to t('menu.donate'), donations_path, class: 'button'
-        li.get-involved
-          = link_to t('menu.get_involved'), getinvolved_path, class: 'button'
+        li.donate.show-for-medium-down
+          a href="#{donations_path}" donate
+        li.get-involved.show-for-medium-down
+          a href="#{getinvolved_path}" get involved!
+
+        li.donate.hide-for-medium-down
+          a href="#{donations_path}" class="button" donate
+        li.get-involved.hide-for-medium-down
+          a href="#{getinvolved_path}" class="button" get involved!
 
         - if user_signed_in?
-          li.has-dropdown
+          li.has-dropdown.hide-for-medium-down
             a href="#"
               = image_tag(current_user.avatar_url(50), :class => "current-user")
             ul.dropdown

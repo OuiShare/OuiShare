@@ -4,7 +4,6 @@ $topbar-dropdown-toggle-alpha: 0.1
 
 body
   font-family: "Gandhi Sans"
-  padding-top: 45px
 
   h1,h2,h3,h4,h5
     font-family: "Gandhi Sans", sans-serif
@@ -74,7 +73,6 @@ body
         content: ""
 
 .top-bar-section
-
   ul
     background-color: #06040f
     li
@@ -89,14 +87,28 @@ body
 
   .left
     .donate
+      @media only screen and (max-width: 769px)
+        margin: 0
+        a
+          background: #155d60
+          &:hover
+            background: darken( #155d60, 5%)
+
       margin-right: 10px
       margin-left: 10px
+
       .button
         background: #155d60
 
     .get-involved
       .button
         background: #124e51
+
+      @media only screen and (max-width: 769px)
+        a
+          background: #124e51
+          &:hover
+            background: darken( #155d60, 5% )
 
     .button
       border: none

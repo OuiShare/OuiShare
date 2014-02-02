@@ -8,6 +8,7 @@ $(document).foundation('orbit', {
     next_class: 'orbit-next',
     prev_class: 'orbit-prev',
     circular: true,
+    variable_height: true,
     timer: true
 });
 $(document).foundation();
