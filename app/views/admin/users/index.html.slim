@@ -7,7 +7,7 @@ div.row
         th Type
         th Admin?
         th
-      - User.all.each do |u|
+      - User.all.order('name asc').each do |u|
         tr
           td = u.name
           td = u.profile_type

@@ -1,4 +1,14 @@
 = simple_form_for [:admin, @user] do |f|
+  = f.input :name
+  = f.input :title
+  = f.input :bio
+  = f.input :image, as: :image_preview, input_html: {preview_version: :small}
+  = f.input :facebook_url
+  = f.input :twitter_url
+  = f.input :google_plus_url
+  = f.input :github_url
+  = f.input :linkedin_url
+  = f.input :tag_list
   = f.input :profile_type
   = f.input :admin
   = f.submit
