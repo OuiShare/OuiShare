@@ -48,7 +48,6 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
-gem 'flutie'
 gem 'auto_html'
 
 gem 'paypal-express'
