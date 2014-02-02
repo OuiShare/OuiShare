@@ -7,81 +7,81 @@ div.contain-to-grid.fixed
     section.top-bar-section
       ul.left
         li.has-dropdown
-          a href="#{about_mission_path}" about
+          = link_to t('menu.about'), about_mission_path
           ul.dropdown
             li
-              a href="#{about_history_path}" Our story
+              = link_to t('menu.story'), about_history_path
             li
-                a href="#{about_value_path}" Our values
+              = link_to t('menu.values'), about_value_path
             li
-              a href="#{about_mission_path}" The Collaborative Economy
+              = link_to t('menu.collaborative_economy'), '#'
             li.org
-              a href="#{about_organization_path}" Organization
+              = link_to t('menu.organization'), about_organization_path
             li
-              a href="#{about_team_path}" team
+              = link_to t('menu.team'), about_team_path
             li
-              a href="#{about_advisory_path}" Advisors
+              = link_to t('menu.advisors'), about_advisory_path
 
         li.has-dropdown
-          a href="#{communities_path}" community
+          = link_to t('menu.community'), communities_path
           ul.dropdown
             li
-              a href="#{communities_path}" local communities
+              = link_to t('menu.local_communities'), communities_path
             li
-              a href="#{expert_groups_path}" knowledge groups
+              = link_to t('menu.knowledge_groups'), expert_groups_path
             li
-              a href="#{about_team_path}" Connectors
+              = link_to t('menu.connectors'), about_team_path
             li
-              a href="#{communities_live_path}" OuiShare Everywhere
+              = link_to t('menu.ouishare_everywhere'), communities_live_path
 
         li.has-dropdown
-          a href="#{events_path}" events
+          = link_to t('menu.events'), events_path
           ul.dropdown
             - @current_language.events.visible.order('date_start desc').each do |e|
               li
                 = link_to e.name, event_path(e)
             li
-              = link_to 'more events', events_path
+              = link_to t('menu.more_events'), events_path
 
         li.has-dropdown
-          a href="#{projects_path}" projects
+          = link_to t('menu.projects'), projects_path
           ul.dropdown
             - @current_language.projects.visible.each do |p|
               li
                 = link_to p.name, project_path(p)
             li
-              a href="#{projects_path}" all projects
+              = link_to t('menu.more_projects'), projects_path
 
         li.has-dropdown
-          a href="#{knowledge_path}" knowledge
+          = link_to t('menu.knowledge'), knowledge_path
           ul.dropdown
             li
-              a href="#{expert_groups_path}" Topical Groups
+              = link_to t('menu.topical_groups'), expert_groups_path
             li
-              a href="#{knowledge_research_path}" Research & Publications
+              = link_to t('menu.research_and_publications'), knowledge_research_path
             li
-              a href="#{knowledge_groups_path}" Co-Creation Events
+              = link_to t('menu.cocreation_events'), knowledge_groups_path
             li
-              a href="http://ouiki.ouishare.net/" target="blank" Wiki
+              = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
             li
-              a href="http://ouishare.net/#{@current_language.slug == 'en' ? '' : @current_language.slug}" target="blank" Magazine
+              a href="http://ouishare.net/#{@current_language.slug == 'en' ? '' : @current_language.slug}" target="blank" = t('menu.magazine')
 
         li.has-dropdown
-          a href="http://ouishare.net" magazine
+          a href="http://ouishare.net" = t('menu.magazine')
           ul.dropdown
             li
-              a href="http://ouishare.net" english
+              a href="http://ouishare.net" = t('menu.english')
             li
-              a href="http://ouishare.net/fr" french
+              a href="http://ouishare.net/fr" = t('menu.french')
             li
-              a href="http://ouishare.net/es" spanish
+              a href="http://ouishare.net/es" = t('menu.spanish')
             li
-              a href="http://ouishare.net/de" german
+              a href="http://ouishare.net/de" = t('menu.german')
 
         li.donate
-          a href="#{donations_path}" class="button" donate
+          = link_to t('menu.donate'), donations_path, class: 'button'
         li.get-involved
-          a href="#{getinvolved_path}" class="button" get involved!
+          = link_to t('menu.get_involved'), getinvolved_path, class: 'button'
 
         - if user_signed_in?
           li.has-dropdown
