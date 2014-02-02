@@ -65,5 +65,9 @@ en:
     contact_a_partner: 'Contact one of the connector teams or fill up this form.'
   donations:
     thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
+  projects:
+    join_us: 'Join us!'
+    info: 'More information'
+    organizers: 'Organizers'
 
 
