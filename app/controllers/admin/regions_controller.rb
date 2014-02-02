@@ -15,7 +15,7 @@ module Admin
     end
 
     def destroy
-      destroy! { admin_regionss_path }
+      destroy! { admin_regions_path }
     end
 
     def show
