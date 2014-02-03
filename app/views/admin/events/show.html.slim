@@ -33,15 +33,15 @@ div#event
       div.large-8.columns
         ul.inline-list.buttons
           li
-            = link_to @service1_link do
+            = link_to @event.service1_link do
               = image_tag(@event.service1_image)
               = @event.service1_title
           li
-            = link_to @service2_link do
+            = link_to @event.service2_link do
               = image_tag(@event.service2_image)
               = @event.service2_title
           li
-            = link_to @service3_link do
+            = link_to @event.service3_link do
               = image_tag(@event.service3_image)
               = @event.service3_title
 
