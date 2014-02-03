@@ -8,7 +8,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(user: [:profile_type, :admin])
+      params.permit(user: [:name, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :tag_list, :profile_type, :admin])
     end
   end
 end
