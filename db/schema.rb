@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202211001) do
+ActiveRecord::Schema.define(version: 20140203122915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140202211001) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "region_id"
+    t.integer  "row_order"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree

@@ -1,24 +1,25 @@
 div.row
   div.large-12.columns
     h2.subheader Communities
-  - Language.all.each do |l|
-    div.large-12.columns
-      h3.subheader = "#{l.name} communities"
-      = link_to 'Create', new_admin_language_community_path(l.id)
-      table
-        tr
-          th Name
-          th Text
-          th Link
-          th Region
-          th
-          th
-        - l.communities.each do |c|
-          tr
-            td = c.name
-            td = truncate(c.text)
-            td = c.link
-            td = c.region.title if c.region.present?
-            td = link_to "Edit", edit_admin_language_community_path(l, c)
-            td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete
+    .communities
+      - Language.all.each do |l|
+        div.large-12.columns
+          h3.subheader = "#{l.name} communities"
+          = link_to 'Create', new_admin_language_community_path(l.id)
+          table
+            tr
+              th Name
+              th Text
+              th Link
+              th Region
+              th
+              th
+            - l.communities.rank(:row_order).each do |c|
+              tr.sortable[data-update-path=sort_admin_language_community_path(l, c)]
+                td = c.name
+                td = truncate(c.text)
+                td = c.link
+                td = c.region.title if c.region.present?
+                td = link_to "Edit", edit_admin_language_community_path(l, c)
+                td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete
 

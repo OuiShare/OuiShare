@@ -38,7 +38,11 @@ OuiShare::Application.routes.draw do
       resources :value_pages
       resources :team_pages
       resources :advisors_pages
-      resources :communities
+      resources :communities do
+        member do
+          post :sort
+        end
+      end
       resources :cocreation_pages
       resources :cocreations
       resources :contact_pages

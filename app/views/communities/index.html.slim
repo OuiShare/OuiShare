@@ -16,7 +16,7 @@ div#page-communities
       - @current_language.regions.rank(:row_order).each do |r|
         - if r.communities.size > 0
           h3.subtitle = r.title
-        - r.communities.each do |c|
+        - r.communities.rank(:row_order).each do |c|
           div.row.community
             div.large-6.columns
               p.title = c.name
@@ -34,7 +34,7 @@ div#page-communities
                       = image_tag u.avatar_url
       - if @current_language.communities.without_region.size > 0
         h3.subtitle = t('communities.other_communities')
-        - @current_language.communities.without_region.each do |c|
+        - @current_language.communities.without_region.rank(:row_order).each do |c|
           div.row.community
             div.large-6.columns
               p.title = c.name

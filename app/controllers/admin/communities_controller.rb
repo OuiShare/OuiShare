@@ -23,9 +23,15 @@ module Admin
       render 'admin/communities/show'
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:community][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(community: [:name, :link, :text, :language_id, :region_id, :user_ids => []])
+      params.permit(community: [:name, :link, :text, :language_id, :region_id, :row_order_position, :user_ids => []])
     end
 
   end
