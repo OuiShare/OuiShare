@@ -13,8 +13,9 @@ div#page-communities
 
   section#communities-list.section
     div.row
-      - @current_language.regions.each do |r|
-        h3.subtitle = r.title
+      - @current_language.regions.rank(:row_order).each do |r|
+        - if r.communities.size > 0
+          h3.subtitle = r.title
         - r.communities.each do |c|
           div.row.community
             div.large-6.columns

@@ -23,9 +23,15 @@ module Admin
       render 'admin/regions/show'
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:region][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(region: [:title])
+      params.permit(region: [:title, :row_order_position])
     end
 
   end

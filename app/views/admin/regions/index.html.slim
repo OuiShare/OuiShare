@@ -3,16 +3,17 @@ div.row
     h2.subheader Regions
   - Language.all.each do |l|
     div.large-12.columns
-      h3.subheader = "#{l.name} regionss"
-      = link_to 'Create', new_admin_language_region_path(l.id)
-      table
-        tr
-          th Title
-          th
-          th
-        - l.regions.each do |r|
+      .regions
+        h3.subheader = "#{l.name} regions"
+        = link_to 'Create', new_admin_language_region_path(l.id)
+        table
           tr
-            td = r.title
-            td = link_to "Edit", edit_admin_language_region_path(l, r)
-            td = link_to "Remove", [:admin, l, r], data: { confirm: 'Are you sure?' }, method: :delete
+            th Title
+            th
+            th
+          - l.regions.rank(:row_order).each do |r|
+            tr.sortable[data-update-path=sort_admin_language_region_path(l, r)]
+              td = r.title
+              td = link_to "Edit", edit_admin_language_region_path(l, r)
+              td = link_to "Remove", [:admin, l, r], data: { confirm: 'Are you sure?' }, method: :delete
 
