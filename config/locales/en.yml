@@ -34,6 +34,7 @@ en:
       funded: 'How we are funded'
     communities:
       index: "Communities"
+      expert_groups: 'Knowledge Groups'
     contact:
       index: 'Contact'
     get_involved:
@@ -87,7 +88,6 @@ en:
     projects: 'Projects'
     more_projects: 'All projects'
     knowledge: 'Knowledge'
-    topical_groups: 'Topical Groups'
     research_and_publications: "Research & Publications"
     cocreation_events: 'Co-Creations Events'
     wiki: 'Wiki'
