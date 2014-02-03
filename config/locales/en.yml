@@ -47,6 +47,7 @@ en:
       show: 'Profile'
     knowledge:
       research: 'Research and Publications'
+      cocreation: 'Co-Creation Events'
     workus:
       index: 'Work with us'
     donations:
@@ -89,7 +90,7 @@ en:
     more_projects: 'All projects'
     knowledge: 'Knowledge'
     research_and_publications: "Research & Publications"
-    cocreation_events: 'Co-Creations Events'
+    cocreation_events: 'Co-Creation Events'
     wiki: 'Wiki'
     magazine: 'Magazine'
     english: 'English'
