@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203133855) do
+ActiveRecord::Schema.define(version: 20140203141145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -395,6 +395,24 @@ ActiveRecord::Schema.define(version: 20140203133855) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "knowledge_pages", force: true do |t|
+    t.integer  "language_id"
+    t.text     "main_text"
+    t.string   "image"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "title2"
+    t.text     "text2"
+    t.string   "title3"
+    t.text     "text3"
+    t.string   "title4"
+    t.text     "text4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "knowledge_pages", ["language_id"], name: "index_knowledge_pages_on_language_id", using: :btree
 
   create_table "languages", force: true do |t|
     t.string   "name"

@@ -1,0 +1,27 @@
+div#page-organization
+  section.about
+    div.row
+      div.large-12.columns
+        = @knowledge_page.main_text
+      div.large-12.columns
+        = image_tag(@knowledge_page.image.top_internal)
+
+  section.more-content
+    div.row
+      ul.large-block-grid-2
+        li
+          h4 = @knowledge_page.title1
+          p = @knowledge_page.text1
+
+        li
+          h4 = @knowledge_page.title2
+          p = @knowledge_page.text2
+
+        li
+          h4 = @knowledge_page.title3
+          p = @knowledge_page.text3
+
+        li
+          h4 = @knowledge_page.title4
+          p = @knowledge_page.text4
+

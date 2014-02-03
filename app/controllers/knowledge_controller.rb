@@ -1,6 +1,7 @@
 class KnowledgeController < ApplicationController
   include AutoHtml
   def index
+    @knowledge_page = @current_language.knowledge_page || KnowledgePage.new
   end
 
   def research
