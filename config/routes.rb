@@ -65,6 +65,7 @@ OuiShare::Application.routes.draw do
           post :sort
         end
       end
+      resources :collaborative_economy_pages
     end
 
     resources :users
@@ -105,6 +106,7 @@ OuiShare::Application.routes.draw do
     get 'workus_pages' => 'home#workus_pages'
     get 'services' => 'services#index'
     get 'regions' => 'regions#index'
+    get 'collaborative_economy_pages' => 'home#collaborative_economy_pages'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
@@ -134,6 +136,7 @@ OuiShare::Application.routes.draw do
   get 'about/team' => 'about#team', as: 'about_team'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
+  get 'about/collaborative_economy' => 'about#collaborative_economy', as: 'about_collaborative_economy'
 
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'

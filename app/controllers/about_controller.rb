@@ -22,6 +22,10 @@ class AboutController < ApplicationController
     @organization_page = @current_language.organization_page || OrganizationPage.new
   end
 
+  def collaborative_economy
+    @collaborative_economy_page = @current_language.collaborative_economy_page || CollaborativeEconomyPage.new
+  end
+
   def team
     @users = User.connectors.order('created_at')
     @team_page = @current_language.team_page || TeamPage.new
