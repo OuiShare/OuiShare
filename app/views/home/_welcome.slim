@@ -20,26 +20,21 @@ section#welcome
   div.separator.white
 
   div.row
-    div.large-5.columns
-      h1
-        | OuiShare
-        small
-          | Connecting the colaborative economy
-    div.large-6.columns
+    div.large-10.large-centered.columns.center
       h2 = @top_banner.title1
       div.textBlock
         span.space = @top_banner.text1
-      h2 = @top_banner.title2
-      div.textBlock
-        span.space = @top_banner.text2
-      div.subscribe.large-12.columns
-        = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
-          div.row.collapse
-            div.large-5.columns
-              .email-field
-                input type="email" id="email" name="email" placeholder="Your email here" required=""
-                small.error An email address is required.
-            div.large-7.columns
-              = submit_tag('Subscribe to our newsletter', class: 'postfix btn white')
+      div.large-10.large-centered.columns.center
+        div.subscribe
+          span.space = @top_banner.text2
+          div.large-6.large-centered.columns.center
+            = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+              div.row.collapse
+                div.small-11.columns
+                  .email-field
+                    input type="email" id="email" name="email" placeholder="Your email here" required=""
+                    small.error An email address is required.
+                div.small-1.columns
+                  = submit_tag('Go', class: 'postfix btn white')
 
-            /*a.postfix href="#{newsletter_path}" Go !*/
+                /*a.postfix href="#{newsletter_path}" Go !*/

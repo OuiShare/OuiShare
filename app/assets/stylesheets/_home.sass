@@ -92,45 +92,49 @@
           color: white
 
       h2
-        @extend .blackBlock
         display: inline-block
         text-transform: uppercase
         margin-bottom: 7px
+        font-size: 70pt
+        color: white
 
       .textBlock
         padding: 0
 
         .space
-          @extend .blackBlock
           line-height: 2em
           padding: 3px 10px
-          font-size: 14px
+          font-size: 17pt
           white-space: pre-line
           display: inline
-
+          color: white
+          text-transform: uppercase
+          font-weight: normal
 
       .subscribe
-        @extend .blackBlock
-        margin-top: 40px
+        background: #e8525d
+        margin: 40px 0
         padding: 10px
+        color: white
+        text-align: center
+        .space
+          margin: 10px 0
+          display: block
 
         form
           margin: 0
 
         input
-          border: 1px solid white
-          background: rgba(0,0,0,0.8)
-          color: white
-          margin: 0
+          background: white
+          color: black
           height: 46px
 
         .btn
           font-family: "Gandhi Sans", sans-serif
           font-style: italic
           text-transform: uppercase
-          background: white
-          color: $blue
-          border: 1px solid white
+          background: #9ad446
+          color: white
           font-size: 14px
           font-weight: bold
 
