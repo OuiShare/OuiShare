@@ -4,7 +4,8 @@ div#page-organization
       div.large-12.columns
         = @organization_page.main_text
       div.large-12.columns
-        = image_tag(@organization_page.image.top_internal)
+        div.banner
+          = image_tag(@organization_page.image.top_internal)
 
   section.more-content
     div.row
@@ -24,4 +25,3 @@ div#page-organization
         li
           h4 = @organization_page.title4
           p = @organization_page.text4
-
