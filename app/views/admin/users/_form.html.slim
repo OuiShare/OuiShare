@@ -1,5 +1,6 @@
 = simple_form_for [:admin, @user] do |f|
   = f.input :name
+  = f.input :email_address
   = f.input :title
   = f.input :bio
   = f.input :image, as: :image_preview, input_html: {preview_version: :small}
