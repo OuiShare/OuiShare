@@ -55,6 +55,8 @@ en:
     donations:
       index: 'Donate!'
       thank_you: 'Thank you for supporting OuiShare!'
+    press:
+      index: 'Press Room'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
