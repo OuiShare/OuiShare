@@ -23,6 +23,7 @@ gem 'acts-as-taggable-on'
 gem 'enumerize'
 gem 'friendly_id'
 gem 'ranked-model'
+gem 'figaro'
 
 # I18n
 gem 'rails-i18n'
