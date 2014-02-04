@@ -1,0 +1,60 @@
+- content_for :page_title, @event.name
+div#event
+  div.row.section
+    div.large-5.columns
+      h2 = @event.cta
+      p = @event.resume
+      - @event.tags.each do |t|
+        span.label.blue = t.name
+    div.large-7.columns
+      img.banner src="#{@event.image.event_page_thumb.url}"
+  div.info
+    div.row.section
+      div.large-4.columns
+        h3.subtitle Organizers
+        ul.large-block-grid-4
+          - @event.users.each do |u|
+            li.avatar
+              = link_to u do
+                = image_tag(u.avatar_url(50))
+
+      div.large-8.columns
+        h3.subtitle.white About this event
+        p = @event.info
+
+    .separator.white
+
+    div.row.section
+      div.large-4.columns
+        h3.subtitle.white Join us!
+
+        p = @event.join_us_text
+
+      div.large-8.columns
+        ul.inline-list.buttons
+          li
+            = link_to @event.service1_link do
+              = image_tag(@event.service1_image)
+              = @event.service1_title
+          li
+            = link_to @event.service2_link do
+              = image_tag(@event.service2_image)
+              = @event.service2_title
+          li
+            = link_to @event.service3_link do
+              = image_tag(@event.service3_image)
+              = @event.service3_title
+
+      div.large-4.columns
+        div.block
+      div.large-4.columns
+        div.block
+
+    div.row
+      div.large-6.columns
+        H4 = @event.title1
+        p = @event.text1
+
+      div.large-6.columns
+        H4 = @event.title2
+        p = @event.text2

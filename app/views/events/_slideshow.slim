@@ -1,4 +1,9 @@
-section#slideshow
+section#slideshow.section
   div.row
     div.large-12.columns
-      div.slideshow
+      ul#slide-events data-orbit=""
+        - @current_language.events.visible.next[0..1].each do |e|
+          li
+            div.slideshow
+              = link_to e do
+                = image_tag e.image.top_image.url

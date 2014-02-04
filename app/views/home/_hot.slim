@@ -1,25 +1,21 @@
 section#hot
   div.row
     div.large-4.columns
-      h3 = @hot_projects_section.title
+      h3.subtitle.white = @hot_projects_section.title
       p = @hot_projects_section.text
-      button.button = @hot_projects_section.link_text
+      a.btn.white = @hot_projects_section.link_text
 
     div.large-8.columns
       ul.projects.large-block-grid-2
-        li
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          img.project src="http://placehold.it/300x180"
-          ul.large-block-grid-4
-            - 4.times do
-              li
-                img.people src="http://flickholdr.com/70/70/avatar"
-        li
-          p Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          img.project src="http://placehold.it/300x180"
-          ul.large-block-grid-4
-            - 4.times do
-              li
-                img.people src="http://flickholdr.com/70/70/avatar"
-
-          a.more href="#" See all projects...
+        - @current_language.projects.visible.featured.each do |p|
+          li
+            = link_to project_path(p) do
+              p.title = p.name
+            = link_to project_path(p) do
+              img.project src="#{p.image.project_thumb}"
+            .seta
+            ul.large-block-grid-4
+              - p.users[0..4].each do |u|
+                li
+                  = link_to u do
+                    = image_tag u.avatar_url(50)

@@ -1,0 +1,21 @@
+- content_for :page_title, 'Team'
+div#page-team
+  section.theTeam
+    div.row
+      div.large-4.columns
+        h3
+          = @team_page.title
+        p = @team_page.text
+
+        a.btn.blue href="#{contact_path}" = @team_page.link_text
+
+      div.large-8.columns
+        ul.large-block-grid-2
+          - @users.order('name').each do |a|
+            li
+              = link_to a do
+                div.avatar
+                  = image_tag(a.avatar_url(140))
+                div.desc
+                  p.name = a.name
+                  p.position = a.title

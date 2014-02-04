@@ -1,0 +1,9 @@
+= simple_form_for  [:admin, @research.language, @research] do |f|
+  h4 Language
+  = @research.language.name
+  = f.input :title
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :text
+  = f.input :link
+  = f.input :tag_list
+  = f.submit

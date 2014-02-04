@@ -19,6 +19,10 @@ gem 'simple_form_fancy_uploads'
 gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'simple_form', '~> 3.0.0'
+gem 'acts-as-taggable-on'
+gem 'enumerize'
+gem 'friendly_id'
+gem 'ranked-model'
 
 # I18n
 gem 'rails-i18n'
@@ -44,13 +48,16 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
+gem 'auto_html'
+
+gem 'paypal-express'
 
 # Assets
 gem 'sass-rails', '4.0.1'
-gem "compass-rails", "~> 2.0.alpha.0"
+gem "compass-rails", "~> 1.1.2"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
-gem 'turbolinks'
+#gem 'turbolinks'
 #gem 'bootstrap-sass'
 gem 'zurb-foundation'
 #gem 'angular-rails'
@@ -71,6 +78,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry'
   gem 'awesome_print'
+  gem "letter_opener"
 end
 
 group :development do
@@ -82,4 +90,5 @@ end
 # Heroku
 group :production do
   gem 'rails_on_heroku'
+  gem 'rails_12factor'
 end

@@ -1,0 +1,6 @@
+= simple_form_for  [:admin, @faq_question.language, @faq_question] do |f|
+  h4 Language
+  = @faq_question.language.name
+  = f.input :question
+  = f.input :answer
+  = f.submit

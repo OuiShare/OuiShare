@@ -2,39 +2,24 @@ div#page-press
   section.about
     div.row
       div.large-12.columns
-        h3 Press room
-    div.row
-      div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-      div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
+        p = @press_room_page.main_text
 
   section#banner
     div.row
       div.large-12.columns
         div.banner
+          = image_tag(@press_room_page.image.top_internal)
 
   section.values
-    div.row
+    div.row.section
       div.large-6.columns
-        h4 Press review
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-
+        div.row
+          div.large-12.columns
+            h4 = @press_room_page.title1
+            p = @press_room_page.text1
+          div.large-12.columns
+            h4 = @press_room_page.title3
+            p = @press_room_page.text3
       div.large-6.columns
-        h4 Press release
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-
-  section.activities
-    div.row
-      div.large-6.columns
-        h4 Activity #1
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-
-
+        h4 = @press_room_page.title2
+        p = @press_room_page.text2

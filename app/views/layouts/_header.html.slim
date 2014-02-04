@@ -1,85 +1,102 @@
 div.contain-to-grid.fixed
   nav.top-bar
     ul.title-area
+      li.toggle-topbar.menu-icon
+        a href="#"
+          span Menu
       li.name
         h1
-          a href="#{root_path}" OS
+          a href="#{root_path}"
     section.top-bar-section
-      ul.right
+      ul.left
         li.has-dropdown
-          a href="#{about_path}" about OuiShare
+          = link_to t('menu.about'), about_mission_path
           ul.dropdown
             li
-              a href="#{about_mission_path}" Our mission & activities
+              = link_to t('menu.story'), about_history_path
             li
-             a href="#{about_vision_path}" Our vision
+              = link_to t('menu.values'), about_value_path
             li
-              a href="#{about_history_path}" Our story
+              = link_to t('menu.collaborative_economy'), about_collaborative_economy_path
+            li.org
+              = link_to t('menu.organization'), about_organization_path
             li
-              a href="#{about_organization_path}" Organization
+              = link_to t('menu.team'), about_team_path
             li
-              a href="#{about_team_path}" OS team
-            li
-              a href="#{about_advisory_path}" OS advisory board
-        li.has-dropdown
-          a href="#{events_path}" events
-          ul.dropdown
-            li
-              a href="" OuiShare fest
-            li
-              a href="" all events
-        li.has-dropdown
-          a href="#{communities_path}" community
-          ul.dropdown
-            li
-              a href="#{communities_mission_path}" local
-            li
-              a href="#{communities_communities_path}" communities
-            li
-              a href="#{communities_ouishare_path}" OuiShare
-            li
-              a href="#{communities_live_path}" live
-            li
-              a href="#{communities_people_path}" people
+              = link_to t('menu.advisors'), about_advisory_path
 
         li.has-dropdown
-          a href="#{projects_path}" projects
+          = link_to t('menu.community'), communities_path
           ul.dropdown
             li
-              a href="#" OS fest
+              = link_to t('menu.local_communities'), communities_path
             li
-              a href="#{team_path}" team
+              = link_to t('menu.knowledge_groups'), expert_groups_path
             li
-              a href="#" OS labs
+              = link_to t('menu.connectors'), about_team_path
             li
-              a href="#" OS jobs
-            li
-              a href="#" OS school
-            li
-              a href="#{projects_path}" all projects
+              = link_to t('menu.ouishare_everywhere'), communities_live_path
+
         li.has-dropdown
-          a href="http://ouishare.net" magazine
+          = link_to t('menu.events'), events_path
           ul.dropdown
+            - @current_language.events.visible.next.order('date_start desc').each do |e|
+              li
+                = link_to e.name, event_path(e)
             li
-              a href="http://ouishare.net" english
-            li
-              a href="http://ouishare.net/fr" french
-            li
-              a href="http://ouishare.net/es" spanish
-            li
-              a href="http://ouishare.net/de" german
+              = link_to t('menu.more_events'), events_path
+
         li.has-dropdown
-          a href="#{knowledge_path}" knowledge
+          = link_to t('menu.projects'), projects_path
+          ul.dropdown
+            - @current_language.projects.visible.each do |p|
+              li
+                = link_to p.name, project_path(p)
+            li
+              = link_to t('menu.more_projects'), projects_path
+
+        li.has-dropdown
+          = link_to t('menu.knowledge'), knowledge_path
           ul.dropdown
             li
-              a href="#{knowledge_research_path}" research & publications
+              = link_to t('menu.knowledge_groups'), expert_groups_path
             li
-              a href="#{knowledge_expert_path}" expert
+              = link_to t('menu.research_and_publications'), knowledge_research_path
             li
-              a href="#{knowledge_groups_path}" groups
+              = link_to t('menu.cocreation_events'), knowledge_cocreation_path
             li
-              a href="#{knowledge_ouiki_path}" Ouiki
-        li.donate
-          a href="#" class="button" Donate
-        li
-          a href="#" class="button" Get involved !
+              = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
+            li
+              a href="http://ouishare.net/#{@current_language.slug == 'en' ? '' : @current_language.slug}" target="blank" = t('menu.magazine')
+
+        li.has-dropdown
+          a href="http://ouishare.net" = t('menu.magazine')
+          ul.dropdown
+            li
+              a href="http://ouishare.net" = t('menu.english')
+            li
+              a href="http://ouishare.net/fr" = t('menu.french')
+            li
+              a href="http://ouishare.net/es" = t('menu.spanish')
+            li
+              a href="http://ouishare.net/de" = t('menu.german')
+
+        li.donate.show-for-medium-down
+          a href="#{donations_path}" donate
+        li.get-involved.show-for-medium-down
+          a href="#{getinvolved_path}" get involved!
+
+        li.donate.hide-for-medium-down
+          a href="#{donations_path}" class="button" donate
+        li.get-involved.hide-for-medium-down
+          a href="#{getinvolved_path}" class="button" get involved!
+
+        - if user_signed_in?
+          li.has-dropdown.hide-for-medium-down
+            a href="#"
+              = image_tag(current_user.avatar_url(50), :class => "current-user")
+            ul.dropdown
+              li
+                = link_to t("edit_profile"), edit_user_registration_path
+              li
+                = link_to t('admin.logout'), destroy_user_session_path, method: :delete

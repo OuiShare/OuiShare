@@ -1,41 +1,40 @@
 section#welcome
+  = image_tag(@top_banner.main_image.top_banner.url)
   div.row
-    div.large-4.large-offset-8.columns.social
-      a.facebook href="#"
+    div.large-4.large-offset-8.columns.social.white
+      a.facebook href="https://www.facebook.com/OuiShare"
         i.fa.fa-facebook
-      a.twitter href="#"
+      a.twitter href="https://www.twitter.com/OuiShare"
         i.fa.fa-twitter
-      a.play href="#"
+      a.play href="http://youtube.com/ouisharetv"
         i.fa.fa-play
 
-      select.small-2#l18n
-        option value="#{request.protocol}#{request.host_with_port}/en" en
-        option value="#{request.protocol}#{request.host_with_port}/fr" fr
-        option value="#{request.protocol}#{request.host_with_port}/es" es
-  div.separator
-  div.arrows
-    div.left
-      i.fa.fa-angle-left.fa-4x
-    div.right
-      i.fa.fa-angle-right.fa-4x
-  div.row
-    div.large-5.columns
-      h1
-        | OuiShare
-        small
-          | Connecting the colaborative economy
+      select.small-2.black#l18n
+        - Language.visible.each do |l|
+          - if l.slug == I18n.locale.to_s
+            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+          - else
+            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
 
-      div.
-    div.large-6.columns
+
+  div.separator.white
+
+  div.row
+    div.large-10.large-centered.columns.center
       h2 = @top_banner.title1
       div.textBlock
         span.space = @top_banner.text1
-      h2 = @top_banner.title2
-      div.textBlock
-        span.space = @top_banner.text2
-      div.subscribe.large-12.columns
-        div.row.collapse
-          div.large-10.columns
-            input type="text" placeholder="Your email here to subscribe to the newsletter"
-          div.large-2.columns
-            a.postfix href="#{newsletter_path}" Go !
+      div.large-10.large-centered.columns.center
+        div.subscribe
+          span.space = @top_banner.text2
+          div.large-6.large-centered.columns.center
+            = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+              div.row.collapse
+                div.small-11.columns
+                  .email-field
+                    input type="email" id="email" name="email" placeholder="Your email here" required=""
+                    small.error An email address is required.
+                div.small-1.columns
+                  = submit_tag('Go', class: 'postfix btn white')
+
+                /*a.postfix href="#{newsletter_path}" Go !*/

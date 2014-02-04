@@ -1,0 +1,7 @@
+= simple_form_for  [:admin, @governance.language, @governance] do |f|
+  h4 Language
+  = @governance.language.name
+  = f.input :name
+  = f.input :link
+  = f.input :text
+  = f.submit

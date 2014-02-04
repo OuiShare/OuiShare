@@ -1,0 +1,6 @@
+= simple_form_for  @governance_page, url: admin_language_governance_page_path(@governance_page.language, @governance_page) do |f|
+  h4 Language
+  = @governance_page.language.name
+  = f.input :text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.submit

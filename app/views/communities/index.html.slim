@@ -1,52 +1,52 @@
+- content_for :page_title, 'Communities'
 div#page-communities
   section.explain
     div.row
-      div.large-6.columns
-        h3 Communities
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-          vitae dolor. Nullam tristique diam non turpis. Cras placerat
-          accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
-
-      div.large-6.columns
-        h3 &nbsp;
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-          vitae dolor. Nullam tristique diam non turpis. Cras placerat
-          accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+      div.large-12.columns
+        p = @community_page.main_text
 
   section#map
     div.row
       div.large-12.columns
         div.map
+          = image_tag @community_page.image.top_internal
 
-  section#communities-list
+  section#communities-list.section
     div.row
-      div.large-6.columns
-        h3 All Local communities
-  - 5.times do
-    div.row.community
-      div.large-6.columns
-        h4 Community Title
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit. Donec hendrerit tempor tellus. Donec pretium posuere
-        tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-        nec, purus. Cum sociis natoque penatibus et magnis dis
-        parturient montes, nascetur ridiculus mus. Nulla posuere. Donec
-        vitae dolor. Nullam tristique diam non turpis. Cras placerat
-        accumsan nulla. Nullam rutrum. Nam vestibulum accumsan nisl.
+      - @current_language.regions.rank(:row_order).each do |r|
+        - if r.communities.size > 0
+          h3.subtitle = r.title
+        - r.communities.rank(:row_order).each do |c|
+          div.row.community
+            div.large-6.columns
+              p.title = c.name
+              p = c.text
 
-      div.large-2.columns
-        button.button join
+            div.large-2.columns
+              = link_to c.link do
+                button.btn.white join
 
-      div.large-4.columns
-        ul.large-block-grid-4
-          - 7.times do
-            li
-              div.block
+            div.large-4.columns
+              div.avatars
+                - c.users.each do |u|
+                  span.block
+                    = link_to u do
+                      = image_tag u.avatar_url
+      - if @current_language.communities.without_region.size > 0
+        h3.subtitle = t('communities.other_communities')
+        - @current_language.communities.without_region.rank(:row_order).each do |c|
+          div.row.community
+            div.large-6.columns
+              p.title = c.name
+              p = c.text
+
+            div.large-2.columns
+              = link_to c.link do
+                button.btn.white join
+
+            div.large-4.columns
+              div.avatars
+                - c.users.each do |u|
+                  span.block
+                    = link_to u do
+                      = image_tag u.avatar_url

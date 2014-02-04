@@ -1,17 +1,13 @@
 section#events
   div.row
     div.large-4.columns
-      h3 = @events_section.title
-      p = @events_section.text
+      h3.subtitle.white = @events_section.title
+      p.desc = @events_section.text
     div.large-8.columns
       ul.events.large-block-grid-2
-        li
-          p.title Lorem ipsum dolor sit amet
-          img.event src="http://placehold.it/300x180"
-          p Porto Alegre | 20h30 | 29/11/2013
-        li
-          p.title Lorem ipsum dolor sit amet
-          img.event src="http://placehold.it/300x180"
-          p.meta Porto Alegre | 20h30 | 29/11/2013
-
-        a.more href="#" See all events...
+        - @current_language.events.visible.order('date_start').next[0..1].each do |e|
+          li
+            = link_to event_path(e) do
+              p.title = e.title
+              img.event src="#{e.image.event_thumb}"
+              p.meta = e.cta

@@ -1,0 +1,7 @@
+= simple_form_for  [:admin, @articles_section.language, @articles_section] do |f|
+  h4 Language
+  = @articles_section.language.name
+  = f.input :title
+  = f.input :text
+  = f.input :link_text
+  = f.submit

@@ -1,0 +1,7 @@
+= simple_form_for  [:admin, @cocreation.language, @cocreation] do |f|
+  h4 Language
+  = @cocreation.language.name
+  = f.input :name
+  = f.input :link
+  = f.input :text
+  = f.submit

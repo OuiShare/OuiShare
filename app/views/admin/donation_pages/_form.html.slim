@@ -1,0 +1,13 @@
+= simple_form_for  @donation_page, url: admin_language_donation_page_path(@donation_page.language, @donation_page) do |f|
+  h4 Language
+  = @donation_page.language.name
+  = f.input :main_title
+  = f.input :main_text
+  = f.input :thanks_text
+  = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :title1
+  = f.input :text1
+  = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :title2
+  = f.input :text2
+  = f.submit

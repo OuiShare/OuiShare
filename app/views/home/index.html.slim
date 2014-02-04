@@ -1,5 +1,20 @@
+- content_for :page_title, 'Home'
 div#home
-  = render 'home/welcome'
+  ul#slideshow data-orbit=""
+    li
+      = render 'home/welcome'
+    - if @top_banner.image1?
+      li
+        = link_to @top_banner.link1 do
+          = image_tag(@top_banner.image1.top_banner.url)
+
+    - if @top_banner.image2?
+      li
+        button.call call to action
+        = link_to @top_banner.link2 do
+          = image_tag(@top_banner.image2.top_banner.url)
+
+
   = render 'home/about'
   = render 'home/hot'
   = render 'home/events'

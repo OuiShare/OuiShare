@@ -1,31 +1,334 @@
-#second-header
-  background: #ddd
+$blue: #00939A
+$red: #D02947
+$topbar-dropdown-toggle-alpha: 0.1
 
-  .social, .l18n
-    margin-top: 1.2em
-    ul
-      li
-        float: right
-        margin-left: 0.375em
+body
+  font-family: "Gandhi Sans"
+
+  h1,h2,h3,h4,h5
+    font-family: "Gandhi Sans", sans-serif
+    font-weight: normal
+  h1,h2,h3
+    text-transform: uppercase
+
+.alert-box
+  &.notice
+    +alert( $blue )
+    text-align: center
+    margin-bottom: 0
+    padding: 20px
+
+  &.alert
+    +alert( $red )
+    text-align: center
+    margin-bottom: 0
+    padding: 20px
+
+  .close
+    font-size: 2.375em
+    padding: 10px 4px 4px
+
+.contain-to-grid
+  border-bottom: 1px solid white
+
+.top-bar
+  z-index: 9999
+  background-color: #06040f
+
+
+  .title-area
+    li.name
+      h1
         a
-          width: 30px
-          height: 30px
-          display: block
-          background: #ccc
-          +border-radius(20px)
-span.brk
-  display: block
-  clear: both
+          font-size: .1em
+          text-indent: -9999px
+          overflow: hidden
+          background: image-url('topbar-logo.png') no-repeat 18px 10px
+          width: 100px
+          height: 40px
+          color: black
+  ul
+    &> li.has-dropdown
+      a
+        text-transform: capitalize
+
+        &:after
+          background: image-url('arrow.png') no-repeat 0px 0px transparent
+          width: 13px
+          height: 7px
+          border: none
+
+        &:hover
+          background: $blue
+
+      .dropdown li.has-dropdown > a:after
+        border: medium none
+        margin-top: -7px
+        right: 5px
+        top: 1em
+        background: url("/assets/arrow-right.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0)
+        border: medium none
+        height: 13px
+        width: 7px
+        content: ""
 
 .top-bar-section
-  .right
+  ul
+    background-color: #06040f
+    li
+
+      &>a
+        font-size: 14px
+        font-family: "Gandhi Sans"
+        font-weight: normal
+
+  .dropdown
+    border-top: 2px solid white
+
+  .left
     .donate
-      margin-right: 20px
+      @media only screen and (max-width: 769px)
+        margin: 0
+        a
+          background: #155d60
+          &:hover
+            background: darken( #155d60, 5%)
+
+      margin-right: 10px
+      margin-left: 10px
+
+      .button
+        background: #155d60
+
+    .get-involved
+      .button
+        background: #124e51
+
+      @media only screen and (max-width: 769px)
+        a
+          background: #124e51
+          &:hover
+            background: darken( #155d60, 5% )
 
     .button
-      background: #383838
-      border: #383838
+      border: none
 
       &:hover
-        background: #747474
-        border: #747474
+        background: darken( #155d60, 5% )
+        border: none
+
+    .current-user
+      width: 25px
+.btn
+  font-size: 24px
+  text-transform: uppercase
+  padding: 10px 20px
+  font-style: italic
+  margin-bottom: 20px
+  display: inline-block
+  border: 0
+
+  &.white
+    background: white
+    color: $blue
+
+    &:hover
+      background: darken($blue, 10%)
+      color: white
+
+  &.blue
+    background: $blue
+    color: white
+
+    &:hover
+      background: darken($blue, 10%)
+      color: white
+
+#second-header
+  background: $blue
+  border-bottom: 1px solid white
+  padding-top: 20px
+
+  .social
+    text-align: right
+    padding-top: 15px
+
+    a
+      display: inline-block
+      text-align: center
+      margin-right: 10px
+      height: 30px
+      width: 30px
+      color: white
+      line-height: 23pt
+      border: 1px solid white
+
+      &.facebook
+        background-color: #3c5a9a
+
+      &.twitter
+        background-color: #359bed
+
+      &.play
+        background-color: #e82d28
+
+    select
+      +appearance(none)
+      +border-radius(none)
+      height: 30px
+      float: right
+      padding: 6px
+      font-size: .7em
+      text-indent: 0.01px
+      text-overflow: ""
+      color: white
+      border: 1px solid white
+      background: image-url('arrow.png') no-repeat 30px 10px transparent
+
+h2
+  font-size: 24px
+  margin-bottom: 7px
+
+h3.subtitle
+  font-size: 24px
+
+  &.black, &.white
+    padding: 5px 10px
+    margin-bottom: 30px
+    display: inline-block
+
+  &.black
+    border: 1px solid black
+    color: black
+
+  &.white
+    border: 1px solid white
+    color: white
+
+h4
+  font-size: 20px
+
+p
+  font-size: 16px
+
+
+/* Orbit modifications */
+.orbit-bullets
+  top: 330px
+  left: 350px
+  position: absolute
+  z-index: 10
+
+  li
+    background: transparent
+    border: 1px solid white
+    +border-radius(0)
+    display: block
+    float: left
+    height: 1.75em
+    margin-right: 6px
+    width: 1.75em
+    padding: 5px
+
+    &.active
+      background: transparent
+
+    span.active-bullet
+      background: white
+      display: block
+      width: 1em
+      height: 1em
+
+.orbit-container
+  .orbit-prev, .orbit-next
+    background: none
+    &> span
+      border: none
+    &:hover
+      background: none
+  .orbit-prev
+    span
+      background: url("/assets/home/arrow-left.png") no-repeat
+      display: block
+      width: 17px
+      height: 32px
+      left: 110px
+      top: 60%
+  .orbit-next
+    span
+      background: url("/assets/home/arrow-right.png") no-repeat
+      display: block
+      width: 17px
+      height: 32px
+      left: -50px
+      top: 60%
+
+.label
+  font-weight: normal
+  margin: 0 10px 10px 0
+  padding-right: 20px
+
+  &.white
+    background: image-url('tag-white.png') no-repeat right
+    color: black
+
+  &.blue
+    background: image-url('tag-blue.png') no-repeat right
+    color: white
+
+
+.separator
+  display: block
+
+  &.white
+    border-top: 1px solid white
+  &.black
+    border-top: 1px solid black
+
+
+.section
+  padding: 64px 0
+
+.center
+  text-align: center
+
+.subscribe
+  @extend .whiteBlock
+  margin-top: -65px
+  padding: 10px
+
+  form
+    margin: 0
+
+  input
+    border: 1px solid white
+    background: rgba(255,255,255,0.7)
+    color: black
+    margin: 0
+    height: 46px
+
+  .btn
+    font-family: "Gandhi Sans", sans-serif
+    font-style: italic
+    text-transform: uppercase
+    background: white
+    color: $blue
+    border: 1px solid white
+    font-size: 14px
+    font-weight: bold
+    width: 89%
+
+    &:hover
+      background: darken($blue, 10%)
+      color: white
+
+  .prefix, .postfix
+    height: 46px
+
+  .error input:focus, input:focus
+    background: white
+    color: black
+    border: 1px solid white
+
+.sortable-highlight
+  border: 2px dashed $blue

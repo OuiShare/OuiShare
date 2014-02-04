@@ -1,14 +1,56 @@
 #page-about
-  section
-    padding: 20px 0
 
-  h3
-    color: #777
-    font-style: italic
-    font-weight: 200
+  .about
+    padding-top: 64px
+    padding-bottom: 30px
 
   .banner
-    background: #CCC
     height: 300px
     width: 100%
     display: block
+    overflow: hidden
+    margin-bottom: 64px
+
+  .values
+    background: white
+    color: black
+
+    h3
+      color: white
+
+    p
+      margin-bottom: 40px
+
+#page-about-internal
+  .main-content, #banner
+    background: $blue
+    color: white
+  .main-content
+    padding-top: 40px
+  #banner
+    padding-top: 20px
+    padding-bottom: 40px
+  #list
+    color: black
+    background: white
+
+    .activities
+      border-bottom: 1px solid black
+      padding: 40px 0
+
+      &:last-child
+        border: none
+
+    h4
+      color: black
+      font-weight: bold
+
+    .row
+      margin-bottom: 20px
+
+      p,a
+        color: black
+        font-weight: normal
+        margin: 0
+        &:visited, &:hover
+          color: black

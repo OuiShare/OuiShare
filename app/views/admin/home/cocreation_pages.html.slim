@@ -1,0 +1,22 @@
+div.row
+  div.large-12.columns
+    h2.subheader Cocreation Page
+    table
+      tr
+        th Language
+        th Text
+        th Image
+        th
+        th
+      - Language.all.each do |l|
+        - if l.cocreation_page.present?
+          tr
+            td = l.name
+            td = l.cocreation_page.text
+            td = image_tag(l.cocreation_page.image.thumb.url)
+            td = link_to "Edit", edit_admin_language_cocreation_page_path(l, l.cocreation_page)
+            td = link_to "Remove", [:admin, l, l.cocreation_page], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_cocreation_page_path(l.id)

@@ -1,0 +1,6 @@
+= simple_form_for  @timeline, url: admin_language_timeline_path(@timeline.language, @timeline) do |f|
+  h4 Language
+  = @timeline.language.name
+  = f.input :url
+  = f.input :text
+  = f.submit

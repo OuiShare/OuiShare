@@ -1,0 +1,33 @@
+- content_for :page_title, t('pages.communities.expert_groups')
+div#page-expert_groups
+  section.explain
+    div.row
+      div.large-12.columns
+        p = @expert_groups_page.main_text
+
+  section#map
+    div.row
+      div.large-12.columns
+        div.map
+          = image_tag @expert_groups_page.image.top_internal
+
+  section#expert-groups-list.section
+    div.row
+      div.large-6.columns
+        h3.subtitle All Topical Groups
+    - @expert_groups.each do |c|
+      div.row.community
+        div.large-6.columns
+          p.title = c.name
+          p = c.text
+
+        div.large-2.columns
+          = link_to c.link do
+            button.btn.white join
+
+        div.large-4.columns
+          div.avatars
+            - c.users.each do |u|
+              span.block
+                = link_to u do
+                  = image_tag u.avatar_url(50)

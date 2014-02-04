@@ -1,0 +1,6 @@
+= simple_form_for  @value_page, url: admin_language_value_page_path(@value_page.language, @value_page) do |f|
+  h4 Language
+  = @value_page.language.name
+  = f.input :text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.submit

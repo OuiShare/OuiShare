@@ -1,24 +1,80 @@
-#projects
+#projects, #events, #research-page
+
+  .orbit-bullets
+    top: 265px
+    left: 200px
+
+  .orbit-prev, .orbit-next
+    display: none
+
+  .orbit-caption
+    background-color: #000000
+    bottom: 30px
+    color: #FFFFFF
+    font-size: 1.6em
+    padding: 0 5px
+    position: absolute
+    right: 350px
+    text-transform: uppercase
+    width: auto
+
   a
     color: black
     text-decoration: none
 
-  #slideshow
-    .slideshow
-      width: 100%
-      height: 300px
-      display: block
-      background: #ccc
-      margin: 20px 0
 
+  #slideshow
+    background: $blue
+    color: white
 
   #list
-    .event
-      padding: 20px 0
-      border-bottom: 1px solid #ccc
+    background: white
+    color: black
 
-      .thumb
-        width: 100%
-        height: 200px
-        display: block
-        background: #ccc
+    .event
+      padding: 64px 0
+      border-bottom: 1px solid black
+      color: black
+
+      &:last-child
+        border: none
+
+      p
+        color: black
+
+#project, #event
+
+  h3
+    color: white
+
+  .info
+    background: white
+    color: black
+
+    h3
+      color: black
+
+    ul
+      text-align: center
+
+      li.avatar
+        display: inline-block
+        margin-bottom: 7px
+        margin-right: 2px
+
+  .buttons
+    margin-top: 80px
+
+    a
+      padding: 10px 0
+      color: black
+      font-width: normal
+      width: 195px
+      text-align: center
+      display: block
+
+#research-page
+  h3
+    color: black
+    padding: 0
+    margin: 0 0 20px 0

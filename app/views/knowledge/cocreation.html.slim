@@ -1,0 +1,22 @@
+- content_for :page_title, t('pages.knowledge.cocreation')
+div#page-communities
+  section.explain
+    div.row
+      div.large-12.columns
+        p = @cocreation_page.text
+
+  section#map
+    div.row
+      div.large-12.columns
+        div.map
+          = image_tag @cocreation_page.image.top_internal
+
+  section#communities-list.section
+    div.row
+      div.large-6.columns
+        h3.subtitle Events
+    - @cocreations.each do |c|
+      div.row.community
+        div.large-12.columns
+          p.title = c.name
+          p = c.text

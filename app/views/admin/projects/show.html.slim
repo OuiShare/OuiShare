@@ -1,0 +1,58 @@
+div#project
+  div.row.section
+    div.large-5.columns
+      p = @project.resume
+      - @project.tags.each do |t|
+        span.label.blue = t.name
+    div.large-7.columns
+      img.banner src="#{@project.image.project_page_thumb.url}"
+  div.info
+    div.row.section
+      div.large-4.columns
+        h3.subtitle = t('projects.organizers')
+        ul
+          - @project.users.each do |u|
+            li.avatar
+              = link_to u do
+                = image_tag(u.avatar_url(50))
+
+      div.large-8.columns
+        h3.subtitle.white = t('projects.info')
+        p = @project.info
+
+    .separator.white
+
+    div.row.section
+      div.large-4.columns
+        h3.subtitle.white = t('projects.join_us')
+
+        p = @project.join_us_text
+
+      div.large-8.columns
+        ul.inline-list.buttons
+          li
+            = link_to @project.service1_link do
+              = image_tag(@project.service1_image)
+              = @project.service1_title
+          li
+            = link_to @project.service2_link do
+              = image_tag(@project.service2_image)
+              = @project.service2_title
+          li
+            = link_to @project.service3_link do
+              = image_tag(@project.service3_image)
+              = @project.service3_title
+
+      div.large-4.columns
+        div.block
+      div.large-4.columns
+        div.block
+
+    div.row.section
+      div.large-6.columns
+        h3.subtitle.black = @project.title1
+        p = @project.text1
+
+      div.large-6.columns
+        h3.subtitle.black = @project.title2
+        p = @project.text2

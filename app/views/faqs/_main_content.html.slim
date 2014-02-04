@@ -1,0 +1,9 @@
+section.main-content
+  div.row
+    div.large-12.columns
+      p = @faq_page.text
+section#banner
+  div.row
+    div.large-12.columns
+      div.banner
+        = image_tag(@faq_page.image.top_internal)

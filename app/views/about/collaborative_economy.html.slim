@@ -1,0 +1,27 @@
+div#page-organization
+  section.about
+    div.row
+      div.large-12.columns
+        = @collaborative_economy_page.main_text
+      div.large-12.columns
+        = image_tag(@collaborative_economy_page.image.top_internal)
+
+  section.more-content
+    div.row
+      ul.large-block-grid-2
+        li
+          h4 = @collaborative_economy_page.title1
+          p = @collaborative_economy_page.text1
+
+        li
+          h4 = @collaborative_economy_page.title2
+          p = @collaborative_economy_page.text2
+
+        li
+          h4 = @collaborative_economy_page.title3
+          p = @collaborative_economy_page.text3
+
+        li
+          h4 = @collaborative_economy_page.title4
+          p = @collaborative_economy_page.text4
+

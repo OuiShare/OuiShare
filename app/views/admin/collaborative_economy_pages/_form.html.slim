@@ -1,0 +1,14 @@
+= simple_form_for  @collaborative_economy_page, url: admin_language_collaborative_economy_page_path(@collaborative_economy_page.language, @collaborative_economy_page) do |f|
+  h4 Language
+  = @collaborative_economy_page.language.name
+  = f.input :main_text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :title1
+  = f.input :text1
+  = f.input :title2
+  = f.input :text2
+  = f.input :title3
+  = f.input :text3
+  = f.input :title4
+  = f.input :text4
+  = f.submit

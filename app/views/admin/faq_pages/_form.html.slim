@@ -1,0 +1,6 @@
+= simple_form_for  @faq_page, url: admin_language_faq_page_path(@faq_page.language, @faq_page) do |f|
+  h4 Language
+  = @faq_page.language.name
+  = f.input :text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.submit

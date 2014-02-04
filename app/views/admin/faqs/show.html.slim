@@ -1,0 +1,50 @@
+div#project
+  div.row
+    div.large-5.columns
+      p = @project.resume
+      - @project.tags.each do |t|
+        span.label.blue = t.name
+    div.large-7.columns
+      img.banner src="#{@project.image.project_page_thumb.url}"
+  div.info
+    div.row.section
+      div.large-4.columns
+        h3.subtitle Organizers
+        ul.large-block-grid-4
+          - 6.times do
+            li.avatar
+
+      div.large-8.columns
+        h3.subtitle.white Info
+        p = @project.info
+
+    .separator.white
+
+    div.row.section
+      div.large-4.columns
+        h3.subtitle.white Join us!
+
+        p = @project.join_us_text
+
+      div.large-8.columns
+        ul.inline-list.buttons
+          li
+            a = @project.service1_title
+          li
+            a = @project.service2_title
+          li
+            a = @project.service3_title
+
+      div.large-4.columns
+        div.block
+      div.large-4.columns
+        div.block
+
+  div.row.section
+    div.large-6.columns
+      h3.subtitle.black = @project.title1
+      p = @project.text1
+
+    div.large-6.columns
+      h3.subtitle.black = @project.title2
+      p = @project.text2

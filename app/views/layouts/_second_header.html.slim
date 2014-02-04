@@ -1,23 +1,22 @@
 div#second-header
   div.row
-    div.large-9.columns
-      h1
-        | ouiShare
-        small
-          |  connecting the collaborative economy
-    div.large-2.columns
-       div.social
-         ul.inline-list
-           li
-             a.facebook href="#"
-           li
-             a.twitter href="#"
-           li
-             a.play href="#"
+    div.large-8.columns
+      - if params[:id].present?
+        - name = resource.name
+        h3.subtitle.white = t("pages.#{params[:controller]}.#{params[:action]}", name: name)
+      - else
+        h3.subtitle.white = t("pages.#{params[:controller]}.#{params[:action]}")
+    div.large-4.columns.social.black
+      a.facebook href="https://www.facebook.com/OuiShare"
+        i.fa.fa-facebook
+      a.twitter href="https://www.twitter.com/OuiShare"
+        i.fa.fa-twitter
+      a.play href="http://youtube.com/ouisharetv"
+        i.fa.fa-play
 
-    div.large-1.columns
-      div.l18n
-        select
-          option en
-          option es
-          option fr
+      select.small-2.white#l18n
+        - Language.visible.each do |l|
+          - if l.slug == I18n.locale.to_s
+            option value="#{url_for(locale: l.slug)}" selected="selected" = l.slug
+          - else
+            option value="#{url_for(locale: l.slug)}" = l.slug

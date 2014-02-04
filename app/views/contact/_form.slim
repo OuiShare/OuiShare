@@ -1,15 +1,24 @@
-= simple_form_for :contact, url: contact_path, method: :post do |f|
-  div.row
-    div.large-6.columns
-      = f.input :name, as: :string, placeholder: 'Your name'
-    div.large-6.columns
-      = f.input :email, as: :string, placeholder: 'sample@domain.com'
-  div.row
-    div.large-6.columns
-      = f.input :country, as: :country
-  div.row
-    div.large-12.columns
-      = f.input :message, as: :text, placeholder: 'Some message...'
-  div.row
-    div.large-12.columns
-      = f.submit 'Send'
+div.contact-form
+  = simple_form_for  :contact, url: contact_path, :html => {'data-abide' => ' ' }, method: :post do |f|
+    div.row
+      div.large-6.columns
+        .email-field
+          = f.email_field :email, as: :string, placeholder: t('contact.email'), label: false, require: true
+          small.error An email address is required.
+      div.large-6.columns
+        = f.input :country, as: :country, prompt: t('contact.country'), label: false, required: true
+    div.row
+      div.large-6.columns
+        = f.input :name, as: :string, placeholder: t('contact.first_name'), label: false, required: true
+      div.large-6.columns
+        = f.input :city, as: :string, placeholder: t('contact.city'), label: false
+    div.row
+      div.large-6.columns
+        = f.input :subject, as: :string, placeholder: t('contact.subject'), label: false
+
+    div.row
+      div.large-12.columns
+        = f.input :message, as: :text, placeholder: t('contact.message'), label: false, required: true
+    div.row
+      div.large-12.columns
+        = f.submit t('contact.send'), class: "btn blue"

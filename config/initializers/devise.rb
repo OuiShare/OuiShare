@@ -256,10 +256,10 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   if Rails.env.production?
-    config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'], scope: 'email', image_size: 'normal'
+    config.omniauth :facebook, ENV['FB_ID'], ENV['FB_SECRET'], scope: 'email', image_size: 'large'
     config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
   else
-    config.omniauth :facebook, '578638515518548', '62cd1e72056d13c0711e1eaceef62c45', scope: 'email', image_size: 'normal'
+    config.omniauth :facebook, '578638515518548', '62cd1e72056d13c0711e1eaceef62c45', scope: 'email', image_size: 'large'
     config.omniauth :twitter, 'tz4c0XWc4JGSMKwGaxGPdQ', 'e3mLwd0y1qjNZmIu6TXvMDToQlQbvyMynvXGithXDc'
   end
 end

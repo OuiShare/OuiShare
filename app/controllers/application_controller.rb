@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :set_locale
+  before_filter :set_language
+
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_home_path
+    else
+      root_path
+    end
+  end
 
   protected
   def render_404
@@ -12,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << [:name, :email, :password, :password_confirmation]
+    devise_parameter_sanitizer.for(:account_update) << [:name, :email, :password, :password_confirmation, :bio, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :profile_type, :tag_list, :image, :title]
   end
 
   def set_locale
@@ -23,6 +32,10 @@ class ApplicationController < ActionController::Base
       new_locale = (current_user.locale if current_user) || I18n.default_locale
       redirect_to params.merge(locale: new_locale, only_path: true)
     end
+  end
+
+  def set_language
+    @current_language = Language.where(slug: I18n.locale.to_s).first
   end
 end
 

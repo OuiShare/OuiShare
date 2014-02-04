@@ -1,0 +1,22 @@
+div.row
+  div.large-12.columns
+    h2.subheader Values Page
+    table
+      tr
+        th Language
+        th Text
+        th Image
+        th
+        th
+      - Language.all.each do |l|
+        - if l.value_page.present?
+          tr
+            td = l.name
+            td = l.value_page.text
+            td = image_tag(l.value_page.image.thumb.url)
+            td = link_to "Edit", edit_admin_language_value_page_path(l, l.value_page)
+            td = link_to "Remove", [:admin, l, l.value_page], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_value_page_path(l.id)

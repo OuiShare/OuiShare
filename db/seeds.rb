@@ -9,7 +9,7 @@
 
 NewsletterLanguage.create([{language: 'English', mailchimp_id: 'b9d2d97e53'}, {language: "Français", mailchimp_id: 'de3e89d146'}])
 
-Language.create([{name: 'English',  english_name: 'English'},
+Language.create([{name: 'English',  english_name: 'English', slug: 'en'},
                  {name: 'Français', english_name: 'French'},
                  {name: 'Deutsch',  english_name: 'German'},
                  {name: 'Español',  english_name: 'Spanish'}])

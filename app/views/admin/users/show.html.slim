@@ -1,0 +1,55 @@
+- content_for :page_title, "Profile - #{resource.name}"
+#profile
+  div.row.section
+    div.large-3.columns
+      = image_tag resource.avatar_url(200)
+    div.large-6.columns
+      h3.subtitle = resource.name
+      h4.subtitle = resource.title if !resource.profile_type.user?
+      p = resource.bio
+
+      / span.label.blue blah
+      / span.label.blue blah
+      / span.label.blue blah
+
+    div.large-3.columns
+      ul.large-block-grid-3.social
+        - if resource.facebook_url.present?
+          li
+            a.facebook href=resource.facebook_url
+              i.fa.fa-facebook
+        - if resource.twitter_url.present?
+          li
+            a.twitter href=resource.twitter_url
+              i.fa.fa-twitter
+        - if resource.google_plus_url.present?
+          li
+            a.plus href=resource.google_plus_url
+              i.fa.fa-google-plus
+        - if resource.github_url.present?
+          li
+            a.github href=resource.github_url
+              i.fa.fa-github-alt
+        - if resource.linkedin_url.present?
+          li
+            a.linkedin href=resource.linkedin_url
+              i.fa.fa-linkedin
+
+  /div.contribute.section
+    div.row
+      div.large-12.columns
+        h3.subtitle.white Contribute to
+    div.row
+      div.large-6.columns
+        h4 OuiShare POA
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing
+          elit. Donec hendrerit tempor tellus. Donec pretium posuere
+          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
+          nec, purus. Cum sociis natoque penatibus et magnis dis
+
+     / div.large-6.columns
+        h4 OuiShare POA
+        p Lorem ipsum dolor sit amet, consectetuer adipiscing
+          elit. Donec hendrerit tempor tellus. Donec pretium posuere
+          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
+          nec, purus. Cum sociis natoque penatibus et magnis dis

@@ -1,25 +1,49 @@
-footer
-  div.row
-    div.large-8.columns
-      ul
-        li
-          a href="#{about_path}" about OS
-        li
-          a href="#{contact_path}" contact
-        li
-          a href="#" press room
-        li
-          a href="#" work with us
-        li
-          a href="#" legal stuf
-        li
-          a href="#" RSS feed
+div#footer
+  footer.section
+    div.row
+      div.large-2.columns
+        ul
+          li
+            a href="#{about_mission_path}" About OuiShare
+          li
+            a href="#{press_path}" Press Room
+          li
+            a href="#{workus_path}" Work with us
+      div.large-2.columns
+        ul
+          li
+            a href="#{contact_path}" Contact
+          li
+            a href="#{faq_path}" FAQs
+          li
+            a href="#{terms_path}" Terms & Services
 
-    div.large-4.columns
-      div.social
-        a.facebook href="#"
-          | follow us on facebook!
-          i.fa.fa-facebook
-        a.twitter href="#"
-          | follow us on twitter!
-          i.fa.fa-twitter
+
+      div.large-4.columns
+        div.social
+          a.facebook href="https://www.facebook.com/OuiShare"
+            | follow us on facebook!
+            i.fa.fa-facebook
+          a.twitter href="https://www.twitter.com/OuiShare"
+            | follow us on twitter!
+            i.fa.fa-twitter
+
+      div.large-4.columns
+        h3
+          OuiShare
+        .right
+          p.opensource = link_to 'open source code by:', 'http://github.com/Ouishare/Ouishare'
+          = link_to 'http://engage.is' do
+            span.engage
+    div.row
+      div.subscribe.large-7
+        = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+          div.row.collapse
+            div.large-5.columns
+              .email-field
+                input type="email" id="email" name="email" value="Your email here" required=""
+                small.error An email address is required.
+            div.large-7.columns
+              = submit_tag('Subscribe to our newsletter', class: 'postfix btn white')
+
+            /*a.postfix href="#{newsletter_path}" Go !*/

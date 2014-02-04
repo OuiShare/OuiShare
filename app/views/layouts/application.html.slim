@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title = content_for?(:title) ? yield(:title) : "Oui Share"
+    title = page_title app_name: "OuiShare"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = yield(:meta_tags)
@@ -15,7 +15,9 @@ html
       = render 'layouts/admin_header'
     - else
       = render 'layouts/header'
-      / = render 'layouts/second_header'
+      - unless params[:controller] == 'home' && params[:action] == 'index'
+        = render 'layouts/second_header'
     = yield
     = render 'layouts/footer'
     = javascript_include_tag "application"
+    = javascript_include_tag "lib/masonry.js"

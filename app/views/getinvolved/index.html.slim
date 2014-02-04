@@ -2,42 +2,44 @@ div#page-getinvolved
   section.about
     div.row
       div.large-12.columns
-        h3 Get Involved !
-    div.row
-      div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-      div.large-6.columns
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-
-  section#banner
-    div.row
+        = @get_involved_page.main_text
       div.large-12.columns
         div.banner
 
-  section.values
+  section.more-content
     div.row
-      div.large-6.columns
-        h4 Join an event
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        a.tiny.button.right href="#" link
+      ul.large-block-grid-2
+        li
+          h4 = @get_involved_page.title1
+          p = @get_involved_page.text1
+          a.btn.white href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
 
-      div.large-6.columns
-        h4 Remain Up-to-date
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        a.tiny.button.right href="#" link
+        li
+          h4 = @get_involved_page.title2
+          p = @get_involved_page.text2
+          a.btn.white href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
 
-      div.large-6.columns
-        h3 Donate
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        a.tiny.button.right href="#" link
+        li
+          h4 = @get_involved_page.title3
+          p = @get_involved_page.text3
+          a.btn.white href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
 
-      div.large-6.columns
-        h3 Join the community
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-          hendrerit tempor tellus. Donec pretium posuere tellus.
-        a.tiny.button.right href="#" link
+        li
+          h4 = @get_involved_page.title4
+          p = @get_involved_page.text4
+          a.btn.white href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
+
+        li
+          h4 = @get_involved_page.title5
+          p = @get_involved_page.text5
+          a.btn.white href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
+
+        li
+          h4 = @get_involved_page.title6
+          p = @get_involved_page.text6
+          a.btn.white href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
+
+        li
+          h4 = @get_involved_page.title7
+          p = @get_involved_page.text7
+          a.btn.white href="#{@get_involved_page.link7}" = @get_involved_page.link7_text

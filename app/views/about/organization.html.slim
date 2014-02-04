@@ -1,0 +1,27 @@
+div#page-organization
+  section.about
+    div.row
+      div.large-12.columns
+        = @organization_page.main_text
+      div.large-12.columns
+        div.banner
+          = image_tag(@organization_page.image.top_internal)
+
+  section.more-content
+    div.row
+      ul.large-block-grid-2
+        li
+          h4 = @organization_page.title1
+          p = @organization_page.text1
+
+        li
+          h4 = @organization_page.title2
+          p = @organization_page.text2
+
+        li
+          h4 = @organization_page.title3
+          p = @organization_page.text3
+
+        li
+          h4 = @organization_page.title4
+          p = @organization_page.text4
