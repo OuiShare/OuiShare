@@ -8,7 +8,9 @@ section#articles
               h5.title = truncate(f.title, length: 70)
               img.article src="#{f.summary.split(' ')[3].split('"')[1]}"
               div.author
-                /*img.avatar src="http://placehold.it/45x45"*/
+                - author = User.where(name: f.author).first
+                - if author.present?
+                  img.avatar src="#{author.avatar_url(45)}"
                 p.name = "by #{f.author}"
                 p.date = "23h41, 21/11/2013"
             div.tags
