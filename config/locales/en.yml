@@ -75,6 +75,8 @@ en:
     join_us: 'Join us!'
     info: 'More information'
     organizers: 'Organizers'
+  knowledge:
+    all_knowledge_groups: 'All Knowledge Groups'
   menu:
     about: 'about'
     story: 'Our story'

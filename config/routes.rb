@@ -129,12 +129,12 @@ OuiShare::Application.routes.draw do
   get 'faq' => 'faqs#index', as: 'faq'
   get 'terms' => 'home#terms', as: 'terms'
 
-  get 'about/mission' => 'about#mission', as: 'about_mission'
+  get 'about' => 'about#mission', as: 'about_mission'
   get 'about/vision' => 'about#vision', as: 'about_vision'
   get 'about/story' => 'about#history', as: 'about_history'
   get 'about/organization' => 'about#organization', as: 'about_organization'
   get 'about/governance' => 'about#governance', as: 'about_governance'
-  get 'about/value' => 'about#value', as: 'about_value'
+  get 'about/values' => 'about#value', as: 'about_value'
   get 'about/team' => 'about#team', as: 'about_team'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
@@ -145,7 +145,7 @@ OuiShare::Application.routes.draw do
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'
   get 'communities/live' => 'communities#live', as: 'communities_live'
   get 'communities/people' => 'communities#people', as: 'communities_people'
-  get 'communities/expert_groups' => 'communities#expert_groups', as: 'expert_groups'
+  get 'communities/knowledge_groups' => 'communities#expert_groups', as: 'expert_groups'
 
   get 'knowledge' => 'knowledge#index', as: 'knowledge'
   get 'knowledge/research' => 'knowledge#research', as: 'knowledge_research'
