@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
   end
 
+  def is_admin?
+    self.admin? || self.profile_type == 1
+  end
+
   protected
   def add_url_protocol_to(field)
     if field.kind_of?(Array)
