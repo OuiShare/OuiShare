@@ -263,3 +263,4 @@ Devise.setup do |config|
     config.omniauth :twitter, 'tz4c0XWc4JGSMKwGaxGPdQ', 'e3mLwd0y1qjNZmIu6TXvMDToQlQbvyMynvXGithXDc'
   end
 end
+
