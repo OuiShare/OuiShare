@@ -2,19 +2,19 @@ section#bepart
   div.row
     div.large-4.columns
       h3.subtitle.black = @take_part_section.main_title
-      p.desc = @take_part_section.main_text
+      p.desc = @take_part_section.main_text_html
       a.btn.blue href="#{contact_path}" = @take_part_section.link_text
 
     div.large-8.columns
       div.part
         div.takePart
         h4 = @take_part_section.title1
-        p = @take_part_section.text1
+        p = @take_part_section.text1_html
       div.part
         div.comeTo
         h4 = @take_part_section.title2
-        p = @take_part_section.text2
+        p = @take_part_section.text2_html
       div.part
         div.donate
         h4 = @take_part_section.title3
-        p = @take_part_section.text3
+        p = @take_part_section.text3_html

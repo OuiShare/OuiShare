@@ -19,6 +19,6 @@ section#articles
 
     div.large-4.columns
       h3.subtitle.black = @articles_section.title
-      p = @articles_section.text
+      p = @articles_section.text_html
 
       a.btn.blue href="http://ouishare.net" = @articles_section.link_text
