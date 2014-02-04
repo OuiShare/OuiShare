@@ -2,7 +2,7 @@ div#page-organization
   section.about
     div.row
       div.large-12.columns
-        = @organization_page.main_text
+        = @organization_page.main_text_html
       div.large-12.columns
         div.banner
           = image_tag(@organization_page.image.top_internal)
@@ -12,16 +12,16 @@ div#page-organization
       ul.large-block-grid-2
         li
           h4 = @organization_page.title1
-          p = @organization_page.text1
+          p = @organization_page.text1_html
 
         li
           h4 = @organization_page.title2
-          p = @organization_page.text2
+          p = @organization_page.text2_html
 
         li
           h4 = @organization_page.title3
-          p = @organization_page.text3
+          p = @organization_page.text3_html
 
         li
           h4 = @organization_page.title4
-          p = @organization_page.text4
+          p = @organization_page.text4_html

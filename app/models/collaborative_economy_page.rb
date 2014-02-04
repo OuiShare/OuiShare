@@ -1,6 +1,6 @@
 class CollaborativeEconomyPage < ActiveRecord::Base
-  belongs_to :language
   include Shared::BeautifulText
+  belongs_to :language
 
   mount_uploader :image, ImageUploader
 

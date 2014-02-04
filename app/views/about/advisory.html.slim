@@ -5,7 +5,7 @@ didv#page-team
       div.large-4.columns
         h3
           = @advisors_page.title
-        p = @advisors_page.text
+        p = @advisors_page.text_html
 
         a.btn.blue href="#{contact_path}" = @advisors_page.link_text
 

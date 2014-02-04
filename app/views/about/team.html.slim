@@ -5,7 +5,7 @@ div#page-team
       div.large-4.columns
         h3
           = @team_page.title
-        p = @team_page.text
+        p = @team_page.text_html
 
         a.btn.blue href="#{contact_path}" = @team_page.link_text
 
