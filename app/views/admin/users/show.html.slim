@@ -34,6 +34,10 @@
           li
             a.linkedin href=resource.linkedin_url
               i.fa.fa-linkedin
+        - if resource.email_address.present?
+          li
+            a.email href="mailto:email_address"
+              i.fa.fa-envelope-o
 
   /div.contribute.section
     div.row
