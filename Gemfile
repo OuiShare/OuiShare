@@ -49,7 +49,7 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
-gem 'auto_html'
+gem 'auto_html', '1.6.0'
 
 gem 'paypal-express'
 

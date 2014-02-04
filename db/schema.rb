@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203155554) do
+ActiveRecord::Schema.define(version: 20140204185128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,8 @@ ActiveRecord::Schema.define(version: 20140203155554) do
     t.text     "text4"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
+    t.text     "text1_html"
   end
 
   add_index "collaborative_economy_pages", ["language_id"], name: "index_collaborative_economy_pages_on_language_id", using: :btree

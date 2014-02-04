@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.2.9)
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
       mail (~> 2.5.3)
@@ -32,11 +31,9 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     attr_required (0.0.5)
-    auto_html (1.4.2)
-      RedCloth
-      redcarpet
-      rinku
-      tag_helper
+    auto_html (1.6.0)
+      redcarpet (~> 2.0)
+      rinku (~> 1.5.0)
     awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
@@ -233,14 +230,14 @@ GEM
     rake (10.1.0)
     ranked-model (0.3)
       activerecord (>= 3.1.12)
-    redcarpet (3.0.0)
+    redcarpet (2.3.0)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     restclient_with_cert (0.0.8)
       rest-client (>= 1.6)
-    rinku (1.7.3)
+    rinku (1.5.1)
     rmagick (2.13.2)
     routing-filter (0.4.0.pre)
       actionpack
@@ -290,7 +287,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    tag_helper (0.0.3)
     temple (0.6.7)
     thin (1.6.1)
       daemons (>= 1.0.9)
@@ -319,7 +315,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  auto_html
+  auto_html (= 1.6.0)
   awesome_print
   better_errors
   binding_of_caller
