@@ -1,7 +1,10 @@
 class Event < ActiveRecord::Base
+  include Shared::BeautifulText
   extend FriendlyId
   belongs_to :language
   has_and_belongs_to_many :users
+
+  beautiful_text_for [:resume, :info, :join_us_text, :text1, :text2]
 
   friendly_id :title, use: [:slugged, :history, :finders]
 
