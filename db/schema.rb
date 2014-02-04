@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204185128) do
+ActiveRecord::Schema.define(version: 20140204194414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "activities", ["language_id"], name: "index_activities_on_language_id", using: :btree
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "advisors_pages", ["language_id"], name: "index_advisors_pages_on_language_id", using: :btree
@@ -66,6 +68,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "articles_sections", ["language_id"], name: "index_articles_sections_on_language_id", using: :btree
@@ -86,6 +89,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "cocreation_pages", ["language_id"], name: "index_cocreation_pages_on_language_id", using: :btree
@@ -97,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "link"
+    t.text     "text_html"
   end
 
   add_index "cocreations", ["language_id"], name: "index_cocreations_on_language_id", using: :btree
@@ -117,6 +122,9 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "updated_at"
     t.text     "main_text_html"
     t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
   end
 
   add_index "collaborative_economy_pages", ["language_id"], name: "index_collaborative_economy_pages_on_language_id", using: :btree
@@ -130,6 +138,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "updated_at"
     t.integer  "region_id"
     t.integer  "row_order"
+    t.text     "text_html"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree
@@ -149,6 +158,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "main_text2"
+    t.text     "main_text_html"
   end
 
   add_index "community_pages", ["language_id"], name: "index_community_pages_on_language_id", using: :btree
@@ -176,6 +186,10 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "language_id"
+    t.text     "maintext_html"
+    t.text     "thanks_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
   end
 
   add_index "donation_pages", ["language_id"], name: "index_donation_pages_on_language_id", using: :btree
@@ -216,9 +230,14 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.boolean  "visible",        default: true, null: false
+    t.boolean  "visible",           default: true, null: false
     t.date     "date_end"
     t.string   "slug"
+    t.text     "resume_html"
+    t.text     "info_html"
+    t.text     "join_us_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
   end
 
   add_index "events", ["language_id"], name: "index_events_on_language_id", using: :btree
@@ -230,6 +249,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "events_sections", ["language_id"], name: "index_events_sections_on_language_id", using: :btree
@@ -249,6 +269,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "expert_groups", ["language_id"], name: "index_expert_groups_on_language_id", using: :btree
@@ -259,6 +280,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
   end
 
   add_index "expert_groups_pages", ["language_id"], name: "index_expert_groups_pages_on_language_id", using: :btree
@@ -368,6 +390,14 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
+    t.text     "text5_html"
+    t.text     "text6_html"
+    t.text     "text7_html"
   end
 
   add_index "get_involved_pages", ["language_id"], name: "index_get_involved_pages_on_language_id", using: :btree
@@ -396,6 +426,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   create_table "knowledge_pages", force: true do |t|
@@ -412,6 +443,11 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.text     "text4"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
   end
 
   add_index "knowledge_pages", ["language_id"], name: "index_knowledge_pages_on_language_id", using: :btree
@@ -439,6 +475,11 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text2"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
   end
 
   add_index "live_pages", ["language_id"], name: "index_live_pages_on_language_id", using: :btree
@@ -449,6 +490,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "missions", ["language_id"], name: "index_missions_on_language_id", using: :btree
@@ -472,6 +514,11 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "language_id"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
   end
 
   add_index "organization_pages", ["language_id"], name: "index_organization_pages_on_language_id", using: :btree
@@ -508,6 +555,10 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.text     "text3"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
   end
 
   add_index "press_room_pages", ["language_id"], name: "index_press_room_pages_on_language_id", using: :btree
@@ -534,10 +585,15 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "updated_at"
     t.string   "title1"
     t.string   "title2"
-    t.boolean  "visible",        default: true,  null: false
-    t.boolean  "featured",       default: false, null: false
+    t.boolean  "visible",           default: true,  null: false
+    t.boolean  "featured",          default: false, null: false
     t.string   "slug"
     t.integer  "row_order"
+    t.text     "resume_html"
+    t.text     "info_html"
+    t.text     "join_us_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
   end
 
   add_index "projects", ["language_id"], name: "index_projects_on_language_id", using: :btree
@@ -567,6 +623,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "main_text_html"
   end
 
   add_index "research_pages", ["language_id"], name: "index_research_pages_on_language_id", using: :btree
@@ -579,6 +636,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "researches", ["language_id"], name: "index_researches_on_language_id", using: :btree
@@ -591,6 +649,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "services", ["language_id"], name: "index_services_on_language_id", using: :btree
@@ -631,6 +690,10 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string   "image1"
     t.string   "image2"
     t.string   "image3"
+    t.text     "main_text_html"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
   end
 
   add_index "take_part_sections", ["language_id"], name: "index_take_part_sections_on_language_id", using: :btree
@@ -642,6 +705,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "team_pages", ["language_id"], name: "index_team_pages_on_language_id", using: :btree
@@ -651,6 +715,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "language_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "terms_pages", ["language_id"], name: "index_terms_pages_on_language_id", using: :btree
@@ -661,6 +726,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text"
+    t.text     "text_html"
   end
 
   add_index "timelines", ["language_id"], name: "index_timelines_on_language_id", using: :btree
@@ -708,6 +774,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.integer  "profile_type"
     t.string   "title"
     t.string   "email_address"
+    t.text     "bio_html"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -717,6 +784,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.text    "text"
     t.string  "image"
     t.integer "language_id"
+    t.text    "text_html"
   end
 
   add_index "value_pages", ["language_id"], name: "index_value_pages_on_language_id", using: :btree
@@ -726,6 +794,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string  "link"
     t.text    "text"
     t.integer "language_id"
+    t.text    "text_html"
   end
 
   create_table "what_is_sections", force: true do |t|
@@ -745,6 +814,10 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string   "image3"
     t.string   "image4"
     t.string   "title"
+    t.text     "text1_html"
+    t.text     "text2_html"
+    t.text     "text3_html"
+    t.text     "text4_html"
   end
 
   add_index "what_is_sections", ["language_id"], name: "index_what_is_sections_on_language_id", using: :btree
@@ -755,6 +828,7 @@ ActiveRecord::Schema.define(version: 20140204185128) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text_html"
   end
 
   add_index "workus_pages", ["language_id"], name: "index_workus_pages_on_language_id", using: :btree
