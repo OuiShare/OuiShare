@@ -3,7 +3,7 @@ module Admin
     before_filter :verify_admin
     private
     def verify_admin
-      unless current_user.is_admin? || (params[:controller] == "admin/users" && params[:action] == 'show')
+      unless current_user.try(:is_admin?) || (params[:controller] == "admin/users" && params[:action] == 'show')
         if user_signed_in?
           redirect_to root_path, alert: t('admin.not_authorized')
         else
