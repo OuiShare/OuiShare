@@ -1,15 +1,16 @@
 div#page-about
-  section.about
-    div.row
-      div.large-6.columns
-        p = @about.main_text1
-      div.large-6.columns
-        p = @about.main_text2
-  section#banner
-    div.row
-      div.large-12.columns
-        div.banner
-          = image_tag(@about.image)
+  div.green
+    section.about
+      div.row
+        div.large-6.columns
+          p = @about.main_text1
+        div.large-6.columns
+          p = @about.main_text2
+    section#banner
+      div.row
+        div.large-12.columns
+          div.banner
+            = image_tag(@about.image)
   section.values.section
     div.row
       div.large-6.columns
