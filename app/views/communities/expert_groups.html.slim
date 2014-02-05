@@ -1,15 +1,15 @@
 - content_for :page_title, t('pages.communities.expert_groups')
 div#page-expert_groups
-  section.explain
-    div.row
-      div.large-12.columns
-        p = @expert_groups_page.main_text_html
-
-  section#map
-    div.row
-      div.large-12.columns
-        div.map
-          = image_tag @expert_groups_page.image.top_internal
+  div.green
+    section.explain
+      div.row
+        div.large-12.columns
+           = @expert_groups_page.main_text_html
+    section#map
+      div.row
+        div.large-12.columns
+          div.map
+            = image_tag @expert_groups_page.image.top_internal
 
   section#expert-groups-list.section
     div.row

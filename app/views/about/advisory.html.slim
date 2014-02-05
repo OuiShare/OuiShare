@@ -1,21 +1,21 @@
 - content_for :page_title, 'Advisory'
-didv#page-team
-  section.theTeam
-    div.row
-      div.large-4.columns
-        h3
-          = @advisors_page.title
-        p = @advisors_page.text_html
+div#page-about-internal
+  section.theTeam#list
+    div.activities
+      div.row
+        div.large-4.columns
+          h3
+            = @advisors_page.title
+          p = @advisors_page.text_html
+          a.btn.blue href="#{contact_path}" = @advisors_page.link_text
 
-        a.btn.blue href="#{contact_path}" = @advisors_page.link_text
-
-      div.large-8.columns
-        ul.large-block-grid-2
-          - @users.order('name').each do |a|
-            li
-              = link_to a do
-                div.avatar
-                  = image_tag(a.avatar_url(110))
-                div.desc
-                  p.name = a.name
-                  p.position = a.title
+        div.large-8.columns
+          ul.large-block-grid-2
+            - @users.order('name').each do |a|
+              li
+                = link_to a do
+                  div.avatar
+                    = image_tag(a.avatar_url(110))
+                  div.desc
+                    span.name = a.name
+                    p.position = a.title

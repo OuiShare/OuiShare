@@ -1,28 +1,27 @@
 div#page-live
-  section.about
-    div.row
-      div.large-12.columns
-        = @live_page.main_text_html
-      div.large-12.columns
-        = image_tag @live_page.image.top_internal
+  div.green
+    section.about
+      div.row
+        div.large-12.columns
+          = @live_page.main_text_html
+        div.large-12.columns
+          = image_tag @live_page.image.top_internal
 
   section.more-content
     div.row
       ul.large-block-grid-2
         li
           h4 = @live_page.title1
-          p = @live_page.text1_html
+          = @live_page.text1_html
 
         li
           h4 = @live_page.title2
-          p = @live_page.text2_html
+          = @live_page.text2_html
 
         li
           h4 = @live_page.title3
-          p = @live_page.text3_html
+          = @live_page.text3_html
 
         li
           h4 = @live_page.title4
-          p = @live_page.text4_html
-
-
+          = @live_page.text4_html

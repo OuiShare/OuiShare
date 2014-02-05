@@ -8,8 +8,15 @@ body
   h1,h2,h3,h4,h5
     font-family: "Gandhi Sans", sans-serif
     font-weight: normal
+
   h1,h2,h3
     text-transform: uppercase
+
+  a
+    color: #f39c12
+    &:hover
+      color: #f39c12
+      text-decoration: underline
 
 .alert-box
   &.notice
@@ -47,6 +54,7 @@ body
           width: 100px
           height: 40px
           color: black
+          text-decoration: none
   ul
     &> li.has-dropdown
       a
@@ -60,6 +68,7 @@ body
 
         &:hover
           background: $blue
+          text-decoration: none
 
       .dropdown li.has-dropdown > a:after
         border: medium none
@@ -81,6 +90,8 @@ body
         font-size: 14px
         font-family: "Gandhi Sans"
         font-weight: normal
+        &:hover
+          text-decoration: none
 
   .dropdown
     border-top: 2px solid white
@@ -186,11 +197,9 @@ body
       background: image-url('arrow.png') no-repeat 30px 10px transparent
 
 h2
-  font-size: 24px
   margin-bottom: 7px
 
 h3.subtitle
-  font-size: 24px
 
   &.black, &.white
     padding: 5px 10px
@@ -204,9 +213,6 @@ h3.subtitle
   &.white
     border: 1px solid white
     color: white
-
-h4
-  font-size: 20px
 
 p
   font-size: 16px
@@ -332,3 +338,7 @@ p
 
 .sortable-highlight
   border: 2px dashed $blue
+
+.green
+  background: $blue
+  color: white

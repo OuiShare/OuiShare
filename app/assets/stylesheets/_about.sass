@@ -22,11 +22,9 @@
       margin-bottom: 40px
 
 #page-about-internal
-  .main-content, #banner
-    background: $blue
-    color: white
   .main-content
     padding-top: 40px
+    color: white
   #banner
     padding-top: 20px
     padding-bottom: 40px
@@ -48,9 +46,33 @@
     .row
       margin-bottom: 20px
 
-      p,a
+      p
         color: black
         font-weight: normal
         margin: 0
         &:visited, &:hover
+          color: black
+
+  .theTeam, .festTeam
+    li
+      padding: 10px 0
+      .avatar
+        display: inline-block
+        vertical-align: top
+      .desc
+        display: inline-block
+        clear: both
+        margin-bottom: 5px
+        margin-left: 5px
+        font-size: 13px
+        width: 179px
+
+        span.name
+          font-weight: bold
+          text-transform: uppercase
+          margin: 0
+          color: $blue
+          font-size: 16px
+
+        p.position
           color: black
