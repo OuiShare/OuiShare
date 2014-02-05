@@ -19,14 +19,14 @@ div#event
                 = image_tag(u.avatar_url(50))
 
       div.large-8.columns
-        h3.subtitle.white About this event
+        h3.subtitle.black About this event
         .markdown = @event.info_html
 
-    .separator.white
+    .separator.black
 
     div.row.section
       div.large-4.columns
-        h3.subtitle.white Join us!
+        h3.subtitle.black Join us!
 
         .markdown = @event.join_us_text_html
 
@@ -52,9 +52,9 @@ div#event
 
     div.row
       div.large-6.columns
-        H4 = @event.title1
+        h4 = @event.title1
         .markdown = @event.text1_html
 
       div.large-6.columns
-        H4 = @event.title2
+        h4 = @event.title2
         .markdown = @event.text2_html

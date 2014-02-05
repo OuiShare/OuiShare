@@ -3,7 +3,7 @@ div#page-about-internal
     section.main-content
       div.row
         div.large-12.columns
-          = @get_involved_page.main_text_html
+          .markdown = @get_involved_page.main_text_html
     section#banner
       div.row
         div.large-12.columns
@@ -18,35 +18,35 @@ div#page-about-internal
           ul.large-block-grid-2
             li
               h4 = @get_involved_page.title1
-              = @get_involved_page.text1_html
+              .markdown = @get_involved_page.text1_html
               a.btn.blue href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
 
             li
               h4 = @get_involved_page.title2
-              = @get_involved_page.text2_html
+              .markdown = @get_involved_page.text2_html
               a.btn.blue href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
 
             li
               h4 = @get_involved_page.title3
-              = @get_involved_page.text3_html
+              .markdown = @get_involved_page.text3_html
               a.btn.blue href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
 
             li
               h4 = @get_involved_page.title4
-              = @get_involved_page.text4_html
+              .markdown = @get_involved_page.text4_html
               a.btn.blue href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
 
             li
               h4 = @get_involved_page.title5
-              = @get_involved_page.text5_html
+              .markdown = @get_involved_page.text5_html
               a.btn.blue href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
 
             li
               h4 = @get_involved_page.title6
-              = @get_involved_page.text6_html
+              .markdown = @get_involved_page.text6_html
               a.btn.blue href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
 
             li
               h4 = @get_involved_page.title7
-              = @get_involved_page.text7_html
+              .markdown = @get_involved_page.text7_html
               a.btn.blue href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
