@@ -1,11 +1,12 @@
-section#slideshow.section
-  div.row
-    div.large-12.columns
-      ul#slide-projects data-orbit=""
-        - @current_language.projects.featured.each do |p|
-          li
-            div.slideshow
-              = link_to p do
-                = image_tag p.image.top_image.url
-                div.orbit-caption
-                  span = p.name
+div.green
+  section#slideshow.section
+    div.row
+      div.large-12.columns
+        ul#slide-projects data-orbit=""
+          - @current_language.projects.featured.each do |p|
+            li
+              div.slideshow
+                = link_to p do
+                  = image_tag p.image.top_image.url
+                  div.orbit-caption
+                    span = p.name

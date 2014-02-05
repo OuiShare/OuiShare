@@ -1,15 +1,16 @@
 - content_for :page_title, 'Communities'
 div#page-communities
-  section.explain
-    div.row
-      div.large-12.columns
-        p = @community_page.main_text_html
+  div.green
+    section.explain
+      div.row
+        div.large-12.columns
+          p = @community_page.main_text_html
 
-  section#map
-    div.row
-      div.large-12.columns
-        div.map
-          = image_tag @community_page.image.top_internal
+    section#map
+      div.row
+        div.large-12.columns
+          div.map
+            = image_tag @community_page.image.top_internal
 
   section#communities-list.section
     div.row
