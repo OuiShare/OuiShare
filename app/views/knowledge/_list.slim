@@ -5,7 +5,7 @@ section#list
         a href="#{p.link}"
           div.large-5.columns
             h3.subtitle.white = p.title
-            p = p.text
+            p = p.text_html
             div.tags
               - p.tags.each do |t|
                 span.label.blue = t.name

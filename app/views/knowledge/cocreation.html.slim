@@ -3,7 +3,7 @@ div#page-communities
   section.explain
     div.row
       div.large-12.columns
-        p = @cocreation_page.text
+        p = @cocreation_page.text_html
 
   section#map
     div.row
@@ -19,4 +19,4 @@ div#page-communities
       div.row.community
         div.large-12.columns
           p.title = c.name
-          p = c.text
+          p = c.text_html

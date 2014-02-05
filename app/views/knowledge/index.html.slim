@@ -2,7 +2,7 @@ div#page-organization
   section.about
     div.row
       div.large-12.columns
-        = @knowledge_page.main_text
+        = @knowledge_page.main_text_html
       div.large-12.columns
         = image_tag(@knowledge_page.image.top_internal)
 
@@ -11,17 +11,17 @@ div#page-organization
       ul.large-block-grid-2
         li
           h4 = @knowledge_page.title1
-          p = @knowledge_page.text1
+          p = @knowledge_page.text1_html
 
         li
           h4 = @knowledge_page.title2
-          p = @knowledge_page.text2
+          p = @knowledge_page.text2_html
 
         li
           h4 = @knowledge_page.title3
-          p = @knowledge_page.text3
+          p = @knowledge_page.text3_html
 
         li
           h4 = @knowledge_page.title4
-          p = @knowledge_page.text4
+          p = @knowledge_page.text4_html
 
