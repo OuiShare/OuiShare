@@ -3,7 +3,7 @@ div#event
   div.row.section
     div.large-5.columns
       h2 = @event.cta
-      p = @event.resume_html
+      .markdown = @event.resume_html
       - @event.tags.each do |t|
         span.label.blue = t.name
     div.large-7.columns
@@ -20,7 +20,7 @@ div#event
 
       div.large-8.columns
         h3.subtitle.white About this event
-        p = @event.info_html
+        .markdown = @event.info_html
 
     .separator.white
 
@@ -28,7 +28,7 @@ div#event
       div.large-4.columns
         h3.subtitle.white Join us!
 
-        p = @event.join_us_text_html
+        .markdown = @event.join_us_text_html
 
       div.large-8.columns
         ul.inline-list.buttons
@@ -53,8 +53,8 @@ div#event
     div.row
       div.large-6.columns
         H4 = @event.title1
-        p = @event.text1_html
+        .markdown = @event.text1_html
 
       div.large-6.columns
         H4 = @event.title2
-        p = @event.text2_html
+        .markdown = @event.text2_html
