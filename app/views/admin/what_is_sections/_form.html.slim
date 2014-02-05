@@ -3,21 +3,21 @@
     | Language |
     = @what_is_section.language.name
 
+  = f.input :title
   div.large-3.columns
-    = f.input :title
     = f.input :title1
     = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :text1, label: 'Text 1 (Markdown)'
   div.large-3.columns
-    = f.input :text1
     = f.input :title2
     = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :text2, label: 'Text 2 (Markdown)'
   div.large-3.columns
-    = f.input :text2
     = f.input :title3
     = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :text3, label: 'Text 3 (Markdown)'
   div.large-3.columns
-    = f.input :text3
     = f.input :title4
     = f.input :image4, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :text4
+    = f.input :text4, label: 'Text 4 (Markdown)'
   = f.submit

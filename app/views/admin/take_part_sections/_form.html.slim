@@ -4,22 +4,22 @@
   div.row
     div.large-12.columns
       = f.input :main_title
-      = f.input :main_text
+      = f.input :main_text, label: 'Main Text (Markdown)'
       = f.input :link_text
   div.row
     div.large-4.columns
       = f.input :title1
       = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
-      = f.input :text1
+      = f.input :text1, label: 'Text 1 (Markdown)'
       = f.input :link1
     div.large-4.columns
       = f.input :title2
       = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
-      = f.input :text2
+      = f.input :text2, label: 'Text 2 (Markdown)'
       = f.input :link2
     div.large-4.columns
       = f.input :title3
       = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
-      = f.input :text3
+      = f.input :text3, label: 'Text 3 (Markdown)'
       = f.input :link3
   = f.submit

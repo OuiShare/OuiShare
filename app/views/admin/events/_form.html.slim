@@ -7,11 +7,11 @@
   = f.input :date_start
   = f.input :date_end
   = f.input :time
-  = f.input :resume
+  = f.input :resume, label: 'Resume (Markdown)'
   = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :tag_list, as: :text
-  = f.input :info
-  = f.input :join_us_text
+  = f.input :info, label: 'Info (Markdown)'
+  = f.input :join_us_text, label: 'Join Us Text (Markdown)'
   = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :service1_link
   = f.input :service1_title
@@ -22,9 +22,9 @@
   = f.input :service3_link
   = f.input :service3_title
   = f.input :title1
-  = f.input :text1
+  = f.input :text1, label: 'Text 1 (Markdown)'
   = f.input :title2
-  = f.input :text2
+  = f.input :text2, label: 'Text 2 (Markdown)'
   = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
 
   = f.submit
