@@ -1,6 +1,6 @@
 = simple_form_for  @cocreation_page, url: admin_language_cocreation_page_path(@cocreation_page.language, @cocreation_page) do |f|
   h4 Language
   = @cocreation_page.language.name
-  = f.input :text
+  = f.input :text, label: 'Text (Markdown)'
   = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.submit
