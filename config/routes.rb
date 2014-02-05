@@ -143,7 +143,7 @@ OuiShare::Application.routes.draw do
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'
-  get 'communities/live' => 'communities#live', as: 'communities_live'
+  get 'communities/ouishare-everywhere' => 'communities#live', as: 'communities_live'
   get 'communities/people' => 'communities#people', as: 'communities_people'
   get 'communities/knowledge_groups' => 'communities#expert_groups', as: 'expert_groups'
 
@@ -154,9 +154,9 @@ OuiShare::Application.routes.draw do
   get 'knowledge/ouiki' => 'knowledge#ouiki', as: 'knowledge_ouiki'
   get 'knowledge/cocreation' => 'knowledge#cocreation', as: 'knowledge_cocreation'
 
-  get 'getinvolved' => 'getinvolved#index', as: 'getinvolved'
-  get 'press' => 'press#index', as: 'press'
-  get 'workus' => 'workus#index', as: 'workus'
+  get 'get-involved' => 'getinvolved#index', as: 'getinvolved'
+  get 'press-room' => 'press#index', as: 'press'
+  get 'work-with-us' => 'workus#index', as: 'workus'
 
   get 'users/:id' => 'admin/users#show', as: 'user'
   post 'donations/pay' => 'donations#pay', as: 'pay_donation'
