@@ -83,4 +83,14 @@ OuiShare::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.default_url_options = {:host => 'ouishare.net'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => ENV['SMTP_ADDRESS'],
+    :port    => 25,
+    :domain  => ENV['SMTP_DOMAIN'],
+    :username => ENV['SMTP_USERNAME'],
+    :password => ENV['SMTP_PASSWORD']
+  }
 end
