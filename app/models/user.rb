@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   extend Enumerize
+  include Shared::BeautifulText
 
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
@@ -18,6 +19,8 @@ class User < ActiveRecord::Base
   mount_uploader :image, AvatarUploader
 
   acts_as_taggable
+
+  beautiful_text_for [:bio]
 
   enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
 

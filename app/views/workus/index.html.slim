@@ -2,7 +2,7 @@ div#page-workus
   section.about
     div.row
       div.large-12.columns
-        = @workus_page.text
+        = @workus_page.text_html
 
   section#banner
     div.row
@@ -16,7 +16,7 @@ div#page-workus
         div.row.actvity
           div.large-6.columns
             h4 = s.name
-            p = s.text
+            p = s.text_html
           div.large-6.columns
             div.img-sample
               = image_tag(s.image.list_thumb)

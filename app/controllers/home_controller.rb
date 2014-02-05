@@ -20,6 +20,5 @@ class HomeController < ApplicationController
 
   def terms
     @terms_page = @current_language.terms_page || TermsPage.new
-    @terms_page.text = auto_html(@terms_page.text) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
   end
 end

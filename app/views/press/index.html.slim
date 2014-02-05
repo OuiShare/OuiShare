@@ -2,7 +2,7 @@ div#page-press
   section.about
     div.row
       div.large-12.columns
-        p = @press_room_page.main_text
+        p = @press_room_page.main_text_html
 
   section#banner
     div.row
@@ -16,10 +16,10 @@ div#page-press
         div.row
           div.large-12.columns
             h4 = @press_room_page.title1
-            p = @press_room_page.text1
+            p = @press_room_page.text1_html
           div.large-12.columns
             h4 = @press_room_page.title3
-            p = @press_room_page.text3
+            p = @press_room_page.text3_html
       div.large-6.columns
         h4 = @press_room_page.title2
-        p = @press_room_page.text2
+        p = @press_room_page.text2_html
