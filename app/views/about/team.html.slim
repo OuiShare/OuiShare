@@ -4,9 +4,8 @@ div#page-about-internal
     div.activities
       div.row
         div.large-4.columns
-          h3
-            = @team_page.title
-            .markdown = @team_page.text_html
+          h3 = @team_page.title
+          .markdown = @team_page.text_html
           a.btn.blue href="#{contact_path}" = @team_page.link_text
 
         div.large-8.columns
