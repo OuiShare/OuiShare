@@ -6,10 +6,10 @@ section#welcome
       h2 = @top_banner.title1
       div.textBlock
         span.space = @top_banner.text1
-      div.large-10.large-centered.columns.center
+      div.large-7.large-centered.columns.center
         div.subscribe
           span.space = @top_banner.text2
-          div.large-6.large-centered.columns.center
+          div.large-12.large-centered.columns.center
             = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
               div.row.collapse
                 div.small-11.columns
