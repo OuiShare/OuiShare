@@ -5,17 +5,19 @@ div#home
       = render 'home/welcome'
     - if @top_banner.image1?
       li
-        div.call
-          button call to action
-        = link_to @top_banner.link1 do
+        section.slide
+          div.call
+            a.button href="@top_banner.link1" call to action
           = image_tag(@top_banner.image1.top_banner.url)
+          = render 'home/sub'
 
     - if @top_banner.image2?
       li
-        div.call
-          button call to action
-        = link_to @top_banner.link2 do
+        section.slide
+          div.call
+            a.button href="@top_banner.link2" call to action
           = image_tag(@top_banner.image2.top_banner.url)
+          = render 'home/sub'
 
 
   = render 'home/about'

@@ -1,14 +1,67 @@
 #home
+
   .call
     bottom: 7%
     position: absolute
     text-align: center
     width: 100%
+    z-index: 9999
+
+    a
+      &:hover
+        text-decoration: none
 
   #slideshow
+    .slide
+      padding: 0
+
     img
+      position: absolute
       width: 100%
       height: 100%
+
+
+    /* Topbar home */
+    .social
+      padding-top: 40px
+      text-align: right
+      margin-bottom: 30px
+      a
+        display: inline-block
+        border: 1px solid white
+        text-align: center
+        margin-right: 10px
+        height: 30px
+        width: 30px
+        color: white
+        line-height: 23pt
+
+        &.facebook
+          background-color: #3c5a9a
+
+        &.twitter
+          background-color: #359bed
+
+        &.play
+          background-color: #e82d28
+
+
+      select
+        +appearance(none)
+        background: image-url('arrow.png') no-repeat 30px 10px transparent
+        border: 1px solid white
+        +border-radius(none)
+        color: white
+        height: 30px
+        float: right
+        padding: 6px
+        font-size: .7em
+        text-indent: 0.01px
+        text-overflow: ""
+
+        option
+          color: black
+
 
   .orbit-bullets
     left: 160px
@@ -35,54 +88,9 @@
     &#welcome
       padding: 0
 
-      img
-        position: absolute
-        width: 100%
-        height: 100%
-
       .separator
         position: relative
 
-        /* Topbar home */
-      .social
-        padding-top: 40px
-        text-align: right
-        margin-bottom: 30px
-        a
-          display: inline-block
-          border: 1px solid white
-          text-align: center
-          margin-right: 10px
-          height: 30px
-          width: 30px
-          color: white
-          line-height: 23pt
-
-          &.facebook
-            background-color: #3c5a9a
-
-          &.twitter
-            background-color: #359bed
-
-          &.play
-            background-color: #e82d28
-
-
-        select
-          +appearance(none)
-          background: image-url('arrow.png') no-repeat 30px 10px transparent
-          border: 1px solid white
-          +border-radius(none)
-          color: white
-          height: 30px
-          float: right
-          padding: 6px
-          font-size: .7em
-          text-indent: 0.01px
-          text-overflow: ""
-
-          option
-            color: black
 
       h1
         background: url("/assets/home/logos/ouishare.png") no-repeat

@@ -3,7 +3,7 @@ div#page-donations
     div.row
       div.large-4.columns
         h3 = @donation_page.main_title
-        p = @donation_page.main_text_html
+        .markdown = @donation_page.main_text_html
         h4 = @donation_page.thanks_text_html
       div.large-8.columns
         .pink-box
@@ -102,14 +102,14 @@ div#page-donations
         img src="#{@donation_page.image1.donation.url}"
       div.large-4.columns
         h3.subtitle.white = @donation_page.title1
-        p = @donation_page.text1_html
+        .markdown = @donation_page.text1_html
     .separator.black
     div.row.section
       div.large-8.columns
         img src="#{@donation_page.image2.donation.url}"
       div.large-4.columns
         h3.subtitle.white = @donation_page.title2
-        p = @donation_page.text2_html
+        .markdown = @donation_page.text2_html
 
   /*div.row.section.certified*/
     /*div.large-4.columns*/

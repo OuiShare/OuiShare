@@ -3,7 +3,7 @@ div#page-live
     section.about
       div.row
         div.large-12.columns
-          = @live_page.main_text_html
+          .markdown = @live_page.main_text_html
         div.large-12.columns
           = image_tag @live_page.image.top_internal
 

@@ -3,7 +3,7 @@ div#page-about-internal
     section.main-content
       div.row
         div.large-12.columns
-          p = @knowledge_page.main_text_html
+          .markdown = @knowledge_page.main_text_html
     section#banner
       div.row
         div.large-12.columns
@@ -17,17 +17,16 @@ div#page-about-internal
           ul.large-block-grid-2
             li
               h4 = @knowledge_page.title1
-              = @knowledge_page.text1_html
+              .markdown = @knowledge_page.text1_html
 
             li
               h4 = @knowledge_page.title2
-              = @knowledge_page.text2_html
+              .markdown = @knowledge_page.text2_html
 
             li
               h4 = @knowledge_page.title3
-              = @knowledge_page.text3_html
-
+              .markdown = @knowledge_page.text3_html
 
             li
               h4 = @knowledge_page.title4
-              = @knowledge_page.text4_html
+              .markdown = @knowledge_page.text4_html

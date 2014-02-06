@@ -1,5 +1,6 @@
 - content_for :page_title, 'Terms and Service'
-section.main-content
-  div.row
-    div.large-12.columns
-      = @terms_page.text_html
+#page-about-internal
+  section.main-content
+    div.row
+      div.large-12.columns
+        .markdown = @terms_page.text_html
