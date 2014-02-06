@@ -2,7 +2,8 @@
 div#event
   div.row.section
     div.large-5.columns
-      h2 = @event.cta
+      h4 = @event.place
+      h4 = @event.cta
       .markdown = @event.resume_html
       - @event.tags.each do |t|
         span.label.blue = t.name

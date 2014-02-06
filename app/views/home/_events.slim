@@ -10,4 +10,5 @@ section#events
             = link_to event_path(e) do
               p.title = e.title
               img.event src="#{e.image.event_thumb}"
+              p.meta = e.place
               p.meta = e.cta

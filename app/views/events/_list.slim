@@ -2,15 +2,15 @@ section#list
   - @current_language.events.visible.next.order('date_start desc').each do |e|
     div.event
       div.row
-        a href="#{event_path(e)}"
-          div.large-6.columns
+        div.large-6.columns
+          a href="#{event_path(e)}"
             h3.subtitle.black = e.title
-            p = e.resume
-            div.tags
-              - e.tags.each do |t|
-                span.label.blue = t.name
+          .markdown = e.resume_html
+          div.tags
+            - e.tags.each do |t|
+              span.label.blue = t.name
 
-          div.large-6.columns
-            div.thumb
-              = link_to e
-                = image_tag e.image.list_thumb.url
+        div.large-6.columns
+          div.thumb
+            = link_to e
+              = image_tag e.image.list_thumb.url
