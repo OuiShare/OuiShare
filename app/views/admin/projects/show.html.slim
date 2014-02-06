@@ -9,8 +9,8 @@ div#project
   div.info
     div.row.section
       div.large-4.columns
-        h3.subtitle = t('projects.organizers')
-        ul
+        h3.subtitle.black = t('projects.organizers')
+        ul.large-block-grid-4
           - @project.users.each do |u|
             li.avatar
               = link_to u do
