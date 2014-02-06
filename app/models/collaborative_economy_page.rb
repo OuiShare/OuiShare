@@ -4,5 +4,5 @@ class CollaborativeEconomyPage < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  beautiful_text_for [:main_text, :text1, :text2, :text3, :text4]
+  beautiful_text_for [:main_text, :text1, :text2, :text3, :text4, :text5]
 end
