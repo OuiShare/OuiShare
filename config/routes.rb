@@ -169,5 +169,5 @@ OuiShare::Application.routes.draw do
   get 'donations/thank_you' => 'donations#thank_you'
 
 
-  get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }
+  get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }
 end
