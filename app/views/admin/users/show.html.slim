@@ -6,7 +6,7 @@
     div.large-6.columns
       h3.subtitle = resource.name
       h4.subtitle = resource.title if !resource.profile_type.user?
-      p = resource.bio
+      .markdown = resource.bio_html
 
       / span.label.blue blah
       / span.label.blue blah
