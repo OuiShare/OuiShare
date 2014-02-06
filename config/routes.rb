@@ -163,4 +163,7 @@ OuiShare::Application.routes.draw do
   get "payments/success_callback"
   get "payments/cancel_callback"
   get 'donations/thank_you' => 'donations#thank_you'
+
+
+  get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }
 end
