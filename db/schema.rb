@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140206175029) do
+ActiveRecord::Schema.define(version: 20140206180139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -751,6 +751,8 @@ ActiveRecord::Schema.define(version: 20140206175029) do
     t.string   "image2"
     t.string   "link2"
     t.string   "main_image"
+    t.string   "link_text1"
+    t.string   "link_text2"
   end
 
   add_index "top_banners", ["language_id"], name: "index_top_banners_on_language_id", using: :btree
