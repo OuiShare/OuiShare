@@ -1,3 +1,6 @@
+var slider = ($( window ).height()) -46 ;
+$("#slideshow li").height(slider);
+
 $(document).foundation('orbit', {
     animation: 'slide',
     timer_speed: 8000,
