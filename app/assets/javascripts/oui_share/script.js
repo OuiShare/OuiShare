@@ -1,5 +1,5 @@
 var slider = ($( window ).height()) -46 ;
-$("#slideshow li").height(slider);
+$("#home #slideshow li").height(slider);
 
 $(document).foundation('orbit', {
     animation: 'slide',
