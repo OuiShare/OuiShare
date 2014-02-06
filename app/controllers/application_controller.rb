@@ -6,11 +6,25 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_language
 
+  rescue_from RoutingError, with: :render_404
+
   def after_sign_in_path_for(resource)
     if current_user.admin?
       admin_home_path
     else
       root_path
+    end
+  end
+
+  unless Rails.application.config.consider_all_requests_local
+    rescue_from ActionController::RoutingError,
+                ActionController::UnknownController,
+                ActionController::UnknownAction,
+                ActionController::MethodNotAllowed do |exception|
+
+      # Put loggers here, if desired.
+
+      render template: 'errors/not_found', status: 404
     end
   end
 
@@ -36,6 +50,13 @@ class ApplicationController < ActionController::Base
 
   def set_language
     @current_language = Language.where(slug: I18n.locale.to_s).first
+  end
+
+  def render_404
+    respond_to do |format|
+      format.html { render template: 'errors/not_found', status: 404 }
+      format.all { render nothing: true, status: 404 }
+    end
   end
 end
 

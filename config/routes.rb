@@ -5,6 +5,8 @@ OuiShare::Application.routes.draw do
 
   filter :locale, exclude: /\/auth\//
 
+  get '404', :to => 'application#render_404'
+
   namespace :admin do
     resources :languages do
       resources :top_banners
