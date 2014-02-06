@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :set_language
 
-  rescue_from RoutingError, with: :render_404
-
   def after_sign_in_path_for(resource)
     if current_user.admin?
       admin_home_path
