@@ -3,6 +3,6 @@ div#contact
   div.row.section
     div.large-4.columns
       h4 = @contact_page.title
-      p = @contact_page.text
+      p = @contact_page.text_html
     div.large-8.columns
       = render 'contact/form'
