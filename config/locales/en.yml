@@ -36,6 +36,7 @@ en:
     communities:
       index: "Communities"
       expert_groups: 'Knowledge Groups'
+      live: 'OuiShare Everyewhere'
     contact:
       index: 'Contact'
     getinvolved:
