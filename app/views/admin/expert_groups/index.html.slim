@@ -3,20 +3,21 @@ div.row
     h2.subheader Expert Groups
   - Language.all.each do |l|
     div.large-12.columns
-      h3.subheader = "#{l.name} expert groups"
-      = link_to 'Create', new_admin_language_expert_group_path(l.id)
-      table
-        tr
-          th Name
-          th Text
-          th Link
-          th
-          th
-        - l.expert_groups.each do |c|
+      .expert_groups
+        h3.subheader = "#{l.name} expert groups"
+        = link_to 'Create', new_admin_language_expert_group_path(l.id)
+        table
           tr
-            td = c.name
-            td = truncate(c.text)
-            td = c.link
-            td = link_to "Edit", edit_admin_language_expert_group_path(l, c)
-            td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete
+            th Name
+            th Text
+            th Link
+            th
+            th
+          - l.expert_groups.rank(:row_order).each do |c|
+            tr.sortable[data-update-path=sort_admin_language_expert_group_path(l, c)]
+              td = c.name
+              td = truncate(c.text)
+              td = c.link
+              td = link_to "Edit", edit_admin_language_expert_group_path(l, c)
+              td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete
 

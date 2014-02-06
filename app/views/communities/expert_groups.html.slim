@@ -15,7 +15,7 @@ div#page-communities
     div.row
       div.large-6.columns
         h3.subtitle = t('knowledge_groups.all_knowledge_groups')
-    - @expert_groups.each do |c|
+    - @expert_groups.rank(:row_order).each do |c|
       div.row.community
         div.large-6.columns
           p.title = c.name

@@ -49,7 +49,11 @@ OuiShare::Application.routes.draw do
       resources :donation_pages
       resources :get_involved_pages
       resources :expert_groups_pages
-      resources :expert_groups
+      resources :expert_groups do
+        member do
+          post :sort
+        end
+      end
       resources :organization_pages
       resources :terms_pages
       resources :live_pages
