@@ -59,3 +59,41 @@ footer
 
       i
         margin-left: 20px
+
+  .subscribe
+    @extend .whiteBlock
+    margin-top: -65px
+    padding: 10px
+
+    form
+      margin: 0
+
+    input
+      border: 1px solid white
+      background: rgba(255,255,255,0.7)
+      color: black
+      margin: 0
+      height: 46px
+
+    .btn
+      font-family: "Gandhi Sans", sans-serif
+      font-style: italic
+      text-transform: uppercase
+      background: white
+      color: $blue
+      border: 1px solid white
+      font-size: 14px
+      font-weight: bold
+      width: 89%
+
+      &:hover
+        background: darken($blue, 10%)
+        color: white
+
+    .prefix, .postfix
+      height: 46px
+
+    .error input:focus, input:focus
+      background: white
+      color: black
+      border: 1px solid white

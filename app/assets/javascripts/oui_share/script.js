@@ -12,7 +12,7 @@ $(document).foundation('orbit', {
     prev_class: 'orbit-prev',
     circular: true,
     variable_height: true,
-    timer: false
+    timer: true
 });
 $(document).foundation();
 
