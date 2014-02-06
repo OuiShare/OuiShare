@@ -1,0 +1,15 @@
+div.row
+  div.large-4.large-offset-8.columns.social.white
+    a.facebook href="https://www.facebook.com/OuiShare"
+      i.fa.fa-facebook
+    a.twitter href="https://www.twitter.com/OuiShare"
+      i.fa.fa-twitter
+    a.play href="http://youtube.com/ouisharetv"
+      i.fa.fa-play
+
+    select.small-2.black#l18n
+      - Language.visible.each do |l|
+        - if l.slug == I18n.locale.to_s
+          option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+        - else
+          option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
