@@ -143,7 +143,7 @@ OuiShare::Application.routes.draw do
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'
-  get 'communities/ouishare-everywhere' => 'communities#live', as: 'communities_live'
+  get 'ouishare-everywhere' => 'communities#live', as: 'communities_live'
   get 'communities/people' => 'communities#people', as: 'communities_people'
   get 'communities/knowledge_groups' => 'communities#expert_groups', as: 'expert_groups'
 
