@@ -7,9 +7,14 @@ div.row
     a.play href="http://youtube.com/ouisharetv"
       i.fa.fa-play
 
-    select.small-2.black#l18n
-      - Language.visible.each do |l|
-        - if l.slug == I18n.locale.to_s
-          option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
-        - else
-          option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
+    - Language.visible.each do |l|
+      - if l.slug == I18n.locale.to_s
+        .l18n.small-2 href="#{request.protocol}#{request.host_with_port}/#{l.slug}" data-dropdown="drop#{slider}" = l.slug
+        ul id="drop#{slider}" class="f-dropdown" data-dropdown-content=""
+          - Language.visible.each do |l|
+            - if l.slug == I18n.locale.to_s
+              li
+                a href="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+            - else
+              li
+                a href="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
