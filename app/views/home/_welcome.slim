@@ -1,6 +1,6 @@
 section#welcome
   = image_tag(@top_banner.main_image.top_banner.url)
-  = render 'home/sub'
+  = render "home/sub", {slider: '1'}
   div.row
     div.large-10.large-centered.columns.center
       h2 = @top_banner.title1

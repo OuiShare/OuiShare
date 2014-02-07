@@ -1,10 +1,10 @@
 var slider = ($( window ).height()) -46 ;
-$("#home #slideshow li").height(slider);
+$("#home #slideshow > li").height(slider);
 
 $(document).foundation('orbit', {
     animation: 'slide',
     timer_speed: 8000,
-    pause_on_hover: true,
+    pause_on_hover: false,
     resume_on_mouseout: true,
     animation_speed: 500,
     slide_number: false,
@@ -18,10 +18,10 @@ $(document).foundation();
 
 $(window).load(function() {
     function language() {
-        var lingua = $("#l18n").val();
+        var lingua = $(".l18n").val();
         window.location = lingua;
     }
-    $("#l18n").change(language);
+    $(".l18n").change(language);
 
     $(".orbit-bullets li.active").prepend("<span class='active-bullet'></span>");
 
@@ -29,7 +29,6 @@ $(window).load(function() {
         $(".orbit-bullets li").html("");
         $(".orbit-bullets li.active").prepend("<span class='active-bullet'></span>");
     });
-
 
     var container = document.querySelector('.more-content ul');
     var column = document.querySelector('.more-content ul li');

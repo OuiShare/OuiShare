@@ -1,5 +1,11 @@
 $blue: #00939A
 $red: #D02947
+$content: list
+$triangle: false
+$max-width: 50px
+$f-dropdown-bg: $blue
+$f-dropdown-border-color: #FFF
+$f-dropdown-border-width: 1px
 $topbar-dropdown-toggle-alpha: 0.1
 
 body
@@ -183,19 +189,33 @@ body
       &.play
         background-color: #e82d28
 
-    select
-      +appearance(none)
+    .l18n, #lang
+      text-align: left
+
+    .l18n
       +border-radius(none)
       height: 30px
       float: right
-      padding: 6px
+      padding: 8px
       font-size: .7em
-      text-indent: 0.01px
-      text-overflow: ""
       color: white
       border: 1px solid white
       background: image-url('arrow.png') no-repeat 30px 10px transparent
 
+    .f-dropdown
+      @include dropdown-container($content, $triangle, $max-width)
+
+      a
+        border: 0
+        width: 100%
+        text-align: center
+        line-height: 0
+        font-size: 12px
+        line-height: 16px
+
+        &:hover
+          background: darken( $blue, 5%)
+          text-decoration: none
 h2
   margin-bottom: 7px
 
@@ -219,6 +239,8 @@ p
 
 
 /* Orbit modifications */
+.orbit-timer
+  display: none
 .orbit-bullets
   top: 330px
   left: 350px
