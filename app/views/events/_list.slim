@@ -5,6 +5,7 @@ section#list
         div.large-6.columns
           a href="#{event_path(e)}"
             h3.subtitle.black = e.title
+            h4 = e.cta
           .markdown = e.resume_html
           div.tags
             - e.tags.each do |t|
