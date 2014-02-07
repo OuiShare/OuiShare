@@ -24,9 +24,9 @@ class Event < ActiveRecord::Base
 
   def cta
     if date_end.present? && date_end != date_start
-      "#{date_start.strftime('%d/%m/%Y')} to #{date_end.strftime('%d/%m/%Y')} | #{time.strftime('%H:%M')}"
+      "#{place} | #{date_start.strftime('%d/%m')} to #{date_end.strftime('%d/%m/%Y')} | #{time.strftime('%H:%M')}"
     else
-      "#{date_start} | #{time.strftime('%H:%M')}"
+      "#{place} | #{date_start.strftime('%d/%m/%Y')} | #{time.strftime('%H:%M')}"
     end
   end
 end
