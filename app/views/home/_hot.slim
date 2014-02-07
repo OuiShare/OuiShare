@@ -12,7 +12,7 @@ section#hot
             = link_to project_path(p) do
               p.title = p.name
             = link_to project_path(p) do
-              img.project src="#{p.image.project_thumb}"
+              img.project src="#{p.image.home_thumb}"
             .seta
             ul.large-block-grid-4
               - p.users[0..4].each do |u|

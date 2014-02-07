@@ -29,6 +29,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [555, 250]
   end
 
+  version :home_thumb, :if => :has_home_thumb? do
+    process :resize_to_fill => [300, 180]
+  end
+
   version :event_page_thumb, :if => :is_event? do
     process :resize_to_fill => [555, 250]
   end
@@ -91,5 +95,9 @@ class ImageUploader < CarrierWave::Uploader::Base
      'CocreationPage', 'ExpertGroupsPage', 'GetInvolvedPage', 'OrganizationPage',
      'LivePage', 'PressRoomPage', 'FundedPage', 'ResearchPage',
      'WorkusPage', 'CollaborativeEconomyPage', 'KnowledgePage'].include?(model.class.name)
+  end
+
+  def has_home_thumb? picture
+    ['Project', 'Event'].include?(model.class.name)
   end
 end
