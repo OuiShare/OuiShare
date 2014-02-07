@@ -52,9 +52,11 @@ div#event
 
     div.row
       div.large-6.columns
-        h4 = @event.title1
-        .markdown = @event.text1_html
+        - if @event.title1.present?
+          h4 = @event.title1
+          .markdown = @event.text1_html
 
       div.large-6.columns
-        h4 = @event.title2
-        .markdown = @event.text2_html
+        - if @event.title2.present?
+          h4 = @event.title2
+          .markdown = @event.text2_html

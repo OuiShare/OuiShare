@@ -23,25 +23,25 @@ div#project
     .separator.black
 
     div.row.section
-      div.large-4.columns
+      div.large-12.columns
         h3.subtitle.black = t('projects.join_us')
 
         .markdown = @project.join_us_text_html
 
-      div.large-8.columns
-        ul.inline-list.buttons
-          li
-            = link_to @project.service1_link do
-              = image_tag(@project.service1_image)
-              = @project.service1_title
-          li
-            = link_to @project.service2_link do
-              = image_tag(@project.service2_image)
-              = @project.service2_title
-          li
-            = link_to @project.service3_link do
-              = image_tag(@project.service3_image)
-              = @project.service3_title
+      /*div.large-8.columns*/
+        /*ul.inline-list.buttons*/
+          /*li*/
+            /*= link_to @project.service1_link do*/
+              /*= image_tag(@project.service1_image)*/
+              /*= @project.service1_title*/
+          /*li*/
+            /*= link_to @project.service2_link do*/
+              /*= image_tag(@project.service2_image)*/
+              /*= @project.service2_title*/
+          /*li*/
+            /*= link_to @project.service3_link do*/
+              /*= image_tag(@project.service3_image)*/
+              /*= @project.service3_title*/
 
       div.large-4.columns
         div.block
@@ -50,9 +50,11 @@ div#project
 
     div.row.section
       div.large-6.columns
-        h3.subtitle.black = @project.title1
-        .markdown = @project.text1_html
+        - if @project.title1.present?
+          h3.subtitle.black = @project.title1
+          .markdown = @project.text1_html
 
       div.large-6.columns
-        h3.subtitle.black = @project.title2
-        .markdown = @project.text2_html
+        - if @project.title2.present?
+          h3.subtitle.black = @project.title2
+          .markdown = @project.text2_html
