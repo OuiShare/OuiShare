@@ -3,7 +3,7 @@ $("#home #slideshow > li").height(slider);
 
 $(document).foundation('orbit', {
     animation: 'slide',
-    timer_speed: 8000,
+    timer_speed: 4000,
     pause_on_hover: false,
     resume_on_mouseout: true,
     animation_speed: 500,
