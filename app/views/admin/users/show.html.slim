@@ -13,7 +13,12 @@
       / span.label.blue blah
 
     div.large-3.columns
+      h4.center Contact me
       ul.large-block-grid-3.social
+        - if resource.email_address.present?
+          li
+            a.email href="mailto:#{resource.email_address}"
+              i.fa.fa-envelope-o
         - if resource.facebook_url.present?
           li
             a.facebook href=resource.facebook_url
@@ -34,10 +39,6 @@
           li
             a.linkedin href=resource.linkedin_url
               i.fa.fa-linkedin
-        - if resource.email_address.present?
-          li
-            a.email href="mailto:#{resource.email_address}"
-              i.fa.fa-envelope-o
 
   /div.contribute.section
     div.row
