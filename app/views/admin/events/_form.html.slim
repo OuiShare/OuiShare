@@ -8,9 +8,9 @@
       = f.input :place
   div.row
     div.large-4.columns
-      = f.input :date_start
+      = f.input :date_start, order: [:day, :month, :year]
     div.large-4.columns
-      = f.input :date_end
+      = f.input :date_end, order: [:day, :month, :year]
     div.large-4.columns
       = f.input :time
   div.row
