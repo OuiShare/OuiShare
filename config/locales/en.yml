@@ -78,6 +78,8 @@ en:
     organizers: 'Organizers'
   knowledge:
     all_knowledge_groups: 'All Knowledge Groups'
+  profile:
+    contact_me: 'Contact me'
   menu:
     about: 'about'
     story: 'Our story'
