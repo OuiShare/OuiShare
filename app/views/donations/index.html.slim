@@ -1,11 +1,12 @@
 div#page-donations
   section.donate.section
     div.row
-      div.large-4.columns
+      div.large-12.columns
         h3 = @donation_page.main_title
         .markdown = @donation_page.main_text_html
         h4 = @donation_page.thanks_text_html
-      div.large-8.columns
+    div.row
+      div.large-8.columns.large-offset-2
         .pink-box
           div.row
             .header
