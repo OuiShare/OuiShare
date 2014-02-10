@@ -85,6 +85,7 @@ OuiShare::Application.routes.draw do
       end
       resources :collaborative_economy_pages
       resources :knowledge_pages
+      resources :testimonials
     end
 
     resources :users
@@ -127,6 +128,7 @@ OuiShare::Application.routes.draw do
     get 'regions' => 'regions#index'
     get 'collaborative_economy_pages' => 'home#collaborative_economy_pages'
     get 'knowledge_pages' => 'home#knowledge_pages'
+    get 'testimonials' => 'home#testimonials'
   end
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'

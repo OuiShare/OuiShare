@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210005141) do
+ActiveRecord::Schema.define(version: 20140210015637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -734,6 +734,30 @@ ActiveRecord::Schema.define(version: 20140210005141) do
   end
 
   add_index "terms_pages", ["language_id"], name: "index_terms_pages_on_language_id", using: :btree
+
+  create_table "testimonials", force: true do |t|
+    t.integer  "language_id"
+    t.string   "user_picture1"
+    t.string   "author1"
+    t.string   "call_to_action1"
+    t.text     "text1"
+    t.string   "user_picture2"
+    t.string   "author2"
+    t.string   "call_to_action2"
+    t.text     "text2"
+    t.string   "user_picture3"
+    t.string   "author3"
+    t.string   "call_to_action3"
+    t.text     "text3"
+    t.string   "user_picture4"
+    t.string   "author4"
+    t.string   "call_to_action4"
+    t.text     "text4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "testimonials", ["language_id"], name: "index_testimonials_on_language_id", using: :btree
 
   create_table "timelines", force: true do |t|
     t.string   "url"

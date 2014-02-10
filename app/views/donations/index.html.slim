@@ -132,12 +132,35 @@ div#page-donations
       h3.subtitle.black Testimonials
     div.large-12.columns
       ul.large-block-grid-2
-        - 4.times do
+        - if @testimonial.call_to_action1.present?
           li
             div.box
               div.avatar
-                img src="http://placehold.it/60x60"
-                span.small by author
-              h4.subtitle Blah
-              p hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
-                nisl, tincidunt et, mattis eget, convallis nec.
+                = image_tag @testimonial.user_picture1.testimonial_avatar
+                span.small by #{@testimonial.author1}
+              h4.subtitle = @testimonial.call_to_action1
+              p = @testimonial.text1
+        - if @testimonial.call_to_action2.present?
+          li
+            div.box
+              div.avatar
+                = image_tag @testimonial.user_picture2.testimonial_avatar
+                span.small by #{@testimonial.author2}
+              h4.subtitle = @testimonial.call_to_action2
+              p = @testimonial.text2
+        - if @testimonial.call_to_action3.present?
+          li
+            div.box
+              div.avatar
+                = image_tag @testimonial.user_picture3.testimonial_avatar
+                span.small by #{@testimonial.author3}
+              h4.subtitle = @testimonial.call_to_action3
+              p = @testimonial.text3
+        - if @testimonial.call_to_action4.present?
+          li
+            div.box
+              div.avatar
+                = image_tag @testimonial.user_picture4.testimonial_avatar
+                span.small by #{@testimonial.author4}
+              h4.subtitle = @testimonial.call_to_action4
+              p = @testimonial.text4
