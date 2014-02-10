@@ -48,16 +48,13 @@ $(window).load(function() {
     });
 
     $(".euro").hide();
-    $("#currency").change(function() {
-        if($(this).val() == "USD") {
-            $(".euro").hide();
-            $(".dolar").show();
-            console.log("dolar");
-        } else {
-            $(".dolar").hide();
-            $(".euro").show();
-            console.log("euro");
-        }
+    $("#currency li.usd").click(function() {
+        $(".euro").hide();
+        $(".dolar").show();
+    });
+    $("#currency li.eur").click(function() {
+        $(".dolar").hide();
+        $(".euro").show();
     });
 });
 

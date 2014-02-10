@@ -13,9 +13,10 @@ div#page-donations
               div.large-6.columns
                 h5 Help support ouiShare!
               div.large-6.columns
-                select.small-2.right id="currency" name="currency"
-                  option value="USD" $
-                  option value="EUR" €
+                .currency.small-2 data-dropdown="currency" data-options="is_hover:true" $
+                ul#currency.f-dropdown data-dropdown-content=""
+                  li.usd $
+                  li.eur €
                 p.right choose currency
           div.row
             section.values
