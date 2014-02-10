@@ -6,7 +6,7 @@ class KnowledgeController < ApplicationController
 
   def research
     @resource = @current_language.research_page || ResearchPage.new
-    @list = @current_language.researches || [Research.new]
+    @list = @current_language.researches.rank(:row_order) || [Research.new]
   end
 
   def expert

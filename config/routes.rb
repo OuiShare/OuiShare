@@ -67,7 +67,11 @@ OuiShare::Application.routes.draw do
       resources :funded_pages
       resources :funding_infos
       resources :research_pages
-      resources :researches
+      resources :researches do
+        member do
+          post :sort
+        end
+      end
       resources :workus_pages
       resources :services do
         member do

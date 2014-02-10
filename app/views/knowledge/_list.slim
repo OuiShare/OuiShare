@@ -1,5 +1,5 @@
 section#list
-  - @current_language.researches.order('created_at desc').each do |p|
+  - @current_language.researches.rank(:row_order).each do |p|
     .event
       div.row
         div.large-6.columns
