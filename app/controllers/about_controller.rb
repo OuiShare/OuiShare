@@ -6,7 +6,7 @@ class AboutController < ApplicationController
 
   def mission
     @resource = @current_language.mission || Mission.new
-    @list = @current_language.activities.order('created_at desc') || [Activity.new]
+    @list = @current_language.activities.rank(:row_order) || [Activity.new]
   end
 
   def vision

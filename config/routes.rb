@@ -32,7 +32,11 @@ OuiShare::Application.routes.draw do
       end
       resources :faqs
       resources :missions
-      resources :activities
+      resources :activities do
+        member do
+          post :sort
+        end
+      end
       resources :timelines
       resources :governances
       resources :governance_pages
