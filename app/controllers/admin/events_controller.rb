@@ -58,6 +58,7 @@ module Admin
                             :text2,
                             :tag_list,
                             :visible,
+                            :display_on_menu,
                             :slug,
                             :user_ids => []])
     end

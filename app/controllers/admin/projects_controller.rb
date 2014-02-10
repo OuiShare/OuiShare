@@ -62,6 +62,7 @@ module Admin
                               :language_id,
                               :visible,
                               :featured,
+                              :display_on_menu,
                               :slug,
                               :row_order_position,
                               :user_ids => []])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208164531) do
+ActiveRecord::Schema.define(version: 20140210000704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -243,6 +243,7 @@ ActiveRecord::Schema.define(version: 20140208164531) do
     t.text     "text1_html"
     t.text     "text2_html"
     t.string   "home_image"
+    t.boolean  "display_on_menu",   default: true, null: false
   end
 
   add_index "events", ["language_id"], name: "index_events_on_language_id", using: :btree
@@ -604,6 +605,7 @@ ActiveRecord::Schema.define(version: 20140208164531) do
     t.text     "text1_html"
     t.text     "text2_html"
     t.string   "home_image"
+    t.boolean  "display_on_menu",   default: true,  null: false
   end
 
   add_index "projects", ["language_id"], name: "index_projects_on_language_id", using: :btree

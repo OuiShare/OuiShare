@@ -40,7 +40,7 @@ div.contain-to-grid.fixed
         li.has-dropdown
           = link_to t('menu.events'), events_path
           ul.dropdown
-            - @current_language.events.visible.next.order('date_start desc').each do |e|
+            - @current_language.events.visible.visible_on_menu.next.order('date_start desc').each do |e|
               li
                 = link_to e.name, event_path(e)
             li
@@ -49,7 +49,7 @@ div.contain-to-grid.fixed
         li.has-dropdown
           = link_to t('menu.projects'), projects_path
           ul.dropdown
-            - @current_language.projects.visible.each do |p|
+            - @current_language.projects.visible.visible_on_menu.each do |p|
               li
                 = link_to p.name, project_path(p)
             li

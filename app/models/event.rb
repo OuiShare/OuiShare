@@ -17,6 +17,7 @@ class Event < ActiveRecord::Base
   acts_as_taggable
 
   scope :visible, ->{ where(visible: true) }
+  scope :visible_on_menu, ->{ where(display_on_menu: true) }
   scope :next, ->{ where('date_start >= ?', Time.now) }
 
   def name
