@@ -25,6 +25,9 @@ gem 'friendly_id'
 gem 'ranked-model'
 gem 'figaro'
 
+# Geolocation
+gem 'geocoder'
+
 # I18n
 gem 'rails-i18n'
 gem 'devise-i18n'

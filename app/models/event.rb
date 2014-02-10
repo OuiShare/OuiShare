@@ -4,6 +4,9 @@ class Event < ActiveRecord::Base
   belongs_to :language
   has_and_belongs_to_many :users
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
   beautiful_text_for [:resume, :info, :join_us_text, :text1, :text2]
 
   friendly_id :title, use: [:slugged, :history, :finders]
