@@ -39,15 +39,15 @@ div#event
           li
             = link_to @event.service1_link do
               = image_tag(@event.service1_image)
-              = @event.service1_title
+              p.service = @event.service1_title
           li
             = link_to @event.service2_link do
               = image_tag(@event.service2_image)
-              = @event.service2_title
+              p.service = @event.service2_title
           li
             = link_to @event.service3_link do
               = image_tag(@event.service3_image)
-              = @event.service3_title
+              p.service = @event.service3_title
 
       div.large-4.columns
         div.block
