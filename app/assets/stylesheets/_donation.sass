@@ -34,17 +34,16 @@
         @include dropdown-container($content, $triangle, $max-width)
         background: $red
 
-        li
+        a
           border: 0
           width: 100%
           text-align: center
           font-size: 12px
           line-height: 16px
+          color: white
 
           &:hover
-            border-top: 1px solid white
-            border-bottom: 1px solid white
-            background: rgba(0,0,0,0.3)
+            background: darken($red,5%)
             color: white
             text-decoration: none
 

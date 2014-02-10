@@ -47,12 +47,14 @@ $(window).load(function() {
         $(this).val("");
     });
 
-    $(".euro").hide();
-    $("#currency li.usd").click(function() {
+    $(".dolar").hide();
+    $("#currency .usd").click(function() {
+        $("a.currency").html("$");
         $(".euro").hide();
         $(".dolar").show();
     });
-    $("#currency li.eur").click(function() {
+    $("#currency .eur").click(function() {
+        $("a.currency").html("€");
         $(".dolar").hide();
         $(".euro").show();
     });

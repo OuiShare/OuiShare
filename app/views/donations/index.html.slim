@@ -13,10 +13,12 @@ div#page-donations
               div.large-6.columns
                 h5 Help support ouiShare!
               div.large-6.columns
-                .currency.small-2 data-dropdown="currency" data-options="is_hover:true" $
-                ul#currency.f-dropdown data-dropdown-content=""
-                  li.usd $
-                  li.eur €
+                a.currency.small-2 data-dropdown="currency" data-options="is_hover:true" €
+                ul id="currency" class="f-dropdown small" data-dropdown-content=""
+                  li
+                    a.usd href="#page-donations" $
+                  li
+                    a.eur href="#page-donations" €
                 p.right choose currency
           div.row
             section.values
