@@ -12,11 +12,11 @@ div#event
     div.row.section
       div.large-4.columns
         h3.subtitle.black Organizers
-        ul.large-block-grid-4
+        div.avatars
           - @event.users.each do |u|
-            li.avatar
+            span.block
               = link_to u do
-                = image_tag(u.avatar_url(50))
+                = image_tag(u.avatar_url)
 
       div.large-8.columns
         h3.subtitle.black About this event

@@ -9,15 +9,18 @@ section#bepart
       div.part
         = link_to @take_part_section.link1 do
           div.takePart
-          h4 = @take_part_section.title1
-          p = @take_part_section.text1
+          .content
+            h4 = @take_part_section.title1
+            .markdown = @take_part_section.text1
       div.part
         = link_to @take_part_section.link2 do
           div.comeTo
-          h4 = @take_part_section.title2
-          p = @take_part_section.text2
+          .content
+            h4 = @take_part_section.title2
+            .markdown = @take_part_section.text2
       div.part
         = link_to @take_part_section.link3 do
           div.donate
-          h4 = @take_part_section.title3
-          p = @take_part_section.text3
+          .content
+            h4 = @take_part_section.title3
+            .markdown = @take_part_section.text3

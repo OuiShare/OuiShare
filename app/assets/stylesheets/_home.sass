@@ -229,6 +229,13 @@ $triangle: false
               height: 32px
               max-height: 32px
 
+      .avatars
+        text-align: center
+      .block
+        width: 70px
+        height: 70px
+        display: inline-block
+        margin: 4px 2px
 
     &#hot, &#events
       color: white
@@ -353,11 +360,15 @@ $triangle: false
         &:last-child
           margin-bottom: 0
 
-        h4
-          @extend .whiteBlock
-          font-weight: 500
-          margin-bottom: 0
-          text-transform: uppercase
+        .content
+          margin-left: 140px
+
+          h4
+            @extend .whiteBlock
+            font-weight: 500
+            margin-bottom: 0
+            text-transform: uppercase
+            padding-left: 0
 
       .takePart, .comeTo, .donate
         float: left
