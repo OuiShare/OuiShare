@@ -29,6 +29,7 @@ class Language < ActiveRecord::Base
   has_one :workus_page
   has_one :collaborative_economy_page
   has_one :knowledge_page
+  has_one :testimonial
   has_many :projects
   has_many :events
   has_many :activities
