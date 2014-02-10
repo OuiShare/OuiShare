@@ -60,6 +60,9 @@ module Admin
                             :visible,
                             :display_on_menu,
                             :slug,
+                            :address,
+                            :latitude,
+                            :longitude,
                             :user_ids => []])
     end
   end
