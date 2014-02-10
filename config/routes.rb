@@ -65,7 +65,11 @@ OuiShare::Application.routes.draw do
       resources :research_pages
       resources :researches
       resources :workus_pages
-      resources :services
+      resources :services do
+        member do
+          post :sort
+        end
+      end
       resources :regions do
         member do
           post :sort

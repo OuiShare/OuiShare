@@ -22,9 +22,15 @@ module Admin
       @service = Service.find(params[:id])
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:service][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(service: [:name, :image, :text, :link, :language_id])
+      params.permit(service: [:name, :image, :text, :link, :row_order_position, :language_id])
     end
 
   end

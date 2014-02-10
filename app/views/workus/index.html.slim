@@ -12,7 +12,7 @@ div#page-about-internal
             = image_tag(@workus_page.image.top_internal)
 
   section#activities.section
-    - @services.each do |s|
+    - @services.rank(:row_order).each do |s|
       div.row.actvity
         div.large-6.columns
           = link_to s.link do
