@@ -72,6 +72,10 @@ en:
     contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
   donations:
     thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
+    help_support_ouishare: 'Help support OuiShare!'
+    choose_currency: 'choose currency'
+    donation: 'Donation'
+    recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
   projects:
     join_us: 'Join us!'
     info: 'More information'

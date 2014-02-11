@@ -11,7 +11,7 @@ div#page-donations
           div.row
             .header
               div.large-6.columns
-                h5 Help support ouiShare!
+                h5 = t('donations.help_support_ouishare')
               div.large-6.columns
                 a.currency.small-2 data-dropdown="currency" data-options="is_hover:true" €
                 ul id="currency" class="f-dropdown small" data-dropdown-content=""
@@ -19,11 +19,11 @@ div#page-donations
                     a.usd href="#page-donations" $
                   li
                     a.eur href="#page-donations" €
-                p.right choose currency
+                p.right = t('donations.choose_currency')
           div.row
             section.values
               div.large-12.columns
-                h5 Donation
+                h5 = t('donations.donation')
                 ul.inline-list.euro
                   li.value
                     form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
@@ -99,6 +99,8 @@ div#page-donations
                       input type="hidden" name="hosted_button_id" value="KM28JDRJBX5UU"
                       input type="image" src="#{image_path 'donation_buttons/custom.png'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                       img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+            div.large-12.columns
+              p = t('donations.recurring_donations')
 
   section.explain
     div.row.section
