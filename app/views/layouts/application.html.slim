@@ -5,6 +5,14 @@ html
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = yield(:meta_tags)
+    meta name="robots" content="index, follow"
+    meta name="description"         content='Connecting the Collaborative Economy'
+    meta property="og:title"        content='OuiShare - Connecting the Collaborative Economy'
+    meta property="og:url"          content='http://ouishare.net'
+    meta property="og:image"        content=image_url('home/logos/ouishare-black.png')
+    meta property="og:site_name"    content='OuiShare'
+    meta property="fb:app_id"       content=ENV['FB_ID']
+    meta property="og:description"  content='OuiShare is a non-profit organization and global community empowering citizens, public institutions and companies to build a society in which every person has access to the resources and opportunities they need to thrive. We believe that an economy based on community principles such as sharing, collaboration and openness can solve many of the complex challenges the world faces.'
     = csrf_meta_tag
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/custom.modernizr"
