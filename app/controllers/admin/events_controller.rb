@@ -41,6 +41,7 @@ module Admin
                             :time,
                             :resume,
                             :image,
+                            :home_image,
                             :info,
                             :join_us_text,
                             :service1_image,
