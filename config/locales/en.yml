@@ -68,8 +68,8 @@ en:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
   workus:
-    become_a_partner: 'Become a Partner!'
-    contact_a_partner: 'Contact one of the connector teams or fill up this form.'
+    become_a_partner: 'Want to know more?'
+    contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
   donations:
     thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
   projects:
