@@ -22,4 +22,5 @@ div#page-communities
           p.title = c.name
           .markdown = c.text_html
         div.large-6.columns
-          = image_tag c.image.list_thumb
+          = link_to c.link, target: '_blank' do
+            = image_tag c.image.list_thumb
