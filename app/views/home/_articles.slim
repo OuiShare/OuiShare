@@ -2,7 +2,7 @@ section#articles
   div.row
     div.large-8.columns
       ul.articles.large-block-grid-2
-        - (Magazine.fetch_last_posts(@current_language.slug) rescue [])[0..2].each do |f|
+        - (Magazine.fetch_last_posts(@current_language.slug) rescue [])[0..1].each do |f|
           li
             a href="#{f.url}" target="blank"
               h5.title = truncate(f.title, length: 70)
