@@ -91,7 +91,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def has_list_thumb? picture
-    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service'].include?(model.class.name)
+    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service', 'Cocreation'].include?(model.class.name)
   end
 
   def is_partner? picture

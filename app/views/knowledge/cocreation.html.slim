@@ -18,6 +18,8 @@ div#page-communities
         h3.subtitle Events
     - @cocreations.each do |c|
       div.row.community
-        div.large-12.columns
+        div.large-6.columns
           p.title = c.name
           .markdown = c.text_html
+        div.large-6.columns
+          = image_tag c.image.list_thumb

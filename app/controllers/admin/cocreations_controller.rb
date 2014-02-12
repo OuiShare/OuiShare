@@ -25,7 +25,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(cocreation: [:name, :link, :text, :language_id])
+      params.permit(cocreation: [:name, :link, :text, :image, :language_id])
     end
 
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210023110) do
+ActiveRecord::Schema.define(version: 20140212124556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20140210023110) do
     t.string   "name"
     t.string   "link"
     t.text     "text_html"
+    t.string   "image"
   end
 
   add_index "cocreations", ["language_id"], name: "index_cocreations_on_language_id", using: :btree

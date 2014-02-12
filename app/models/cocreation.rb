@@ -3,4 +3,6 @@ class Cocreation < ActiveRecord::Base
   belongs_to :language
 
   beautiful_text_for [:text]
+
+  mount_uploader :image, ImageUploader
 end
