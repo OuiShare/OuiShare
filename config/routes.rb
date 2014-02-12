@@ -88,7 +88,7 @@ OuiShare::Application.routes.draw do
       resources :testimonials
     end
 
-    resources :users
+    resources :users, except: [:show]
 
     get '/' => 'home#index'
     get 'home' => 'home#home'
@@ -130,6 +130,8 @@ OuiShare::Application.routes.draw do
     get 'knowledge_pages' => 'home#knowledge_pages'
     get 'testimonials' => 'home#testimonials'
   end
+
+  get 'profile/:id' => 'admin/users#show', as: 'user'
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
   get 'events/:id' => 'admin/events#show', as: 'event'
@@ -178,7 +180,6 @@ OuiShare::Application.routes.draw do
   get 'press-room' => 'press#index', as: 'press'
   get 'work-with-us' => 'workus#index', as: 'workus'
 
-  get 'users/:id' => 'admin/users#show', as: 'user'
   post 'donations/pay' => 'donations#pay', as: 'pay_donation'
   get "payments/success_callback"
   get "payments/cancel_callback"
