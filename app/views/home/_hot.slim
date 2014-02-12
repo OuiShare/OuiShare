@@ -3,7 +3,7 @@ section#hot
     div.large-4.columns
       h3.subtitle.white = @hot_projects_section.title
       p = @hot_projects_section.text_html
-      a.btn.white = @hot_projects_section.link_text
+      a.btn.white href="#{projects_path}" = @hot_projects_section.link_text
 
     div.large-8.columns
       ul.projects.large-block-grid-2
