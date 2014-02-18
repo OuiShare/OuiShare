@@ -48,8 +48,10 @@ class User < ActiveRecord::Base
   def avatar_url(size = 200)
     if size < 100
       return image.small if image.present?
-    else
+    elsif size < 150
       return image.normal if image.present?
+    else
+      return image if image.present?
     end
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
   end
