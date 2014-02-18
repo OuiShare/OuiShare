@@ -16,7 +16,7 @@ div#event
           - @event.users.each do |u|
             span.block
               = link_to u do
-                = image_tag(u.avatar_url)
+                = image_tag(u.avatar_url(140))
 
       div.large-8.columns
         h3.subtitle.black About this event
