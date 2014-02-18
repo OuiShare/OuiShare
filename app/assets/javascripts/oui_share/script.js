@@ -1,5 +1,9 @@
-var slider = ($( window ).height()) -46 ;
-$("#home #slideshow > li").height(slider);
+// var screen = $(window).width();
+
+// if (screen >= 769) {
+//     var slider = ($( window ).height()) -46 ;
+//     $("#home #slideshow > li").height(slider);
+// }
 
 $(document).foundation('orbit', {
     animation: 'slide',
@@ -12,7 +16,7 @@ $(document).foundation('orbit', {
     prev_class: 'orbit-prev',
     circular: true,
     variable_height: true,
-    timer: true
+    timer: false
 });
 $(document).foundation();
 
