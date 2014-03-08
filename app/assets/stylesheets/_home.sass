@@ -5,8 +5,7 @@ $triangle: false
 #home
 
   .call
-    top: 70%
-    position: absolute
+    margin-top: 30%
     text-align: center
     width: 100%
     z-index: 9999
@@ -17,8 +16,14 @@ $triangle: false
         text-decoration: none
 
   #slideshow
+    section
+      position: relative
+      padding: 0
+
     .slide
       padding: 0
+      position: absolute
+      width: 100%
 
     img
       z-index: 0
@@ -107,8 +112,10 @@ $triangle: false
   section
     padding: 64px 0
 
-    &#welcome
+    #welcome
+      position: absolute
       padding: 0
+      width: 100%
 
       .separator
         position: relative
@@ -147,7 +154,7 @@ $triangle: false
           font-weight: normal
 
       .pinkbox
-        top: 70%
+        top: 350%
         position: absolute
         text-align: center
         z-index: 9999
