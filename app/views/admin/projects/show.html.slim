@@ -22,7 +22,7 @@ div#project
 
     .separator.black
 
-    div.row.section
+    div.row.joinus
       div.large-12.columns
         h3.subtitle.black = t('projects.join_us')
 
@@ -43,12 +43,7 @@ div#project
               /*= image_tag(@project.service3_image)*/
               /*= @project.service3_title*/
 
-      div.large-4.columns
-        div.block
-      div.large-4.columns
-        div.block
-
-    div.row.section
+    div.row.present
       div.large-6.columns
         - if @project.title1.present?
           h3.subtitle.black = @project.title1
