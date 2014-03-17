@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212124556) do
+ActiveRecord::Schema.define(version: 20140317203153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -261,6 +261,7 @@ ActiveRecord::Schema.define(version: 20140212124556) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text_html"
+    t.string   "link_text"
   end
 
   add_index "events_sections", ["language_id"], name: "index_events_sections_on_language_id", using: :btree

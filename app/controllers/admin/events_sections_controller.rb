@@ -18,7 +18,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(events_section: [:title, :text])
+      params.permit(events_section: [:title, :text, :link_text])
     end
 
     def resource
