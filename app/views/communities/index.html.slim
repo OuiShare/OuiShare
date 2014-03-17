@@ -32,7 +32,7 @@ div#page-communities
                 - c.users.each do |u|
                   span.block
                     = link_to u do
-                      = image_tag u.avatar_url
+                      = image_tag u.avatar_url(140)
       - if @current_language.communities.without_region.size > 0
         h3.subtitle = t('communities.other_communities')
         - @current_language.communities.without_region.rank(:row_order).each do |c|
