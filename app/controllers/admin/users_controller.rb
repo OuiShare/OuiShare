@@ -2,7 +2,7 @@ module Admin
   class UsersController < BaseController
     inherit_resources
 
-    before_filter :verify_admin
+    before_filter :verify_admin, except: :show
 
     def update
       update! { admin_users_path }
