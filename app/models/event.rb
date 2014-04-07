@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
 
   scope :visible, ->{ where(visible: true) }
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
-  scope :next, ->{ where('date_start >= ?', Time.now) }
+  scope :next, ->{ where('date_end >= ?', Time.now) }
 
   def name
     title
