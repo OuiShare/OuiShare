@@ -4,6 +4,8 @@ module Admin
     singleton_belongs_to :language
     actions :all, except: [:show, :index]
 
+    before_filter :verify_admin
+
     def create
       create! { admin_research_pages_path }
     end

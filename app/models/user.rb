@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   beautiful_text_for [:bio]
 
-  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
+  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2, editor: 3 }
 
   scope :connectors, ->{ where(profile_type: 1) }
   scope :advisors, ->{ where(profile_type: 2) }
@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
       return image if image.present?
     end
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
+  end
+
+  def has_edit_rights?
+    [1, 2, 3].include?(self.profile_type_value) || self.admin?
   end
 
   def is_admin?

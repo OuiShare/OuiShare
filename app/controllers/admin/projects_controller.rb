@@ -3,7 +3,7 @@ module Admin
     inherit_resources
     belongs_to :language
     include AutoHtml
-    skip_before_filter :verify_admin, only: [:show, :index]
+    skip_before_filter :verify_editor, only: [:show, :index]
 
     def index
     end

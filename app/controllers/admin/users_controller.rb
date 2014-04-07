@@ -2,6 +2,8 @@ module Admin
   class UsersController < BaseController
     inherit_resources
 
+    before_filter :verify_admin
+
     def update
       update! { admin_users_path }
     end

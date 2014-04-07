@@ -3,6 +3,8 @@ module Admin
     inherit_resources
     belongs_to :language
 
+    before_filter :verify_admin
+
     def index
     end
 

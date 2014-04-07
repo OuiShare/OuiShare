@@ -53,5 +53,11 @@ class ApplicationController < ActionController::Base
       format.all { render nothing: true, status: 404 }
     end
   end
+
+  def verify_admin
+    unless current_user.try(:is_admin?)
+      redirect_to root_path, alert: t('admin.not_authorized')
+    end
+  end
 end
 
