@@ -2,19 +2,25 @@ section#bepart
   div.row
     div.large-4.columns
       h3.subtitle.black = @take_part_section.main_title
-      p.desc = @take_part_section.main_text
-      a.btn.blue href="#{contact_path}" = @take_part_section.link_text
+      p.desc = @take_part_section.main_text_html
+      a.btn.blue href="#{getinvolved_path}" = @take_part_section.link_text
 
     div.large-8.columns
       div.part
-        div.takePart
-        h4 = @take_part_section.title1
-        p = @take_part_section.text1
+        = link_to @take_part_section.link1 do
+          div.takePart
+          .content
+            h4 = @take_part_section.title1
+            .markdown = @take_part_section.text1
       div.part
-        div.comeTo
-        h4 = @take_part_section.title2
-        p = @take_part_section.text2
+        = link_to @take_part_section.link2 do
+          div.comeTo
+          .content
+            h4 = @take_part_section.title2
+            .markdown = @take_part_section.text2
       div.part
-        div.donate
-        h4 = @take_part_section.title3
-        p = @take_part_section.text3
+        = link_to @take_part_section.link3 do
+          div.donate
+          .content
+            h4 = @take_part_section.title3
+            .markdown = @take_part_section.text3

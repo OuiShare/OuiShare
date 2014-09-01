@@ -3,6 +3,8 @@ module Admin
     inherit_resources
     belongs_to :language
 
+    before_filter :verify_admin
+
     def index
     end
 
@@ -22,9 +24,15 @@ module Admin
       @research = Research.find(params[:id])
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:research][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(research: [:title, :image, :text, :link, :tag_list, :language_id])
+      params.permit(research: [:title, :image, :text, :link, :row_order_position, :tag_list, :language_id])
     end
 
   end

@@ -1,9 +1,10 @@
-section.main-content
-  div.row
-    div.large-12.columns
-      = @resource.text
-section#banner
-  div.row
-    div.large-12.columns
-      div.banner
-        = image_tag(@resource.image.top_internal.url)
+.green
+  section.main-content
+    div.row
+      div.large-12.columns
+        .markdown = @resource.text_html
+  section#banner
+    div.row
+      div.large-12.columns
+        div.banner
+          = image_tag(@resource.image.top_internal.url)

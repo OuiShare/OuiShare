@@ -4,6 +4,8 @@ module Admin
     singleton_belongs_to :language
     actions :all, except: [:show, :index]
 
+    before_filter :verify_admin
+
     def create
       create! { admin_collaborative_economy_pages_path }
     end
@@ -18,7 +20,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(collaborative_economy_page: [:main_text, :image, :title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4])
+      params.permit(collaborative_economy_page: [:main_text, :image, :title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4, :title5, :text5])
     end
 
     def resource

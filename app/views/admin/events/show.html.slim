@@ -2,8 +2,8 @@
 div#event
   div.row.section
     div.large-5.columns
-      h2 = @event.cta
-      p = @event.resume
+      h4 = @event.cta
+      .markdown = @event.resume_html
       - @event.tags.each do |t|
         span.label.blue = t.name
     div.large-7.columns
@@ -11,39 +11,44 @@ div#event
   div.info
     div.row.section
       div.large-4.columns
-        h3.subtitle Organizers
-        ul.large-block-grid-4
+        h3.subtitle.black Organizers
+        div.avatars
           - @event.users.each do |u|
-            li.avatar
+            span.block
               = link_to u do
-                = image_tag(u.avatar_url(50))
+                = image_tag(u.avatar_url(140))
 
       div.large-8.columns
-        h3.subtitle.white About this event
-        p = @event.info
-
-    .separator.white
+        h3.subtitle.black About this event
+        .markdown = @event.info_html
+        .row
+          = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
+            .large-8.columns
+              = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+            .large-4.columns
+              = @event.address
+    .separator.black
 
     div.row.section
       div.large-4.columns
-        h3.subtitle.white Join us!
+        h3.subtitle.black Join us!
 
-        p = @event.join_us_text
+        .markdown = @event.join_us_text_html
 
       div.large-8.columns
         ul.inline-list.buttons
           li
             = link_to @event.service1_link do
               = image_tag(@event.service1_image)
-              = @event.service1_title
+              p.service = @event.service1_title
           li
             = link_to @event.service2_link do
               = image_tag(@event.service2_image)
-              = @event.service2_title
+              p.service = @event.service2_title
           li
             = link_to @event.service3_link do
               = image_tag(@event.service3_image)
-              = @event.service3_title
+              p.service = @event.service3_title
 
       div.large-4.columns
         div.block
@@ -52,9 +57,11 @@ div#event
 
     div.row
       div.large-6.columns
-        H4 = @event.title1
-        p = @event.text1
+        - if @event.title1.present?
+          h4 = @event.title1
+          .markdown = @event.text1_html
 
       div.large-6.columns
-        H4 = @event.title2
-        p = @event.text2
+        - if @event.title2.present?
+          h4 = @event.title2
+          .markdown = @event.text2_html

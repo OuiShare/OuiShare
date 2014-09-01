@@ -1,15 +1,16 @@
 - content_for :page_title, 'Communities'
 div#page-communities
-  section.explain
-    div.row
-      div.large-12.columns
-        p = @community_page.main_text
+  div.green
+    section.explain
+      div.row
+        div.large-12.columns
+          .markdown = @community_page.main_text_html
 
-  section#map
-    div.row
-      div.large-12.columns
-        div.map
-          = image_tag @community_page.image.top_internal
+    section#map
+      div.row
+        div.large-12.columns
+          div.map
+            = image_tag @community_page.image.top_internal
 
   section#communities-list.section
     div.row
@@ -20,7 +21,7 @@ div#page-communities
           div.row.community
             div.large-6.columns
               p.title = c.name
-              p = c.text
+              .markdown = c.text_html
 
             div.large-2.columns
               = link_to c.link do
@@ -31,14 +32,14 @@ div#page-communities
                 - c.users.each do |u|
                   span.block
                     = link_to u do
-                      = image_tag u.avatar_url
+                      = image_tag u.avatar_url(140)
       - if @current_language.communities.without_region.size > 0
         h3.subtitle = t('communities.other_communities')
         - @current_language.communities.without_region.rank(:row_order).each do |c|
           div.row.community
             div.large-6.columns
               p.title = c.name
-              p = c.text
+              .markdown = c.text_html
 
             div.large-2.columns
               = link_to c.link do

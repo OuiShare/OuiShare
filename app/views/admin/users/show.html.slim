@@ -6,14 +6,19 @@
     div.large-6.columns
       h3.subtitle = resource.name
       h4.subtitle = resource.title if !resource.profile_type.user?
-      p = resource.bio
+      .markdown = resource.bio_html
 
       / span.label.blue blah
       / span.label.blue blah
       / span.label.blue blah
 
     div.large-3.columns
+      h4.center = t('profile.contact_me')
       ul.large-block-grid-3.social
+        - if resource.email_address.present?
+          li
+            a.email href="mailto:#{resource.email_address}"
+              i.fa.fa-envelope-o
         - if resource.facebook_url.present?
           li
             a.facebook href=resource.facebook_url

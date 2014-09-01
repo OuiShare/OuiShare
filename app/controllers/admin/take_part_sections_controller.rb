@@ -4,6 +4,8 @@ module Admin
     singleton_belongs_to :language
     actions :all, except: [:show, :index]
 
+    before_filter :verify_admin
+
     def create
       create! { admin_home_path }
     end
@@ -18,7 +20,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(take_part_section: [:main_title, :main_text, :link_text, :title1, :text1, :link1, :title2, :text2, :link2, :title3, :text3, :link_3, :image1, :image2, :image3])
+      params.permit(take_part_section: [:main_title, :main_text, :link_text, :title1, :text1, :link1, :title2, :text2, :link2, :title3, :text3, :link3, :image1, :image2, :image3])
     end
 
     def resource

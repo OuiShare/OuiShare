@@ -4,6 +4,7 @@ module Admin
     singleton_belongs_to :language
     actions :all, except: [:show, :index]
 
+    before_filter :verify_admin
 
     def create
       create! { admin_home_path }
@@ -19,7 +20,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(top_banner: [:title1, :text1, :title2, :text2, :main_image, :image1, :image2, :link1, :link2])
+      params.permit(top_banner: [:title1, :text1, :title2, :text2, :main_image, :image1, :image2, :link1, :link2, :link_text1, :link_text2])
     end
 
     def resource

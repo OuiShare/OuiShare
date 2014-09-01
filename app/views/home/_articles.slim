@@ -2,13 +2,15 @@ section#articles
   div.row
     div.large-8.columns
       ul.articles.large-block-grid-2
-        - @feed.entries[0..1].each do |f|
+        - (Magazine.fetch_last_posts(@current_language.slug) rescue [])[0..1].each do |f|
           li
             a href="#{f.url}" target="blank"
               h5.title = truncate(f.title, length: 70)
               img.article src="#{f.summary.split(' ')[3].split('"')[1]}"
               div.author
-                /*img.avatar src="http://placehold.it/45x45"*/
+                - author = User.where(name: f.author).first
+                - if author.present?
+                  img.avatar src="#{author.avatar_url(45)}"
                 p.name = "by #{f.author}"
                 p.date = "23h41, 21/11/2013"
             div.tags
@@ -17,6 +19,6 @@ section#articles
 
     div.large-4.columns
       h3.subtitle.black = @articles_section.title
-      p = @articles_section.text
+      p = @articles_section.text_html
 
-      a.btn.blue href="http://ouishare.net" = @articles_section.link_text
+      a.btn.blue href="http://magazine.ouishare.net" = @articles_section.link_text

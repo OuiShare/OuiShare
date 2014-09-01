@@ -11,20 +11,42 @@
       text-transform: uppercase
 
     .header
-      select
+      .currency
         +appearance(none)
         border: 1px solid white
         +border-radius(none)
         color: white
         height: 30px
         float: right
-        padding: 6px
+        padding: 8px
         font-size: .7em
         text-indent: 0.01px
         text-overflow: ""
         border: 1px solid white
         margin-left: 20px
         background: image-url('arrow.png') no-repeat 25px 10px transparent
+
+      $f-dropdown-triangle-size: 0px
+      $f-dropdown-triangle-color: none
+      $triangle: false
+
+      .f-dropdown
+        @include dropdown-container($content, $triangle, $max-width)
+        background: $red
+
+        a
+          border: 0
+          width: 100%
+          text-align: center
+          font-size: 12px
+          line-height: 16px
+          color: white
+
+          &:hover
+            background: darken($red,5%)
+            color: white
+            text-decoration: none
+
 
     section
       border: 1px solid white
@@ -101,7 +123,6 @@
   .explain
     border-top: 1px solid black
     background: white
-    padding: 64px 0
     color: black
 
     h3
@@ -110,6 +131,8 @@
   .box
     border: 1px solid black
     padding: 20px 30px
+    .content
+      margin-left: 105px
     .avatar
       float: left
       margin-right: 20px

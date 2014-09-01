@@ -1,28 +1,28 @@
-div#page-live
-  section.about
+div#page-about-internal
+  section.main-content
     div.row
       div.large-12.columns
-        = @live_page.main_text
+        .markdown = @live_page.main_text_html
       div.large-12.columns
         = image_tag @live_page.image.top_internal
 
-  section.more-content
-    div.row
-      ul.large-block-grid-2
-        li
-          h4 = @live_page.title1
-          p = @live_page.text1
+  section#list.live
+    div.activities
+      div.row
+        div.large-12.columns
+          ul.large-block-grid-2
+            li
+              h4 = @live_page.title1
+              .markdown = @live_page.text1_html
 
-        li
-          h4 = @live_page.title2
-          p = @live_page.text2
+            li
+              h4 = @live_page.title2
+              .markdown = @live_page.text2_html
 
-        li
-          h4 = @live_page.title3
-          p = @live_page.text3
+            li
+              h4 = @live_page.title3
+              .markdown = @live_page.text3_html
 
-        li
-          h4 = @live_page.title4
-          p = @live_page.text4
-
-
+            li
+              h4 = @live_page.title4
+              .markdown = @live_page.text4_html

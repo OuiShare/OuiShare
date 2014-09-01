@@ -3,5 +3,6 @@
   = @cocreation.language.name
   = f.input :name
   = f.input :link
-  = f.input :text
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :text, label: 'Text (Markdown)'
   = f.submit

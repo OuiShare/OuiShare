@@ -11,8 +11,8 @@ div.contain-to-grid.fixed
         li.has-dropdown
           a href="#" About
           ul.dropdown
-            li
-              a href="#{admin_about_path}" OuiShare Live
+            /*li*/
+              /*a href="#{admin_about_path}" OuiShare Live*/
 
             li.has-dropdown
               a href="#{admin_missions_path}" Mission
@@ -80,6 +80,8 @@ div.contain-to-grid.fixed
             li
               = link_to 'Donation Page', admin_donation_pages_path
             li
+              = link_to 'Testimonials', admin_testimonials_path
+            li
               = link_to 'Get Involved Page', admin_get_involved_pages_path
             li
               = link_to 'Terms & Service', admin_terms_pages_path
@@ -93,5 +95,7 @@ div.contain-to-grid.fixed
 
         li
           = link_to "Users", admin_users_path
+        li
+          = link_to "Languages", admin_languages_path
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete

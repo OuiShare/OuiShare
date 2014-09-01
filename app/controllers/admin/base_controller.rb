@@ -1,9 +1,9 @@
 module Admin
   class BaseController < ApplicationController
-    before_filter :verify_admin
+    before_filter :verify_editor
     private
-    def verify_admin
-      unless current_user.try(:admin?) || (params[:controller] == "admin/users" && params[:action] == 'show')
+    def verify_editor
+      unless current_user.try(:has_edit_rights?) || (params[:controller] == "admin/users" && params[:action] == 'show')
         if user_signed_in?
           redirect_to root_path, alert: t('admin.not_authorized')
         else

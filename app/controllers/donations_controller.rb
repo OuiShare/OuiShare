@@ -1,6 +1,7 @@
 class DonationsController < ApplicationController
   def index
     @donation_page = @current_language.donation_page || DonationPage.new
+    @testimonial = @current_language.testimonial || Testimonial.new
   end
 
   def pay

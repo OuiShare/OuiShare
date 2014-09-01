@@ -29,6 +29,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [555, 250]
   end
 
+  version :home_thumb, :if => :has_home_thumb? do
+    process :resize_to_fill => [300, 180]
+  end
+
   version :event_page_thumb, :if => :is_event? do
     process :resize_to_fill => [555, 250]
   end
@@ -57,6 +61,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [600, 230]
   end
 
+  version :testimonial_avatar, :if => :is_testimonial? do
+    process :resize_to_fill => [60, 60]
+  end
+
   protected
   def is_top_banner? picture
     model.kind_of?(TopBanner)
@@ -74,12 +82,16 @@ class ImageUploader < CarrierWave::Uploader::Base
     model.kind_of?(DonationPage)
   end
 
+  def is_testimonial? picture
+    model.kind_of?(Testimonial)
+  end
+
   def has_top_image? picture
     ['Project', 'Event'].include?(model.class.name)
   end
 
   def has_list_thumb? picture
-    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service'].include?(model.class.name)
+    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service', 'Cocreation'].include?(model.class.name)
   end
 
   def is_partner? picture
@@ -91,5 +103,9 @@ class ImageUploader < CarrierWave::Uploader::Base
      'CocreationPage', 'ExpertGroupsPage', 'GetInvolvedPage', 'OrganizationPage',
      'LivePage', 'PressRoomPage', 'FundedPage', 'ResearchPage',
      'WorkusPage', 'CollaborativeEconomyPage', 'KnowledgePage'].include?(model.class.name)
+  end
+
+  def has_home_thumb? picture
+    ['Project', 'Event'].include?(model.class.name)
   end
 end

@@ -2,7 +2,6 @@ class CommunitiesController < ApplicationController
   include AutoHtml
   def index
     @community_page = @current_language.community_page || CommunityPage.new
-    @community_page.main_text = auto_html(@community_page.main_text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
     @communities = @current_language.communities
   end
 
@@ -17,7 +16,6 @@ class CommunitiesController < ApplicationController
 
   def live
     @live_page = @current_language.live_page || LivePage.new
-    @live_page.main_text = auto_html(@live_page.main_text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
   end
 
   def people
@@ -25,7 +23,6 @@ class CommunitiesController < ApplicationController
 
   def expert_groups
     @expert_groups_page = @current_language.expert_groups_page || ExpertGroupsPage.new
-    @expert_groups_page.main_text = auto_html(@expert_groups_page.main_text) { html_escape; image; youtube(:width => 400, :height => 250); link(:target => "_blank", :rel => "nofollow"); simple_format }
     @expert_groups = @current_language.expert_groups
   end
 end

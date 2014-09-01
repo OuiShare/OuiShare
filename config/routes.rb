@@ -5,6 +5,8 @@ OuiShare::Application.routes.draw do
 
   filter :locale, exclude: /\/auth\//
 
+  get '404', :to => 'application#render_404'
+
   namespace :admin do
     resources :languages do
       resources :top_banners
@@ -30,7 +32,11 @@ OuiShare::Application.routes.draw do
       end
       resources :faqs
       resources :missions
-      resources :activities
+      resources :activities do
+        member do
+          post :sort
+        end
+      end
       resources :timelines
       resources :governances
       resources :governance_pages
@@ -49,7 +55,11 @@ OuiShare::Application.routes.draw do
       resources :donation_pages
       resources :get_involved_pages
       resources :expert_groups_pages
-      resources :expert_groups
+      resources :expert_groups do
+        member do
+          post :sort
+        end
+      end
       resources :organization_pages
       resources :terms_pages
       resources :live_pages
@@ -57,9 +67,17 @@ OuiShare::Application.routes.draw do
       resources :funded_pages
       resources :funding_infos
       resources :research_pages
-      resources :researches
+      resources :researches do
+        member do
+          post :sort
+        end
+      end
       resources :workus_pages
-      resources :services
+      resources :services do
+        member do
+          post :sort
+        end
+      end
       resources :regions do
         member do
           post :sort
@@ -67,9 +85,10 @@ OuiShare::Application.routes.draw do
       end
       resources :collaborative_economy_pages
       resources :knowledge_pages
+      resources :testimonials
     end
 
-    resources :users
+    resources :users, except: [:show]
 
     get '/' => 'home#index'
     get 'home' => 'home#home'
@@ -109,7 +128,10 @@ OuiShare::Application.routes.draw do
     get 'regions' => 'regions#index'
     get 'collaborative_economy_pages' => 'home#collaborative_economy_pages'
     get 'knowledge_pages' => 'home#knowledge_pages'
+    get 'testimonials' => 'home#testimonials'
   end
+
+  get 'profile/:id' => 'admin/users#show', as: 'user'
 
   get 'projects/:id' => 'admin/projects#show', as: 'project'
   get 'events/:id' => 'admin/events#show', as: 'event'
@@ -129,12 +151,12 @@ OuiShare::Application.routes.draw do
   get 'faq' => 'faqs#index', as: 'faq'
   get 'terms' => 'home#terms', as: 'terms'
 
-  get 'about/mission' => 'about#mission', as: 'about_mission'
+  get 'about' => 'about#mission', as: 'about_mission'
   get 'about/vision' => 'about#vision', as: 'about_vision'
   get 'about/story' => 'about#history', as: 'about_history'
   get 'about/organization' => 'about#organization', as: 'about_organization'
   get 'about/governance' => 'about#governance', as: 'about_governance'
-  get 'about/value' => 'about#value', as: 'about_value'
+  get 'about/values' => 'about#value', as: 'about_value'
   get 'about/team' => 'about#team', as: 'about_team'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
@@ -143,9 +165,9 @@ OuiShare::Application.routes.draw do
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'
-  get 'communities/live' => 'communities#live', as: 'communities_live'
+  get 'ouishare-everywhere' => 'communities#live', as: 'communities_live'
   get 'communities/people' => 'communities#people', as: 'communities_people'
-  get 'communities/expert_groups' => 'communities#expert_groups', as: 'expert_groups'
+  get 'communities/knowledge_groups' => 'communities#expert_groups', as: 'expert_groups'
 
   get 'knowledge' => 'knowledge#index', as: 'knowledge'
   get 'knowledge/research' => 'knowledge#research', as: 'knowledge_research'
@@ -154,13 +176,15 @@ OuiShare::Application.routes.draw do
   get 'knowledge/ouiki' => 'knowledge#ouiki', as: 'knowledge_ouiki'
   get 'knowledge/cocreation' => 'knowledge#cocreation', as: 'knowledge_cocreation'
 
-  get 'getinvolved' => 'getinvolved#index', as: 'getinvolved'
-  get 'press' => 'press#index', as: 'press'
-  get 'workus' => 'workus#index', as: 'workus'
+  get 'get-involved' => 'getinvolved#index', as: 'getinvolved'
+  get 'press-room' => 'press#index', as: 'press'
+  get 'work-with-us' => 'workus#index', as: 'workus'
 
-  get 'users/:id' => 'admin/users#show', as: 'user'
   post 'donations/pay' => 'donations#pay', as: 'pay_donation'
   get "payments/success_callback"
   get "payments/cancel_callback"
   get 'donations/thank_you' => 'donations#thank_you'
+
+
+  get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }
 end

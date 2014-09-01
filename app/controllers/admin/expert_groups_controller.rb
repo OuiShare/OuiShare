@@ -22,9 +22,15 @@ module Admin
       @expert_group = ExpertGroup.find(params[:id])
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:expert_group][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(expert_group: [:name, :link, :text, :language_id, :user_ids => []])
+      params.permit(expert_group: [:name, :link, :text, :language_id, :row_order_position, :user_ids => []])
     end
 
   end

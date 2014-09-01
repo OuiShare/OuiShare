@@ -1,5 +1,4 @@
 #page-about
-
   .about
     padding-top: 64px
     padding-bottom: 30px
@@ -22,9 +21,11 @@
       margin-bottom: 40px
 
 #page-about-internal
-  .main-content, #banner
-    background: $blue
-    color: white
+  #activities
+    .services
+      .row
+        margin-bottom: 30px
+
   .main-content
     padding-top: 40px
   #banner
@@ -48,9 +49,55 @@
     .row
       margin-bottom: 20px
 
-      p,a
+      p
         color: black
         font-weight: normal
-        margin: 0
         &:visited, &:hover
           color: black
+
+    .get-involved
+      a.btn
+        margin-top: 20px
+
+    &.live
+      h4
+        color: black
+        font-weight: normal
+        text-transform: uppercase
+
+      .btn
+        margin-bottom: 40px
+
+
+  .theTeam, .festTeam
+    li
+      padding: 10px 0
+      .avatar
+        display: inline-block
+        vertical-align: top
+      .desc
+        display: inline-block
+        clear: both
+        margin-bottom: 5px
+        margin-left: 5px
+        font-size: 13px
+        width: 179px
+
+        span.name
+          font-weight: bold
+          text-transform: uppercase
+          margin: 0
+          color: $blue
+          font-size: 16px
+
+        p.position
+          color: black
+  #faq
+    .faq
+      section
+        .content
+          .markdown
+            ul
+              height: auto !important
+              li
+                position: relative !important

@@ -2,8 +2,8 @@ section#hot
   div.row
     div.large-4.columns
       h3.subtitle.white = @hot_projects_section.title
-      p = @hot_projects_section.text
-      a.btn.white = @hot_projects_section.link_text
+      p = @hot_projects_section.text_html
+      a.btn.white href="#{projects_path}" = @hot_projects_section.link_text
 
     div.large-8.columns
       ul.projects.large-block-grid-2
@@ -12,10 +12,10 @@ section#hot
             = link_to project_path(p) do
               p.title = p.name
             = link_to project_path(p) do
-              img.project src="#{p.image.project_thumb}"
+              img.project src="#{p.image.home_thumb}"
             .seta
-            ul.large-block-grid-4
+            div.avatars
               - p.users[0..4].each do |u|
-                li
+                span.block
                   = link_to u do
-                    = image_tag u.avatar_url(50)
+                    = image_tag u.avatar_url

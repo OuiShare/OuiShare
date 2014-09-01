@@ -1,13 +1,15 @@
 = simple_form_for  [:admin, @top_banner.language, @top_banner] do |f|
   h4 Language
   = @top_banner.language.name
-  = f.input :title1
+  /= f.input :title1
   = f.input :text1
-  = f.input :title2
-  = f.input :text2
+  /= f.input :title2
+  /= f.input :text2
   = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :link1
+  = f.input :link_text1
   = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :link2
+  = f.input :link_text2
   = f.submit

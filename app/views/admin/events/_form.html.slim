@@ -1,30 +1,41 @@
 = simple_form_for  [:admin, @event.language, @event] do |f|
   h4 Language
   = @event.language.name
-  = f.input :visible
-  = f.input :title
-  = f.input :place
-  = f.input :date_start
-  = f.input :date_end
-  = f.input :time
-  = f.input :resume
-  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :tag_list, as: :text
-  = f.input :info
-  = f.input :join_us_text
-  = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :service1_link
-  = f.input :service1_title
-  = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :service2_link
-  = f.input :service2_title
-  = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :service3_link
-  = f.input :service3_title
-  = f.input :title1
-  = f.input :text1
-  = f.input :title2
-  = f.input :text2
-  = f.association :users, as: :check_boxes
+  div.row
+    div.large-12.columns
+      = f.input :visible
+      = f.input :display_on_menu
+      = f.input :title
+      = f.input :place, label: 'Place (few words)'
+      = f.input :address, label: 'Full address'
+  div.row
+    div.large-4.columns
+      = f.input :date_start, order: [:day, :month, :year]
+    div.large-4.columns
+      = f.input :date_end, order: [:day, :month, :year]
+    div.large-4.columns
+      = f.input :time
+  div.row
+    div.large-12.columns
+      = f.input :resume, label: 'Resume (Markdown)'
+      = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Home Image (300x180)'
+      = f.input :tag_list, as: :text
+      = f.input :info, label: 'Info (Markdown)'
+      = f.input :join_us_text, label: 'Join Us Text (Markdown)'
+      = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
+      = f.input :service1_link, label: 'External registration 1 link'
+      = f.input :service1_title, label: 'External registration 1 title'
+      = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 3 image'
+      = f.input :service2_link, label: 'External registration 3 link'
+      = f.input :service2_title, label: 'External registration 2 title'
+      = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 3 image'
+      = f.input :service3_link, label: 'External registration 3 link'
+      = f.input :service3_title, label: 'External registration 3 title'
+      = f.input :title1
+      = f.input :text1, label: 'Text 1 (Markdown)'
+      = f.input :title2
+      = f.input :text2, label: 'Text 2 (Markdown)'
+      = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
 
-  = f.submit
+      = f.submit

@@ -1,26 +1,107 @@
+$f-dropdown-triangle-size: 0px
+$f-dropdown-triangle-color: none
+$triangle: false
+
 #home
+
   .call
-    bottom: 7%
-    position: absolute
-    right: 7%
+    margin-top: 30%
+    text-align: center
+    width: 100%
+    z-index: 9999
+    font-size: 20px
+
+    a
+      &:hover
+        text-decoration: none
 
   #slideshow
-    img
+    section
+      position: relative
+      padding: 0
+
+    .slide
+      padding: 0
+      position: absolute
       width: 100%
-      height: 100%
+
+    img
+      z-index: 0
+      @media only screen and (min-width: 769px)
+        width: 100%
+        height: 100%
+
+
+
+
+    /* Topbar home */
+    .social
+      padding-top: 40px
+      text-align: right
+      margin-bottom: 30px
+      $f-dropdown-bg: rgba(255,255,255,0.0)
+      a
+        display: inline-block
+        border: 1px solid white
+        text-align: center
+        margin-right: 10px
+        height: 30px
+        width: 30px
+        color: white
+        line-height: 23pt
+
+        &.facebook
+          background-color: #3c5a9a
+
+        &.twitter
+          background-color: #359bed
+
+        &.play
+          background-color: #e82d28
+
+      .l18n
+        text-align: left
+
+      .l18n
+        +border-radius(none)
+        height: 30px
+        float: right
+        padding: 5px 8px
+        font-size: .7em
+        color: white
+        border: 1px solid white
+        background: image-url('arrow.png') no-repeat 30px 10px transparent
+        cursor: pointer
+
+      .f-dropdown
+        @include dropdown-container($content, $triangle, $max-width)
+
+        a
+          border: 0
+          width: 100%
+          text-align: center
+          font-size: 12px
+          line-height: 16px
+
+          &:hover
+            border-top: 1px solid white
+            border-bottom: 1px solid white
+            background: rgba(0,0,0,0.3)
+            color: white
+            text-decoration: none
 
   .orbit-bullets
-    left: 160px
-    top: 400px
+    left: 80%
+    top: 90%
 
   .blackBlock
-    font-family: "Gandhi Sans", sans-serif
+    font-family: "Naiv", sans-serif
     background: rgba(0,0,0,0.8)
     color: white
     padding: 10px
 
   .whiteBlock
-    font-family: "Gandhi Sans", sans-serif
+    font-family: "Naiv", sans-serif
     background: white
     color: black
     padding: 10px
@@ -31,57 +112,14 @@
   section
     padding: 64px 0
 
-    &#welcome
+    #welcome
+      position: absolute
       padding: 0
-
-      img
-        position: absolute
-        width: 100%
-        height: 100%
+      width: 100%
 
       .separator
         position: relative
 
-        /* Topbar home */
-      .social
-        padding-top: 40px
-        text-align: right
-        margin-bottom: 30px
-        a
-          display: inline-block
-          border: 1px solid white
-          text-align: center
-          margin-right: 10px
-          height: 30px
-          width: 30px
-          color: white
-          line-height: 23pt
-
-          &.facebook
-            background-color: #3c5a9a
-
-          &.twitter
-            background-color: #359bed
-
-          &.play
-            background-color: #e82d28
-
-
-        select
-          +appearance(none)
-          background: image-url('arrow.png') no-repeat 30px 10px transparent
-          border: 1px solid white
-          +border-radius(none)
-          color: white
-          height: 30px
-          float: right
-          padding: 6px
-          font-size: .7em
-          text-indent: 0.01px
-          text-overflow: ""
-
-          option
-            color: black
 
       h1
         background: url("/assets/home/logos/ouishare.png") no-repeat
@@ -115,12 +153,21 @@
           text-transform: uppercase
           font-weight: normal
 
+      .pinkbox
+        top: 440%
+        position: absolute
+        text-align: center
+        z-index: 9999
+        width: 100%
+
       .subscribe
         background: #e8525d
-        margin: 40px 0
         padding: 10px
         color: white
         text-align: center
+        width: 350px
+        margin: 0 auto
+
         .space
           margin: 10px 0
           display: block
@@ -134,13 +181,14 @@
           height: 46px
 
         .btn
-          font-family: "Gandhi Sans", sans-serif
+          font-family: "Naiv", sans-serif
           font-style: italic
           text-transform: uppercase
           background: #9ad446
           color: white
           font-size: 14px
           font-weight: bold
+          padding: 0
 
           &:hover
             background: darken($blue, 10%)
@@ -151,10 +199,10 @@
 
 
     &#about
-      background: image-url('home/bg/about.jpg') no-repeat
+      background: image-url('home/bg/about.png') no-repeat
       +background-size(cover)
       text-align: center
-      40px: padding 0
+      //40px: padding 0
 
       .box
         background: white
@@ -162,7 +210,7 @@
         height: 285px
 
       h4
-        font-family: "Gandhi Sans", sans-serif
+        font-family: "Naiv", sans-serif
         font-weight: 400
         text-transform: uppercase
 
@@ -178,12 +226,42 @@
       .separator
         width: 100%
 
+    &#events
+      .events
+        li
+          p, a
+            &.title
+              overflow: hidden
+              display: block
+              min-height: 64px
+              height: 64px
+              max-height: 64px
+
+    &#hot
+      .projects
+        li
+          p, a
+            &.title
+              overflow: hidden
+              display: block
+              min-height: 32px
+              height: 32px
+              max-height: 32px
+
+      .avatars
+        text-align: center
+      .block
+        width: 70px
+        height: 70px
+        display: inline-block
+        margin: 4px 2px
+
     &#hot, &#events
       color: white
 
       .projects, .events
         text-align: center
-        font-family: "Gandhi Sans", sans-serif
+        font-family: "Naiv", sans-serif
 
         li
           p, a
@@ -231,7 +309,7 @@
       p.text, p.meta
         font-size: 14px
         font-weight: normal
-        font-family: "Gandhi Sans"
+        font-family: "Naiv"
 
 
     &#articles
@@ -249,7 +327,9 @@
             font-size: 1.1em
             color: black
             display: block
-            min-height: 49px
+            min-height: 74px
+            height: 74px
+            max-height: 74px
 
           img.article
             width: 100%
@@ -282,7 +362,7 @@
         padding: 10px
 
     &#bepart
-      background: image-url('home/bg/about.jpg') no-repeat center
+      background: image-url('home/bg/about.png') no-repeat center
       +background-size(cover)
       width: 100%
       height: 100%
@@ -292,16 +372,22 @@
         padding: 0 10px
         margin-bottom: 20px
         overflow: hidden
-        font-family: "Gandhi Sans"
+        font-family: "Naiv"
+        a
+          color: black
 
         &:last-child
           margin-bottom: 0
 
-        h4
-          @extend .whiteBlock
-          font-weight: 500
-          margin-bottom: 0
-          text-transform: uppercase
+        .content
+          margin-left: 140px
+
+          h4
+            @extend .whiteBlock
+            font-weight: 500
+            margin-bottom: 0
+            text-transform: uppercase
+            padding-left: 0
 
       .takePart, .comeTo, .donate
         float: left

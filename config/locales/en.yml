@@ -36,9 +36,10 @@ en:
     communities:
       index: "Communities"
       expert_groups: 'Knowledge Groups'
+      live: 'OuiShare Everyewhere'
     contact:
       index: 'Contact'
-    get_involved:
+    getinvolved:
       index: 'Get involved!'
     home:
       terms: 'Terms & Services'
@@ -55,6 +56,8 @@ en:
     donations:
       index: 'Donate!'
       thank_you: 'Thank you for supporting OuiShare!'
+    press:
+      index: 'Press Room'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"
@@ -65,16 +68,25 @@ en:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
   workus:
-    become_a_partner: 'Become a Partner!'
-    contact_a_partner: 'Contact one of the connector teams or fill up this form.'
+    become_a_partner: 'Want to know more?'
+    contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
   donations:
     thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
+    help_support_ouishare: 'Help support OuiShare!'
+    choose_currency: 'choose currency'
+    donation: 'Donation'
+    recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
   projects:
     join_us: 'Join us!'
     info: 'More information'
     organizers: 'Organizers'
+  knowledge:
+    all_knowledge_groups: 'All Knowledge Groups'
+  profile:
+    contact_me: 'Contact me'
   menu:
     about: 'about'
+    about_us: 'About Us'
     story: 'Our story'
     values: 'Our values'
     collaborative_economy: 'The Collaborative Economy'

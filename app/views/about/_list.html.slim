@@ -2,9 +2,17 @@ section#list
   - @list.each do |l|
     div.activities
       div.row
-        = link_to(l.link)
+        - unless params[:action] == 'mission'
+          = link_to l.link do
+            div.large-6.columns
+              h4 = l.name
+              .markdown = l.text_html
+            div.large-6.columns
+              = image_tag(l.image.list_thumb.url)
+        - else
           div.large-6.columns
-            h4 = l.name
-            p = l.text
+              h4 = l.name
+              .markdown = l.text_html
           div.large-6.columns
             = image_tag(l.image.list_thumb.url)
+

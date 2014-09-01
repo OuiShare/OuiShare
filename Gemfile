@@ -23,6 +23,10 @@ gem 'acts-as-taggable-on'
 gem 'enumerize'
 gem 'friendly_id'
 gem 'ranked-model'
+gem 'figaro'
+
+# Geolocation
+gem 'geocoder'
 
 # I18n
 gem 'rails-i18n'
@@ -48,7 +52,7 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem 'country_select'
-gem 'auto_html'
+gem 'auto_html', '1.6.0'
 
 gem 'paypal-express'
 

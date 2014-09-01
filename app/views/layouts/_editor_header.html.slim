@@ -1,0 +1,22 @@
+div.contain-to-grid.fixed
+  nav.top-bar
+    ul.title-area
+      li.name
+        h1
+          a href="#{root_path}" OS Admin
+    section.top-bar-section
+      ul
+        li
+          a href="#{admin_projects_path}" Projects
+        li
+          a href="#{admin_events_path}" Events
+        li
+          a href="#{admin_communities_path}" Communities
+        li
+          a href="#{admin_regions_path}" Regions
+        li
+          a href="#{admin_expert_groups_path}" Expert groups
+
+        li.right
+          = link_to t('admin.logout'), destroy_user_session_path, method: :delete
+

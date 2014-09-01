@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   extend Enumerize
+  include Shared::BeautifulText
 
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
@@ -19,7 +20,9 @@ class User < ActiveRecord::Base
 
   acts_as_taggable
 
-  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2 }
+  beautiful_text_for [:bio]
+
+  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2, editor: 3 }
 
   scope :connectors, ->{ where(profile_type: 1) }
   scope :advisors, ->{ where(profile_type: 2) }
@@ -45,10 +48,20 @@ class User < ActiveRecord::Base
   def avatar_url(size = 200)
     if size < 100
       return image.small if image.present?
-    else
+    elsif size < 150
       return image.normal if image.present?
+    else
+      return image if image.present?
     end
     "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
+  end
+
+  def has_edit_rights?
+    [1, 2, 3].include?(self.profile_type_value) || self.admin?
+  end
+
+  def is_admin?
+    self.admin? || self.profile_type == 1
   end
 
   protected

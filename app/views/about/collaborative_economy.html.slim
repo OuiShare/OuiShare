@@ -1,27 +1,31 @@
-div#page-organization
-  section.about
+div#page-about-internal
+  section.main-content
     div.row
       div.large-12.columns
-        = @collaborative_economy_page.main_text
-      div.large-12.columns
-        = image_tag(@collaborative_economy_page.image.top_internal)
+        .markdown = @collaborative_economy_page.main_text_html
+      /div.large-12.columns
+        /= image_tag(@collaborative_economy_page.image.top_internal)
 
-  section.more-content
-    div.row
-      ul.large-block-grid-2
-        li
-          h4 = @collaborative_economy_page.title1
-          p = @collaborative_economy_page.text1
+  section#list
+    div.activities
+      div.row
+        div.large-12.columns
+          ul.large-block-grid-2
+            li
+              h4 = @collaborative_economy_page.title1
+              .markdown = @collaborative_economy_page.text1_html
 
-        li
-          h4 = @collaborative_economy_page.title2
-          p = @collaborative_economy_page.text2
+            li
+              h4 = @collaborative_economy_page.title2
+              .markdown = @collaborative_economy_page.text2_html
 
-        li
-          h4 = @collaborative_economy_page.title3
-          p = @collaborative_economy_page.text3
+            li
+              h4 = @collaborative_economy_page.title3
+              .markdown = @collaborative_economy_page.text3_html
 
-        li
-          h4 = @collaborative_economy_page.title4
-          p = @collaborative_economy_page.text4
-
+            li
+              h4 = @collaborative_economy_page.title4
+              .markdown = @collaborative_economy_page.text4_html
+            li
+              h4 = @collaborative_economy_page.title5
+              .markdown = @collaborative_economy_page.text5_html

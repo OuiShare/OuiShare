@@ -18,34 +18,30 @@
     text-transform: uppercase
     width: auto
 
-  a
-    color: black
-    text-decoration: none
-
-
-  #slideshow
-    background: $blue
-    color: white
-
   #list
     background: white
     color: black
+    padding: 40px 0
 
     .event
-      padding: 64px 0
+      padding: 40px 0
       border-bottom: 1px solid black
       color: black
 
       &:last-child
         border: none
+        padding-bottom: 0
+
+      &:first-child
+        padding-top: 0
 
       p
         color: black
 
 #project, #event
 
-  h3
-    color: white
+  //h3
+    //color: white
 
   .info
     background: white
@@ -54,13 +50,11 @@
     h3
       color: black
 
-    ul
-      text-align: center
-
-      li.avatar
-        display: inline-block
-        margin-bottom: 7px
-        margin-right: 2px
+    .block
+      width: 70px
+      height: 70px
+      display: inline-block
+      margin: 3px 1px
 
   .buttons
     margin-top: 80px
@@ -72,6 +66,18 @@
       width: 195px
       text-align: center
       display: block
+
+    p.service
+      margin-top: 20px
+
+  a.address
+    color: black
+
+  .joinus
+    margin-top: 64px
+
+  .present
+    margin-bottom: 64px
 
 #research-page
   h3

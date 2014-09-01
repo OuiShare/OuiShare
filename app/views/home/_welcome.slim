@@ -1,40 +1,18 @@
-section#welcome
-  = image_tag(@top_banner.main_image.top_banner.url)
-  div.row
-    div.large-4.large-offset-8.columns.social.white
-      a.facebook href="https://www.facebook.com/OuiShare"
-        i.fa.fa-facebook
-      a.twitter href="https://www.twitter.com/OuiShare"
-        i.fa.fa-twitter
-      a.play href="http://youtube.com/ouisharetv"
-        i.fa.fa-play
-
-      select.small-2.black#l18n
-        - Language.visible.each do |l|
-          - if l.slug == I18n.locale.to_s
-            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
-          - else
-            option value="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
-
-
-  div.separator.white
-
-  div.row
-    div.large-10.large-centered.columns.center
-      h2 = @top_banner.title1
-      div.textBlock
+section
+  #welcome
+    = render "home/sub", {slider: '1'}
+    div.pinkbox.hide-for-small
+      div.subscribe
         span.space = @top_banner.text1
-      div.large-10.large-centered.columns.center
-        div.subscribe
-          span.space = @top_banner.text2
-          div.large-6.large-centered.columns.center
-            = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
-              div.row.collapse
-                div.small-11.columns
-                  .email-field
-                    input type="email" id="email" name="email" placeholder="Your email here" required=""
-                    small.error An email address is required.
-                div.small-1.columns
-                  = submit_tag('Go', class: 'postfix btn white')
+        div.large-12.large-centered.columns.center
+          = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+            div.row.collapse
+              div.small-10.columns
+                .email-field
+                  input type="email" id="email" name="email" placeholder="Your email here" required=""
+                  small.error An email address is required.
+              div.small-2.columns
+                = submit_tag('Go', class: 'postfix btn white')
 
-                /*a.postfix href="#{newsletter_path}" Go !*/
+              /*a.postfix href="#{newsletter_path}" Go !*/
+  = image_tag(@top_banner.main_image.top_banner.url)

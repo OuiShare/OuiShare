@@ -3,6 +3,8 @@ module Admin
     inherit_resources
     belongs_to :language
 
+    before_filter :verify_admin
+
     def index
     end
 
@@ -25,7 +27,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(cocreation: [:name, :link, :text, :language_id])
+      params.permit(cocreation: [:name, :link, :text, :image, :language_id])
     end
 
   end

@@ -1,27 +1,32 @@
-div#page-organization
-  section.about
-    div.row
-      div.large-12.columns
-        = @knowledge_page.main_text
-      div.large-12.columns
-        = image_tag(@knowledge_page.image.top_internal)
+div#page-about-internal
+  div.green
+    section.main-content
+      div.row
+        div.large-12.columns
+          .markdown = @knowledge_page.main_text_html
+    section#banner
+      div.row
+        div.large-12.columns
+          div.banner
+            = image_tag(@knowledge_page.image.top_internal)
 
-  section.more-content
-    div.row
-      ul.large-block-grid-2
-        li
-          h4 = @knowledge_page.title1
-          p = @knowledge_page.text1
+  section#list
+    div.activities
+      div.row
+        div.large-12.columns
+          ul.large-block-grid-2
+            li
+              h4 = @knowledge_page.title1
+              .markdown = @knowledge_page.text1_html
 
-        li
-          h4 = @knowledge_page.title2
-          p = @knowledge_page.text2
+            li
+              h4 = @knowledge_page.title2
+              .markdown = @knowledge_page.text2_html
 
-        li
-          h4 = @knowledge_page.title3
-          p = @knowledge_page.text3
+            li
+              h4 = @knowledge_page.title3
+              .markdown = @knowledge_page.text3_html
 
-        li
-          h4 = @knowledge_page.title4
-          p = @knowledge_page.text4
-
+            li
+              h4 = @knowledge_page.title4
+              .markdown = @knowledge_page.text4_html

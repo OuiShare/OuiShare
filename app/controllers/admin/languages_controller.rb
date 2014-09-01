@@ -2,6 +2,8 @@ module Admin
   class LanguagesController < BaseController
     inherit_resources
 
+    before_filter :verify_admin
+
     def update
       update! { admin_languages_path }
     end

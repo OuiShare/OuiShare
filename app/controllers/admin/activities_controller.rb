@@ -3,6 +3,8 @@ module Admin
     inherit_resources
     belongs_to :language
 
+    before_filter :verify_admin
+
     def index
     end
 
@@ -23,9 +25,15 @@ module Admin
       render 'admin/activities/show'
     end
 
+    def sort
+      resource.update_attribute :row_order_position, params[:activity][:row_order_position]
+
+      render nothing: true
+    end
+
     protected
     def permitted_params
-      params.permit(activity: [:name, :image, :text, :language_id])
+      params.permit(activity: [:name, :image, :text, :row_order_position, :language_id])
     end
 
   end

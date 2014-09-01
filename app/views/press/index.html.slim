@@ -1,14 +1,15 @@
-div#page-press
-  section.about
-    div.row
-      div.large-12.columns
-        p = @press_room_page.main_text
+div#page-about-internal
+  .green
+    section.main-content
+      div.row
+        div.large-12.columns
+          .markdown = @press_room_page.main_text_html
 
-  section#banner
-    div.row
-      div.large-12.columns
-        div.banner
-          = image_tag(@press_room_page.image.top_internal)
+    section#banner
+      div.row
+        div.large-12.columns
+          div.banner
+            = image_tag(@press_room_page.image.top_internal)
 
   section.values
     div.row.section
@@ -16,10 +17,10 @@ div#page-press
         div.row
           div.large-12.columns
             h4 = @press_room_page.title1
-            p = @press_room_page.text1
+            .markdown = @press_room_page.text1_html
           div.large-12.columns
             h4 = @press_room_page.title3
-            p = @press_room_page.text3
+            .markdown = @press_room_page.text3_html
       div.large-6.columns
         h4 = @press_room_page.title2
-        p = @press_room_page.text2
+        .markdown = @press_room_page.text2_html

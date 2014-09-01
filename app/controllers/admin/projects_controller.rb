@@ -3,7 +3,7 @@ module Admin
     inherit_resources
     belongs_to :language
     include AutoHtml
-    skip_before_filter :verify_admin, only: [:show, :index]
+    skip_before_filter :verify_editor, only: [:show, :index]
 
     def index
     end
@@ -23,9 +23,6 @@ module Admin
 
     def show
       @project = Project.find(params[:id])
-      @project.info = auto_html(@project.info) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
-      @project.text1 = auto_html(@project.text1) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
-      @project.text2 = auto_html(@project.text2) { html_escape; image; youtube(:width => 400, :height => 250); md_link; simple_format }
 
       if request.path != "/#{@current_language.slug}#{project_path(@project)}"
         redirect_to @project, status: :moved_permanently
@@ -65,6 +62,7 @@ module Admin
                               :language_id,
                               :visible,
                               :featured,
+                              :display_on_menu,
                               :slug,
                               :row_order_position,
                               :user_ids => []])
