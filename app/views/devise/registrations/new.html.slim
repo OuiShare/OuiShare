@@ -20,14 +20,29 @@ div.row
       = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
         = f.error_notification
         .form-inputs
+          = f.input :fname, :label => "First name", :required => true
           - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-            = f.input :name, :required => true, :autofocus => true
+            = f.input :name, :label => "Last name", :required => true, :autofocus => true
           - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
             = f.input :email, :required => true
           = f.input :password, :required => true, :hint => false
-        = f.input :password_confirmation, :required => true, :hint => false
-
-
+          = f.input :password_confirmation, :required => true, :hint => false
+          = f.label :birthday, "Date of birth"
+          = f.date_select :birthday, start_year: 1950
+          = f.label :gender
+          = f.select :gender, { 'Mr' => 0, 'Mrs' => 1, 'Other' => 2}, :required => true
+          = f.label :country , "* Country"
+          = f.country_select :country, priority_countries: ["GB", "US"]
+          = f.input :city, :required => true
+          = f.label :language_id, "* What are your language preferences?"
+          = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
+          = f.label :occupation, "* Occupation"
+          = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
+          = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
+          = f.input :organization_name, label: "Name of your organization:"
+          = f.input :organization_url, label: "Url of your organization"
+          = f.label :user_source_id, "How did you first hear about OuiShare?"
+          = f.collection_select :user_source_id, UserSource.all, :id, :name, prompt: "Make your choice"
         h2 = "OuiShare Mission & Values"
 
         p = "What connects the OuiShare communtiy are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."

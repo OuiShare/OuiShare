@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320212130) do
+ActiveRecord::Schema.define(version: 20140912140909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -516,6 +516,10 @@ ActiveRecord::Schema.define(version: 20140320212130) do
     t.string "mailchimp_id"
   end
 
+  create_table "occupations", force: true do |t|
+    t.string "name"
+  end
+
   create_table "organization_pages", force: true do |t|
     t.text     "main_text"
     t.string   "image"
@@ -660,6 +664,18 @@ ActiveRecord::Schema.define(version: 20140320212130) do
 
   add_index "researches", ["language_id"], name: "index_researches_on_language_id", using: :btree
 
+  create_table "sectors", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "sectors_users", id: false, force: true do |t|
+    t.integer "user_id",   null: false
+    t.integer "sector_id", null: false
+  end
+
+  add_index "sectors_users", ["sector_id", "user_id"], name: "index_sectors_users_on_sector_id_and_user_id", using: :btree
+  add_index "sectors_users", ["user_id", "sector_id"], name: "index_sectors_users_on_user_id_and_sector_id", using: :btree
+
   create_table "services", force: true do |t|
     t.integer  "language_id"
     t.string   "name"
@@ -794,6 +810,10 @@ ActiveRecord::Schema.define(version: 20140320212130) do
 
   add_index "top_banners", ["language_id"], name: "index_top_banners_on_language_id", using: :btree
 
+  create_table "user_sources", force: true do |t|
+    t.string "name"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "image"
@@ -821,6 +841,16 @@ ActiveRecord::Schema.define(version: 20140320212130) do
     t.string   "title"
     t.string   "email_address"
     t.text     "bio_html"
+    t.string   "fname"
+    t.date     "birthday"
+    t.integer  "gender"
+    t.string   "country"
+    t.string   "city"
+    t.integer  "language_id"
+    t.integer  "occupation_id"
+    t.string   "organization_name"
+    t.string   "organization_url"
+    t.integer  "user_source_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

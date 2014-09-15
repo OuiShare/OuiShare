@@ -67,8 +67,12 @@ GEM
       sass (~> 3.1)
     compass-rails (1.1.2)
       compass (>= 0.12.2)
-    country_select (1.2.0)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    country_select (2.0.0)
+      countries (~> 0.9, >= 0.9.3)
     curb (0.8.5)
+    currencies (0.4.2)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (3.1.2)
@@ -324,7 +328,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (= 4.0.1)
   compass-rails (~> 1.1.2)
-  country_select
+  country_select (~> 2.0.0)
   devise (~> 3.1.1)
   devise-i18n
   enumerize
