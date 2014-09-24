@@ -38,7 +38,9 @@ div.row
           = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
           = f.label :occupation, "* Occupation"
           = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
-          = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
+          .sectors-collection
+            = f.label :sector_ids, label: "Sector(s)"
+            = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
           = f.input :organization_name, label: "Name of your organization:"
           = f.input :organization_url, label: "Url of your organization"
           = f.label :user_source_id, "How did you first hear about OuiShare?"
@@ -52,11 +54,16 @@ div.row
 
 
         p 
-          | Read more about our values (http://ouishare.net/about/values) and our mission (http://ouishare.net/about).
+          = "Read more about "
+          a href= about_value_url our values
+          = " and "
+          a href= about_mission_url our mission
+          = "."
         p 
           | By becoming a member of OuiShare, you express your consent for our mission and values. *
         p 
-          | => I consent with and wish to support the OuiShare mission and values.
+          = f.check_box :terms_of_service
+          |  I consent with and wish to support the OuiShare mission and values.
 
 
         h2 = "Support us"
@@ -65,11 +72,11 @@ div.row
 
         p 
           | As an open community, membership is free for individuals. However we ask you to help support our team with a one-time or recurring yearly donation to help us continue to provide value to our members by:
-
-        ul
-          li organizing local gatherings
-          li hosting OuiShare Summits
-          li producing and curating knowledge through our online magazine, newsletters and Facebook groups
+        .list-sign_up
+          ul
+            li organizing local gatherings
+            li hosting OuiShare Summits
+            li producing and curating knowledge through our online magazine, newsletters and Facebook groups
         
         p 
           | ... and more!
@@ -77,7 +84,7 @@ div.row
         p
           a href="http://ouishare.net/donations"  Donate at http://ouishare.net/donations
 
-        = f.button :submit, t(".sign_up")
+        = f.button :submit, t(".sign_up_submit")
       = render "devise/shared/links"
 
       br/

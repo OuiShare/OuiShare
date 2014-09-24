@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
   extend Enumerize
   include Shared::BeautifulText
 
-  attr_accessor :country_name
-
+  validates :terms_of_service, acceptance: true
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
   has_and_belongs_to_many :projects
