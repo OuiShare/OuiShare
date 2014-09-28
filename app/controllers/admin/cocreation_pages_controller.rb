@@ -7,7 +7,14 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_cocreation_pages_path }
+      build_resource
+      @cocreation_page = DefaultAttributes.new(@cocreation_page).set([:image])
+      if @cocreation_page.save
+        redirect_to admin_cocreation_pages_path
+      else
+        raise @cocreation_page.errors.inspect
+        redirect_to new_admin_language_cocreation_page_path(params[:language_id])
+      end
     end
 
     def update

@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_collaborative_economy_pages_path }
+      build_resource
+      @collaborative_economy_page = DefaultAttributes.new(@collaborative_economy_page).set([:image])
+      if @collaborative_economy_page.save
+        redirect_to admin_collaborative_economy_pages_path
+      else
+        redirect_to new_admin_language_collaborative_economy_page_path(params[:language_id])
+      end
     end
 
     def update
