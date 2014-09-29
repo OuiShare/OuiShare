@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_live_pages_path }
+      build_resource
+      @live_page = DefaultAttributes.new(@live_page).set([:image])
+      if @live_page.save
+        redirect_to admin_live_pages_path
+      else
+        redirect_to new_admin_language_live_page_path(params[:language_id])
+      end
     end
 
     def update

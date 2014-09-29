@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_community_pages_path }
+      build_resource
+      @community_page = DefaultAttributes.new(@community_page).set([:image])
+      if @community_page.save
+        redirect_to admin_community_pages_path
+      else
+        redirect_to new_admin_language_community_page_path(params[:language_id])
+      end
     end
 
     def update

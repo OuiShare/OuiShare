@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_contact_pages_path }
+      build_resource
+      @contact_page = DefaultAttributes.new(@contact_page).set()
+      if @contact_page.save
+        redirect_to admin_contact_pages_path
+      else
+        redirect_to new_admin_language_contact_page_path(params[:language_id])
+      end
     end
 
     def update

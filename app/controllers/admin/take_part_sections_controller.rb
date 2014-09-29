@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_home_path }
+      build_resource
+      @take_part_section = DefaultAttributes.new(@take_part_section).set([:image1, :image2, :image3])
+      if @take_part_section.save
+        redirect_to admin_home_path
+      else
+        redirect_to new_admin_language_take_part_section_path(params[:language_id])
+      end
     end
 
     def update

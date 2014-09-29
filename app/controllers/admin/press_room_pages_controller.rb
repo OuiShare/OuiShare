@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_press_room_pages_path }
+      build_resource
+      @press_room_page = DefaultAttributes.new(@press_room_page).set([:image])
+      if @press_room_page.save
+        redirect_to admin_press_room_pages_path
+      else
+        redirect_to new_admin_language_press_room_page_path(params[:language_id])
+      end
     end
 
     def update

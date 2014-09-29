@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_home_path }
+      build_resource
+      @events_section = DefaultAttributes.new(@events_section).set()
+      if @events_section.save
+        redirect_to admin_home_path
+      else
+        redirect_to new_admin_language_events_section_path(params[:language_id])
+      end
     end
 
     def update

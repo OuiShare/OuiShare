@@ -4,7 +4,9 @@ class DefaultAttributes
   end
 
   def set(images = [])
-    unless @model.language.slug == 'en'
+    if @model.language.slug == 'en'
+      return @model
+    else
       english_obj = @model.class.where(language: Language.where(slug: 'en').first).first
       attributes = @model.attributes
       english_attributes = english_obj.attributes
