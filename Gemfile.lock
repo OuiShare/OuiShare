@@ -192,7 +192,7 @@ GEM
       activesupport (>= 2.3)
       attr_required (>= 0.0.5)
       restclient_with_cert
-    pg (0.17.0)
+    pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -239,7 +239,7 @@ GEM
     restclient_with_cert (0.0.8)
       rest-client (>= 1.6)
     rinku (1.5.1)
-    rmagick (2.13.2)
+    rmagick (2.13.3)
     routing-filter (0.4.0.pre)
       actionpack
     rspec-core (2.14.7)
@@ -348,7 +348,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   paypal-express
-  pg
+  pg (= 0.17.1)
   pry
   quiet_assets
   rack-google-analytics
@@ -357,7 +357,7 @@ DEPENDENCIES
   rails_12factor
   rails_on_heroku
   ranked-model
-  rmagick
+  rmagick (= 2.13.3)
   routing-filter (~> 0.4.0.pre)
   rspec-rails
   sass-rails (= 4.0.1)
