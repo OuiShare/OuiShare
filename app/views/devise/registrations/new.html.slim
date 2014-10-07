@@ -3,23 +3,88 @@ div.row
     .sign_up_box
       h2 = t(".sign_up")
       br/
-      .omniauth
-        - if resource.authorizations.any?
-          .avatar= image_tag resource.avatar_url
-          .user-name= resource.name
-          .description= t('.omniauth_description')
-        - else
-          = render "devise/shared/social_links"
+      p = "We're pleased that you would like to become a member of OuiShare! "
+      br/
+      p = "To complete your registration, we ask you to please fill out the questions below."
+      br/
+      p = "*all personal information will be treated with confidentiality."
+      /.
+        .omniauth
+          - if resource.authorizations.any?
+            .avatar= image_tag resource.avatar_url
+            .user-name= resource.name
+            .description= t('.omniauth_description')
+          - else
+            = render "devise/shared/social_links"
 
       = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
         = f.error_notification
         .form-inputs
+          = f.input :fname, :label => "First name", :required => true
           - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-            = f.input :name, :required => true, :autofocus => true
+            = f.input :name, :label => "Last name", :required => true, :autofocus => true
           - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
             = f.input :email, :required => true
           = f.input :password, :required => true, :hint => false
-        = f.input :password_confirmation, :required => true, :hint => false
+          = f.input :password_confirmation, :required => true, :hint => false
+          = f.label :birthday, "Date of birth"
+          = f.date_select :birthday, start_year: 1950
+          = f.label :gender
+          = f.select :gender, { 'Mr' => 0, 'Mrs' => 1, 'Other' => 2}, :required => true
+          = f.label :country , "* Country"
+          = f.country_select :country, priority_countries: ["GB", "US"]
+          = f.input :city, :required => true
+          = f.label :language_id, "* What are your language preferences?"
+          = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
+          = f.label :occupation, "* Occupation"
+          = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
+          .sectors-collection
+            = f.label :sector_ids, label: "Sector(s)"
+            = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
+          = f.input :organization_name, label: "Name of your organization:"
+          = f.input :organization_url, label: "Url of your organization"
+          = f.label :user_source_id, "How did you first hear about OuiShare?"
+          = f.collection_select :user_source_id, UserSource.all, :id, :name, prompt: "Make your choice"
+        h2 = "OuiShare Mission & Values"
 
-        = f.button :submit, t(".sign_up")
+        p = "What connects the OuiShare communtiy are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
+
+        p
+          | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
+
+
+        p 
+          = "Read more about "
+          a href= about_value_url our values
+          = " and "
+          a href= about_mission_url our mission
+          = "."
+        p 
+          | By becoming a member of OuiShare, you express your consent for our mission and values. *
+        p 
+          = f.check_box :terms_of_service
+          |  I consent with and wish to support the OuiShare mission and values.
+
+
+        h2 = "Support us"
+        p 
+          | We are a non-profit organization being built by passionate individuals around the world since 2012.
+
+        p 
+          | As an open community, membership is free for individuals. However we ask you to help support our team with a one-time or recurring yearly donation to help us continue to provide value to our members by:
+        .list-sign_up
+          ul
+            li organizing local gatherings
+            li hosting OuiShare Summits
+            li producing and curating knowledge through our online magazine, newsletters and Facebook groups
+        
+        p 
+          | ... and more!
+
+        p
+          a href="http://ouishare.net/donations"  Donate at http://ouishare.net/donations
+
+        = f.button :submit, t(".sign_up_submit")
       = render "devise/shared/links"
+
+      br/

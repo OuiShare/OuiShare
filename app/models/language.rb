@@ -44,6 +44,8 @@ class Language < ActiveRecord::Base
   has_many :services
   has_many :regions
 
+  has_many :users
+  
   validates :name, :english_name, :slug, presence: true
 
   scope :visible, ->{ where(visible: true) }

@@ -21,3 +21,5 @@ latest.dump
 
 # Ignore application configuration
 /config/application.yml
+
+Gemfile.lock

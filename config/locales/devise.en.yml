@@ -14,7 +14,8 @@ en:
         update: "Update"
         are_you_sure: "Are you sure?"
       new:
-        sign_up: "Sign Up"
+        sign_up: "Become a member"
+        sign_up_submit: "Register"
         sign_in: "Sign In"
         name: "Name"
         email: "Email"

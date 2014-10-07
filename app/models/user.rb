@@ -5,13 +5,21 @@ class User < ActiveRecord::Base
   extend Enumerize
   include Shared::BeautifulText
 
+  validates :terms_of_service, acceptance: true
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :communities
   has_and_belongs_to_many :expert_groups
 
-  validates :name, presence: true
+  belongs_to :language
+  belongs_to :occupation
+  belongs_to :user_source
+  has_and_belongs_to_many :sectors
+
+  validates :name, :language, :country, :gender, :city, :occupation, presence: true
+  validates_inclusion_of :gender, :in => 0..2
+
   before_validation do
     add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])
   end
@@ -26,6 +34,11 @@ class User < ActiveRecord::Base
 
   scope :connectors,  lambda{('profile_type => 1')}
   scope :advisors, lambda{('profile_type = 2')}
+
+  def country_name
+    country = ISO3166::Country[self.country]
+    country.translations[I18n.locale.to_s] || country.name
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
