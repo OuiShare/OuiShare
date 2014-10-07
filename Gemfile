@@ -67,11 +67,11 @@ gem 'zurb-foundation'
 #gem 'angular-rails'
 gem 'font-awesome-sass'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-#group :production do
-  #gem 'execjs'
-  #gem 'therubyracer', platform: :ruby
-#end
+#See https://github.com/sstephenson/execjs#readme for more supported runtimes
+group :production do
+  gem 'execjs'
+  gem 'therubyracer', platform: :ruby
+end
 
 #gem 'newrelic_rpm'
 
