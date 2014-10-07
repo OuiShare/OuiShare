@@ -348,7 +348,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   paypal-express
-  pg (= 0.17.1)
+  pg
   pry
   quiet_assets
   rack-google-analytics
@@ -357,7 +357,7 @@ DEPENDENCIES
   rails_12factor
   rails_on_heroku
   ranked-model
-  rmagick (= 2.13.3)
+  rmagick
   routing-filter (~> 0.4.0.pre)
   rspec-rails
   sass-rails (= 4.0.1)
