@@ -12,7 +12,7 @@ gem 'thin'
 # Uploads
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-gem "rmagick"
+gem "rmagick", '2.13.3'
 gem 'simple_form_fancy_uploads'
 
 # Improvements
