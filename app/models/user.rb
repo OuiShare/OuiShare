@@ -24,8 +24,8 @@ class User < ActiveRecord::Base
 
   enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2, editor: 3 }
 
-  scope :connectors, ->{ where(profile_type: 1) }
-  scope :advisors, ->{ where(profile_type: 2) }
+  scope :connectors,  where(:profile_type => 1) }
+  scope :advisors, where(:profile_type => 2) }
 
   def self.new_with_session(params, session)
     super.tap do |user|
