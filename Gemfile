@@ -58,6 +58,7 @@ gem 'paypal-express'
 
 # Assets
 gem 'sass-rails', '4.0.1'
+gem 'sprockets', '2.11.0'
 gem "compass-rails", "~> 1.1.2"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
