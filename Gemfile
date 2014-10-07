@@ -43,7 +43,7 @@ gem 'omniauth-twitter'
 # Email/newsletter
 gem 'gibbon'
 
-gem 'feedzirra'
+gem 'feedjira'
 
 # Frontend stuff
 gem 'jquery-rails'
