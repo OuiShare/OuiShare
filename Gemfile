@@ -28,6 +28,10 @@ gem 'figaro'
 # Geolocation
 gem 'geocoder'
 
+
+# Notification Exception
+gem 'exception_notification'
+
 # I18n
 gem 'rails-i18n'
 gem 'devise-i18n'
