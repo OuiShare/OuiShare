@@ -1,7 +1,13 @@
 OuiShare::Application.routes.draw do
   resources :authorizations, only: [:destroy]
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"}
   root :to => "home#index"
+
+  devise_scope :user do
+    get 'donate', :to => 'registrations#donate'
+    get 'register', :to => "registrations#new"
+    get 'register/thanks', :to => "registrations#thank_you"
+  end
 
   filter :locale, exclude: /\/auth\//
 

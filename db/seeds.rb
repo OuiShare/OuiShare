@@ -47,6 +47,21 @@ occupations.each do |o|
     Occupation.create(o)
   end
 end
+topics = [
+                {name: "Collaborative Consumption"},
+                {name: "Open Design & Manufacturing"},
+                {name: "Open Knowledge & Education"},
+                {name: "Peer-to-Peer Finance"},
+                {name: "Open & Horizontal Governance"},
+                {name: "Decentralized Tools & Open Source Software"},
+                {name: "Community Building"}
+              ]
+
+topics.each do |o|
+  if Topic.find_by_name(o[:name]).nil?
+    Topic.create(o)
+  end
+end
 
 user_sources = [
                   {name: "I attended a local event"},
