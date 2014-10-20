@@ -3,16 +3,17 @@ div#page-donations
     div.row
       div.large-12.columns
         - if @from == 'http://ouishare.pitchme.webfactional.com/en/users/sign_up' or 'http://ouishare.pitchme.webfactional.com/en/users/' or 'http://ouishare.pitchme.webfactional.com/en/register'
-          h3 = "Support Us"
-          .markdown  = "We are a non-profit organization being built by passionate individuals around the world since 2012."
-          .markdown  style="margin-bottom:20px;" "As an open community, membership is free for individuals. However we encourage you to support our team of Connectors with a one-time or recurring annual donation to help us maintain our community activities such as:"
-          ul style="margin-left:15px;"
-            li = "organizing local events and international summits"
-            li = "producing and curating knowledge through our online magazine, newsletters and online discussion groups"
-            li = "supporting and advising our members on how to develop their local communities and projects"
-          .markdown = "... and more !"
-          br
-          br
+          .support-msg style="margin-left:20px;"
+            h3 = "Support Us"
+            .markdown  = "We are a non-profit organization being built by passionate individuals around the world since 2012."
+            .markdown  style="margin-bottom:20px;" As an open community, membership is free for individuals. However we encourage you to support our team of Connectors with a one-time or recurring annual donation to help us maintain our community activities such as:
+            ul style="margin-left:15px;"
+              li = "organizing local events and international summits"
+              li = "producing and curating knowledge through our online magazine, newsletters and online discussion groups"
+              li = "supporting and advising our members on how to develop their local communities and projects"
+            .markdown = "... and more !"
+            br
+            br
         - else 
           h4 = @donation_page.thanks_text_html
           h3 = @donation_page.main_title
