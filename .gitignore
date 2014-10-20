@@ -22,8 +22,6 @@ latest.dump
 # Ignore application configuration
 /config/application.yml
 
-Gemfile
-
 app/assets/stylesheets/application.sass
 
 public/assets/application.css
