@@ -2,7 +2,7 @@ div#page-donations
   section.donate.section
     div.row
       div.large-12.columns
-        - if @from == 'http://ouishare.pitchme.webfactional.com/en/users/sign_up'
+        - if @from == 'http://ouishare.pitchme.webfactional.com/en/users/sign_up' or 'http://ouishare.pitchme.webfactional.com/en/users/' or 'http://ouishare.pitchme.webfactional.com/en/register'
           h3 = "Support Us"
           .markdown  = "We are a non-profit organization being built by passionate individuals around the world since 2012."
           .markdown  style="margin-bottom:20px;" "As an open community, membership is free for individuals. However we encourage you to support our team of Connectors with a one-time or recurring annual donation to help us maintain our community activities such as:"
@@ -112,7 +112,7 @@ div#page-donations
                       img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
             div.large-12.columns
               p = t('donations.recurring_donations')
-    - if @from == 'http://ouishare.pitchme.webfactional.com/en/users/sign_up'
+    - if @from == 'http://ouishare.pitchme.webfactional.com/en/users/sign_up' or 'http://ouishare.pitchme.webfactional.com/en/users/' or 'http://ouishare.pitchme.webfactional.com/en/register'
       a.button.right style= "margin-right:50px;text-decoration:none;"href="register/thanks" Complete Registration
   section.explain
     div.row.section
