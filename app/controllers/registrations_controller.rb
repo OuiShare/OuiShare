@@ -15,6 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
+    ConfirmationMailer.confirmation(current_user).deliver!
     donations_path
   end
 
@@ -43,6 +44,5 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def thank_you
-    ConfirmationMailer.confirmation(params).deliver!
   end
 end

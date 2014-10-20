@@ -3,6 +3,8 @@ class ConfirmationMailer < ActionMailer::Base
   default from: 'no-reply@ouishare.net'
 
   def confirmation(params)
-    mail(to: current_user.email, from: 'no-reply@ouishare.net', subject: "[OuiShare contact] #{@params[:subject]}")
+    current_user = params
+    attachments.inline['ouishare-email.png'] = File.read(File.join(Rails.root, 'app','assets','images','ouishare-email.png'))
+    mail(to: current_user.email, from: 'no-reply@ouishare.net', subject: "[OuiShare contact] Welcome to the OuiShare community!")
   end
 end
