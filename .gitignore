@@ -22,15 +22,7 @@ latest.dump
 # Ignore application configuration
 /config/application.yml
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Gemfile.lock
-=======
-Gemfile
 
-=======
->>>>>>> 188_signup_process
 app/assets/stylesheets/application.sass
 
 public/assets/application.css
->>>>>>> ouishare-staging/188_signup_process
