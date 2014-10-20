@@ -5,16 +5,13 @@ div.row
 
       p  
         | Our members are passionate individuals who spread the OuiShare
-        a href="http://ouishare.net/about"  vision
+        a href="http://ouishare.net/about"target="_blank" vision
         |, 
-        a href="http://ouishare.net/values"  values 
-        | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today. "
+        a href="http://ouishare.net/values"target="_blank" values 
+        | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today.
 
       p = "OuiShare members come from different backgrounds, countries and life phases: entrepreneurs, researchers, activists, freelancers, business leaders, public officials and more. They live in 75 cities across Europe, the Americas and the Arab Countries, with a growing number in Africa and Asia. We see this diversity of perspectives and expertise as an enrichment that is crucial for achieving change. Each new voice is valuable!"
-      span style= "font-family: verdana;font-weight:bold;" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the 
-      span style="text-decoration:underline;font-family: verdana;font-weight:bold;" form below.
-      br 
-      br
+      p style="font-weight:bold" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the form below.
       p = "Membership is free and open to anyone. However as a non-profit, we encourage members to help support our community activities with a one-time or recurring donation."
       p 
         a href="http://ouiki.ouishare.net/index.php?title=Role_and_Membership_types#Members"target="_blank" >> Read more about being a OuiShare member
@@ -25,7 +22,7 @@ div.row
 
       p = "We're pleased that you would like to become a member of OuiShare! "
       p = "To complete your registration, please fill out the questions below. Your editable profile in the OuiShare member database will be automatically generated. "
-      p = "*all personal information will be treated with confidentiality."
+      p style="font-weight:bold" All personal information will be treated with confidentiality.
       /.
         .omniauth
           - if resource.authorizations.any?
@@ -91,11 +88,8 @@ div.row
         p
           | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
         p 
-          | By becoming a member of OuiShare, you express your consent for our mission and values. *
-          = "Read more about "
-          a target="_blank"href= about_value_url our values
-          = " and "
-          a target="_blank"href= about_mission_url our mission
+          | By becoming a member of OuiShare, you express your consent for our mission and values. 
+          a target="_blank"href= about_mission_url Read more
           = "."
         p 
           = f.check_box :terms_of_service
