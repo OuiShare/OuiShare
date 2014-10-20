@@ -40,7 +40,7 @@ en:
     contact:
       index: 'Contact'
     get_involved:
-      index: 'Get involved!'
+      index: 'Join'
     home:
       terms: 'Terms & Services'
     devise/registrations:
@@ -113,4 +113,4 @@ en:
     spanish: 'Spanish'
     german: 'German'
     donate: 'Donate'
-    get_involved: 'Get Involved!'
+    get_involved: 'Get Involved'
