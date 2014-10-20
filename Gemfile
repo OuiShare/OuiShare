@@ -61,6 +61,7 @@ gem 'auto_html', '1.6.0'
 gem 'paypal-express'
 
 # Assets
+gem 'sass', '3.4.5'
 gem 'sass-rails', '4.0.1'
 gem 'sprockets', '2.11.0'
 gem "compass-rails", "~> 1.1.2"
@@ -71,6 +72,7 @@ gem 'uglifier'
 gem 'zurb-foundation'
 #gem 'angular-rails'
 gem 'font-awesome-sass'
+gem "font-awesome-rails"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 group :production do
