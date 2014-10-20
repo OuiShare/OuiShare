@@ -43,7 +43,7 @@ en:
       index: 'Join'
     home:
       terms: 'Terms & Services'
-    devise/registrations:
+    registrations:
       new: 'Join'
       edit: 'Edit profile'
     admin/users:
