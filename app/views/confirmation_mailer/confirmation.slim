@@ -9,10 +9,14 @@ ul
   li = "Read up on our management and governance principles"
 p
   | Consult our 
-  a href="http://ouishare.net/faq" FAQ
+  a href="http://ouishare.net/faq" FAQ 
   | and 
   a href="http://ouiki.ouishare.net/" Wiki 
   | for help. And don't hesitate to contact a 
   a href="http://ouishare.net/about/team" Connector 
   | near you for guidance and advice. They will be happy to help.
 p = "#OuiShareLove"
+
+tr
+  td.divider align="center"colspan= "2"style="border: 0px; width: 100%;"
+    = link_to image_tag(attachments['ouishare-email'].url), "http://ouishare.net" unless attachments['ouishare-email'].nil?
