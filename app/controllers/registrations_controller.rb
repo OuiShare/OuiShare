@@ -1,8 +1,26 @@
-class DonationsController < ApplicationController
-  def index
+class RegistrationsController < Devise::RegistrationsController
+
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:fname, :email, :password, :password_confirmation)}
+  end
+  
+  def new
+    super
+  end
+
+  def create
+    super
+  end
+
+  protected
+
+  def after_sign_up_path_for(resource)
+    donations_path
+  end
+
+  def donate
     @donation_page = @current_language.donation_page || DonationPage.new
     @testimonial = @current_language.testimonial || Testimonial.new
-    @from = request.referrer
   end
 
   def pay
@@ -25,5 +43,6 @@ class DonationsController < ApplicationController
   end
 
   def thank_you
+    ConfirmationMailer.confirmation(params).deliver!
   end
 end

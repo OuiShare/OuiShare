@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :communities
   has_and_belongs_to_many :expert_groups
-
+  has_and_belongs_to_many :topics
   belongs_to :language
   belongs_to :occupation
   belongs_to :user_source
