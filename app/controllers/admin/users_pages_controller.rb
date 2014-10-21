@@ -30,7 +30,7 @@ module Admin
     end
 
     def resource
-      # @users_page ||= UsersPage.find(params[:id])
+      @users_page ||= UsersPage.find(params[:id])
     end
 
     def build_resource
