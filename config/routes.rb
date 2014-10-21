@@ -164,6 +164,7 @@ OuiShare::Application.routes.draw do
   get 'about/governance' => 'about#governance', as: 'about_governance'
   get 'about/values' => 'about#value', as: 'about_value'
   get 'about/team' => 'about#team', as: 'about_team'
+  get 'about/users' => 'about#users', as: 'users'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
   get 'about/collaborative_economy' => 'about#collaborative_economy', as: 'about_collaborative_economy'

@@ -49,4 +49,8 @@ class AboutController < ApplicationController
     @list = @current_language.funding_infos.order('created_at desc') || [FundingInfo.new]
   end
 
+  def users
+    @users = User.where(profile_type: "user")
+  end
+
 end

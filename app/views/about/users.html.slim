@@ -1,0 +1,20 @@
+- content_for :page_title, 'Users'
+div#page-about-internal
+  section.theTeam#list
+    div.activities
+      div.row
+        div.large-4.columns
+          h3 = @users_page.title unless @users_page.nil?
+          .markdown = @users_page.text_html unless @users_page.nil?
+          a.btn.blue href="#{contact_path}" = @userspage.link_text unless @users_page.nil?
+
+        div.large-8.columns
+          ul.large-block-grid-2
+            - @users.order('name').each do |a|
+              li
+                = link_to a do
+                  div.avatar
+                    = image_tag(a.avatar_url(140))
+                  div.desc
+                    span.name = a.name
+                    p.position = a.title
