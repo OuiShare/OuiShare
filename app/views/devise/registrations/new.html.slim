@@ -5,7 +5,7 @@ div.row
 
       p  
         | Our members are passionate individuals who spread the OuiShare
-        a href="http://ouishare.net/about"target="_blank" vision
+        a href="http://ouishare.net/about"target="_blank"  vision
         |, 
         a href="http://ouishare.net/values"target="_blank" values 
         | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today.
@@ -16,7 +16,7 @@ div.row
       p 
         a href="http://ouiki.ouishare.net/index.php?title=Role_and_Membership_types#Members"target="_blank" >> Read more about being a OuiShare member
       
-      img src="/assets/signup.jpg"
+      img src="/assets/signup-2.jpg"
 
       h2 = t(".sign_up")
 
@@ -37,64 +37,86 @@ div.row
         .form-inputs
           .container
             .row
-              .large-3.columns
-                = f.label :gender
-                = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
-              .large-3.columns
-                = f.input :fname, :label => "First name", :required => true
-              .large-3.columns
-                - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-                  = f.input :name, :label => "Last name", :required => true, :autofocus => true
-              .large-3.columns
-                - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
-                  = f.input :email, :required => true
-              .large-4.columns
-                = f.label :birthday, "Date of birth"
-                = f.date_select :birthday, start_year: 1950              
-             
-              .large-4.columns
-                = f.label :country , "* Country"
-                = f.country_select :country, priority_countries: ["GB", "US"]
-              .large-4.columns
-                = f.input :city, :required => true
-              .large-6.columns
-                = f.label :language_id, "* What is your language preference?"
-                = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
-              .large-6.columns
-                = f.label :occupation, "* Occupation"
-                = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
+              .large-8.columns
+                .row
+                  .large-6.columns
+                    = f.input :fname, :label => "First name", :required => true
+                  .large-6.columns.left
+                    - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
+                      = f.input :name, :label => "Last name", :required => true, :autofocus => true
+                .row
+                  .large-6.columns
+                    = f.label :gender
+                    = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
+                .row
+                  .large-12.columns
+                    - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
+                      = f.input :email, :required => true
+                .row
+                  .large-12.columns
+                    = f.label :birthday, "Date of birth"
+                    = f.date_select :birthday, start_year: 1950              
+                .row
+                  .large-6.columns
+                    = f.label :country , "* Country"
+                    = f.country_select :country, priority_countries: ["GB", "US"]
+                  .large-6.columns.left
+                    = f.input :city, :required => true
+                .row
+                  .large-6.columns
+                    = f.label :language_id, "* What is your language preference?"
+                    = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
+                  .large-6.columns.left
+                    = f.label :occupation, "* Occupation"
+                    = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
+                .row
 
-              / .sectors-collection
-              /   = f.label :sector_ids, label: "Sector(s)"
-              /   = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
-              .large-6.columns
-                = f.input :organization_name, label: "Name of your organization:"
-              .large-6.columns
-                = f.input :organization_url, label: "Url of your organization"
-              .large-12.columns style= "margin-bottom:5px;"
-                = f.label :occupation, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
-                = f.collection_check_boxes :topics, Topic.all, :id, :name, prompt: "Select your occupation" 
-              .large-12.columns
-                = f.label :user_source_id, "How did you first hear about OuiShare?"
-                = f.collection_select :user_source_id, UserSource.all, :id, :name, prompt: "Choose one"
-              .large-6.columns
-                = f.input :password, :required => true, :hint => false
-              .large-6.columns
-                = f.input :password_confirmation, :required => true, :hint => false
-        h2 = "OuiShare Mission & Values"
+                  / .sectors-collection
+                  /   = f.label :sector_ids, label: "Sector(s)"
+                  /   = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
+                  .large-6.columns
+                    = f.input :organization_name, label: "Name of your organization:"
+                  .large-6.columns.left
+                    = f.input :organization_url, label: "Url of your organization"
+                .row
+                  .large-12.columns style= "margin-bottom:5px;"
+                    = f.label :occupation, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
+                    = f.collection_check_boxes :topics, Topic.all, :id, :name, prompt: "Select your occupation" 
+                .row
+                  .large-12.columns
+                    = f.label :user_source_id, "How did you first hear about OuiShare?"
+                    = f.collection_select :user_source_id, UserSource.all, :id, :name, prompt: "Choose one"
+                .row
+                  .large-6.columns
+                    = f.input :password, :required => true, :hint => false
+                  .large-6.columns.left
+                    = f.input :password_confirmation, :required => true, :hint => false
+                .row
+                  h2 = "OuiShare Mission & Values"
 
-        p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
+                  p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
 
-        p
-          | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
-        p 
-          | By becoming a member of OuiShare, you express your consent for our mission and values. 
-          a target="_blank"href= about_mission_url Read more
-          = "."
-        p 
-          = f.check_box :terms_of_service
-          |  I consent with and wish to support the OuiShare mission and values.
+                  p
+                    | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
+                  p 
+                    | By becoming a member of OuiShare, you express your consent for our mission and values. 
+                    a target="_blank"href= about_mission_url Read more
+                    = "."
+                  p
+                    = f.check_box :terms_of_service
+                    |  I consent with and wish to support the OuiShare mission and values.
+                  div.right
+                    = f.button :submit, t(".sign_up_submit")
+                  br
+                  br
+                  br
+                  br
+                  br
+                  div.right
+                    = render "devise/shared/links"
+              .large-6.columns
 
+               
 
         / h2 = "Support us"
         / p 
@@ -114,7 +136,5 @@ div.row
         / p
         /   a href="http://ouishare.net/donations"  Donate at http://ouishare.net/donations
 
-        = f.button :submit, t(".sign_up_submit")
-      = render "devise/shared/links"
 
       br/

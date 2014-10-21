@@ -6899,6 +6899,9 @@ body h1, body h2, body h3 {
 body p, body h4, body h5 {
   font-family: "Naiv", verdana;
 }
+body p {
+  text-align: justify;
+}
 /* line 24, ../../app/assets/stylesheets/_base.sass */
 body a {
   color: #f39c12;
@@ -9332,8 +9335,8 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
 
 /* line 1, ../../app/assets/stylesheets/_signup.sass */
 #user_birthday_1i, #user_birthday_2i, #user_birthday_3i {
-  width: 30%;
-  margin-left: 2%;
+  width: 32.7%;
+  /*margin-left: 2%;*/
 }
 
 /* line 5, ../../app/assets/stylesheets/_signup.sass */
@@ -9368,6 +9371,10 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   margin-left: 15px;
 }
 
+/*.first-row .columns{
+  margin-right: 2.0%;
+  margin-left:5px;
+}*/
 /* line 26, ../../app/assets/stylesheets/_signup.sass */
 .container select {
   -webkit-appearance: button;
@@ -9387,7 +9394,9 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   border-radius: 0;
   height: 2.05556rem;
 }
-
+.support-msg {
+  text-align: justify;
+}
 /* @import contact */
 /* @import events */
 /* @import getinvolved */
