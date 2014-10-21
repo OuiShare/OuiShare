@@ -51,7 +51,7 @@ class AboutController < ApplicationController
 
   def users
     @users = User.where(profile_type: "user")
-    @users_page = @current_language.users_page || UsersPage.new
+    # @users_page = @current_language.users_page || UsersPage.new
   end
 
 end
