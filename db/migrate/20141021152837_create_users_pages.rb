@@ -1,5 +1,5 @@
 class CreateUsersPages < ActiveRecord::Migration
-  def change
+  def up
     create_table :users_pages do |t|
       t.string :title
       t.text :text
@@ -8,5 +8,8 @@ class CreateUsersPages < ActiveRecord::Migration
 
       t.timestamps
     end
+  end
+  def down
+    drop_table :users_pages
   end
 end
