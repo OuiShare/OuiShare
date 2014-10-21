@@ -5,14 +5,5 @@ section
       div.subscribe
         span.space = @top_banner.text1
         div.large-12.large-centered.columns.center
-          = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
-            div.row.collapse
-              div.small-10.columns
-                .email-field
-                  input type="email" id="email" name="email" placeholder="Your email here" required=""
-                  small.error An email address is required.
-              div.small-2.columns
-                = submit_tag('Go', class: 'postfix btn white')
-
-              /*a.postfix href="#{newsletter_path}" Go !*/
+          a href="/register" class="button" style="text-decoration:none;" Join us ! 
   = image_tag(@top_banner.main_image.top_banner.url)
