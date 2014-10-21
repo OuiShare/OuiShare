@@ -2304,7 +2304,7 @@ form .row textarea.columns {
 /* Label Styles */
 /* line 270, ../../../../../.rvm/gems/ruby-2.0.0-p576/gems/zurb-foundation-4.3.2/scss/foundation/components/_forms.scss */
 label {
-  font-size: 0.875em;
+  font-size: 0.8em;
   color: #4d4d4d;
   cursor: pointer;
   display: block;
