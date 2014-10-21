@@ -37,7 +37,7 @@ div.row
         .form-inputs
           .container
             .row
-              .large-8.columns
+              .large-6.columns
                 .row
                   .large-6.columns
                     = f.input :fname, :label => "First name", :required => true
@@ -92,29 +92,30 @@ div.row
                   .large-6.columns.left
                     = f.input :password_confirmation, :required => true, :hint => false
                 .row
-                  h2 = "OuiShare Mission & Values"
-
-                  p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
-
-                  p
-                    | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
-                  p 
-                    | By becoming a member of OuiShare, you express your consent for our mission and values. 
-                    a target="_blank"href= about_mission_url Read more
-                    = "."
-                  p
-                    = f.check_box :terms_of_service
-                    |  I consent with and wish to support the OuiShare mission and values.
-                  div.right
-                    = f.button :submit, t(".sign_up_submit")
-                  br
-                  br
-                  br
-                  br
-                  br
-                  div.right
-                    = render "devise/shared/links"
+              
               .large-6.columns
+                h2 = "OuiShare Mission & Values"
+
+                p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
+
+                p
+                  | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
+                p 
+                  | By becoming a member of OuiShare, you express your consent for our mission and values. 
+                  a target="_blank"href= about_mission_url Read more
+                  = "."
+                p
+                  = f.check_box :terms_of_service
+                  |  I consent with and wish to support the OuiShare mission and values.
+                div.right
+                  = f.button :submit, t(".sign_up_submit")
+                br
+                br
+                br
+                br
+                br
+                div.right
+                  = render "devise/shared/links"
 
                
 
