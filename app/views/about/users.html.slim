@@ -1,4 +1,4 @@
-- content_for :page_title, 'Users'
+- content_for :page_title, 'Members'
 div#page-about-internal
   section.theTeam#list
     div.activities
@@ -6,7 +6,7 @@ div#page-about-internal
         div.large-4.columns
           h3 = @users_page.title unless @users_page.nil?
           .markdown = @users_page.text_html unless @users_page.nil?
-          a.btn.blue href="#{contact_path}" = @userspage.link_text unless @users_page.nil?
+          a.btn.blue href="#{contact_path}" = @users_page.link_text unless @users_page.nil?
 
         div.large-8.columns
           ul.large-block-grid-2

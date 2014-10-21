@@ -98,6 +98,7 @@ en:
     local_communities: 'Local Communities'
     knowledge_groups: 'knowledge Groups'
     connectors: 'Connectors'
+    users: 'Members'
     ouishare_everywhere: 'OuiShare Everywhere'
     events: 'Events'
     more_events: 'More Events'

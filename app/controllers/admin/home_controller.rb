@@ -30,6 +30,9 @@ module Admin
     def team_pages
     end
 
+    def users_pages
+    end
+
     def advisors_pages
     end
 

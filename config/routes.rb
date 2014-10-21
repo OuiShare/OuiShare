@@ -49,6 +49,7 @@ OuiShare::Application.routes.draw do
       resources :values
       resources :value_pages
       resources :team_pages
+      resources :users_pages
       resources :advisors_pages
       resources :communities do
         member do
@@ -112,6 +113,7 @@ OuiShare::Application.routes.draw do
     get 'faq_pages' => 'home#faq_pages'
     get 'faq_questions' => 'faq_questions#index'
     get 'team_pages' => 'home#team_pages'
+    get 'users_pages' => 'home#users_pages'
     get 'advisors_pages' => 'home#advisors_pages'
     get 'communities' => 'communities#index'
     get 'cocreation_pages' => 'home#cocreation_pages'
