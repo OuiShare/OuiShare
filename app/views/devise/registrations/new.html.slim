@@ -67,7 +67,7 @@ div.row
                     = f.label :language_id, "* What is your language preference?"
                     = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
                   .large-6.columns.left
-                    = f.label :occupation, "* Occupation", class: "occupation"
+                    = f.label :occupation, "* Occupation"
                     = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
                 .row
 
