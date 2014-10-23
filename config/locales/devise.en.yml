@@ -68,7 +68,7 @@ en:
         sign_in_with: "Sign in with %{provider}"
       links:
         sign_in: "Sign in "
-        sign_up: "Sign up"
+        sign_up: "Sign up "
         reset_your_password: " Reset your password"
         didn_t_receive_confirmation_instructions?: "Didn't receive confirmation instructions?"
         didn_t_receive_unlock_instructions?: "Didn't receive unlock instructions?"
@@ -77,4 +77,8 @@ en:
         change_my_password: "Change my password"
         or: " or "
         back: "Back"
+  activerecord:
+    attributes:
+      user:
+        remember_me:   Remember me
 

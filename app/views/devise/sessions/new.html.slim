@@ -1,13 +1,20 @@
-div.row
-  div.large-12.columns
-    .sign_in_box
+div.row.signin
+  div.large-6.large-offset-3.columns
+    .sign_in_box.social
       h2 = t(".sign_in")
       br/
       = render "devise/shared/social_links"
-      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-        .form-inputs
-          = f.input :email, :required => false, :autofocus => true
-          = f.input :password, :required => false, :hint => false
-          = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-          = f.button :submit, t(".sign_in")
-        = render "devise/shared/links"
+      br/
+      br
+      br
+      br
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, :required => false, :autofocus => true
+        = f.input :password, :required => false, :hint => false
+        = f.input :remember_me, class: "right", :as => :boolean if devise_mapping.rememberable?
+        = f.button :submit, t(".sign_in"), class: "right"
+        br
+        br
+        div
+          = render "devise/shared/links"
