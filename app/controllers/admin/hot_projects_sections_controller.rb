@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_home_path }
+      build_resource
+      @hot_projects_section = DefaultAttributes.new(@hot_projects_section).set()
+      if @hot_projects_section.save
+        redirect_to admin_home_path
+      else
+        redirect_to new_admin_language_hot_projects_section_path(params[:language_id])
+      end
     end
 
     def update

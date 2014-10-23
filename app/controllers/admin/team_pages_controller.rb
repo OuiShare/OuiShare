@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_team_pages_path }
+      build_resource
+      @team_page = DefaultAttributes.new(@team_page).set()
+      if @team_page.save
+        redirect_to admin_team_pages_path
+      else
+        redirect_to new_admin_language_team_page_path(params[:language_id])
+      end
     end
 
     def update

@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_advisors_pages_path }
+      build_resource
+      @advisors_page = DefaultAttributes.new(@advisors_page).set()
+      if @advisors_page.save
+        redirect_to admin_advisors_pages_path
+      else
+        redirect_to new_admin_advisors_page_path
+      end
     end
 
     def update

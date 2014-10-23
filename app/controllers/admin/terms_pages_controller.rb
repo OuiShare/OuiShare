@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_terms_pages_path }
+      build_resource
+      @terms_page = DefaultAttributes.new(@terms_page).set()
+      if @terms_page.save
+        redirect_to admin_terms_pages_path
+      else
+        redirect_to new_admin_language_terms_page_path(params[:language_id])
+      end
     end
 
     def update

@@ -7,6 +7,8 @@ module Admin
     before_filter :verify_admin
 
     def create
+      build_resource
+      @about = DefaultAttributes.new(@about).set([:image])
       create! { admin_about_path }
     end
 

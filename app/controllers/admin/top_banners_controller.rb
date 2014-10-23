@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_home_path }
+      build_resource
+      @top_banner = DefaultAttributes.new(@top_banner).set([:image1, :image2, :main_image])
+      if @top_banner.save
+        redirect_to admin_home_path
+      else
+        redirect_to new_admin_language_top_banner_path(params[:language_id])
+      end
     end
 
     def update

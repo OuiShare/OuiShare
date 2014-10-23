@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_home_path }
+      build_resource
+      @articles_section = DefaultAttributes.new(@articles_section).set()
+      if @articles_section.save
+        redirect_to admin_home_path
+      else
+        render new_admin_articles_section_path
+      end
     end
 
     def update

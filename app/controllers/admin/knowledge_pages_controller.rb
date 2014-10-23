@@ -7,7 +7,13 @@ module Admin
     before_filter :verify_admin
 
     def create
-      create! { admin_knowledge_pages_path }
+      build_resource
+      @knowledge_page = DefaultAttributes.new(@knowledge_page).set([:image])
+      if @knowledge_page.save
+        redirect_to admin_knowledge_pages_path
+      else
+        redirect_to new_admin_language_knowledge_page_path(params[:language_id])
+      end
     end
 
     def update
