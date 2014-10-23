@@ -71,7 +71,7 @@ gem 'uglifier'
 #gem 'bootstrap-sass'
 gem 'zurb-foundation'
 #gem 'angular-rails'
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 gem "font-awesome-rails"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
