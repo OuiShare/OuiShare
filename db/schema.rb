@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023120131) do
+ActiveRecord::Schema.define(version: 20141023125041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -654,7 +654,10 @@ ActiveRecord::Schema.define(version: 20141023120131) do
     t.string   "link2"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "language_id"
   end
+
+  add_index "registration_pages", ["language_id"], name: "index_registration_pages_on_language_id", using: :btree
 
   create_table "research_pages", force: true do |t|
     t.text     "main_text"

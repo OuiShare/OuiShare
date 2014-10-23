@@ -1,0 +1,34 @@
+div.row
+  div.large-12.columns
+    h2.subheader Registration pages
+    table
+      tr
+        th Language
+        th Main Title
+        th Main Text
+        th Image 1
+        th Title 1
+        th Text
+        th Title 2
+        th Text 2
+        th Text 3
+      - Language.all.each do |l|
+        - if l.registration_page.present?
+          tr
+            td = l.name
+            td = l.registration_page.main_title
+            td = l.registration_page.main_text
+            td = image_tag(l.registration_page.image1.thumb.url)
+            td = l.registration_page.title1
+            td = l.registration_page.text
+            td = l.registration_page.title2
+            td = l.registration_page.text2
+            td = l.registration_page.text3
+            td = link_to "Edit", edit_admin_language_registration_page_path(l, l.registration_page)
+            td = link_to "Remove", [:admin, l, l.registration_page], data: { confirm: 'Are you sure?' }, method: :delete
+        - else
+          tr
+            td = l.name
+            td colspan='6' = link_to 'Create', new_admin_language_registration_page_path(l.id)
+
+
