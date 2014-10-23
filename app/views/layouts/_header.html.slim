@@ -37,7 +37,7 @@ div.contain-to-grid.fixed
             li
               = link_to t('menu.get_involved'), getinvolved_path
             li
-              = link_to t('menu.users'), users_path
+              = link_to t('menu.users'), members_path
             li
               = link_to t('menu.ouishare_everywhere'), communities_live_path              
 
@@ -92,8 +92,6 @@ div.contain-to-grid.fixed
 
         li.donate.hide-for-medium-down
           a href="#{donations_path}" class="button" Donate
-        li.get-involved.hide-for-medium-down
-          a href="#{register_url}" class="button" Join
 
         - if user_signed_in?
           li.has-dropdown.hide-for-medium-down
@@ -104,3 +102,9 @@ div.contain-to-grid.fixed
                 = link_to t("edit_profile"), edit_user_registration_path
               li
                 = link_to t('admin.logout'), destroy_user_session_path, method: :delete
+        - else
+          li.donate.hide-for-medium-down
+            a href="#{register_url}" class="button" Join 
+
+          li.get-involved.hide-for-medium-down
+            a href="#{new_user_session_path}" class="button" Login

@@ -33,6 +33,7 @@ en:
       value: 'Values'
       funded: 'How we are funded'
       collaborative_economy: 'The Collaborative Economy'
+      users: 'Members'
     communities:
       index: "Communities"
       expert_groups: 'Knowledge Groups'

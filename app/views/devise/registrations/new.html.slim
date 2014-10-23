@@ -43,7 +43,7 @@ div.row
                     = f.input :fname, :label => "First name", :required => true
                   .large-6.columns.left
                     - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-                      = f.input :name, :label => "Last name", :required => true, :autofocus => true
+                      = f.input :name, :label => "Last name", :required => true
                 .row
                   .large-6.columns
                     = f.label :gender
