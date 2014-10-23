@@ -18,7 +18,7 @@ class DefaultAttributes
 
       images.each do |image_name|
         image_name = image_name.to_s
-        new_attributes["remote_#{image_name}_url"] = english_attributes[image_name]
+        new_attributes["remote_#{image_name}_url"] = english_obj.try(image_name).url
       end
     end
     @model.class.new(new_attributes)
