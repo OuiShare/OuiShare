@@ -21,3 +21,6 @@ latest.dump
 
 # Ignore application configuration
 /config/application.yml
+
+
+app/assets/stylesheets/application.sass

@@ -1,7 +1,13 @@
 OuiShare::Application.routes.draw do
   resources :authorizations, only: [:destroy]
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"}
   root :to => "home#index"
+
+  devise_scope :user do
+    get 'donate', :to => 'registrations#donate'
+    get 'register', :to => "registrations#new"
+    get 'register/thanks', :to => "registrations#thank_you"
+  end
 
   filter :locale, exclude: /\/auth\//
 
@@ -43,6 +49,7 @@ OuiShare::Application.routes.draw do
       resources :values
       resources :value_pages
       resources :team_pages
+      resources :users_pages
       resources :advisors_pages
       resources :communities do
         member do
@@ -106,6 +113,7 @@ OuiShare::Application.routes.draw do
     get 'faq_pages' => 'home#faq_pages'
     get 'faq_questions' => 'faq_questions#index'
     get 'team_pages' => 'home#team_pages'
+    get 'users_pages' => 'home#users_pages'
     get 'advisors_pages' => 'home#advisors_pages'
     get 'communities' => 'communities#index'
     get 'cocreation_pages' => 'home#cocreation_pages'
@@ -158,6 +166,7 @@ OuiShare::Application.routes.draw do
   get 'about/governance' => 'about#governance', as: 'about_governance'
   get 'about/values' => 'about#value', as: 'about_value'
   get 'about/team' => 'about#team', as: 'about_team'
+  get 'about/members' => 'about#users', as: 'members'
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
   get 'about/collaborative_economy' => 'about#collaborative_economy', as: 'about_collaborative_economy'

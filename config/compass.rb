@@ -1,4 +1,5 @@
 # Set this to the root of your project when deployed:
+require "zurb-foundation"
 http_path = "/"
 css_dir = "public/assets"
 sass_dir = "app/assets/stylesheets"

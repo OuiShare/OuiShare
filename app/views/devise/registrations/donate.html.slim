@@ -1,0 +1,175 @@
+div#page-donations
+  section.donate.section
+    div.row
+      div.large-12.columns
+        h3 = @donation_page.main_title
+        .markdown = @donation_page.main_text_html
+        h4 = @donation_page.thanks_text_html
+    div.row
+      div.large-8.columns
+        .pink-box
+          div.row
+            .header
+              div.large-6.columns
+                h5 = t('donations.help_support_ouishare')
+              div.large-6.columns
+                a.currency.small-2 data-dropdown="currency" data-options="is_hover:true" €
+                ul id="currency" class="f-dropdown small" data-dropdown-content=""
+                  li
+                    a.usd href="#page-donations" $
+                  li
+                    a.eur href="#page-donations" €
+                p.right = t('donations.choose_currency')
+          div.row
+            section.values
+              div.large-12.columns
+                h5 = t('donations.donation')
+                ul.inline-list.euro
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="NMQ426LXB9R3L"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/10eu.jpg'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="2SBD8D7FEBYML"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/50eu.jpg'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="SR7XQUNQH5MHJ"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/100eu.jpg'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="XPCLGHF44K7YE"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/150eu.jpg'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="FDHAD3S3FMXLU"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/200eu.jpg'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  li.value.custom
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="S5JFXUNG2JDEA"
+                      input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/custom.png'}" type="image"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+
+                ul.inline-list.dolar
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="4H7AH5RND963U"
+                      input type="image" src="#{image_path 'donation_buttons/10re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="LYWRZYZVYLT7L"
+                      input type="image" src="#{image_path 'donation_buttons/50re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="SSRYCJYDQEGXJ"
+                      input type="image" src="#{image_path 'donation_buttons/100re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="DZBGKM6GKWL2N"
+                      input type="image" src="#{image_path 'donation_buttons/150re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  li.value
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="R9MA23N3ZV4V4"
+                      input type="image" src="#{image_path 'donation_buttons/200re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  li.value.custom
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="KM28JDRJBX5UU"
+                      input type="image" src="#{image_path 'donation_buttons/custom.png'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+            div.large-12.columns
+              p = t('donations.recurring_donations')
+
+  section.explain
+    div.row.section
+      div.large-8.columns
+        img src="#{@donation_page.image1.donation.url}"
+      div.large-4.columns
+        h3.subtitle.white = @donation_page.title1
+        .markdown = @donation_page.text1_html
+    /.separator.black
+    /div.row.section
+      /div.large-8.columns
+        /img src="#{@donation_page.image2.donation.url}"
+      /div.large-4.columns
+        /h3.subtitle.white = @donation_page.title2
+        /.markdown = @donation_page.text2_html
+
+    /div.row.section.certified
+      /div.large-4.columns
+        /h3.subtitle.black Ceritfied by
+        /p hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
+
+      /div.large-8.columns
+        /h3
+          /ul.inline-list
+            /- 5.times do
+              /li
+                /img src="http://placehold.it/80x80"
+
+  .separator.black
+
+  - if @testimonial.call_to_action1.present? || @testimonial.call_to_action2.present? || @testimonial.call_to_action3.present? || @testimonial.call_to_action4.present?
+    div.row.section
+      div.large-12.columns.center
+        h3.subtitle.black Testimonials
+      div.large-12.columns
+        ul.large-block-grid-2
+          - if @testimonial.call_to_action1.present?
+            li
+              div.box
+                div.avatar
+                  = image_tag @testimonial.user_picture1.testimonial_avatar
+                  span.small by #{@testimonial.author1}
+                .content
+                  h4.subtitle = @testimonial.call_to_action1
+                  p = @testimonial.text1
+          - if @testimonial.call_to_action2.present?
+            li
+              div.box
+                div.avatar
+                  = image_tag @testimonial.user_picture2.testimonial_avatar
+                  span.small by #{@testimonial.author2}
+                .content
+                  h4.subtitle = @testimonial.call_to_action2
+                  p = @testimonial.text2
+          - if @testimonial.call_to_action3.present?
+            li
+              div.box
+                div.avatar
+                  = image_tag @testimonial.user_picture3.testimonial_avatar
+                  span.small by #{@testimonial.author3}
+                .content
+                  h4.subtitle = @testimonial.call_to_action3
+                  p = @testimonial.text3
+          - if @testimonial.call_to_action4.present?
+            li
+              div.box
+                div.avatar
+                  = image_tag @testimonial.user_picture4.testimonial_avatar
+                  span.small by #{@testimonial.author4}
+                .content
+                  h4.subtitle = @testimonial.call_to_action4
+                  p = @testimonial.text4

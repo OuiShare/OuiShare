@@ -49,4 +49,9 @@ class AboutController < ApplicationController
     @list = @current_language.funding_infos.order('created_at desc') || [FundingInfo.new]
   end
 
+  def users
+    @users = User.where(:profile_type => ['user','connector'])
+    @users_page = @current_language.users_page || UsersPage.new
+  end
+
 end

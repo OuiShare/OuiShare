@@ -12,7 +12,7 @@ gem 'thin'
 # Uploads
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-gem "rmagick"
+gem "rmagick", '2.13.3'
 gem 'simple_form_fancy_uploads'
 
 # Improvements
@@ -27,6 +27,10 @@ gem 'figaro'
 
 # Geolocation
 gem 'geocoder'
+
+
+# Notification Exception
+gem 'exception_notification'
 
 # I18n
 gem 'rails-i18n'
@@ -51,13 +55,15 @@ gem 'slim-rails'
 gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
-gem 'country_select'
+gem "country_select", "~> 2.0.0"
 gem 'auto_html', '1.6.0'
 
 gem 'paypal-express'
 
 # Assets
+gem 'sass', '3.4.5'
 gem 'sass-rails', '4.0.1'
+gem 'sprockets', '2.11.0'
 gem "compass-rails", "~> 1.1.2"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
@@ -66,12 +72,13 @@ gem 'uglifier'
 gem 'zurb-foundation'
 #gem 'angular-rails'
 gem 'font-awesome-sass'
+gem "font-awesome-rails"
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-#group :production do
-  #gem 'execjs'
-  #gem 'therubyracer', platform: :ruby
-#end
+#See https://github.com/sstephenson/execjs#readme for more supported runtimes
+group :production do
+  gem 'execjs'
+  gem 'therubyracer', platform: :ruby
+end
 
 #gem 'newrelic_rpm'
 

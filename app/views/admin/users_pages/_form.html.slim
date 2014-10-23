@@ -1,0 +1,7 @@
+= simple_form_for  @users_page, url: admin_language_users_page_path(@users_page.language, @users_page) do |f|
+  h4 Language
+  = @users_page.language.name
+  = f.input :title
+  = f.input :text, label: 'Text (Markdown)'
+  = f.input :link_text
+  = f.submit
