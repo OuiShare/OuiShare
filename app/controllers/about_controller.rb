@@ -50,7 +50,7 @@ class AboutController < ApplicationController
   end
 
   def users
-    @users = User.where(:profile_type => ['user','connector'])
+    @users = User.where(:profile_type => [1, 0])
     @users_page = @current_language.users_page || UsersPage.new
   end
 
