@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320212130) do
+ActiveRecord::Schema.define(version: 20141023120131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -516,6 +516,10 @@ ActiveRecord::Schema.define(version: 20140320212130) do
     t.string "mailchimp_id"
   end
 
+  create_table "occupations", force: true do |t|
+    t.string "name"
+  end
+
   create_table "organization_pages", force: true do |t|
     t.text     "main_text"
     t.string   "image"
@@ -635,6 +639,23 @@ ActiveRecord::Schema.define(version: 20140320212130) do
 
   add_index "regions", ["language_id"], name: "index_regions_on_language_id", using: :btree
 
+  create_table "registration_pages", force: true do |t|
+    t.string   "main_title"
+    t.text     "main_text"
+    t.text     "main_text2"
+    t.string   "link1"
+    t.string   "image1"
+    t.string   "title1"
+    t.text     "text1"
+    t.string   "image2"
+    t.string   "title2"
+    t.text     "text2"
+    t.text     "text3"
+    t.string   "link2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "research_pages", force: true do |t|
     t.text     "main_text"
     t.string   "image"
@@ -659,6 +680,18 @@ ActiveRecord::Schema.define(version: 20140320212130) do
   end
 
   add_index "researches", ["language_id"], name: "index_researches_on_language_id", using: :btree
+
+  create_table "sectors", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "sectors_users", id: false, force: true do |t|
+    t.integer "user_id",   null: false
+    t.integer "sector_id", null: false
+  end
+
+  add_index "sectors_users", ["sector_id", "user_id"], name: "index_sectors_users_on_sector_id_and_user_id", using: :btree
+  add_index "sectors_users", ["user_id", "sector_id"], name: "index_sectors_users_on_user_id_and_sector_id", using: :btree
 
   create_table "services", force: true do |t|
     t.integer  "language_id"
@@ -794,6 +827,22 @@ ActiveRecord::Schema.define(version: 20140320212130) do
 
   add_index "top_banners", ["language_id"], name: "index_top_banners_on_language_id", using: :btree
 
+  create_table "topics", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "topics_users", id: false, force: true do |t|
+    t.integer "user_id",  null: false
+    t.integer "topic_id", null: false
+  end
+
+  add_index "topics_users", ["topic_id", "user_id"], name: "index_topics_users_on_topic_id_and_user_id", using: :btree
+  add_index "topics_users", ["user_id", "topic_id"], name: "index_topics_users_on_user_id_and_topic_id", using: :btree
+
+  create_table "user_sources", force: true do |t|
+    t.string "name"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "image"
@@ -821,10 +870,31 @@ ActiveRecord::Schema.define(version: 20140320212130) do
     t.string   "title"
     t.string   "email_address"
     t.text     "bio_html"
+    t.string   "fname"
+    t.date     "birthday"
+    t.integer  "gender"
+    t.string   "country"
+    t.string   "city"
+    t.integer  "language_id"
+    t.integer  "occupation_id"
+    t.string   "organization_name"
+    t.string   "organization_url"
+    t.integer  "user_source_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_pages", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "link_text"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_pages", ["language_id"], name: "index_users_pages_on_language_id", using: :btree
 
   create_table "value_pages", force: true do |t|
     t.text    "text"

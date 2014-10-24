@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  require 'feedzirra'
+  require 'feedjira'
   include AutoHtml
 
   def index

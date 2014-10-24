@@ -25,12 +25,12 @@ class AboutController < ApplicationController
   end
 
   def team
-    @users = User.connectors.order('created_at')
+    @users = User.where(:profile_type => 1).order('created_at')
     @team_page = @current_language.team_page || TeamPage.new
   end
 
   def advisory
-    @users = User.advisors.order('created_at')
+    @users = User.where(:profile_type => 2).order('created_at')
     @advisors_page = @current_language.advisors_page || AdvisorsPage.new
   end
 
@@ -47,6 +47,11 @@ class AboutController < ApplicationController
   def funded
     @resource = @current_language.funded_page || FundedPage.new
     @list = @current_language.funding_infos.order('created_at desc') || [FundingInfo.new]
+  end
+
+  def users
+    @users = User.where(:profile_type => [1, 0])
+    @users_page = @current_language.users_page || UsersPage.new
   end
 
 end

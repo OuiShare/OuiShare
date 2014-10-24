@@ -2,17 +2,7 @@ section
   #welcome
     = render "home/sub", {slider: '1'}
     div.pinkbox.hide-for-small
-      div.subscribe
-        span.space = @top_banner.text1
-        div.large-12.large-centered.columns.center
-          = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
-            div.row.collapse
-              div.small-10.columns
-                .email-field
-                  input type="email" id="email" name="email" placeholder="Your email here" required=""
-                  small.error An email address is required.
-              div.small-2.columns
-                = submit_tag('Go', class: 'postfix btn white')
-
-              /*a.postfix href="#{newsletter_path}" Go !*/
+      div
+        div.large-3.large-centered.columns.center
+          a href="/register" class="button expand" style="text-decoration:none;margin-top:15px;" Join
   = image_tag(@top_banner.main_image.top_banner.url)

@@ -14,7 +14,8 @@ en:
         update: "Update"
         are_you_sure: "Are you sure?"
       new:
-        sign_up: "Sign Up"
+        sign_up: "Become a member"
+        sign_up_submit: "Register"
         sign_in: "Sign In"
         name: "Name"
         email: "Email"
@@ -66,9 +67,9 @@ en:
       social_links:
         sign_in_with: "Sign in with %{provider}"
       links:
-        sign_in: "Sign in"
-        sign_up: "Sign up"
-        reset_your_password: "Reset your password"
+        sign_in: "Sign in "
+        sign_up: "Sign up "
+        reset_your_password: " Reset your password"
         didn_t_receive_confirmation_instructions?: "Didn't receive confirmation instructions?"
         didn_t_receive_unlock_instructions?: "Didn't receive unlock instructions?"
         unlock_my_account: "Unlock my account"
@@ -76,4 +77,8 @@ en:
         change_my_password: "Change my password"
         or: " or "
         back: "Back"
+  activerecord:
+    attributes:
+      user:
+        remember_me:   Remember me
 

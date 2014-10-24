@@ -18,7 +18,7 @@ html
     = javascript_include_tag "vendor/custom.modernizr"
   body
     = initjs_tag app_name: "OuiShare"
-    = render 'layouts/flash', flash: flash if flash.present?
+    = render 'layouts/flash', flash: flash if flash.present? unless controller.controller_name == 'donations' && params[:action] == 'index'
     - if admin?
       - if current_user.try(:is_admin?)
         = render 'layouts/admin_header'
