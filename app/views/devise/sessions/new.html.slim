@@ -3,10 +3,10 @@ div.row.signin
     .sign_in_box.social
       h2 = t(".sign_in")
       br/
-      = render "devise/shared/social_links"
-      br/
-      br
-      br
+      / = render "devise/shared/social_links"
+      / br/
+      / br
+      / br
       br
     = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       .form-inputs
