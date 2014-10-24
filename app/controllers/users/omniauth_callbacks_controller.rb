@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user_signed_in?
       current_user.authorizations.where(provider: omniauth['provider'],
                                         uid:      omniauth['uid']).first_or_create
-      current_user.update_image(omniauth[:info][:image])
+      current_user.update_image(omniauth[:info][:image].gsub('http://','https://'))
       redirect_to root_path, notice: I18n.t('devise.omniauth_callbacks.success', kind: omniauth['provider'])
     else
       authorization = Authorization.where(provider: omniauth['provider'],
