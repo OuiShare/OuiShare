@@ -16,5 +16,6 @@ div#page-about-internal
                   div.avatar
                     = image_tag(a.avatar_url(140))
                   div.desc
-                    span.name = a.name
+                    span.name = a.fname unless a.fname.nil? 
+                    span.name style="margin-left:3px;" = a.name
                     p.position = a.title
