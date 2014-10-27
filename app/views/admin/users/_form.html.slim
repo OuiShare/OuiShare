@@ -1,9 +1,14 @@
 = simple_form_for [:admin, @user] do |f|
   = f.input :fname, label: 'First Name'
   = f.input :name
+  = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
   = f.input :email_address
   = f.input :title
   = f.input :bio, label: 'Text 1 (Markdown)'
+  = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
+  = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
+  = f.country_select :country, priority_countries: ["GB", "US"], :required => true
+  = f.input :city, :required => true, :required => true
   = f.input :image, as: :image_preview, input_html: {preview_version: :small}
   = f.input :facebook_url
   = f.input :twitter_url
@@ -11,6 +16,8 @@
   = f.input :github_url
   = f.input :linkedin_url
   = f.input :tag_list
+  = f.input :organization_name, label: "Name of your organization"
+  = f.input :organization_url, label: "Url of your organization"
   = f.input :profile_type
   = f.input :admin
   = f.submit

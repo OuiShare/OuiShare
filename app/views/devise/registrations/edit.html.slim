@@ -6,9 +6,14 @@
       .form-inputs
         = f.input :fname, :label => 'First Name', :autofocus => true
         = f.input :name, :required => true 
+        = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
         = f.input :email, :required => true
         = f.input :title
         = f.input :bio
+        = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
+        = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
+        = f.country_select :country, priority_countries: ["GB", "US"], :required => true
+        = f.input :city, :required => true, :required => true
         = f.input :image, as: :image_preview, input_html: {preview_version: :small}
         = f.input :facebook_url
         = f.input :twitter_url
@@ -17,6 +22,8 @@
         = f.input :linkedin_url
         = f.input :email_address
         = f.input :tag_list, as: :text
+        = f.input :organization_name, label: "Name of your organization"
+        = f.input :organization_url, label: "Url of your organization"
         = f.input :password, :autocomplete => "off", :required => false
         = f.input :password_confirmation, :required => false
         / = f.input :current_password, :required => true, :label => 'Type your password to save changes'
