@@ -16,11 +16,11 @@
             = f.label :birthday, "Date of birth"
             = f.date_select :birthday, start_year: 1920
             = f.label :occupation, "* Occupation"
-            = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
+            = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
             = f.label :language_id, "* What is your language preference?"
-            = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
+            = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
             = f.label :country , "* Country"
-            = f.country_select :country, priority_countries: ["GB", "US"]
+            = f.country_select :country, priority_countries: ["GB", "US"], :required => true
             = f.input :city, :required => true
             = f.input :image, as: :image_preview, input_html: {preview_version: :small}
           .large-6.columns            
