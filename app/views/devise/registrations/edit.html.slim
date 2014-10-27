@@ -4,7 +4,8 @@
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
       = f.error_notification
       .form-inputs
-        = f.input :name, :required => true, :autofocus => true
+        = f.input :fname, :label => 'First Name', :autofocus => true
+        = f.input :name, :required => true 
         = f.input :email, :required => true
         = f.input :title
         = f.input :bio
@@ -18,7 +19,7 @@
         = f.input :tag_list, as: :text
         = f.input :password, :autocomplete => "off", :required => false
         = f.input :password_confirmation, :required => false
-        = f.input :current_password, :required => true
+        = f.input :current_password, :required => true, :label => 'Type your password to save changes'
       = f.button :submit, t(".update")
 
     - if devise_mapping.omniauthable?
