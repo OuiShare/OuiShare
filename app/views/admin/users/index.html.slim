@@ -3,12 +3,14 @@ div.row
     h2.subheader Users
     table
       tr
+        th First Name
         th Name
         th Type
         th Admin?
         th
       - User.all.order('name asc').each do |u|
         tr
+          td = u.fname
           td = u.name
           td = u.profile_type
           td = u.admin? ? 'Yes' : 'No'
