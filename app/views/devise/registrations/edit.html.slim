@@ -19,7 +19,7 @@
         = f.input :tag_list, as: :text
         = f.input :password, :autocomplete => "off", :required => false
         = f.input :password_confirmation, :required => false
-        = f.input :current_password, :required => true, :label => 'Type your password to save changes'
+        / = f.input :current_password, :required => true, :label => 'Type your password to save changes'
       = f.button :submit, t(".update")
 
     - if devise_mapping.omniauthable?
