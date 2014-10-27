@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   belongs_to :user_source
   has_and_belongs_to_many :sectors
 
-  validates :name, :language, :country, :gender, :city, :occupation, presence: true
+  validates :fname, :name, :language, :country, :gender, :city, :occupation, presence: true
   validates_inclusion_of :gender, :in => 0..2
 
   before_validation do
