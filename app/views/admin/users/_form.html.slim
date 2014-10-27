@@ -5,10 +5,10 @@
   = f.input :email_address
   = f.input :title
   = f.input :bio, label: 'Text 1 (Markdown)'
-  = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
-  = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
-  = f.country_select :country, priority_countries: ["GB", "US"], :required => true
-  = f.input :city, :required => true, :required => true
+  = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", label: 'Occupation'
+  = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", label: 'Language'
+  = f.country_select :country, priority_countries: ["GB", "US"], label: 'Country'
+  = f.input :city
   = f.input :image, as: :image_preview, input_html: {preview_version: :small}
   = f.input :facebook_url
   = f.input :twitter_url

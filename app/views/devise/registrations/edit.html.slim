@@ -14,14 +14,14 @@
             = f.input :title
             = f.input :bio
             = f.label :birthday, "Date of birth"
-            = f.date_select :birthday, start_year: 1950
+            = f.date_select :birthday, start_year: 1920
             = f.label :occupation, "* Occupation"
-            = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
+            = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
             = f.label :language_id, "* What is your language preference?"
-            = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
+            = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
             = f.label :country , "* Country"
-            = f.country_select :country, priority_countries: ["GB", "US"], :required => true
-            = f.input :city, :required => true, :required => true
+            = f.country_select :country, priority_countries: ["GB", "US"]
+            = f.input :city, :required => true
             = f.input :image, as: :image_preview, input_html: {preview_version: :small}
           .large-6.columns            
             = f.input :facebook_url
@@ -30,7 +30,7 @@
             = f.input :github_url
             = f.input :linkedin_url
             = f.input :email_address
-            = f.input :tag_list, as: :text
+            = f.input :tag_list, as: :text, label: "Tags, separated by comma and without #"
             = f.input :organization_name, label: "Name of your organization"
             = f.input :organization_url, label: "Url of your organization"
             = f.input :password, :autocomplete => "off", :required => false
