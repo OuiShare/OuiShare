@@ -10,7 +10,12 @@
         = f.input :email, :required => true
         = f.input :title
         = f.input :bio
+        = f.label :birthday, "Date of birth"
+        = f.date_select :birthday, start_year: 1950
+        = f.label :occupation, "* Occupation"
         = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
+        = f.label :language_id, "* What is your language preference?"
+        = f.label :country , "* Country"
         = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
         = f.country_select :country, priority_countries: ["GB", "US"], :required => true
         = f.input :city, :required => true, :required => true
