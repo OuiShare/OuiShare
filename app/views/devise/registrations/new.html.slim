@@ -47,7 +47,7 @@ div.row
                 .row
                   .large-6.columns
                     = f.label :gender
-                    = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
+                    = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true, prompt: true 
                 .row
                   .large-12.columns
                     - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
@@ -55,11 +55,11 @@ div.row
                 .row
                   .large-12.columns
                     = f.label :birthday, "Date of birth"
-                    = f.date_select :birthday, start_year: 1950              
+                    = f.date_select :birthday, start_year: 1950, prompt: true              
                 .row
                   .large-6.columns
                     = f.label :country , "* Country"
-                    = f.country_select :country, priority_countries: ["GB", "US"]
+                    = f.country_select :country, prompt: 'Select your country'
                   .large-6.columns.left
                     = f.input :city, :required => true
                 .row
@@ -80,8 +80,8 @@ div.row
                     = f.input :organization_url, label: "Url of your organization"
                 .row
                   .large-12.columns style= "margin-bottom:5px;"
-                    = f.label :occupation, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
-                    = f.collection_check_boxes :topics, Topic.all, :id, :name, prompt: "Select your occupation" 
+                    = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
+                    = f.collection_check_boxes :topics, Topic.all, :id, :name
                 .row
                   .large-12.columns
                     = f.label :user_source_id, "How did you first hear about OuiShare?"

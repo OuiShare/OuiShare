@@ -150,7 +150,6 @@ OuiShare::Application.routes.draw do
   post 'newsletter/subscribe' => 'newsletter#subscribe', as: 'newsletter_subscribe'
 
   get 'live' => 'about#index', as: 'about'
-  get 'team'  => 'team#index',  as: 'team'
   get 'communities' => 'communities#index', as: 'communities'
   get 'contact' => 'contact#index', as: 'contact'
   post 'contact' => 'contact#submit'

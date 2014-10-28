@@ -8917,6 +8917,12 @@ label {
   margin-left: 20px;
 }
 
+/* line 76, ../../app/assets/stylesheets/_signup.sass */
+label.error {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 /* @import contact */
 /* @import events */
 /* @import getinvolved */

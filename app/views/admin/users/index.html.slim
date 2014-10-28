@@ -7,11 +7,12 @@ div.row
         th Name
         th Type
         th Admin?
-        th
+        th Show order
       - User.all.order('name asc').each do |u|
         tr
           td = u.fname
           td = u.name
           td = u.profile_type
           td = u.admin? ? 'Yes' : 'No'
+          td = u.show_order
           td = link_to "Edit", edit_admin_user_path(u)

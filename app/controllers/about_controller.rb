@@ -25,12 +25,12 @@ class AboutController < ApplicationController
   end
 
   def team
-    @users = User.where(:profile_type => 1).order('created_at')
+    @users = User.where(:profile_type => 1).order('show_order')
     @team_page = @current_language.team_page || TeamPage.new
   end
 
   def advisory
-    @users = User.where(:profile_type => 2).order('created_at')
+    @users = User.where(:profile_type => 2).order('show_order')
     @advisors_page = @current_language.advisors_page || AdvisorsPage.new
   end
 

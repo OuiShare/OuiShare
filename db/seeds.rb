@@ -66,9 +66,10 @@ end
 user_sources = [
                   {name: "I attended a local event"},
                   {name: "I attended OuiShare Fest"},
-                  {name: "I read an article on the online magazine"},
-                  {name: "A friend told me about it"},
+                  {name: "I am a reader of the online magazine"},
                   {name: "I joined a OuiShare Facebook group"},
+                  {name: "I read about it in the media"},
+                  {name: "A friend told me about it"},
                   {name: "Other"}
                ]
 

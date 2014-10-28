@@ -18,3 +18,4 @@
 //= require oui_share/script.js
 //= require init.js
 //= require_tree ./lib
+//= require registration
