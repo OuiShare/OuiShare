@@ -17,6 +17,7 @@ html
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/custom.modernizr"
   body
+    a href="https://plus.google.com/+OuishareNet" rel="publisher"
     = initjs_tag app_name: "OuiShare"
     = render 'layouts/flash', flash: flash if flash.present? unless controller.controller_name == 'donations' && params[:action] == 'index'
     - if admin?
