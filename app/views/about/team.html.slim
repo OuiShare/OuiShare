@@ -10,7 +10,7 @@ div#page-about-internal
 
         div.large-8.columns
           ul.large-block-grid-2
-            - @users.order('name').each do |a|
+            - @users.each do |a|
               li
                 = link_to a do
                   div.avatar
