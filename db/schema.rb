@@ -886,7 +886,7 @@ ActiveRecord::Schema.define(version: 20141028133015) do
     t.string   "organization_name"
     t.string   "organization_url"
     t.integer  "user_source_id"
-    t.integer  "show_order"
+    t.integer  "show_order",             default: 1000
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
