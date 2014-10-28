@@ -14,6 +14,7 @@ class Language < ActiveRecord::Base
   has_one :timeline
   has_one :faq_page
   has_one :team_page
+  has_one :alumni_page
   has_one :users_page
   has_one :advisors_page
   has_one :cocreation_page

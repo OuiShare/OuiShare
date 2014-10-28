@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   beautiful_text_for [:bio]
 
-  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2, editor: 3 }
+  enumerize :profile_type, in: { user: 0, connector: 1, advisor: 2, editor: 3, alumni_connector: 4 }
 
   scope :connectors,  lambda{('profile_type => 1')}
   scope :advisors, lambda{('profile_type = 2')}

@@ -1,12 +1,12 @@
-- content_for :page_title, 'Advisory'
+- content_for :page_title, 'Alumni Connectors'
 div#page-about-internal
   section.theTeam#list
     div.activities
       div.row
         div.large-4.columns
-          h3
-            = @advisors_page.title
-          p = @advisors_page.text_html
+          h3 = @alumni_page.title
+          .markdown = @alumni_page.text_html
+          a.btn.blue href="#{contact_path}" = @alumni_page.link_text
 
         div.large-8.columns
           ul.large-block-grid-2

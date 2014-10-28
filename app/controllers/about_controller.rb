@@ -30,8 +30,13 @@ class AboutController < ApplicationController
   end
 
   def advisory
-    @users = User.where(:profile_type => 2).order('show_order')
+    @users = User.where(:profile_type => 2).order('name')
     @advisors_page = @current_language.advisors_page || AdvisorsPage.new
+  end
+
+  def alumni
+    @users = User.where(:profile_type => 4).order('name')
+    @alumni_page = @current_language.alumni_page || TeamPage.new
   end
 
   def governance
