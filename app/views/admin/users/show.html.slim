@@ -76,15 +76,16 @@
         br
         p.left Topics :
         p style="margin-right:-20px;"
-          - @user_topics.each do |topic|
-            span.label.blue.right
-              = topic.name.to_s
+          - if @user_topics.present?
+            - @user_topics.each do |topic|
+              span.label.blue.right
+                = topic.name.to_s
         br
         br
         br
         p.left Occupation :
         p.right 
-          = @user_occupation.name
+          = @user_occupation.name unless @user_occupation.nil?
 
     div.large-5.large-offset-1.columns
       div.large
