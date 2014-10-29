@@ -61,3 +61,44 @@
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
           nec, purus. Cum sociis natoque penatibus et magnis dis
+  div.row.section
+    div.large-5.columns
+      div.large
+        h4 About
+        br
+        p.left From :
+        p.right 
+          = @user.city
+          = ", "
+          = @user.country
+        br
+        br
+        br
+        p.left Topics :
+        p style="margin-right:-20px;"
+          - @user_topics.each do |topic|
+            span.label.blue.right
+              = topic.name.to_s
+        br
+        br
+        br
+        p.left Occupation :
+        p.right 
+          = @user_occupation.name
+
+    div.large-5.large-offset-1.columns
+      div.large
+        h4 Organization
+        br
+        p.left Organization name :
+        p.right 
+          = @user.organization_name
+        br
+        br
+        br
+        - if @user.organization_url.present?
+          p.left Organization URL :
+          p.right 
+            = link_to @user.organization_url
+
+

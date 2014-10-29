@@ -11,6 +11,8 @@ en:
     success: 'Your email was sent!'
     missing_fields: 'Please fill the Email, Country and First name fields.'
   pages:
+    globalpartners:
+      index: "Global Partners"
     admin/projects:
       show: "%{name}"
     admin/events:
@@ -100,6 +102,7 @@ en:
     local_communities: 'Local Communities'
     knowledge_groups: 'knowledge Groups'
     connectors: 'Connectors'
+    global_partners: 'Global Partners'
     users: 'Members'
     ouishare_everywhere: 'OuiShare Everywhere'
     events: 'Events'

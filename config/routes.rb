@@ -172,7 +172,7 @@ OuiShare::Application.routes.draw do
   get 'about/advisory' => 'about#advisory', as: 'about_advisory'
   get 'about/how_we_are_funded' => 'about#funded', as: 'about_funded'
   get 'about/collaborative_economy' => 'about#collaborative_economy', as: 'about_collaborative_economy'
-
+  get '/global-partners' => 'globalpartners#index', as: 'global_partners'
   get 'communities/local' => 'communities#local', as: 'communities_mission'
   get 'communities/communities' => 'communities#communities', as: 'communities_communities'
   get 'communities/ouishare' => 'communities#ouishare', as: 'communities_ouishare'

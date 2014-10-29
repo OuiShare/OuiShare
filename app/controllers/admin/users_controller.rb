@@ -4,6 +4,13 @@ module Admin
 
     before_filter :verify_admin, except: :show
 
+    def show
+      user_id = params[:id]
+      @user = User.find_by_id(user_id)
+      @user_topics = @user.topics
+      @user_occupation = @user.occupation
+    end
+
     def update
       update! { admin_users_path }
     end

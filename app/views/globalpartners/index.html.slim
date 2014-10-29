@@ -1,0 +1,72 @@
+div#page-about-internal
+  div.green
+    section.main-content
+      div.row
+        div.large-12.columns
+          // Dynamic Content
+          // .markdown = @partners.text_html
+          .markdown = "Text or title"
+    section#banner
+      div.row
+        div.large-12.columns
+          div.banner
+            = "Our Partners are the best !"
+            // Dynamic Content
+            // = image_tag(@partners.image.top_internal)
+
+
+  section#activities.section
+    .services
+      // Dynamic Content
+      / - @services.rank(:row_order).each do |s|
+      /   div.row.actvity
+      /     div.large-6.columns
+      /       = link_to s.link do
+      /         h4 = s.name
+      /       .markdown = s.text_html
+      /     div.large-6.columns
+      /       = link_to s.link do
+      /         div.img-sample
+      /           = image_tag(s.image.list_thumb)
+      // Partner n°1
+      div.row.actvity
+        div.large-6.columns
+          h4 = "Partner n°1 name"
+          .markdown = "Partner n°1 description"
+        div.large-6.columns
+          div.img-sample
+            = image_tag('/')
+
+      // Partner n°2
+      div.row.actvity
+        div.large-6.columns
+          h4 = "Partner n°1 name"
+          .markdown = "Partner n°1 description"
+        div.large-6.columns
+          div.img-sample
+            = image_tag('/')
+      // Partner n°2
+      div.row.actvity
+        div.large-6.columns
+          h4 = "Partner n°1 name"
+          .markdown = "Partner n°1 description"
+        div.large-6.columns
+          div.img-sample
+            = image_tag('/')
+      // Partner n°2
+      div.row.actvity
+        div.large-6.columns
+          h4 = "Partner n°1 name"
+          .markdown = "Partner n°1 description"
+        div.large-6.columns
+          div.img-sample
+            = image_tag('/')
+
+  section#become
+    div.row
+      div.large-4.columns
+        h4 = t('workus.become_a_partner')
+        .markdown = t('workus.contact_a_partner')
+
+      div.large-8.columns
+        = render 'contact/form'
