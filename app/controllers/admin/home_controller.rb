@@ -33,6 +33,9 @@ module Admin
     def users_pages
     end
 
+    def registrations_pages
+    end
+
     def advisors_pages
     end
 

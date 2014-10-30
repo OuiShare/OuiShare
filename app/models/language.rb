@@ -20,6 +20,7 @@ class Language < ActiveRecord::Base
   has_one :cocreation_page
   has_one :contact_page
   has_one :donation_page
+  has_one :registration_page
   has_one :get_involved_page
   has_one :expert_groups_page
   has_one :organization_page

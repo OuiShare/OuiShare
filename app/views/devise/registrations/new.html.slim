@@ -13,8 +13,12 @@ div.row
       p = "OuiShare members come from different backgrounds, countries and life phases: entrepreneurs, researchers, activists, freelancers, business leaders, public officials and more. They live in 75 cities across Europe and the Americas, with a growing number in Africa and Asia. We see this diversity of perspectives and expertise as an enrichment that is crucial for achieving change. Each new voice is valuable!"
       p style="font-family: 'Naiv Bold';font-weight:bold" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the form below.
       p = "Membership is free and open to anyone. However as a non-profit, we encourage members to help support our community activities with a one-time or recurring donation."
+      // DYNAMIC CONTENT
+      //p = @registration_page.main_text_html
+
       p 
-        a href="http://ouiki.ouishare.net/index.php?title=Role_and_Membership_types#Members"target="_blank" >> Read more about being a OuiShare member
+        a href= @registration_page.link1 target="_blank" 
+          = @registration_page.main_text2
       
       img src="/assets/signup-2.jpg"
 
@@ -85,7 +89,7 @@ div.row
                 .row
                   .large-12.columns
                     = f.label :user_source_id, "How did you first hear about OuiShare?"
-                    = f.collection_select :user_source_id, UserSource.all, :id, :name, prompt: "Choose one"
+                    = f.collection_select :user_source_id, @user_sources, :id, :name, prompt: "Choose one"
                 .row
                   .large-6.columns
                     = f.input :password, :required => true, :hint => false
