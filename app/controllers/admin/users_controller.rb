@@ -3,6 +3,12 @@ module Admin
     inherit_resources
 
     before_filter :verify_admin, except: :show
+    def index
+      @users = User.all
+      respond_to do |format|
+      format.csv  { render csv: @users, only: [:id, :fname, :name, :gender, :email, :created_at, :admin, :birthday, :country, :city, :organization_name, :organization_url] }
+      end
+    end
 
     def show
       user_id = params[:id]

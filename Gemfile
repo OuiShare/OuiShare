@@ -9,6 +9,11 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+
+# CSV rendering
+
+gem 'render_csv'
+
 # Uploads
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
