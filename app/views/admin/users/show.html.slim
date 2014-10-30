@@ -3,6 +3,10 @@
   div.row.section
     div.large-3.columns
       = image_tag resource.avatar_url(200)
+      - if current_user.id == @user.id
+        br
+        i.fa.fa-pencil
+        = link_to "Edit Profile", edit_user_registration_path
     div.large-6.columns
       h3.subtitle 
         = resource.fname unless resource.fname.nil?
@@ -74,18 +78,19 @@
         br
         br
         br
-        p.left Topics :
-        p style="margin-right:-20px;"
-          - if @user_topics.present?
-            - @user_topics.each do |topic|
-              span.label.blue.right
-                = topic.name.to_s
-        br
-        br
-        br
         p.left Occupation :
         p.right 
           = @user_occupation.name unless @user_occupation.nil?
+        br
+        br
+        br
+        p.left Topics :
+        p style="margin-right:-20px;margin-top:17px;"
+          - if @user_topics.present?
+            - @user_topics.each do |topic|
+              span.label.blue.right style="display:block;"
+                = topic.name.to_s
+        
 
     div.large-5.large-offset-1.columns
       div.large
