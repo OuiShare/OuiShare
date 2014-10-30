@@ -119,7 +119,7 @@ OuiShare::Application.routes.draw do
     get 'communities' => 'communities#index'
     get 'cocreation_pages' => 'home#cocreation_pages'
     get 'donation_pages' => 'home#donation_pages'
-    get 'registration_pages' => 'home#registration_pages'
+    get 'registrations_pages' => 'home#registrations_pages'
     get 'cocreations' => 'cocreations#index'
     get 'contact_pages' => 'home#contact_pages'
     get 'get_involved_pages' => 'home#get_involved_pages'

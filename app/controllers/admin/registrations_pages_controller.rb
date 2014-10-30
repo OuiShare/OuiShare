@@ -1,5 +1,5 @@
 module Admin
-  class RegistrationPagesController < BaseController
+  class RegistrationsPagesController < BaseController
     inherit_resources
     singleton_belongs_to :language
     actions :all, except: [:show, :index]
@@ -10,23 +10,23 @@ module Admin
       build_resource
       @registration_page = DefaultAttributes.new(@registration_page).set([:image1, :image2])
       if @registration_page.save
-        redirect_to admin_registration_pages_path
+        redirect_to admin_registrations_pages_path
       else
-        redirect_to new_admin_language_registration_page_path(params[:language_id])
+        redirect_to new_admin_language_registrations_page_path(params[:language_id])
       end
     end
 
     def update
-      update! { admin_registration_pages_path }
+      update! { admin_registrations_pages_path }
     end
 
     def destroy
-      destroy! { admin_registration_pages_path }
+      destroy! { admin_registrations_pages_path }
     end
 
     protected
     def permitted_params
-      params.permit(registration_page: [:main_title, :main_text, :thanks_text, :image1, :title1, :text1, :image2, :title2, :text2])
+      params.permit :utf8, :_method, :authenticity_token, :commit, :id, :language_id, registration_page: [:id, :main_title, :main_text, :thanks_text, :image1, :title1, :text1, :image2, :title2, :text2, :main_text2, :link1, :text3, :link2] 
     end
 
     def resource
