@@ -314,6 +314,8 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sprockets-image_compressor (0.3.0)
+      sprockets
     sprockets-rails (2.0.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -402,6 +404,7 @@ DEPENDENCIES
   simple_form_fancy_uploads
   slim-rails
   sprockets (= 2.11.0)
+  sprockets-image_compressor
   therubyracer
   thin
   uglifier

@@ -11,8 +11,10 @@ gem 'thin'
 
 
 # CSV rendering
-
 gem 'render_csv'
+
+# Image Compressor
+gem 'sprockets-image_compressor'
 
 # Uploads
 gem 'carrierwave'

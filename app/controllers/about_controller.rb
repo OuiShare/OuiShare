@@ -25,7 +25,7 @@ class AboutController < ApplicationController
   end
 
   def team
-    @users = User.where(:profile_type => 1).order('show_order asc')
+    @users = User.where(:profile_type => 1).order('show_order asc').order('name')
     @team_page = @current_language.team_page || TeamPage.new
   end
 
