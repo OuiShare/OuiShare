@@ -17,6 +17,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [140, 140]
   end
 
+  version :avatar do
+    process :resize_to_fill => [220, 220]
+  end
+
   version :small do
     process :resize_to_fill => [50, 50]
   end
