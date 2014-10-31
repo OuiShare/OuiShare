@@ -25,11 +25,11 @@ class User < ActiveRecord::Base
   end
 
   mount_uploader :image, AvatarUploader
-  validates :image, 
-    :presence => true, 
-    :file_size => { 
-      :maximum => 1.megabytes.to_i 
-    } 
+  # validates :image, 
+  #   :presence => true, 
+  #   :file_size => { 
+  #     :maximum => 1.megabytes.to_i 
+  #   } 
 
   acts_as_taggable
 

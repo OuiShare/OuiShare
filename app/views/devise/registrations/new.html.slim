@@ -85,7 +85,7 @@ div.row
                 .row
                   .large-12.columns style= "margin-bottom:5px;"
                     = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
-                    = f.collection_check_boxes :topics, Topic.all, :id, :name
+                    = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
                 .row
                   .large-12.columns
                     = f.label :user_source_id, "How did you first hear about OuiShare?"
