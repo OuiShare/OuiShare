@@ -1,6 +1,9 @@
 $(document).ready(function(){
   // $('#user_language_id').append(newOption);
   // $('#user_language_id').val(newOption);
+  $('#new_user').submit(function(){
+    $(this).find(':submit').attr('disabled','disabled');
+  });
 	$("#new_user").validate({
     rules: {
      'user[birthday(1i)]': {
