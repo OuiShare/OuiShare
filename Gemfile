@@ -9,6 +9,9 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+# HAML
+
+gem 'haml-rails'
 
 # CSV rendering
 gem 'render_csv'

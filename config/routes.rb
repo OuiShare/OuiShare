@@ -11,7 +11,10 @@ OuiShare::Application.routes.draw do
 
   filter :locale, exclude: /\/auth\//
 
-  get '404', :to => 'application#render_404'
+  %w( 404 422 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
 
   namespace :admin do
     resources :languages do

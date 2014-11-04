@@ -1,19 +1,19 @@
-- content_for :page_title, "Profile - #{resource.name}"
+- content_for :page_title, "Profile - #{@user.name}"
 #profile
   div.row.section
     div.large-3.columns
-      = image_tag resource.avatar_url(200)
+      = image_tag @user.avatar_url(200)
       - if current_user && current_user.id == @user.id
         br
         i.fa.fa-pencil
         = link_to " Edit Profile", edit_user_registration_path
     div.large-6.columns
       h3.subtitle 
-        = resource.fname unless resource.fname.nil?
+        = @user.fname unless @user.fname.nil?
         = " "
-        = resource.name 
-      h4.subtitle = resource.title if !resource.profile_type.user?
-      .markdown = resource.bio_html
+        = @user.name 
+      h4.subtitle = @user.title if !@user.profile_type.user?
+      .markdown = @user.bio_html
 
       / span.label.blue blah
       / span.label.blue blah
@@ -22,29 +22,29 @@
     div.large-3.columns
       h4.center = t('profile.contact_me')
       ul.large-block-grid-3.social
-        - if resource.email_address.present?
+        - if @user.email_address.present?
           li
-            a.email href="mailto:#{resource.email_address}"
+            a.email href="mailto:#{@user.email_address}"
               i.fa.fa-envelope-o
-        - if resource.facebook_url.present?
+        - if @user.facebook_url.present?
           li
-            a.facebook href=resource.facebook_url
+            a.facebook href=@user.facebook_url
               i.fa.fa-facebook
-        - if resource.twitter_url.present?
+        - if @user.twitter_url.present?
           li
-            a.twitter href=resource.twitter_url
+            a.twitter href=@user.twitter_url
               i.fa.fa-twitter
-        - if resource.google_plus_url.present?
+        - if @user.google_plus_url.present?
           li
-            a.plus href=resource.google_plus_url
+            a.plus href=@user.google_plus_url
               i.fa.fa-google-plus
-        - if resource.github_url.present?
+        - if @user.github_url.present?
           li
-            a.github href=resource.github_url
+            a.github href=@user.github_url
               i.fa.fa-github-alt
-        - if resource.linkedin_url.present?
+        - if @user.linkedin_url.present?
           li
-            a.linkedin href=resource.linkedin_url
+            a.linkedin href=@user.linkedin_url
               i.fa.fa-linkedin
 
   /div.contribute.section

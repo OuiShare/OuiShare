@@ -16,6 +16,8 @@ en:
     success: 'Your email was sent!'
     missing_fields: 'Please fill the Email, Country and First name fields.'
   pages:
+    errors:
+      show: Error
     globalpartners:
       index: "Global Partners"
     admin/projects:
