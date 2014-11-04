@@ -19,6 +19,7 @@ div.contact-form
     div.row
       div.large-12.columns
         = f.input :message, as: :text, placeholder: t('contact.message'), label: false, required: true
+
     div.row
       div.large-12.columns
         = f.submit t('contact.send'), class: "btn blue"

@@ -1,4 +1,6 @@
 en:
+  simple_captcha:
+    label: "Please enter characters"
   errors:
     messages:
       wrong_size: "is the wrong size (should be %{file_size})"
@@ -14,7 +16,8 @@ en:
     message: 'Please, write your message...'
     send: 'Send'
     success: 'Your email was sent!'
-    missing_fields: 'Please fill the Email, Country and First name fields.'
+    captcha: "..."
+    missing_fields: 'Please fill the Email, First name, Country and Captcha fields.'
   pages:
     errors:
       show: Error
