@@ -14,8 +14,12 @@ module Admin
     def show
       user_id = params[:id]
       @user = User.find_by_id(user_id)
-      @user_topics = @user.topics
-      @user_occupation = @user.occupation
+        if @user.nil?
+          redirect_to '/errors/404', :code => '404'
+        else
+          @user_topics = @user.topics
+          @user_occupation = @user.occupation
+        end
     end
 
     def update
