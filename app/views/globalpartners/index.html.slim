@@ -5,14 +5,25 @@ div#page-about-internal
         div.large-12.columns
           // Dynamic Content
           // .markdown = @partners.text_html
-          .markdown = "Text or title"
+          / .markdown = "Global Partners"
     section#banner
       div.row
         div.large-12.columns
           div.banner
-            = "Our Partners are the best !"
+            p = "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
+            p = "We do this by :"
+      div.row
+        div.large-11.large-offset-1.columns style= "margin-left:30px;"
+            ul
+              li = "Working with them to understand the drivers and impacts of the transition toward a distributed and networked economy."
+              li = "Organizing thought-provoking events and building communities of intrapeneurs, entrepreneurs and researchers. We establish strong ties between startups, disruptive projects, innovators and traditional organizations to ignite new projects."
             // Dynamic Content
             // = image_tag(@partners.image.top_internal)
+      div.row
+        div.large-12.columns
+          p = "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
+          a href= "#" >> See detailed partnership agreements [link tbc]
+
 
 
   section#activities.section
@@ -31,42 +42,24 @@ div#page-about-internal
       // Partner n°1
       div.row.actvity
         div.large-6.columns
-          h4 = "Partner n°1 name"
-          .markdown = "Partner n°1 description"
+          h4 = "MAIF"
+          .markdown = "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
         div.large-6.columns
-          div.img-sample
-            = image_tag('/')
+          div.img-sample.right
+            = image_tag('/assets/maif.png')
 
       // Partner n°2
-      div.row.actvity
-        div.large-6.columns
-          h4 = "Partner n°1 name"
-          .markdown = "Partner n°1 description"
-        div.large-6.columns
-          div.img-sample
-            = image_tag('/')
-      // Partner n°2
-      div.row.actvity
-        div.large-6.columns
-          h4 = "Partner n°1 name"
-          .markdown = "Partner n°1 description"
-        div.large-6.columns
-          div.img-sample
-            = image_tag('/')
-      // Partner n°2
-      div.row.actvity
-        div.large-6.columns
-          h4 = "Partner n°1 name"
-          .markdown = "Partner n°1 description"
-        div.large-6.columns
-          div.img-sample
-            = image_tag('/')
+      / div.row.actvity
+      /   div.large-6.columns
+      /     h4 = "Partner n°2 name"
+      /     .markdown = "Partner n°2 description"
+      /   div.large-6.columns
+      /     div.img-sample
+      /       = image_tag('/')
 
-  section#become
-    div.row
-      div.large-4.columns
-        h4 = t('workus.become_a_partner')
-        .markdown = t('workus.contact_a_partner')
-
-      div.large-8.columns
-        = render 'contact/form'
+  / section#become
+  /   div.row
+  /     div.large-4.columns
+  /       h4 = t('workus.become_a_partner')
+  /       .markdown = t('workus.contact_a_partner')
+  / br

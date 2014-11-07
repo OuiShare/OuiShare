@@ -7541,12 +7541,12 @@ p {
 }
 /* line 302, ../../app/assets/stylesheets/_base.sass */
 .label.white {
-  background: url(/assets/tag-white.png) no-repeat right;
+  background: url('/tag-white.png?1413541586') no-repeat right;
   color: black;
 }
 /* line 306, ../../app/assets/stylesheets/_base.sass */
 .label.blue {
-  background: url(/assets/tag-blue.png) no-repeat right;
+  background: url('/tag-blue.png?1413541586') no-repeat right;
   color: white;
 }
 
@@ -7628,20 +7628,20 @@ select.time.optional {
 @font-face {
   font-family: "Naiv";
   src: url('/normal');
-  src: url('/normal?#iefix') format('embedded-opentype'), url(/assets/naiv_normal-webfont.ttf) format('truetype'), url(/assets/naiv_normal-webfont.otf) format('opentype'), url(/assets/naiv_bold-webfont.ttf) format('truetype'), url(/assets/naiv_bold-webfont.eot) format('embedded-opentype');
+  src: url('/normal?#iefix') format('embedded-opentype'), url('/naiv_normal-webfont.ttf?1413541585') format('truetype'), url('/naiv_normal-webfont.otf') format('opentype'), url('/naiv_bold-webfont.ttf?1413541585') format('truetype'), url('/naiv_bold-webfont.eot?1413541585') format('embedded-opentype');
 }
 @font-face {
   font-family: "Ouishare Stencil";
-  src: url(/assets/ouishare_stencil_bold-webfont.ttf) format('truetype'), url(/assets/ouishare_stencil_bold-webfont.otf) format('opentype');
+  src: url('/ouishare_stencil_bold-webfont.ttf?1413541585') format('truetype'), url('/ouishare_stencil_bold-webfont.otf') format('opentype');
 }
 @font-face {
   font-family: "Naiv Bold";
   src: url('/bold');
-  src: url('/bold?#iefix') format('embedded-opentype'), url(/assets/naiv_bold-webfont.ttf) format('truetype'), url(/assets/naiv_bold-webfont.eot) format('embedded-opentype');
+  src: url('/bold?#iefix') format('embedded-opentype'), url('/naiv_bold-webfont.ttf?1413541585') format('truetype'), url('/naiv_bold-webfont.eot?1413541585') format('embedded-opentype');
 }
 @font-face {
   font-family: "FontAwesome";
-  src: url('/assets/fontawesome-webfont.ttf') format('truetype');
+  src: url(/assets/fontawesome-webfont.ttf) format('truetype');
 }
 /* line 1, ../../app/assets/stylesheets/_footer.sass */
 footer {
@@ -8358,38 +8358,37 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
 }
 /* line 52, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #list .row p {
-  text-align: left !important;
   color: black;
   font-weight: normal;
 }
-/* line 56, ../../app/assets/stylesheets/_about.sass */
+/* line 55, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #list .row p:visited, #page-about-internal #list .row p:hover {
   color: black;
 }
-/* line 60, ../../app/assets/stylesheets/_about.sass */
+/* line 59, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #list .get-involved a.btn {
   margin-top: 20px;
 }
-/* line 64, ../../app/assets/stylesheets/_about.sass */
+/* line 63, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #list.live h4 {
   color: black;
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 69, ../../app/assets/stylesheets/_about.sass */
+/* line 68, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #list.live .btn {
   margin-bottom: 40px;
 }
-/* line 74, ../../app/assets/stylesheets/_about.sass */
+/* line 73, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal .theTeam li, #page-about-internal .festTeam li {
   padding: 10px 0;
 }
-/* line 76, ../../app/assets/stylesheets/_about.sass */
+/* line 75, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal .theTeam li .avatar, #page-about-internal .festTeam li .avatar {
   display: inline-block;
   vertical-align: top;
 }
-/* line 79, ../../app/assets/stylesheets/_about.sass */
+/* line 78, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal .theTeam li .desc, #page-about-internal .festTeam li .desc {
   display: inline-block;
   clear: both;
@@ -8398,7 +8397,7 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   font-size: 13px;
   width: 179px;
 }
-/* line 87, ../../app/assets/stylesheets/_about.sass */
+/* line 86, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal .theTeam li .desc span.name, #page-about-internal .festTeam li .desc span.name {
   font-weight: bold;
   text-transform: uppercase;
@@ -8406,15 +8405,15 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   color: #00939A;
   font-size: 16px;
 }
-/* line 94, ../../app/assets/stylesheets/_about.sass */
+/* line 93, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal .theTeam li .desc p.position, #page-about-internal .festTeam li .desc p.position {
   color: black;
 }
-/* line 101, ../../app/assets/stylesheets/_about.sass */
+/* line 100, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #faq .faq section .content .markdown ul {
   height: auto !important;
 }
-/* line 103, ../../app/assets/stylesheets/_about.sass */
+/* line 102, ../../app/assets/stylesheets/_about.sass */
 #page-about-internal #faq .faq section .content .markdown ul li {
   position: relative !important;
 }
@@ -8818,68 +8817,40 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   width: 30%;
 }
 
-/* line 5, ../../app/assets/stylesheets/_signup.sass */
-#edit_user .sectors-collection {
-  display: inline-block;
-  width: 100%;
-}
-/* line 8, ../../app/assets/stylesheets/_signup.sass */
-#edit_user .sectors-collection span {
-  width: 33%;
-}
-/* line 11, ../../app/assets/stylesheets/_signup.sass */
-#edit_user .form-inputs span {
-  display: inline-block;
-}
-/* line 13, ../../app/assets/stylesheets/_signup.sass */
-#edit_user .custom {
-  display: inline !important;
-}
-/* line 16, ../../app/assets/stylesheets/_signup.sass */
-#edit_user input[type=checkbox] {
-  display: inline;
-}
-/* line 18, ../../app/assets/stylesheets/_signup.sass */
-#edit_user .collection_check_boxes {
-  display: inline;
-  margin-left: 5px;
-  margin-right: 20px;
-}
-
-/* line 23, ../../app/assets/stylesheets/_signup.sass */
+/* line 4, ../../app/assets/stylesheets/_signup.sass */
 #new_user .sectors-collection {
   display: inline-block;
   width: 100%;
 }
-/* line 26, ../../app/assets/stylesheets/_signup.sass */
+/* line 7, ../../app/assets/stylesheets/_signup.sass */
 #new_user .sectors-collection span {
   width: 33%;
 }
-/* line 29, ../../app/assets/stylesheets/_signup.sass */
+/* line 10, ../../app/assets/stylesheets/_signup.sass */
 #new_user .form-inputs span {
   display: inline-block;
 }
-/* line 31, ../../app/assets/stylesheets/_signup.sass */
+/* line 12, ../../app/assets/stylesheets/_signup.sass */
 #new_user .custom {
   display: inline !important;
 }
-/* line 34, ../../app/assets/stylesheets/_signup.sass */
+/* line 15, ../../app/assets/stylesheets/_signup.sass */
 #new_user input[type=checkbox] {
   display: inline;
 }
-/* line 37, ../../app/assets/stylesheets/_signup.sass */
+/* line 18, ../../app/assets/stylesheets/_signup.sass */
 #new_user .collection_check_boxes {
   display: inline;
   margin-left: 5px;
   margin-right: 20px;
 }
 
-/* line 42, ../../app/assets/stylesheets/_signup.sass */
+/* line 23, ../../app/assets/stylesheets/_signup.sass */
 .list-sign_up {
   margin-left: 15px;
 }
 
-/* line 45, ../../app/assets/stylesheets/_signup.sass */
+/* line 26, ../../app/assets/stylesheets/_signup.sass */
 .container select {
   -webkit-appearance: button;
   -webkit-border-radius: 0px;
@@ -8899,23 +8870,23 @@ footer .subscribe .error input:focus, footer .subscribe input:focus {
   height: 2.05556rem;
 }
 
-/* line 63, ../../app/assets/stylesheets/_signup.sass */
+/* line 44, ../../app/assets/stylesheets/_signup.sass */
 body p {
   text-align: justify;
 }
 
-/* line 66, ../../app/assets/stylesheets/_signup.sass */
+/* line 47, ../../app/assets/stylesheets/_signup.sass */
 label {
   font-size: 0.8em;
 }
 
-/* line 69, ../../app/assets/stylesheets/_signup.sass */
+/* line 50, ../../app/assets/stylesheets/_signup.sass */
 .signin {
   margin-top: 50px;
   margin-bottom: 200px;
 }
 
-/* line 73, ../../app/assets/stylesheets/_signup.sass */
+/* line 54, ../../app/assets/stylesheets/_signup.sass */
 .signin .social a {
   width: 190px;
   height: 30px;
@@ -8928,27 +8899,21 @@ label {
   text-decoration: none;
 }
 
-/* line 84, ../../app/assets/stylesheets/_signup.sass */
+/* line 65, ../../app/assets/stylesheets/_signup.sass */
 .signin .social a.facebook {
   background-color: #3d5a9c;
   float: left;
 }
 
-/* line 88, ../../app/assets/stylesheets/_signup.sass */
+/* line 69, ../../app/assets/stylesheets/_signup.sass */
 .signin .social a.twitter {
   background-color: #389bec;
   float: right;
 }
 
-/* line 92, ../../app/assets/stylesheets/_signup.sass */
+/* line 73, ../../app/assets/stylesheets/_signup.sass */
 .signin .social a i {
   margin-left: 20px;
-}
-
-/* line 95, ../../app/assets/stylesheets/_signup.sass */
-label.error {
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
 
 /* @import contact */
