@@ -6,4 +6,4 @@
 	      ul.inline-list
 	        - p = @current_language.partner || Partner.new
 	        li
-	          = image_tag('/assets/maif.png')
+	          = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank"
