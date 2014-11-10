@@ -1,0 +1,9 @@
+#global
+	section#partners
+	  div.row
+	    div.large-12.columns
+	      h3.subtitle.black Global Partners
+	      ul.inline-list
+	        - p = @current_language.partner || Partner.new
+	        li
+	          = image_tag('/assets/maif.png')
