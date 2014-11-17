@@ -4,7 +4,6 @@ OuiShare::Application.routes.draw do
   root :to => "home#index"
 
   devise_scope :user do
-    get 'donate', :to => 'registrations#donate'
     get 'register', :to => "registrations#new"
     get 'register/thanks', :to => "registrations#thank_you"
   end
