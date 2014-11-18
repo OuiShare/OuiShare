@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if params[:locale]
-      I18n.locale = 'en'
+      I18n.locale = params[:locale]
       current_user.update_attribute :locale, params[:locale] if current_user && params[:locale] != current_user.locale
     elsif request.method == "GET"
       new_locale = I18n.default_locale
