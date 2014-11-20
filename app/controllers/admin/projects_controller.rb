@@ -24,12 +24,12 @@ module Admin
     def show
       @project = Project.find(params[:id])
 
-      if request.path != "/#{@current_language.slug}#{project_path(@project)}"
-        redirect_to @project, status: :moved_permanently
-        return
-      end
+      # if request.path != "/#{@current_language.slug}#{project_path(@project)}"
+      #   redirect_to @project, status: :moved_permanently
+      #   return
+      # end
 
-      render 'admin/projects/show'
+      # render 'admin/projects/show'
     end
 
     def sort

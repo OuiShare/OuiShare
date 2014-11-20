@@ -24,12 +24,13 @@ module Admin
     def show
       @event = Event.find(params[:id])
 
-      if request.path != "/#{@current_language.slug}#{event_path(@event)}"
-        redirect_to @event, status: :moved_permanently
-        return
-      end
+      # if request.path != "/#{@current_language.slug}/#{event_path(@event)}"
+      #   xxx
+      #   redirect_to @event, status: :moved_permanently
+      #   return
+      # end
 
-      render 'admin/events/show'
+      # render 'admin/events/show'
     end
 
     protected

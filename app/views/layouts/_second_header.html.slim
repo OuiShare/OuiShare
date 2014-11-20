@@ -5,7 +5,13 @@ div#second-header
       /   - name = resource.name
       /   h3.subtitle.white = t("pages.#{params[:controller]}.#{params[:action]}", name: name)
       / - else
-      h3.subtitle.white = t("pages.#{params[:controller]}.#{params[:action]}")
+      - if params[:controller] == 'admin/events' || params[:controller] == 'admin/projects' && params[:action] == 'show'
+        - if @event
+          h3.subtitle.white = @event.title 
+        - else
+          h3.subtitle.white = @project.name 
+      - else
+        h3.subtitle.white = t("pages.#{params[:controller]}.#{params[:action]}")
     div.large-4.columns.social
       a.facebook href="https://www.facebook.com/OuiShare"
         i.fa.fa-facebook
