@@ -16,12 +16,12 @@ div#second-header
 
       - Language.visible.each do |l|
         - if l.slug == I18n.locale.to_s
-          .l18n.small-2 href="#{request.protocol}#{request.host_with_port}/#{l.slug}" data-dropdown="lang" = l.slug
+          .l18n.small-2 href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" data-dropdown="lang" = l.slug
           ul#lang.f-dropdown data-dropdown-content=""
             - Language.visible.each do |l|
               - if l.slug == I18n.locale.to_s
                 li
-                  a href="#{request.protocol}#{request.host_with_port}/#{l.slug}" selected="selected" = l.slug
+                  a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" selected="selected" = l.slug
               - else
                 li
-                  a href="#{request.protocol}#{request.host_with_port}/#{l.slug}" = l.slug
+                  a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" = l.slug
