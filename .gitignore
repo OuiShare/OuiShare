@@ -24,6 +24,3 @@ latest.dump
 
 
 app/assets/stylesheets/application.sass
-config/locales/fr.yml
-
-config/locales/en.yml
