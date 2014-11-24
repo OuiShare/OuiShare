@@ -23,7 +23,7 @@ fr:
     admin/events:
       show: "%{name}"
     projects:
-      index: "Projet"
+      index: "Projets"
     events:
       index: "Evénements"
     faqs:
