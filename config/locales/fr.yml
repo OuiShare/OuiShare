@@ -1,0 +1,127 @@
+fr:
+  errors:
+    messages:
+      wrong_size: "is the wrong size (should be %{file_size})"
+      size_too_small: "is too small (should be at least %{file_size})"
+      size_too_big: "is too big (should be at most %{file_size})"
+  hello: "Hello world"
+  contact:
+    email: 'Email'
+    first_name: 'Prénom'
+    country: 'Pays'
+    city: 'Ville'
+    subject: 'Sujet'
+    message: 'Ecrivez votre message'
+    send: 'Envoyer'
+    success: 'Votre email a été envoyé'
+    missing_fields: 'Merci de remplir les champs correspondants'
+  pages:
+    globalpartners:
+      index: "Nos grands partenaires"
+    admin/projects:
+      show: "%{name}"
+    admin/events:
+      show: "%{name}"
+    projects:
+      index: "Projet"
+    events:
+      index: "Evénements"
+    faqs:
+      index: "FAQ"
+    about:
+      index: "OuiShare Live"
+      mission: "A propos "
+      vision: "Vision"
+      history: "Notre histoire"
+      organization: "Organisation"
+      team: "Team"
+      advisory: "Mentors"
+      governance: "Gouvernance"
+      value: 'Nos valeurs'
+      funded: 'Comment nous nous finançons '
+      collaborative_economy: 'L''Economie Collaborative'
+      users: 'Membres'
+    communities:
+      index: "Communautés"
+      expert_groups: 'Groupes thématiques'
+      live: 'OuiShare dans le monde'
+    contact:
+      index: 'Contacts'
+    get_involved:
+      index: 'Nous rejoindre'
+    home:
+      terms: 'Editer le profile'
+    registrations:
+      new: 'Nous rejoindre'
+      edit: 'Modifier mon profil'
+    admin/users:
+      show: 'Profile'
+    knowledge:
+      research: 'Recherche et publications. '
+      cocreation: 'Evénements '
+      index: 'Activités'
+    workus:
+      index: 'Travailler avec nous'
+    donations:
+      index: 'Donnez !'
+      thank_you: 'Merci beaucoup de supporter OuiShare !'
+    press:
+      index: 'Presse'
+  newsletter:
+    error: 'L''inscription à la newsletter n''a pas fonctionné. Regardez vos emails et essayez une nouvelle fois. '
+    already_registered: "Cet email est déjà enregistré"
+    successful: "Votre inscription a bien été enregistrée !"
+  admin:
+    not_authorized: 'Vous n''avez pas la permission d''effectuer cette action. '
+  payment:
+    success: "Merci beaucoup ! Nous avons bien reçu votre don !"
+    error: "Une erreur est survenue lors du paiement. "
+  workus:
+    become_a_partner: 'En savoir plus'
+    contact_a_partner: 'Si vous êtes intéressé par les services de OuiShare, contactez-nous !'
+  donations:
+    thank_you_text: "Votre don nous aidera à continuer nos activités en tant qu\"organisation indépendante, et contribuera à construire une société plus collaborative \n<br />#OuiShareLove<br />"
+    help_support_ouishare: 'Supporter OuiShare'
+    choose_currency: 'Choisissez la devise'
+    donation: 'Faire un don'
+    recurring_donations: 'Si vous souhaitez faire un don régulier, merci de sélectionner "custom amount". '
+  projects:
+    join_us: 'Nous rejoindre !'
+    info: 'Plus d''information'
+    organizers: 'Organisateurs'
+  knowledge:
+    all_knowledge_groups: 'Tous les groupes thématiques'
+  profile:
+    contact_me: 'Me contacter'
+  menu:
+    about: 'A propos'
+    alumni: 'Alumni Connectors'
+    about_us: 'A propos de nous'
+    story: 'Notre histoire'
+    values: 'Nos valeurs'
+    collaborative_economy: 'L''Economie Collaborative'
+    organization: 'Organisation'
+    team: 'Team'
+    advisors: 'Mentors'
+    community: 'Communauté'
+    local_communities: 'Communautés Locales'
+    knowledge_groups: 'Groupes thématiques'
+    connectors: 'Connectors'
+    global_partners: 'Nos grands partenaires'
+    users: 'Membres'
+    ouishare_everywhere: 'OuiShare dans le Monde'
+    events: 'Evénements'
+    more_events: 'Plus d''événements'
+    projects: 'Projets'
+    more_projects: 'Tous les projets'
+    knowledge: 'Activités'
+    research_and_publications: "Recherche et Publications"
+    cocreation_events: 'Evénements'
+    wiki: 'Wiki'
+    magazine: 'Magazine'
+    english: 'Anglais'
+    french: 'Français'
+    spanish: 'Espagnol'
+    german: 'Deutsch'
+    donate: 'Faire un don'
+    get_involved: 'S''impliquer'

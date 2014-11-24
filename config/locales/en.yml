@@ -1,0 +1,127 @@
+en:
+  errors:
+    messages:
+      wrong_size: "is the wrong size (should be %{file_size})"
+      size_too_small: "is too small (should be at least %{file_size})"
+      size_too_big: "is too big (should be at most %{file_size})"
+  hello: "Hello world"
+  contact:
+    email: 'Email'
+    first_name: 'First name'
+    country: 'Country'
+    city: 'City'
+    subject: 'Subject'
+    message: 'Please, write your message...'
+    send: 'Send'
+    success: 'Your email was sent!'
+    missing_fields: 'Please fill the Email, Country and First name fields.'
+  pages:
+    globalpartners:
+      index: "Global Partners"
+    admin/projects:
+      show: "%{name}"
+    admin/events:
+      show: "%{name}"
+    projects:
+      index: "Projects"
+    events:
+      index: "Events"
+    faqs:
+      index: "FAQs"
+    about:
+      index: "OuiShare Live"
+      mission: "About us"
+      vision: "Vision"
+      history: "Our Story"
+      organization: "Organization"
+      team: "Team"
+      advisory: "Advisory"
+      governance: "Governance"
+      value: 'Values'
+      funded: 'How we are funded'
+      collaborative_economy: 'The Collaborative Economy'
+      users: 'Members'
+    communities:
+      index: "Communities"
+      expert_groups: 'Knowledge Groups'
+      live: 'OuiShare Everywhere'
+    contact:
+      index: 'Contact'
+    get_involved:
+      index: 'Join'
+    home:
+      terms: 'Terms & Services'
+    registrations:
+      new: 'Join'
+      edit: 'Edit profile'
+    admin/users:
+      show: 'Profile'
+    knowledge:
+      research: 'Research and Publications'
+      cocreation: 'Co-Creation Events'
+      index: 'Knowledge'
+    workus:
+      index: 'Work with us'
+    donations:
+      index: 'Donate!'
+      thank_you: 'Thank you for supporting OuiShare!'
+    press:
+      index: 'Press Room'
+  newsletter:
+    error: 'Could not subscribe to the newsletter, check your email address and try again'
+    already_registered: "This email is already registered to our newsletter"
+    successful: "Your address was successfuly registered in our newsletter!"
+  admin:
+    not_authorized: 'You are not allowed to do that.'
+  payment:
+    success: "Thank you! Your donation was successfuly recieved."
+    error: "Error getting the payment."
+  workus:
+    become_a_partner: 'Want to know more?'
+    contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
+  donations:
+    thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
+    help_support_ouishare: 'Help support OuiShare!'
+    choose_currency: 'choose currency'
+    donation: 'Donation'
+    recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
+  projects:
+    join_us: 'Join us!'
+    info: 'More information'
+    organizers: 'Organizers'
+  knowledge:
+    all_knowledge_groups: 'All Knowledge Groups'
+  profile:
+    contact_me: 'Contact me'
+  menu:
+    about: 'about'
+    alumni: 'Alumni Connectors'
+    about_us: 'About Us'
+    story: 'Our story'
+    values: 'Our values'
+    collaborative_economy: 'The Collaborative Economy'
+    organization: 'Organization'
+    team: 'Team'
+    advisors: 'Advisors'
+    community: 'Community'
+    local_communities: 'Local Communities'
+    knowledge_groups: 'knowledge Groups'
+    connectors: 'Connectors'
+    global_partners: 'Global Partners'
+    users: 'Members'
+    ouishare_everywhere: 'OuiShare Everywhere'
+    events: 'Events'
+    more_events: 'More Events'
+    projects: 'Projects'
+    more_projects: 'All projects'
+    knowledge: 'Knowledge'
+    research_and_publications: "Research & Publications"
+    cocreation_events: 'Co-Creation Events'
+    wiki: 'Wiki'
+    magazine: 'Magazine'
+    english: 'English'
+    french: 'French'
+    spanish: 'Spanish'
+    german: 'German'
+    donate: 'Donate'
+    get_involved: 'Get Involved'
