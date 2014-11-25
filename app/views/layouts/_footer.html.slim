@@ -4,37 +4,37 @@ div#footer
       div.large-2.columns
         ul
           li
-            a href="#{about_mission_path}" About OuiShare
+            = link_to t('footer.about'), about_mission_path
           li
-            a href="#{press_path}" Press Room
+            = link_to t('footer.press_room'), press_path
           li
-            a href="#{workus_path}" Work with us
+            = link_to t('footer.workus'), workus_path
           li
-            = link_to t('menu.global_partners'), global_partners_path
+            = link_to t('footer.globalpartners'), global_partners_path
       br
       div.large-2.columns
         ul
           li
-            a href="#{contact_path}" Contact
+            = link_to t('footer.contact'), contact_path
           li
-            a href="#{faq_path}" FAQs
+            = link_to t('footer.faq'), faq_path
           li
-            a href="#{terms_path}" Terms & Services
+            = link_to t('footer.terms'), terms_path
 
       div.large-4.columns
         div.social
           a.facebook href="https://www.facebook.com/OuiShare"
-            | follow us on facebook!
+            = t('footer.follow_fb')
             i.fa.fa-facebook
           a.twitter href="https://www.twitter.com/OuiShare"
-            | follow us on twitter!
+            = t('footer.follow_tw')
             i.fa.fa-twitter
 
       div.large-4.columns
         h3
           OuiShare
         .right
-          p.opensource = link_to 'open source code by:', 'http://github.com/Ouishare/Ouishare'
+          p.opensource = link_to t('footer.open_source'), 'http://github.com/Ouishare/Ouishare'
           = link_to 'http://engage.is' do
             span.engage
     div.row
@@ -43,9 +43,10 @@ div#footer
           div.row.collapse
             div.large-5.columns
               .email-field
-                input type="email" id="email" name="email" value="Your email here" required=""
-                small.error An email address is required.
+                input type="email" id="email" name="email" value=t('footer.your_email') required=""
+                small.error
+                  = t('footer.email_required')
             div.large-7.columns
-              = submit_tag('Subscribe to our newsletter', class: 'postfix btn white')
+              = submit_tag(t('footer.subscribe'), class: 'postfix btn white')
 
             /*a.postfix href="#{newsletter_path}" Go !*/
