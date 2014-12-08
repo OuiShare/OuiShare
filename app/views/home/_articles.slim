@@ -14,8 +14,10 @@ section#articles
                 p.name = "by #{f.author}"
                 p.date = "23h41, 21/11/2013"
             div.tags
-              - f.categories[0..2].each do |t|
-                span.label.blue = t
+              - begin
+                - f.categories[0..2].each do |t|
+                  span.label.blue = t
+              - rescue
 
     div.large-4.columns
       h3.subtitle.black = @articles_section.title
