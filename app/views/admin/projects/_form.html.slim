@@ -1,28 +1,38 @@
 = simple_form_for  [:admin, @project.language, @project] do |f|
-  h4 Language
+  h4 This project will be displayed under the following language:
   = @project.language.name
-  = f.input :visible
-  = f.input :featured
-  = f.input :display_on_menu
-  = f.input :name
-  = f.input :resume, label: 'Resume (Markdown)'
-  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Home Image (300x180)'
-  = f.input :tag_list, as: :text
-  = f.input :info, label: 'Info (Markdown)'
-  = f.input :join_us_text, label: 'Join Us Text (Markdown)'
-  /*= f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}*/
-  /*= f.input :service1_link*/
-  /*= f.input :service1_title*/
-  /*= f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}*/
-  /*= f.input :service2_link*/
-  /*= f.input :service2_title*/
-  /*= f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}*/
-  /*= f.input :service3_link*/
-  /*= f.input :service3_title*/
-  = f.input :title1
-  = f.input :text1, label: 'Text 1 (Markdown)'
-  = f.input :title2
-  = f.input :text2, label: 'Text 2 (Markdown)'
-  = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
-  = f.submit
+  div.row
+    div.large-12.columns
+      = f.input :visible, label: 'Visible in projects list'
+      = f.input :featured, label: 'Featured in projects slider'
+      = f.input :display_on_menu, label: 'Show in menu'
+      = f.submit
+  div.row
+    div.large-7.columns
+      = f.input :name, label: 'Project name'
+      = f.input :resume, label: 'Short teaser about the project (Markdown)'
+      = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #'
+    div.large-5.columns
+      = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Main image (555x250px, displayed on project page)'
+      = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in projects list)'
+  div.row
+    div.large-12.columns
+      = f.input :info, label: 'More information (Long description, Markdown)'
+      = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
+      / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service1_link
+      / = f.input :service1_title
+      / = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service2_link
+      / = f.input :service2_title
+      / = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service3_link
+      / = f.input :service3_title
+      / = f.input :title1
+      / = f.input :text1, label: 'Text 1 (Markdown)'
+      / = f.input :title2
+      / = f.input :text2, label: 'Text 2 (Markdown)'
+  div.row
+    div.large-12.columns
+      = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
+      = f.submit
