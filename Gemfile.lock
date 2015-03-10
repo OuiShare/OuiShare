@@ -30,8 +30,8 @@ GEM
     addressable (2.3.6)
     arel (4.0.2)
     attr_required (1.0.0)
-    auto_html (1.6.0)
-      redcarpet (~> 2.0)
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
       rinku (~> 1.5.0)
     awesome_print (1.2.0)
     bcrypt (3.1.9)
@@ -260,7 +260,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (2.3.0)
+    redcarpet (3.2.2)
     ref (1.0.5)
     render_csv (2.0.0)
       rails (>= 3.0)
@@ -357,7 +357,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  auto_html (= 1.6.0)
+  auto_html (~> 1.6.1)
   awesome_print
   better_errors
   binding_of_caller

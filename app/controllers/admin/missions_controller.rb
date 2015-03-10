@@ -6,6 +6,13 @@ module Admin
 
     before_filter :verify_admin
 
+    def new
+      @mission = Mission.new(language_id: params[:language_id])
+      if @mission.save
+        render edit: @mission
+      end
+    end
+
     def create
       create! { admin_missions_path }
     end

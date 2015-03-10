@@ -66,7 +66,7 @@ gem 'initjs'
 gem 'flutie'
 gem 'rack-google-analytics'
 gem "country_select", "~> 2.0.0"
-gem 'auto_html', '1.6.0'
+gem 'auto_html', '~> 1.6.1'
 
 gem 'paypal-express'
 
