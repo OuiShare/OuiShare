@@ -2,4 +2,15 @@ div.row
   div.large-12.columns
     h1 New Press Room page
 
-    = render 'form'
+    = simple_form_for  @press_room_page, url: {:controller => "press_room_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @press_room_page.language.name
+	  = f.input :main_text, label: 'Main Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.input :title1
+	  = f.input :text1, label: 'Text 1 (Markdown)'
+	  = f.input :title2
+	  = f.input :text2, label: 'Text 2 (Markdown)'
+	  = f.input :title3
+	  = f.input :text3, label: 'Text 3 (Markdown)'
+	  = f.submit

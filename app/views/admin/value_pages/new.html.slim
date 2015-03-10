@@ -2,4 +2,9 @@ div.row
   div.large-12.columns
     h1 New Value
 
-    = render 'form'
+    = simple_form_for  @value_page, url: {:controller => "value_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @value_page.language.name
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.submit

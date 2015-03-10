@@ -2,4 +2,9 @@ div.row
   div.large-12.columns
     h1 New Work with us page
 
-    = render 'form'
+    = simple_form_for  @workus_page, url: {:controller => "workus_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @workus_page.language.name
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.submit

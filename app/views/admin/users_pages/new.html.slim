@@ -2,4 +2,11 @@ div.row
   div.large-12.columns
     h1 New users page
 
-    = render 'form'
+    = simple_form_for  @users_page, url: {:controller => "users_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @users_page.language.name
+	  = f.input :title
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :link_text
+	  = f.submit
+

@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @press_room_page = DefaultAttributes.new(@press_room_page).set([:image])
+      # Note : Currently @press_room_page.save never works (03/10/2015)
       if @press_room_page.save
         redirect_to admin_press_room_pages_path
       else

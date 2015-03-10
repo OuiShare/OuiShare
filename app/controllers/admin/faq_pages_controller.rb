@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @faq_page = DefaultAttributes.new(@faq_page).set([:image])
+      # Note : Currently @faq_page.save never works (03/10/2015)
       if @faq_page.save
         redirect_to admin_faq_pages_path
       else

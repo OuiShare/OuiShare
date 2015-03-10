@@ -9,10 +9,11 @@ module Admin
     def create
       build_resource
       @expert_groups_page = DefaultAttributes.new(@expert_groups_page).set([:image])
+      # Note : Currently @expert_groups_page.save never works (03/10/2015)
       if @expert_groups_page.save
         redirect_to admin_expert_groups_pages_path
       else
-        redirect_to new_admin_language_expert_group_path(params[:language_id])
+        redirect_to new_admin_language_expert_groups_page_path(params[:language_id])
       end
     end
 

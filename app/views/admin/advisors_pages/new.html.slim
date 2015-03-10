@@ -2,4 +2,10 @@ div.row
   div.large-12.columns
     h1 New advisors page
 
-    = render 'form'
+    = simple_form_for  @advisors_page, url: {:controller => "advisors_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @advisors_page.language.name
+	  = f.input :title
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :link_text, as: :string
+	  = f.submit

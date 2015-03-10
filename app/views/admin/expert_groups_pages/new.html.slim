@@ -2,4 +2,10 @@ div.row
   div.large-12.columns
     h1 New Expert groups page
 
-    = render 'form'
+    = simple_form_for  @expert_groups_page, url: {:controller => "expert_groups_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @expert_groups_page.language.name
+	  = f.input :main_text, label: 'Main Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.submit
+

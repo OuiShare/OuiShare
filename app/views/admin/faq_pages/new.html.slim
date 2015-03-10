@@ -2,4 +2,9 @@ div.row
   div.large-12.columns
     h1 New Faq Page
 
-    = render 'form'
+    = simple_form_for  @faq_page, url: {:controller => "faq_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @faq_page.language.name
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.submit

@@ -2,4 +2,8 @@ div.row
   div.large-12.columns
     h1 New Terms & Service
 
-    = render 'form'
+    = simple_form_for  @terms_page, url: {:controller => "terms_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @terms_page.language.name
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.submit

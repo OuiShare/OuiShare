@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @live_page = DefaultAttributes.new(@live_page).set([:image])
+      # Note : Currently @live_page.save never works (03/10/2015)
       if @live_page.save
         redirect_to admin_live_pages_path
       else

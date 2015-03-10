@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @registration_page = DefaultAttributes.new(@registration_page).set([:image1, :image2])
+      # Note : Currently @registration_page.save never works (03/10/2015) attribute nil
       if @registration_page.save
         redirect_to admin_registrations_pages_path
       else

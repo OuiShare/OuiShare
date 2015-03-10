@@ -2,4 +2,11 @@ div.row
   div.large-12.columns
     h1 New Alumni page
 
-    = render 'form'
+    = simple_form_for  @alumni_page, url: {:controller => "alumni_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @alumni_page.language.name
+	  = f.input :title
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.input :link_text
+	  = f.submit
+

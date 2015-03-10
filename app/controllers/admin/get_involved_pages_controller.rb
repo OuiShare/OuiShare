@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @get_involved_page = DefaultAttributes.new(@get_involved_page).set([:image])
+      # Note : Currently @get_involved_page.save never works (03/10/2015)
       if @get_involved_page.save
         redirect_to admin_get_involved_pages_path
       else

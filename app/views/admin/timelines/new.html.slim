@@ -2,4 +2,9 @@ div.row
   div.large-12.columns
     h1 New Timeline
 
-    = render 'form'
+	= simple_form_for  @timeline, url: {:controller => "timelines", :action => "create"} do |f|
+	  h4 Language
+	  = @timeline.language.name
+	  = f.input :url
+	  = f.input :text, label: 'Text (Markdown)'
+	  = f.submit

@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @donation_page = DefaultAttributes.new(@donation_page).set([:image1, :image2])
+      # Note : Currently @donation_page.save never works (03/10/2015)
       if @donation_page.save
         redirect_to admin_donation_pages_path
       else

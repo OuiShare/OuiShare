@@ -9,6 +9,7 @@ module Admin
     def create
       build_resource
       @knowledge_page = DefaultAttributes.new(@knowledge_page).set([:image])
+      # Note : Currently @knowledge_page.save never works (03/10/2015)
       if @knowledge_page.save
         redirect_to admin_knowledge_pages_path
       else

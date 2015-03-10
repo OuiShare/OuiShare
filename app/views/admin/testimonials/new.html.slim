@@ -2,4 +2,23 @@ div.row
   div.large-12.columns
     h1 New Testimonials
 
-    = render 'form'
+    = simple_form_for  @testimonial, url: {:controller => "testimonials", :action => "create"} do |f|
+	  h4 Language
+	  = @testimonial.language.name
+	  = f.input :user_picture1, as: :image_preview, input_html: {preview_version: :thumb} 
+	  = f.input :author1 
+	  = f.input :call_to_action1 
+	  = f.input :text1 
+	  = f.input :user_picture2, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.input :author2 
+	  = f.input :call_to_action2 
+	  = f.input :text2 
+	  = f.input :user_picture3, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.input :author3 
+	  = f.input :call_to_action3 
+	  = f.input :text3 
+	  = f.input :user_picture4, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.input :author4 
+	  = f.input :call_to_action4 
+	  = f.input :text4
+	  = f.submit
