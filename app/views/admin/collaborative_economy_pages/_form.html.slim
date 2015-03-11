@@ -2,7 +2,7 @@
   h4 Language
   = @collaborative_economy_page.language.name
   = f.input :main_text, label: 'Main Text (Markdown)'
-  /= f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :title1
   = f.input :text1, label: 'Text 1 (Markdown)'
   = f.input :title2

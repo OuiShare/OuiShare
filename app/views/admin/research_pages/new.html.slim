@@ -2,4 +2,10 @@ div.row
   div.large-12.columns
     h1 New Research Page
 
-    = render 'form'
+    = simple_form_for  @research_page, url: {:controller => "research_pages", :action => "create"} do |f|
+	  h4 Language
+	  = @research_page.language.name
+	  = f.input :main_text, label: 'Main Text (Markdown)'
+	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+	  = f.submit
+

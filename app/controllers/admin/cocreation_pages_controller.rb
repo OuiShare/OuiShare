@@ -9,7 +9,6 @@ module Admin
     def create
       build_resource
       @cocreation_page = DefaultAttributes.new(@cocreation_page).set([:image])
-      # Note : Currently @cocreation_page.save never works (03/10/2015)
       if @cocreation_page.save
         redirect_to admin_cocreation_pages_path
       else

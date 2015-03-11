@@ -4,7 +4,7 @@ class DefaultAttributes
   end
 
   def set(images = [])
-    if @model.language.slug == 'en'
+    if @model.language.slug == 'en' || 1 # TEMPORARY FIX
       return @model
     else
       english_obj = @model.class.where(language: Language.where(slug: 'en').first).first
@@ -17,10 +17,12 @@ class DefaultAttributes
       new_attributes = english_attributes.merge(attributes)
 
       images.each do |image_name|
-        image_name = image_name.to_s
-        new_attributes["remote_#{image_name}_url"] = english_obj.try(image_name).url
+       image_name = image_name.to_s
+       new_attributes["remote_#{image_name}_url"] = english_obj.try(image_name).url # THIS IS BAD
       end
     end
+
     @model.class.new(new_attributes)
+    
   end
 end

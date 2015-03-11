@@ -9,7 +9,6 @@ module Admin
     def create
       build_resource
       @workus_page = DefaultAttributes.new(@workus_page).set([:image])
-      # Note : Currently @workus_page.save never works (03/10/2015)
       if @workus_page.save
         redirect_to admin_workus_pages_path
       else
