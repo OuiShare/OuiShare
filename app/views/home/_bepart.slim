@@ -1,26 +1,66 @@
 section#bepart
-  div.row
-    div.large-4.columns
-      h3.subtitle.black = @take_part_section.main_title
-      p.desc = @take_part_section.main_text_html
-      a.btn.blue href="#{getinvolved_path}" = @take_part_section.link_text
+  .container
+    / div.row
+    /   div.large-4.columns
+    /     h3.subtitle.black = @take_part_section.main_title
+    /     p.desc = @take_part_section.main_text_html
+    /     a.btn.blue href="#{getinvolved_path}" = @take_part_section.link_text
 
-    div.large-8.columns
-      div.part
-        = link_to @take_part_section.link1 do
-          div.takePart
-          .content
+    /   div.large-8.columns
+    /     div.part
+    /       = link_to @take_part_section.link1 do
+    /         div.takePart
+    /         .content
+    /           h4 = @take_part_section.title1
+    /           .markdown = @take_part_section.text1
+    /     div.part
+    /       = link_to @take_part_section.link2 do
+    /         div.comeTo
+    /         .content
+    /           h4 = @take_part_section.title2
+    /           .markdown = @take_part_section.text2
+    /     div.part
+    /       = link_to @take_part_section.link3 do
+    /         div.donate
+    /         .content
+    /           h4 = @take_part_section.title3
+    /           .markdown = @take_part_section.text3
+
+    .row
+      .col-lg-12
+        h3.blue = @take_part_section.main_title
+        hr.hr-large.blue
+
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        = @take_part_section.main_text_html
+
+    br
+    br
+    br
+
+    .row
+      a.btn.get-involved-btn href="#{getinvolved_path}" = @take_part_section.link_text
+
+
+    br
+    br
+    br
+    .row
+      .col-lg-10.col-lg-offset-1
+        .col-lg-4
+          = link_to @take_part_section.link1 do
             h4 = @take_part_section.title1
-            .markdown = @take_part_section.text1
-      div.part
-        = link_to @take_part_section.link2 do
-          div.comeTo
-          .content
+            br
+            p = @take_part_section.text1
+
+        .col-lg-4
+          = link_to @take_part_section.link2 do
             h4 = @take_part_section.title2
-            .markdown = @take_part_section.text2
-      div.part
-        = link_to @take_part_section.link3 do
-          div.donate
-          .content
+            br
+            p = @take_part_section.text2
+
+        .col-lg-4
+          = link_to @take_part_section.link3 do
             h4 = @take_part_section.title3
-            .markdown = @take_part_section.text3
+            br
+            p = @take_part_section.text3

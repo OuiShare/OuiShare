@@ -1,17 +1,18 @@
-div.contain-to-grid.fixed
-  nav.top-bar
-    ul.title-area
-      li.toggle-topbar.menu-icon
-        a href="#"
-          span Menu
-      li.name
-        h1
-          a href="#{root_path}"
-    section.top-bar-section
-      ul.left
-        li.has-dropdown
-          = link_to t('menu.about'), about_mission_path
-          ul.dropdown
+.navbar.navbar-default.navbar-fixed-top
+  .container.special-container-navbar
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.nopadding href=root_path
+
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav
+
+        li.dropdown
+          = link_to t('menu.about'), about_mission_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
             li
               = link_to t('menu.about_us'), about_mission_path
             li
@@ -20,16 +21,17 @@ div.contain-to-grid.fixed
               = link_to t('menu.values'), about_value_path
             li
               = link_to t('menu.collaborative_economy'), about_collaborative_economy_path
-            li.org
+            li
               = link_to t('menu.organization'), about_organization_path
             li
               = link_to t('menu.team'), about_team_path
             li
               = link_to t('menu.advisors'), about_advisory_path
 
-        li.has-dropdown
-          = link_to t('menu.community'), communities_path
-          ul.dropdown
+
+        li.dropdown
+          = link_to t('menu.community'), communities_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
             li
               = link_to t('menu.local_communities'), communities_path
             li
@@ -39,31 +41,31 @@ div.contain-to-grid.fixed
             li
               = link_to t('menu.users'), members_path
             li
-              = link_to t('menu.ouishare_everywhere'), communities_live_path  
+              = link_to t('menu.ouishare_everywhere'), communities_live_path 
             li
-              = link_to t('menu.alumni'), about_alumni_path            
+              = link_to t('menu.alumni'), about_alumni_path
 
-        li.has-dropdown
-          = link_to t('menu.events'), events_path
-          ul.dropdown
+        li.dropdown
+          = link_to t('menu.events'), events_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
             - @current_language.events.visible.visible_on_menu.next.order('date_start desc').each do |e|
               li
                 = link_to e.name, event_path(e)
             li
               = link_to t('menu.more_events'), events_path
 
-        li.has-dropdown
-          = link_to t('menu.projects'), projects_path
-          ul.dropdown
+        li.dropdown
+          = link_to t('menu.projects'), projects_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
             - @current_language.projects.visible.visible_on_menu.each do |p|
               li
                 = link_to p.name, project_path(p)
             li
               = link_to t('menu.more_projects'), projects_path
 
-        li.has-dropdown
-          = link_to t('menu.knowledge'), knowledge_path
-          ul.dropdown
+        li.dropdown
+          = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
             li
               = link_to t('menu.knowledge_groups'), expert_groups_path
             li
@@ -73,11 +75,14 @@ div.contain-to-grid.fixed
             li
               = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
             li
-              a href="http://magazine.ouishare.net/#{@current_language.slug == 'en' ? '' : @current_language.slug}" target="blank" = t('menu.magazine')
+              a href="http://magazine.ouishare.net/# @current_language.slug == 'en' ? '' : @current_language.slug" target="blank" = t('menu.magazine')
 
-        li.has-dropdown
-          a href="http://magazine.ouishare.net" = t('menu.magazine')
-          ul.dropdown
+        li
+          = image_tag('/assets/coeur-ouishare.png', :class => "header-main-logo")
+        
+        li.dropdown
+          a.dropdown-toggle href="http://magazine.ouishare.net" = t('menu.magazine')
+          ul.dropdown-menu
             li
               a href="http://magazine.ouishare.net" = t('menu.english')
             li
@@ -87,26 +92,49 @@ div.contain-to-grid.fixed
             li
               a href="http://magazine.ouishare.net/de" = t('menu.german')
 
-        li.donate.show-for-medium-down
-          a href="#{donations_path}" donate
-        li.get-involved.show-for-medium-down
-          a href="#{getinvolved_path}" join us!
+        li.header-btn-li
+          button.header-btn Donate
 
-        li.donate.hide-for-medium-down
-          a href="#{donations_path}" class="button" Donate
+        li.header-btn-li
+          button.header-btn Join us!
 
-        - if user_signed_in?
-          li.has-dropdown.hide-for-medium-down
-            a href="#"
-              = image_tag(current_user.avatar_url(50), :class => "current-user")
-            ul.dropdown
-              li
-                = link_to t("edit_profile"), edit_user_registration_path
-              li
-                = link_to t('admin.logout'), destroy_user_session_path, method: :delete
-        - else
-          li.donate.hide-for-medium-down
-            a href="#{register_url}" class="button" Join 
+        li.header-btn-li
+          button.header-btn Login
 
-          li.get-involved.hide-for-medium-down
-            a href="#{new_user_session_path}" class="button" Login
+        li
+          .text-center.social-media-icons-header
+            a href="https://www.facebook.com/OuiShare" target="_blank"
+              img src="/assets/BT-facebook.png" width="24px" style="margin-top:-10px;"
+            a href="https://twitter.com/OuiShareFest" target="_blank"
+              img src="/assets/BT-twitter.png" width="24px" style="margin-top:-10px;"
+            a href="https://plus.google.com/+OuishareNet" target="_blank"
+              img src="/assets/BT-googleplus.png" width="24px" style="margin-top:-10px;"
+            a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
+              img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
+
+        / li
+        /   = select_languages
+
+/         li.donate.show-for-medium-down
+/           a href="# donations_path" donate
+/         li.get-involved.show-for-medium-down
+/           a href="# getinvolved_path" join us!
+
+/         li.donate.hide-for-medium-down
+/           a href="# donations_path" class="button" Donate
+
+/         - if user_signed_in?
+/           li.has-dropdown.hide-for-medium-down
+/             a href="#"
+/               = image_tag(current_user.avatar_url(50), :class => "current-user")
+/             ul.dropdown
+/               li
+/                 = link_to t("edit_profile"), edit_user_registration_path
+/               li
+/                 = link_to t('admin.logout'), destroy_user_session_path, method: :delete
+/         - else
+/           li.donate.hide-for-medium-down
+/             a href="# register_url" class="button" Join 
+
+/           li.get-involved.hide-for-medium-down
+/             a href="# new_user_session_path" class="button" Login

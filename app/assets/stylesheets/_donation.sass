@@ -1,143 +1,143 @@
-#page-donations
+// #page-donations
 
-  .pink-box
-    background: $red
-    color: white
-    padding: 20px 40px
-
-
-    h5
-      color: white
-      text-transform: uppercase
-
-    .header
-      .currency
-        +appearance(none)
-        border: 1px solid white
-        +border-radius(none)
-        color: white
-        height: 30px
-        float: right
-        padding: 8px
-        font-size: .7em
-        text-indent: 0.01px
-        text-overflow: ""
-        border: 1px solid white
-        margin-left: 20px
-        background: image-url('arrow.png') no-repeat 25px 10px transparent
-
-      $f-dropdown-triangle-size: 0px
-      $f-dropdown-triangle-color: none
-      $triangle: false
-
-      .f-dropdown
-        @include dropdown-container($content, $triangle, $max-width)
-        background: $red
-
-        a
-          border: 0
-          width: 100%
-          text-align: center
-          font-size: 12px
-          line-height: 16px
-          color: white
-
-          &:hover
-            background: darken($red,5%)
-            color: white
-            text-decoration: none
+//   .pink-box
+//     background: $red
+//     color: white
+//     padding: 20px 40px
 
 
-    section
-      border: 1px solid white
-      overflow: hidden
-      margin-bottom: 20px
+//     h5
+//       color: white
+//       text-transform: uppercase
 
-      &.values, &.methods
+//     .header
+//       .currency
+//         +appearance(none)
+//         border: 1px solid white
+//         +border-radius(none)
+//         color: white
+//         height: 30px
+//         float: right
+//         padding: 8px
+//         font-size: .7em
+//         text-indent: 0.01px
+//         text-overflow: ""
+//         border: 1px solid white
+//         margin-left: 20px
+//         background: image-url('arrow.png') no-repeat 25px 10px transparent
 
-        ul
-          list-style: none
-          margin-left: 0
+//       $f-dropdown-triangle-size: 0px
+//       $f-dropdown-triangle-color: none
+//       $triangle: false
 
-          li
-            display: inline-block
-            text-align: center
-            margin: 0 10px 0 0px
-            padding: 0
-            +box-sizing(border-box)
-            position: relative
+//       .f-dropdown
+//         @include dropdown-container($content, $triangle, $max-width)
+//         background: $red
 
-            &.value
-              height: 45px
-              width: 75px
-            &.method
-              height: 40px
-              width: 180px
+//         a
+//           border: 0
+//           width: 100%
+//           text-align: center
+//           font-size: 12px
+//           line-height: 16px
+//           color: white
 
-            &:after
-              content: ""
-              clear: both
+//           &:hover
+//             background: darken($red,5%)
+//             color: white
+//             text-decoration: none
 
-            label
-              display: block
-              position: absolute
-              cursor: pointer
-              font-size: 0
-              left: 1px
-              right: 1px
-              top: 1px
-              white-space: nowrap
 
-            input:checked + label
-              background: $blue
-              color: white
+//     section
+//       border: 1px solid white
+//       overflow: hidden
+//       margin-bottom: 20px
 
-            input:checked + #custom
-              border: 2px solid $blue
+//       &.values, &.methods
 
-            input[type="radio"]
-              position: absolute
-              margin: 10px
+//         ul
+//           list-style: none
+//           margin-left: 0
 
-          .btn
-            font-size: 20px
-            padding: 4px 10px
+//           li
+//             display: inline-block
+//             text-align: center
+//             margin: 0 10px 0 0px
+//             padding: 0
+//             +box-sizing(border-box)
+//             position: relative
 
-        .custom
-          width: 119px !important
-          text-align: left !important
-          margin-top: 7px
+//             &.value
+//               height: 45px
+//               width: 75px
+//             &.method
+//               height: 40px
+//               width: 180px
 
-        #custom
-          display: inline-block
-          border: 1px solid white
-          background: $red
-          font-size: 12px
-          font-style: italic
-          border: 1px solid #FFFFFF
-          color: #FFFFFF
-          margin-left: 5px
-          width: 100px
-          height: 40px
+//             &:after
+//               content: ""
+//               clear: both
 
-  .explain
-    border-top: 1px solid black
-    background: white
-    color: black
+//             label
+//               display: block
+//               position: absolute
+//               cursor: pointer
+//               font-size: 0
+//               left: 1px
+//               right: 1px
+//               top: 1px
+//               white-space: nowrap
 
-    h3
-      color: black
+//             input:checked + label
+//               background: $blue
+//               color: white
 
-  .box
-    border: 1px solid black
-    padding: 20px 30px
-    .content
-      margin-left: 105px
-    .avatar
-      float: left
-      margin-right: 20px
-      .small
-        font-size: 12px
-        clear: both
-        display: block
-        margin-top: 10px
+//             input:checked + #custom
+//               border: 2px solid $blue
+
+//             input[type="radio"]
+//               position: absolute
+//               margin: 10px
+
+//           .btn
+//             font-size: 20px
+//             padding: 4px 10px
+
+//         .custom
+//           width: 119px !important
+//           text-align: left !important
+//           margin-top: 7px
+
+//         #custom
+//           display: inline-block
+//           border: 1px solid white
+//           background: $red
+//           font-size: 12px
+//           font-style: italic
+//           border: 1px solid #FFFFFF
+//           color: #FFFFFF
+//           margin-left: 5px
+//           width: 100px
+//           height: 40px
+
+//   .explain
+//     border-top: 1px solid black
+//     background: white
+//     color: black
+
+//     h3
+//       color: black
+
+//   .box
+//     border: 1px solid black
+//     padding: 20px 30px
+//     .content
+//       margin-left: 105px
+//     .avatar
+//       float: left
+//       margin-right: 20px
+//       .small
+//         font-size: 12px
+//         clear: both
+//         display: block
+//         margin-top: 10px
