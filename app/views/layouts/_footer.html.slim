@@ -104,11 +104,11 @@
     br
     br
     .row
-      .col-lg-12.centered
+      .col-lg-12.text-center
         p
-          / Powered by 
+          = "open source code by "
+          = link_to "http://engage.is", :target => "_blank" do
+            = "Engage"
+          = " & "
           = link_to "http://www.pitch-me.fr", :target => "_blank" do
-            Pitch Me
-          / |Design:
-          = link_to "http://www.corp-lab.com", :target => "_blank" do
-            CORP
+            = "Pitch Me"

@@ -1,28 +1,62 @@
 section#partners
   .container
-    div.row
-      div.large-12.columns
-        h3.subtitle.black Featured in
-        ul.inline-list
-          - p = @current_language.partner || Partner.new
-          li
-            = link_to p.link1
-              = image_tag(p.partner1.partner.url)
-          li
-            = link_to p.link2
-              = image_tag(p.partner2.partner.url)
-          li
-            = link_to p.link3
-              = image_tag(p.partner3.partner.url)
-          li
-            = link_to p.link4
-              = image_tag(p.partner4.partner.url)
-          li
-            = link_to p.link5
-              = image_tag(p.partner5.partner.url)
-          li
-            = link_to p.link6
-              = image_tag(p.partner6.partner.url)
-          li
-            = link_to p.link7
-              = image_tag(p.partner7.partner.url)
+    .row
+      .col-lg-12
+        h3.blue Featured in
+        hr.hr-large.blue
+
+      - p = @current_language.partner || Partner.new
+
+      .col-lg-12
+        .col-lg-3
+          = link_to p.link1
+            = image_tag(p.partner1.partner.url, :class => "img-responsive")
+        .col-lg-3
+          = link_to p.link2
+            = image_tag(p.partner2.partner.url, :class => "img-responsive")
+        .col-lg-3
+          = link_to p.link3
+            = image_tag(p.partner3.partner.url, :class => "img-responsive")
+        .col-lg-3
+          = link_to p.link4
+            = image_tag(p.partner4.partner.url, :class => "img-responsive")
+
+      br
+      .col-lg-10.col-lg-offset-1
+
+        .col-lg-4
+          = link_to p.link5
+            = image_tag(p.partner5.partner.url, :class => "img-responsive")
+        .col-lg-4
+          = link_to p.link6
+            = image_tag(p.partner6.partner.url, :class => "img-responsive")
+        .col-lg-4
+          = link_to p.link7
+            = image_tag(p.partner7.partner.url, :class => "img-responsive")
+
+    / div.row
+    /   div.large-12.columns
+    /     h3.subtitle.black Featured in
+    /     ul.inline-list
+    /       - p = @current_language.partner || Partner.new
+    /       li
+    /         = link_to p.link1
+    /           = image_tag(p.partner1.partner.url)
+    /       li
+    /         = link_to p.link2
+    /           = image_tag(p.partner2.partner.url)
+    /       li
+    /         = link_to p.link3
+    /           = image_tag(p.partner3.partner.url)
+    /       li
+    /         = link_to p.link4
+    /           = image_tag(p.partner4.partner.url)
+    /       li
+    /         = link_to p.link5
+    /           = image_tag(p.partner5.partner.url)
+    /       li
+    /         = link_to p.link6
+    /           = image_tag(p.partner6.partner.url)
+    /       li
+    /         = link_to p.link7
+    /           = image_tag(p.partner7.partner.url)
