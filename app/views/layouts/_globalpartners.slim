@@ -6,6 +6,6 @@
 	      ul.inline-list
 	        - p = @current_language.partner || Partner.new
 	        li
-	          = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank" , :style => "width:120px;"
+	          = link_to image_tag('/assets/maif.png'), global_partners_path, :target => "_blank" , :style => "width:120px;"
 	        li
-	          = link_to image_tag('/assets/sncf.png'), "http://www.sncf.com/", :target => "_blank" , :style => "width:120px;"
+	          = link_to image_tag('/assets/sncf.png'), global_partners_path, :target => "_blank" , :style => "width:120px;"
