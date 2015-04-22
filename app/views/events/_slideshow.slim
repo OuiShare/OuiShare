@@ -1,10 +1,18 @@
-div.green
+.green
   section#slideshow.section
-    div.row
-      div.large-12.columns
-        ul#slide-events data-orbit=""
-          - @current_language.events.visible.next[0..1].each do |e|
-            li
-              div.slideshow
-                = link_to e do
-                  = image_tag e.image.top_image.url
+    .container
+      .row
+        .col-lg-12
+          #carousel-example-generic.carousel.slide data-ride="carousel"
+            / Indicators
+            ol.carousel-indicators
+              li.active data-slide-to="0" data-target="#carousel-example-generic"
+              li data-slide-to="1" data-target="#carousel-example-generic"
+            / Wrapper for slides
+            .carousel-inner role="listbox"
+              - @current_language.events.visible.next[0..1].each do |e|
+                .item
+                  = link_to e do
+                    = image_tag e.image.top_image.url
+
+
