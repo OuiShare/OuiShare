@@ -78,7 +78,7 @@
               a href="http://magazine.ouishare.net/# @current_language.slug == 'en' ? '' : @current_language.slug" target="blank" = t('menu.magazine')
 
         li
-          = image_tag('/assets/coeur-ouishare.png', :class => "header-main-logo")
+          = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")
         
         li.dropdown
           a.dropdown-toggle href="http://magazine.ouishare.net" = t('menu.magazine')
@@ -124,29 +124,16 @@
             a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
               img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
 
-        / li
-        /   = select_languages
-
-/         li.donate.show-for-medium-down
-/           a href="# donations_path" donate
-/         li.get-involved.show-for-medium-down
-/           a href="# getinvolved_path" join us!
-
-/         li.donate.hide-for-medium-down
-/           a href="# donations_path" class="button" Donate
-
-/         - if user_signed_in?
-/           li.has-dropdown.hide-for-medium-down
-/             a href="#"
-/               = image_tag(current_user.avatar_url(50), :class => "current-user")
-/             ul.dropdown
-/               li
-/                 = link_to t("edit_profile"), edit_user_registration_path
-/               li
-/                 = link_to t('admin.logout'), destroy_user_session_path, method: :delete
-/         - else
-/           li.donate.hide-for-medium-down
-/             a href="# register_url" class="button" Join 
-
-/           li.get-involved.hide-for-medium-down
-/             a href="# new_user_session_path" class="button" Login
+        - Language.visible.each do |l|
+          - if l.slug == I18n.locale.to_s
+            li.dropdown
+              .l18n.small-2 href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" data-dropdown="lang" = l.slug
+              
+              ul#lang.dropdown-menu
+              - Language.visible.each do |l|
+                - if l.slug == I18n.locale.to_s
+                  li
+                    a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" selected="selected" = l.slug
+                - else
+                  li
+                    a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" = l.slug

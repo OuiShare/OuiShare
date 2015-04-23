@@ -19,7 +19,7 @@ section#events-home
         #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
           / Slides Container
           div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
-            - @current_language.events.visible.order('date_start').next[0..2].each do |e|
+            - @current_language.events.visible.order('date_start').each do |e|
               div
                 = link_to event_path(e) do
                   span = e.title
