@@ -1,7 +1,8 @@
 section#list.section
-  - @list.each do |l|
-    div.row
-      = link_to(l.link)
-        div.large-12.columns
-          h4 = l.name
-          .markdown = l.text_html
+  .container
+    - @list.each do |l|
+      div.row
+        = link_to(l.link)
+          .col-lg-12
+            h4 = l.name
+            .markdown = l.text_html

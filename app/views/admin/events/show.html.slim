@@ -1,41 +1,44 @@
 - content_for :page_title, @event.name
-div#event
-  div.row.section
-    div.large-5.columns
-      h4 = @event.cta
-      .markdown = @event.resume_html
-      - @event.tags.each do |t|
-        span.label.blue = t.name
-    div.large-7.columns
-      img.banner src="#{@event.image.event_page_thumb.url}"
-  div.info
-    div.row.section
-      div.large-4.columns
-        h3.subtitle.black Organizers
-        div.avatars
-          - @event.users.each do |u|
-            span.block
-              = link_to u do
-                = image_tag(u.avatar_url(140))
+#event
+  .row.section
+    .container
+      .col-lg-5
+        h4 = @event.cta
+        .markdown = @event.resume_html
+        - @event.tags.each do |t|
+          span.label.blue = t.name
+      .col-lg-7
+        img.banner src="#{@event.image.event_page_thumb.url}"
+  .info
+    .row.section
+      .container
+        .col-lg-4
+          h3.subtitle.black Organizers
+          .avatars
+            - @event.users.each do |u|
+              span.block
+                = link_to u do
+                  = image_tag(u.avatar_url(140))
 
-      div.large-8.columns
-        h3.subtitle.black About this event
-        .markdown = @event.info_html
-        .row
-          = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
-            .large-8.columns
-              = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
-            .large-4.columns
-              = @event.address
+        .col-lg-8
+          h3.subtitle.black About this event
+          .markdown = @event.info_html
+          .row
+            = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
+              .large-8.columns
+                = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+              .col-lg-4
+                = @event.address
     .separator.black
 
-    div.row.section
-      div.large-4.columns
-        h3.subtitle.black Join us!
+    .row.section
+      .container
+        .col-lg-4
+          h3.subtitle.black Join us!
 
-        .markdown = @event.join_us_text_html
+          .markdown = @event.join_us_text_html
 
-      div.large-8.columns
+      .col-lg-8
         ul.inline-list.buttons
           li
             = link_to @event.service1_link do
@@ -50,18 +53,18 @@ div#event
               = image_tag(@event.service3_image)
               p.service = @event.service3_title
 
-      div.large-4.columns
-        div.block
-      div.large-4.columns
-        div.block
+      .col-lg-4
+        .block
+      .col-lg-4
+        .block
 
-    div.row
-      div.large-6.columns
+    .row
+      .col-lg-6
         - if @event.title1.present?
           h4 = @event.title1
           .markdown = @event.text1_html
 
-      div.large-6.columns
+      .col-lg-6
         - if @event.title2.present?
           h4 = @event.title2
           .markdown = @event.text2_html

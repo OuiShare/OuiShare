@@ -93,13 +93,25 @@
               a href="http://magazine.ouishare.net/de" = t('menu.german')
 
         li.header-btn-li
-          button.header-btn Donate
+          a.btn.header-btn href="#{donations_path}" Donate
 
         li.header-btn-li
-          button.header-btn Join us!
+          a.btn.header-btn href="#{getinvolved_path}" Join us!
 
-        li.header-btn-li
-          button.header-btn Login
+        - if user_signed_in?
+          li.dropdown
+            a.dropdown-toggle href="#"
+              = image_tag(current_user.avatar_url(50), :class => "current-user")
+            ul.dropdown-menu
+              li
+                = link_to 'Edit Profile', edit_user_registration_path
+              li
+                = link_to 'Logout', destroy_user_session_path, method: :delete
+
+        - else
+
+          li.header-btn-li
+            a.btn.header-btn href="#{new_user_session_path}" Login
 
         li
           .text-center.social-media-icons-header
