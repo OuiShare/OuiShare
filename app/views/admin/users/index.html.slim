@@ -1,21 +1,22 @@
-div.row
-  div.large-12.columns
-    h2.subheader Users
-    = link_to 'Users CSV Download', admin_users_path('csv')
-    br
-    br
-    table
-      tr
-        th First Name
-        th Name
-        th Type
-        th Admin?
-        th Show order
-      - User.all.order('name asc').each do |u|
+.container#admin
+  div.row
+    .col-lg-12
+      h2.subheader Users
+      = link_to 'Users CSV Download', admin_users_path('csv')
+      br
+      br
+      table.table
         tr
-          td = u.fname
-          td = u.name
-          td = u.profile_type
-          td = u.admin? ? 'Yes' : 'No'
-          td = u.show_order
-          td = link_to "Edit", edit_admin_user_path(u)
+          th First Name
+          th Name
+          th Type
+          th Admin?
+          th Show order
+        - User.all.order('name asc').each do |u|
+          tr
+            td = u.fname
+            td = u.name
+            td = u.profile_type
+            td = u.admin? ? 'Yes' : 'No'
+            td = u.show_order
+            td = link_to "Edit", edit_admin_user_path(u)
