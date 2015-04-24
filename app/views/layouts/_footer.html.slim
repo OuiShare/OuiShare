@@ -63,44 +63,27 @@
               .col-lg-12.text-field-newsletter
                 = text_field_tag :email_address, "MAIL", :class => "form-control-footer"
                 = submit_tag "OK", :class => "btn-footer submit-newsletter", :style => 'border-radius: 0px;'
-        .col-lg-4
-          h6 About OuiShare
-          h6 Work with us
-          h6 Contact
+        .col-lg-4.infos
+          = link_to about_mission_path do
+            h6 About
+          = link_to workus_path do
+            h6 = t('footer.workus')
+          = link_to contact_path do
+            h6 = t('footer.contact')
           h6 OUISHARE logo kit
-          h6 FAQS        
+          = link_to faq_path do
+            h6 = t('footer.faqs')
           
-        .col-lg-4
+        .col-lg-4.follow
           h5 Follow OuiShare
-          br
-          h6 FACEBOOK
-          h6 TWITTER
-          h6 FLICKR
-          h6 GOOGLE+
-          
-
-        /   p
-        /     = t('dynamic_translations.footer.general_questions')
-        /     a href="mailto:hello@ouishare.net" target="_blank" hello@ouishare.net
-        /     br
-        /     = t('dynamic_translations.footer.volunteers')
-        /     a href="mailto:volunteers@ouishare.net" target="_blank" volunteers@ouishare.net
-        /     br
-        /     = t('dynamic_translations.footer.partners_sponsors')
-        /     a href="mailto:partners@ouishare.net" target="_blank" partners@ouishare.net
-        /     br
-        /     = t('dynamic_translations.about.title')
-        /     a href="http://ouishare.net/about/" target="_blank" OuiShare
-        / .col-lg-4
-        /   h4
-        /     = t('dynamic_translations.footer.press')
-        /   p
-        /     a href="https://drive.google.com/folderview?id=0B7b2-hkRWIe-XzYtTlJXZjVKMTA&usp=sharing" target="_blank" 
-        /       = t('dynamic_translations.footer.download_press_kit')
-        /     br
-        /     = t('dynamic_translations.footer.press_contact')
-        /     a href="mailto:press@ouishare.net", target: "_blank" 
-        /       press@ouishare.net
+          a href="https://www.facebook.com/OuiShare" target="_blank"
+            h6 FACEBOOK
+          a href="https://twitter.com/OuiShareFest" target="_blank"
+            h6 TWITTER
+          a href="https://www.flickr.com/photos/ouishare" target="_blank"
+            h6 FLICKR
+          a href="https://plus.google.com/+OuishareNet" target="_blank"
+            h6 GOOGLE+
     br
     br
     .row
