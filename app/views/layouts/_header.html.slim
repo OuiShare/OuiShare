@@ -78,7 +78,9 @@
               a href="http://magazine.ouishare.net/# @current_language.slug == 'en' ? '' : @current_language.slug" target="blank" = t('menu.magazine')
 
         li
-          = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")
+          .header-main-logo
+            a href=root_path
+              = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")
         
         li.dropdown
           a.dropdown-toggle href="http://magazine.ouishare.net" = t('menu.magazine')
@@ -126,14 +128,14 @@
 
         - Language.visible.each do |l|
           - if l.slug == I18n.locale.to_s
-            li.dropdown
-              .l18n.small-2 href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" data-dropdown="lang" = l.slug
+            li.dropdown.lang-dropdown
+              .langage-select = l.slug
               
               ul#lang.dropdown-menu
-              - Language.visible.each do |l|
-                - if l.slug == I18n.locale.to_s
-                  li
-                    a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" selected="selected" = l.slug
-                - else
-                  li
-                    a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" = l.slug
+                - Language.visible.each do |l|
+                  - if l.slug == I18n.locale.to_s
+                    li
+                      a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" selected="selected" = l.slug
+                  - else
+                    li
+                      a href="#{request.protocol}#{request.host_with_port}/#{l.slug}#{request.path.gsub(request.path.first(3), "")}" = l.slug
