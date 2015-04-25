@@ -1,29 +1,21 @@
 - content_for :page_title, 'Connecting the Collaborative Economy'
-div#home
-  ul#slideshow data-orbit=""
-    li
-      = render "home/welcome"
-    - if @top_banner.image1?
-      li
-        section
-          .slide
-            = render "home/sub", {slider: '2'}
-            div.call
-              a.button href="#{@top_banner.link1}" = @top_banner.link_text1
-          = image_tag(@top_banner.image1.top_banner.url)
+#home
 
-    - if @top_banner.image2?
-      li
-        section
-          .slide
-            = render "home/sub", {slider: '3'}
-            div.call
-              a.button href="#{@top_banner.link2}" = @top_banner.link_text2
-          = image_tag(@top_banner.image2.top_banner.url)
+  #slideshow.carousel.slide data-ride="carousel"
+    / Indicators
+    / ol.carousel-indicators
+    /   li.active data-slide-to="0" data-target="#carousel-example-generic"
+    /   li data-slide-to="1" data-target="#carousel-example-generic"
+    / Wrapper for slides
+    .carousel-inner role="listbox"
+      .item.active
+        = image_tag('/assets/image slider 01.png')
+      .item
+        = image_tag('/assets/image slider 02.png')
 
   = render 'home/about'
-  = render 'home/hot'
   = render 'home/events'
   = render 'home/articles'
+  = render 'home/hot'
   = render 'home/bepart'
   = render 'home/partners'

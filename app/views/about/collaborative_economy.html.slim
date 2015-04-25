@@ -1,31 +1,30 @@
-div#page-about-internal
+#page-about-internal
   section.main-content
-    div.row
-      div.large-12.columns
-        .markdown = @collaborative_economy_page.main_text_html
-      /div.large-12.columns
-        /= image_tag(@collaborative_economy_page.image.top_internal)
+    .container
+      .row
+        .col-lg-12
+          .markdown = @collaborative_economy_page.main_text_html
+        /.large-12.columns
+          /= image_tag(@collaborative_economy_page.image.top_internal)
 
   section#list
-    div.activities
-      div.row
-        div.large-12.columns
-          ul.large-block-grid-2
-            li
-              h4 = @collaborative_economy_page.title1
-              .markdown = @collaborative_economy_page.text1_html
-
-            li
-              h4 = @collaborative_economy_page.title2
-              .markdown = @collaborative_economy_page.text2_html
-
-            li
-              h4 = @collaborative_economy_page.title3
-              .markdown = @collaborative_economy_page.text3_html
-
-            li
-              h4 = @collaborative_economy_page.title4
-              .markdown = @collaborative_economy_page.text4_html
-            li
-              h4 = @collaborative_economy_page.title5
-              .markdown = @collaborative_economy_page.text5_html
+    .container
+      .activities
+        .row
+          .col-lg-6
+            h4 = @collaborative_economy_page.title1
+            .markdown = @collaborative_economy_page.text1_html
+          .col-lg-6
+            h4 = @collaborative_economy_page.title2
+            .markdown = @collaborative_economy_page.text2_html
+        .row
+          .col-lg-6
+            h4 = @collaborative_economy_page.title3
+            .markdown = @collaborative_economy_page.text3_html
+          .col-lg-6
+            h4 = @collaborative_economy_page.title4
+            .markdown = @collaborative_economy_page.text4_html
+        .row
+          .col-lg-6
+            h4 = @collaborative_economy_page.title5
+            .markdown = @collaborative_economy_page.text5_html

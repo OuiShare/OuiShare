@@ -1,33 +1,37 @@
 - content_for :page_title, t('pages.communities.expert_groups')
-div#page-communities
-  div.green
+#page-communities
+  .green
     section.explain
-      div.row
-        div.large-12.columns
-          .markdown = @expert_groups_page.main_text_html
+      .container
+        .row
+          .col-lg-12
+            .markdown = @expert_groups_page.main_text_html
     section#map
-      div.row
-        div.large-12.columns
-          div.map
-            = image_tag @expert_groups_page.image.top_internal
+      .container
+        .row
+          .col-lg-12
+            .map
+              = image_tag @expert_groups_page.image.top_internal
 
   section#expert-groups-list.section
-    div.row
-      div.large-6.columns
-        h3.subtitle = t('knowledge_groups.all_knowledge_groups')
-    - @expert_groups.rank(:row_order).each do |c|
-      div.row.community
-        div.large-6.columns
-          p.title = c.name
-          .markdown = c.text_html
+    .container
+      .row
+        .col-lg-6
+          h3.subtitle = t('knowledge_groups.all_knowledge_groups')
+          hr.hr-large.blue
+      - @expert_groups.rank(:row_order).each do |c|
+        .row.community
+          .col-lg-6
+            p.title = c.name
+            .markdown = c.text_html
 
-        div.large-2.columns
-          = link_to c.link do
-            button.btn.white join
+          .col-lg-2
+            = link_to c.link do
+              button.btn.white join
 
-        div.large-4.columns
-          div.avatars
-            - c.users.each do |u|
-              span.block
-                = link_to u do
-                  = image_tag u.avatar_url
+          .col-lg-4
+            .avatars
+              - c.users.each do |u|
+                span.block
+                  = link_to u do
+                    = image_tag u.avatar_url

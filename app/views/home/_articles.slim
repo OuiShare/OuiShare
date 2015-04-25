@@ -1,26 +1,58 @@
 section#articles
-  div.row
-    div.large-8.columns
-      ul.articles.large-block-grid-2
-        - (Magazine.fetch_last_posts(@current_language.slug) rescue [])[0..1].each do |f|
-          li
-            a href="#{f.url}" target="blank"
-              h5.title = truncate(f.title, length: 70)
-              img.article src="#{f.summary.split(' ')[3].split('"')[1]}"
-              div.author
-                - author = User.where(name: f.author).first
-                - if author.present?
-                  img.avatar src="#{author.avatar_url(45)}"
-                p.name = "by #{f.author}"
-                p.date = "23h41, 21/11/2013"
-            div.tags
-              - begin
-                - f.categories[0..2].each do |t|
-                  span.label.blue = t
-              - rescue
+  .container
+    / div.row
+    /   div.large-8.columns
+    /     ul.articles.large-block-grid-2
+    /       - (Magazine.fetch_last_posts(@current_language.slug) rescue [])[0..1].each do |f|
+    /         li
+    /           a href="#{f.url}" target="blank"
+    /             h5.title = truncate(f.title, length: 70)
+    /             img.article src="#{f.summary.split(' ')[3].split('"')[1]}"
+    /             div.author
+    /               - author = User.where(name: f.author).first
+    /               - if author.present?
+    /                 img.avatar src="#{author.avatar_url(45)}"
+    /               p.name = "by #{f.author}"
+    /               p.date = "23h41, 21/11/2013"
+    /           div.tags
+    /             - begin
+    /               - f.categories[0..2].each do |t|
+    /                 span.label.blue = t
+    /             - rescue
 
-    div.large-4.columns
-      h3.subtitle.black = @articles_section.title
-      p = @articles_section.text_html
+    /   div.large-4.columns
+    /     h3.subtitle.black = @articles_section.title
+    /     p = @articles_section.text_html
 
-      a.btn.blue href="http://magazine.ouishare.net" = @articles_section.link_text
+    /     a.btn.blue href="http://magazine.ouishare.net" = @articles_section.link_text
+
+
+    .row
+      .col-lg-12
+        h3.blue = @articles_section.title
+        hr.hr-large.blue
+
+  .row
+    #slider-container.text-center style="min-height:100%;"
+      #slider1_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+        / Slides Container
+        div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+          - @magazines.each do |f|
+            div
+              img src="#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")}" u="image"
+                span.presentation.ouishare_stencil.white = f.title
+                span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
+                  a href="#{f.url}" target="blank" Read More
+
+        span.jssora13l style="width: 40px; height: 50px; top: 123px; left: 30px;" u="arrowleft"
+        / Arrow Right
+        span.jssora13r style="width: 40px; height: 50px; top: 123px; right: 30px" u="arrowright"
+
+  br
+  br
+  br
+
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        = @articles_section.text_html

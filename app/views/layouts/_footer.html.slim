@@ -1,52 +1,97 @@
-div#footer
-  footer.section
-    div.row
-      div.large-2.columns
-        ul
-          li
-            = link_to t('footer.about'), about_mission_path
-          li
-            = link_to t('footer.press_room'), press_path
-          li
-            = link_to t('footer.workus'), workus_path
-          li
-            = link_to t('footer.globalpartners'), global_partners_path
-      br
-      div.large-2.columns
-        ul
-          li
-            = link_to t('footer.contact'), contact_path
-          li
-            = link_to t('footer.faqs'), faq_path
-          li
-            = link_to t('footer.terms'), terms_path
+/ div#footer
+/   footer.section
+/     div.row
+/       div.large-2.columns
+/         ul
+/           li
+/             = link_to t('footer.about'), about_mission_path
+/           li
+/             = link_to t('footer.press_room'), press_path
+/           li
+/             = link_to t('footer.workus'), workus_path
+/           li
+/             = link_to t('footer.globalpartners'), global_partners_path
+/       br
+/       div.large-2.columns
+/         ul
+/           li
+/             = link_to t('footer.contact'), contact_path
+/           li
+/             = link_to t('footer.faqs'), faq_path
+/           li
+/             = link_to t('footer.terms'), terms_path
 
-      div.large-4.columns
-        div.social
-          a.facebook href="https://www.facebook.com/OuiShare"
-            = t('footer.follow_fb')
-            i.fa.fa-facebook
-          a.twitter href="https://www.twitter.com/OuiShare"
-            = t('footer.follow_tw')
-            i.fa.fa-twitter
+/       div.large-4.columns
+/         div.social
+/           a.facebook href="https://www.facebook.com/OuiShare"
+/             = t('footer.follow_fb')
+/             i.fa.fa-facebook
+/           a.twitter href="https://www.twitter.com/OuiShare"
+/             = t('footer.follow_tw')
+/             i.fa.fa-twitter
 
-      div.large-4.columns
-        h3
-          OuiShare
-        .right
-          p.opensource = link_to t('footer.open_source'), 'http://github.com/Ouishare/Ouishare'
-          = link_to 'http://engage.is' do
-            span.engage
-    div.row
-      div.subscribe.large-7
-        = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
-          div.row.collapse
-            div.large-5.columns
-              .email-field
-                input type="email" id="email" name="email" value=t('footer.your_email') required=""
-                small.error
-                  = t('footer.email_required')
-            div.large-7.columns
-              = submit_tag(t('footer.subscribe'), class: 'postfix btn white')
+/       div.large-4.columns
+/         h3
+/           OuiShare
+/         .right
+/           p.opensource = link_to t('footer.open_source'), 'http://github.com/Ouishare/Ouishare'
+/           = link_to 'http://engage.is' do
+/             span.engage
+/     div.row
+/       div.subscribe.large-7
+/         = form_tag('/newsletter/subscribe', 'data-abide' => '' , method: 'post')
+/           div.row.collapse
+/             div.large-5.columns
+/               .email-field
+/                 input type="email" id="email" name="email" value=t('footer.your_email') required=""
+/                 small.error
+/                   = t('footer.email_required')
+/             div.large-7.columns
+/               = submit_tag(t('footer.subscribe'), class: 'postfix btn white')
 
-            /*a.postfix href="#{newsletter_path}" Go !*/
+/             /*a.postfix href="# newsletter_path" Go !*/
+
+
+#f
+  .container
+    .row
+      .col-lg-10.col-lg-offset-1
+        .col-lg-4
+          h5 Subscribe to our newsletter            
+          = form_tag newsletter_subscribe_path, :class => "form-inline" do
+            .row
+              .col-lg-12.text-field-newsletter
+                = text_field_tag :email_address, "MAIL", :class => "form-control-footer"
+                = submit_tag "OK", :class => "btn-footer submit-newsletter", :style => 'border-radius: 0px;'
+        .col-lg-4.infos
+          = link_to about_mission_path do
+            h6 About
+          = link_to workus_path do
+            h6 = t('footer.workus')
+          = link_to contact_path do
+            h6 = t('footer.contact')
+          h6 OUISHARE logo kit
+          = link_to faq_path do
+            h6 = t('footer.faqs')
+          
+        .col-lg-4.follow
+          h5 Follow OuiShare
+          a href="https://www.facebook.com/OuiShare" target="_blank"
+            h6 FACEBOOK
+          a href="https://twitter.com/OuiShareFest" target="_blank"
+            h6 TWITTER
+          a href="https://www.flickr.com/photos/ouishare" target="_blank"
+            h6 FLICKR
+          a href="https://plus.google.com/+OuishareNet" target="_blank"
+            h6 GOOGLE+
+    br
+    br
+    .row
+      .col-lg-12.text-center
+        p
+          = "open source code by "
+          = link_to "http://engage.is", :target => "_blank" do
+            = "Engage"
+          = " & "
+          = link_to "http://www.pitch-me.fr", :target => "_blank" do
+            = "Pitch Me"

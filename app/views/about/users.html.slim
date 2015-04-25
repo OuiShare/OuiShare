@@ -1,20 +1,22 @@
 - content_for :page_title, 'Members'
-div#page-about-internal
+#page-about-internal
   section.theTeam#list
-    div.activities
-      div.row
-        div.large-4.columns
-          h3 = @users_page.title unless @users_page.nil?
-          .markdown = @users_page.text_html unless @users_page.nil?
+    .container
+      .activities
+        .row
+          .col-lg-4
+            h3 = @users_page.title unless @users_page.nil?
+            .markdown = @users_page.text_html unless @users_page.nil?
 
-        div.large-8.columns
-          ul.large-block-grid-2
+          .col-lg-8
             - @users.order('name').each do |a|
-              li
+              .col-lg-6.list-team
                 = link_to a do
-                  div.avatar
-                    = image_tag(a.avatar_url(140))
-                  div.desc
-                    span.name = a.fname unless a.fname.nil? 
-                    span.name style="margin-left:3px;" = a.name
-                    p.position = a.title
+                  .col-lg-5
+                    .avatar
+                      = image_tag(a.avatar_url(140))
+                  .col-lg-7.no-padding
+                    .desc
+                      span.name = a.fname unless a.fname.nil? 
+                      span.name style="margin-left:3px;" = a.name
+                      p.position = a.title

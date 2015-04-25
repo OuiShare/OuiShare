@@ -1,3 +1,5 @@
+$red: #D02947
+
 #page-donations
 
   .pink-box
@@ -31,7 +33,7 @@
       $triangle: false
 
       .f-dropdown
-        @include dropdown-container($content, $triangle, $max-width)
+        // @include dropdown-container($content, $triangle, $max-width)
         background: $red
 
         a
@@ -87,13 +89,6 @@
               right: 1px
               top: 1px
               white-space: nowrap
-
-            input:checked + label
-              background: $blue
-              color: white
-
-            input:checked + #custom
-              border: 2px solid $blue
 
             input[type="radio"]
               position: absolute

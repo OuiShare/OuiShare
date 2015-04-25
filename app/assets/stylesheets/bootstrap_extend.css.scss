@@ -1,0 +1,113 @@
+.navbar{
+  .navbar-header{
+    .navbar-brand{
+      .header-logo{
+        width: 230px;
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+  .nav.navbar-nav{
+    .social-media-icons-header{
+      position: relative;
+      top: 16px;
+    }
+  }
+}
+
+.container:not(.special-container-navbar){
+  width: 80% !important;
+}
+
+/**** Header display corrective (because languages change his width) ******/
+
+@media (min-width: 1070px) and (max-width: 1999px){
+  .special-container-navbar{
+    width: 1200px;
+  }
+}
+
+@media (max-width: 1069px){
+  .navbar-header{
+    float: none;
+  }
+}
+
+// @media (max-width: 1999px){
+//   .navbar-header{
+//     float: none;
+//   }
+// }
+/*************************************************************************/
+
+
+.round_fond {
+  // background-color: rgba(0,0,0,0.36);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+h3.naiv_thin{
+  font-family:'naiv_normal_thin';
+  .white
+  {
+    color:#ffffff;
+  }
+}
+
+h3.naiv_thin_white{
+  font-family:'naiv_normal_thin';
+  color:#ffffff;
+}
+
+h3.naiv
+{
+  font-family:'naiv_normal';
+  .white
+  {
+    color:#ffffff;
+  }  
+}
+
+h1.slider_naiv_thin
+{
+  font-family:'naiv_normal';
+  font-weight: bold;
+}
+
+.mb_20
+{
+  margin-bottom: 20px;
+}
+
+.mt_20
+{
+  margin-top: 20px;
+}
+
+
+p.testimonial
+{
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+p.white, p.white a
+{
+  color: #ffffff;
+}
+
+p.white a {
+  text-decoration: underline;
+}
+
+p.white a:hover {
+  text-decoration: underline;
+  color :#34495E;
+}
+
+hr.partners
+{
+  margin-top: 10px;
+}

@@ -1,302 +1,305 @@
-$blue: #00939A
-$red: #D02947
-$content: list
-$triangle: false
-$max-width: 50px
-$f-dropdown-bg: $blue
-$f-dropdown-border-color: #FFF
-$f-dropdown-border-width: 1px
-$topbar-dropdown-toggle-alpha: 0.1
+// $blue: #00939A
+// $red: #D02947
+// $content: list
+// $triangle: false
+// $max-width: 50px
+// $f-dropdown-bg: $blue
+// $f-dropdown-border-color: #FFF
+// $f-dropdown-border-width: 1px
+// $topbar-dropdown-toggle-alpha: 0.1
 
-body
-  font-family: "Naiv"
+// body
+//   font-family: "Naiv"
 
-  h1,h2,h3
-    font-family: "Ouishare Stencil", verdana
-    font-weight: normal
+//   h1,h2,h3
+//     font-family: "Ouishare Stencil", verdana
+//     font-weight: normal
 
-  h1,h2,h3
-    text-transform: uppercase
+//   h1,h2,h3
+//     text-transform: uppercase
 
-  p,h4,h5
-    font-family: "Naiv", verdana
+//   p,h4,h5
+//     font-family: "Naiv", verdana
 
-  a
-    color: #f39c12
-    &:hover
-      color: #f39c12
-      text-decoration: underline
+//   a
+//     color: #f39c12
+//     &:hover
+//       color: #f39c12
+//       text-decoration: underline
 
-.alert-box
-  &.notice
-    +alert( $blue )
-    text-align: center
-    margin-bottom: 0
-    padding: 20px
+// .alert-box
+//   &.notice
+//     +alert( $blue )
+//     text-align: center
+//     margin-bottom: 0
+//     padding: 20px
 
-  &.alert
-    +alert( $red )
-    text-align: center
-    margin-bottom: 0
-    padding: 20px
+//   &.alert
+//     +alert( $red )
+//     text-align: center
+//     margin-bottom: 0
+//     padding: 20px
 
-  .close
-    font-size: 2.375em
-    padding: 10px 4px 4px
+//   .close
+//     font-size: 2.375em
+//     padding: 10px 4px 4px
 
-.contain-to-grid
-  border-bottom: 1px solid white
+// .contain-to-grid
+//   border-bottom: 1px solid white
 
-.top-bar
-  z-index: 9999
-  background-color: #06040f
-
-
-  .title-area
-    li.name
-      h1
-        a
-          font-size: .1em
-          text-indent: -9999px
-          overflow: hidden
-          background: image-url('topbar-logo.png') no-repeat 0px 15px
-          width: 100px
-          height: 40px
-          color: black
-          text-decoration: none
-  ul
-    &> li.has-dropdown
-      a
-        text-transform: capitalize
-
-        &:after
-          background: image-url('arrow.png') no-repeat 0px 0px transparent
-          width: 13px
-          height: 7px
-          border: none
-
-        &:hover
-          background: $blue
-          text-decoration: none
-
-      .dropdown li.has-dropdown > a:after
-        border: medium none
-        margin-top: -7px
-        right: 5px
-        top: 1em
-        background: url("/assets/arrow-right.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0)
-        border: medium none
-        height: 13px
-        width: 7px
-        content: ""
-
-.top-bar-section
-  ul
-    background-color: #06040f
-    li
-
-      &>a
-        font-size: 14px
-        font-family: "Naiv"
-        font-weight: normal
-        &:hover
-          text-decoration: none
-
-  .dropdown
-    border-top: 2px solid white
-
-  .left
-    .donate
-      @media only screen and (max-width: 769px)
-        margin: 0
-        a
-          background: #155d60
-          &:hover
-            background: darken( #155d60, 5%)
-
-      margin-right: 10px
-      margin-left: 10px
-
-      .button
-        background: #155d60
-
-    .get-involved
-      .button
-        background: #124e51
-
-      @media only screen and (max-width: 769px)
-        a
-          background: #124e51
-          &:hover
-            background: darken( #155d60, 5% )
-
-    .button
-      border: none
-
-      &:hover
-        background: darken( #155d60, 5% )
-        border: none
-
-    .current-user
-      width: 25px
-.btn
-  font-size: 24px
-  text-transform: uppercase
-  padding: 10px 20px
-  font-style: italic
-  margin-bottom: 20px
-  display: inline-block
-  border: 0
-
-  &.white
-    background: white
-    color: $blue
-
-    &:hover
-      background: darken($blue, 10%)
-      color: white
-
-  &.blue
-    background: $blue
-    color: white
-
-    &:hover
-      background: darken($blue, 10%)
-      color: white
-
-#second-header
-  background: $blue
-  border-bottom: 1px solid white
-  padding-top: 20px
-
-  .social
-    text-align: right
-    padding-top: 15px
-
-    a
-      display: inline-block
-      text-align: center
-      margin-right: 10px
-      height: 30px
-      width: 30px
-      color: white
-      line-height: 23pt
-      border: 1px solid white
-
-      &.facebook
-        background-color: #3c5a9a
-
-      &.twitter
-        background-color: #359bed
-
-      &.play
-        background-color: #e82d28
-
-    .l18n, #lang
-      text-align: left
-
-    .l18n
-      +border-radius(none)
-      height: 30px
-      float: right
-      padding: 8px
-      font-size: .7em
-      color: white
-      border: 1px solid white
-      background: image-url('arrow.png') no-repeat 30px 10px transparent
-
-    .f-dropdown
-      @include dropdown-container($content, $triangle, $max-width)
-
-      a
-        border: 0
-        width: 100%
-        text-align: center
-        line-height: 0
-        font-size: 12px
-        line-height: 16px
-
-        &:hover
-          background: darken( $blue, 5%)
-          text-decoration: none
-h2
-  margin-bottom: 7px
-
-h3.subtitle
-
-  &.black, &.white
-    padding: 5px 10px
-    margin-bottom: 30px
-    display: inline-block
-
-  &.black
-    border: 1px solid black
-    color: black
-
-  &.white
-    border: 1px solid white
-    color: white
-
-p
-  font-size: 16px
+// .top-bar
+//   z-index: 9999
+//   background-color: #06040f
 
 
-/* Orbit modifications */
-.orbit-timer
-  display: none
-.orbit-bullets
-  top: 330px
-  left: 350px
-  position: absolute
-  z-index: 10
+//   .title-area
+//     li.name
+//       h1
+//         a
+//           font-size: .1em
+//           text-indent: -9999px
+//           overflow: hidden
+//           background: image-url('topbar-logo.png') no-repeat 0px 15px
+//           width: 100px
+//           height: 40px
+//           color: black
+//           text-decoration: none
+//   ul
+//     &> li.has-dropdown
+//       a
+//         text-transform: capitalize
 
-  li
-    background: transparent
-    border: 1px solid white
-    +border-radius(0)
-    display: block
-    float: left
-    height: 1.75em
-    margin-right: 6px
-    width: 1.75em
-    padding: 5px
+//         &:after
+//           background: image-url('arrow.png') no-repeat 0px 0px transparent
+//           width: 13px
+//           height: 7px
+//           border: none
 
-    &.active
-      background: transparent
+//         &:hover
+//           background: $blue
+//           text-decoration: none
 
-    span.active-bullet
-      background: white
-      display: block
-      width: 1em
-      height: 1em
+//       .dropdown li.has-dropdown > a:after
+//         border: medium none
+//         margin-top: -7px
+//         right: 5px
+//         top: 1em
+//         background: url("/assets/arrow-right.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0)
+//         border: medium none
+//         height: 13px
+//         width: 7px
+//         content: ""
 
-.orbit-container
-  .orbit-prev, .orbit-next
-    background: none
-    &> span
-      border: none
-    &:hover
-      background: none
-  .orbit-prev
-    span
-      background: url("/assets/home/arrow-left.png") no-repeat
-      display: block
-      width: 17px
-      height: 32px
-      left: 110px
-      top: 60%
-  .orbit-next
-    span
-      background: url("/assets/home/arrow-right.png") no-repeat
-      display: block
-      width: 17px
-      height: 32px
-      left: -50px
-      top: 60%
+// .top-bar-section
+//   ul
+//     background-color: #06040f
+//     li
+
+//       &>a
+//         font-size: 14px
+//         font-family: "Naiv"
+//         font-weight: normal
+//         &:hover
+//           text-decoration: none
+
+//   .dropdown
+//     border-top: 2px solid white
+
+//   .left
+//     .donate
+//       @media only screen and (max-width: 769px)
+//         margin: 0
+//         a
+//           background: #155d60
+//           &:hover
+//             background: darken( #155d60, 5%)
+
+//       margin-right: 10px
+//       margin-left: 10px
+
+//       .button
+//         background: #155d60
+
+//     .get-involved
+//       .button
+//         background: #124e51
+
+//       @media only screen and (max-width: 769px)
+//         a
+//           background: #124e51
+//           &:hover
+//             background: darken( #155d60, 5% )
+
+//     .button
+//       border: none
+
+//       &:hover
+//         background: darken( #155d60, 5% )
+//         border: none
+
+//     .current-user
+//       width: 25px
+// .btn
+//   font-size: 24px
+//   text-transform: uppercase
+//   padding: 10px 20px
+//   font-style: italic
+//   margin-bottom: 20px
+//   display: inline-block
+//   border: 0
+
+//   &.white
+//     background: white
+//     color: $blue
+
+//     &:hover
+//       background: darken($blue, 10%)
+//       color: white
+
+//   &.blue
+//     background: $blue
+//     color: white
+
+//     &:hover
+//       background: darken($blue, 10%)
+//       color: white
+
+// #second-header
+//   background: $blue
+//   border-bottom: 1px solid white
+//   padding-top: 20px
+
+//   .social
+//     text-align: right
+//     padding-top: 15px
+
+//     a
+//       display: inline-block
+//       text-align: center
+//       margin-right: 10px
+//       height: 30px
+//       width: 30px
+//       color: white
+//       line-height: 23pt
+//       border: 1px solid white
+
+//       &.facebook
+//         background-color: #3c5a9a
+
+//       &.twitter
+//         background-color: #359bed
+
+//       &.play
+//         background-color: #e82d28
+
+//     .l18n, #lang
+//       text-align: left
+
+//     .l18n
+//       +border-radius(none)
+//       height: 30px
+//       float: right
+//       padding: 8px
+//       font-size: .7em
+//       color: white
+//       border: 1px solid white
+//       background: image-url('arrow.png') no-repeat 30px 10px transparent
+
+//     .f-dropdown
+//       @include dropdown-container($content, $triangle, $max-width)
+
+//       a
+//         border: 0
+//         width: 100%
+//         text-align: center
+//         line-height: 0
+//         font-size: 12px
+//         line-height: 16px
+
+//         &:hover
+//           background: darken( $blue, 5%)
+//           text-decoration: none
+// h2
+//   margin-bottom: 7px
+
+// h3.subtitle
+
+//   &.black, &.white
+//     padding: 5px 10px
+//     margin-bottom: 30px
+//     display: inline-block
+
+//   &.black
+//     border: 1px solid black
+//     color: black
+
+//   &.white
+//     border: 1px solid white
+//     color: white
+
+// p
+//   font-size: 16px
+
+
+// /* Orbit modifications */
+// .orbit-timer
+//   display: none
+// .orbit-bullets
+//   top: 330px
+//   left: 350px
+//   position: absolute
+//   z-index: 10
+
+//   li
+//     background: transparent
+//     border: 1px solid white
+//     +border-radius(0)
+//     display: block
+//     float: left
+//     height: 1.75em
+//     margin-right: 6px
+//     width: 1.75em
+//     padding: 5px
+
+//     &.active
+//       background: transparent
+
+//     span.active-bullet
+//       background: white
+//       display: block
+//       width: 1em
+//       height: 1em
+
+// .orbit-container
+//   .orbit-prev, .orbit-next
+//     background: none
+//     &> span
+//       border: none
+//     &:hover
+//       background: none
+//   .orbit-prev
+//     span
+//       background: url("/assets/home/arrow-left.png") no-repeat
+//       display: block
+//       width: 17px
+//       height: 32px
+//       left: 110px
+//       top: 60%
+//   .orbit-next
+//     span
+//       background: url("/assets/home/arrow-right.png") no-repeat
+//       display: block
+//       width: 17px
+//       height: 32px
+//       left: -50px
+//       top: 60%
+
+.tags
+  text-align: left
 
 .label
   font-weight: normal
-  margin: 0 10px 10px 0
+  margin: 0 5px 10px 0
   padding-right: 20px
 
   &.white
@@ -308,53 +311,369 @@ p
     color: white
 
 
-.separator
-  display: block
+// .separator
+//   display: block
 
-  &.white
-    border-top: 1px solid white
-  &.black
-    border-top: 1px solid black
+//   &.white
+//     border-top: 1px solid white
+//   &.black
+//     border-top: 1px solid black
 
 
-.section
-  padding: 64px 0
+// .section
+//   padding: 64px 0
 
-.center
+// .center
+//   text-align: center
+
+
+// .sortable-highlight
+//   border: 2px dashed $blue
+
+// li
+//   .markdown
+//     font-size: 16px
+//     ul, ol
+//       margin: 0
+
+// .markdown
+//   color: black
+//   text-align: left
+//   font-size: 16px
+//   p
+//     margin-bottom: 15px
+//     text-align: justify
+
+//   ul
+//     padding: 0.9375em
+//     text-align: left
+
+//   ol
+//     margin-left: 20px
+//     text-align: left
+
+
+// .green
+//   color: black
+//   border-bottom: 1px solid black
+
+// select.date.optional
+//   width: 80px
+// select.time.optional
+//   width: 60px
+
+#admin
+  margin-top: 50px
+
+  h3
+    font-size: 26px
+
+.current-user
+  width: 25px
+
+#list
+  h3
+    font-size: 26px
+    text-align: left
+
+.btn-green
+  background-color: #09c894
+
+.uppercase
+  text-transform: uppercase
+
+
+.no-padding
+  padding: 0
+
+img
+  max-width: 100%
+
+.text-justify
+  text-align: justify
+
+.header-btn
+  background-color: #09c894
+  border: none
+  padding: 0px 10px 0px 10px !important
+  color: white
+  font-weight: bold
+  text-transform: uppercase
+  margin-top: 14px
+  border-radius: 5px !important
+  font-family: "Open Sans", regular, Arial, sans-serif
+  font-size: 12px
+
+.lang-dropdown
+  ul
+    top: 80% !important
+    left: 20px !important
+    width: 40px !important
+    min-width: 0 !important
+    background: transparent !important
+    border: 1px solid white !important
+    border-radius: 5px !important
+
+.lang-dropdown:hover
+  background: none !important
+  ul
+    top: 80% !important
+    left: 20px !important
+    width: 40px !important
+    min-width: 0 !important
+    background: transparent !important
+    border: 1px solid white !important
+    border-radius: 5px !important
+
+  
+
+
+.langage-select
+  padding: 5px 10px
+  background: white
+  border-radius: 5px
+  color: black
+  border: 1px solid rgb(194, 194, 194)
+  text-transform: uppercase
+  font-size: 14px
+  margin: 10px 20px
+
+.header-main-logo
+  width: 45px
+  margin-top: 3px
+
+.header-btn-li
+  padding-left: 10px
+  padding-right: 10px
+
+hr.blue
+  border: 0
+  border-top: 4px solid #001E60
+  border-radius: 5px
+
+hr.hr-large
+  width: 250px
+  margin-top: 20px
+  margin-bottom: 50px
+
+hr.hr-low
+  width: 50px
+  margin-top: 20px
+  margin-bottom: 20px
+
+section
+  text-align: center
+  padding-top: 35px
+  padding-bottom: 35px
+  min-height: 100%
+
+  ul
+    text-align: left
+
+  p
+    text-align: justify
+
+h3
+  font-size: 50px
+  font-family: "Naiv"
+  font-weight: bold
+  color: #001E60
+  text-transform: uppercase
+
+h4
+  font-size: 24px
+  font-family: "Naiv"
+  font-weight: bold
+  color: #001E60
+  text-transform: uppercase
+
+.top-buffer
+  margin-top: 100px
+
+
+.visible-link
+  text-shadow: 1px 1px white
+
+
+p.little
+  font-size: 14px
+
+
+.justify
+  text-align: justify
+
+
+.awards-text
+  padding: 20px 0 0 20px
+
+
+#myCarousel
+  margin-top: 25px
+
+.ouishare_stencil
+  text-transform: uppercase
+  // font-family: 'ouisharestencilbold'
+
+.triangle_bg
+  a
+    color: #34495e
+  
+
+
+.press-content
+  height: 200px
+  display: table
+  width: 85%
+  margin: auto
+  background: rgba(255,255,255,0.5)
+
+
+.quote-left-carousel
+  position: absolute
+  left: 30px
+  top: -30px
+
+
+.quote-right-carousel
+  position: absolute
+  right: 30px
+  bottom: 0px
+
+
+
+.press-text
+  h3
+    font-size: 25px
+  
+  text-align: center
+  height: auto
+  width: 80%
+  vertical-align: middle
+  display: table-cell
+
+
+.label-press
+  a
+    color: #0b0b6d
+    font-family: 'naiv_normal'
+  
+  color: #0b0b6d
+  font-family: 'naiv_normal'
+  text-align: left
+  margin-top: 15px
+  margin-left: 7.5%
+
+
+.navbar .nav li.dropdown:hover
+  background-color: #34495e
+
+.navbar .navbar-nav
+  display: inline-block
+  float: none
+  vertical-align: top
+
+.navbar .navbar-collapse
   text-align: center
 
 
-.sortable-highlight
-  border: 2px dashed $blue
 
-li
-  .markdown
-    font-size: 16px
-    ul, ol
-      margin: 0
+/* Header showing dropdown on hover */
+.navbar .nav li.dropdown:hover .dropdown-menu 
+  background-color: #34495e
+  opacity: 1
+  padding: 0
+  visibility: visible
 
-.markdown
+
+.navbar .navbar-brand
+  padding: 12px 28px 11px 17px
+
+
+.headline 
+  font-family: Calibri, "Helvetica", san-serif
+  line-height: 1.5em
   color: black
-  text-align: left
-  font-size: 16px
-  p
-    margin-bottom: 15px
-    text-align: justify
-
-  ul
-    padding: 0.9375em
-    text-align: left
-
-  ol
-    margin-left: 20px
-    text-align: left
+  font-size: 10px
 
 
-.green
-  color: black
-  border-bottom: 1px solid black
+.navbar .nav > li > a
 
-select.date.optional
-  width: 80px
-select.time.optional
-  width: 60px
+  padding: 12px 14px
+
+
+.nav.navbar-nav
+
+  .highlight
+    color: white
+    color: #fff
+    -o-transition: 800ms
+    -ms-transition: 800ms
+    -moz-transition: 800ms
+    -webkit-transition: 800ms
+    transition: 800ms
+    // font-family: arial
+    font-weight: bold
+  
+
+  .tickets-highlight
+    margin-right: 10px
+    .highlight
+      background-color: #09C894
+  
+    .highlight:hover
+      background-color: #34495e
+      color: #fff
+    
+  
+
+  .blog-highlight
+    .highlight
+    // background-color: #0b0b6d
+    color: white
+  
+    .highlight:hover
+      background-color: #34495e
+      color: #fff
+    
+  
+
+
+
+  .header-vertical-align
+    margin-top: 10px
+  
+
+
+.navbar.navbar-default
+  .language-header
+    color: white
+    font-weight: bold
+    margin-left: 10px
+    font-family: naiv_normal
+    border: none
+    width: 50px
+    background: url("/assets/arrow_language.png") no-repeat right
+    -moz-appearance: none
+    -webkit-appearance: none
+    margin-top: 15px
+    outline: none
+  
+
+
+.table-nonfluid 
+  width: auto
+
+.unstyled
+  list-style: none
+
+
+.display-inline
+  display: inline-block
+
+
+.white
+  color: #ffffff
+
+
+.navbar 
+  background-color: #ff8888

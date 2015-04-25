@@ -78,8 +78,8 @@ gem "compass-rails", "~> 1.1.2"
 gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
 #gem 'turbolinks'
-#gem 'bootstrap-sass'
-gem 'zurb-foundation'
+gem 'bootstrap-sass'
+#gem 'zurb-foundation'
 #gem 'angular-rails'
 # gem 'font-awesome-sass'
 gem "font-awesome-rails"

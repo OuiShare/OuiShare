@@ -1,32 +1,31 @@
-div#page-about-internal
-  div.green
+#page-about-internal
+  .green
     section.main-content
-      div.row
-        div.large-12.columns
-          .markdown = @knowledge_page.main_text_html
+      .container
+        .row
+          .col-lg-12
+            .markdown = @knowledge_page.main_text_html
     section#banner
-      div.row
-        div.large-12.columns
-          div.banner
-            = image_tag(@knowledge_page.image.top_internal)
+      .container
+        .row
+          .col-lg-12
+            .banner
+              = image_tag(@knowledge_page.image.top_internal)
 
   section#list
-    div.activities
-      div.row
-        div.large-12.columns
-          ul.large-block-grid-2
-            li
+    .container
+      .activities
+        .row
+          .col-lg-12
+            .col-lg-6
               h4 = @knowledge_page.title1
               .markdown = @knowledge_page.text1_html
-
-            li
+            .col-lg-6
               h4 = @knowledge_page.title2
               .markdown = @knowledge_page.text2_html
-
-            li
+            .col-lg-6
               h4 = @knowledge_page.title3
               .markdown = @knowledge_page.text3_html
-
-            li
+            .col-lg-6
               h4 = @knowledge_page.title4
               .markdown = @knowledge_page.text4_html

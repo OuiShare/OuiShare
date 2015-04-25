@@ -10,6 +10,7 @@ class HomeController < ApplicationController
     @take_part_section = @current_language.take_part_section || TakePartSection.new
     @articles_section = @current_language.articles_section || ArticlesSection.new
     @partner = @current_language.partner || Partner.new
+    @magazines = Magazine.fetch_last_posts(@current_language.slug) rescue []
   end
 
   def terms

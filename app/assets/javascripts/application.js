@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require bootstrap
+//= require ./jssor/jssor
+//= require ./jssor/jssor.slider
 
 //= require oui_share/oui_share.js
 //= require oui_share/script.js

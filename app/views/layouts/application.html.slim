@@ -17,6 +17,8 @@ html
     = csrf_meta_tag
     = stylesheet_link_tag "application"
     = javascript_include_tag "vendor/custom.modernizr"
+    link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'
+    
   body
     a href="https://plus.google.com/+OuishareNet" rel="publisher"
     = initjs_tag app_name: "OuiShare"
@@ -29,7 +31,7 @@ html
     - else
       = render 'layouts/header'
       - unless params[:controller] == 'home' && params[:action] == 'index'
-        = render 'layouts/second_header'
+        / = render 'layouts/second_header'
     = yield
     = render 'layouts/globalpartners'
     = render 'layouts/footer'
