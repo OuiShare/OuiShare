@@ -1,0 +1,106 @@
+it:
+  contact:
+    email: 'Email'
+    first_name: 'Nome'
+    country: 'Paese'
+    city: 'Città'
+    subject: 'Oggetto'
+    message: 'Scrivi qui il tuo messaggio'
+    send: 'Invia'
+    success: 'Il tuo messaggio è stato inviato'
+    missing_fields: 'Per favore compila i campi Email, Paese e Nome'
+  pages:
+    projects:
+      index: "Progetti"
+    events:
+      index: "Eventi"
+    faqs:
+      index: "FAQ"
+    about:
+      index: "OuiShare Live"
+      mission: "Chi siamo"
+      vision: "Vision"
+      history: "La "
+      organization: "Organizzazione"
+      team: "Team"
+      governance: "Governance"
+      value: 'Valori'
+      funded: 'Come ci finanziamo'
+      collaborative_economy: 'L''economia collaborativa'
+      users: 'Membri'
+    communities:
+      expert_groups: 'Gruppi di discussione'
+      live: 'OuiShare Everywhere'
+    contact:
+      index: 'Contattaci'
+    get_involved:
+      index: 'Partecipa'
+    registrations:
+      new: 'Partecipa'
+      edit: 'Modifica profilo'
+    admin/users:
+      show: 'Profilo'
+    knowledge:
+      research: 'Ricerche e pubblicazioni'
+      cocreation: 'Eventi di co-creazione'
+      index: 'Conoscenza'
+    workus:
+      index: 'Collabora con noi'
+    donations:
+      index: 'Fai una donazione!'
+      thank_you: 'Grazie per aver sostenuto OuiShare!'
+    press:
+      index: 'Sala stampa'
+  newsletter:
+    error: 'La registrazione non è andata a buon fine. Per favore, controlla il tuo indirizzo email e riprova.'
+    already_registered: "Questo indirizzo è già registrato alla newsletter"
+    successful: "Sei stato correttamente iscritto alla newsletter!"
+  admin:
+    not_authorized: 'Spiacente, non sei autorizzato a fare questa operazione.'
+  payment:
+    success: "Grazie! La tua donazione è stata registrata."
+    error: "Errore nel completare il pagamento."
+  workus:
+    become_a_partner: 'Vuoi saperne di più?'
+    contact_a_partner: 'Se sei interessato ai servizi OuiShare, contattaci.'
+  donations:
+    thank_you_text: "La tua donazione ci aiuterà a proseguire le nostre attività come non-profit e contribuirà a costruire una società più collaborativa. <br />#OuiShareLove"
+    help_support_ouishare: 'Sostieni OuiShare!'
+    choose_currency: 'Seleziona valuta'
+    donation: 'Fai una donazione'
+    recurring_donations: 'Se intendi fare una donazione ricorrente, seleziona "custom amount"'
+  projects:
+    info: 'Leggi altro'
+    organizers: 'Organizzatori'
+  knowledge:
+    all_knowledge_groups: 'Tutti i gruppi di discussione'
+  profile:
+    contact_me: 'Contattami'
+  menu:
+    alumni: 'Connectors onorari'
+    about_us: 'Chi siamo'
+    story: 'La nostra storia'
+    values: 'I nostri valori'
+    collaborative_economy: 'L''economia collaborativa'
+    organization: 'Organizzazione'
+    team: 'Team'
+    community: 'Community'
+    knowledge_groups: 'Gruppi di discussione'
+    connectors: 'Connectors'
+    users: 'Membri'
+    ouishare_everywhere: 'OuiShare Everywhere'
+    events: 'Eventi'
+    more_events: 'Altri eventi'
+    projects: 'Progetti'
+    more_projects: 'Tutti i progetti'
+    knowledge: 'Conoscenza'
+    research_and_publications: "Ricerche e pubblicazioni"
+    cocreation_events: 'Eventi di co-creazione'
+    wiki: 'Wiki'
+    magazine: 'Magazine'
+    english: 'Inglese'
+    french: 'Francese'
+    spanish: 'Spagnolo'
+    german: 'Tedesco'
+    donate: 'Fai una donazione'
+    get_involved: 'Partecipa'
