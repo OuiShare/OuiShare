@@ -505,7 +505,8 @@ a:focus {
 p {
   font-size: 16px;
   line-height: 24px;
-  font-family: "Open Sans"
+  font-family: "Open Sans";
+  color: #001E60;
 }
 .lead {
   font-size: 28px;

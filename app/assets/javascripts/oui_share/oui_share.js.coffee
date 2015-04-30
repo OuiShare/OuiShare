@@ -16,6 +16,19 @@ $(document).ready ->
 		jssor_slider1_starter(slider1_container)
 		jssor_slider2_starter(slider2_container)
 
+	$('.eur').click (e) ->
+		e.preventDefault()
+		console.log 'test'
+		$('.dolar').hide()
+		$('.euro').show()
+
+	$('.usd').click (e) ->
+		e.preventDefault()
+		console.log 'test'
+		$('.euro').hide()
+		$('.dolar').show()
+
+
 
 
 	
