@@ -4,6 +4,6 @@ class ContactMailer < ActionMailer::Base
 
   def contact(params)
     @params = params[:contact]
-    mail(to: @params[:to], from: @params[:email], subject: "[OuiShare contact] #{@params[:subject]}")
+    mail(to: @params[:to], from: 'no-reply@ouishare.net', subject: "[OuiShare contact] #{@params[:subject]}")
   end
 end
