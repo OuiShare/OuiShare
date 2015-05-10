@@ -13,40 +13,32 @@ section#events-home
       .col-lg-6.col-lg-offset-3.col-sm-12
         = @events_section.text_html
 
+    - if @current_language.events.visible.next.any?
+      .row
+        #slider-container.text-center style="min-height:100%;"
+          #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+            / Slides Container
+            div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+              - @current_language.events.visible.next.order('date_start').each do |e|
+                .event-slide
+                  .event-slide-month
+                    = I18n.t("date.month_names")[e.date_start.month]
+                  hr.event-slide-hr                
+                  
+                  .event-slide-title
+                    = e.title
+                  a.event-slide-link href=event_path(e)
 
-    .row
-      #slider-container.text-center style="min-height:100%;"
-        #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
-          / Slides Container
-          div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
-            - @current_language.events.visible.next.order('date_start').each do |e|
-              .event-slide
-                .event-slide-month
-                  = I18n.t("date.month_names")[e.date_start.month]
-                hr.event-slide-hr                
-                
-                .event-slide-title
-                  = e.title
+                  .event-slider-place 
+                    = e.place + ' | ' + I18n.l(e.date_start)
 
-                .event-slider-place 
-                  = e.place + ' | ' + I18n.l(e.date_start)
+                  .event-slider-resume
+                    = truncate(e.resume, length: 100)
+                        
+                  / span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
+                  /   = link_to event_path(e) do 
+                  /     span = e.title
 
-                .event-slider-resume
-                  = truncate(e.resume, length: 100)
-                      
-                / span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
-                /   = link_to event_path(e) do 
-                /     span = e.title
-
-          span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
-          / Arrow Right
-          span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
-
-      / div.large-8.columns
-      /   ul.events.large-block-grid-2
-      /     - @current_language.events.visible.order('date_start').next[0..1].each do |e|
-      /       li
-      /         = link_to event_path(e) do
-      /           p.title = e.title
-      /           img.event src="#{e.home_image.home_thumb}"
-      /           p.meta = e.cta
+            span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
+            / Arrow Right
+            span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
