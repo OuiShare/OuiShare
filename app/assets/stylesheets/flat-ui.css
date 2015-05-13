@@ -490,7 +490,7 @@ a {
 a:hover,
 a:focus {
 /*  color: #1abc9c;*/
-  color:#001E60;
+  color:#ff8888;
   text-decoration: none;
 }
 .img-rounded {
@@ -1201,7 +1201,7 @@ address {
 .navbar .nav > li.active > a:focus {
   background: none;
   /*color: #1abc9c;*/
-  color: #001E60;
+  color: #ff8888;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -1261,7 +1261,7 @@ address {
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
   /*color: #1abc9c;*/
-  color: #001E60;
+  color: #ff8888;
   background-color: transparent;
 }
 .navbar .nav > li > a[class*="fui-"] {

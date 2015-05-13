@@ -1,13 +1,14 @@
 - content_for :page_title, 'Communities'
+.title-header
+  .row
+    .col-lg-4.col-lg-offset-2
+      hr.hr-title
+      h3.blue Communities
+      hr.hr-title
 #page-communities
   .green
     section.explain
       .container
-        .row
-          .col-lg-12
-            h3.blue Communities
-            hr.hr-large.blue
-
         .row
           .col-lg-12
             .markdown = @community_page.main_text_html
