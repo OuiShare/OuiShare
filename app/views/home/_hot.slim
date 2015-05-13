@@ -28,7 +28,8 @@ section#hot
 
         .col-lg-6.col-lg-offset-3.col-sm-12
           = @hot_projects_section.text_html
-          = link_to 'see all project >', projects_path  
+          p
+            = link_to t('pages.home.see_all_projects'), projects_path  
 
 
     br

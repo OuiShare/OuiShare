@@ -51,6 +51,7 @@ fr:
       index: 'Nous rejoindre'
     home:
       terms: 'Editer le profile'
+      see_all_projects: 'Voir tous les projets'
     registrations:
       new: 'Nous rejoindre'
       edit: 'Modifier mon profil'
