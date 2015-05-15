@@ -1,4 +1,5 @@
 - content_for :page_title, t('pages.about.mission')
+== render partial: 'layouts/sub_header_title', locals: {title: "About Us"}
 div#page-about-internal
   = render "main_content"
   = render "list"

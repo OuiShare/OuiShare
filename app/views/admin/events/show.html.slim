@@ -1,4 +1,5 @@
 - content_for :page_title, @event.name
+== render partial: 'layouts/sub_header_title', locals: {title: @event.title}
 #event
   .row.section
     .container
