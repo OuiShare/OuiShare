@@ -1,5 +1,5 @@
-- content_for :page_title, 'Values'
-== render partial: 'layouts/sub_header_title', locals: {title: "Our Values"}
+- content_for :page_title, t('menu.values')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.values')}
 div#page-about-internal
   = render "main_content"
   = render "list_noimage"

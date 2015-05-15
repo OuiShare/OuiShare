@@ -1,5 +1,5 @@
-- content_for :page_title, 'Team'
-== render partial: 'layouts/sub_header_title', locals: {title: "Team"}
+- content_for :page_title, t('menu.team')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.team')}
 #page-about-internal
   section.theTeam#list
     .container

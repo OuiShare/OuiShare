@@ -1,4 +1,5 @@
-== render partial: 'layouts/sub_header_title', locals: {title: "Collaborative economy"}
+-  content_for :page_title, t('menu.collaborative_economy')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.collaborative_economy')}
 #page-about-internal
   section.main-content
     .container

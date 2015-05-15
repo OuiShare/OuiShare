@@ -1,5 +1,5 @@
-- content_for :page_title, 'Projects'
-== render partial: 'layouts/sub_header_title', locals: {title: "Projects"}
+- content_for :page_title, t('menu.more_projects')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.more_projects')}
 div#projects
   = render 'projects/slideshow'
   = render 'projects/list'

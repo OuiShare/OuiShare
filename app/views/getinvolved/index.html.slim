@@ -1,4 +1,5 @@
-== render partial: 'layouts/sub_header_title', locals: {title: "Get Involved"}
+- content_for :page_title, t('menu.get_involved')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.get_involved')}
 #page-about-internal
   .green
     section.main-content
