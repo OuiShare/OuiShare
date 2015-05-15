@@ -1,19 +1,26 @@
 .green
-  section#slideshow.section
+  section#slideshow
     .container
       .row
         .col-lg-12
-          #carousel-example-generic.carousel.slide data-ride="carousel"
+          h3.blue Projects
+          hr.hr-large.blue
+      .row
+        .col-lg-12
+          #slideshow.carousel.slide data-ride="carousel"
             / Indicators
-            ol.carousel-indicators
-              li.active data-slide-to="0" data-target="#carousel-example-generic"
-              li data-slide-to="1" data-target="#carousel-example-generic"
-            / Wrapper for slides
+            / ol.carousel-indicators
+            /   li.active data-slide-to="0" data-target="#carousel-example-generic"
+            /   li data-slide-to="1" data-target="#carousel-example-generic"
             .carousel-inner role="listbox"
-              - @current_language.projects.featured.each do |p|
-                li
-                  div.slideshow
+              - @current_language.projects.featured.each_with_index do |p, i|
+                - if i > 0
+                  .item
                     = link_to p do
-                      = image_tag p.image.top_image.url
+                      = image_tag p.image.top_image.url, :style => "margin: 0 auto;"
+                - else
+                  .item.active
+                    = link_to p do
+                      = image_tag p.image.top_image.url, :style => "margin: 0 auto;"
                       div.orbit-caption
                         span = p.name

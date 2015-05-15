@@ -51,6 +51,7 @@ en:
       index: 'Join'
     home:
       terms: 'Terms & Services'
+      see_all_projects: 'See all projects'
     registrations:
       new: 'Join'
       edit: 'Edit profile'

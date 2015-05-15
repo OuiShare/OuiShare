@@ -61,7 +61,7 @@
           = form_tag newsletter_subscribe_path, :class => "form-inline" do
             .row
               .col-lg-12.text-field-newsletter
-                = text_field_tag :email_address, "MAIL", :class => "form-control-footer"
+                = text_field_tag :email_address, '', :class => "form-control-footer", :placeholder => "MAIL"
                 = submit_tag "OK", :class => "btn-footer submit-newsletter", :style => 'border-radius: 0px;'
         .col-lg-4.infos
           = link_to about_mission_path do
