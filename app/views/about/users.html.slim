@@ -10,14 +10,15 @@
             .markdown = @users_page.text_html unless @users_page.nil?
 
           .col-lg-8
-            - @users.order('name').each do |a|
-              .col-lg-6.list-team
-                = link_to a do
-                  .col-lg-5
-                    .avatar
-                      = image_tag(a.avatar_url(140))
-                  .col-lg-7.no-padding
-                    .desc
-                      span.name = a.fname unless a.fname.nil? 
-                      span.name style="margin-left:3px;" = a.name
-                      p.position = a.title
+            .ch-grid
+              - @users.order('name').each do |a|
+                .col-lg-6.individuals-list-display
+                  li
+                    .ch-item style= "background-image: url(#{a.avatar_url(140)})"
+                      .ch-info
+                        h3 = a.fname.to_s + " " +a.name.to_s 
+                    h5
+                      = a.fname.to_s + " " +a.name.to_s
+                    - if !a.title.blank?
+                        small
+                          = a.title
