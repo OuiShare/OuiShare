@@ -16,7 +16,7 @@
                           h3.info 
                             = a.fname.to_s + " " +a.name.to_s 
                         p 
-                          = link_to "@" + a.twitter_url.slice!(20..-1), a.twitter_url, :target => "_blank"
+                          = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
                       - else 
                         h3.info
                           = a.fname.to_s + " " +a.name.to_s 
@@ -26,4 +26,4 @@
                       = a.fname.to_s + " " +a.name.to_s
                   - if !a.title.blank?
                       small
-                        = a.title                                
+                        = a.title                    

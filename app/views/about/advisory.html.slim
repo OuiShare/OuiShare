@@ -1,24 +1,30 @@
 - content_for :page_title, t('menu.advisors')
-== render partial: 'layouts/sub_header_title', locals: {title: t('menu.advisors'), text: ""}
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.advisors'), text: @advisors_page.text_html}
 #page-about-internal
   section.theTeam#list
     .container
       .activities
         .row
-          .col-lg-4
-            h3
-              = @advisors_page.title
-            p = @advisors_page.text_html
+          .col-lg-12
+            .ch-grid
+              - @users.each do |a|
+                .col-lg-4.individuals-list-display
+                    li
+                      .ch-item style= "background-image: url(#{a.avatar_url(220)})"
+                        .ch-info
+                          - if !a.twitter_url.blank?
+                            = link_to a.twitter_url, :target => "_blank"
+                              h3.info 
+                                = a.fname.to_s + " " +a.name.to_s 
+                            p 
+                              = link_to "@" + a.twitter_url.slice!(20..-1), a.twitter_url, :target => "_blank"
+                          - else 
+                            h3.info
+                              = a.fname.to_s + " " +a.name.to_s 
 
-          .col-lg-8
-            - @users.each do |a|
-              .col-lg-6.list-team
-                = link_to a do
-                  .col-lg-5
-                    .avatar
-                      = image_tag(a.avatar_url(140))
-                  .col-lg-7.no-padding
-                    .desc
-                      span.name = a.fname unless a.fname.nil? 
-                      span.name style="margin-left:3px;" = a.name
-                      p.position = a.title
+                      h6
+                        b
+                          = a.fname.to_s + " " +a.name.to_s
+                      - if !a.title.blank?
+                          small
+                            = a.title
