@@ -1,18 +1,13 @@
 - content_for :page_title, t('menu.users')
-== render partial: 'layouts/sub_header_title', locals: {title: t('menu.users')}
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.users'), text: @users_page.text_html}
 #page-about-internal
   section.theTeam#list
     .container
       .activities
-        .row
-          .col-lg-4
-            h3 = @users_page.title unless @users_page.nil?
-            .markdown = @users_page.text_html unless @users_page.nil?
-
-          .col-lg-8
+          .col-lg-12
             .ch-grid
               - @users.order('name').each do |a|
-                .col-lg-6.individuals-list-display
+                .col-lg-4.individuals-list-display
                   li
                     .ch-item style= "background-image: url(#{a.avatar_url(220)})"
                       .ch-info

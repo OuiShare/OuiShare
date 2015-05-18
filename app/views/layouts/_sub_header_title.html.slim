@@ -4,3 +4,12 @@
       hr.hr-title
       h3.blue = title
       hr.hr-title
+    .col-lg-4
+      - if defined? text
+      	p
+      	  = text
+      - if defined? link
+      	=link_to @alumni_page.link_text, contact_path, class: "btn btn-green uppercase"  	
+
+
+
