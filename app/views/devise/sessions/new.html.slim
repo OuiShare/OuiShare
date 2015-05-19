@@ -1,26 +1,20 @@
 - content_for :page_title, 'Login'
+== render partial: 'layouts/sub_header_title', locals: {title: t('.sign_in'), text: ""}
 #login
   .container
-    .row
-      .col-md-4.col-md-offset-4
-        h1.text-center 
-          = t('.sign_in')
-        hr
-        h2.text-center 
-          small
-            Please fill in your information
-        hr.invisible
-        
-        = form_tag new_user_session_path do
-          .form-group.row.text-center
-            = text_field_tag 'user[email]', '', :placeholder => 'Your Email', :class => 'form-control'
-          .form-group.row.text-center
-            = password_field_tag 'user[password]', '', :placeholder => 'Your password', :class => 'form-control'
-          .form-group.row.text-center
-            / .checkbox
-            = check_box_tag 'user[remember_me]'
-            = label_tag 'user[remember_me]', 'Remember me'
-          .form-group.row.text-center
-            = link_to "Forgotten password?", new_password_path(resource_name)
-          .form-group.row.text-center
-            button.btn.btn-primary Sign in
+    .col-lg-8.col-lg-offset-2
+      .row
+        .col-md-8.col-md-offset-2
+          = form_tag new_user_session_path do
+            .form-group.row.text-center
+              = text_field_tag 'user[email]', '', :placeholder => 'E-MAIL', :class => 'form-control'
+            .form-group.row.text-center
+              = password_field_tag 'user[password]', '', :placeholder => 'PASSWORD', :class => 'form-control'
+            .form-group.row.text-center
+              / .checkbox
+              = check_box_tag 'user[remember_me]'
+              = label_tag 'user[remember_me]', 'Remember me'
+            .form-group.row.text-center
+              button SIGN IN
+            .form-group.row.text-center
+              = link_to "Forgotten password?", new_password_path(resource_name)  
