@@ -8,9 +8,9 @@
 
         - p = @current_language.partner || Partner.new
 
-        .col-lg-4.col-lg-offset-4
-          .col-lg-6
-            = link_to image_tag('/assets/maif.png', :class => "img-responsive"), "http://www.maif.fr/", :target => "_blank"
+        .col-lg-12
+          .col-lg-3.col-lg-offset-3.center
+            = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank"
 
-          .col-lg-6
-            = link_to image_tag('/assets/sncf.png', :class => "img-responsive"), "http://www.sncf.com/", :target => "_blank"
+          .col-lg-3.center
+            = link_to image_tag('/assets/sncf.png'), "http://www.sncf.com/", :target => "_blank"
