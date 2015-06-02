@@ -2,12 +2,12 @@ div#page-about-internal
   div.green
     section.main-content
       div.row
-        div.large-12.columns
+        div.col-lg-12
           .markdown = @workus_page.text_html
 
     section#banner
       div.row
-        div.large-12.columns
+        div.col-lg-12
           div.banner
             = image_tag(@workus_page.image.top_internal)
 
@@ -15,20 +15,20 @@ div#page-about-internal
     .services
       - @services.rank(:row_order).each do |s|
         div.row.actvity
-          div.large-6.columns
+          div.col-lg-6
             = link_to s.link do
               h4 = s.name
             .markdown = s.text_html
-          div.large-6.columns
+          div.col-lg-6
             = link_to s.link do
               div.img-sample
                 = image_tag(s.image.list_thumb)
 
   section#become
     div.row
-      div.large-4.columns
+      div.col-lg-4
         h4 = t('workus.become_a_partner')
         .markdown = t('workus.contact_a_partner')
 
-      div.large-8.columns
+      div.col-lg-8
         = render 'contact/form'

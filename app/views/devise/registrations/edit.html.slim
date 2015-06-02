@@ -1,16 +1,16 @@
 .row
-  .large-12.columns
+  .col-lg-12
     br/
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
       = f.error_notification
       .form-inputs
         .row
-          .large-6.columns
-            = f.input :fname, :label => 'First Name', :autofocus => true
-            = f.input :name, :required => true 
+          .col-lg-6
+            = f.input :fname, :label => 'First name', :autofocus => true
+            = f.input :name, :label => "Last name", :required => true 
             = f.label :occupation, "* Gender"
             = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
-            = f.input :email, :required => true
+            = f.input :email, :label => "(Login address)" :required => true
             = f.input :title
             = f.input :bio
             = f.label :birthday, "Date of birth"
@@ -21,18 +21,18 @@
             = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
             = f.label :country , "* Country"
             = f.country_select :country, priority_countries: ["GB", "US"], :required => true
-            = f.input :city, :required => true
-            = f.input :image, as: :image_preview, input_html: {preview_version: :small}
-            = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
+            = f.input :city, :required => true 
+            = f.label :topics, "Which of the following topics are you interested in?", :style => "margin-bottom:7px;font-weight:bold;"
             = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
-          .large-6.columns            
+          .col-lg-6            
+            = f.input :image, as: :image_preview, input_html: {preview_version: :small}
             = f.input :facebook_url
             = f.input :twitter_url
             = f.input :google_plus_url
             = f.input :github_url
             = f.input :linkedin_url
-            = f.input :email_address
-            = f.input :tag_list, as: :text, label: "Tags, separated by comma and without #"
+            = f.input :email_address, label: "Email address to display on profile"
+            = f.input :tag_list, as: :text, label: "Interested in (Tags, separated by comma and without #)"
             = f.input :organization_name, label: "Name of your organization"
             = f.input :organization_url, label: "Url of your organization"
             = f.input :password, :autocomplete => "off", :required => false
