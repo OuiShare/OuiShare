@@ -65,14 +65,19 @@
                 = submit_tag "OK", :class => "btn-footer submit-newsletter", :style => 'border-radius: 0px;'
         .col-lg-4.infos
           = link_to about_mission_path do
-            h6 About
+            h6 = t('footer.about')
+          = link_to press_path do
+            h6 = t('footer.press_room')
           = link_to workus_path do
             h6 = t('footer.workus')
+          = link_to global_partners_path do
+            h6 = t('footer.globalpartners')
           = link_to contact_path do
             h6 = t('footer.contact')
-          h6 OUISHARE logo kit
           = link_to faq_path do
             h6 = t('footer.faqs')
+          = link_to terms_path do
+            h6 = t('footer.terms')
           
         .col-lg-4.follow
           h5 Follow OuiShare
