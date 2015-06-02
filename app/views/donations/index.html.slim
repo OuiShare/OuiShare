@@ -123,6 +123,8 @@ div#page-donations
                       img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
             div.large-12.columns
               p = t('donations.recurring_donations')
+      div.large-4.columns
+        iframe height="200px" src="http://faircoin.ouishare.net/donate/" width="100%" style="border: none; overflow: hidden;" Faircoin
     - if params[:sign_up] == 'yes'
       a.button.right style= "margin-right:50px;text-decoration:none;"href="register/thanks" Complete Registration
   - if !params[:sign_up]
