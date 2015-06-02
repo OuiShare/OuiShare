@@ -2,40 +2,40 @@
   h4 This event will be displayed under the following language:
   = @event.language.name
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.input :visible, label: 'Visible in events list'
       = f.input :display_on_menu, label: 'Show in menu'
       = f.submit
   div.row
-    div.large-7.columns
+    div.col-lg-7
       = f.input :title, label: 'Event title'
       = f.input :place, label: 'Location (city or venue name)'
       = f.input :address, label: 'Full address (will be used on the map)'
-    div.large-5.columns
+    div.col-lg-5
       = f.input :date_start, order: [:day, :month, :year]
       = f.input :date_end, order: [:day, :month, :year]
       = f.input :time
   div.row
-    div.large-7.columns
+    div.col-lg-7
       = f.input :resume, label: 'Short teaser about the event (Markdown)'
       = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #'
-    div.large-5.columns
+    div.col-lg-5
       = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Main image (555x250px, displayed on the event page)'
       = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in events list)'
   div.row
-    div.large-12.columns    
+    div.col-lg-12    
       = f.input :info, label: 'About this event (Long description, Markdown)'
       = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
   div.row
-    div.large-4.columns
+    div.col-lg-4
       = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
       = f.input :service1_link, label: 'External registration 1 link'
       = f.input :service1_title, label: 'External registration 1 title'
-    div.large-4.columns
+    div.col-lg-4
       = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 2 image'
       = f.input :service2_link, label: 'External registration 2 link'
       = f.input :service2_title, label: 'External registration 2 title'
-    div.large-4.columns
+    div.col-lg-4
       = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 3 image'
       = f.input :service3_link, label: 'External registration 3 link'
       = f.input :service3_title, label: 'External registration 3 title'
@@ -44,7 +44,7 @@
       / = f.input :title2, label: 'Title 2 (Deprecated)'
       / = f.input :text2, label: 'Text 2 (Deprecated)'
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.association :users, as: :check_boxes, collection: User.all(order: 'name'), label: 'Organizers (Select members organising this event)'
 
       = f.submit

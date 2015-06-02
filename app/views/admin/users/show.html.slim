@@ -1,13 +1,13 @@
 - content_for :page_title, "Profile - #{@user.name}"
 #profile
   div.row.section
-    div.large-3.columns
+    div.col-lg-3
       = image_tag @user.avatar_url(200)
       - if current_user && current_user.id == @user.id
         br
         i.fa.fa-pencil
         = link_to " Edit Profile", edit_user_registration_path
-    div.large-6.columns
+    div.col-lg-6
       h3.subtitle 
         = @user.fname unless @user.fname.nil?
         = " "
@@ -19,7 +19,7 @@
       / span.label.blue blah
       / span.label.blue blah
 
-    div.large-3.columns
+    div.col-lg-3
       h4.center = t('profile.contact_me')
       ul.large-block-grid-3.social
         - if @user.email_address.present?
@@ -49,24 +49,24 @@
 
   /div.contribute.section
     div.row
-      div.large-12.columns
+      div.col-lg-12
         h3.subtitle.white Contribute to
     div.row
-      div.large-6.columns
+      div.col-lg-6
         h4 OuiShare POA
         p Lorem ipsum dolor sit amet, consectetuer adipiscing
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
           nec, purus. Cum sociis natoque penatibus et magnis dis
 
-     / div.large-6.columns
+     / div.col-lg-6
         h4 OuiShare POA
         p Lorem ipsum dolor sit amet, consectetuer adipiscing
           elit. Donec hendrerit tempor tellus. Donec pretium posuere
           tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
           nec, purus. Cum sociis natoque penatibus et magnis dis
   div.row.section
-    div.large-5.columns
+    div.col-lg-5
       div.large
         h4 About
         br
@@ -92,7 +92,7 @@
                 = topic.name.to_s
         
 
-    div.large-5.large-offset-1.columns
+    div.col-lg-5.col-lg-offset-1
       div.large
         h4 Organization
         br

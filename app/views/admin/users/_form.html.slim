@@ -1,19 +1,19 @@
 = simple_form_for [:admin, @user] do |f|
   div.row
-    div.large-4.columns
+    div.col-lg-4
       = f.input :fname, label: 'First Name'
       = f.input :name, label: 'Last Name'
       = f.input :image, as: :image_preview, input_html: {preview_version: :small}
       = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
       = f.input :email, :required => true
-    div.large-4.columns
+    div.col-lg-4
       = f.country_select :country, priority_countries: ["GB", "US", "ES", "FR", "DE", "IT"], label: 'Country (Required)', :required => true
       = f.input :city, :required => true
       = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select language (Required)", label: 'Preferred language', :required => true
       = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select occupation (Required)", label: 'Occupation type', :required => true
       = f.input :organization_name, label: "Name of your organization"
       = f.input :organization_url, label: "Website of your organization"  
-    div.large-4.columns
+    div.col-lg-4
       = f.input :email_address, label: 'E-mail to display on your profile'
       = f.input :facebook_url
       = f.input :twitter_url, label: 'Please insert the full URL like http://twitter.com/username'
@@ -21,27 +21,27 @@
       = f.input :github_url
       = f.input :linkedin_url
   div.row
-    div.large-4.columns
+    div.col-lg-4
       = f.input :title, label: 'Title or occupation'  
-    div.large-8.columns
+    div.col-lg-8
       = f.input :bio, label: 'Biography'
   div.row
-    div.large-6.columns    
+    div.col-lg-6    
       = f.input :tag_list, label: 'Interests (free tags, separated by comma and without #)'
-    div.large-6.columns
+    div.col-lg-6
       
   div.row
-    div.large-12.columns
+    div.col-lg-12
       h4 User rights (admin)
   div.row
-    div.large-4.columns
+    div.col-lg-4
       = f.input :profile_type, label: 'Profile type (user class)'
-    div.large-4.columns
+    div.col-lg-4
       = f.input :admin
-    div.large-4.columns
+    div.col-lg-4
       = f.input :show_order, label: 'Display order (on Connectors list)'
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.submit
 
 .userID data-url= @user.id

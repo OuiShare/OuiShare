@@ -2,21 +2,21 @@
   h4 This project will be displayed under the following language:
   = @project.language.name
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.input :visible, label: 'Visible in projects list'
       = f.input :featured, label: 'Featured in projects slider'
       = f.input :display_on_menu, label: 'Show in menu'
       = f.submit
   div.row
-    div.large-7.columns
+    div.col-lg-7
       = f.input :name, label: 'Project name'
       = f.input :resume, label: 'Short teaser about the project (Markdown)'
       = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #'
-    div.large-5.columns
+    div.col-lg-5
       = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Main image (555x250px, displayed on project page)'
       = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in projects list)'
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.input :info, label: 'More information (Long description, Markdown)'
       = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
       / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
@@ -33,6 +33,6 @@
       / = f.input :title2
       / = f.input :text2, label: 'Text 2 (Markdown)'
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
       = f.submit

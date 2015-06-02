@@ -1,33 +1,33 @@
 div.row
-  div.large-12.columns
+  div.col-lg-12
     h2.subheader Home page
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Top Banner
     table
       tr
         th Language
-        th Title1
+        /th Title1
         th Text1
-        th Title2
-        th Text2
+        th Link text1
+        th Link text2
         th
         th
       - Language.all.each do |l|
         - if l.top_banner.present?
           tr
             td = l.name
-            td = l.top_banner.title1
+            /td = l.top_banner.title1
             td = l.top_banner.text1
-            td = l.top_banner.title2
-            td = l.top_banner.text2
+            td = l.top_banner.link_text1
+            td = l.top_banner.link_text2
             td = link_to "Edit", edit_admin_language_top_banner_path(l, l.top_banner)
             td = link_to "Remove", [:admin, l, l.top_banner], data: { confirm: 'Are you sure?' }, method: :delete
         - else
           tr
             td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_top_banner_path(l.id)
+            td colspan='5' = link_to 'Create', new_admin_language_top_banner_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader What is
     table
       tr
@@ -61,7 +61,7 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Hot Projects
     table
       tr
@@ -85,7 +85,7 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_hot_projects_section_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Events
     table
       tr
@@ -107,7 +107,7 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Articles
     table
       tr
@@ -130,7 +130,7 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_articles_section_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Take Part
     table
       tr
@@ -160,7 +160,7 @@ div.row
             td = l.name
             td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
 
-  div.large-12.columns
+  div.col-lg-12
     h3.subheader Partners
     table
       tr
