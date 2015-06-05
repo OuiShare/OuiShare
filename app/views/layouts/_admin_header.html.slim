@@ -11,10 +11,10 @@
       ul.nav.navbar-nav
 
         li.dropdown
-          a href="#" About
+          a href="#{admin_home_path}" Home
           ul.dropdown-menu
             li.dropdown-submenu
-              a href="#{admin_missions_path}" Mission
+              a href="#{admin_missions_path}" About us
               ul.dropdown-menu
                 li
                   a href="#{admin_activities_path}" Activities
@@ -31,7 +31,7 @@
                 li
                   a href="#{admin_faq_questions_path}" Questions
             li
-              = link_to 'Team', admin_team_pages_path
+              = link_to t('menu.team'), admin_team_pages_path
             li
               = link_to 'Advisors', admin_advisors_pages_path
             li
