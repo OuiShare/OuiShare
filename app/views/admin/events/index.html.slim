@@ -5,8 +5,8 @@
     - Language.all.each do |l|
       div.col-lg-12
         h3.subheader = "#{l.name} events"
-        a.btn.btn-success 
-          = link_to 'Create', new_admin_language_event_path(l.id)
+        h6.btn.btn-success 
+          = link_to 'Create new event on #{l.name} page', new_admin_language_event_path(l.id)
         table.table
           tr
             th Name
