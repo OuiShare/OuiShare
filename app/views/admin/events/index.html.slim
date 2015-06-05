@@ -5,7 +5,7 @@
     - Language.all.each do |l|
       div.col-lg-12
         h3.subheader = "#{l.name} events"
-        = link_to 'Create', new_admin_language_event_path(l.id)
+        a.btn.btn-success = link_to 'Create', new_admin_language_event_path(l.id)
         table.table
           tr
             th Name
