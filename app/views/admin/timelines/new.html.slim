@@ -1,10 +1,11 @@
-div.row
-  div.col-lg-12
-    h1 New Timeline
+.container#admin
+  div.row
+    div.col-lg-12
+      h1 New Timeline
 
-	= simple_form_for  @timeline, url: {:controller => "timelines", :action => "create"} do |f|
-	  h4 Language
-	  = @timeline.language.name
-	  = f.input :url
-	  = f.input :text, label: 'Text (Markdown)'
-	  = f.submit
+      = simple_form_for  @timeline, url: {:controller => "timelines", :action => "create"} do |f|
+        h4 Language
+        = @timeline.language.name
+        = f.input :url
+        = f.input :text, label: 'Text (Markdown)'
+        = f.submit

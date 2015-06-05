@@ -29,18 +29,18 @@
               td colspan='5' = link_to 'Create', new_admin_language_top_banner_path(l.id)
 
     div.col-lg-12
-      h3.subheader What is
-      table.table.table-hover
+      h3.subheader What is OuiShare?
+      table.table.table-hover.table-condensed
         tr
           th Language
           th Title1
-          th Text1
+          /th Text1
           th Title2
-          th Text2
+          /th Text2
           th Title3
-          th Text3
+          /th Text3
           th Title4
-          th Text4
+          /th Text4
           th
           th
         - Language.all.each do |l|
@@ -48,13 +48,13 @@
             tr
               td = l.name
               td = l.what_is_section.title1
-              td = l.what_is_section.text1
+              /td = l.what_is_section.text1
               td = l.what_is_section.title2
-              td = l.what_is_section.text2
+              /td = l.what_is_section.text2
               td = l.what_is_section.title3
-              td = l.what_is_section.text3
+              /td = l.what_is_section.text3
               td = l.what_is_section.title4
-              td = l.what_is_section.text4
+              /td = l.what_is_section.text4
               td = link_to "Edit", edit_admin_language_what_is_section_path(l, l.what_is_section)
               td = link_to "Remove", [:admin, l, l.what_is_section], data: { confirm: 'Are you sure?' }, method: :delete
           - else
@@ -63,7 +63,7 @@
               td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
 
     div.col-lg-12
-      h3.subheader Hot Projects
+      h3.subheader New projects
       table.table.table-hover
         tr
           th Language
@@ -87,7 +87,7 @@
               td colspan='6' = link_to 'Create', new_admin_language_hot_projects_section_path(l.id)
 
     div.col-lg-12
-      h3.subheader Events
+      h3.subheader Upcoming events
       table.table.table-hover
         tr
           th Language
@@ -109,7 +109,7 @@
               td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
 
     div.col-lg-12
-      h3.subheader Articles
+      h3.subheader OuiShare Magazine
       table.table.table-hover
         tr
           th Language
@@ -132,12 +132,12 @@
               td colspan='6' = link_to 'Create', new_admin_language_articles_section_path(l.id)
 
     div.col-lg-12
-      h3.subheader Take Part
-      table.table.table-hover
+      h3.subheader Join us
+      table.table.table-hover.table-condensed
         tr
           th Language
           th Main title
-          th Main text
+          /th Main text
           th Link text
           th Title1
           th Title2
@@ -149,7 +149,7 @@
             tr
               td = l.name
               td = l.take_part_section.main_title
-              td = l.take_part_section.main_text
+              /td = l.take_part_section.main_text
               td = l.take_part_section.link_text
               td = l.take_part_section.title1
               td = l.take_part_section.title2
@@ -162,7 +162,7 @@
               td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
 
     div.col-lg-12
-      h3.subheader Partners
+      h3.subheader Featured in (Media partners)
       table.table.table-hover
         tr
           th Language
