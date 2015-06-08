@@ -5,11 +5,11 @@
     .container
       .activities
         .row 
-          .col-lg-8.col-lg-offset-2
+          .col-lg-6.col-lg-offset-3.col-sm-12
               h2.center
                 = @team_page.title
         .row
-          .col-lg-10.col-lg-offset-1
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @team_page.text_html
             a.btn.btn-green.uppercase href="#{contact_path}" = @team_page.link_text
         .row    

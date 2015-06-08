@@ -3,41 +3,42 @@
 #project
   .container
     .row.section
-      .col-lg-5
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        img.banner src="#{@project.image.project_page_thumb.url}"
         .markdown = @project.resume_html
         - @project.tags.each do |t|
           span.label.blue = t.name
-      .col-lg-7
-        img.banner src="#{@project.image.project_page_thumb.url}"
+       
     .info
       .row.section
-        .col-lg-4
+        .col-lg-6.col-lg-offset-3.col-sm-12
           h3.subtitle.black = t('projects.organizers')
           .avatars
             - @project.users.each do |u|
               span.block
                 = link_to u do
                   = image_tag(u.avatar_url(140))
-
-        .col-lg-8
+      br
+      br
+        .col-lg-6.col-lg-offset-3.col-sm-12
           h3.subtitle.black = t('projects.info')
           .markdown = @project.info_html
 
       .separator.black
 
       .row.joinus
-        .col-lg-12
+        .col-lg-6.col-lg-offset-3.col-sm-12
           h3.subtitle.black = t('projects.join_us')
 
           .markdown = @project.join_us_text_html
 
       .row.present
-        .col-lg-6
+        .col-lg-6.col-lg-offset-3.col-sm-12
           - if @project.title1.present?
             h3.subtitle.black = @project.title1
             .markdown = @project.text1_html
 
-        .col-lg-6
+        .col-lg-6.col-lg-offset-3.col-sm-12
           - if @project.title2.present?
             h3.subtitle.black = @project.title2
             .markdown = @project.text2_html

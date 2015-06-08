@@ -4,32 +4,33 @@
     section.main-content
       .container
         .row
-          .large-12.columns
+          .col-lg-6.col-lg-offset-3.col-sm-12
             p = @organization_page.main_text_html
-    section#banner
-      .container
-        .row
-          .large-12.columns
-            .banner
-              = image_tag(@organization_page.image.top_internal)
+    / section#banner
+    /   .container
+    /     .row
+    /       .large-12.columns
+    /         .banner
+    /           = image_tag(@organization_page.image.top_internal)
 
   section#list
     .container
       .activities
-        .row
-          .col-lg-10.col-lg-offset-1
-            .col-lg-6
-              h4 = @organization_page.title1
-              p = @organization_page.text1_html
-            .col-lg-6
-              h4 = @organization_page.title2
-              p = @organization_page.text2_html
-        br
-        .row
-          .col-lg-10.col-lg-offset-1
-            .col-lg-6
-              h4 = @organization_page.title3
-              p = @organization_page.text3_html
-            .col-lg-6
-              h4 = @organization_page.title4
-              p = @organization_page.text4_html
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @organization_page.title1
+          p = @organization_page.text1_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @organization_page.title2
+          p = @organization_page.text2_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @organization_page.title3
+          p = @organization_page.text3_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @organization_page.title4
+          p = @organization_page.text4_html

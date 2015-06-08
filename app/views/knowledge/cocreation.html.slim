@@ -5,29 +5,29 @@
     section.explain
       .container
         .row
-          .col-lg-12
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @cocreation_page.text_html
 
     section#map
       .container
         .row
-          .col-lg-12
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .map
               = image_tag @cocreation_page.image.top_internal
 
   section#communities-list.section
     .container
       .row
-        .col-lg-6
+        .col-lg-6.col-lg-offset-3.col-sm-12
           h3.subtitle Events
       - @cocreations.each do |c|
         .row.community
-          .col-lg-6
-            p.title = c.name
-            .markdown = c.text_html
-          .col-lg-6
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            h4.title.cente = c.name
             - if c.link.present?
               = link_to c.link, target: '_blank' do
                 = image_tag c.image.list_thumb
             - else
               = image_tag c.image.list_thumb
+            .markdown = c.text_html
+            
