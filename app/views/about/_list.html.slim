@@ -6,13 +6,15 @@ section#list
           - unless params[:action] == 'mission'
             = link_to l.link do
               .col-lg-6.col-lg-offset-3.col-sm-12
-                h4 = l.name
+                h3.blue = l.name
+                hr.hr-large.blue 
                 = image_tag(l.image.list_thumb.url)
                 .markdown = l.text_html
                 
           - else
             .col-lg-6.col-lg-offset-3.col-sm-12
-                h4 = l.name
+                h3.blue = l.name
+                hr.hr-large.blue 
                 = image_tag(l.image.list_thumb.url)
                 .markdown = l.text_html
               

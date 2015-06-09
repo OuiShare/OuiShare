@@ -4,5 +4,6 @@ section#list.section
       div.row
         = link_to(l.link)
           .col-lg-6.col-lg-offset-3.col-sm-12
-            h4 = l.name
+            h3.blue = l.name
+            hr.hr-large.blue 
             .markdown = l.text_html

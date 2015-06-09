@@ -1,22 +1,20 @@
 .green
   section#slideshow
     .container
-      .row
-        .col-lg-12
-          h3.blue Events
-          hr.hr-large.blue
-      .row
-        .col-lg-12
-          #carousel-example-generic.carousel.slide data-ride="carousel"
-            / Wrapper for slides
-            .carousel-inner role="listbox"
-              - @current_language.events.visible.next[0..1].each_with_index do |e, i|
-                - if i > 0
-                  .item
-                    = link_to e do
-                      = image_tag e.image.top_image.url, :style => "margin: 0 auto;"
-                - else
-                  .item.active
-                    = link_to e do
-                      = image_tag e.image.top_image.url, :style => "margin: 0 auto;"
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h3.blue Events
+        hr.hr-large.blue
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        #carousel-example-generic.carousel.slide data-ride="carousel"
+          / Wrapper for slides
+          .carousel-inner role="listbox"
+            - @current_language.events.visible.next[0..1].each_with_index do |e, i|
+              - if i > 0
+                .item
+                  = link_to e do
+                    = image_tag e.image.top_image.url, :style => "margin: 0 auto;"
+              - else
+                .item.active
+                  = link_to e do
+                    = image_tag e.image.top_image.url, :style => "margin: 0 auto;"
 

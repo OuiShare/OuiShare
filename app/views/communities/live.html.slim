@@ -3,23 +3,22 @@
   section.main-content
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        .markdown = @live_page.main_text_html
+        .markdown.blue = @live_page.main_text_html
       .col-lg-6.col-lg-offset-3.col-sm-12
         = image_tag @live_page.image.top_internal
 
   section#list.live
     .container
       .activities
-
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @live_page.title1
+        .col-lg-6.col-lg-offset-3.col-sm-12.activity
+          h3.blue = @live_page.title1
           .markdown = @live_page.text1_html
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @live_page.title2
+        .col-lg-6.col-lg-offset-3.col-sm-12.activity
+          h3.blue = @live_page.title2
           .markdown = @live_page.text2_html
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @live_page.title3
+        .col-lg-6.col-lg-offset-3.col-sm-12.activity
+          h3.blue = @live_page.title3
           .markdown = @live_page.text3_html
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @live_page.title4
+        .col-lg-6.col-lg-offset-3.col-sm-12.activity
+          h3.blue = @live_page.title4
           .markdown = @live_page.text4_html

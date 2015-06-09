@@ -18,20 +18,19 @@
     .container
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.subtitle = t('knowledge_groups.all_knowledge_groups')
+          h3.blue = t('knowledge_groups.all_knowledge_groups')
           hr.hr-large.blue
       - @expert_groups.rank(:row_order).each do |c|
-        .row.community
-          .col-lg-6.col-lg-offset-3.col-sm-12
-            h4.title.center = c.name
-            .markdown = c.text_html
-            .center
-              = link_to c.link do
-                button.btn.white join
-        br  
-          .col-lg-6.col-lg-offset-3.col-sm-12
-            .avatars
-              - c.users.each do |u|
-                span.block
-                  = link_to u do
-                    = image_tag u.avatar_url
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = c.name
+          hr.hr-large.blue
+          .markdown = c.text_html
+
+          .avatars
+            - c.users.each do |u|
+              span.block
+                = link_to u do
+                  = image_tag u.avatar_url
+          .center         
+            = link_to c.link do
+              button.btn.get-involved-btn join                

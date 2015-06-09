@@ -6,12 +6,13 @@
       .activities
         .row 
           .col-lg-6.col-lg-offset-3.col-sm-12
-              h2.center
-                = @team_page.title
+            h3.blue = @team_page.title
+            hr.hr-large.blue
         .row
           .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @team_page.text_html
-            a.btn.btn-green.uppercase href="#{contact_path}" = @team_page.link_text
+            .center
+              a.btn.get-involved-btn.uppercase.center href="#{contact_path}" = @team_page.link_text
         .row    
           .col-lg-12
             .ch-grid
@@ -22,17 +23,15 @@
                         .ch-info
                           - if !a.twitter_url.blank?
                             = link_to a.twitter_url, :target => "_blank"
-                              h3.info 
-                                = a.fname.to_s + " " +a.name.to_s 
+                              - if !a.title.blank?
+                                h6.info
+                                  = a.title 
                             p 
                               = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
                           - else 
-                            h3.info
+                            h6.info
                               = a.fname.to_s + " " +a.name.to_s 
 
                       h6
-                        b
-                          = a.fname.to_s + " " +a.name.to_s
-                      - if !a.title.blank?
-                          small
-                            = a.title                    
+                        b.center
+                          = a.fname.to_s + " " +a.name.to_s                   

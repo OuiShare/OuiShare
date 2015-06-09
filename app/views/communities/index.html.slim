@@ -20,7 +20,7 @@
       .row
         - @current_language.regions.rank(:row_order).each do |r|
           - if r.communities.size > 0
-            h3.subtitle = r.title
+            h3.blue = r.title
             hr.hr-large.blue
           - r.communities.rank(:row_order).each do |c|
             .row.community

@@ -2,9 +2,9 @@ section#list
   .container
     - @current_language.projects.visible.rank(:row_order).each do |p|
       .event
-        .col-lg-6.col-lg-offset-3.col-sm-12
+        .col-lg-6.col-lg-offset-3.col-sm-12.project-list
           a href="#{project_path(p)}"
-            h3.subtitle.black.center = p.name
+            h3.center = p.name
             .thumb
               = link_to p
                 = image_tag p.image.list_thumb.url
