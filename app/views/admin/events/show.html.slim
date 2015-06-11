@@ -3,69 +3,59 @@
 #event
   .row.section
     .container
-      .col-lg-5
-        h4 = @event.cta
-        .markdown = @event.resume_html
-        - @event.tags.each do |t|
-          span.label.blue = t.name
-      .col-lg-7
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h3.blue = @event.cta
+        hr.hr-large.blue
         img.banner src="#{@event.image.event_page_thumb.url}"
+        .markdown = @event.resume_html
+        .event-slider-place
+          - @event.tags.each do |e|
+            = e.name.to_s + "|"     
+
   .info
-    .row.section
-      .container
-        .col-lg-4
-          h3.subtitle.black Organizers
-          .avatars
-            - @event.users.each do |u|
-              span.block
-                = link_to u do
-                  = image_tag(u.avatar_url(140))
-
-        .col-lg-8
-          h3.subtitle.black About this event
-          .markdown = @event.info_html
-          .row
-            = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
-              .large-8.columns
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4.subtitle Organizers
+        .avatars
+          - @event.users.each do |u|
+            span.block
+              = link_to u do
+                = image_tag(u.avatar_url(140))
+        h4.subtitle About this event
+        .markdown = @event.info_html
+        .row
+          = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
+            .row
+              .col-lg-12
                 = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
-              .col-lg-4
+            .row
+              .col-lg-12.center  
                 = @event.address
-    .separator.black
-
+  
+  .separator.black
     .row.section
       .container
-        .col-lg-4
-          h3.subtitle.black Join us!
-
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4.subtitle Join us!
           .markdown = @event.join_us_text_html
+          ul.inline-list.buttons
+            li
+              = link_to @event.service1_link do
+                = image_tag(@event.service1_image)
+                p.service = @event.service1_title
+            li
+              = link_to @event.service2_link do
+                = image_tag(@event.service2_image)
+                p.service = @event.service2_title
+            li
+              = link_to @event.service3_link do
+                = image_tag(@event.service3_image)
+                p.service = @event.service3_title
 
-      .col-lg-8
-        ul.inline-list.buttons
-          li
-            = link_to @event.service1_link do
-              = image_tag(@event.service1_image)
-              p.service = @event.service1_title
-          li
-            = link_to @event.service2_link do
-              = image_tag(@event.service2_image)
-              p.service = @event.service2_title
-          li
-            = link_to @event.service3_link do
-              = image_tag(@event.service3_image)
-              p.service = @event.service3_title
+          - if @event.title1.present?
+            h4 = @event.title1
+            .markdown = @event.text1_html
 
-      .col-lg-4
-        .block
-      .col-lg-4
-        .block
-
-    .row
-      .col-lg-6
-        - if @event.title1.present?
-          h4 = @event.title1
-          .markdown = @event.text1_html
-
-      .col-lg-6
-        - if @event.title2.present?
-          h4 = @event.title2
-          .markdown = @event.text2_html
+          - if @event.title2.present?
+            h4 = @event.title2
+            .markdown = @event.text2_html

@@ -4,12 +4,13 @@ section#list
       .event
         .col-lg-6.col-lg-offset-3.col-sm-12.project-list
           a href="#{project_path(p)}"
-            h3.center = p.name
+            h3.blue = p.name
+            hr.hr-large.blue
             .thumb
               = link_to p
                 = image_tag p.image.list_thumb.url
             p = p.resume
-            .tags
+            .tag-show
               - p.tags.each do |t|
-                span.label.blue = t.name
+                = t.name.to_s + "|"           
             

@@ -5,11 +5,12 @@ section#list
         .row
           .col-lg-6.col-lg-offset-3.col-sm-12
             a href="#{p.link}"
-              h3.subtitle.white = p.title
+              h3.blue = p.title
+              hr.hr-large.blue
             = link_to p.link
               = image_tag p.image.list_thumb.url
             .markdown = p.text_html
-            .tags
+            .tag-show
               - p.tags.each do |t|
-                span.label.blue = t.name
+                = t.name
               

@@ -19,10 +19,9 @@
     .container
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.subtitle Events
-      - @cocreations.each do |c|
-        .row.community
-          .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue Events
+          hr.hr-large.blue
+          - @cocreations.each do |c|
             h4.title.cente = c.name
             - if c.link.present?
               = link_to c.link, target: '_blank' do

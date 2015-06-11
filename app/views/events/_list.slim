@@ -10,7 +10,7 @@ section#list
               = image_tag e.image.list_thumb.url
           h4 = e.cta
         .markdown.event = e.resume_html
-        .tags
+        .tag-show
           - e.tags.each do |t|
-            span.label.blue = t.name
+            = t.name.to_s + "|"         
           
