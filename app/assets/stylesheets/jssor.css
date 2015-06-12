@@ -46,7 +46,7 @@
     color:#001E60; 
     font-size: 30px; 
     background-color:rgba(255, 255, 255, 0.6); 
-    padding: 10px 10px 10px 10px; 
+    padding: 10px 160px 10px 10px; 
     height:90%; 
     width:95%;
     font-family:'naiv_normal';
@@ -54,6 +54,7 @@
 
 .presentation:hover{
   background-color:rgba(0, 30, 96, 0.6); 
+  color:#FFF; 
 }
 
 .btn.btn-blue {

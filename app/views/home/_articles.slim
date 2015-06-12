@@ -34,9 +34,9 @@ section#articles
 
   .row
     #slider-container style="min-height:100%;"
-      #slider1_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+      #slider1_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 350px;"
         / Slides Container
-        div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+        div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 350px; overflow: hidden;" u="slides"
           - @magazines.each do |f|
             div
               img src="#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")}" u="image"
