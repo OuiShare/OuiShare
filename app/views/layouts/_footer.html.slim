@@ -55,7 +55,7 @@
 #f
   .container
     .row
-      .col-lg-10.col-lg-offset-1
+      .col-lg-10
         .col-lg-4
           h5 Subscribe to our newsletter            
           = form_tag newsletter_subscribe_path, :class => "form-inline" do
@@ -82,13 +82,16 @@
         .col-lg-4.follow
           h5 Follow OuiShare
           a href="https://www.facebook.com/OuiShare" target="_blank"
-            h6 FACEBOOK
+            h6 Facebook
           a href="https://twitter.com/OuiShareFest" target="_blank"
-            h6 TWITTER
+            h6 Twitter
           a href="https://www.flickr.com/photos/ouishare" target="_blank"
-            h6 FLICKR
+            h6 Flickr
           a href="https://plus.google.com/+OuishareNet" target="_blank"
-            h6 GOOGLE+
+            h6 Google+
+      .col-lg-2
+        a href=root_path
+          = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")      
     br
     br
     .row

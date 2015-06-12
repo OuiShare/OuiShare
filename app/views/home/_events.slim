@@ -35,7 +35,7 @@ section#events-home
 
                     .event-slider-place
                       = truncate(e.resume, length: 100)
-                    .event-slider-place
+                    .tag-show
                       - e.tags.each do |t|
                         = t.name.to_s + "|"   
                           

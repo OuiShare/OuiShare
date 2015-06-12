@@ -449,7 +449,6 @@
 // You can use Sass (SCSS) here: http: //sass-lang.com/
 #home
   margin-top: 50px
-  text-align: center
 
   #slideshow
     img
@@ -472,6 +471,11 @@
   font-family: Arial
   padding: 15px 30px
   border-radius: 5px !important
+
+.get-involved-btn:hover
+  background-color: #00C389
+  color: white
+
 
 #bepart
   h4
@@ -538,14 +542,11 @@
 .main-section
   #headerwrap
     padding-top: 55px
-  
-
 
 .speakers-container
   .container.sinfo
     padding-top: 31px
   
-
 .get-involved-section
   .get-involved-punchline
     background-color: white
@@ -858,11 +859,14 @@ p.col-xs-6 > a:hover
 
 
 .ch-item
+  text-overflow: ellipsis
+  overflow: hidden
   .ch-info
-    a
-      text-decoration: none
+    h4
+      a
+        text-decoration: none
+        text-align: center
     
-  
 
 
 #slider-container
@@ -876,6 +880,7 @@ p.col-xs-6 > a:hover
 .event-slide
 
   text-align: left
+  padding-right: 30px
 
   .event-slide-month
     text-transform: uppercase
@@ -898,7 +903,7 @@ p.col-xs-6 > a:hover
     border-top: 1px solid #001E60
 
   .event-slider-place
-    font-size: 14px
+    font-size: 16px
     margin-bottom: 20px
 
   .event-slide-resume
@@ -985,15 +990,15 @@ p.col-xs-6 > a:hover
   -webkit-backface-visibility: hidden
 
 .ch-info
-  h3
+  h4
     color: #fff
     text-transform: uppercase
     letter-spacing: 2px
-    font-size: 22px
+    font-size: 19px
     margin: 0 30px
     padding: 45px 0 0 0
     height: 140px
-    font-family: 'Lato', Arial, sans-serif
+    font-family: 'Naiv', Arial, sans-serif
     text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3)
     font-weight: 300
     box-sizing: border-box
@@ -1074,7 +1079,7 @@ p.col-xs-6 > a:hover
   border-radius: 50%
   position: relative
   cursor: default
-  box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1)
+  box-shadow: inset 0 0 0 16px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
   -webkit-transition: all 0.4s ease-in-out
   -moz-transition: all 0.4s ease-in-out
   -o-transition: all 0.4s ease-in-out
@@ -1185,6 +1190,10 @@ body > div.title-header > div > div:nth-child(2)
 
 #slider1_container > div > div > div:nth-child(2) > div > span.presentation.ouishare_stencil.white   
   text-align: left
+
+.event-slide-month 
+  font-size: 20px
+
 
 
 

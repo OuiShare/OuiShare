@@ -37,13 +37,13 @@ section#hot
 
     .row
       .col-lg-10.col-lg-offset-1
-        .col-lg-4
+        .col-lg-4.center
           = image_tag '/assets/logo collaborative territoiries copie.png', :class => "home-pictures"
           a.new_projects href=project_path(Project.where(name: 'Sharitories').first) Sharitories and the city >
-        .col-lg-4
+        .col-lg-4.center
           = image_tag '/assets/LOGO_OUISHARE_JOB-RGB.png', :class => "home-pictures"
           a.new_projects href=project_path(Project.where(name: 'OuiShare Job Board').first) Ouishare Job Board >
-        .col-lg-4
+        .col-lg-4.center
           = image_tag '/assets/LOGO_ouisharefest.png', :class => "home-pictures"
           a.new_projects href=project_path(Project.where(name: 'OuiShare Fest').first) Ouishare fest >
 

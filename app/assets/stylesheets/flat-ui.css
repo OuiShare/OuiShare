@@ -473,13 +473,13 @@ you can use the generic selector below, but it's slower:
 }
 body {
   font-family: Open Sans, 'regular', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.231;
   color: #001E60;
   background-color: #ffffff;
 }
 a {
-  color: #00C389;
+  color: #09c894;
   text-decoration: none;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -628,7 +628,7 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 40px;
+  font-size: 35px;
 }
 h4,
 .h4 {
