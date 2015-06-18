@@ -1,11 +1,12 @@
+== render partial: 'layouts/sub_header_title', locals: {title: 'Donate', text: ""}
 #page-donations
   section.donate.section
     .container
       .row
-        .col-lg-12
+        .col-lg-6.col-lg-offset-3.col-sm-12
           - if params[:sign_up] == 'yes'
             .support-msg style="margin-left:20px;"
-              h3 = "Support Us"
+              p.bold = "Support Us"
               p  = "We are a non-profit organization being built by passionate iniduals around the world since 2012."
               span  style="margin-bottom:20px;font-family: 'Naiv', verdana;" 
                 | As an open community, membership is free for iniduals. However we encourage you to support our team of 
@@ -25,11 +26,10 @@
               br
               br
           - else 
-            h3 = @donation_page.main_title
+            p.bold = @donation_page.main_title
             .markdown = @donation_page.main_text_html
-            h4 = @donation_page.thanks_text_html
-      .row
-        .col-lg-8
+            p = @donation_page.thanks_text_html
+
           .pink-box
             .row
               .header
@@ -128,11 +128,11 @@
     section.explain
       .container
         .row.section
-          .col-lg-8
-            img src="#{@donation_page.image1.donation.url}"
-          .col-lg-4
-            h3.subtitle.white = @donation_page.title1
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            h3.blue = @donation_page.title1
+            hr.hr-large.blue
             .markdown = @donation_page.text1_html
+            img src="#{@donation_page.image1.donation.url}"
         /.separator.black
         /.row.section
           /.large-8.columns
