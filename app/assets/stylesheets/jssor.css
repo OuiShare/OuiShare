@@ -11,33 +11,36 @@
     position: absolute;
     cursor: pointer;
     display: block;
-    background: url(/assets/img/a13.png) no-repeat;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .jssora13l {
-    background-position: -10px -35px;
+  background: url(/assets/arrow-grey-gauche.png) no-repeat;
+  background-size: 90%;
 }
 
 .jssora13r {
-    background-position: -70px -35px;
+  background: url(/assets/arrow-grey-droite.png) no-repeat;
+  background-size: 90%;
 }
 
 .jssora13l:hover {
-    background-position: -130px -35px;
+  background: url(/assets/arrow-blue-gauche.png) no-repeat;
+  background-size: 90%;
 }
 
 .jssora13r:hover {
-    background-position: -190px -35px;
+  background: url(/assets/arrow-blue-droite.png) no-repeat;
+  background-size: 90%;
 }
 
-.jssora13ldn {
+/*.jssora13ldn {
     background-position: -250px -35px;
 }
 
 .jssora13rdn {
     background-position: -310px -35px;
-}
+}*/
 
 .presentation{
     position: absolute;
