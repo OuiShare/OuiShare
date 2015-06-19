@@ -1,6 +1,8 @@
 - content_for :page_title, 'Terms and Service'
+== render partial: 'layouts/sub_header_title', locals: {title: 'Terms and Service', text: ""}
 #page-about-internal
   section.main-content
-    div.row
-      div.col-lg-12
-        .markdown = @terms_page.text_html
+  	.container
+	    .row
+	      .col-lg-6.col-lg-offset-3.col-sm-12
+	        .markdown = @terms_page.text_html

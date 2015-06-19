@@ -1,0 +1,65 @@
+/ req param: community
+- if defined? community
+  .container
+    .col-lg-8.col-lg-offset-2.col-sm-12
+      .row
+        h3.blue = community.name
+        hr.hr-large
+      .row
+        a href= community.link = "Site de la communauté #{community.name}"
+        p = community.text
+      .row
+         - community.users.each do |u|
+          .col-lg-4.individuals-list-display
+            li
+              .ch-item style= "background-image: url(#{u.avatar_url(220)})"
+                .ch-info
+                  h4.info
+                    - if !u.title.blank?
+                      = link_to u do
+                          = u.title
+                    - else      
+                      = link_to u do
+                        = u.fname.to_s + " " +u.name.to_s 
+              h4.center.blue
+                = u.fname.to_s + " " +u.name.to_s
+      
+
+
+/     h3.blue = r.title
+        /     hr.hr-large.blue
+        /   - r.communities.rank(:row_order).each do |c|
+        /     .row.community
+        /       .col-lg-6
+        /         p.title = c.name
+        /         .markdown = c.text_html
+
+        /       .col-lg-2
+        /         = link_to c.link do
+        /           .btn join
+
+        /       .col-lg-4
+        /         .avatars
+        /           - c.users.each do |u|
+        /             span.block
+        /               = link_to u do
+        /                 = image_tag u.avatar_url(140), :class => "img-responsive"
+        / - if @current_language.communities.without_region.size > 0
+        /   h3.subtitle = t('communities.other_communities')
+        /   hr.hr-large.blue
+        /   - @current_language.communities.without_region.rank(:row_order).each do |c|
+        /     .row.community
+        /       .col-lg-6
+        /         p.title = c.name
+        /         .markdown = c.text_html
+
+        /       .col-lg-2
+        /         = link_to c.link do
+        /           .btn join
+
+        /       .col-lg-4
+        /         .avatars
+        /           - c.users.each do |u|
+        /             span.block
+        /               = link_to u do
+        /                 = image_tag u.avatar_url, :class => "img-responsive"  

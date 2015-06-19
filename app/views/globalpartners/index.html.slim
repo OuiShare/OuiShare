@@ -1,55 +1,56 @@
 == render partial: 'layouts/sub_header_title', locals: {title: 'Global Partners', text: ""}
 div#page-about-internal
   .green
-    .col-lg-6.col-lg-offset-3.col-sm-12      
-      section#banner
-        .row
-          div.banner
-              p = "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
-              p = "We do this by :"
-        .row
-          ul
-            li = "Working with them to understand the drivers and impacts of the transition toward a distributed and networked economy."
-            li = "Organizing thought-provoking events and building communities of intrapeneurs, entrepreneurs and researchers. We establish strong ties between startups, disruptive projects, innovators and traditional organizations to ignite new projects."
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12      
+        section#banner
+          .row
+            div.banner
+                p = "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
+                p = "We do this by :"
+          .row
+            ul
+              li = "Working with them to understand the drivers and impacts of the transition toward a distributed and networked economy."
+              li = "Organizing thought-provoking events and building communities of intrapeneurs, entrepreneurs and researchers. We establish strong ties between startups, disruptive projects, innovators and traditional organizations to ignite new projects."
+                // Dynamic Content
+                // = image_tag(@partners.image.top_internal)
+          .row
+            div.col-lg-12
+              p = "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
+              a href= "http://bit.ly/OuiShareGlobalPartnershipTemplate" >> See detailed partnership agreements
+
+
+
+          section#activities.section
+            .services
               // Dynamic Content
-              // = image_tag(@partners.image.top_internal)
-        .row
-          div.col-lg-12
-            p = "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
-            a href= "http://bit.ly/OuiShareGlobalPartnershipTemplate" >> See detailed partnership agreements
+              / - @services.rank(:row_order).each do |s|
+              /   div.row.actvity
+              /     div.col-lg-6
+              /       = link_to s.link do
+              /         h4 = s.name
+              /       .markdown = s.text_html
+              /     div.col-lg-6
+              /       = link_to s.link do
+              /         div.img-sample
+              /           = image_tag(s.image.list_thumb)
+              // Partner n°1
+              .row.actvity
+                h4 = "MAIF"
+                .markdown = "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
+                div.img-sample.center
+                  = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank"
 
+              // Partner n°2
+              .row.actvity
+                h4 = "SNCF"
+                .markdown = "SNCF is a French major industrial services group, and a world leader in transporting people and goods. SNCF operates the country's national rail services, including the TGV, France's high-speed rail network, and has operates other form of mobility services all around the world."
+                div.img-sample.center
+                  = link_to image_tag('/assets/sncf.png'), "http://www.sncf.com/", :target => "_blank"
 
-
-        section#activities.section
-          .services
-            // Dynamic Content
-            / - @services.rank(:row_order).each do |s|
-            /   div.row.actvity
-            /     div.col-lg-6
-            /       = link_to s.link do
-            /         h4 = s.name
-            /       .markdown = s.text_html
-            /     div.col-lg-6
-            /       = link_to s.link do
-            /         div.img-sample
-            /           = image_tag(s.image.list_thumb)
-            // Partner n°1
-            .row.actvity
-              h4 = "MAIF"
-              .markdown = "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
-              div.img-sample.center
-                = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank"
-
-            // Partner n°2
-            .row.actvity
-              h4 = "SNCF"
-              .markdown = "SNCF is a French major industrial services group, and a world leader in transporting people and goods. SNCF operates the country's national rail services, including the TGV, France's high-speed rail network, and has operates other form of mobility services all around the world."
-              div.img-sample.center
-                = link_to image_tag('/assets/sncf.png'), "http://www.sncf.com/", :target => "_blank"
-
-  / section#become
-  /   div.row
-  /     div.col-lg-4
-  /       h4 = t('workus.become_a_partner')
-  /       .markdown = t('workus.contact_a_partner')
-  / br
+    / section#become
+    /   div.row
+    /     div.col-lg-4
+    /       h4 = t('workus.become_a_partner')
+    /       .markdown = t('workus.contact_a_partner')
+    / br

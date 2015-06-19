@@ -200,6 +200,9 @@ OuiShare::Application.routes.draw do
   get "payments/cancel_callback"
   get 'donations/thank_you' => 'donations#thank_you'
 
+  get '/get_communities_select' => 'communities#get_communities_select'
+  get '/get_community_partial' => 'communities#get_community_partial'
+
 
   get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }
 end
