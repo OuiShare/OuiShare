@@ -1,29 +1,78 @@
-section.section	
-	.container
-		h1 = @current_community.name
+== render partial: 'layouts/sub_header_title', locals: {title: @current_community.name, text: @current_community.text_html}
+
+.container
+  .col-lg-6.col-lg-offset-3.col-sm-12
+    br
+    br
+    br
+    br
+    .row
+      img alt="List thumb poc21 premiere" src="https://ouishare.s3.amazonaws.com/uploads/project/image/27/list_thumb_Poc21_premiere.png"
+    .row
+      - @current_community.users.limit(6).each do |u|
+        .col-lg-4
+          .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
+            .ch-info
+              .info
+                - if !u.title.blank?
+                  = link_to u do
+                      = u.title
+              /   - else      
+              /     = link_to u do
+              /       = u.fname.to_s + " " +u.name.to_s 
+          p.center.blue 
+            = u.fname.to_s + " " +u.name.to_s    
+
+- unless @current_community.events.empty?
+  section#events-home
+    .container
+      .row
+        .col-lg-12
+          h3.blue = "Events"
+          hr.hr-large.blue
+      .row
+        .col-lg-10.col-lg-offset-1
+          #slider-container.text-center style="min-height:100%;"
+            #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+              div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+                - @current_community.events.order('date_start').each do |e|
+                  .event-slide
+                    .event-slide-month
+                      = I18n.t("date.month_names")[e.date_start.month]
+                    hr.event-slide-hr                
+                    .event-slide-title
+                      = e.title
+                    a.event-slide-link href=event_path(e)
+                    .event-slider-place 
+                      = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
+                    .event-slider-place
+                      = truncate(e.resume, length: 100)
+                    .tag-show
+                      - e.tags.each do |t|
+                        = t.name.to_s + "|"   
+              span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
+              span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
+
+- unless @current_community.projects.empty?
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12.center
+      .row
+        h3.blue = "Events"
+        hr.hr-large.blue
+    .col-lg-6.col-lg-offset-3.col-sm-12.project-list
+      - @current_community.projects.rank(:row_order).each do |p|
+        .event
+          .col-md-6.community-project
+            a href="#{project_path(p)}"
+              h4.blue = p.name
+              hr.hr-large.blue
+              .thumb
+                = link_to p
+                  = image_tag p.image.list_thumb.url
+              / p = p.resume
+              .tag-show.center
+                - p.tags.each do |t|
+                  = t.name.to_s + "|"      
 
 
 
-		.row
-			.col-lg-8.col-lg-offset-2.col-sm-12
-				- @current_community.users.each do |u|
-				  .col-lg-4.individuals-list-display
-				    li
-				      .ch-item style= "background-image: url(#{u.avatar_url(220)})"
-				        .ch-info
-				          h4.info
-				            - if !u.title.blank?
-				              = link_to u do
-				                  = u.title
-				            - else      
-				              = link_to u do
-				                = u.fname.to_s + " " +u.name.to_s 
-				      h4.center.blue
-				        = u.fname.to_s + " " +u.name.to_s      
-				- unless @current_community.community_project.empty?
-					- @current_community.community_project.each do |project|
-						p = project.name
-				- unless @current_community.community_event.empty?
-					- @current_community.community_project.each do |event|
-						p = event.title
-					     

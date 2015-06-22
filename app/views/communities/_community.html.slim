@@ -1,33 +1,21 @@
 / req param: community
 - if defined? community
   .container
-    .col-lg-8.col-lg-offset-2.col-sm-12
+    .col-lg-6.col-lg-offset-3.col-sm-12
       .row
-        h3.blue = community.name
-        hr.hr-large
-      .row.center
-        a href= community.link = "Site de la communauté #{community.name}"
-        p = community.text
-        a.btn.get-involved-btn.center href="#{community_path(community)}" = "See the community"
-        br
-        br
-        br
+        h3 = community.name
+        hr.hr-large.blue
       .row
-         - community.users.limit(3).each do |u|
-          .col-lg-4.individuals-list-display
-            li
-              .ch-item style= "background-image: url(#{u.avatar_url(220)})"
+        .col-lg-12    
+          - community.users.limit(6).each do |u|
+            .col-lg-2.center
+              .ch-item-community style= "background-image: url(#{u.avatar_url(220)})"
                 .ch-info
-                  h4.info
-                    - if !u.title.blank?
-                      = link_to u do
-                          = u.title
-                    - else      
-                      = link_to u do
-                        = u.fname.to_s + " " +u.name.to_s 
-              h4.center.blue
+              p.center.blue style= "word-wrap: break-word;"
                 = u.fname.to_s + " " +u.name.to_s
-      
+      .row.center    
+        a.btn.get-involved-btn.center href="#{community_path(community)}" = "See the community"      
+    
 
 
 /     h3.blue = r.title

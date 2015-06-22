@@ -17,28 +17,33 @@
   .row.center
     .col-lg-8.col-lg-offset-2.col-sm-12
         = collection_select(nil, :region_id,  @regions,  :id, :title, {:prompt   => "Select a Country"}, {:id => 'country_select'})
-        = collection_select(nil, :community_id, @communities_for_select, :id, :name, {:prompt   => "Select a Community"}, {:id => 'community_select'})   
+        = collection_select(nil, :community_id, @communities_for_select, :id, :name, {:prompt => "Select a Community"}, {:id => 'community_select'})   
 
 #communitypartial
 
-#page-communities
-  .green
-    section.explain
-      .container
-        .row
-          .col-lg-12
-            .markdown = @community_page.main_text_html
+/ #page-communities
+/   .green
+/     section.explain
+/       .container
+/         .row
+/           .col-lg-12
+/             .markdown = @community_page.main_text_html
 
-    section#map
-      .container
-        .row
-          .col-lg-12
-            .map
-              = image_tag @community_page.image.top_internal
+/     section#map
+/       .container
+/         .row
+/           .col-lg-12
+/             .map
+/               = image_tag @community_page.image.top_internal
 
-  section#communities-list.section
-    .container
-      .row
+/   section#communities-list.section
+/     .container
+/       .row
+
+
+
+
+
         / - @current_language.regions.rank(:row_order).each do |r|
         /   - if r.communities.size > 0
         /     h3.blue = r.title
