@@ -1,0 +1,29 @@
+section.section	
+	.container
+		h1 = @current_community.name
+
+
+
+		.row
+			.col-lg-8.col-lg-offset-2.col-sm-12
+				- @current_community.users.each do |u|
+				  .col-lg-4.individuals-list-display
+				    li
+				      .ch-item style= "background-image: url(#{u.avatar_url(220)})"
+				        .ch-info
+				          h4.info
+				            - if !u.title.blank?
+				              = link_to u do
+				                  = u.title
+				            - else      
+				              = link_to u do
+				                = u.fname.to_s + " " +u.name.to_s 
+				      h4.center.blue
+				        = u.fname.to_s + " " +u.name.to_s      
+				- unless @current_community.community_project.empty?
+					- @current_community.community_project.each do |project|
+						p = project.name
+				- unless @current_community.community_event.empty?
+					- @current_community.community_project.each do |event|
+						p = event.title
+					     

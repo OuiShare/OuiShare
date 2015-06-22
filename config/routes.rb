@@ -157,6 +157,7 @@ OuiShare::Application.routes.draw do
 
   get 'live' => 'about#index', as: 'about'
   get 'communities' => 'communities#index', as: 'communities'
+  get 'community/:id' => 'communities#show', as: 'community'
   get 'contact' => 'contact#index', as: 'contact'
   post 'contact' => 'contact#submit'
   get 'projects' => 'projects#index', as: 'projects'

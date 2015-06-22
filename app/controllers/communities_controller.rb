@@ -1,10 +1,16 @@
 class CommunitiesController < ApplicationController
   include AutoHtml
+
+  before_action :set_community, :only => [:show]
+  
   def index
     @community_page = @current_language.community_page || CommunityPage.new
     @communities = @current_language.communities
     @regions = Region.all
     @communities_for_select = Community.all
+  end
+
+  def show
   end
 
   def get_communities_select
@@ -41,5 +47,14 @@ class CommunitiesController < ApplicationController
   def expert_groups
     @expert_groups_page = @current_language.expert_groups_page || ExpertGroupsPage.new
     @expert_groups = @current_language.expert_groups
+  end
+
+  private
+
+  def set_community
+    @current_community = Community.find(params[:id])
+  end
+
+  def community_params
   end
 end

@@ -2389,8 +2389,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .checkbox input,
 .radio input {
-  outline: none !important;
-  display: none;
+  /*outline: none !important;*/
+  /*display: none;*/
 }
 .checkbox .icons,
 .radio .icons {

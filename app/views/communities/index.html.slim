@@ -17,7 +17,7 @@
   .row.center
     .col-lg-8.col-lg-offset-2.col-sm-12
         = collection_select(nil, :region_id,  @regions,  :id, :title, {:prompt   => "Select a Country"}, {:id => 'country_select'})
-        = collection_select(nil, :community_id, @communities_for_select, :id, :name, {:prompt   => "Select a Community"}, {:id => 'community_select'})    
+        = collection_select(nil, :community_id, @communities_for_select, :id, :name, {:prompt   => "Select a Community"}, {:id => 'community_select'})   
 
 #communitypartial
 
