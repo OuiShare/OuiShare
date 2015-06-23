@@ -12,7 +12,11 @@ window.OuiShare =
 
 $(document).ready ->
 
-	if $('#slider1_container').length > 0
+	if  $('#slider1_container').length == 0
+		console.log("toto")
+		jssor_slider2_starter(slider2_container)
+
+	else if $('#slider1_container').length > 0
 		jssor_slider1_starter(slider1_container)
 		jssor_slider2_starter(slider2_container)
 
