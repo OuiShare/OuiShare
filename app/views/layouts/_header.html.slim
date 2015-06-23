@@ -106,11 +106,13 @@
               = image_tag(current_user.avatar_url(50), :class => "current-user")
             ul.dropdown-menu
               li
-                a href="#" View my profile
+                / a href="#" View my profile
+                = link_to 'View my profile', user_path(current_user)
               li
                 = link_to 'Edit Profile', edit_user_registration_path
               li
-                a href="#" Admin
+                / a href="#" Admin
+                = link_to 'Admin', admin_home_path
               li.divider
               li
                 = link_to 'Logout', destroy_user_session_path, method: :delete

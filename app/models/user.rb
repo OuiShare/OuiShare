@@ -17,6 +17,12 @@ class User < ActiveRecord::Base
   belongs_to :user_source
   has_and_belongs_to_many :sectors
 
+  # has_many :connectors
+  # has_many :communities, through: :connectors
+  
+  # has_many :communities_users
+  #has_many :communities, through: :communities_users
+
   validates :fname, :name, :language, :country, :gender, :city, :occupation, presence: true
   validates_inclusion_of :gender, :in => 0..2
 

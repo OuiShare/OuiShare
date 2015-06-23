@@ -17,34 +17,35 @@
     /           = image_tag(@get_involved_page.image)
 
 
-  section#list
-    .container
-      .activities.get-involved
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title1
-          .markdown = @get_involved_page.text1_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title2
-          .markdown = @get_involved_page.text2_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title3
-          .markdown = @get_involved_page.text3_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title4
-          .markdown = @get_involved_page.text4_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title5
-          .markdown = @get_involved_page.text5_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title6
-          .markdown = @get_involved_page.text6_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          h4 = @get_involved_page.title7
-          .markdown = @get_involved_page.text7_html
-          a.btn.btn-green.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
+section#list
+  .container
+    .activities.get-involved
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h3.blue = @get_involved_page.title1
+        hr.hr-large.blue
+        .markdown = @get_involved_page.text1_html
+        a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title2
+        .markdown = @get_involved_page.text2_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title3
+        .markdown = @get_involved_page.text3_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title4
+        .markdown = @get_involved_page.text4_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title5
+        .markdown = @get_involved_page.text5_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title6
+        .markdown = @get_involved_page.text6_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h4 = @get_involved_page.title7
+        .markdown = @get_involved_page.text7_html
+        a.btn.btn-green.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text

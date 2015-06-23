@@ -7,13 +7,7 @@
       hr.hr-title
   .row
     .col-md-6.col-md-offset-3
-      p.white = 'some text'
-      p.white = 'some text'
-      p.white = 'some text'
-      p.white = 'some text'
-      p.white = 'some text'
-      p.white = 'some text'
-      p.white = 'some text'    
+      p = @community_page.main_text_html    
   .row.center
     .col-lg-8.col-lg-offset-2.col-sm-12
         = collection_select(nil, :region_id,  @regions,  :id, :title, {:prompt   => "Select a Country"}, {:id => 'country_select'})

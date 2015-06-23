@@ -6,6 +6,23 @@ class Community < ActiveRecord::Base
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :events
 
+  # has_many :connectors
+  # has_many :users, through: :connectors
+  # has_many :communities_users
+  #has_many :users, through: :communities_users
+ 
+  # extend FriendlyId
+  # friendly_id :slug_candidates, use: :slugged
+  
+  # def slug_candidates
+  #   [
+  #     :name,
+  #     [:name, :region_id],
+  #     [:name, :region_id, :id],
+  #   ]
+  # end
+  mount_uploader :main_image, ImageUploader
+
 
   include RankedModel
   ranks :row_order
