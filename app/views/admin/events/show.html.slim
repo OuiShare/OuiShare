@@ -5,9 +5,9 @@
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
         img.banner src="#{@event.image.event_page_thumb.url}"
-        .tag-show
+        .tag-show.font-14
           - @event.tags.each do |e|
-            = e.name.to_s + "|"
+            = e.name.to_s + (e != @event.tags.last ? " |" : "")
         br
         .markdown = @event.resume_html
         .row.center
@@ -19,9 +19,9 @@
       .col-lg-6.col-lg-offset-3.col-sm-12
         h4.subtitle About this event
         .markdown = @event.info_html
-        .tag-show
+        .tag-show.font-14
           - @event.tags.each do |e|
-            = e.name.to_s + "|"
+            = e.name.to_s + (e != @event.tags.last ? " |" : "")
 
   .row.section
     .container
@@ -50,7 +50,7 @@
         .col-lg-6.col-lg-offset-3.col-sm-12
           h4.subtitle Join us!
           .markdown = @event.join_us_text_html
-          ul.inline-list.buttons
+          ul.unstyled
             li
               = link_to @event.service1_link do
                 = image_tag(@event.service1_image)
@@ -71,3 +71,40 @@
           - if @event.title2.present?
             h4 = @event.title2
             .markdown = @event.text2_html
+
+  .row.section
+    .container
+      - if @current_language.events.visible.next.any?
+        .row
+          .col-lg-10.col-lg-offset-1
+            #slider-container.text-center style="min-height:100%;"
+              #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+                / Slides Container
+                div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+                  - @current_language.events.visible.order('date_start').each do |e|
+                    .event-slide class=('event-inactive' if e.over?)
+                      .event-slide-month
+                        = I18n.t("date.month_names")[e.date_start.month]
+                      hr.event-slide-hr                
+                      
+                      .event-slide-title
+                        = e.title
+                      - if !e.over?
+                        a.event-slide-link href=event_path(e)
+
+                      .event-slider-place 
+                        = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
+
+                      .event-slider-place
+                        = truncate(e.resume, length: 100)
+                      .tag-show
+                        - e.tags.each do |t|
+                          = t.name.to_s + "|"   
+                            
+                      / span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
+                      /   = link_to event_path(e) do 
+                      /     span = e.title
+
+                span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
+                / Arrow Right
+                span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"

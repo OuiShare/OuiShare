@@ -11,9 +11,10 @@ window.OuiShare =
 
 
 $(document).ready ->
-
+	
 	if $('#slider1_container').length > 0
 		jssor_slider1_starter(slider1_container)
+	if $('#slider2_container').length > 0
 		jssor_slider2_starter(slider2_container)
 
 	$('.eur').click (e) ->
