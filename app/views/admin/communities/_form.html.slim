@@ -8,6 +8,6 @@
   = f.input :text, label: 'Text (Markdown)'
   = f.association :projects, as: :check_boxes
   = f.association :events, as: :check_boxes
-  = f.association :users, as: :check_boxes
+  = f.association :users, as: :check_boxes, :label_method => :full_name
   
   = f.submit

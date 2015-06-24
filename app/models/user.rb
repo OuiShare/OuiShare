@@ -54,6 +54,10 @@ class User < ActiveRecord::Base
     country.translations[I18n.locale.to_s] || country.name
   end
 
+  def full_name
+    "#{self.fname} #{self.name}"
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if auth = session[:omniauth]
