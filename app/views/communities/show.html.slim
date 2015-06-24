@@ -18,7 +18,7 @@
       .container
         .row
           .col-lg-12
-            h2.blue = "Events"
+            h3.blue Events
             hr.hr-large.blue
         .row
           .col-lg-10.col-lg-offset-1
@@ -68,7 +68,7 @@
   .col-lg-6.col-lg-offset-3.col-sm-12
     .row
       .col-lg-12
-        h2.blue = "Get In Touch"
+        h3.blue = "Members"
         hr.hr-large.blue
     .row   
       - @current_community.users.limit(11).each do |u|

@@ -22,6 +22,13 @@ class CommunitiesController < ApplicationController
     end
   end
 
+  def get_communities_partial
+    region = Region.find(params[:region_id_2])
+    # map to name and id for use in our options_for_select
+    communities = region.communities.all
+    render partial: 'communities/communities', locals:{communities: communities, region: region}
+  end
+
   def get_community_partial
     community = Community.find(params[:community_id])
     users = community.users

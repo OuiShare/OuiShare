@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-select.js
 //= require ./jssor/jssor
 //= require ./jssor/jssor.slider
 

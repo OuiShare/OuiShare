@@ -202,6 +202,7 @@ OuiShare::Application.routes.draw do
   get 'donations/thank_you' => 'donations#thank_you'
 
   get '/get_communities_select' => 'communities#get_communities_select'
+  get '/get_communities_partial' => 'communities#get_communities_partial'
   get '/get_community_partial' => 'communities#get_community_partial'
 
 
