@@ -25,6 +25,10 @@ class Event < ActiveRecord::Base
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
   scope :next, ->{ where('date_end >= ?', Time.now) }
 
+  def over?
+    date_end < Time.now
+  end
+
   def name
     title
   end

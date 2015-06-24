@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   extend Enumerize
   include Shared::BeautifulText
 
+  extend FriendlyId
+  friendly_id :fname, use: [:slugged]
+
   validates :terms_of_service, acceptance: true
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events

@@ -10,8 +10,14 @@
     .carousel-inner role="listbox"
       .item.active
         = image_tag('/assets/image slider 01.png')
+        .carousel-caption.nostyle-caption.center
+          a.btn-green.btn.btn-large href="#{new_user_session_path}"
+            |Join
       .item
         = image_tag('/assets/image slider 02.png')
+        .carousel-caption.nostyle-caption.center
+          a.btn-green.btn.btn-large href="http://magazine.ouishare.net"
+            |Read the Magazine
 
   = render 'home/about'
   = render 'home/events'

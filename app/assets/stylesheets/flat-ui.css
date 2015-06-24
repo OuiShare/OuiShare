@@ -1300,7 +1300,7 @@ address {
   padding-left: 5px;
 }
 .navbar .nav ul li {
-  background-color: #FF8888;
+  background-color: #001E60;
   padding: 0 3px 3px;
   position: relative;
 }
@@ -1333,7 +1333,7 @@ address {
 }
 .navbar .nav ul a:hover {
   background-color: white;
-  color: #FF8888;
+  color: #001E60;
 }
 .navbar .btn-navbar {
   background: none;
