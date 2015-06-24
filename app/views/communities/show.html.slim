@@ -8,47 +8,67 @@
     br
     .row
       / TODO: image dynamic
-      img alt="List thumb poc21 premiere" src="https://ouishare.s3.amazonaws.com/uploads/project/image/27/list_thumb_Poc21_premiere.png"
+      / img alt="List thumb poc21 premiere" src="https://ouishare.s3.amazonaws.com/uploads/project/image/27/list_thumb_Poc21_premiere.png"
+      = image_tag (@current_community.main_image)
     .row
       = @current_community.text_html
 
+section
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row
+        .col-lg-12
+          h3.blue Join Us
+          hr.hr-large.blue
+      .row   
+        - @current_community.users.limit(6).each do |u|
+          .col-lg-4.user
+            .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
+              .ch-info
+                .info
+                  = link_to u do
+                      = u.fname.to_s + " " +u.name.to_s 
+            p.center.blue 
+              = u.fname.to_s + " " +u.name.to_s    
+
 - unless @current_community.events.empty?
-  #home
-    section#events-home
-      .container
-        .row
-          .col-lg-12
-            h3.blue Events
-            hr.hr-large.blue
-        .row
-          .col-lg-10.col-lg-offset-1
-            #slider-container.text-center style="min-height:100%;"
-              #slider3_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
-                div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
-                  - @current_community.events.order('date_start').each do |e|
-                    .event-slide
-                      .event-slide-month
-                        = I18n.t("date.month_names")[e.date_start.month]
-                      hr.event-slide-hr                
-                      .event-slide-title
-                        = e.title
-                      a.event-slide-link href=event_path(e)
-                      .event-slider-place 
-                        = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
-                      .event-slider-place
-                        = truncate(e.resume, length: 100)
-                      .tag-show
-                        - e.tags.each do |t|
-                          = t.name.to_s + "|"   
-                span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
-                span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
+
+  section
+    .container
+      .row
+        .col-lg-12
+          h3.blue Events
+          hr.hr-large.blue
+      .row
+        .col-lg-10.col-lg-offset-1
+          #slider-container.text-center style="min-height:100%;"
+            #slider3_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+              div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+                - @current_community.events.order('date_start').each do |e|
+                  .event-slide
+                    .event-slide-month
+                      = I18n.t("date.month_names")[e.date_start.month]
+                    hr.event-slide-hr                
+                    .event-slide-title
+                      = e.title
+                    a.event-slide-link href=event_path(e)
+                    .event-slider-place 
+                      = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
+                    .event-slider-place
+                      = truncate(e.resume, length: 100)
+                    .tag-show
+                      - e.tags.each do |t|
+                        = t.name.to_s + "|"   
+              span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
+              span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
+
 
 - unless @current_community.projects.empty?
-  section#hot
+  section
     .container
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12.center
-          h2.blue = "Projects"
+          h3.blue Projects
           hr.hr-large.blue
       br
       br
@@ -63,24 +83,28 @@
               .tag-show
                 - p.tags.each do |t|
                   = t.name.to_s + "|"
-
-.container
-  .col-lg-6.col-lg-offset-3.col-sm-12
-    .row
-      .col-lg-12
-        h3.blue = "Members"
-        hr.hr-large.blue
-    .row   
-      - @current_community.users.limit(11).each do |u|
-        .col-lg-4.user
-          .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
-            .ch-info
-              .info
-                - if !u.title.blank?
+section
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row
+        .col-lg-12
+          h3.blue Members
+          hr.hr-large.blue
+      .row   
+        - @current_community.users.limit(11).each do |u|
+          .col-lg-4.user
+            .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
+              .ch-info
+                .info
                   = link_to u do
-                      = u.title
-          p.center.blue 
-            = u.fname.to_s + " " +u.name.to_s    
+                    = u.fname.to_s + " " +u.name.to_s  
+            p.center.blue 
+              = u.fname.to_s + " " +u.name.to_s   
+        .ch-item-show style= "background-color: #00c389;"
+          .ch-info
+            .info
+              | Join US
+
 
 
 

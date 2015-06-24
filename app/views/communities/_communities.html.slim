@@ -7,14 +7,15 @@
         hr.hr-large.blue
         - communities.each do |c|
           .row
-            h3 = c.name
+            h4 style="padding-top: 50px;"
+              = c.name
             hr.hr-large.blue
           .row
             .col-lg-12
               .row  
                 - c.users.limit(3).each do |u|
                   .col-md-3
-                    .ch-item-community style= "background-image: url(#{u.avatar_url(220)})"
+                    .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
                       .ch-info
                         .info
                           - if !u.title.blank?
@@ -22,8 +23,10 @@
                                 = u.title
                     p.center.blue style= "word-wrap: break-word;"
                       = "#{u.fname} #{u.name}"
-                  .col-md-3
-                    = link_to community_path(c)     
-                      .ch-item-community style= "background-color: #00C389"
-                        p = "See the community"
+                .col-md-3
+                  .ch-item-show style= "background-color: #00c389"
+                    .ch-info
+                      .info
+                        = link_to community_path(c)  
+                          = "See the community"
 

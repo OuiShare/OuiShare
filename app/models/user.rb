@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
     else
       return image if image.present?
     end
-    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
+    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}&d=mm"
   end
 
   def has_edit_rights?

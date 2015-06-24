@@ -29,4 +29,7 @@ class Community < ActiveRecord::Base
   beautiful_text_for [:text]
 
   scope :without_region, ->{ where(region_id: nil) }
+
+  def add_new_member
+  end
 end
