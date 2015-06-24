@@ -1,110 +1,103 @@
 - content_for :page_title, "Profile - #{@user.name}"
+== render partial: 'layouts/sub_header_title', locals: {title: "Member Profiles", text: ""}
 #profile
-  div.row.section
-    div.col-lg-3
-      = image_tag @user.avatar_url(200)
-      - if current_user && current_user.id == @user.id
-        br
-        i.fa.fa-pencil
-        = link_to " Edit Profile", edit_user_registration_path
-    div.col-lg-6
-      h3.subtitle 
-        = @user.fname unless @user.fname.nil?
-        = " "
-        = @user.name 
-      h4.subtitle = @user.title if !@user.profile_type.user?
-      .markdown = @user.bio_html
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12.center
+        = image_tag @user.avatar_url(200), :class => "profile-pic"
+        - if current_user && current_user.id == @user.id
+          br
+          i
+            = link_to " Edit Profile", edit_user_registration_path
+        .profile-name
+          = @user.fname.nil? ? @user.name : @user.fname
+        hr.hr-large.blue.no-margin-vertical
 
-      / span.label.blue blah
-      / span.label.blue blah
-      / span.label.blue blah
+        h4.subtitle = @user.title if !@user.profile_type.user?
+        .markdown = @user.bio_html
 
-    div.col-lg-3
-      h4.center = t('profile.contact_me')
-      ul.large-block-grid-3.social
-        - if @user.email_address.present?
-          li
-            a.email href="mailto:#{@user.email_address}"
-              i.fa.fa-envelope-o
-        - if @user.facebook_url.present?
-          li
-            a.facebook href=@user.facebook_url
-              i.fa.fa-facebook
-        - if @user.twitter_url.present?
-          li
-            a.twitter href=@user.twitter_url
-              i.fa.fa-twitter
-        - if @user.google_plus_url.present?
-          li
-            a.plus href=@user.google_plus_url
-              i.fa.fa-google-plus
-        - if @user.github_url.present?
-          li
-            a.github href=@user.github_url
-              i.fa.fa-github-alt
-        - if @user.linkedin_url.present?
-          li
-            a.linkedin href=@user.linkedin_url
-              i.fa.fa-linkedin
-
-  /div.contribute.section
-    div.row
-      div.col-lg-12
-        h3.subtitle.white Contribute to
-    div.row
-      div.col-lg-6
-        h4 OuiShare POA
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-
-     / div.col-lg-6
-        h4 OuiShare POA
-        p Lorem ipsum dolor sit amet, consectetuer adipiscing
-          elit. Donec hendrerit tempor tellus. Donec pretium posuere
-          tellus. Proin quam nisl, tincidunt et, mattis eget, convallis
-          nec, purus. Cum sociis natoque penatibus et magnis dis
-  div.row.section
-    div.col-lg-5
-      div.large
-        h4 About
-        br
-        p.left From :
-        p.right 
-          = @user.city
-          = ", "
-          = @user.country
-        br
-        br
-        br
-        p.left Occupation :
-        p.right 
-          = @user_occupation.name unless @user_occupation.nil?
-        br
-        br
-        br
-        p.left Topics :
-        p style="margin-right:-20px;margin-top:17px;"
-          - if @user_topics.present?
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+      
+        //.markdown = @user.community.text_html
+        .profile-title.center = t('profile.contact_me')
+        ul.list-unstyled.center
+          - if @user.email_address.present?
+            li style="display: inline-block"
+              a.email href="mailto:#{@user.email_address}"
+                i.fa.fa-envelope-o.fa-special
+          - if @user.facebook_url.present?
+            li style="display: inline-block"
+              a.facebook href=@user.facebook_url
+                i.fa.fa-facebook.fa-special
+          - if @user.twitter_url.present?
+            li style="display: inline-block"
+              a.twitter href=@user.twitter_url
+                i.fa.fa-twitter.fa-special
+          - if @user.google_plus_url.present?
+            li style="display: inline-block"
+              a.plus href=@user.google_plus_url
+                i.fa.fa-google-plus.fa-special
+          - if @user.github_url.present?
+            li style="display: inline-block"
+              a.github href=@user.github_url
+                i.fa.fa-github-alt.fa-special
+          - if @user.linkedin_url.present?
+            li style="display: inline-block"
+              a.linkedin href=@user.linkedin_url
+                i.fa.fa-linkedin.fa-special
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        .profile-title.center Topics
+        - if @user_topics.present?
+          .tag-show.font-14
             - @user_topics.each do |topic|
-              span.label.blue.right style="display:block;"
-                = topic.name.to_s
+              = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+
+
+
+  / div.row.section
+  /   div.col-lg-5
+  /     div.large
+  /       h4 About
+  /       br
+  /       p.left From :
+  /       p.right 
+  /         = @user.city
+  /         = ", "
+  /         = @user.country
+  /       br
+  /       br
+  /       br
+  /       p.left Occupation :
+  /       p.right 
+  /         = @user_occupation.name unless @user_occupation.nil?
+  /       br
+  /       br
+  /       br
+  /       p.left Topics :
+  /       p style="margin-right:-20px;margin-top:17px;"
+  /         - if @user_topics.present?
+  /           - @user_topics.each do |topic|
+  /             span.label.blue.right style="display:block;"
+  /               = topic.name.to_s
         
 
-    div.col-lg-5.col-lg-offset-1
-      div.large
-        h4 Organization
-        br
-        p.left Organization name :
-        p.right 
-          = @user.organization_name
-        br
-        br
-        br
-        - if @user.organization_url.present?
-          p.left Organization URL :
-          p.right 
-            = link_to @user.organization_url
+  /   div.col-lg-5.col-lg-offset-1
+  /     div.large
+  /       h4 Organization
+  /       br
+  /       p.left Organization name :
+  /       p.right 
+  /         = @user.organization_name
+  /       br
+  /       br
+  /       br
+  /       - if @user.organization_url.present?
+  /         p.left Organization URL :
+  /         p.right 
+  /           = link_to @user.organization_url
 
 
