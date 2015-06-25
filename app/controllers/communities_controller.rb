@@ -13,6 +13,11 @@ class CommunitiesController < ApplicationController
   def show
   end
 
+  def join_us
+    community = Community.find(params[:community_id])
+    user = current_user
+  end
+
   def get_communities_select
     region = Region.find(params[:region_id])
     # map to name and id for use in our options_for_select

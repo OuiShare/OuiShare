@@ -30,6 +30,4 @@ class Community < ActiveRecord::Base
 
   scope :without_region, ->{ where(region_id: nil) }
 
-  def add_new_member
-  end
 end
