@@ -33,9 +33,9 @@
           .pink-box
             .row
               .header
-                .col-lg-6
+                .col-lg-8
                   h5 = t('donations.help_support_ouishare')
-                .col-lg-6.menu-currency
+                .col-lg-4.menu-currency
                   table
                     tr
                       td.usd $
@@ -122,6 +122,10 @@
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
               .col-lg-12
                 p.white = t('donations.recurring_donations')
+          br
+          p.center
+            iframe src="http://faircoin.ouishare.net/donate/"
+
       - if params[:sign_up] == 'yes'
         a.button.right style= "margin-right:50px;text-decoration:none;"href="register/thanks" Complete Registration
   - if !params[:sign_up]
