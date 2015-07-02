@@ -97,9 +97,6 @@
         li.header-btn-li
           a.btn.header-btn href="#{donations_path}" Donate
 
-        li.header-btn-li
-          a.btn.header-btn href="#{getinvolved_path}" Join us!
-
         - if user_signed_in?
           li.dropdown
             a.dropdown-toggle href="#"
@@ -114,8 +111,9 @@
               li.divider
               li
                 = link_to 'Logout', destroy_user_session_path, method: :delete
-
         - else
+          li.header-btn-li
+            a.btn.header-btn href="#{new_user_registration_path}" Join us!
 
           li.header-btn-li
             a.btn.header-btn href="#{new_user_session_path}" Login
