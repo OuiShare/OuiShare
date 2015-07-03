@@ -1,7 +1,8 @@
 class CommunitiesController < ApplicationController
   include AutoHtml
 
-  before_action :set_community, :only => [:show]
+  before_action :set_community, :only => [:show, :join, :leave]
+  before_action :authenticate_user!, :only => [:join, :leave]
   
   def index
     @community_page = @current_language.community_page || CommunityPage.new
@@ -22,6 +23,16 @@ class CommunitiesController < ApplicationController
   def join_us
     community = Community.find(params[:community_id])
     user = current_user
+  end
+
+  def join
+    @current_community.members << current_user
+    redirect_to :back
+  end
+
+  def leave
+    @current_community.members.delete(current_user)
+    redirect_to :back
   end
 
   def get_communities_select

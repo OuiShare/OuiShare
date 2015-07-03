@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :communities
   has_and_belongs_to_many :expert_groups
   has_and_belongs_to_many :topics
-  has_many :communities, through: :communities_members
+  has_many :community_members
+  has_many :member_of, -> { uniq }, through: :community_members, source: :community
   belongs_to :language
   belongs_to :occupation
   belongs_to :user_source

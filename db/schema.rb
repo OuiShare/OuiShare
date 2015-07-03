@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702132156) do
+ActiveRecord::Schema.define(version: 20150703101858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(version: 20150702132156) do
     t.integer  "region_id"
     t.integer  "row_order"
     t.text     "text_html"
-    t.string   "address"
     t.string   "main_image"
+    t.string   "address"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree
@@ -184,6 +184,16 @@ ActiveRecord::Schema.define(version: 20150702132156) do
 
   add_index "communities_users", ["community_id"], name: "index_communities_users_on_community_id", using: :btree
   add_index "communities_users", ["user_id"], name: "index_communities_users_on_user_id", using: :btree
+
+  create_table "community_members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "community_members", ["community_id"], name: "index_community_members_on_community_id", using: :btree
+  add_index "community_members", ["user_id"], name: "index_community_members_on_user_id", using: :btree
 
   create_table "community_pages", force: true do |t|
     t.text     "main_text"

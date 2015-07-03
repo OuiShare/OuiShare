@@ -90,8 +90,8 @@ section
         .col-lg-12
           h3.blue Members
           hr.hr-large.blue
-      .row   
-        - @current_community.users.limit(11).each do |u|
+      .row
+        - @current_community.members.limit(11).each do |u|
           .col-lg-4.user
             .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
               .ch-info
@@ -100,9 +100,16 @@ section
                     = u.fname.to_s + " " +u.name.to_s  
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s   
-        .col-lg-4.center
-          .ch-item-btn
-            | Join US
+        - if !current_user.member_of.include?(@current_community)
+          .col-lg-4.center
+            .ch-item-btn
+              = link_to join_community_path, method: :post
+                | Join US
+        - else
+          .col-lg-4.center
+            .ch-item-btn
+              = link_to leave_community_path, method: :post
+                | Leave
 
 
 
