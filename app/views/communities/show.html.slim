@@ -100,17 +100,16 @@ section
                     = u.fname.to_s + " " +u.name.to_s  
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s   
-        - if !current_user.member_of.include?(@current_community)
+        - if !current_user || !current_user.member_of.include?(@current_community)
           .col-lg-4.center
             .ch-item-btn
               = link_to join_community_path, method: :post
                 | Join US
-        - else
+        - elsif current_user
           .col-lg-4.center
             .ch-item-btn
               = link_to leave_community_path, method: :post
                 | Leave
-
 
 
 
