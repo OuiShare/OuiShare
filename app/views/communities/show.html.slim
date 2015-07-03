@@ -18,7 +18,7 @@ section
     .col-lg-6.col-lg-offset-3.col-sm-12
       .row
         .col-lg-12
-          h3.blue Join Us
+          h3.blue Get in Touch
           hr.hr-large.blue
       .row   
         - @current_community.users.limit(6).each do |u|
@@ -31,7 +31,7 @@ section
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s    
 
-- unless @current_community.events.empty?
+- unless @community_events.empty?
 
   section
     .container
@@ -44,8 +44,8 @@ section
           #slider-container.text-center style="min-height:100%;"
             #slider3_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
               div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
-                - @current_community.events.order('date_start').each do |e|
-                  .event-slide
+                - @community_events.each do |e|
+                  .event-slide class=('event-inactive' if e.over?)
                     .event-slide-month
                       = I18n.t("date.month_names")[e.date_start.month]
                     hr.event-slide-hr                
@@ -100,10 +100,9 @@ section
                     = u.fname.to_s + " " +u.name.to_s  
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s   
-        .ch-item-show style= "background-color: #00c389;"
-          .ch-info
-            .info
-              | Join US
+        .col-lg-4.center
+          .ch-item-btn
+            | Join US
 
 
 

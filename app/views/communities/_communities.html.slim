@@ -24,9 +24,7 @@
                     p.center.blue style= "word-wrap: break-word;"
                       = "#{u.fname} #{u.name}"
                 .col-md-3
-                  .ch-item-show style= "background-color: #00c389"
-                    .ch-info
-                      .info
-                        = link_to community_path(c)  
-                          = "See the community"
+                  .ch-item-btn style="padding-top: 40px"
+                    = link_to community_path(c)  
+                       = "See the community"
 

@@ -5,6 +5,7 @@ class Community < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :events
+  has_many :users, through: :communities_members
 
   # has_many :connectors
   # has_many :users, through: :connectors
