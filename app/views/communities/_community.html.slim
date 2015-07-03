@@ -19,9 +19,9 @@
                 p.center.blue style= "word-wrap: break-word;"
                   = u.fname.to_s + " " +u.name.to_s
             .col-md-3
-              = link_to community_path(community)     
-                .ch-item-community style= "background-color: #00C389"
-                  p = "See the community"
+              .ch-item-btn style="padding-top: 40px"                     
+                = link_to community_path(community)                       
+                    = "See the community"
 
 
 /     h3.blue = r.title
