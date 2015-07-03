@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150623134438) do
-=======
 ActiveRecord::Schema.define(version: 20150702132156) do
->>>>>>> cyril_new_css
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,11 +155,8 @@ ActiveRecord::Schema.define(version: 20150702132156) do
     t.integer  "region_id"
     t.integer  "row_order"
     t.text     "text_html"
-<<<<<<< HEAD
-    t.string   "main_image"
-=======
     t.string   "address"
->>>>>>> cyril_new_css
+    t.string   "main_image"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree

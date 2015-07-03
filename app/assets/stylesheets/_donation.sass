@@ -2,122 +2,64 @@ $red: #D02947
 
 #page-donations
 
-  .pink-box
-    background: $red
-    color: white
-    padding: 20px 40px
 
+  font-weight: bold
 
-    h5
+  ul
+    text-align: center
+
+    .value
+      width: 70px
+      height: 70px
+      background: #09c894
       color: white
-      text-transform: uppercase
-      font-size: 20px
-
-    .header
-      .menu-currency
-
-        .choose-currency
-          float: right
-          font-size: 16px
-          margin-top: 4px
-          margin-right: 20px
-
-        table
-          float: right
-
-        table, tr, td
-          border: 1px solid white
-          border-collapse: collapse
-
-        tr, td
-          padding: 2px 5px 3px 5px
-
-        .usd, .eur
-          cursor: pointer
-
-
-    section
-      border: 1px solid white
-      overflow: hidden
-      margin-bottom: 20px
-      padding: 0
-
-      &.values, &.methods
-
-        ul
-          list-style: none
-          margin-left: 0
-          padding: 0
-
-          li
-            display: inline-block
-            text-align: center
-            margin: 0 10px 0 0px
-            padding: 0
-            +box-sizing(border-box)
-            position: relative
-
-            &.value
-              height: 45px
-              width: 75px
-            &.method
-              height: 40px
-              width: 180px
-
-            &:after
-              content: ""
-              clear: both
-
-            label
-              display: block
-              position: absolute
-              cursor: pointer
-              font-size: 0
-              left: 1px
-              right: 1px
-              top: 1px
-              white-space: nowrap
-
-            input[type="radio"]
-              position: absolute
-              margin: 10px
-
-          .btn
-            font-size: 20px
-            padding: 4px 10px
-
-        .custom
-          width: 119px !important
-          text-align: left !important
-          margin-top: 7px
-
-        #custom
-          display: inline-block
-          border: 1px solid white
-          background: $red
-          font-size: 12px
-          font-style: italic
-          border: 1px solid #FFFFFF
-          color: #FFFFFF
-          margin-left: 5px
-          width: 100px
-          height: 40px
-
-  .explain
-    border-top: 1px solid black
-    background: white
-    color: black
-
-  .box
-    border: 1px solid black
-    padding: 20px 30px
-    .content
-      margin-left: 105px
-    .avatar
-      float: left
+      border-radius: 35px
+      display: inline-block
       margin-right: 20px
-      .small
-        font-size: 12px
-        clear: both
-        display: block
-        margin-top: 10px
+
+      .submit
+        width: 70px
+        height: 70px
+        border: none
+        border-radius: 35px
+        background: #09c894
+        text-align: center
+
+  .custom
+    text-align: center
+    .submit
+
+
+  .title-donation 
+    font-size: 24px
+    font-family: "Naiv", verdana
+    text-transform: uppercase
+    color: #09c894
+    margin-top: 50px
+
+  .menu-currency
+
+    
+    font-size: 22px
+
+    table
+      float: right
+
+    table, tr, td
+      border: 1px solid white
+      border-collapse: collapse
+
+    tr, td
+      padding: 2px 5px 3px 5px
+
+    .active
+      text-decoration: underline
+      color: #09c894
+
+    .usd, .eur
+      cursor: pointer
+
+    .usd, .eur
+      &:hover
+        text-decoration: underline
+        color: #09c894

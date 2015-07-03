@@ -9,15 +9,13 @@
     / Wrapper for slides
     .carousel-inner role="listbox"
       .item.active
-        = image_tag('/assets/image slider 01.png')
+        = image_tag(@top_banner.image1.top_banner.url)
         .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{new_user_session_path}"
-            |Join
+          a.btn-green.btn.btn-large href="#{@top_banner.link1}" = @top_banner.link_text1
       .item
-        = image_tag('/assets/image slider 02.png')
+        = image_tag(@top_banner.image2.top_banner.url)
         .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="http://magazine.ouishare.net"
-            |Read the Magazine
+          a.btn-green.btn.btn-large href="#{@top_banner.link2}" = @top_banner.link_text2
 
   = render 'home/about'
   = render 'home/events'

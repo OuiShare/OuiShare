@@ -23,13 +23,15 @@ $(document).ready ->
 
   $('.eur').click (e) ->
     e.preventDefault()
-    console.log 'test'
+    $('.eur').addClass('active')
+    $('.usd').removeClass('active')
     $('.dolar').hide()
     $('.euro').show()
 
   $('.usd').click (e) ->
     e.preventDefault()
-    console.log 'test'
+    $('.eur').removeClass('active')
+    $('.usd').addClass('active')
     $('.euro').hide()
     $('.dolar').show()
 
