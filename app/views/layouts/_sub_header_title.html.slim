@@ -7,11 +7,9 @@
 
     - if @event
       .col-lg-4
-        hr.hr-title
-        h3.blue 
-          = @event.cta
-        hr.hr-title
-
+        .sub-header-container
+          p
+            = @event.cta
 
     - else
       .col-lg-4

@@ -1,4 +1,4 @@
-- content_for :page_title, "Profile - #{@user.name}"
+- content_for :page_title, "Profile - #{@user.full_name}"
 == render partial: 'layouts/sub_header_title', locals: {title: "Member Profiles", text: ""}
 #profile
   .row.section
@@ -10,7 +10,7 @@
           i
             = link_to " Edit Profile", edit_user_registration_path
         .profile-name
-          = @user.fname.nil? ? @user.name : @user.fname
+          = @user.full_name
         hr.hr-large.blue.no-margin-vertical
 
         h4.subtitle = @user.title if !@user.profile_type.user?

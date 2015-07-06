@@ -6,16 +6,18 @@
       .col-lg-6.col-lg-offset-3.col-sm-12
         img.banner src="#{@project.image.project_page_thumb.url}"
         .markdown = @project.resume_html
-        - @project.tags.each do |t|
-          span.label.blue = t.name
+        .tag-show.font-14
+          - @project.tags.each do |p|
+            = p.name.to_s + (p != @project.tags.last ? " |" : "")
+
        
     .info
       .row.section
         .col-lg-6.col-lg-offset-3.col-sm-12
           h3.subtitle.black = t('projects.organizers')
-          .avatars
+          .avatars.center
             - @project.users.each do |u|
-              span.block
+              span.block.event-organizer-avatar
                 = link_to u do
                   = image_tag(u.avatar_url(140))
       br

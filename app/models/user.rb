@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Shared::BeautifulText
 
   extend FriendlyId
-  friendly_id :fname, use: [:slugged]
+  friendly_id :full_name, use: [:slugged]
 
   validates :terms_of_service, acceptance: true
   has_many :authorizations, dependent: :destroy

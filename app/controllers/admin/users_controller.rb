@@ -13,7 +13,7 @@ module Admin
 
     def show
       user_id = params[:id]
-      @user = User.find_by_id(user_id)
+      @user = User.find_by_id(user_id) || User.friendly.find(user_id)
         if @user.nil?
           redirect_to '/errors/404', :code => '404'
         else
