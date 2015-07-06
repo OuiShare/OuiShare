@@ -34,5 +34,5 @@
       / = f.input :text2, label: 'Text 2 (Markdown)'
   div.row
     div.col-lg-12
-      = f.association :users, as: :check_boxes, collection: User.all(order: 'name')
+      = f.association :users, as: :check_boxes,  :label_method => :full_name, collection: User.all(order: 'name')
       = f.submit
