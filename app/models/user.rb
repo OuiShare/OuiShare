@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   belongs_to :language
   belongs_to :occupation
   belongs_to :user_source
-  has_and_belongs_to_many :sectors
 
   # has_many :connectors
   # has_many :communities, through: :connectors

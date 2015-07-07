@@ -5,9 +5,11 @@
 /        .col-lg-12
 /          h3.blue About
 /          hr.hr-large.blue
-.row
-  .col-lg-6.col-lg-offset-3.col-sm-12
-    .markdown = @resource.text_html
+section
+  .container
+    .row
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        .markdown = @resource.text_html
   / section#banner
   /   .container
   /     .row

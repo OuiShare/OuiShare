@@ -9,6 +9,9 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+#Language list
+gem 'language_list', '~> 1.1.0'
+
 # HAML
 
 gem 'haml-rails'

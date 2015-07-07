@@ -25,10 +25,10 @@
   div.row
     div.col-lg-12    
       = f.input :info, label: 'About this event (Long description, Markdown)'
-      = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
+      = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)'
   div.row
     div.col-lg-12    
-      = f.input :join_us_text_html, label: 'Join Event Integration code'
+      = f.input :join_us_code_html, label: 'Join Event Integration code (html)'
   div.row
     div.col-lg-4
       = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'

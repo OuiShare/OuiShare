@@ -11,13 +11,14 @@
         br
         .markdown = @event.resume_html
         .row.center
-          a.btn.btn-green.btn-large href="#join-us" Join us
+          a.btn.btn-white-green.btn-large href="#join-us" = t("join_us")
           
 
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        h4.subtitle About this event
+        h3.blue About this event
+        hr.hr-large.blue
         .markdown = @event.info_html
         .tag-show.font-14
           - @event.tags.each do |e|
@@ -37,7 +38,8 @@
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        h4.subtitle Organizers
+        h3.blue Organizers
+        hr.hr-large.blue
         .avatars.center
           - @event.users.each do |u|
             span.block.event-organizer-avatar
@@ -48,29 +50,31 @@
     .row.section#join-us
       .container
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h4.subtitle Join us!
-          .markdown = @event.join_us_text_html
-          ul.unstyled
-            li
-              = link_to @event.service1_link do
-                = image_tag(@event.service1_image)
-                p.service = @event.service1_title
-            li
-              = link_to @event.service2_link do
-                = image_tag(@event.service2_image)
-                p.service = @event.service2_title
-            li
-              = link_to @event.service3_link do
-                = image_tag(@event.service3_image)
-                p.service = @event.service3_title
+          h3.blue Join us!
+          hr.hr-large.blue
+          = raw @event.join_us_code_html
+          / .markdown = @event.join_us_text_html
+          / ul.unstyled
+          /   li
+          /     = link_to @event.service1_link do
+          /       = image_tag(@event.service1_image)
+          /       p.service = @event.service1_title
+          /   li
+          /     = link_to @event.service2_link do
+          /       = image_tag(@event.service2_image)
+          /       p.service = @event.service2_title
+          /   li
+          /     = link_to @event.service3_link do
+          /       = image_tag(@event.service3_image)
+          /       p.service = @event.service3_title
 
-          - if @event.title1.present?
-            h4 = @event.title1
-            .markdown = @event.text1_html
+          / - if @event.title1.present?
+          /   h4 = @event.title1
+          /   .markdown = @event.text1_html
 
-          - if @event.title2.present?
-            h4 = @event.title2
-            .markdown = @event.text2_html
+          / - if @event.title2.present?
+          /   h4 = @event.title2
+          /   .markdown = @event.text2_html
 
   .row.section
     .container

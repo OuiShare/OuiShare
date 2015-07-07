@@ -8,20 +8,21 @@
         - if current_user && current_user.id == @user.id
           br
           i
-            = link_to " Edit Profile", edit_user_registration_path
+            = link_to "Edit Profile", edit_user_registration_path
         .profile-name
           = @user.full_name
         hr.hr-large.blue.no-margin-vertical
 
-        h4.subtitle = @user.title if !@user.profile_type.user?
-        .markdown = @user.bio_html
+        a href="#{@user.organization_url}"
+          h4.subtitle = @user.organization_name
+        span based in #{@user.city}, #{@user.country}
 
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
       
         //.markdown = @user.community.text_html
-        .profile-title.center = t('profile.contact_me')
+        .profile-title.center = "#{t('profile.contact_me_in')} : #{@user.contact_languages.join('/') }"
         ul.list-unstyled.center
           - if @user.email_address.present?
             li style="display: inline-block"

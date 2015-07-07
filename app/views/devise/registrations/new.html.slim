@@ -62,7 +62,8 @@ section#signup
                     / - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
                 .row  
                   .col-lg-12
-                    = f.input :birthday, as: :date, :placeholder => "Date of birth", start_year: 1920, prompt: true, label: false 
+                    = f.label :birthday, "Date of birth", :style => "width: 100%"
+                    = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
                 br             
                 .row
                   .col-md-6
@@ -104,7 +105,7 @@ section#signup
         | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
       p 
         | By becoming a member of OuiShare, you express your consent for our mission and values. 
-          a target="_blank"href= about_mission_url Read more
+        a target="_blank" href="#{about_mission_url}" Read more
 
       div.right
         = render "devise/shared/links"

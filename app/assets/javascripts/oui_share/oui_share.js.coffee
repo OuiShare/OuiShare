@@ -35,15 +35,42 @@ $(document).ready ->
     $('.euro').hide()
     $('.dolar').show()
 
+  $('.add-contact-language').click (e) ->
+    e.preventDefault()
+    value = $('.contact-language-select').val()
+    res = $('#user_contact_languages').val().replace('{','').replace('}','').split(',')
+    if (res.indexOf(value) == -1)
+      console.log res
+      res.push(value)
+      console.log res 
+      $('#user_contact_languages').val("{"+res.toString()+"}")
+      $('.contact-languages').append("<div value='"+value+"' class='contact-language-value'><span class='remove-contact-language'>x</span>" +value+ "</div>")
+
+  $('#edit').on 'click', '.remove-contact-language', (e) ->
+    value = this.parentNode.getAttribute('value')
+    res = $('#user_contact_languages').val().replace('{','').replace('}','').split(',')
+    res = res.splice(res, res.indexOf(value))
+    $('#user_contact_languages').val("{"+res.toString()+"}")
+    this.parentNode.remove()
+    
 
 
+  remove_ctc_lang = (t) ->
+    console.log(this)
 
+  removetest = (t) ->
+    console.log(test)
   
 
+remove_ctc_lang = () ->
+  console.log(this)
+
+removetest = (t) ->
+  console.log(test)
 
 jssor_slider1_starter = (containerId) ->
   options = 
-    $AutoPlay: true
+    $AutoPlay: false
     $PauseOnHover: 1
     $ArrowKeyNavigation: true
     $SlideWidth: 600
@@ -77,7 +104,7 @@ jssor_slider1_starter = (containerId) ->
 
 jssor_slider2_starter = (containerId) ->
   options = 
-    $AutoPlay: true
+    $AutoPlay: false
     $PauseOnHover: 1
     $ArrowKeyNavigation: true
     $SlideWidth: 400

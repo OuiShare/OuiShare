@@ -1,61 +1,111 @@
-.row
-  .col-lg-12
-    br/
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
-      = f.error_notification
-      .form-inputs
-        .row
-          .col-lg-6
-            = f.input :fname, :label => 'First name', :autofocus => true
-            = f.input :name, :label => "Last name", :required => true 
-            = f.label :occupation, "* Gender"
-            = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
-            = f.input :email, :label => "(Login address)", :required => true
-            = f.input :title
-            = f.input :bio
-            = f.label :birthday, "Date of birth"
-            = f.date_select :birthday, start_year: 1920
-            = f.label :occupation, "* Occupation"
-            = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation", :required => true
-            = f.label :language_id, "* What is your language preference?"
-            = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language", :required => true
-            = f.label :country , "* Country"
-            = f.country_select :country, priority_countries: ["GB", "US"], :required => true
-            = f.input :city, :required => true 
-            = f.label :topics, "Which of the following topics are you interested in?", :style => "margin-bottom:7px;font-weight:bold;"
-            = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
-          .col-lg-6            
-            = f.input :image, as: :image_preview, input_html: {preview_version: :small}
-            = f.input :facebook_url
-            = f.input :twitter_url
-            = f.input :google_plus_url
-            = f.input :github_url
-            = f.input :linkedin_url
-            = f.input :email_address, label: "Email address to display on profile"
-            = f.input :tag_list, as: :text, label: "Interested in (Tags, separated by comma and without #)"
-            = f.input :organization_name, label: "Name of your organization"
-            = f.input :organization_url, label: "Url of your organization"
-            = f.input :password, :autocomplete => "off", :required => false
-            = f.input :password_confirmation, :required => false
-            / = f.input :current_password, :required => true, :label => 'Type your password to save changes'
-            = f.button :submit, t(".update"), class: 'right'
+#edit
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row
+        h3.blue = t("pages.registrations.edit")
+        hr.hr-large.blue
+      .row
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }, defaults: { input_html: { class: 'form-control'}, wrapper_html: { class: 'form-group' } } ) do |f|
+          = f.error_notification
+          .form-inputs
+            .row
+              .col-lg-6.col-sm-12
+                  = f.input :fname, :label => 'First name', :autofocus => true
+              .col-lg-6.col-sm-12
+                  = f.input :name, :label => "Last name", :required => true 
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :email, :label => "(Login address)", :required => true
+              .col-lg-6.col-sm-12
+                = f.label :occupation, "* Gender"
+                = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, { }, { :class => 'form-control' }
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :title
+              .col-lg-6.col-sm-12
+                = f.label :language_id, "* What is your language preference?"
+                = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
+            .row
+              .col-lg-6.col-sm-12
+                = f.label :country , "* Country"
+                = f.input :country, as: :country, :placeholder => "Country", prompt: 'Select your country', label: false  
+              .col-lg-6.col-sm-12
+                = f.input :city, :required => true
+            .row
+              .col-lg-12
+                = f.input :bio
+            .row
+              .col-lg-6.col-sm-12
+                = f.label :birthday, "Date of birth", :style => "width: 100%"
+                = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
+              .col-lg-6.col-sm-12
+                = f.label :occupation_id, "* Occupation"
+                = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
+            .row
+              .col-lg-12
+                = f.label :topics, "Which of the following topics are you interested in?"
+                br
+                = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
+            .row
+              .col-lg-12   
+                = f.input :image, as: :image_preview, input_html: {preview_version: :small}
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :facebook_url
+              .col-lg-6.col-sm-12
+                = f.input :twitter_url
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :google_plus_url
+              .col-lg-6.col-sm-12
+                = f.input :github_url
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :linkedin_url
+              .col-lg-6.col-sm-12
+                = f.input :email_address, label: "Email address to display on profile"
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :organization_url, label: "Url of your organization"
+              .col-lg-6.col-sm-12
+                = f.input :organization_name, label: "Name of your organization"
+            .row
+              .col-lg-12
+                = f.input :tag_list, as: :text, label: "Interested in (Tags, separated by comma and without #)"
+            .row
+              .col-lg-6.col-sm-12              
+                = f.input :contact_languages, as: :hidden             
+                |Contact me in
+                br
+                = select :contact, :user,  @language_list,{}, { :class => 'form-control contact-language-select', :style => "width: 80%; float: left;" }
+                a.btn.btn-green.add-contact-language.glyphicon.glyphicon-plus href="#"
+                .contact-languages
+                  - @user.contact_languages.each do |lang|
+                    = raw("<div value='"+ lang +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + lang + "</div>")
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :password, :autocomplete => "off", :required => false
+              .col-lg-6.col-sm-12
+                = f.input :password_confirmation, :required => false
+            .row.center
+              = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
 
-    - if devise_mapping.omniauthable?
-      table.table
-        thead
-          tr
-            th = t(".provider")
-            td = t(".connect_disconnect")
-        tbody
-          - resource_class.omniauth_providers.each do |provider_name|
-            tr
-              td= provider_name.to_s.titleize
-              td
-                - provider = current_user.authorizations.provider(provider_name).first
-                = link_to t(".connect_your_provider", provider_name: provider_name.to_s.titleize), omniauth_authorize_path(resource_name, provider_name) unless provider.present?
-                = link_to t(".disconnect_from_provider", provider_name: provider_name.to_s.titleize), authorization_path(provider), method: :delete if provider.present?
+        - if devise_mapping.omniauthable?
+          table.table
+            thead
+              tr
+                th = t(".provider")
+                td = t(".connect_disconnect")
+            tbody
+              - resource_class.omniauth_providers.each do |provider_name|
+                tr
+                  td= provider_name.to_s.titleize
+                  td
+                    - provider = current_user.authorizations.provider(provider_name).first
+                    = link_to t(".connect_your_provider", provider_name: provider_name.to_s.titleize), omniauth_authorize_path(resource_name, provider_name) unless provider.present?
+                    = link_to t(".disconnect_from_provider", provider_name: provider_name.to_s.titleize), authorization_path(provider), method: :delete if provider.present?
 
-    h3 = t(".cancel_my_account")
-    p
-      | #{t(".unhappy")} #{link_to t(".cancel_my_account"), registration_path(resource_name), :data => { :confirm => t(".are_you_sure") }, :method => :delete}.
-    = link_to t(".back"), :back
+        h3 = t(".cancel_my_account")
+        p
+          | #{t(".unhappy")} #{link_to t(".cancel_my_account"), registration_path(resource_name), :data => { :confirm => t(".are_you_sure") }, :method => :delete}.
+        = link_to t(".back"), :back
