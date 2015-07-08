@@ -13,9 +13,15 @@
           = @user.full_name
         hr.hr-large.blue.no-margin-vertical
 
+        h4.subtitle = @user.title
+        .row based in #{@user.city}, #{@user.country}
         a href="#{@user.organization_url}"
-          h4.subtitle = @user.organization_name
-        span based in #{@user.city}, #{@user.country}
+          = @user.organization_name
+
+  .row.bio
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        p = @user.bio
 
   .row.section
     .container
@@ -51,11 +57,24 @@
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        .profile-title.center Topics
-        - if @user_topics.present?
-          .tag-show.font-14
-            - @user_topics.each do |topic|
-              = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Topic
+          - if @user.topics.present?
+            .tag-show.font-14
+              - @user_topics.each do |topic|
+                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Skill
+          - if @user.topics.present?
+            .tag-show.font-14
+              - @user_topics.each do |topic|
+                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Interest
+          - if @user.topics.present?
+            .tag-show.font-14
+              - @user_topics.each do |topic|
+                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
 
 
 
