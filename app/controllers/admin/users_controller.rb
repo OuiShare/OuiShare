@@ -18,6 +18,8 @@ module Admin
           redirect_to '/errors/404', :code => '404'
         else
           @user_topics = @user.topics
+          @user_interests = @user.tag_list
+          @user_skills = @user.skill_list
         end
     end
 

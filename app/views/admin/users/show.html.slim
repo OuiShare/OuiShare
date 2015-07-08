@@ -14,8 +14,8 @@
         hr.hr-large.blue.no-margin-vertical
 
         h4.subtitle = @user.title
-        .row based in #{@user.city}, #{@user.country}
-        a href="#{@user.organization_url}"
+        .row based in #{@user.city}, #{@user.country_name}
+        a.big-link href="#{@user.organization_url}"
           = @user.organization_name
 
   .row.bio
@@ -65,16 +65,16 @@
                 = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
         .col-lg-4.col-sm-12
           .profile-title.center Skill
-          - if @user.topics.present?
+          - if @user_skills.present?
             .tag-show.font-14
-              - @user_topics.each do |topic|
-                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+              - @user_skills.each do |skill|
+                = skill.to_s + (skill != @user_skills.last ? " |" : "")
         .col-lg-4.col-sm-12
           .profile-title.center Interest
-          - if @user.topics.present?
+          - if @user_interests.present?
             .tag-show.font-14
-              - @user_topics.each do |topic|
-                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+              - @user_interests.each do |interest|
+                = interest + (interest != @user_interests.last ? " |" : "")
 
 
 
