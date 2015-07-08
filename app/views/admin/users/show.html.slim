@@ -13,9 +13,15 @@
           = @user.full_name
         hr.hr-large.blue.no-margin-vertical
 
-        a href="#{@user.organization_url}"
-          h4.subtitle = @user.organization_name
-        span based in #{@user.city}, #{@user.country}
+        h4.subtitle = @user.title
+        .row based in #{@user.city}, #{@user.country_name}
+        a.big-link href="#{@user.organization_url}"
+          = @user.organization_name
+
+  .row.bio
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        p = @user.bio
 
   .row.section
     .container
@@ -51,11 +57,24 @@
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        .profile-title.center Topics
-        - if @user_topics.present?
-          .tag-show.font-14
-            - @user_topics.each do |topic|
-              = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Topic
+          - if @user.topics.present?
+            .tag-show.font-14
+              - @user_topics.each do |topic|
+                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Skill
+          - if @user_skills.present?
+            .tag-show.font-14
+              - @user_skills.each do |skill|
+                = skill.to_s + (skill != @user_skills.last ? " |" : "")
+        .col-lg-4.col-sm-12
+          .profile-title.center Interest
+          - if @user_interests.present?
+            .tag-show.font-14
+              - @user_interests.each do |interest|
+                = interest + (interest != @user_interests.last ? " |" : "")
 
 
 

@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   #     :maximum => 1.megabytes.to_i 
   #   } 
 
-  acts_as_taggable
+  acts_as_taggable_on :skill, :tag
 
   beautiful_text_for [:bio]
 

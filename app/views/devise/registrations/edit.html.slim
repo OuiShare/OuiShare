@@ -73,6 +73,9 @@
               .col-lg-12
                 = f.input :tag_list, as: :text, label: "Interested in (Tags, separated by comma and without #)"
             .row
+              .col-lg-12
+                = f.input :skill_list, as: :text, label: "Skills (Tags, separated by comma and without #)"
+            .row
               .col-lg-6.col-sm-12              
                 = f.input :contact_languages, as: :hidden             
                 |Contact me in

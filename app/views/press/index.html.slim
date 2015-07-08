@@ -1,3 +1,4 @@
+== render partial: 'layouts/sub_header_title', locals: {title: t("pages.press.index"), text: ""}
 #page-about-internal
   section
     .container
@@ -14,13 +15,5 @@
           h3 = @press_room_page.title3
           hr.hr-large.blue
           .markdown = @press_room_page.text3_html
-            
-  section
-    .container
-      .col-lg-12
-        h3 Featured in
-        hr.hr-large.blue
-        .row.press-ugly-syle
-          .markdown = @press_room_page.text2_html
 
 

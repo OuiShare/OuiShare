@@ -31,7 +31,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(community: [:name, :link, :text, :main_image, :language_id, :region_id, :row_order_position, :user_ids => [], :event_ids => [], :project_ids => []])
+      params.permit(community: [:name, :link, :text, :address, :main_image, :language_id, :region_id, :row_order_position, :user_ids => [], :event_ids => [], :project_ids => []])
     end
 
   end

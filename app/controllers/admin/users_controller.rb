@@ -18,7 +18,8 @@ module Admin
           redirect_to '/errors/404', :code => '404'
         else
           @user_topics = @user.topics
-          @user_occupation = @user.occupation
+          @user_interests = @user.tag_list
+          @user_skills = @user.skill_list
         end
     end
 
@@ -28,7 +29,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(user: [:fname, :name, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :tag_list, :profile_type, :admin, :show_order, :contact_languages])
+      params.permit(user: [:fname, :name, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :skills, :tag_list, :profile_type, :admin, :show_order, :contact_languages])
     end
   end
 end

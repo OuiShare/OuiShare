@@ -7,8 +7,8 @@ class CommunitiesController < ApplicationController
   def index
     @community_page = @current_language.community_page || CommunityPage.new
     @communities = @current_language.communities
-    @regions = Region.all
-    @communities_for_select = Community.all
+    @regions = Region.where(language: @current_language)
+    @communities_for_select = Community.where(language: @current_language)
   end
 
   def show

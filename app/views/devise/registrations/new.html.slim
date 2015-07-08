@@ -96,6 +96,9 @@ section#signup
                 .row    
                   .col-lg-10.col-lg-offset-1
                     = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false
+
+                .row.center
+                  = f.button :submit, t(".sign_up_submit"), class: 'btn btn-green btn-large'
                       
     .col-lg-6.col-lg-offset-3.col-sm-12
       p.bold = "OuiShare Mission & Values"
