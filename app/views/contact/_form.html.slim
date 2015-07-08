@@ -1,14 +1,13 @@
 .contact-form
-  = simple_form_for  :contact, url: contact_path, html: {class: 'form-vertical'}, method: :post do |f|
+  = simple_form_for  :contact, url: contact_path, defaults: { input_html: { class: 'form-control'}, wrapper_html: { class: 'form-group' } } , method: :post do |f|
 
-    = f.email_field :email, as: :string, placeholder: t('contact.email'), label: false, required: true
-        small.error An email address is required.
+    = f.input :email, placeholder: t('contact.email'), label: false, required: true
     = f.input :country, as: :country, prompt: t('contact.country'), label: false, required: true
     = f.input :name, as: :string, placeholder: t('contact.first_name'), label: false
     = f.input :city, as: :string, placeholder: t('contact.city'), label: false
     = f.input :subject, as: :string, placeholder: t('contact.subject'), label: false
     = f.input :message, as: :text, placeholder: t('contact.message'), label: false, required: true
 
-    .row
-      .pull-right
-        = f.submit t('contact.send'), class: "btn blue"
+    
+    .pull-right
+        = f.submit t('contact.send'), class: "btn btn-green btn-large"
