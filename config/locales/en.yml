@@ -5,6 +5,7 @@ en:
       size_too_small: "is too small (should be at least %{file_size})"
       size_too_big: "is too big (should be at most %{file_size})"
   hello: "Hello world"
+  join_us: "Join us"
   contact:
     email: 'Email'
     first_name: 'First name'
@@ -95,7 +96,7 @@ en:
   knowledge:
     all_knowledge_groups: 'All Knowledge Groups'
   profile:
-    contact_me: 'Contact me'
+    contact_me_in: 'Contact me in'
   menu:
     about: 'about'
     alumni: 'Alumni Connectors'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706044903) do
+ActiveRecord::Schema.define(version: 20150707133628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -296,6 +296,7 @@ ActiveRecord::Schema.define(version: 20150706044903) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.text     "join_us_code_html"
   end
 
   add_index "events", ["language_id"], name: "index_events_on_language_id", using: :btree
@@ -935,6 +936,7 @@ ActiveRecord::Schema.define(version: 20150706044903) do
     t.integer  "user_source_id"
     t.integer  "show_order",             default: 1000
     t.string   "slug"
+    t.text     "contact_languages",      default: [],                 array: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

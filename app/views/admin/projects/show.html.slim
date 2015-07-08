@@ -4,7 +4,8 @@
   .container
     .row.section
       .col-lg-6.col-lg-offset-3.col-sm-12
-        img.banner src="#{@project.image.project_page_thumb.url}"
+        .center
+          img.banner src="#{@project.image.project_page_thumb.url}"
         .markdown = @project.resume_html
         .tag-show.font-14
           - @project.tags.each do |p|

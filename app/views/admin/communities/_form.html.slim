@@ -6,6 +6,7 @@
   = f.input :link
   = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
   = f.input :text, label: 'Text (Markdown)'
+  = f.input :address
   = f.association :projects, as: :check_boxes
   = f.association :events, as: :check_boxes
   = f.association :users, as: :check_boxes, :label_method => :full_name
