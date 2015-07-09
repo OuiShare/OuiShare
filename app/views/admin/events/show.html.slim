@@ -28,7 +28,7 @@
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12    
         = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
-          .row
+          .row.center
             .col-lg-12
               = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
           .row
