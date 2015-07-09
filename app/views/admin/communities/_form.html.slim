@@ -1,12 +1,14 @@
 = simple_form_for  [:admin, @community.language, @community] do |f|
   h4 Language
+  = f.submit
+  br
   = @community.language.name
-  = f.association :region
+  = f.association :region, collection: Region.where(language: @community.language)
   = f.input :name
   = f.input :link
   = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
   = f.input :text, label: 'Text (Markdown)'
-  = f.input :address
+  = f.input :address, label: 'Full address (will be used on the map)'
   = f.association :projects, as: :check_boxes
   = f.association :events, as: :check_boxes
   = f.association :users, as: :check_boxes, :label_method => :full_name

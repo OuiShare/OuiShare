@@ -1,19 +1,18 @@
 == render partial: 'layouts/sub_header_title', locals: {title: t("pages.press.index"), text: ""}
 #page-about-internal
   section
-    .container
-      .col-lg-6.col-lg-offset-3.col-sm-12
-        .markdown = @press_room_page.main_text_html
-        
-        .banner
-          = image_tag(@press_room_page.image.top_internal)
-        
-        .row
-          h3 = @press_room_page.title1
-          hr.hr-large.blue
-          .markdown = @press_room_page.text1_html
-          h3 = @press_room_page.title3
-          hr.hr-large.blue
-          .markdown = @press_room_page.text3_html
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .markdown = @press_room_page.main_text_html
+      
+      .banner
+        = image_tag(@press_room_page.image.top_internal)
+      
+      .row
+        h3 = @press_room_page.title1
+        hr.hr-large.blue
+        .markdown = @press_room_page.text1_html
+        h3 = @press_room_page.title3
+        hr.hr-large.blue
+        .markdown = @press_room_page.text3_html
 
 

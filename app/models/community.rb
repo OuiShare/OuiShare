@@ -8,6 +8,9 @@ class Community < ActiveRecord::Base
   has_many :community_members
   has_many :members, -> { uniq }, through: :community_members, source: :user
 
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+
   # has_many :connectors
   # has_many :users, through: :connectors
   # has_many :communities_users

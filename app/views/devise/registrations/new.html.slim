@@ -70,6 +70,7 @@ section#signup
                     = f.input :country, as: :country, :placeholder => "Country", prompt: 'Select your country', label: false    
                   .col-md-6   
                     = f.input :city, :required => true, label: false, :placeholder => 'City'
+                br
                 .row
                   .col-lg-6
                     = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
@@ -95,23 +96,28 @@ section#signup
                     = f.input :password, :placeholder => 'Password', :required => true, :hint => false, label: false
                 .row    
                   .col-lg-10.col-lg-offset-1
-                    = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false
+                    = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false                      
+
+                p.bold = "OuiShare Mission & Values"
+
+                p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
+                p
+                  | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
+                p 
+                  | By becoming a member of OuiShare, you express your consent for our mission and values. 
+                  a target="_blank" href="#{about_mission_url}" Read more
+
+                div.right
+                  = render "devise/shared/links"
+
+                br
+                .row
+                  = f.check_box :terms_of_service, label: true, :style => "margin-right:5px;", :required => true
+                  = f.label :terms_of_service, "I consent with and wish to support the OuiShare mission and values."
+                br
 
                 .row.center
                   = f.button :submit, t(".sign_up_submit"), class: 'btn btn-green btn-large'
-                      
-    .col-lg-6.col-lg-offset-3.col-sm-12
-      p.bold = "OuiShare Mission & Values"
-
-      p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
-      p
-        | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
-      p 
-        | By becoming a member of OuiShare, you express your consent for our mission and values. 
-        a target="_blank" href="#{about_mission_url}" Read more
-
-      div.right
-        = render "devise/shared/links"
 
            
 
