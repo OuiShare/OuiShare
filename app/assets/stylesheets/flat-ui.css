@@ -1780,10 +1780,6 @@ address {
     margin: 0 0 0 10px;
   }
 }
-.select {
-  display: inline-block;
-  margin-bottom: 10px;
-}
 [class*="span"] > .select[class*="span"] {
   margin-left: 0;
 }
