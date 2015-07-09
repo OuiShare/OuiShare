@@ -21,6 +21,8 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable
 
+  self.per_page = 10
+
   scope :visible, ->{ where(visible: true) }
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
   scope :next, ->{ where('date_end >= ?', Time.now) }
