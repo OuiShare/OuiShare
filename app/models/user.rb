@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   belongs_to :occupation
   belongs_to :user_source
 
+  self.per_page = 30
+
   # has_many :connectors
   # has_many :communities, through: :connectors
   

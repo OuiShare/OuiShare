@@ -17,11 +17,11 @@
         .carousel-caption.nostyle-caption.center
           a.btn-green.btn.btn-large href="#{@top_banner.link2}" = @top_banner.link_text2
 
-    a.left.carousel-control href="#slideshow" role="button" data-slide="prev"
-      span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+    a.left.carousel-control.carousel-home-left href="#slideshow" role="button" data-slide="prev"
+      span aria-hidden="true"
       span.sr-only Previous
-    a.right.carousel-control href="#slideshow" role="button" data-slide="next"
-      span.glyphicon.glyphicon-chevron-right aria-hidden="true"
+    a.right.carousel-control.carousel-home-right href="#slideshow" role="button" data-slide="next"
+      span aria-hidden="true"
       span.sr-only Next
 
   = render 'home/about'

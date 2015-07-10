@@ -164,6 +164,7 @@ OuiShare::Application.routes.draw do
   post 'contact' => 'contact#submit'
   get 'projects' => 'projects#index', as: 'projects'
   get 'events' => 'events#index', as: 'events'
+  get 'past_events' => 'events#past_events'
   get 'faq' => 'faqs#index', as: 'faq'
   get 'terms' => 'home#terms', as: 'terms'
 

@@ -13,12 +13,9 @@ class HomeController < ApplicationController
     @magazines = Magazine.fetch_last_posts(@current_language.slug) rescue []
 
     #Fetch and order events for slider
-    @slider_events = @current_language.events.visible.order('date_start').to_a
-    t = []
-    @slider_events.each_with_index do |e, index|
-      t << @slider_events.delete_at(index) if !e.over?
-    end
-    @slider_events = t + @slider_events
+    past_events = Event.visible.over.order('date_start DESC').limit(30).reverse
+    @slider_events = Event.visible.next.order('date_start').to_a
+    @slider_events = @slider_events + past_events
     
   end
 

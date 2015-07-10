@@ -1,9 +1,12 @@
 - content_for :page_title, t('menu.advisors')
-== render partial: 'layouts/sub_header_title', locals: {title: t('menu.advisors'), text: @advisors_page.text_html}
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.advisors')}
 #page-about-internal
   section.theTeam#list
     .container
       .activities
+        .row
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            .markdown = @advisors_page.text_html
         .row
           .col-lg-12
             .ch-grid

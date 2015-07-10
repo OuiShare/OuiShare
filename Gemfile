@@ -29,6 +29,7 @@ gem "rmagick", '2.13.3'
 gem 'simple_form_fancy_uploads'
 
 # Improvements
+gem 'will_paginate', '~> 3.0.7'
 gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'simple_form', '~> 3.0.0'
