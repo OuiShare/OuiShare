@@ -12,5 +12,5 @@ section#list
             p = p.resume
             .tag-show
               - p.tags.each do |t|
-                = t.name.to_s + (t != t.tags.last ? " |" : "")      
+                = t.name.to_s + (t != p.tags.last ? " |" : "")      
             
