@@ -1,9 +1,12 @@
 - content_for :page_title, t('menu.users')
-== render partial: 'layouts/sub_header_title', locals: {title: t('menu.users'), text: @users_page.text_html}
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.users')}
 #page-about-internal
   section.theTeam#list
     .container
       .activities
+        .row
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            .markdown = @users_page.text_html
         .col-lg-12
           .ch-grid
             - @users.order('name').each do |a|

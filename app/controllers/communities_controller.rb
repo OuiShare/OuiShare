@@ -12,12 +12,9 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    @community_events = @current_community.events.order('date_start').to_a
-    t = []
-    @community_events.each_with_index do |e, index|
-      t << @community_events.delete_at(index) if !e.over?
-    end
-    @community_events = t + @community_events
+    past_events = @current_community.events.visible.over.order('date_start DESC').limit(30).reverse
+    @community_events = @current_community.events.visible.next.order('date_start').to_a
+    @community_events = @community_events + past_events
   end
 
   def join_us

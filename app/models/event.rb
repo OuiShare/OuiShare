@@ -23,6 +23,7 @@ class Event < ActiveRecord::Base
 
   self.per_page = 10
 
+  scope :over, -> { where('date_end < ?', Time.now) }
   scope :visible, ->{ where(visible: true) }
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
   scope :next, ->{ where('date_end >= ?', Time.now) }

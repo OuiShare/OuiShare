@@ -12,11 +12,11 @@ section#list
         .markdown.event = e.resume_html
         .tag-show
           - e.tags.each do |t|
-            = t.name.to_s + "|"   
+            = t.name.to_s + (e != e.tags.last ? " |" : "")
 
         - unless @past
           .row.center.top-buffer
-            a.btn.btn-green.btn-large href=events_path(past: 'true') See past events
+            a.btn.btn-green.btn-large href=past_events_path See past events
 
     .col-lg-6.col-lg-offset-3.col-sm-12.center
       = will_paginate @events
