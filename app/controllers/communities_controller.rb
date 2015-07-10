@@ -5,10 +5,11 @@ class CommunitiesController < ApplicationController
   before_action :authenticate_user!, :only => [:join, :leave]
   
   def index
-    @community_page = @current_language.community_page || CommunityPage.new
-    @communities = @current_language.communities
-    @regions = Region.where(language: @current_language)
-    @communities_for_select = Community.where(language: @current_language)
+    language = Language.where(name:'English')
+    @community_page = language.community_page || CommunityPage.new
+    @communities = language.communities
+    @regions = Region.where(language: language)
+    @communities_for_select = Community.where(language: language)
   end
 
   def show
