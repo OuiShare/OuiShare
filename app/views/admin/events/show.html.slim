@@ -1,67 +1,114 @@
 - content_for :page_title, @event.name
-div#event
-  div.row.section
-    div.large-5.columns
-      h4 = @event.cta
-      .markdown = @event.resume_html
-      - @event.tags.each do |t|
-        span.label.blue = t.name
-    div.large-7.columns
-      img.banner src="#{@event.image.event_page_thumb.url}"
-  div.info
-    div.row.section
-      div.large-4.columns
-        h3.subtitle.black Organizers
-        div.avatars
+== render partial: 'layouts/sub_header_title', locals: {title: @event.title, text: ""}
+#event
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        img.banner src="#{@event.image.event_page_thumb.url}"
+        .tag-show.font-14
+          - @event.tags.each do |e|
+            = e.name.to_s + (e != @event.tags.last ? " |" : "")
+        br
+        .markdown = @event.resume_html
+        .row.center
+          a.btn.btn-white-green.btn-large href="#join-us" = t("join_us")
+          
+
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h3.blue About this event
+        hr.hr-large.blue
+        .markdown = @event.info_html
+        .tag-show.font-14
+          - @event.tags.each do |e|
+            = e.name.to_s + (e != @event.tags.last ? " |" : "")
+
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12    
+        = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
+          .row.center
+            .col-lg-12
+              = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+          .row
+            .col-lg-12.center  
+              = @event.address
+
+  .row.section
+    .container
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        h3.blue Organizers
+        hr.hr-large.blue
+        .avatars.center
           - @event.users.each do |u|
-            span.block
+            span.block.event-organizer-avatar
               = link_to u do
                 = image_tag(u.avatar_url(140))
+  
+  .separator.black
+    .row.section#join-us
+      .container
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue Join us!
+          hr.hr-large.blue
+          = raw @event.join_us_code_html
+          / .markdown = @event.join_us_text_html
+          / ul.unstyled
+          /   li
+          /     = link_to @event.service1_link do
+          /       = image_tag(@event.service1_image)
+          /       p.service = @event.service1_title
+          /   li
+          /     = link_to @event.service2_link do
+          /       = image_tag(@event.service2_image)
+          /       p.service = @event.service2_title
+          /   li
+          /     = link_to @event.service3_link do
+          /       = image_tag(@event.service3_image)
+          /       p.service = @event.service3_title
 
-      div.large-8.columns
-        h3.subtitle.black About this event
-        .markdown = @event.info_html
+          / - if @event.title1.present?
+          /   h4 = @event.title1
+          /   .markdown = @event.text1_html
+
+          / - if @event.title2.present?
+          /   h4 = @event.title2
+          /   .markdown = @event.text2_html
+
+  .row.section
+    .container
+      - if @current_language.events.visible.next.any?
         .row
-          = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
-            .large-8.columns
-              = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
-            .large-4.columns
-              = @event.address
-    .separator.black
+          .col-lg-10.col-lg-offset-1
+            #slider-container.text-center style="min-height:100%;"
+              #slider2_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
+                / Slides Container
+                div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
+                  - @current_language.events.visible.order('date_start').each do |e|
+                    .event-slide class=('event-inactive' if e.over?)
+                      .event-slide-month
+                        = I18n.t("date.month_names")[e.date_start.month]
+                      hr.event-slide-hr                
+                      
+                      .event-slide-title
+                        = e.title
+                      - if !e.over?
+                        a.event-slide-link href=event_path(e)
 
-    div.row.section
-      div.large-4.columns
-        h3.subtitle.black Join us!
+                      .event-slider-place 
+                        = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
 
-        .markdown = @event.join_us_text_html
+                      .event-slider-place
+                        = truncate(e.resume, length: 100)
+                      .tag-show
+                        - e.tags.each do |t|
+                          = t.name.to_s + "|"   
+                            
+                      / span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
+                      /   = link_to event_path(e) do 
+                      /     span = e.title
 
-      div.large-8.columns
-        ul.inline-list.buttons
-          li
-            = link_to @event.service1_link do
-              = image_tag(@event.service1_image)
-              p.service = @event.service1_title
-          li
-            = link_to @event.service2_link do
-              = image_tag(@event.service2_image)
-              p.service = @event.service2_title
-          li
-            = link_to @event.service3_link do
-              = image_tag(@event.service3_image)
-              p.service = @event.service3_title
-
-      div.large-4.columns
-        div.block
-      div.large-4.columns
-        div.block
-
-    div.row
-      div.large-6.columns
-        - if @event.title1.present?
-          h4 = @event.title1
-          .markdown = @event.text1_html
-
-      div.large-6.columns
-        - if @event.title2.present?
-          h4 = @event.title2
-          .markdown = @event.text2_html
+                span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
+                / Arrow Right
+                span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"

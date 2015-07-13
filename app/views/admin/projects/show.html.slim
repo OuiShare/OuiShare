@@ -1,55 +1,47 @@
-div#project
-  div.row.section
-    div.large-5.columns
-      .markdown = @project.resume_html
-      - @project.tags.each do |t|
-        span.label.blue = t.name
-    div.large-7.columns
-      img.banner src="#{@project.image.project_page_thumb.url}"
-  div.info
-    div.row.section
-      div.large-4.columns
-        h3.subtitle.black = t('projects.organizers')
-        div.avatars
-          - @project.users.each do |u|
-            span.block
-              = link_to u do
-                = image_tag(u.avatar_url(140))
+- content_for :page_title, @project.name
+== render partial: 'layouts/sub_header_title', locals: {title: @project.name, text: ""}
+#project
+  .container
+    .row.section
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        .center
+          img.banner src="#{@project.image.project_page_thumb.url}"
+        .markdown = @project.resume_html
+        .tag-show.font-14
+          - @project.tags.each do |p|
+            = p.name.to_s + (p != @project.tags.last ? " |" : "")
 
-      div.large-8.columns
-        h3.subtitle.black = t('projects.info')
-        .markdown = @project.info_html
+       
+    .info
+      .row.section
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.subtitle.black = t('projects.organizers')
+          .avatars.center
+            - @project.users.each do |u|
+              span.block.event-organizer-avatar
+                = link_to u do
+                  = image_tag(u.avatar_url(140))
+      br
+      br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.subtitle.black = t('projects.info')
+          .markdown = @project.info_html
 
-    .separator.black
+      .separator.black
 
-    div.row.joinus
-      div.large-12.columns
-        h3.subtitle.black = t('projects.join_us')
+      .row.joinus
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.subtitle.black = t('projects.join_us')
 
-        .markdown = @project.join_us_text_html
+          .markdown = @project.join_us_text_html
 
-      /*div.large-8.columns*/
-        /*ul.inline-list.buttons*/
-          /*li*/
-            /*= link_to @project.service1_link do*/
-              /*= image_tag(@project.service1_image)*/
-              /*= @project.service1_title*/
-          /*li*/
-            /*= link_to @project.service2_link do*/
-              /*= image_tag(@project.service2_image)*/
-              /*= @project.service2_title*/
-          /*li*/
-            /*= link_to @project.service3_link do*/
-              /*= image_tag(@project.service3_image)*/
-              /*= @project.service3_title*/
+      .row.present
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          - if @project.title1.present?
+            h3.subtitle.black = @project.title1
+            .markdown = @project.text1_html
 
-    div.row.present
-      div.large-6.columns
-        - if @project.title1.present?
-          h3.subtitle.black = @project.title1
-          .markdown = @project.text1_html
-
-      div.large-6.columns
-        - if @project.title2.present?
-          h3.subtitle.black = @project.title2
-          .markdown = @project.text2_html
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          - if @project.title2.present?
+            h3.subtitle.black = @project.title2
+            .markdown = @project.text2_html

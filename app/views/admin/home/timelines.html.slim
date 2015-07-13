@@ -1,21 +1,22 @@
-div.row
-  div.large-12.columns
-    h2.subheader Story page
-    table
-      tr
-        th Language
-        th URL
-        th
-        th
-      - Language.all.each do |l|
-        - if l.timeline.present?
-          tr
-            td = l.name
-            td = l.timeline.url
-            td = link_to "Edit", edit_admin_language_timeline_path(l, l.timeline)
-            td = link_to "Remove", [:admin, l, l.timeline], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_timeline_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader "Our story" page
+      table.table.table-hover
+        tr
+          th Language
+          th URL
+          th
+          th
+        - Language.all.each do |l|
+          - if l.timeline.present?
+            tr
+              td = l.name
+              td = l.timeline.url
+              td = link_to "Edit", edit_admin_language_timeline_path(l, l.timeline)
+              td = link_to "Remove", [:admin, l, l.timeline], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='6' = link_to 'Create', new_admin_language_timeline_path(l.id)
 

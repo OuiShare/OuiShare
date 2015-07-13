@@ -1,23 +1,24 @@
-div.row
-  div.large-12.columns
-    h2.subheader Faq page
-    table
-      tr
-        th Language
-        th Text
-        th Image
-        th
-        th
-      - Language.all.each do |l|
-        - if l.faq_page.present?
-          tr
-            td = l.name
-            td = l.faq_page.text
-            td = image_tag(l.faq_page.image.thumb.url)
-            td = link_to "Edit", edit_admin_language_faq_page_path(l, l.faq_page)
-            td = link_to "Remove", [:admin, l, l.faq_page], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_faq_page_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader FAQs page
+      table.table.table-hover
+        tr
+          th Language
+          th Text
+          th Image
+          th
+          th
+        - Language.all.each do |l|
+          - if l.faq_page.present?
+            tr
+              td = l.name
+              td = l.faq_page.text
+              td = image_tag(l.faq_page.image.thumb.url)
+              td = link_to "Edit", edit_admin_language_faq_page_path(l, l.faq_page)
+              td = link_to "Remove", [:admin, l, l.faq_page], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='6' = link_to 'Create', new_admin_language_faq_page_path(l.id)
 

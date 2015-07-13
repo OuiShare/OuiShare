@@ -1,444 +1,1347 @@
-$f-dropdown-triangle-size: 0px
-$f-dropdown-triangle-color: none
-$triangle: false
+// $f-dropdown-triangle-size: 0px
+// $f-dropdown-triangle-color: none
+// $triangle: false
 
-.contain-to-grid
-  .top-bar
-    max-width: 64.5em !important
-    margin: 0px auto !important
-.f-topbar-fixed
-  padding-top: 46px !important
+// .contain-to-grid
+//   .top-bar
+//     max-width: 64.5em !important
+//     margin: 0px auto !important
+// .f-topbar-fixed
+//   padding-top: 46px !important
+// #home
+
+//   .call
+//     margin-top: 30%
+//     text-align: center
+//     width: 100%
+//     z-index: 9999
+//     font-size: 20px
+
+//     a
+//       &:hover
+//         text-decoration: none
+
+//   #slideshow
+//     section
+//       position: relative
+//       padding: 0
+
+//     .slide
+//       padding: 0
+//       position: absolute
+//       width: 100%
+
+//     img
+//       z-index: 0
+//       @media only screen and (min-width: 769px)
+//         width: 100%
+//         height: 100%
+
+
+
+
+//     /* Topbar home */
+//     .social
+//       padding-top: 40px
+//       text-align: right
+//       margin-bottom: 30px
+//       $f-dropdown-bg: rgba(255,255,255,0.0)
+//       a
+//         display: inline-block
+//         border: 1px solid white
+//         text-align: center
+//         margin-right: 10px
+//         height: 30px
+//         width: 30px
+//         color: white
+//         line-height: 23pt
+
+//         &.facebook
+//           background-color: #3c5a9a
+
+//         &.twitter
+//           background-color: #359bed
+
+//         &.play
+//           background-color: #e82d28
+
+//       .l18n
+//         text-align: left
+
+//       .l18n
+//         +border-radius(none)
+//         height: 30px
+//         float: right
+//         padding: 5px 8px
+//         font-size: .7em
+//         color: white
+//         border: 1px solid white
+//         background: image-url('arrow.png') no-repeat 30px 10px transparent
+//         cursor: pointer
+
+//       .f-dropdown
+//         @include dropdown-container($content, $triangle, $max-width)
+
+//         a
+//           border: 0
+//           width: 100%
+//           text-align: center
+//           font-size: 12px
+//           line-height: 16px
+
+//           &:hover
+//             border-top: 1px solid white
+//             border-bottom: 1px solid white
+//             background: rgba(0,0,0,0.3)
+//             color: white
+//             text-decoration: none
+
+//   .orbit-bullets
+//     left: 80%
+//     top: 90%
+
+//   .blackBlock
+//     font-family: "Naiv", sans-serif
+//     background: rgba(0,0,0,0.8)
+//     color: white
+//     padding: 10px
+
+//   .whiteBlock
+//     font-family: "Naiv", sans-serif
+//     background: white
+//     color: black
+//     padding: 10px
+
+//   .separator
+//     margin-bottom: 20px
+
+//   section
+//     padding: 64px 0
+
+//     #welcome
+//       position: absolute
+//       padding: 0
+//       width: 100%
+
+//       .separator
+//         position: relative
+
+
+//       h1
+//         background: url("/assets/home/logos/ouishare.png") no-repeat
+//         color: white
+//         height: 71px
+//         margin-top: 100px
+//         overflow: hidden
+//         text-indent: -9999px
+//         width: 364px
+
+//         small
+//           color: white
+
+//       h2
+//         display: inline-block
+//         text-transform: uppercase
+//         margin-bottom: 7px
+//         font-size: 70pt
+//         color: white
+
+//       .textBlock
+//         padding: 0
+
+//         .space
+//           line-height: 2em
+//           padding: 3px 10px
+//           font-size: 17pt
+//           white-space: pre-line
+//           display: inline
+//           color: white
+//           text-transform: uppercase
+//           font-weight: normal
+
+//       .pinkbox
+//         top: 440%
+//         position: absolute
+//         text-align: center
+//         z-index: 9999
+//         width: 100%
+
+//       .subscribe
+//         background: #e8525d
+//         padding: 10px
+//         color: white
+//         text-align: center
+//         width: 350px
+//         margin: 0 auto
+
+//         .space
+//           margin: 10px 0
+//           display: block
+
+//         form
+//           margin: 0
+
+//         input
+//           background: white
+//           color: black
+//           height: 46px
+
+//         .btn
+//           font-family: "Naiv", sans-serif
+//           font-style: italic
+//           text-transform: uppercase
+//           background: #9ad446
+//           color: white
+//           font-size: 14px
+//           font-weight: bold
+//           padding: 0
+
+//           &:hover
+//             background: darken($blue, 10%)
+//             color: white
+
+//         .prefix, .postfix
+//           height: 46px
+
+
+//     &#about
+//       background: image-url('home/bg/about.png') no-repeat
+//       +background-size(cover)
+//       text-align: center
+//       //40px: padding 0
+
+//       .box
+//         background: white
+//         padding: 10px
+//         height: 285px
+
+//       h4
+//         font-family: "Naiv", sans-serif
+//         font-weight: 400
+//         text-transform: uppercase
+
+//       .icon
+//         width: 171px
+//         height: 131px
+//         display: block
+//         margin: 0 auto
+
+//       p
+//         font-size: 14px
+
+//       .separator
+//         width: 100%
+
+//     &#events
+//       .events
+//         li
+//           p, a
+//             &.title
+//               overflow: hidden
+//               display: block
+//               min-height: 64px
+//               height: 64px
+//               max-height: 64px
+
+//     &#hot
+//       .projects
+//         li
+//           p, a
+//             &.title
+//               overflow: hidden
+//               display: block
+//               min-height: 32px
+//               height: 32px
+//               max-height: 32px
+
+//       .avatars
+//         text-align: center
+//       .block
+//         width: 70px
+//         height: 70px
+//         display: inline-block
+//         margin: 4px 2px
+
+//     &#hot, &#events
+//       color: white
+
+//       .projects, .events
+//         text-align: center
+//         font-family: "Naiv", sans-serif
+
+//         li
+//           p, a
+//             text-align: left
+//             text-transform: uppercase
+//             color: white
+
+//             &:hover, &: visited
+//               color: white
+
+//             &.title
+//               font-size: 20px
+
+//           img.project
+//             width: 100%
+//             height: 100%
+//             display: block
+//             margin-bottom: 20px
+
+//         a.more
+//           float: right
+//           color: white
+//           font-size: 12px
+//           font-style: italic
+
+
+//     &#hot
+//       background: $blue
+
+//       .seta
+//         background: image-url('home/hot-arrow.png') no-repeat center
+//         display: block
+//         height: 17px
+//         margin: 20px 0
+//         width: 100%
+
+//     &#events
+//       background: $red
+//       border-top: 1px solid white
+
+//       img
+//         width: 100%
+//         margin-bottom: 10px
+
+//       p.text, p.meta
+//         font-size: 14px
+//         font-weight: normal
+//         font-family: "Naiv"
+
+
+//     &#articles
+//       color: black
+//       border-top: 1px solid white
+
+//       .articles
+
+//         li
+//           position: relative
+
+//           .title
+//             text-align: left
+//             text-transform: uppercase
+//             font-size: 1.1em
+//             color: black
+//             display: block
+//             min-height: 74px
+//             height: 74px
+//             max-height: 74px
+
+//           img.article
+//             width: 100%
+//             height: 100%
+//             display: block
+
+//           div.author
+//             display: inline-block
+//             width: 70%
+
+//             img.avatar
+//               margin-top: 20px
+//               margin-right: 15px
+//               float: left
+//             .name
+//               font-size: 12px
+//               display: inline-block
+//               margin: 23px 0 0
+//             .date
+//               font-size: 12px
+//               color: black
+
+//       a.button
+//         background: $blue
+//         color: white
+//         border: 0
+//         font-size: 1.3em
+//         text-transform: uppercase
+//         font-style: italic
+//         padding: 10px
+
+//     &#bepart
+//       background: image-url('home/bg/about.png') no-repeat center
+//       +background-size(cover)
+//       width: 100%
+//       height: 100%
+
+//       .part
+//         background: white
+//         padding: 0 10px
+//         margin-bottom: 20px
+//         overflow: hidden
+//         font-family: "Naiv"
+//         a
+//           color: black
+
+//         &: last-child
+//           margin-bottom: 0
+
+//         .content
+//           margin-left: 140px
+
+//           h4
+//             @extend .whiteBlock
+//             font-weight: 500
+//             margin-bottom: 0
+//             text-transform: uppercase
+//             padding-left: 0
+
+//       .takePart, .comeTo, .donate
+//         float: left
+//         width: 133px
+//         height: 116px
+//         display: block
+
+//       .takePart
+//         background: image-url('home/icons/takePart.png') no-repeat
+//       .comeTo
+//         background: image-url('home/icons/goEvent.png') no-repeat
+//       .donate
+//         background: image-url('home/icons/donate.png') no-repeat
+
+//       a.button
+//         background: $blue
+//         color: white
+//         border: 0
+//         font-size: 1.3em
+//         text-transform: uppercase
+//         font-style: italic
+//         padding: 10px
+
+
+//     &#partners
+//       text-align: center
+
+//       ul
+//         display: table
+//         margin: 20px auto
+
+//       li
+//         margin: 0
+//         padding: 0 10px
+
+//         p
+//           line-height: 30px
+
+//     &#know-more
+//       background: #eee
+
+// #global
+//   text-align: center
+//   li
+//     margin-left: 0px !important
+//   ul
+//     display: table
+//     margin: 20px auto
+
+
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http: //sass-lang.com/
 #home
+  margin-top: 50px
 
-  .call
-    margin-top: 30%
-    text-align: center
-    width: 100%
-    z-index: 9999
-    font-size: 20px
+  .carousel-home-left
+    background: url(/assets/arrow-grey-gauche.png) no-repeat
+    background-size: cover
+    border: 0
 
-    a
-      &:hover
-        text-decoration: none
+  .carousel-home-right
+    background: url(/assets/arrow-grey-droite.png) no-repeat
+    background-size: cover
+    border: 0
 
   #slideshow
-    section
-      position: relative
-      padding: 0
-
-    .slide
-      padding: 0
-      position: absolute
-      width: 100%
-
     img
       z-index: 0
       @media only screen and (min-width: 769px)
         width: 100%
         height: 100%
 
+#about
+  .icon
+    height: 75px
+
+.get-involved-btn
+  font-size: 16px
+  text-transform: uppercase
+  background-color: transparent
+  border: 1px solid #00C389
+  color: #00C389
+  font-weight: bold
+  font-family: Arial
+  padding: 15px 30px
+  border-radius: 5px !important
+
+.get-involved-btn:hover
+  background-color: #00C389
+  color: white
+
+
+#bepart
+  h4
+    font-size: 16px
+    font-family: Arial
+
+#hot  
+  .new_projects
+    text-transform: uppercase
+    text-decoration: underline
+    font-weight: bold
+    display: block
+    color: #001E60
+
+
+.home-pictures
+  height: 75px
+  margin-bottom: 25px
+
+
+.nopadding 
+  padding-bottom: 0px !important
+
+.tooltip-inner
+  font-size: 11px
+  line-height: 1.4
+  max-width: 400px
+  padding: 8px
+  width: 320px
+  color: #fff
+  text-align: center
+  text-decoration: none
+  background-color: #000
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+  font-family: 'Ubuntu','Helvetica Neue','Helvetica','Arial','sans-serif'
+
+
+.tooltip-arrow
+  border-right-color: #000 !important
+
+
+.follow-event-button
+  background-color: #d5544b
+
+
+#btn_attendees_up
+  display: none
+
+.parnters-bg
+  padding-top: 100px
+
+.downpage
+  .downpage-icon
+    margin-top: 20px
+  
+  .downpage-text
+    margin-top: 20px
+    margin-bottom: 20px
+    font-family: 'Lato'
+  
+
+.main-section
+  #headerwrap
+    padding-top: 55px
+
+.speakers-container
+  .container.sinfo
+    padding-top: 31px
+  
+.get-involved-section
+  .get-involved-punchline
+    background-color: white
+    color: #FF7777
+    padding-top: 1px
+  
+
+.button-call-to-action-option
+  border-radius: 10px !important
+
+.events-section
+  .events-container
+    border-bottom: 1px solid #f9f9f9
+    background: rgba(0, 0, 0, 0.15)
+    height: 85px
+  
+  .events-container:hover
+    background: rgba(0, 0, 0, 0.5)
+  
+  .events-items
+    margin-bottom: 10px
+    margin-left: 15px
+    font-size: 18px
+    text-align: left
+    height: 40px
+    color: #fff
+    padding-top: 10px
+    a
+      color: #0b0b6d
+    
+  
+
+.tickets-section
+  .tickets-font-color
+    color: #c5c5c5
+  
+  .gravatar-display
+    width: 50px
+  
+  .who-s-coming-title
+    margin-top: 20px
+    margin-bottom: 30px
+  
+  .attendee-container
+    border-bottom: 1px solid #f9f9f9
+    background: rgba(0, 0, 0, 0.15)
+    height: 70px
+  
+  .attendee-container:hover
+    background: rgba(0, 0, 0, 0.5)
+  
+  .attendee-items
+    margin-bottom: 10px
+    margin-left: 15px
+    text-align: left
+    height: 40px
+    color: #fff
+    padding-top: 10px
+  
+
+
+.section
+  padding-top: 130px
+
+.partners-container
+  .logo-centered
+    position: relative
+    top: 25%
+  
+
+.get-involved-section
+  .get-involved-options-choice
+    li
+      min-height: 90px
+    
+  
+
+.individuals-list-display
+  min-height: 335px
+
+.individuals-list-btn
+  position: relative
+  top: 20px
+
+.design-team-footer
+  position: relative
+  top: -21px
+  left: 1px
 
 
 
-    /* Topbar home */
-    .social
-      padding-top: 40px
-      text-align: right
-      margin-bottom: 30px
-      $f-dropdown-bg: rgba(255,255,255,0.0)
+.container
+  .main-section
+    .main-title
+      font-size: 45px
+      font-family: 'naiv_normal_thin'
+      text-transform: uppercase
+    
+    .main-section-paragraphes
+      font-size: 20px
+      font-family: 'naiv_normal_thin'
+      margin-top: 10px
+    
+    .twitter-hashtag
+      color: #fff
+    
+  
+
+
+.join_bouton 
+  padding: 20px 0px
+
+.main-section 
+  min-height: 100%
+
+.second-section 
+  min-height: 100%
+  padding-top: 10%
+  text-align: left
+
+.third-section 
+  min-height: 100%
+  text-align: left
+  padding-top: 5%
+
+.tickets 
+  background: url(/assets/fest2.png)
+  background-size: cover
+  margin-top: -12%
+  padding-top: 18%
+
+
+
+.get-involved-section 
+  min-height: 100%
+
+
+.first-part 
+  background: url(/assets/fest1.png) no-repeat
+
+  /*background-color: #33FF99 */
+  margin-top: 0px
+  padding-top: 5%
+  padding-bottom: 4%
+  text-align: center
+  background-position: bottom
+
+
+.program-part 
+  // background: url(/assets/background/background-base.png) no-repeat
+
+  min-height: 100%
+  margin-top: 0px
+  padding-top: 10%
+  padding-bottom: 4%
+  text-align: center
+  background-position: 0% 0%
+  background-size: 100% 100% !important
+
+
+// .tracks-block 
+//   border-top: 2px solid #E03E52
+//   background: none
+//   min-height: 161px
+//   margin: 0px
+//   padding: 10px
+
+//   h6 
+//     font-size: 22px
+//     margin: 10px 0px 0px 7px
+//     text-align: left
+//     color: #E03E52
+
+//     // :hover 
+//     //   color: #FFF
+//     // 
+  
+
+//   p 
+//     font-weight: 200
+//     text-align: left
+//     margin: 8px
+//     font-size: 15px
+//     line-height: 20px
+//     padding-left: 12px
+
+//     // :hover
+//     //   color: #FFF
+//     // 
+  
+
+
+// .tracks-block:hover 
+//   background-color: #E03E52
+
+//   h6, p 
+//     color: #FFF
+  
+
+
+
+p.white 
+  font-size: 16px
+  color: white
+
+
+
+.third-section 
+  padding-bottom: 15%
+
+
+
+div.alt > div > div > div > a 
+  background-color: #E03E51
+
+
+.aboutouishare-section 
+  padding-bottom: 10%
+
+
+.space_background 
+  min-height: 4%
+
+
+p.col-xs-6 a 
+  color: #001E60
+
+
+.btn 
+  border-radius: 3px
+  box-shadow: none
+
+
+.navbar a 
+  text-transform: uppercase
+  font-size: 10px
+
+
+#head_logo > img 
+  margin-left: auto
+  margin-right: auto
+  position: center
+
+
+#speakers > h6 
+  color: #001E60
+
+
+.conatiner a 
+  text-decoration: underline
+
+
+body > div.navbar.navbar-default.navbar-fixed-top > div > div.navbar-collapse.collapse > ul > li > a:hover 
+  background-color: white
+  color: #FF8888
+
+
+body > div.navbar.navbar-default.navbar-fixed-top > div > div.navbar-collapse.collapse > ul > li.tickets-highlight.dropdown > a 
+  padding-bottom: 0px
+  padding-top: 0px
+  margin-top: 12px
+
+
+body > div.navbar.navbar-default.navbar-fixed-top > div 
+/*   width: 985px */
+
+
+.ch-grid > div > li > h6 > small > a 
+  text-decoration: none
+  color: #001E60
+
+
+button.mt_20:hover 
+  background-color: white
+  color: #001E60
+
+
+p.col-xs-6 > a:hover 
+  color: #001E60
+
+
+.btn.btn-pink.become-partner-btn
+  background-color: #fff
+  font-size: 18px
+  padding: 30px 50px
+  margin: 40px 100px 0px 0px
+
+  a    
+    color: #E03E51
+  
+
+.btn.btn-pink.become-partner-btn:hover
+  background-color: #E03E51
+  font-size: 18px
+  padding: 30px 50px
+  margin: 40px 100px 0px 0px
+
+  a    
+    color: #fff
+  
+
+
+.btn.btn-pink.get-involved-btn
+  padding: 25px 0px
+  width: 180px
+
+
+.btn.btn-pink.buy-tickets-btn
+  padding: 30px 30px
+  width: 270px
+
+
+.ch-item
+  text-overflow: ellipsis
+  overflow: hidden
+  .ch-info
+    h4
       a
-        display: inline-block
-        border: 1px solid white
+        text-decoration: none
+        color: white
         text-align: center
-        margin-right: 10px
-        height: 30px
-        width: 30px
-        color: white
-        line-height: 23pt
+    
 
-        &.facebook
-          background-color: #3c5a9a
 
-        &.twitter
-          background-color: #359bed
+#slider-container
+  padding-top: 50px
+  padding-bottom: 100px
 
-        &.play
-          background-color: #e82d28
 
-      .l18n
-        text-align: left
+.ouishare-news-section
+  padding-bottom: 10%
 
-      .l18n
-        +border-radius(none)
-        height: 30px
-        float: right
-        padding: 5px 8px
-        font-size: .7em
-        color: white
-        border: 1px solid white
-        background: image-url('arrow.png') no-repeat 30px 10px transparent
-        cursor: pointer
+.event-slide
 
-      .f-dropdown
-        @include dropdown-container($content, $triangle, $max-width)
+  text-align: left
+  padding: 10px 10px 10px 10px
 
-        a
-          border: 0
-          width: 100%
-          text-align: center
-          font-size: 12px
-          line-height: 16px
+  .event-slide-month
+    text-transform: uppercase
+    font-weight: bold
+    text-align: center
 
-          &:hover
-            border-top: 1px solid white
-            border-bottom: 1px solid white
-            background: rgba(0,0,0,0.3)
-            color: white
-            text-decoration: none
-
-  .orbit-bullets
-    left: 80%
-    top: 90%
-
-  .blackBlock
-    font-family: "Naiv", sans-serif
-    background: rgba(0,0,0,0.8)
-    color: white
-    padding: 10px
-
-  .whiteBlock
-    font-family: "Naiv", sans-serif
-    background: white
-    color: black
-    padding: 10px
-
-  .separator
+  .event-slide-title  
+    text-transform: uppercase
+    font-weight: bold
+    margin-top: 30px
     margin-bottom: 20px
 
-  section
-    padding: 64px 0
+  .event-slide-link
+    position: absolute    
+    width: 100%
+    height: 60px
+    top: 63px
 
-    #welcome
-      position: absolute
-      padding: 0
-      width: 100%
+  .event-slide-hr
+    border-top: 1px solid #001E60
 
-      .separator
-        position: relative
+  .event-slider-place
+    font-size: 16px
+    margin-bottom: 20px
 
+  .event-slide-resume
 
-      h1
-        background: url("/assets/home/logos/ouishare.png") no-repeat
-        color: white
-        height: 71px
-        margin-top: 100px
-        overflow: hidden
-        text-indent: -9999px
-        width: 364px
+#about > div > div > div > h3 
+  margin-top: 100px
+  margin-bottom: 30px
+  font-size: 35px
 
-        small
-          color: white
+#events-home > div > div:nth-child(1) > div.col-lg-12 > h3
+  margin-top: 150px
+  font-size: 35px
 
-      h2
-        display: inline-block
-        text-transform: uppercase
-        margin-bottom: 7px
-        font-size: 70pt
-        color: white
+#events-home > div > div:nth-child(1) > div.col-lg-4.col-lg-offset-4.col-sm-12 > p
+  text-align: left  
 
-      .textBlock
-        padding: 0
+#articles > div:nth-child(1) > div > div > h3 
+  font-size: 35px
 
-        .space
-          line-height: 2em
-          padding: 3px 10px
-          font-size: 17pt
-          white-space: pre-line
-          display: inline
-          color: white
-          text-transform: uppercase
-          font-weight: normal
+#hot
+  h3
+    font-size: 35px  
 
-      .pinkbox
-        top: 440%
-        position: absolute
-        text-align: center
-        z-index: 9999
-        width: 100%
+#bepart 
+  margin-top: 200px 
 
-      .subscribe
-        background: #e8525d
-        padding: 10px
-        color: white
-        text-align: center
-        width: 350px
-        margin: 0 auto
+  h3
+    font-size: 35px  
+  p
+    margin-top: 50px       
+ 
 
-        .space
-          margin: 10px 0
-          display: block
+#partners 
+  h3
+    font-size: 25px
 
-        form
-          margin: 0
+#about > div > div > div.col-lg-12 
+  margin-bottom: 30px    
 
-        input
-          background: white
-          color: black
-          height: 46px
+#bepart > div > div > div > div > a > h4  
+  font-weight: bold
 
-        .btn
-          font-family: "Naiv", sans-serif
-          font-style: italic
-          text-transform: uppercase
-          background: #9ad446
-          color: white
-          font-size: 14px
-          font-weight: bold
-          padding: 0
+//#slider2_container > div > div > div > div > div:nth-child(7)
+//  text-decoration: underline
 
-          &:hover
-            background: darken($blue, 10%)
-            color: white
+#slider2_container > div > div > div > div > a
+  font-size: 16px
 
-        .prefix, .postfix
-          height: 46px
+#slider3_container > div > div > div > div > a
+  font-size: 16px
 
+#hot > div > div:nth-child(1) > div > div > p:nth-child(2) > a
+  text-decoration: underline
+  text-align: left  
+  color: #001E60
 
-    &#about
-      background: image-url('home/bg/about.png') no-repeat
-      +background-size(cover)
-      text-align: center
-      //40px: padding 0
+#hot > div > div:nth-child(1) > div > div 
+  margin-bottom: 50px
 
-      .box
-        background: white
-        padding: 10px
-        height: 285px
+.title-header
+  margin-top: 52px
+  background: url("/assets/fond-ouishare-page.png")
 
-      h4
-        font-family: "Naiv", sans-serif
-        font-weight: 400
-        text-transform: uppercase
+.title-header-commu
+  margin-top: 52px
+  background: url("/assets/fond-communities.png")  
 
-      .icon
-        width: 171px
-        height: 131px
-        display: block
-        margin: 0 auto
+.title-header > div > div > h3 
+  color: white 
 
-      p
-        font-size: 14px
+.ch-info
+  position: absolute
+  //background: rgb(224, 62, 82)
+  background: #00C389
+  width: inherit
+  height: inherit
+  border-radius: 50%
+  opacity: 0
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out
+  -webkit-transform: scale(0)
+  -moz-transform: scale(0)
+  -o-transform: scale(0)
+  -ms-transform: scale(0)
+  transform: scale(0)
+  -webkit-backface-visibility: hidden
 
-      .separator
-        width: 100%
+.ch-info
+  h4
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-size: 19px
+    margin: 0 30px
+    padding: 45px 0 0 0
+    height: 140px
+    font-family: 'Naiv', Arial, sans-serif
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3)
+    font-weight: 300
+    box-sizing: border-box
+  p
+    color: #001E60
+    padding: 10px 5px
+    font-style: italic
+    margin: 0 30px
+    font-size: 12px
+    border-top: 1px solid rgba(255, 255, 255, 0.5)
+    opacity: 0
+    -webkit-transition: all 1s ease-in-out 0.4s
+    -moz-transition: all 1s ease-in-out 0.4s
+    -o-transition: all 1s ease-in-out 0.4s
+    -ms-transition: all 1s ease-in-out 0.4s
+    transition: all 1s ease-in-out 0.4s
+    a
+      display: block
+      color: #001E60
+      color: rgba(255, 255, 255, 0.7)
+      font-style: normal
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 9px
+      letter-spacing: 1px
+      padding-top: 4px
+      font-family: 'varela_roundregular', Arial, sans-serif
+      &:hover
+        //color: #fff222
+        //color: rgba(255,242,34, 0.8)
+        color: #001E60
 
-    &#events
-      .events
-        li
-          p, a
-            &.title
-              overflow: hidden
-              display: block
-              min-height: 64px
-              height: 64px
-              max-height: 64px
+.ch-item:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1
 
-    &#hot
-      .projects
-        li
-          p, a
-            &.title
-              overflow: hidden
-              display: block
-              min-height: 32px
-              height: 32px
-              max-height: 32px
-
-      .avatars
-        text-align: center
-      .block
-        width: 70px
-        height: 70px
-        display: inline-block
-        margin: 4px 2px
-
-    &#hot, &#events
-      color: white
-
-      .projects, .events
-        text-align: center
-        font-family: "Naiv", sans-serif
-
-        li
-          p, a
-            text-align: left
-            text-transform: uppercase
-            color: white
-
-            &:hover, &:visited
-              color: white
-
-            &.title
-              font-size: 20px
-
-          img.project
-            width: 100%
-            height: 100%
-            display: block
-            margin-bottom: 20px
-
-        a.more
-          float: right
-          color: white
-          font-size: 12px
-          font-style: italic
-
-
-    &#hot
-      background: $blue
-
-      .seta
-        background: image-url('home/hot-arrow.png') no-repeat center
-        display: block
-        height: 17px
-        margin: 20px 0
-        width: 100%
-
-    &#events
-      background: $red
-      border-top: 1px solid white
-
-      img
-        width: 100%
-        margin-bottom: 10px
-
-      p.text, p.meta
-        font-size: 14px
-        font-weight: normal
-        font-family: "Naiv"
-
-
-    &#articles
-      color: black
-      border-top: 1px solid white
-
-      .articles
-
-        li
-          position: relative
-
-          .title
-            text-align: left
-            text-transform: uppercase
-            font-size: 1.1em
-            color: black
-            display: block
-            min-height: 74px
-            height: 74px
-            max-height: 74px
-
-          img.article
-            width: 100%
-            height: 100%
-            display: block
-
-          div.author
-            display: inline-block
-            width: 70%
-
-            img.avatar
-              margin-top: 20px
-              margin-right: 15px
-              float: left
-            .name
-              font-size: 12px
-              display: inline-block
-              margin: 23px 0 0
-            .date
-              font-size: 12px
-              color: black
-
-      a.button
-        background: $blue
-        color: white
-        border: 0
-        font-size: 1.3em
-        text-transform: uppercase
-        font-style: italic
-        padding: 10px
-
-    &#bepart
-      background: image-url('home/bg/about.png') no-repeat center
-      +background-size(cover)
-      width: 100%
-      height: 100%
-
-      .part
-        background: white
-        padding: 0 10px
-        margin-bottom: 20px
-        overflow: hidden
-        font-family: "Naiv"
-        a
-          color: black
-
-        &:last-child
-          margin-bottom: 0
-
-        .content
-          margin-left: 140px
-
-          h4
-            @extend .whiteBlock
-            font-weight: 500
-            margin-bottom: 0
-            text-transform: uppercase
-            padding-left: 0
-
-      .takePart, .comeTo, .donate
-        float: left
-        width: 133px
-        height: 116px
-        display: block
-
-      .takePart
-        background: image-url('home/icons/takePart.png') no-repeat
-      .comeTo
-        background: image-url('home/icons/goEvent.png') no-repeat
-      .donate
-        background: image-url('home/icons/donate.png') no-repeat
-
-      a.button
-        background: $blue
-        color: white
-        border: 0
-        font-size: 1.3em
-        text-transform: uppercase
-        font-style: italic
-        padding: 10px
-
-
-    &#partners
-      text-align: center
-
-      ul
-        display: table
-        margin: 20px auto
-
-      li
-        margin: 0
-        padding: 0 10px
-
-        p
-          line-height: 30px
-
-    &#know-more
-      background: #eee
-
-#global
+.ch-grid
+  margin: 20px 0 0 0
+  padding: 0
+  list-style: none
+  display: block
   text-align: center
-  li
-    margin-left: 0px !important
-  ul
+  width: 100%
+  &:after
+    content: ''
     display: table
-    margin: 20px auto
+
+.ch-item:before
+  content: ''
+  display: table
+
+.ch-grid
+  &:after
+    clear: both
+  li
+    width: 220px
+    height: 220px
+    display: inline-block
+    margin: 20px
+  h6
+    font-size: 18px
+    font-weight: 200
+    margin-top: 10px
+    color: #001E60
+    font-family: "Naiv"
+
+.ch-item
+  width: 220px
+  height: 220px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 16px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center
+
+#list > div > div > div > div.col-lg-12 > div > div > li > h6
+  color: #001E60
+  font-family: "Naiv"
+  font-size: bold
+  font-size: 18px
+
+#list > div > div > div > div > div > li > div > .ch-info > a > h3.info
+  text-align: center
+
+body > div.title-header > div > div > p 
+  color: white
+
+body > div.title-header > div > div:nth-child(2) 
+  //needed property ?
+  //margin-top: 20px
+
+#list > div > div > div > div > div > li > small 
+  color: #7F8C9A
+  font-family: "Naiv"
+
+#list > div > div > div > div > div > li > div > div > p > a  
+  text-align: center
+
+#list > div > div > div > div > div > div > li > div > div > a > h3.info
+  text-align: center
+
+#list > div > div > div:nth-child(1) > div > h2 
+  text-align: center  
+
+#contact_name 
+  width: 100%
+  margin-bottom: 10px
+
+#contact_email
+  width: 100%
+  margin-bottom: 10px
+
+#contact_city
+  width: 100%
+  margin-bottom: 10px
+
+#contact_subject
+  width: 100%
+  margin-bottom: 10px
+
+#contact_message
+  width: 100%
+  margin-bottom: 10px
+
+#contact_country 
+  width: 100%
+  margin-bottom: 10px
+
+#contact > div > div:nth-child(2) > div > form > div.row > div > input   
+  text-align: right
+.contact-section
+  margin-top : 50px  
+
+#contact > div > div > div > form > div.row > div > input
+  margin-right: 12px
+
+#login > .container > .col-lg-8.col-lg-offset-2 
+  background: url(/assets/pic_sign_in.png) no-repeat
+
+#login > div > div > div > div > form > div
+  margin-left: 5px
+
+#login > div > div > div > div > form
+  margin-top: 87px
+
+
+#login > div > div > div > div > form > div:nth-child(5) > button
+  background-color: white
+  border: 1px solid #00C389
+  border-radius: 3px
+  padding: 15px 80px 15px 80px
+  color: #00C389
+  font-weight: bold
+  font-size: 18px
+  font-familly: "Naiv"
+
+#partners > div > div > div > div.col-lg-2.center > a > img
+  padding-bottom: 20px
+
+#partners > div > div > div:nth-child(4) > div > div > a > img 
+  padding-bottom: 20px
+
+#partners > div > div > div > div.col-lg-3.center > a > img 
+  height: 100px
+
+#slider1_container > div > div > div:nth-child(2) > div > span.presentation.ouishare_stencil.white   
+  text-align: left
+
+.event-slide-month 
+  font-size: 20px
+
+#login > div > div.col-lg-8.col-lg-offset-2
+  background: url(/assets/pic_sign_in.png) no-repeat
+
+body > div.title-header-commu > div.row.center > div
+  margin-top: 40px
+  margin-bottom: 100px
+
+
+
+.ch-item-community
+  background-size: 100%
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 5px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center  
+  text-overflow: ellipsis
+  overflow: hidden
+  margin: 0 auto
+  .ch-info
+    h4
+      a
+        text-decoration: none
+        text-align: center
+        font-color: #001E60
+    .info
+      a
+        font-color: #001E60
+
+
+
+.ch-item-community:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1        
+
+.ch-item-show
+  background-size: 100%
+  width: 120px
+  height: 120px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 5px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center  
+  text-overflow: ellipsis
+  overflow: hidden
+  margin: 0 auto
+  .ch-info
+    overflow: hidden
+    vertical-align: middle
+    .info
+      vertical-align: middle
+      margin-top: 30px
+      a
+        color: #001E60
+        text-decoration: none
+        text-align: center
+        font-size: 14px
+
+.ch-item-btn
+  padding: 50px 0px 0px 0px
+  color: white
+  background: #00c389
+  text-align: center
+  margin: auto
+  width: 120px
+  height: 120px
+  border-radius: 50%
+
+  a
+    color: white
+    text-decoration: none
+
+
+.ch-item-show:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1
+    info
+      a
+        font-size: 14px     
+
+body > div.container > div > div > div > li > h6
+  list-style-type: none
+
+.community > p
+  color: #fff
+  font-weight: 600
+
+
+.col-lg-4.user
+  min-height: 200px
+
+
+.select_community
+  color: #fff
+  background-color: #09c894  
+  border: none  
+  height: 50px  
+  width: 39%  
+  padding-left: 10px  
+  position: absolute  
+  left: 9%
+  text-transform: uppercase
+
+.select_community_2
+  color: #fff
+  background-color: #09c894  
+  border: none  
+  height: 50px  
+  width: 39%  
+  padding-left: 10px  
+  position: absolute  
+  left: 49%
+  text-transform: uppercase
+
+
+

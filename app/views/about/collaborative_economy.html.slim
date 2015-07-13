@@ -1,31 +1,46 @@
-div#page-about-internal
+-  content_for :page_title, t('menu.collaborative_economy')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.collaborative_economy'), text: ""}
+#page-about-internal
   section.main-content
-    div.row
-      div.large-12.columns
-        .markdown = @collaborative_economy_page.main_text_html
-      /div.large-12.columns
-        /= image_tag(@collaborative_economy_page.image.top_internal)
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          .markdown = @collaborative_economy_page.main_text_html
+        /.col-lg-12
+          /= image_tag(@collaborative_economy_page.image.top_internal)
 
   section#list
-    div.activities
-      div.row
-        div.large-12.columns
-          ul.large-block-grid-2
-            li
-              h4 = @collaborative_economy_page.title1
-              .markdown = @collaborative_economy_page.text1_html
-
-            li
-              h4 = @collaborative_economy_page.title2
-              .markdown = @collaborative_economy_page.text2_html
-
-            li
-              h4 = @collaborative_economy_page.title3
-              .markdown = @collaborative_economy_page.text3_html
-
-            li
-              h4 = @collaborative_economy_page.title4
-              .markdown = @collaborative_economy_page.text4_html
-            li
-              h4 = @collaborative_economy_page.title5
-              .markdown = @collaborative_economy_page.text5_html
+    .container
+      .activities
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @collaborative_economy_page.title1
+          hr.hr-large.blue
+          .markdown = @collaborative_economy_page.text1_html
+          br
+          br
+          br  
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @collaborative_economy_page.title2
+          hr.hr-large.blue 
+          .markdown = @collaborative_economy_page.text2_html
+          br
+          br
+          br  
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @collaborative_economy_page.title3
+          hr.hr-large.blue 
+          .markdown = @collaborative_economy_page.text3_html
+          br
+          br
+          br  
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @collaborative_economy_page.title4
+          hr.hr-large.blue 
+          .markdown = @collaborative_economy_page.text4_html
+          br
+          br
+          br  
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @collaborative_economy_page.title5
+          hr.hr-large.blue 
+          .markdown = @collaborative_economy_page.text5_html

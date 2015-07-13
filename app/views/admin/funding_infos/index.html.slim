@@ -1,22 +1,23 @@
-div.row
-  div.large-12.columns
-    h2.subheader Funding Infos
-  - Language.all.each do |l|
-    div.large-12.columns
-      h3.subheader = "#{l.name} funding infos"
-      = link_to 'Create', new_admin_language_funding_info_path(l.id)
-      table
-        tr
-          th Name
-          th Text
-          th Image
-          th
-          th
-        - l.funding_infos.each do |f|
+.container#admin
+  div.row
+    .col-lg-12
+      h2.subheader Funding Infos
+    - Language.all.each do |l|
+      .col-lg-12
+        h3.subheader = "#{l.name} funding infos"
+        = link_to 'Create', new_admin_language_funding_info_path(l.id)
+        table.table
           tr
-            td = f.title
-            td = truncate(f.text)
-            td = image_tag(f.image.thumb.url)
-            td = link_to "Edit", edit_admin_language_funding_info_path(l, f)
-            td = link_to "Remove", [:admin, l, f], data: { confirm: 'Are you sure?' }, method: :delete
+            th Name
+            th Text
+            th Image
+            th
+            th
+          - l.funding_infos.each do |f|
+            tr
+              td = f.title
+              td = truncate(f.text)
+              td = image_tag(f.image.thumb.url)
+              td = link_to "Edit", edit_admin_language_funding_info_path(l, f)
+              td = link_to "Remove", [:admin, l, f], data: { confirm: 'Are you sure?' }, method: :delete
 

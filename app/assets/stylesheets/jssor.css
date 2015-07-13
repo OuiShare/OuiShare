@@ -1,0 +1,106 @@
+/* jssor slider arrow navigator skin 13 css */
+/*
+.jssora13l              (normal)
+.jssora13r              (normal)
+.jssora13l:hover        (normal mouseover)
+.jssora13r:hover        (normal mouseover)
+.jssora13ldn            (mousedown)
+.jssora13rdn            (mousedown)
+*/
+.jssora13l, .jssora13r, .jssora13ldn, .jssora13rdn {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    /*overflow: hidden;*/
+}
+
+.jssora13l {
+  background: url(/assets/arrow-grey-gauche.png) no-repeat;
+  background-size: 90%;
+}
+
+.jssora13r {
+  background: url(/assets/arrow-grey-droite.png) no-repeat;
+  background-size: 90%;
+}
+
+.jssora13l:hover {
+  background: url(/assets/arrow-blue-gauche.png) no-repeat;
+  background-size: 90%;
+}
+
+.jssora13r:hover {
+  background: url(/assets/arrow-blue-droite.png) no-repeat;
+  background-size: 90%;
+}
+
+/*.jssora13ldn {
+    background-position: -250px -35px;
+}
+
+.jssora13rdn {
+    background-position: -310px -35px;
+}*/
+
+.presentation{
+    position: absolute;
+    top: 15px; 
+    left: 15px; 
+    color:#001E60; 
+    font-size: 30px; 
+    background-color:rgba(255, 255, 255, 0.6); 
+    padding: 10px 160px 10px 10px; 
+    height:90%; 
+    width:95%;
+    font-family:'naiv_normal';
+}
+
+.presentation:hover{
+  background-color:rgba(0, 30, 96, 0.6); 
+  color:#FFF; 
+}
+
+.btn.btn-blue {
+  background-color: #001E60;
+  font-family:'naiv_normal';
+  padding: 10px 15px;
+  /*text-transform: uppercase;*/
+  border-radius: 3px !important;
+  font-size: 12px;
+  border: 2px solid; 
+  border-color:#fff;
+  color:#fff;
+}
+
+/*.btn.btn-blue:hover{
+  color:#001E60;
+  background-color: #fff;
+  border-color:#001E60;
+}*/
+
+.btn.btn-blue a{
+  color:#fff;
+}
+
+/*.btn.btn-blue a:hover{
+  color:#001E60;
+}*/
+
+/* jssor slider bullet navigator skin 21 css */
+/*
+.jssorb21 div           (normal)
+.jssorb21 div:hover     (normal mouseover)
+.jssorb21 .av           (active)
+.jssorb21 .av:hover     (active mouseover)
+.jssorb21 .dn           (mousedown)
+*/
+.jssorb21 div, .jssorb21 div:hover, .jssorb21 .av
+{
+    background: url(/assets/b21.png) no-repeat;
+    overflow:hidden;
+    cursor: pointer;
+}
+.jssorb21 div { background-position: -5px -5px; }
+.jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+.jssorb21 .av { background-position: -65px -5px; }
+.jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }

@@ -13,6 +13,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url(*args)
+    # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    "/images/default_avatar.png"
+  end
+
   version :normal do
     process :resize_to_fill => [140, 140]
   end

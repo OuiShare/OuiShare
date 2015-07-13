@@ -1,145 +1,137 @@
-div.row
-  div.large-12.columns
-    .sign_up_box style= "margin-top:20px;"
+== render partial: 'layouts/sub_header_title', locals: {title: 'Join Us', text: "OuiShare is a global community with the mission to build and nurture a collaborative society. Our members are passionate individuals who spread the OuiShare vision, values and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today."}
+section#signup
+  .container
+    .row
+      .col-lg-12
+        .sign_up_box style= "margin-top:20px;"
 
-      - if @registration_page = RegistrationPage.new
-        p style="font-family: 'Naiv Bold';font-weight:bold" 
-          | OuiShare is a global community with the mission to build and nurture a collaborative society. Our members are passionate individuals who spread the OuiShare
-          a href="http://ouishare.net/about"target="_blank"  vision
-          |,
-          a href="http://ouishare.net/values"target="_blank" values 
-          | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today.
+          - if @registration_page = RegistrationPage.new
+            / p style="font-family: 'Naiv Bold';font-weight:bold" 
+            /   | OuiShare is a global community with the mission to build and nurture a collaborative society. Our members are passionate individuals who spread the OuiShare
+            /   a href="http://ouishare.net/about"target="_blank"  vision
+            /   |,
+            /   a href="http://ouishare.net/values"target="_blank" values 
+            /   | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today.
 
-        p = "OuiShare members come from different backgrounds, countries and life phases: entrepreneurs, researchers, activists, freelancers, business leaders, public officials and more. They live in 75 cities across Europe and the Americas, with a growing number in Africa and Asia. We see this diversity of perspectives and expertise as an enrichment that is crucial for achieving change. Each new voice is valuable!"
-        p style="font-family: 'Naiv Bold';font-weight:bold" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the form below.
-        p = "Membership is free and open to anyone. However as a non-profit, we encourage members to help support our community activities with a one-time or recurring donation."
-        
-      - else
-        p = @registration_page.main_text_html
-
-        a href= @registration_page.link1 target="_blank" 
-          = @registration_page.main_text2
-      
-      img src="/assets/signup-2.jpg"
-
-      h2 = t(".sign_up")
-
-      p = "We're pleased that you would like to become a member of OuiShare! "
-      p = "To complete your registration, please fill out the questions below. Your editable profile in the OuiShare member database will be automatically generated. "
-      p style="font-family: 'Naiv Bold';font-weight:bold" All personal information will be treated with confidentiality.
-      /.
-        .omniauth
-          - if resource.authorizations.any?
-            .avatar= image_tag resource.avatar_url
-            .user-name= resource.name
-            .description= t('.omniauth_description')
+            / p = "OuiShare members come from different backgrounds, countries and life phases: entrepreneurs, researchers, activists, freelancers, business leaders, public officials and more. They live in 75 cities across Europe and the Americas, with a growing number in Africa and Asia. We see this diversity of perspectives and expertise as an enrichment that is crucial for achieving change. Each new voice is valuable!"
+            / p style="font-family: 'Naiv Bold';font-weight:bold" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the form below.
+            / p = "Membership is free and open to anyone. However as a non-profit, we encourage members to help support our community activities with a one-time or recurring donation."
+            
           - else
-            = render "devise/shared/social_links"
+            p = @registration_page.main_text_html
 
-      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-        = f.error_notification
-        .form-inputs
-          .container
+            a href= @registration_page.link1 target="_blank" 
+              = @registration_page.main_text2
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            h3.blue = t(".sign_up")
+            hr.hr-large.blue
             .row
-              .large-6.columns
-                .row
-                  .large-6.columns
-                    = f.input :fname, :label => "First name", :required => true
-                  .large-6.columns.left
-                    - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-                      = f.input :name, :label => "Last name", :required => true
-                .row
-                  .large-6.columns
-                    = f.label :gender
-                    = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true, prompt: true 
-                .row
-                  .large-12.columns
-                    - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
-                      = f.input :email, :required => true
-                .row
-                  .large-12.columns
-                    = f.label :birthday, "Date of birth"
-                    = f.date_select :birthday, start_year: 1920, prompt: true              
-                .row
-                  .large-6.columns
-                    = f.label :country , "* Country"
-                    = f.country_select :country, prompt: 'Select your country'
-                  .large-6.columns.left
-                    = f.input :city, :required => true
-                .row
-                  .large-6.columns
-                    = f.label :language_id, "* What is your language preference?"
-                    = f.collection_select :language_id, Language.all, :id, :name, prompt: "Select your language"
-                  .large-6.columns.left
-                    = f.label :occupation, "* Occupation"
-                    = f.collection_select :occupation_id, Occupation.all, :id, :name, prompt: "Select your occupation"
-                .row
+              p = "We're pleased that you would like to become a member of OuiShare! "
+              p = "To complete your registration, please fill out the questions below. Your editable profile in the OuiShare member database will be automatically generated. "
+              p style="font-family: 'Naiv Bold';font-weight:bold" All personal information will be treated  with confidentiality.
 
-                  / .sectors-collection
-                  /   = f.label :sector_ids, label: "Sector(s)"
-                  /   = f.collection_check_boxes :sector_ids, Sector.all, :id, :name
-                  .large-6.columns
-                    = f.input :organization_name, label: "Name of your organization:"
-                  .large-6.columns.left
-                    = f.input :organization_url, label: "Url of your organization"
+            / .omniauth
+            /   - if resource.authorizations.any?
+            /     .avatar= image_tag resource.avatar_url
+            /     .user-name= resource.name
+            /     .description= t('.omniauth_description')
+            /   - else
+            /     = render "devise/shared/social_links"
+#login
+  .container
+    .col-lg-8.col-lg-offset-2
+      .row
+        .col-md-8.col-md-offset-2
+          = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), defaults: { input_html: { class: 'form-control'}, wrapper_html: { class: 'form-group' } }) do |f|
+            /= f.error_notification
+            .row.form-inputs
                 .row
-                  .large-12.columns style= "margin-bottom:5px;"
+                  .col-lg-12
+                    = f.input :fname, :placeholder => "First name", :required => true, label: false
+                .row  
+                  .col-lg-12  
+                    - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
+                      = f.input :name, :placeholder => "Last name", :required => true, label: false
+                .row
+                  .col-lg-12
+                    = f.input :gender, as: :select, 
+                      collection: [["Male",0],["Female",1],["Other",2]] , :required => true, prompt: "Select a gender", label: false
+                .row
+                  .col-lg-12
+                    = f.input :email, :placeholder => 'E-MAIL', :required => true, label: false
+                    / - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
+                .row.form-group
+                  .col-lg-12
+                    = f.label :birthday, "Date of birth", :style => "width: 100%"
+                    = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
+                .row
+                  .col-lg-6
+                    = f.input :country, as: :country, :placeholder => "Country", prompt: 'Select your country', label: false    
+                  .col-lg-6   
+                    = f.input :city, :required => true, label: false, :placeholder => 'City'
+                .row
+                  .col-lg-6
+                    = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
+                  .col-lg-6.left
+                    = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
+                .row
+                  .col-lg-12
+                    = f.input :organization_name, placeholder: "Name of your organization:", label: false, label: false
+                .row  
+                  .col-lg-12
+                    = f.input :organization_url, placeholder: "Url of your organization", label: false
+                .row.form-group
+                  .col-lg-12
                     = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
-                    = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
+                    br
+                    = f.collection_check_boxes(:topic_ids, Topic.all, :id, :name, {} , { :class=>'checkbox' })
                 .row
-                  .large-12.columns
-                    = f.label :user_source_id, "How did you first hear about OuiShare?"
-                    = f.collection_select :user_source_id, @user_sources, :id, :name, prompt: "Choose one"
+                  .col-lg-12
+                    = f.input :user_source_id, collection: @user_sources, prompt: "How did you first hear about OuiShare?", :label => false
                 .row
-                  .large-6.columns
-                    = f.input :password, :required => true, :hint => false
-                  .large-6.columns.left
-                    = f.input :password_confirmation, :required => true, :hint => false
-                .row
-              
-              .large-6.columns
-                h2 = "OuiShare Mission & Values"
+                  .col-lg-10.col-lg-offset-1
+                    = f.input :password, :placeholder => 'Password', :required => true, :hint => false, label: false
+                .row    
+                  .col-lg-10.col-lg-offset-1
+                    = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false                      
+
+                p.bold = "OuiShare Mission & Values"
 
                 p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
-
                 p
-                  | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."
+                  | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
                 p 
                   | By becoming a member of OuiShare, you express your consent for our mission and values. 
-                  a target="_blank"href= about_mission_url Read more
-                  = "."
-                p
-                  = f.check_box :terms_of_service
-                  |  I consent with and wish to support the OuiShare mission and values.
-                div.right
-                  = f.button :submit, t(".sign_up_submit")
-                br
-                br
-                br
-                br
-                br
+                  a target="_blank" href="#{about_mission_url}" Read more
+
                 div.right
                   = render "devise/shared/links"
 
-               
+                br
+                .row
+                  = f.check_box :terms_of_service, label: true, :style => "margin-right:5px;", :required => true
+                  = f.label :terms_of_service, "I consent with and wish to support the OuiShare mission and values."
+                br
 
-        / h2 = "Support us"
-        / p 
-        /   | We are a non-profit organization being built by passionate individuals around the world since 2012.
+                .row.center
+                  = f.button :submit, t(".sign_up_submit"), class: 'btn btn-green btn-large'
 
-        / p 
-        /   | As an open community, membership is free for individuals. However we ask you to help support our team with a one-time or recurring yearly donation to help us continue to provide value to our members by:
-        / .list-sign_up
-        /   ul
-        /     li organizing local gatherings
-        /     li hosting OuiShare Summits
-        /     li producing and curating knowledge through our online magazine, newsletters and Facebook groups
-        
-        / p 
-        /   | ... and more!
+           
 
-        / p
-        /   a href="http://ouishare.net/donations"  Donate at http://ouishare.net/donations
+            / h2 = "Support us"
+            / p 
+            /   | We are a non-profit organization being built by passionate individuals around the world since 2012.
 
+            / p 
+            /   | As an open community, membership is free for individuals. However we ask you to help support our team with a one-time or recurring yearly donation to help us continue to provide value to our members by:
+            / .list-sign_up
+            /   ul
+            /     li organizing local gatherings
+            /     li hosting OuiShare Summits
+            /     li producing and curating knowledge through our online magazine, newsletters and Facebook groups
+            
+            / p 
+            /   | ... and more!
 
-      br/
+            / p
+            /   a href="http://ouishare.net/donations"  Donate at http://ouishare.net/donations

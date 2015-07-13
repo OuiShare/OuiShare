@@ -1,36 +1,37 @@
-div.row
-  div.large-12.columns
-    h2.subheader Testimonials
-    table
-      tr
-        th Language
-        th User picture 1
-        th Call to action 1
-        th User picture 2
-        th Call to action 2
-        th User picture 3
-        th Call to action 3
-        th User picture 4
-        th Call to action 4
-        th
-        th
-      - Language.all.each do |l|
-        - if l.testimonial.present?
-          tr
-            td = l.name
-            td = image_tag(l.testimonial.user_picture1.thumb.url)
-            td = l.testimonial.call_to_action1
-            td = image_tag(l.testimonial.user_picture2.thumb.url)
-            td = l.testimonial.call_to_action2
-            td = image_tag(l.testimonial.user_picture3.thumb.url)
-            td = l.testimonial.call_to_action3
-            td = image_tag(l.testimonial.user_picture4.thumb.url)
-            td = l.testimonial.call_to_action4
-            td = link_to "Edit", edit_admin_language_testimonial_path(l, l.testimonial)
-            td = link_to "Remove", [:admin, l, l.testimonial], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='10' = link_to 'Create', new_admin_language_testimonial_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Testimonials
+      table.table.table-hover
+        tr
+          th Language
+          th User picture 1
+          th Call to action 1
+          th User picture 2
+          th Call to action 2
+          th User picture 3
+          th Call to action 3
+          th User picture 4
+          th Call to action 4
+          th
+          th
+        - Language.all.each do |l|
+          - if l.testimonial.present?
+            tr
+              td = l.name
+              td = image_tag(l.testimonial.user_picture1.thumb.url)
+              td = l.testimonial.call_to_action1
+              td = image_tag(l.testimonial.user_picture2.thumb.url)
+              td = l.testimonial.call_to_action2
+              td = image_tag(l.testimonial.user_picture3.thumb.url)
+              td = l.testimonial.call_to_action3
+              td = image_tag(l.testimonial.user_picture4.thumb.url)
+              td = l.testimonial.call_to_action4
+              td = link_to "Edit", edit_admin_language_testimonial_path(l, l.testimonial)
+              td = link_to "Remove", [:admin, l, l.testimonial], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='10' = link_to 'Create', new_admin_language_testimonial_path(l.id)
 
 

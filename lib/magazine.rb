@@ -14,5 +14,9 @@ class Magazine
         end
       end
     end
+
+    def test_noko
+      doc = Nokogiri::HTML::DocumentFragment.parse("http://magazine.ouishare.net/feed")
+    end
   end
 end

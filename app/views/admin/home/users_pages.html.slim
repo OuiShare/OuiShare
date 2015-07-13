@@ -1,25 +1,26 @@
-div.row
-  div.large-12.columns
-    h2.subheader Users pages
-    table
-      tr
-        th Language
-        th Title
-        th Text
-        th Link text
-        th
-        th
-      - Language.all.each do |l|
-        - if l.users_page.present?
-          tr
-            td = l.name
-            td = l.users_page.title
-            td = l.users_page.text
-            td = l.users_page.link_text
-            td = link_to "Edit", edit_admin_language_users_page_path(l, l.users_page)
-            td = link_to "Remove", [:admin, l, l.users_page], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_users_page_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Members page
+      table.table.table-hover
+        tr
+          th Language
+          th Title
+          th Text
+          th Link text
+          th
+          th
+        - Language.all.each do |l|
+          - if l.users_page.present?
+            tr
+              td = l.name
+              td = l.users_page.title
+              td = l.users_page.text
+              td = l.users_page.link_text
+              td = link_to "Edit", edit_admin_language_users_page_path(l, l.users_page)
+              td = link_to "Remove", [:admin, l, l.users_page], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='6' = link_to 'Create', new_admin_language_users_page_path(l.id)
 

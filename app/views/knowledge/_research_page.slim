@@ -1,6 +1,7 @@
-div.green
+.green
   section#slideshow.section
-    div.row
-      div.large-12.columns
-        .markdown = @resource.main_text_html
-        = image_tag @resource.image.top_internal
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          .markdown = @resource.main_text_html
+          = image_tag @resource.image.top_internal

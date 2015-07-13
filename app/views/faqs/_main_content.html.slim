@@ -1,10 +1,12 @@
-div.green
- section.main-content
-   div.row
-     div.large-12.columns
-       .markdown = @faq_page.text_html
- section#banner
-   div.row
-     div.large-12.columns
-       div.banner
-         = image_tag(@faq_page.image.top_internal)
+.container
+  .col-lg-6.col-lg-offset-3.col-sm-12
+    section.main-content
+      .row
+        .col-lg-12
+          .markdown = @faq_page.text_html
+    
+    section#banner
+      .row
+        .col-lg-12
+          .banner
+            = image_tag(@faq_page.image.top_internal)

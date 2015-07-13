@@ -1,21 +1,35 @@
-- content_for :page_title, 'Alumni Connectors'
-div#page-about-internal
+- content_for :page_title, t('menu.alumni')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.alumni'), link: ""}
+#page-about-internal
   section.theTeam#list
-    div.activities
-      div.row
-        div.large-4.columns
-          h3 = @alumni_page.title
-          .markdown = @alumni_page.text_html
-          a.btn.blue href="#{contact_path}" = @alumni_page.link_text
+    .container
+      .activities  
+        .row
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            .markdown = @alumni_page.text_html
+            .center
+              a.btn.get-involved-btn.uppercase.center href="#{contact_path}" = @alumni_page.link_text
+        .row
+          .col-lg-12
+            .ch-grid
+              - @users.each do |a|
+                .col-lg-4.individuals-list-display
+                  li
+                    .ch-item style= "background-image: url(#{a.avatar_url(220)})"
+                      .ch-info
+                        - if !a.twitter_url.blank?
+                          = link_to a.twitter_url, :target => "_blank"
+                            h3.info 
+                              = a.fname.to_s + " " +a.name.to_s 
+                          p 
+                            = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
+                        - else 
+                          h3.info
+                            = a.fname.to_s + " " +a.name.to_s 
 
-        div.large-8.columns
-          ul.large-block-grid-2
-            - @users.each do |a|
-              li
-                = link_to a do
-                  div.avatar
-                    = image_tag(a.avatar_url(140))
-                  div.desc
-                    span.name = a.fname unless a.fname.nil? 
-                    span.name style="margin-left:3px;" = a.name
-                    p.position = a.title
+                    h6
+                      b
+                        = a.fname.to_s + " " +a.name.to_s
+                    - if !a.title.blank?
+                        small
+                          = a.title                    

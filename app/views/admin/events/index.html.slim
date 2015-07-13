@@ -1,24 +1,25 @@
-div.row
-  div.large-12.columns
-    h2.subheader Events
-  - Language.all.each do |l|
-    div.large-12.columns
-      h3.subheader = "#{l.name} events"
-      = link_to 'Create', new_admin_language_event_path(l.id)
-      table
-        tr
-          th Name
-          th Image
-          th Resume
-          th Info
-          th
-          th
-        - l.events.each do |e|
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Events
+    - Language.all.each do |l|
+      div.col-lg-12
+        h3.subheader = "#{l.name} events"
+        a.btn.btn-green href="#{new_admin_language_event_path(l.id)}" = "Create new event on #{l.name} page"
+        table.table
           tr
-            td = e.title
-            td = image_tag(e.image.thumb.url)
-            td = truncate(e.resume)
-            td = truncate(e.info)
-            td = link_to "Edit", edit_admin_language_event_path(l, e)
-            td = link_to "Remove", [:admin, l, e], data: { confirm: 'Are you sure?' }, method: :delete
+            th Name
+            th Image
+            th Resume
+            th Info
+            th
+            th
+          - l.events.each do |e|
+            tr
+              td = e.title
+              td = image_tag(e.image.thumb.url)
+              td = truncate(e.resume)
+              td = truncate(e.info)
+              td = link_to "Edit", edit_admin_language_event_path(l, e)
+              td = link_to "Remove", [:admin, l, e], data: { confirm: 'Are you sure?' }, method: :delete
 

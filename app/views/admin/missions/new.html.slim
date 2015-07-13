@@ -1,10 +1,11 @@
-div.row
-  div.large-12.columns
-    h1 New Mission
+.container#admin
+  div.row
+    div.col-lg-12
+      h1 New Mission
 
-    = simple_form_for  @mission, url: {:controller => "missions", :action => "create"} do |f|
-	  h4 Language
-	  = @mission.language.name
-	  = f.input :text, label: 'Text (Markdown)'
-	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-	  = f.submit
+      = simple_form_for  @mission, url: {:controller => "missions", :action => "create"} do |f|
+        h4 Language
+        = @mission.language.name
+        = f.input :text, label: 'Text (Markdown)'
+        = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+        = f.submit

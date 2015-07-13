@@ -1,108 +1,121 @@
-div.contain-to-grid.fixed
-  nav.top-bar
-    ul.title-area
-      li.name
-        h1
-          a href="#{root_path}" OS Admin
-    section.top-bar-section
-      ul
-        li
-          a href="#{admin_home_path}" Home
-        li.has-dropdown
-          a href="#" About
-          ul.dropdown
-            /*li*/
-              /*a href="#{admin_about_path}" OuiShare Live*/
+.navbar.navbar-default.navbar-fixed-top
+  .container.special-container-navbar
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.nopadding href="#{admin_home_path}" OS Admin
 
-            li.has-dropdown
-              a href="#{admin_missions_path}" Mission
-              ul.dropdown
+    .navbar-collapse.collapse
+      ul.nav.navbar-nav
+
+        li.dropdown
+          a href="#{admin_home_path}" Home
+          ul.dropdown-menu
+            li.dropdown-submenu
+              a href="#{admin_missions_path}" = t('menu.about_us')
+              ul.dropdown-menu
                 li
                   a href="#{admin_activities_path}" Activities
-            li
-              a href="#{admin_timelines_path}" Story
-            li.has-dropdown
-              a href="#{admin_value_pages_path}" Value
-              ul.dropdown
+            li.dropdown-submenu
+              a href="#" = t('menu.story')
+              ul.dropdown-menu
+                li
+                  a href="#{admin_timelines_path}" Timelines            
+            li.dropdown-submenu
+              a href="#{admin_value_pages_path}" = t('menu.values')
+              ul.dropdown-menu
                 li
                   a href="#{admin_values_path}" Values
-            li.has-dropdown
-              a href= "#{admin_faq_pages_path}" FAQ
-              ul.dropdown
+            li
+              a href="#{admin_collaborative_economy_pages_path}" = t('menu.collaborative_economy')            
+            li
+              = link_to t('menu.organization'), admin_organization_pages_path
+            li
+              = link_to t('menu.team'), admin_team_pages_path
+            li
+              = link_to t('menu.advisors'), admin_advisors_pages_path
+
+        li.dropdown
+          a href="#{admin_community_pages_path}" = t('menu.community')
+          ul.dropdown-menu
+            li
+              a href="#{admin_communities_path}" = t('menu.local_communities')
+            li
+              = link_to 'Get Involved Page', admin_get_involved_pages_path             
+            li
+              a href="#{admin_users_pages_path}" = t('menu.users')
+            li
+              a href="#{admin_alumni_pages_path}" = t('menu.alumni')
+            li
+              a href="#{admin_regions_path}" Regions
+            li.dropdown-submenu
+              a href="#{admin_expert_groups_pages_path}" Knowledge groups page
+              ul.dropdown-menu
+                li
+                  a href="#{admin_expert_groups_path}" = t('menu.knowledge_groups')
+            li
+              = link_to t('menu.ouishare_everywhere'), admin_live_pages_path
+
+        li
+          a href="#{admin_events_path}" = t('menu.events')
+        li
+          a href="#{admin_projects_path}" = t('menu.projects')
+
+
+        li.dropdown
+          = link_to 'Knowledge', admin_knowledge_pages_path
+          ul.dropdown-menu
+            li
+              a href="#{admin_expert_groups_path}" = t('menu.knowledge_groups')            
+            li.dropdown-submenu
+              a href="#{admin_research_pages_path}" = t('menu.research_and_publications')
+              ul.dropdown-menu
+                li
+                  a href="#{admin_researches_path}" Researches            
+            li.dropdown-submenu
+              a href="#{admin_cocreation_pages_path}" Co-creations page
+              ul.dropdown-menu
+                li
+                  a href="#{admin_cocreations_path}" = t('menu.cocreation_events')
+
+        li.dropdown
+          a href="#" Footer
+          ul.dropdown-menu
+            li
+              = link_to 'Donation Page', admin_donation_pages_path            
+            li
+              = link_to 'Get Involved Page', admin_get_involved_pages_path            
+            li.divider
+            li
+              = link_to t('footer.press_room'), admin_press_room_pages_path
+            li.dropdown-submenu
+              a href="#{admin_workus_pages_path}" = t('footer.workus')
+              ul.dropdown-menu
+                li
+                  a href="#{admin_services_path}" Services
+            li
+              a href="#" = t('footer.globalpartners')
+            li
+              = link_to t('footer.contact'), admin_contact_pages_path
+            li.dropdown-submenu
+              a href= "#{admin_faq_pages_path}" = t('footer.faqs')
+              ul.dropdown-menu
                 li
                   a href="#{admin_faq_questions_path}" Questions
             li
-              = link_to 'Team', admin_team_pages_path
-            li
-              = link_to 'Advisors', admin_advisors_pages_path
-            li
-              = link_to 'Organization', admin_organization_pages_path
-            li
-              a href="#{admin_collaborative_economy_pages_path}" The Collaborative Economy
-
-        li
-          a href="#{admin_projects_path}" Projects
-        li
-          a href="#{admin_events_path}" Events
-        li.has-dropdown
-          a href="#{admin_community_pages_path}" Community page
-          ul.dropdown
-            li
-              a href="#{admin_communities_path}" Communities
-            li
-              a href="#{admin_users_pages_path}" Users pages
-            li
-              a href="#{admin_alumni_pages_path}" Alumni pages
-            li
-              a href="#{admin_regions_path}" Regions
-            li.has-dropdown
-              a href="#{admin_expert_groups_pages_path}" Exp. groups page
-              ul.dropdown
-                li
-                  a href="#{admin_expert_groups_path}" Expert groups
-            li
-              = link_to 'OuiShare Live', admin_live_pages_path
-
-        li.has-dropdown
-          = link_to 'Knowledge', admin_knowledge_pages_path
-          ul.dropdown
-            li.has-dropdown
-              a href="#{admin_cocreation_pages_path}" Co-creations page
-              ul.dropdown
-                li
-                  a href="#{admin_cocreations_path}" co-creations
-            li.has-dropdown
-              a href="#{admin_research_pages_path}" Research and Publications page
-              ul.dropdown
-                li
-                  a href="#{admin_researches_path}" Researches
-        li.has-dropdown
-          a href="#" Pages
-          ul.dropdown
-            li
-              = link_to 'Contact Page', admin_contact_pages_path
-            li
-              = link_to 'Donation Page', admin_donation_pages_path
+              = link_to 'Terms & Service', admin_terms_pages_path            
+            li.divider
             li
               = link_to 'Registration Page', admin_registrations_pages_path
             li
               = link_to 'Testimonials', admin_testimonials_path
-            li
-              = link_to 'Get Involved Page', admin_get_involved_pages_path
-            li
-              = link_to 'Terms & Service', admin_terms_pages_path
-            li
-              = link_to 'Press Room', admin_press_room_pages_path
-            li.has-dropdown
-              a href="#{admin_workus_pages_path}" Work with us page
-              ul.dropdown
-                li
-                  a href="#{admin_services_path}" Services
-        li.has-dropdown
+        li.dropdown
           a href="#{admin_users_path}" Users 
-          ul.dropdown
-            li
-              a href="#{admin_users_pages_path}" Users Pages
+          /ul.dropdown-menu
+            /li
+              /a href="#{admin_users_pages_path}" = t('menu.users')
 
         li
           = link_to "Languages", admin_languages_path

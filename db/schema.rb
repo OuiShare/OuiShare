@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028143720) do
+ActiveRecord::Schema.define(version: 20150709120419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,9 +155,29 @@ ActiveRecord::Schema.define(version: 20141028143720) do
     t.integer  "region_id"
     t.integer  "row_order"
     t.text     "text_html"
+    t.string   "main_image"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree
+
+  create_table "communities_events", force: true do |t|
+    t.integer "community_id"
+    t.integer "event_id"
+  end
+
+  add_index "communities_events", ["community_id"], name: "index_communities_events_on_community_id", using: :btree
+  add_index "communities_events", ["event_id"], name: "index_communities_events_on_event_id", using: :btree
+
+  create_table "communities_projects", force: true do |t|
+    t.integer "community_id"
+    t.integer "project_id"
+  end
+
+  add_index "communities_projects", ["community_id"], name: "index_communities_projects_on_community_id", using: :btree
+  add_index "communities_projects", ["project_id"], name: "index_communities_projects_on_project_id", using: :btree
 
   create_table "communities_users", force: true do |t|
     t.integer "community_id"
@@ -166,6 +186,16 @@ ActiveRecord::Schema.define(version: 20141028143720) do
 
   add_index "communities_users", ["community_id"], name: "index_communities_users_on_community_id", using: :btree
   add_index "communities_users", ["user_id"], name: "index_communities_users_on_user_id", using: :btree
+
+  create_table "community_members", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "community_members", ["community_id"], name: "index_community_members_on_community_id", using: :btree
+  add_index "community_members", ["user_id"], name: "index_community_members_on_user_id", using: :btree
 
   create_table "community_pages", force: true do |t|
     t.text     "main_text"
@@ -178,6 +208,14 @@ ActiveRecord::Schema.define(version: 20141028143720) do
   end
 
   add_index "community_pages", ["language_id"], name: "index_community_pages_on_language_id", using: :btree
+
+  create_table "connectors", force: true do |t|
+    t.integer "users_id"
+    t.integer "community_id"
+  end
+
+  add_index "connectors", ["community_id"], name: "index_connectors_on_community_id", using: :btree
+  add_index "connectors", ["users_id"], name: "index_connectors_on_users_id", using: :btree
 
   create_table "contact_pages", force: true do |t|
     t.string   "title"
@@ -260,6 +298,7 @@ ActiveRecord::Schema.define(version: 20141028143720) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.text     "join_us_code_html"
   end
 
   add_index "events", ["language_id"], name: "index_events_on_language_id", using: :btree
@@ -898,6 +937,8 @@ ActiveRecord::Schema.define(version: 20141028143720) do
     t.string   "organization_url"
     t.integer  "user_source_id"
     t.integer  "show_order",             default: 1000
+    t.string   "slug"
+    t.text     "contact_languages",      default: [],                 array: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,34 +1,36 @@
-div#page-about-internal
-  div.green
-    section.main-content
-      div.row
-        div.large-12.columns
-          .markdown = @workus_page.text_html
+== render partial: 'layouts/sub_header_title', locals: {title: t("pages.workus.index"), text: ""}
+#page-about-internal
+  section
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .markdown = @workus_page.text_html
 
-    section#banner
-      div.row
-        div.large-12.columns
-          div.banner
-            = image_tag(@workus_page.image.top_internal)
+  section#banner
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .banner
+        = image_tag(@workus_page.image.top_internal)
 
   section#activities.section
-    .services
-      - @services.rank(:row_order).each do |s|
-        div.row.actvity
-          div.large-6.columns
-            = link_to s.link do
-              h4 = s.name
-            .markdown = s.text_html
-          div.large-6.columns
-            = link_to s.link do
-              div.img-sample
-                = image_tag(s.image.list_thumb)
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .services
+        - @services.rank(:row_order).each do |s|
+          .row.actvity
+            h3 = s.name
+            hr.hr-large.blue
+            .center
+              = link_to s.link do
+                .img-sample
+                  = image_tag(s.image.list_thumb)
+
+            .markdown = s.text_html  
 
   section#become
-    div.row
-      div.large-4.columns
-        h4 = t('workus.become_a_partner')
-        .markdown = t('workus.contact_a_partner')
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row
 
-      div.large-8.columns
-        = render 'contact/form'
+        h3 = t('workus.become_a_partner')
+        hr.hr-large.blue
+        .col-lg-4
+          .markdown = t('workus.contact_a_partner')
+
+        .col-lg-8
+          = render 'contact/form'

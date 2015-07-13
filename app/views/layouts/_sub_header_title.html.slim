@@ -1,0 +1,21 @@
+.title-header
+  .row
+    .col-lg-4.col-lg-offset-2
+      hr.hr-title
+      h3.blue = title
+      hr.hr-title
+
+    - if @event
+      .col-lg-4
+        .sub-header-container
+          p
+            = @event.cta
+
+    - else
+      .col-lg-4
+        - if defined? text
+          p
+           = text  
+
+
+

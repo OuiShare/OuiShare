@@ -157,10 +157,14 @@ OuiShare::Application.routes.draw do
 
   get 'live' => 'about#index', as: 'about'
   get 'communities' => 'communities#index', as: 'communities'
+  get 'community/:id' => 'communities#show', as: 'community'
+  post 'community/:id/join' => 'communities#join', as: 'join_community'
+  post 'community/:id/leave' => 'communities#leave', as: 'leave_community'
   get 'contact' => 'contact#index', as: 'contact'
   post 'contact' => 'contact#submit'
   get 'projects' => 'projects#index', as: 'projects'
   get 'events' => 'events#index', as: 'events'
+  get 'past_events' => 'events#past_events'
   get 'faq' => 'faqs#index', as: 'faq'
   get 'terms' => 'home#terms', as: 'terms'
 
@@ -199,6 +203,10 @@ OuiShare::Application.routes.draw do
   get "payments/success_callback"
   get "payments/cancel_callback"
   get 'donations/thank_you' => 'donations#thank_you'
+
+  get '/get_communities_select' => 'communities#get_communities_select'
+  get '/get_communities_partial' => 'communities#get_communities_partial'
+  get '/get_community_partial' => 'communities#get_community_partial'
 
 
   get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }

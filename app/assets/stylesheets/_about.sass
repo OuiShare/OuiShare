@@ -1,26 +1,29 @@
-#page-about
-  .about
-    padding-top: 64px
-    padding-bottom: 30px
+// #page-about
+//   .about
+//     padding-top: 64px
+//     padding-bottom: 30px
 
-  .banner
-    height: 300px
-    width: 100%
-    display: block
-    overflow: hidden
-    margin-bottom: 64px
+//   .banner
+//     height: 300px
+//     width: 100%
+//     display: block
+//     overflow: hidden
+//     margin-bottom: 64px
 
-  .values
-    background: white
-    color: black
+//   .values
+//     background: white
+//     color: black
 
-    h3
-      color: white
+//     h3
+//       color: white
 
-    p
-      margin-bottom: 40px
+//     p
+//       margin-bottom: 40px
 
 #page-about-internal
+
+  margin-top: 40px
+
   #activities
     .services
       .row
@@ -32,73 +35,86 @@
     padding-top: 20px
     padding-bottom: 40px
   #list
-    color: black
     background: white
 
     .activities
       border-bottom: 1px solid black
       padding: 40px 0
 
+      ul
+        text-align: left
+
       &:last-child
         border: none
 
-    h4
-      color: black
-      font-weight: bold
-
-    .row
+  .theTeam
+    .avatar
+      float: left
+    .list-team
       margin-bottom: 20px
-
-      p
-        text-align: left !important
-        color: black
-        font-weight: normal
-        &:visited, &:hover
-          color: black
-
-    .get-involved
-      a.btn
-        margin-top: 20px
-
-    &.live
-      h4
-        color: black
-        font-weight: normal
+    .desc
+      text-align: left
+      .name
         text-transform: uppercase
+        font-size: 16px
 
-      .btn
-        margin-bottom: 40px
+//     h4
+//       color: black
+//       font-weight: bold
+
+//     .row
+//       margin-bottom: 20px
+
+//       p
+//         text-align: left !important
+//         color: black
+//         font-weight: normal
+//         &:visited, &:hover
+//           color: black
+
+//     .get-involved
+//       a.btn
+//         margin-top: 20px
+
+//     &.live
+//       h4
+//         color: black
+//         font-weight: normal
+//         text-transform: uppercase
+
+//       .btn
+//         margin-bottom: 40px
 
 
-  .theTeam, .festTeam
-    li
-      padding: 10px 0
-      .avatar
-        display: inline-block
-        vertical-align: top
-      .desc
-        display: inline-block
-        clear: both
-        margin-bottom: 5px
-        margin-left: 5px
-        font-size: 13px
-        width: 179px
+//   .theTeam, .festTeam
+//     li
+//       padding: 10px 0
+//       .avatar
+//         display: inline-block
+//         vertical-align: top
+//       .desc
+//         display: inline-block
+//         clear: both
+//         margin-bottom: 5px
+//         margin-left: 5px
+//         font-size: 13px
+//         width: 179px
 
-        span.name
-          font-weight: bold
-          text-transform: uppercase
-          margin: 0
-          color: $blue
-          font-size: 16px
+//         span.name
+//           font-weight: bold
+//           text-transform: uppercase
+//           margin: 0
+//           color: $blue
+//           font-size: 16px
 
-        p.position
-          color: black
-  #faq
-    .faq
-      section
-        .content
-          .markdown
-            ul
-              height: auto !important
-              li
-                position: relative !important
+//         p.position
+//           color: black
+//   #faq
+//     .faq
+//       section
+//         .content
+//           .markdown
+//             ul
+//               height: auto !important
+//               li
+//                 position: relative !important

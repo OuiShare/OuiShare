@@ -1,32 +1,41 @@
-div#page-about-internal
-  div.green
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.organization'), text: ""}
+#page-about-internal
+  .green
     section.main-content
-      div.row
-        div.large-12.columns
-          p = @organization_page.main_text_html
-    section#banner
-      div.row
-        div.large-12.columns
-          div.banner
-            = image_tag(@organization_page.image.top_internal)
+      .container
+        .row
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            p = @organization_page.main_text_html
+    / section#banner
+    /   .container
+    /     .row
+    /       .col-lg-12
+    /       .large-12.columns
+    /         .banner
+    /           = image_tag(@organization_page.image.top_internal)
 
   section#list
-    div.activities
-      div.row
-        div.large-12.columns
-          ul.large-block-grid-2
-            li
-              h4 = @organization_page.title1
-              p = @organization_page.text1_html
-
-            li
-              h4 = @organization_page.title2
-              p = @organization_page.text2_html
-
-            li
-              h4 = @organization_page.title3
-              p = @organization_page.text3_html
-
-            li
-              h4 = @organization_page.title4
-              p = @organization_page.text4_html
+    .container
+      .activities
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @organization_page.title1
+          hr.hr-large.blue
+          p = @organization_page.text1_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @organization_page.title2
+          hr.hr-large.blue
+          p = @organization_page.text2_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @organization_page.title3
+          hr.hr-large.blue
+          p = @organization_page.text3_html
+          br
+          br
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = @organization_page.title4
+          hr.hr-large.blue
+          p = @organization_page.text4_html

@@ -1,38 +1,39 @@
-div.row
-  div.large-12.columns
-    h1 New Get involved page
+.container#admin
+  div.row
+    div.col-lg-12
+      h1 New Get involved page
 
-    = simple_form_for  @get_involved_page, url: {:controller => "get_involved_pages", :action => "create"} do |f|
-	  h4 Language
-	  = @get_involved_page.language.name
-	  = f.input :main_text, label: 'Main Text (Markdown)'
-	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-	  = f.input :title1
-	  = f.input :text1, label: 'Text 1 (Markdown)'
-	  = f.input :link1_text
-	  = f.input :link1
-	  = f.input :title2
-	  = f.input :text2, label: 'Text 2 (Markdown)'
-	  = f.input :link2_text
-	  = f.input :link2
-	  = f.input :title3
-	  = f.input :text3, label: 'Text 3 (Markdown)'
-	  = f.input :link3_text
-	  = f.input :link3
-	  = f.input :title4
-	  = f.input :text4, label: 'Text 4 (Markdown)'
-	  = f.input :link4_text
-	  = f.input :link4
-	  = f.input :title5
-	  = f.input :text5, label: 'Text 5 (Markdown)'
-	  = f.input :link5_text
-	  = f.input :link5
-	  = f.input :title6
-	  = f.input :text6, label: 'Text 6 (Markdown)'
-	  = f.input :link6_text
-	  = f.input :link6
-	  = f.input :title7
-	  = f.input :text7, label: 'Text 7 (Markdown)'
-	  = f.input :link7_text
-	  = f.input :link7
-	  = f.submit
+      = simple_form_for  @get_involved_page, url: {:controller => "get_involved_pages", :action => "create"} do |f|
+        h4 Language
+        = @get_involved_page.language.name
+        = f.input :main_text, label: 'Main Text (Markdown)'
+        = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+        = f.input :title1
+        = f.input :text1, label: 'Text 1 (Markdown)'
+        = f.input :link1_text
+        = f.input :link1
+        = f.input :title2
+        = f.input :text2, label: 'Text 2 (Markdown)'
+        = f.input :link2_text
+        = f.input :link2
+        = f.input :title3
+        = f.input :text3, label: 'Text 3 (Markdown)'
+        = f.input :link3_text
+        = f.input :link3
+        = f.input :title4
+        = f.input :text4, label: 'Text 4 (Markdown)'
+        = f.input :link4_text
+        = f.input :link4
+        = f.input :title5
+        = f.input :text5, label: 'Text 5 (Markdown)'
+        = f.input :link5_text
+        = f.input :link5
+        = f.input :title6
+        = f.input :text6, label: 'Text 6 (Markdown)'
+        = f.input :link6_text
+        = f.input :link6
+        = f.input :title7
+        = f.input :text7, label: 'Text 7 (Markdown)'
+        = f.input :link7_text
+        = f.input :link7
+        = f.submit

@@ -1,0 +1,30 @@
+/ req param: community
+- if defined? communities
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row style="margin-top: 40px;"
+        h3 = region.title
+        hr.hr-large.blue
+        - communities.each do |c|
+          .row
+            h4 style="padding-top: 50px;"
+              = c.name
+            hr.hr-large.blue
+          .row
+            .col-lg-12
+              .row  
+                - c.users.limit(3).each do |u|
+                  .col-md-3
+                    .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
+                      .ch-info
+                        .info
+                          - if !u.title.blank?
+                            = link_to u do
+                                = u.title
+                    p.center.blue style= "word-wrap: break-word;"
+                      = "#{u.fname} #{u.name}"
+                .col-md-3
+                  .ch-item-btn style="padding-top: 40px"
+                    = link_to community_path(c)  
+                       = "See the community"
+
