@@ -25,6 +25,7 @@ en:
     sessions:
       new:
         sign_in: "Sign in"
+        sign_up: "Sign up"
     confirmations:
       new:
         resend_confirmation_instructions: "Resend confirmation instructions"
