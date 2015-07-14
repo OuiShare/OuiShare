@@ -449,7 +449,16 @@
 // You can use Sass (SCSS) here: http: //sass-lang.com/
 #home
   margin-top: 50px
-  text-align: center
+
+  .carousel-home-left
+    background: url(/assets/arrow-grey-gauche.png) no-repeat
+    background-size: cover
+    border: 0
+
+  .carousel-home-right
+    background: url(/assets/arrow-grey-droite.png) no-repeat
+    background-size: cover
+    border: 0
 
   #slideshow
     img
@@ -460,7 +469,7 @@
 
 #about
   .icon
-    height: 131px
+    height: 75px
 
 .get-involved-btn
   font-size: 16px
@@ -472,6 +481,11 @@
   font-family: Arial
   padding: 15px 30px
   border-radius: 5px !important
+
+.get-involved-btn:hover
+  background-color: #00C389
+  color: white
+
 
 #bepart
   h4
@@ -538,14 +552,11 @@
 .main-section
   #headerwrap
     padding-top: 55px
-  
-
 
 .speakers-container
   .container.sinfo
     padding-top: 31px
   
-
 .get-involved-section
   .get-involved-punchline
     background-color: white
@@ -749,6 +760,7 @@
 
 p.white 
   font-size: 16px
+  color: white
 
 
 
@@ -858,11 +870,15 @@ p.col-xs-6 > a:hover
 
 
 .ch-item
+  text-overflow: ellipsis
+  overflow: hidden
   .ch-info
-    a
-      text-decoration: none
+    h4
+      a
+        text-decoration: none
+        color: white
+        text-align: center
     
-  
 
 
 #slider-container
@@ -876,6 +892,7 @@ p.col-xs-6 > a:hover
 .event-slide
 
   text-align: left
+  padding: 10px 10px 10px 10px
 
   .event-slide-month
     text-transform: uppercase
@@ -891,14 +908,14 @@ p.col-xs-6 > a:hover
   .event-slide-link
     position: absolute    
     width: 100%
-    height: 25px
+    height: 60px
     top: 63px
 
   .event-slide-hr
     border-top: 1px solid #001E60
 
   .event-slider-place
-    font-size: 14px
+    font-size: 16px
     margin-bottom: 20px
 
   .event-slide-resume
@@ -918,9 +935,7 @@ p.col-xs-6 > a:hover
 #articles > div:nth-child(1) > div > div > h3 
   font-size: 35px
 
-#hot 
-  padding-top: 200px
-
+#hot
   h3
     font-size: 35px  
 
@@ -949,6 +964,9 @@ p.col-xs-6 > a:hover
 #slider2_container > div > div > div > div > a
   font-size: 16px
 
+#slider3_container > div > div > div > div > a
+  font-size: 16px
+
 #hot > div > div:nth-child(1) > div > div > p:nth-child(2) > a
   text-decoration: underline
   text-align: left  
@@ -961,10 +979,369 @@ p.col-xs-6 > a:hover
   margin-top: 52px
   background: url("/assets/fond-ouishare-page.png")
 
+.title-header-commu
+  margin-top: 52px
+  background: url("/assets/fond-communities.png")  
+
 .title-header > div > div > h3 
+  color: white 
+
+.ch-info
+  position: absolute
+  //background: rgb(224, 62, 82)
+  background: #00C389
+  width: inherit
+  height: inherit
+  border-radius: 50%
+  opacity: 0
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out
+  -webkit-transform: scale(0)
+  -moz-transform: scale(0)
+  -o-transform: scale(0)
+  -ms-transform: scale(0)
+  transform: scale(0)
+  -webkit-backface-visibility: hidden
+
+.ch-info
+  h4
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-size: 19px
+    margin: 0 30px
+    padding: 45px 0 0 0
+    height: 140px
+    font-family: 'Naiv', Arial, sans-serif
+    text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3)
+    font-weight: 300
+    box-sizing: border-box
+  p
+    color: #001E60
+    padding: 10px 5px
+    font-style: italic
+    margin: 0 30px
+    font-size: 12px
+    border-top: 1px solid rgba(255, 255, 255, 0.5)
+    opacity: 0
+    -webkit-transition: all 1s ease-in-out 0.4s
+    -moz-transition: all 1s ease-in-out 0.4s
+    -o-transition: all 1s ease-in-out 0.4s
+    -ms-transition: all 1s ease-in-out 0.4s
+    transition: all 1s ease-in-out 0.4s
+    a
+      display: block
+      color: #001E60
+      color: rgba(255, 255, 255, 0.7)
+      font-style: normal
+      font-weight: 700
+      text-transform: uppercase
+      font-size: 9px
+      letter-spacing: 1px
+      padding-top: 4px
+      font-family: 'varela_roundregular', Arial, sans-serif
+      &:hover
+        //color: #fff222
+        //color: rgba(255,242,34, 0.8)
+        color: #001E60
+
+.ch-item:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1
+
+.ch-grid
+  margin: 20px 0 0 0
+  padding: 0
+  list-style: none
+  display: block
+  text-align: center
+  width: 100%
+  &:after
+    content: ''
+    display: table
+
+.ch-item:before
+  content: ''
+  display: table
+
+.ch-grid
+  &:after
+    clear: both
+  li
+    width: 220px
+    height: 220px
+    display: inline-block
+    margin: 20px
+  h6
+    font-size: 18px
+    font-weight: 200
+    margin-top: 10px
+    color: #001E60
+    font-family: "Naiv"
+
+.ch-item
+  width: 220px
+  height: 220px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 16px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center
+
+#list > div > div > div > div.col-lg-12 > div > div > li > h6
+  color: #001E60
+  font-family: "Naiv"
+  font-size: bold
+  font-size: 18px
+
+#list > div > div > div > div > div > li > div > .ch-info > a > h3.info
+  text-align: center
+
+body > div.title-header > div > div > p 
   color: white
 
+body > div.title-header > div > div:nth-child(2) 
+  //needed property ?
+  //margin-top: 20px
 
+#list > div > div > div > div > div > li > small 
+  color: #7F8C9A
+  font-family: "Naiv"
+
+#list > div > div > div > div > div > li > div > div > p > a  
+  text-align: center
+
+#list > div > div > div > div > div > div > li > div > div > a > h3.info
+  text-align: center
+
+#list > div > div > div:nth-child(1) > div > h2 
+  text-align: center  
+
+#contact_name 
+  width: 100%
+  margin-bottom: 10px
+
+#contact_email
+  width: 100%
+  margin-bottom: 10px
+
+#contact_city
+  width: 100%
+  margin-bottom: 10px
+
+#contact_subject
+  width: 100%
+  margin-bottom: 10px
+
+#contact_message
+  width: 100%
+  margin-bottom: 10px
+
+#contact_country 
+  width: 100%
+  margin-bottom: 10px
+
+#contact > div > div:nth-child(2) > div > form > div.row > div > input   
+  text-align: right
+.contact-section
+  margin-top : 50px  
+
+#contact > div > div > div > form > div.row > div > input
+  margin-right: 12px
+
+#login > .container > .col-lg-8.col-lg-offset-2 
+  background: url(/assets/pic_sign_in.png) no-repeat
+
+#login > div > div > div > div > form > div
+  margin-left: 5px
+
+#login > div > div > div > div > form
+  margin-top: 87px
+
+
+#login > div > div > div > div > form > div:nth-child(5) > button
+  background-color: white
+  border: 1px solid #00C389
+  border-radius: 3px
+  padding: 15px 80px 15px 80px
+  color: #00C389
+  font-weight: bold
+  font-size: 18px
+  font-familly: "Naiv"
+
+#partners > div > div > div > div.col-lg-2.center > a > img
+  padding-bottom: 20px
+
+#partners > div > div > div:nth-child(4) > div > div > a > img 
+  padding-bottom: 20px
+
+#partners > div > div > div > div.col-lg-3.center > a > img 
+  height: 100px
+
+#slider1_container > div > div > div:nth-child(2) > div > span.presentation.ouishare_stencil.white   
+  text-align: left
+
+.event-slide-month 
+  font-size: 20px
+
+#login > div > div.col-lg-8.col-lg-offset-2
+  background: url(/assets/pic_sign_in.png) no-repeat
+
+body > div.title-header-commu > div.row.center > div
+  margin-top: 40px
+  margin-bottom: 100px
+
+
+
+.ch-item-community
+  background-size: 100%
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 5px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center  
+  text-overflow: ellipsis
+  overflow: hidden
+  margin: 0 auto
+  .ch-info
+    h4
+      a
+        text-decoration: none
+        text-align: center
+        font-color: #001E60
+    .info
+      a
+        font-color: #001E60
+
+
+
+.ch-item-community:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1        
+
+.ch-item-show
+  background-size: 100%
+  width: 120px
+  height: 120px
+  border-radius: 50%
+  position: relative
+  cursor: default
+  box-shadow: inset 0 0 0 5px rgba(0, 195, 137, 1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-transition: all 0.4s ease-in-out
+  -moz-transition: all 0.4s ease-in-out
+  -o-transition: all 0.4s ease-in-out
+  -ms-transition: all 0.4s ease-in-out
+  transition: all 0.4s ease-in-out  
+  text-align: center  
+  text-overflow: ellipsis
+  overflow: hidden
+  margin: 0 auto
+  .ch-info
+    overflow: hidden
+    vertical-align: middle
+    .info
+      vertical-align: middle
+      margin-top: 30px
+      a
+        color: #001E60
+        text-decoration: none
+        text-align: center
+        font-size: 14px
+
+.ch-item-btn
+  padding: 50px 0px 0px 0px
+  color: white
+  background: #00c389
+  text-align: center
+  margin: auto
+  width: 120px
+  height: 120px
+  border-radius: 50%
+
+  a
+    color: white
+    text-decoration: none
+
+
+.ch-item-show:hover
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1)
+  .ch-info
+    -webkit-transform: scale(1)
+    -moz-transform: scale(1)
+    -o-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    opacity: 1
+    p
+      opacity: 1
+    info
+      a
+        font-size: 14px     
+
+body > div.container > div > div > div > li > h6
+  list-style-type: none
+
+.community > p
+  color: #fff
+  font-weight: 600
+
+
+.col-lg-4.user
+  min-height: 200px
+
+
+.select_community
+  color: #fff
+  background-color: #09c894  
+  border: none  
+  height: 50px  
+  width: 39%  
+  padding-left: 10px  
+  position: absolute  
+  left: 9%
+  text-transform: uppercase
+
+.select_community_2
+  color: #fff
+  background-color: #09c894  
+  border: none  
+  height: 50px  
+  width: 39%  
+  padding-left: 10px  
+  position: absolute  
+  left: 49%
+  text-transform: uppercase
 
 
 

@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
   extend FriendlyId
   belongs_to :language
   has_and_belongs_to_many :users
+  has_and_belongs_to_many :communities
 
   include RankedModel
   ranks :row_order
@@ -21,7 +22,7 @@ class Project < ActiveRecord::Base
 
   scope :visible, ->{ where(visible: true) }
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
-  scope :featured, ->{ where(featured: true).order('created_at desc').limit(2) }
+  scope :featured, ->{ where(featured: true).order('created_at desc').limit(3) }
 
   def featured?
     featured

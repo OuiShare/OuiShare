@@ -1,11 +1,12 @@
+== render partial: 'layouts/sub_header_title', locals: {title: 'Donate', text: ""}
 #page-donations
   section.donate.section
     .container
       .row
-        .col-lg-12
+        .col-lg-6.col-lg-offset-3.col-sm-12
           - if params[:sign_up] == 'yes'
             .support-msg style="margin-left:20px;"
-              h3 = "Support Us"
+              p.bold = "Support Us"
               p  = "We are a non-profit organization being built by passionate iniduals around the world since 2012."
               span  style="margin-bottom:20px;font-family: 'Naiv', verdana;" 
                 | As an open community, membership is free for iniduals. However we encourage you to support our team of 
@@ -25,114 +26,111 @@
               br
               br
           - else 
-            h3 = @donation_page.main_title
+            p.bold = @donation_page.main_title
             .markdown = @donation_page.main_text_html
-            h4 = @donation_page.thanks_text_html
-      .row
-        .col-lg-8
-          .pink-box
-            .row
-              .header
-                .col-lg-6
-                  h5 = t('donations.help_support_ouishare')
-                .col-lg-6.menu-currency
-                  table
-                    tr
-                      td.usd $
-                      td.eur €
-                  .choose-currency.right = t('donations.choose_currency')
+            p = @donation_page.thanks_text_html
+
+          .title-donation.center = t('donations.help_support_ouishare')
+          .menu-currency
+            table
+              tr
+                td.usd $
+                td.eur.active €
             .row
               section.values
                 .col-lg-12
-                  h5 = t('donations.donation')
-                  ul.inline-list.euro
+                  ul.euro
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input name="cmd" type="hidden" value="_s-xclick"
                         input name="hosted_button_id" type="hidden" value="NMQ426LXB9R3L"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/10eu.jpg'}" type="image"
+                        input.submit alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" value="10€" type="submit"
                         img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input name="cmd" type="hidden" value="_s-xclick"
                         input name="hosted_button_id" type="hidden" value="2SBD8D7FEBYML"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/50eu.jpg'}" type="image"
+                        input.submit alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" value="50€" type="submit"
                         img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input name="cmd" type="hidden" value="_s-xclick"
                         input name="hosted_button_id" type="hidden" value="SR7XQUNQH5MHJ"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/100eu.jpg'}" type="image"
+                        input.submit alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" value="100€" type="submit"
                         img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input name="cmd" type="hidden" value="_s-xclick"
                         input name="hosted_button_id" type="hidden" value="XPCLGHF44K7YE"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/150eu.jpg'}" type="image"
+                        input.submit alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" value="150€" type="submit"
                         img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input name="cmd" type="hidden" value="_s-xclick"
                         input name="hosted_button_id" type="hidden" value="FDHAD3S3FMXLU"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/200eu.jpg'}" type="image"
+                        input.submit alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" value="200€" type="submit"
                         img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
-                    li.value.custom
-                      form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
-                        input name="cmd" type="hidden" value="_s-xclick"
-                        input name="hosted_button_id" type="hidden" value="S5JFXUNG2JDEA"
-                        input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="#{image_path 'donation_buttons/custom.png'}" type="image"
-                        img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                  .custom.euro
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input name="cmd" type="hidden" value="_s-xclick"
+                      input name="hosted_button_id" type="hidden" value="S5JFXUNG2JDEA"
+                      input.btn.btn-white-green alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" type="submit" value="custom amount"
+                      img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
 
-                  ul.inline-list.dolar style="display: none"
+                  ul.dolar style="display: none"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input type="hidden" name="cmd" value="_s-xclick"
                         input type="hidden" name="hosted_button_id" value="4H7AH5RND963U"
-                        input type="image" src="#{image_path 'donation_buttons/10re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                        input.submit value="10$" type="submit" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input type="hidden" name="cmd" value="_s-xclick"
                         input type="hidden" name="hosted_button_id" value="LYWRZYZVYLT7L"
-                        input type="image" src="#{image_path 'donation_buttons/50re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                        input.submit value="50$" type="submit" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input type="hidden" name="cmd" value="_s-xclick"
                         input type="hidden" name="hosted_button_id" value="SSRYCJYDQEGXJ"
-                        input type="image" src="#{image_path 'donation_buttons/100re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                        input.submit value="100$" type="submit" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input type="hidden" name="cmd" value="_s-xclick"
                         input type="hidden" name="hosted_button_id" value="DZBGKM6GKWL2N"
-                        input type="image" src="#{image_path 'donation_buttons/150re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                        input.submit value="150$" type="submit" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
                     li.value
                       form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
                         input type="hidden" name="cmd" value="_s-xclick"
                         input type="hidden" name="hosted_button_id" value="R9MA23N3ZV4V4"
-                        input type="image" src="#{image_path 'donation_buttons/200re.jpg'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                        input.submit value="200$" type="submit" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                         img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
-                    li.value.custom
-                      form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
-                        input type="hidden" name="cmd" value="_s-xclick"
-                        input type="hidden" name="hosted_button_id" value="KM28JDRJBX5UU"
-                        input type="image" src="#{image_path 'donation_buttons/custom.png'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
-                        img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
+                  .custom.dolar style="display: none"
+                    form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+                      input type="hidden" name="cmd" value="_s-xclick"
+                      input type="hidden" name="hosted_button_id" value="KM28JDRJBX5UU"
+                      input.btn.btn-white-green type="submit" value="custom amount" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                      img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
               .col-lg-12
                 p.white = t('donations.recurring_donations')
+          br
+          p.center
+            iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
+
       - if params[:sign_up] == 'yes'
         a.button.right style= "margin-right:50px;text-decoration:none;"href="register/thanks" Complete Registration
   - if !params[:sign_up]
     section.explain
       .container
         .row.section
-          .col-lg-8
-            img src="#{@donation_page.image1.donation.url}"
-          .col-lg-4
-            h3.subtitle.white = @donation_page.title1
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            h3.blue = @donation_page.title1
+            hr.hr-large.blue
             .markdown = @donation_page.text1_html
+            img src="#{@donation_page.image1.donation.url}"
         /.separator.black
         /.row.section
           /.large-8.columns

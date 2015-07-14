@@ -1,18 +1,23 @@
 section#list
-  .container
-    - @current_language.events.visible.next.order('date_start').each do |e|
-      .event
-        .row
-          .col-lg-6
-            a href="#{event_path(e)}"
-              h3.subtitle.black = e.title
-              h4 = e.cta
-            .markdown = e.resume_html
-            .tags
-              - e.tags.each do |t|
-                span.label.blue = t.name
+  .container    
+    - @events.each do |e|
+      .col-lg-6.col-lg-offset-3.col-sm-12  
+        a href="#{event_path(e)}"
+          h3.blue = e.title
+          hr.hr-large.blue
+          .thumb.center
+            = link_to e
+              = image_tag e.image.list_thumb.url
+          h4 = e.cta
+        .markdown.event = e.resume_html
+        .tag-show
+          - e.tags.each do |t|
+            = t.name.to_s + (e != e.tags.last ? " |" : "")
 
-          .col-lg-6
-            .thumb
-              = link_to e
-                = image_tag e.image.list_thumb.url
+        - unless @past
+          .row.center.top-buffer
+            a.btn.btn-green.btn-large href=past_events_path See past events
+
+    .col-lg-6.col-lg-offset-3.col-sm-12.center
+      = will_paginate @events
+          

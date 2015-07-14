@@ -31,28 +31,27 @@ section#articles
       .col-lg-12
         h3.blue = @articles_section.title
         hr.hr-large.blue
-
-  .row
-    #slider-container.text-center style="min-height:100%;"
-      #slider1_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 300px;"
-        / Slides Container
-        div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 300px; overflow: hidden;" u="slides"
-          - @magazines.each do |f|
-            div
-              img src="#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")}" u="image"
-                span.presentation.ouishare_stencil.white = f.title
-                span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
-                  a href="#{f.url}" target="blank" Read More
-
-        span.jssora13l style="width: 40px; height: 50px; top: 123px; left: 30px;" u="arrowleft"
-        / Arrow Right
-        span.jssora13r style="width: 40px; height: 50px; top: 123px; right: 30px" u="arrowright"
-
-  br
-  br
-  br
-
   .container
     .row
       .col-lg-6.col-lg-offset-3.col-sm-12
         = @articles_section.text_html
+    .row.center
+      .a.btn.btn-white-green.btn-large href="http://magazine.ouishare.net" = @articles_section.link_text
+      
+
+  .row
+    #slider-container style="min-height:100%;"
+      #slider1_container style="position: relative; top: 0px; left: 0px; width: 1200px; height: 350px;"
+        / Slides Container
+        div.scale-jssor style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 350px; overflow: hidden;" u="slides"
+          - @magazines.each do |f|
+            div
+              img src="#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")}" u="image"
+                span.presentation.ouishare_stencil 
+                  = f.title
+                span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
+                  a href="#{f.url}" target="blank" Read More
+
+        span.jssora13l style="width: 50px; height: 50px; top: 123px; left: 30px;" u="arrowleft"
+        / Arrow Right
+        span.jssora13r style="width: 50px; height: 50px; top: 123px; right: 30px" u="arrowright"

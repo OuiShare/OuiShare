@@ -5,10 +5,11 @@
       = link_to 'Users CSV Download', admin_users_path('csv')
       br
       br
-      table.table
+      table.table.table-hover
         tr
           th First Name
           th Name
+          th Account email
           th Type
           th Admin?
           th Show order
@@ -16,6 +17,7 @@
           tr
             td = u.fname
             td = u.name
+            td = u.email
             td = u.profile_type
             td = u.admin? ? 'Yes' : 'No'
             td = u.show_order

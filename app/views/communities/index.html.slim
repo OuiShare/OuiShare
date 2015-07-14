@@ -1,64 +1,81 @@
-- content_for :page_title, 'Communities'
-.title-header
+- content_for :page_title, t('menu.local_communities')
+.title-header-commu
   .row
     .col-lg-4.col-lg-offset-2
       hr.hr-title
-      h3.blue Communities
+      h3.white = "Communities"
       hr.hr-title
-#page-communities
-  .green
-    section.explain
-      .container
-        .row
-          .col-lg-12
-            .markdown = @community_page.main_text_html
+  .row
+    .col-md-6.col-md-offset-3.community
+      p
+       = @community_page.main_text_html    
+  .row.center
+    .col-lg-8.col-lg-offset-2.col-sm-12
+        = collection_select(:country_select, :region_id,  @regions,  :id, :title, {:prompt   => "Select a Country"}, {:class=>'select_community'})
+        = collection_select(:community_select, :community_id, @communities_for_select, :id, :name, {:prompt => "Select a Community"}, {:class=>'select_community_2'})
 
-    section#map
-      .container
-        .row
-          .col-lg-12
-            .map
-              = image_tag @community_page.image.top_internal
+#communitypartial
 
-  section#communities-list.section
-    .container
-      .row
-        - @current_language.regions.rank(:row_order).each do |r|
-          - if r.communities.size > 0
-            h3.subtitle = r.title
-            hr.hr-large.blue
-          - r.communities.rank(:row_order).each do |c|
-            .row.community
-              .col-lg-6
-                p.title = c.name
-                .markdown = c.text_html
+/ #page-communities
+/   .green
+/     section.explain
+/       .container
+/         .row
+/           .col-lg-12
+/             .markdown = @community_page.main_text_html
 
-              .col-lg-2
-                = link_to c.link do
-                  .btn join
+/     section#map
+/       .container
+/         .row
+/           .col-lg-12
+/             .map
+/               = image_tag @community_page.image.top_internal
 
-              .col-lg-4
-                .avatars
-                  - c.users.each do |u|
-                    span.block
-                      = link_to u do
-                        = image_tag u.avatar_url(140), :class => "img-responsive"
-        - if @current_language.communities.without_region.size > 0
-          h3.subtitle = t('communities.other_communities')
-          hr.hr-large.blue
-          - @current_language.communities.without_region.rank(:row_order).each do |c|
-            .row.community
-              .col-lg-6
-                p.title = c.name
-                .markdown = c.text_html
+/   section#communities-list.section
+/     .container
+/       .row
 
-              .col-lg-2
-                = link_to c.link do
-                  .btn join
 
-              .col-lg-4
-                .avatars
-                  - c.users.each do |u|
-                    span.block
-                      = link_to u do
-                        = image_tag u.avatar_url, :class => "img-responsive"
+
+
+
+        / - @current_language.regions.rank(:row_order).each do |r|
+        /   - if r.communities.size > 0
+        /     h3.blue = r.title
+        /     hr.hr-large.blue
+        /   - r.communities.rank(:row_order).each do |c|
+        /     .row.community
+        /       .col-lg-6
+        /         p.title = c.name
+        /         .markdown = c.text_html
+
+        /       .col-lg-2
+        /         = link_to c.link do
+        /           .btn join
+
+        /       .col-lg-4
+        /         .avatars
+        /           - c.users.each do |u|
+        /             span.block
+        /               = link_to u do
+        /                 = image_tag u.avatar_url(140), :class => "img-responsive"
+        / - if @current_language.communities.without_region.size > 0
+        /   h3.subtitle = t('communities.other_communities')
+        /   hr.hr-large.blue
+        /   - @current_language.communities.without_region.rank(:row_order).each do |c|
+        /     .row.community
+        /       .col-lg-6
+        /         p.title = c.name
+        /         .markdown = c.text_html
+
+        /       .col-lg-2
+        /         = link_to c.link do
+        /           .btn join
+
+        /       .col-lg-4
+        /         .avatars
+        /           - c.users.each do |u|
+        /             span.block
+        /               = link_to u do
+        /                 = image_tag u.avatar_url, :class => "img-responsive"
+               

@@ -1,18 +1,18 @@
 div#page-donations
   section.donate.section
     div.row
-      div.large-12.columns
+      div.col-lg-12
         h3 = @donation_page.main_title
         .markdown = @donation_page.main_text_html
         h4 = @donation_page.thanks_text_html
     div.row
-      div.large-8.columns
+      div.col-lg-8
         .pink-box
           div.row
             .header
-              div.large-6.columns
+              div.col-lg-6
                 h5 = t('donations.help_support_ouishare')
-              div.large-6.columns
+              div.col-lg-6
                 a.currency.small-2 data-dropdown="currency" data-options="is_hover:true" €
                 ul id="currency" class="f-dropdown small" data-dropdown-content=""
                   li
@@ -22,7 +22,7 @@ div#page-donations
                 p.right = t('donations.choose_currency')
           div.row
             section.values
-              div.large-12.columns
+              div.col-lg-12
                 h5 = t('donations.donation')
                 ul.inline-list.euro
                   li.value
@@ -99,30 +99,30 @@ div#page-donations
                       input type="hidden" name="hosted_button_id" value="KM28JDRJBX5UU"
                       input type="image" src="#{image_path 'donation_buttons/custom.png'}" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
                       img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"
-            div.large-12.columns
+            div.col-lg-12
               p = t('donations.recurring_donations')
 
   section.explain
     div.row.section
-      div.large-8.columns
+      div.col-lg-8
         img src="#{@donation_page.image1.donation.url}"
-      div.large-4.columns
+      div.col-lg-4
         h3.subtitle.white = @donation_page.title1
         .markdown = @donation_page.text1_html
     /.separator.black
     /div.row.section
-      /div.large-8.columns
+      /div.col-lg-8
         /img src="#{@donation_page.image2.donation.url}"
-      /div.large-4.columns
+      /div.col-lg-4
         /h3.subtitle.white = @donation_page.title2
         /.markdown = @donation_page.text2_html
 
     /div.row.section.certified
-      /div.large-4.columns
+      /div.col-lg-4
         /h3.subtitle.black Ceritfied by
         /p hendrerit tempor tellus. Donec pretium posuere tellus. Proin quam
 
-      /div.large-8.columns
+      /div.col-lg-8
         /h3
           /ul.inline-list
             /- 5.times do
@@ -133,9 +133,9 @@ div#page-donations
 
   - if @testimonial.call_to_action1.present? || @testimonial.call_to_action2.present? || @testimonial.call_to_action3.present? || @testimonial.call_to_action4.present?
     div.row.section
-      div.large-12.columns.center
+      div.col-lg-12.center
         h3.subtitle.black Testimonials
-      div.large-12.columns
+      div.col-lg-12
         ul.large-block-grid-2
           - if @testimonial.call_to_action1.present?
             li

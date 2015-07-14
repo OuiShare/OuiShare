@@ -1,20 +1,21 @@
-div.row
-  div.large-12.columns
-    h1 New Registration page
+.container#admin
+  div.row
+    div.col-lg-12
+      h1 New Registration page
 
-    = simple_form_for  @registration_page, url: {:controller => "registrations_pages", :action => "create"} do |f|
-	  h4 Language
-	  = @registration_page.language.name
-	  = f.input :main_title
-	  = f.input :main_text, label: 'Text (Markdown)'
-	  = f.input :main_text2
-	  = f.input :link1
-	  = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
-	  = f.input :title1
-	  = f.input :text1, label: 'Text (Markdown)'
-	  = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
-	  = f.input :title2
-	  = f.input :text2
-	  = f.input :text3
-	  = f.input :link2
-	  = f.submit
+      = simple_form_for  @registration_page, url: {:controller => "registrations_pages", :action => "create"} do |f|
+        h4 Language
+        = @registration_page.language.name
+        = f.input :main_title
+        = f.input :main_text, label: 'Text (Markdown)'
+        = f.input :main_text2
+        = f.input :link1
+        = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+        = f.input :title1
+        = f.input :text1, label: 'Text (Markdown)'
+        = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+        = f.input :title2
+        = f.input :text2
+        = f.input :text3
+        = f.input :link2
+        = f.submit

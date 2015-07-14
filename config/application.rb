@@ -26,7 +26,11 @@ module OuiShare
 
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
+<<<<<<< HEAD
     config.i18n.available_locales = [:en, :fr, :it, :es]
+=======
+    config.i18n.available_locales = [:en, :fr, :es, :it, :de]
+>>>>>>> 9291b8ac64f6278eb746c8c3472a9a07949517a0
     config.i18n.fallbacks = true
 
     # Settings in config/environments/* take precedence over those specified here.

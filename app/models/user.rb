@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   extend Enumerize
   include Shared::BeautifulText
 
+  extend FriendlyId
+  friendly_id :full_name, use: [:slugged]
+
   validates :terms_of_service, acceptance: true
   has_many :authorizations, dependent: :destroy
   has_and_belongs_to_many :events
@@ -12,10 +15,19 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :communities
   has_and_belongs_to_many :expert_groups
   has_and_belongs_to_many :topics
+  has_many :community_members
+  has_many :member_of, -> { uniq }, through: :community_members, source: :community
   belongs_to :language
   belongs_to :occupation
   belongs_to :user_source
-  has_and_belongs_to_many :sectors
+
+  self.per_page = 30
+
+  # has_many :connectors
+  # has_many :communities, through: :connectors
+  
+  # has_many :communities_users
+  #has_many :communities, through: :communities_users
 
   validates :fname, :name, :language, :country, :gender, :city, :occupation, presence: true
   validates_inclusion_of :gender, :in => 0..2
@@ -31,7 +43,7 @@ class User < ActiveRecord::Base
   #     :maximum => 1.megabytes.to_i 
   #   } 
 
-  acts_as_taggable
+  acts_as_taggable_on :skill, :tag
 
   beautiful_text_for [:bio]
 
@@ -43,6 +55,10 @@ class User < ActiveRecord::Base
   def country_name
     country = ISO3166::Country[self.country]
     country.translations[I18n.locale.to_s] || country.name
+  end
+
+  def full_name
+    "#{self.fname} #{self.name}"
   end
 
   def self.new_with_session(params, session)
@@ -71,7 +87,7 @@ class User < ActiveRecord::Base
     else
       return image if image.present?
     end
-    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}"
+    "http://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?s=#{size}&d=mm"
   end
 
   def has_edit_rights?

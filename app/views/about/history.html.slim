@@ -1,9 +1,11 @@
-- content_for :page_title, 'Our History'
+- content_for :page_title, t('menu.story')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.story'), text: ""}
 #page-about-internal
   section.main-content
     .container
       .row
         .col-lg-12
-          .markdown = @timeline.text_html
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            .markdown = @timeline.text_html
   section#timeline
     iframe src="#{@timeline.url}" width='100%' height='650' frameborder='0'

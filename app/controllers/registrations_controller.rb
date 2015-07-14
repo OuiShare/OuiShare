@@ -3,6 +3,14 @@ class RegistrationsController < Devise::RegistrationsController
   def update_sanitized_params
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:fname, :email, :password, :password_confirmation)}
   end
+
+  def edit
+    @language_list = Hash.new
+
+    LanguageList::COMMON_LANGUAGES.each do |language|
+      @language_list[language.name] = language.iso_639_1
+    end
+  end
   
   def new
     ids_userssource = [1,2,3,5,8,4,6]

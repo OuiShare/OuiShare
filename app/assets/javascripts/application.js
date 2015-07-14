@@ -21,3 +21,4 @@
 //= require init.js
 //= require_tree ./lib
 //= require registration
+//= require oui_share/communities.js

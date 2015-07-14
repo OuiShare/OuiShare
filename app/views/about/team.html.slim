@@ -1,23 +1,43 @@
-- content_for :page_title, 'Team'
+- content_for :page_title, t('menu.team')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.team'), text: ""}
 #page-about-internal
   section.theTeam#list
     .container
       .activities
+        .row 
+          .col-lg-6.col-lg-offset-3.col-sm-12
+            h3.blue = @team_page.title
+            hr.hr-large.blue
         .row
-          .col-lg-4
-            h3 = @team_page.title
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @team_page.text_html
-            a.btn.btn-green.uppercase href="#{contact_path}" = @team_page.link_text
+            .center
+              a.btn.get-involved-btn.uppercase.center href="#{contact_path}" = @team_page.link_text
+        .row    
+          .col-lg-12
+            .ch-grid
+              - @users.each do |a|
+                .col-lg-4.individuals-list-display
+                    li
+                      .ch-item style= "background-image: url(#{a.avatar_url(220)})"
+                        .ch-info
+                          / - if !a.twitter_url.blank?
+                          /   = link_to a.twitter_url, :target => "_blank"
+                          /     - if !a.title.blank?
+                          /       h4.info
+                          /         = link_to a do
+                          /           = a.title
+                                / br     
+                                /   = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
+                          / - else 
+                          h4.info
+                            - if !a.title.blank?
+                              = link_to a do
+                                  = a.title
+                            - else      
+                              = link_to a do
+                                = a.fname.to_s + " " +a.name.to_s 
 
-          .col-lg-8
-            - @users.each do |a|
-              .col-lg-6.list-team
-                = link_to a do
-                  .col-lg-5
-                    .avatar
-                      = image_tag(a.avatar_url(140))
-                  .col-lg-7.no-padding
-                    .desc
-                      span.name = a.fname unless a.fname.nil? 
-                      span.name style="margin-left:3px;" = a.name
-                      p.position = a.title
+                      h6
+                        b.center
+                          = a.fname.to_s + " " +a.name.to_s                   

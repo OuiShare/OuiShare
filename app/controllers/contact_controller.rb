@@ -4,11 +4,11 @@ class ContactController < ApplicationController
   end
 
   def submit
-    unless params[:contact][:email].present? && params[:contact][:name].present? && params[:contact][:country].present?
+    unless params[:contact][:email].present? && params[:contact][:name].present?
       redirect_to contact_path, alert: t('contact.missing_fields')
       return
     end
-    countries = {'France' => 'france@ouishare.net',
+    countries = {'France' => 'macabitbol@gmail.com',
                 'Germany' => 'dach@ouishare.net',
                 'Austria' => 'dach@ouishare.net',
                 'Switzerland' => 'dach@ouishare.net',
@@ -86,7 +86,7 @@ class ContactController < ApplicationController
     if countries.keys.include?(params[:contact][:country])
       params[:contact][:to] = countries[params[:contact][:country]]
     else
-      params[:contact][:to] = 'hello@ouishare.net'
+      params[:contact][:to] = 'macabitbol@gmail.com'
     end
     ContactMailer.contact(params).deliver!
     redirect_to root_path, notice: t('contact.success')

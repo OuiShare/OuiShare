@@ -1,52 +1,48 @@
+- content_for :page_title, t('menu.get_involved')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.get_involved'), text: ""}
 #page-about-internal
   .green
     section.main-content
       .container
         .row
-          .col-lg-12
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @get_involved_page.main_text_html
-    section#banner
-      .container
-        .row
-          .col-lg-12
-            .banner
-              = image_tag(@get_involved_page.image)
-
-
+            
   section#list
     .container
       .activities.get-involved
-        .row
-          .col-lg-12
-            .row.involved-row
-              .col-lg-6
-                h4 = @get_involved_page.title1
-                .markdown = @get_involved_page.text1_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
-              .col-lg-6
-                h4 = @get_involved_page.title2
-                .markdown = @get_involved_page.text2_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
-            .row.involved-row
-              .col-lg-6
-                h4 = @get_involved_page.title3
-                .markdown = @get_involved_page.text3_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
-              .col-lg-6
-                h4 = @get_involved_page.title4
-                .markdown = @get_involved_page.text4_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
-            .row.involved-row
-              .col-lg-6
-                h4 = @get_involved_page.title5
-                .markdown = @get_involved_page.text5_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
-              .col-lg-6
-                h4 = @get_involved_page.title6
-                .markdown = @get_involved_page.text6_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
-            .row.involved-row
-              .col-lg-6
-                h4 = @get_involved_page.title7
-                .markdown = @get_involved_page.text7_html
-                a.btn.btn-green.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title1
+          .markdown = @get_involved_page.text1_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title2
+          .markdown = @get_involved_page.text2_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title3
+          .markdown = @get_involved_page.text3_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title4
+          .markdown = @get_involved_page.text4_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title5
+          .markdown = @get_involved_page.text5_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title6
+          .markdown = @get_involved_page.text6_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h4 = @get_involved_page.title7
+          .markdown = @get_involved_page.text7_html
+          .row.center
+            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text

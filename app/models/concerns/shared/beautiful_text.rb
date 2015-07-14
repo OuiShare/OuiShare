@@ -9,8 +9,8 @@ module Shared::BeautifulText
         image
         google_map
         twitter
-        youtube width: 640, height: 390
-        vimeo width: 640, height: 390
+        youtube width: 540, height: 329
+        vimeo width: 540, height: 329
         redcarpet markdown_options: { filter_html: true, no_links: true }
         link target: '_blank', data: { :"no-turbolink" => true }
       end

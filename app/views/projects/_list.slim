@@ -2,16 +2,15 @@ section#list
   .container
     - @current_language.projects.visible.rank(:row_order).each do |p|
       .event
-        .row
+        .col-lg-6.col-lg-offset-3.col-sm-12.project-list
           a href="#{project_path(p)}"
-            .col-lg-5
-              h3.subtitle.black = p.name
-              p = p.resume
-              .tags
-                - p.tags.each do |t|
-                  span.label.blue = t.name
-
-          .col-lg-7
-            .thumb
+            h3.blue = p.name
+            hr.hr-large.blue
+            .thumb.center
               = link_to p
                 = image_tag p.image.list_thumb.url
+            p = p.resume
+            .tag-show
+              - p.tags.each do |t|
+                = t.name.to_s + (t != p.tags.last ? " |" : "")      
+            

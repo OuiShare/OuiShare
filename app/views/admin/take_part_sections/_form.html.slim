@@ -2,22 +2,22 @@
   h4 Language
   = @take_part_section.language.name
   div.row
-    div.large-12.columns
+    div.col-lg-12
       = f.input :main_title
       = f.input :main_text, label: 'Main Text (Markdown)'
       = f.input :link_text
   div.row
-    div.large-4.columns
+    div.col-lg-4
       = f.input :title1
       = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
       = f.input :text1, label: 'Text 1 (Markdown)'
       = f.input :link1
-    div.large-4.columns
+    div.col-lg-4
       = f.input :title2
       = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
       = f.input :text2, label: 'Text 2 (Markdown)'
       = f.input :link2
-    div.large-4.columns
+    div.col-lg-4
       = f.input :title3
       = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
       = f.input :text3, label: 'Text 3 (Markdown)'

@@ -8,31 +8,32 @@ section#partners
       - p = @current_language.partner || Partner.new
 
       .col-lg-12
-        .col-lg-3
+        .col-lg-2.col-lg-offset-1.center
           = link_to p.link1
-            = image_tag(p.partner1.partner.url, :class => "img-responsive")
-        .col-lg-3
+            = image_tag(p.partner1.partner.url)
+        .col-lg-2.center
           = link_to p.link2
-            = image_tag(p.partner2.partner.url, :class => "img-responsive")
-        .col-lg-3
+            = image_tag(p.partner2.partner.url)
+        .col-lg-2.center
           = link_to p.link3
-            = image_tag(p.partner3.partner.url, :class => "img-responsive")
-        .col-lg-3
+            = image_tag(p.partner3.partner.url)
+        .col-lg-2.center
           = link_to p.link4
-            = image_tag(p.partner4.partner.url, :class => "img-responsive")
+            = image_tag(p.partner4.partner.url)
+        .col-lg-2.center
+          = link_to p.link7
+            = image_tag(p.partner7.partner.url)    
 
       br
-      .col-lg-10.col-lg-offset-1
-
-        .col-lg-4
-          = link_to p.link5
-            = image_tag(p.partner5.partner.url, :class => "img-responsive")
-        .col-lg-4
-          = link_to p.link6
-            = image_tag(p.partner6.partner.url, :class => "img-responsive")
-        .col-lg-4
-          = link_to p.link7
-            = image_tag(p.partner7.partner.url, :class => "img-responsive")
+      .col-lg-12
+        .row
+          .col-lg-2.col-lg-offset-4.center
+            = link_to p.link5
+              = image_tag(p.partner5.partner.url)
+          .col-lg-2.center
+            = link_to p.link6
+              = image_tag(p.partner6.partner.url)
+        
 
     / div.row
     /   div.large-12.columns

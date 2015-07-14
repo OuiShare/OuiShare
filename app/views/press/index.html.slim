@@ -1,26 +1,18 @@
-div#page-about-internal
-  .green
-    section.main-content
-      div.row
-        div.large-12.columns
-          .markdown = @press_room_page.main_text_html
+== render partial: 'layouts/sub_header_title', locals: {title: t("pages.press.index"), text: ""}
+#page-about-internal
+  section
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .markdown = @press_room_page.main_text_html
+      
+      .banner
+        = image_tag(@press_room_page.image.top_internal)
+      
+      .row
+        h3 = @press_room_page.title1
+        hr.hr-large.blue
+        .markdown = @press_room_page.text1_html
+        h3 = @press_room_page.title3
+        hr.hr-large.blue
+        .markdown = @press_room_page.text3_html
 
-    section#banner
-      div.row
-        div.large-12.columns
-          div.banner
-            = image_tag(@press_room_page.image.top_internal)
 
-  section.values
-    div.row.section
-      div.large-6.columns
-        div.row
-          div.large-12.columns
-            h4 = @press_room_page.title1
-            .markdown = @press_room_page.text1_html
-          div.large-12.columns
-            h4 = @press_room_page.title3
-            .markdown = @press_room_page.text3_html
-      div.large-6.columns
-        h4 = @press_room_page.title2
-        .markdown = @press_room_page.text2_html

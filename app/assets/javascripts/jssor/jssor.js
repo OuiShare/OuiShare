@@ -1065,8 +1065,8 @@ var $Jssor$ = window.$Jssor$ = new function () {
     };
 
     _This.$EnableHWA = function (elmt) {
-        if (!elmt.style[GetTransformProperty(elmt)] || elmt.style[GetTransformProperty(elmt)] == "none")
-            elmt.style[GetTransformProperty(elmt)] = "perspective(2000px)";
+        // if (!elmt.style[GetTransformProperty(elmt)] || elmt.style[GetTransformProperty(elmt)] == "none")
+        //     elmt.style[GetTransformProperty(elmt)] = "perspective(2000px)";
     };
 
     _This.$DisableHWA = function (elmt) {

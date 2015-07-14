@@ -1,37 +1,36 @@
 - content_for :page_title, t('pages.communities.expert_groups')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.knowledge_groups'), text: ""}
 #page-communities
   .green
     section.explain
       .container
         .row
-          .col-lg-12
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @expert_groups_page.main_text_html
     section#map
       .container
         .row
-          .col-lg-12
+          .col-lg-6.col-lg-offset-3.col-sm-12
             .map
               = image_tag @expert_groups_page.image.top_internal
 
   section#expert-groups-list.section
     .container
       .row
-        .col-lg-6
-          h3.subtitle = t('knowledge_groups.all_knowledge_groups')
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = t('knowledge.all_knowledge_groups')
           hr.hr-large.blue
       - @expert_groups.rank(:row_order).each do |c|
-        .row.community
-          .col-lg-6
-            p.title = c.name
-            .markdown = c.text_html
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          h3.blue = c.name
+          hr.hr-large.blue
+          .markdown = c.text_html
 
-          .col-lg-2
+          .avatars
+            - c.users.each do |u|
+              span.block
+                = link_to u do
+                  = image_tag u.avatar_url
+          .center         
             = link_to c.link do
-              button.btn.white join
-
-          .col-lg-4
-            .avatars
-              - c.users.each do |u|
-                span.block
-                  = link_to u do
-                    = image_tag u.avatar_url
+              button.btn.get-involved-btn join                

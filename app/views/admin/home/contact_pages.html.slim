@@ -1,24 +1,25 @@
-div.row
-  div.large-12.columns
-    h2.subheader Contact pages
-    table
-      tr
-        th Language
-        th Title
-        th Text
-        th
-        th
-      - Language.all.each do |l|
-        - if l.contact_page.present?
-          tr
-            td = l.name
-            td = l.contact_page.title
-            td = l.contact_page.text
-            td = link_to "Edit", edit_admin_language_contact_page_path(l, l.contact_page)
-            td = link_to "Remove", [:admin, l, l.contact_page], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_contact_page_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Contact page
+      table.table.table-hover
+        tr
+          th Language
+          th Title
+          th Text
+          th
+          th
+        - Language.all.each do |l|
+          - if l.contact_page.present?
+            tr
+              td = l.name
+              td = l.contact_page.title
+              td = l.contact_page.text
+              td = link_to "Edit", edit_admin_language_contact_page_path(l, l.contact_page)
+              td = link_to "Remove", [:admin, l, l.contact_page], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='6' = link_to 'Create', new_admin_language_contact_page_path(l.id)
 
 

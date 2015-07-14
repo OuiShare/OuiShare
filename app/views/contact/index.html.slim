@@ -1,8 +1,6 @@
 - content_for :page_title, 'Contact'
-div#contact
-  div.row.section
-    div.large-4.columns
-      h4 = @contact_page.title
-      .markdown = @contact_page.text_html
-    div.large-8.columns
-      = render 'contact/form'
+== render partial: 'layouts/sub_header_title', locals: {title: "Contact", text: @contact_page.text_html}
+#contact
+  .row.contact-section
+    .col-lg-4.col-lg-offset-4
+      = render 'contact/form'     

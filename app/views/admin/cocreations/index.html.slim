@@ -1,12 +1,12 @@
 .container#admin
   div.row
     div.col-lg-12
-      h2.subheader Cocreations
+      h2.subheader Co-creation events
     - Language.all.each do |l|
       div.col-lg-12
         h3.subheader = "#{l.name} cocreation"
         = link_to 'Create', new_admin_language_cocreation_path(l.id)
-        table.table
+        table.table.table-hover
           tr
             th Name
             th Text

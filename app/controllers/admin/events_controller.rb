@@ -45,6 +45,8 @@ module Admin
                             :home_image,
                             :info,
                             :join_us_text,
+                            :join_us_text_html,
+                            :join_us_code_html,
                             :service1_image,
                             :service1_link,
                             :service1_title,

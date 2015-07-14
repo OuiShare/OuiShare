@@ -1,11 +1,11 @@
 section.more-content
-  div.row.section#faq
-   div.large-12.columns
-      .section-container.accordion.faq data-section="accordion"
-        - @faq_questions.rank(:row_order).each do |q|
+  .row#faq
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .section-container.faq
+        - @faq_questions.rank(:row_order).each_with_index do |q, index|
           section
             p.title data-section-title=""
-              a href="#"
+              a href="#collapse#{index}" role="button" data-toggle="collapse" aria-expanded="false" aria-control="collapse#{index}"
                 = q.question
-            .content data-section-content=""
-              .markdown = q.answer_html
+            .content.collapse id="collapse#{index}" aria-expanded="false"
+              .markdown.well = q.answer_html

@@ -473,13 +473,13 @@ you can use the generic selector below, but it's slower:
 }
 body {
   font-family: Open Sans, 'regular', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.231;
   color: #001E60;
   background-color: #ffffff;
 }
 a {
-  color: #00C389;
+  color: #09c894;
   text-decoration: none;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -505,6 +505,7 @@ a:focus {
 p {
   font-size: 16px;
   line-height: 24px;
+  text-align: justify;
   font-family: "Open Sans";
   color: #001E60;
 }
@@ -628,7 +629,7 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 40px;
+  font-size: 35px;
 }
 h4,
 .h4 {
@@ -1300,7 +1301,7 @@ address {
   padding-left: 5px;
 }
 .navbar .nav ul li {
-  background-color: #FF8888;
+  background-color: #001E60;
   padding: 0 3px 3px;
   position: relative;
 }
@@ -1333,7 +1334,7 @@ address {
 }
 .navbar .nav ul a:hover {
   background-color: white;
-  color: #FF8888;
+  color: #001E60;
 }
 .navbar .btn-navbar {
   background: none;
@@ -1778,10 +1779,6 @@ address {
     float: right;
     margin: 0 0 0 10px;
   }
-}
-.select {
-  display: inline-block;
-  margin-bottom: 10px;
 }
 [class*="span"] > .select[class*="span"] {
   margin-left: 0;
@@ -2389,8 +2386,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .checkbox input,
 .radio input {
-  outline: none !important;
-  display: none;
+  /*outline: none !important;*/
+  /*display: none;*/
 }
 .checkbox .icons,
 .radio .icons {

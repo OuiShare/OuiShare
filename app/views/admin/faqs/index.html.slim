@@ -1,12 +1,12 @@
 .container#admin
   div.row
     .col-lg-12
-      h2.subheader Projects
+      h2.subheader faqs - not in use?
     - Language.all.each do |l|
       .col-lg-12
         h3.subheader = "#{l.name} projects"
         = link_to 'Create', new_admin_language_project_path(l.id)
-        table.table
+        table.table.table-hover
           tr
             th Name
             th Image

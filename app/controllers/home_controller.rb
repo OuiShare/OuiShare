@@ -11,6 +11,12 @@ class HomeController < ApplicationController
     @articles_section = @current_language.articles_section || ArticlesSection.new
     @partner = @current_language.partner || Partner.new
     @magazines = Magazine.fetch_last_posts(@current_language.slug) rescue []
+
+    #Fetch and order events for slider
+    past_events = Event.visible.over.order('date_start DESC').limit(30).reverse
+    @slider_events = Event.visible.next.order('date_start').to_a
+    @slider_events = @slider_events + past_events
+    
   end
 
   def terms

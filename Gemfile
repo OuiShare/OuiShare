@@ -9,6 +9,9 @@ gem 'foreigner'
 # Server
 gem 'thin'
 
+#Language list
+gem 'language_list', '~> 1.1.0'
+
 # HAML
 
 gem 'haml-rails'
@@ -26,6 +29,7 @@ gem "rmagick", '2.13.3'
 gem 'simple_form_fancy_uploads'
 
 # Improvements
+gem 'will_paginate', '~> 3.0.7'
 gem 'jbuilder'
 gem 'inherited_resources', '~> 1.4.1'
 gem 'simple_form', '~> 3.0.0'

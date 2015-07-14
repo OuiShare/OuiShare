@@ -1,22 +1,23 @@
-div.row
-  div.large-12.columns
-    h2.subheader Get involved page
-    table
-      tr
-        th Language
-        th Main Text
-        th Image
-        th
-        th
-      - Language.all.each do |l|
-        - if l.get_involved_page.present?
-          tr
-            td = l.name
-            td = l.get_involved_page.main_text
-            td = image_tag(l.get_involved_page.image.thumb.url)
-            td = link_to "Edit", edit_admin_language_get_involved_page_path(l, l.get_involved_page)
-            td = link_to "Remove", [:admin, l, l.get_involved_page], data: { confirm: 'Are you sure?' }, method: :delete
-        - else
-          tr
-            td = l.name
-            td colspan='6' = link_to 'Create', new_admin_language_get_involved_page_path(l.id)
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Get involved page
+      table.table.table-hover
+        tr
+          th Language
+          th Main Text
+          th Image
+          th
+          th
+        - Language.all.each do |l|
+          - if l.get_involved_page.present?
+            tr
+              td = l.name
+              td = l.get_involved_page.main_text
+              td = image_tag(l.get_involved_page.image.thumb.url)
+              td = link_to "Edit", edit_admin_language_get_involved_page_path(l, l.get_involved_page)
+              td = link_to "Remove", [:admin, l, l.get_involved_page], data: { confirm: 'Are you sure?' }, method: :delete
+          - else
+            tr
+              td = l.name
+              td colspan='6' = link_to 'Create', new_admin_language_get_involved_page_path(l.id)
