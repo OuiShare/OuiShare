@@ -25,7 +25,8 @@ gem 'sprockets-image_compressor'
 # Uploads
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-gem "rmagick", '2.13.3'
+# gem "rmagick", '2.13.3'
+gem "rmagick", '2.15.3'
 gem 'simple_form_fancy_uploads'
 
 # Improvements
@@ -87,6 +88,7 @@ gem 'bootstrap-sass'
 #gem 'angular-rails'
 # gem 'font-awesome-sass'
 gem "font-awesome-rails"
+gem "byebug"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 group :production do

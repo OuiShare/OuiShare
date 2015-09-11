@@ -27,8 +27,6 @@ OuiShare::Application.configure do
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 
-  config.action_mailer.raise_delivery_errors = true
-
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -49,7 +47,7 @@ OuiShare::Application.configure do
   :email => {
     :email_prefix => "[OuiShareNet ERR] ",
     :sender_address => %{"OuiShare Team" <no-reply@ouisharefest.com>},
-    :exception_recipients => %w{macabitbol@gmail.com yann@kastelnik.com karol.arnaud@gmail.com}
+    :exception_recipients => %w{yann@kastelnik.com karol.arnaud@gmail.com}
   }
   
 end

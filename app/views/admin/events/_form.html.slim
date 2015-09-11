@@ -3,20 +3,24 @@
   / = @event.language.name
   .form-inputs
     .row
-      .col-lg-4
-        = f.input :visible, label: 'Visible in events list'
-      .col-lg-4
-        = f.input :display_on_menu, label: 'Show in menu'
-      .col-lg-4
-        = f.submit
+      .col-lg-1.col-sm-2
+        = f.input :visible
+      .col-lg-3.col-sm-10
+        = f.label :visible, 'Visible in events list'
+      .col-lg-1.col-sm-2
+        = f.input :display_on_menu
+      .col-lg-3.col-sm-10
+        = f.label :display_on_menu, 'Show in menu'
+      .col-lg-4.col-sm-12
+        = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
     .row
       .col-lg-12
-        = f.input :title, label: 'Event title'
+        = f.input :title, label: 'Event title', class: 'form-control'
     .row
       .col-lg-6.col-sm-12
-        = f.input :place, label: 'Location (city or venue name)'
+        = f.input :place, label: 'Location (city or venue name)', class: 'form-control'
       .col-lg-6.col-sm-12
-        = f.input :address, label: 'Full address (will be used on the map)'
+        = f.input :address, label: 'Full address (will be used on the map)', class: 'form-control'
     .row
       .col-lg-6.col-sm-12
         = f.input :date_start, order: [:day, :month, :year]
@@ -30,23 +34,23 @@
         = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in events list)'
     .row
       .col-lg-12
-        = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #'
+        = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #', class: 'form-control'
     .row
       .col-lg-12
-        = f.input :resume, label: 'Short teaser about the event (Markdown)'
+        = f.input :resume, label: 'Short teaser about the event (Markdown)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue About this event
         hr.hr-large.blue  
-        = f.input :info, label: 'About this event (Long description, Markdown)'
+        = f.input :info, label: 'About this event (Long description, Markdown)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue Join us
         hr.hr-large.blue 
-        = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)'
+        = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)', class: 'form-control'
     .row
       .col-lg-12    
-        = f.input :join_us_code_html, label: 'Join Event Integration code (html)'
+        = f.input :join_us_code_html, label: 'Join Event Integration code (html)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue Organizers
@@ -55,7 +59,7 @@
  
     .row
       .col-lg-12
-        = "The following fields are no longer in use"
+        h3 = "The following fields are no longer in use"
     .row
       .col-lg-4
         = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
