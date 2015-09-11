@@ -88,6 +88,7 @@ gem 'bootstrap-sass'
 #gem 'angular-rails'
 # gem 'font-awesome-sass'
 gem "font-awesome-rails"
+gem "byebug"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 group :production do

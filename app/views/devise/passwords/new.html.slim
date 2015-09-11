@@ -1,9 +1,16 @@
-div.row
-  div.col-lg-12
-    h2 = t(".forgot_your_password")
-    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-      = f.error_notification
-      .form-inputs
-        = f.input :email, :required => true
-      = f.button :submit, t(".send_me_reset_password_instructions")
-    = render "devise/shared/links"
+- content_for :page_title, t(".forgot_your_password")
+== render partial: 'layouts/sub_header_title', locals: {title: t(".forgot_your_password"), text: ""}
+
+#login
+  .container
+    .col-lg-8.col-lg-offset-2
+      .row
+        .col-md-8.col-md-offset-2
+          = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+            = f.error_notification
+            .form-group.row.text-center
+              = f.input :email, :required => true, :class => "form-control"
+            .form-group.row.text-center
+              = f.button :submit, t(".send_me_reset_password_instructions")
+            .form-group.row.text-center
+              = render "devise/shared/links"
