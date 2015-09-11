@@ -12,8 +12,7 @@ module Admin
     end
 
     def show
-      user_id = params[:id]
-      @user = User.find_by_id(user_id) || User.friendly.find(user_id)
+      @user = User.friendly.find(params[:id])
         if @user.nil?
           redirect_to '/errors/404', :code => '404'
         else
@@ -24,12 +23,23 @@ module Admin
     end
 
     def update
-      update! { admin_users_path }
+      @user = User.friendly.find(params[:id])
+      params[:user][:slug] = nil
+      if @user.update_attributes(permitted_params)
+        redirect_to admin_users_path, notice: 'User updated.'
+      else
+        params[:user][:slug] = params[:id]
+        redirect_to :back, alert: 'User NOT updated.'
+      end
+    end
+
+    def edit
+      @user = User.friendly.find(params[:id])
     end
 
     protected
     def permitted_params
-      params.permit(user: [:fname, :name, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :skills, :tag_list, :profile_type, :admin, :show_order, :contact_languages])
+      params.require(:user).permit(:fname, :name, :slug, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :skills, :tag_list, :profile_type, :admin, :show_order, :contact_languages)
     end
   end
 end
