@@ -3,6 +3,7 @@ class CommunitiesController < ApplicationController
 
   before_action :set_community, :only => [:show, :join, :leave]
   before_action :authenticate_user!, :only => [:join, :leave]
+  helper_method :clean_description
   
   def index
     language = Language.where(name:'English').first

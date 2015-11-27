@@ -2,6 +2,8 @@ class HomeController < ApplicationController
   require 'feedjira'
   include AutoHtml
 
+  helper_method :clean_description
+
   def index
     @top_banner = @current_language.top_banner || TopBanner.new
     @what_is_section = @current_language.what_is_section || WhatIsSection.new

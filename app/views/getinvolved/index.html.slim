@@ -1,4 +1,5 @@
 - content_for :page_title, t('menu.get_involved')
+- content_for :description, clean_description(@get_involved_page.main_text_html, 150)
 == render partial: 'layouts/sub_header_title', locals: {title: t('menu.get_involved'), text: ""}
 #page-about-internal
   .green

@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def clean_description(description, length)
+    ActionController::Base.helpers.strip_tags(description).squish.truncate(length).gsub(/&\w+;/, '')
+  end
+
   def after_sign_in_path_for(resource)
     if current_user.admin?
       admin_home_path

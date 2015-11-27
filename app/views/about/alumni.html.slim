@@ -1,4 +1,5 @@
 - content_for :page_title, t('menu.alumni')
+- content_for :description, clean_description(@alumni_page.text_html, 150)
 == render partial: 'layouts/sub_header_title', locals: {title: t('menu.alumni'), link: ""}
 #page-about-internal
   section.theTeam#list

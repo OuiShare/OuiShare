@@ -1,4 +1,5 @@
 - content_for :page_title, t('pages.communities.expert_groups')
+- content_for :description, clean_description(@expert_groups_page.main_text_html, 150)
 == render partial: 'layouts/sub_header_title', locals: {title: t('menu.knowledge_groups'), text: ""}
 #page-communities
   .green

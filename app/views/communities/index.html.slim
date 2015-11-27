@@ -1,4 +1,5 @@
 - content_for :page_title, t('menu.local_communities')
+- content_for :description, clean_description(@community_page.main_text_html, 150)
 .title-header-commu
   .row
     .col-lg-4.col-lg-offset-2

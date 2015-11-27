@@ -1,5 +1,8 @@
 class AboutController < ApplicationController
   include AutoHtml
+
+  helper_method :clean_description
+  
   def index
     @about = @current_language.about || About.new
   end

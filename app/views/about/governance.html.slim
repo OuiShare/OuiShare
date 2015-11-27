@@ -1,4 +1,5 @@
 - content_for :page_title, 'Governances'
+- content_for :description, clean_description(@resource.text_html, 150)
 div#page-about-internal
   = render "main_content"
   = render "list_noimage"

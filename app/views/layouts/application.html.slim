@@ -6,7 +6,8 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = yield(:meta_tags)
     meta name="robots" content="index, follow"
-    meta name="description"         content='OuiShare is a non-profit and global community empowering citizens, public institutions and companies to to build a society based on openness, collaboration and sharing.'
+    / meta name="description"         content='OuiShare is a non-profit and global community empowering citizens, public institutions and companies to to build a society based on openness, collaboration and sharing.'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'OuiShare is a non-profit and global community empowering citizens, public institutions and companies to to build a society based on openness, collaboration and sharing.'}"
     meta name="pressformore-key"    content='08e27595cb5dd8176a3f73bec19899e9'
     meta property="og:title"        content='OuiShare - Connecting the Collaborative Economy'
     meta property="og:url"          content=url_for(only_path: false)
