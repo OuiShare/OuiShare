@@ -55,7 +55,8 @@ class AboutController < ApplicationController
   end
 
   def users
-    @users = User.where(:profile_type => [1, 0]).paginate(:page => params[:page]).order('id DESC')
+    # @users = User.where(:profile_type => [1, 0]).paginate(:page => params[:page]).order('id DESC')
+    @users, @alphaParams = User.all.alpha_paginate(params[:letter], {:default_field => "a", :include_all => false}){|user| user.name}
     @users_page = @current_language.users_page || UsersPage.new
   end
 
