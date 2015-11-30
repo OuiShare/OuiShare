@@ -52,6 +52,31 @@ $(document).ready ->
     res = res.splice(res, res.indexOf(value))
     $('#user_contact_languages').val("{"+res.toString()+"}")
     this.parentNode.remove()
+
+
+  $('.community_events').hide()
+  res_community = []
+  $('#community_event_ids option:selected').each (i, selected)->
+    res_community[i] = $(selected).text()
+  # $('.event_community').append("<div value='"+res_community[i]+"' class='event-community-value'><span class='remove-event-community'>x</span>" +res_community[i]+ "</div>")
+
+  $('#event_community').click (e) ->
+    e.preventDefault()
+    value = $('#event_community option:selected').text()
+    id = $('#event_community option:selected').val()
+    console.log id
+    if (res_community.indexOf(value) == -1)
+      res_community.push(value)
+      $('#community_event_ids option[value="'+id+'"]').prop('selected', true)
+      $('.event_community').append("<div value='"+value+"' class='event-community-value'><span class='remove-event-community'>x</span>" +value+ "</div>")
+
+  $('#admin').on 'click', '.remove-event-community', (e) ->
+    alert 'Not working yet ;-('
+    # value = this.parentNode.getAttribute('value')
+    # res = $('#user_contact_languages').val().replace('{','').replace('}','').split(',')
+    # res = res.splice(res, res.indexOf(value))
+    # $('#user_contact_languages').val("{"+res.toString()+"}")
+    # this.parentNode.remove()
     
 
 
