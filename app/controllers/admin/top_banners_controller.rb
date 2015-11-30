@@ -8,7 +8,7 @@ module Admin
 
     def create
       build_resource
-      @top_banner = DefaultAttributes.new(@top_banner).set([:image1, :image2, :main_image])
+      @top_banner = DefaultAttributes.new(@top_banner).set([:image1, :image2, :image3, :image4, :image5, :main_image])
       if @top_banner.save
         redirect_to admin_home_path
       else
@@ -26,7 +26,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(top_banner: [:title1, :text1, :title2, :text2, :main_image, :image1, :image2, :link1, :link2, :link_text1, :link_text2])
+      params.permit(top_banner: [:title1, :text1, :title2, :text2, :title3, :text3, :title4, :text4, :title5, :text5, :main_image, :image1, :image2, :image3, :image4, :image5, :link1, :link2, :link3, :link4, :link5, :link_text1, :link_text2, :link_text3, :link_text4, :link_text5])
     end
 
     def resource
