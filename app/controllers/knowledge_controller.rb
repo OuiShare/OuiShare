@@ -1,5 +1,8 @@
 class KnowledgeController < ApplicationController
   include AutoHtml
+
+  helper_method :clean_description
+  
   def index
     @knowledge_page = @current_language.knowledge_page || KnowledgePage.new
   end

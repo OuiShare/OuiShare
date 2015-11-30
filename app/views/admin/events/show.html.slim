@@ -1,4 +1,5 @@
 - content_for :page_title, @event.name
+- content_for :description, clean_description(@event.cta+ '. ' +@event.info_html, 150)
 == render partial: 'layouts/sub_header_title', locals: {title: @event.title, text: ""}
 #event
   .row.section

@@ -1,4 +1,5 @@
 class ContactController < ApplicationController
+  helper_method :clean_description
   def index
     @contact_page = @current_language.contact_page || ContactPage.new
   end

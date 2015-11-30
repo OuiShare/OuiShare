@@ -1,5 +1,6 @@
-- content_for :page_title, 'FAQ'
-== render partial: 'layouts/sub_header_title', locals: {title: "FAQ", text: ""}
+- content_for :page_title, t('footer.faqs')
+- content_for :description, clean_description(@faq_page.text_html, 150)
+== render partial: 'layouts/sub_header_title', locals: {title: t('footer.faqs'), text: ""}
 div#page-about-internal
   = render "main_content"
   = render "faqs"

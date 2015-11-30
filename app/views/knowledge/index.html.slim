@@ -1,3 +1,5 @@
+- content_for :page_title, t('menu.knowledge')
+- content_for :description, clean_description(@knowledge_page.main_text_html, 150)
 == render partial: 'layouts/sub_header_title', locals: {title: t("pages.knowledge.index"), text: ""}
 #page-about-internal
   section

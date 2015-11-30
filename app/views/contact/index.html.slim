@@ -1,5 +1,6 @@
-- content_for :page_title, 'Contact'
-== render partial: 'layouts/sub_header_title', locals: {title: "Contact", text: @contact_page.text_html}
+- content_for :page_title, t('footer.contact')
+- content_for :description, clean_description(@contact_page.text_html, 150)
+== render partial: 'layouts/sub_header_title', locals: {title: t('footer.contact'), text: @contact_page.text_html}
 #contact
   .row.contact-section
     .col-lg-4.col-lg-offset-4

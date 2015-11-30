@@ -1,5 +1,6 @@
 module Admin
   class ProjectsController < BaseController
+    helper_method :clean_description
     inherit_resources
     belongs_to :language
     include AutoHtml
