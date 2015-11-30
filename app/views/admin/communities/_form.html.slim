@@ -23,8 +23,8 @@
     - unless @community.events.nil?
       - @community.events.each do |event| 
         / = raw("<div value='"+ event.title +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + event.title + "</div>")
-        .event-community-value
-          span.remove-event-community
+        div class=("event-community-value") id=("event-#{event.id}")
+          span.remove-event-community id=("remove-event-#{event.id}")
             | x
           = event.title  
   br
