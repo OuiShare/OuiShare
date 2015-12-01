@@ -27,4 +27,8 @@ class Project < ActiveRecord::Base
   def featured?
     featured
   end
+
+  def name_with_date
+    "#{self.name} | #{self.language.name}"
+  end
 end

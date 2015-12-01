@@ -36,6 +36,10 @@ class Event < ActiveRecord::Base
     title
   end
 
+  def name_with_date_and_language
+    "#{self.title} | #{self.date_start} | #{self.language.name}"
+  end
+
   def cta
     if date_end.present? && date_end != date_start
       "#{place} | #{date_start.strftime('%d/%m')} to #{date_end.strftime('%d/%m/%Y')} | #{time.strftime('%H:%M')}"

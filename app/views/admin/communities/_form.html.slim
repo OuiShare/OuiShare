@@ -9,28 +9,29 @@
   = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
   = f.input :text, label: 'Text (Markdown)'
   = f.input :address, label: 'Full address (will be used on the map)'
-  / = f.association :projects, as: :check_boxes
+  
 
   br
   br
   = f.association :events, as: :select
   | Events
   br
-  = select :event, :community,  Event.all.collect {|e| [ e.title, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 30%; float: left; margin-right: 20px; margin-top: 2px;" }
+  br
+  = select :event, :community,  Event.all.collect {|e| [ e.name_with_date_and_language, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
   br
   br
   .event_community
     - unless @community.events.nil?
       - @community.events.each do |event| 
-        / = raw("<div value='"+ event.title +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + event.title + "</div>")
         div class=("event-community-value") id=("event-#{event.id}")
           span.remove-event-community id=("remove-event-#{event.id}")
             | x
-          = event.title  
+          = event.name_with_date_and_language  
   br
   br
 
   / = f.association :events, as: :check_boxes
+  = f.association :projects, as: :check_boxes, :label_method => :name_with_date
   
 
   = f.association :users, as: :check_boxes, :label_method => :full_name
