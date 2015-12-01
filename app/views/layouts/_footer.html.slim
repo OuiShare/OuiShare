@@ -74,6 +74,8 @@
             h6 = t('footer.globalpartners')
           = link_to contact_path do
             h6 = t('footer.contact')
+          = link_to "http://jobs.ouishare.net", :target => "_blank" do
+            h6 = t('footer.jobs')
           = link_to faq_path do
             h6 = t('footer.faqs')
           = link_to terms_path do
@@ -89,6 +91,14 @@
             h6 Flickr
           a href="https://plus.google.com/+OuishareNet" target="_blank"
             h6 Google+
+          a href="http://instagram.com/ouishare" target="_blank"
+            h6 Instagram
+          a href="https://ouishare.sharetribe.com/" target="_blank"
+            h6 Sharetribe
+          a href="http://www.slideshare.net/OuiShare" target="_blank"
+            h6 Slideshare
+          a href="https://soundcloud.com/ouishare" target="_blank"
+            h6 OuiShare Radio
       .col-lg-2
         a href=root_path
           = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")      

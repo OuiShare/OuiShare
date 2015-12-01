@@ -39,9 +39,7 @@
             li
               = link_to t('menu.get_involved'), getinvolved_path
             li
-              = link_to t('menu.users'), members_path
-            li
-              = link_to t('menu.ouishare_everywhere'), communities_live_path 
+              = link_to t('menu.users'), members_path 
             li
               = link_to t('menu.alumni'), about_alumni_path
 
@@ -104,15 +102,15 @@
             ul.dropdown-menu
               li
                 / a href="#" View my profile
-                = link_to 'View my profile', user_path(current_user)
+                = link_to t('admin.view_profile'), user_path(current_user)
               li
-                = link_to 'Edit Profile', edit_user_registration_path
+                = link_to t("pages.registrations.edit"), edit_user_registration_path
               li
                 / a href="#" Admin
-                = link_to 'Admin', admin_home_path
+                = link_to t('admin.admin'), admin_home_path
               li.divider
               li
-                = link_to 'Logout', destroy_user_session_path, method: :delete
+                = link_to t('admin.logout'), destroy_user_session_path, method: :delete
         - else
           li.header-btn-li
             a.btn.header-btn href="#{new_user_registration_path}" Join us!
