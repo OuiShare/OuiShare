@@ -77,6 +77,9 @@ en:
     not_authorized: 'You are not allowed to do that.'
     login: "Log in"
     logout: "Log out"
+    view_profile: 'View my profile'
+    edit_profile: 'Edit profile'
+    admin: 'Admin'
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
@@ -144,3 +147,4 @@ en:
     follow_tw: 'Follow us on twitter'
     open_source: 'Open source code by'
     twitter_link: 'OuiShare'
+    jobs: 'Jobs'
