@@ -67,16 +67,12 @@ $(document).ready ->
       $('#community_event_ids option[value="'+id+'"]').prop('selected', true)
       $('.event_community').append("<div value='"+value+"' class='event-community-value'><span class='remove-event-community'>x</span>" +value+ "</div>")
   
-  $("span[id^='remove-event-']").click (e) ->
-    alert ('Not working yet ;-(')
-    # $('#community_event_ids option[value="'+id+'"]').prop('selected', false)
-    e.preventDefault()
-    id = this.attr('id')
-    console.log id
-
-
-
-    
+  $('.event_community').on 'click', '.remove-event-community', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#community_event_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
+   
 
 
   remove_ctc_lang = (t) ->
