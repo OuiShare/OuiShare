@@ -8,26 +8,31 @@
     /   li data-slide-to="1" data-target="#carousel-example-generic"
     / Wrapper for slides
     .carousel-inner role="listbox"
-      .item.active
-        = image_tag(@top_banner.image1.top_banner.url)
-        .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{@top_banner.link1}" = @top_banner.link_text1
-      .item
-        = image_tag(@top_banner.image2.top_banner.url)
-        .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{@top_banner.link2}" = @top_banner.link_text2
-      .item
-        = image_tag(@top_banner.image3.top_banner.url)
-        .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{@top_banner.link3}" = @top_banner.link_text3
-      .item
-        = image_tag(@top_banner.image4.top_banner.url)
-        .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{@top_banner.link4}" = @top_banner.link_text4
-      .item
-        = image_tag(@top_banner.image5.top_banner.url)
-        .carousel-caption.nostyle-caption.center
-          a.btn-green.btn.btn-large href="#{@top_banner.link5}" = @top_banner.link_text5
+      - unless @top_banner.image1.top_banner.url.blank?
+        .item.active
+          = image_tag(@top_banner.image1.top_banner.url)
+          .carousel-caption.nostyle-caption.center
+            a.btn-green.btn.btn-large href="#{@top_banner.link1}" = @top_banner.link_text1
+      - unless @top_banner.image2.top_banner.url.blank?
+        .item
+          = image_tag(@top_banner.image2.top_banner.url)
+          .carousel-caption.nostyle-caption.center
+            a.btn-green.btn.btn-large href="#{@top_banner.link2}" = @top_banner.link_text2
+      - unless @top_banner.image3.top_banner.url.blank?
+        .item
+          = image_tag(@top_banner.image3.top_banner.url)
+          .carousel-caption.nostyle-caption.center
+            a.btn-green.btn.btn-large href="#{@top_banner.link3}" = @top_banner.link_text3
+      - unless @top_banner.image4.top_banner.url.blank?
+        .item
+          = image_tag(@top_banner.image4.top_banner.url)
+          .carousel-caption.nostyle-caption.center
+            a.btn-green.btn.btn-large href="#{@top_banner.link4}" = @top_banner.link_text4
+      - unless @top_banner.image5.top_banner.url.blank?
+        .item
+          = image_tag(@top_banner.image5.top_banner.url)
+          .carousel-caption.nostyle-caption.center
+            a.btn-green.btn.btn-large href="#{@top_banner.link5}" = @top_banner.link_text5
 
     a.left.carousel-control.carousel-home-left href="#slideshow" role="button" data-slide="prev"
       span aria-hidden="true"
