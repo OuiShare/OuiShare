@@ -145,9 +145,9 @@ GEM
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     geocoder (1.2.11)
-    gibbon (2.0.0)
-      faraday (>= 0.9.1)
-      multi_json (>= 1.11.0)
+    gibbon (1.1.6)
+      httparty
+      multi_json (>= 1.9.0)
     haml (4.0.7)
       tilt
     haml-rails (0.5.1)
@@ -163,6 +163,9 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     http_accept_language (2.0.5)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     i18n_data (0.7.0)
     inherited_resources (1.4.1)
@@ -397,7 +400,7 @@ DEPENDENCIES
   foreigner
   friendly_id
   geocoder
-  gibbon
+  gibbon (~> 1.1.6)
   haml-rails
   http_accept_language
   inherited_resources (~> 1.4.1)

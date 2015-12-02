@@ -61,7 +61,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
 # Email/newsletter
-gem 'gibbon'
+gem 'gibbon', '~> 1.1.6'
 
 gem 'feedjira'
 

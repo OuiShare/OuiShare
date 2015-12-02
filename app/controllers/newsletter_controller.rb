@@ -7,7 +7,7 @@ class NewsletterController < ApplicationController
     if Rails.env.production?
       gb = Gibbon::API.new(ENV['mailchimp_key'])
     else
-      gb = Gibbon::API.new('2429f1a83c7b9c1a0be20d595ff856cf-us3')
+      gb = Gibbon::API.new(ENV['mailchimp_key_test'])
     end
 
     begin
