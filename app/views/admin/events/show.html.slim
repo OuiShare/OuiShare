@@ -11,8 +11,9 @@
             = e.name.to_s + (e != @event.tags.last ? " |" : "")
         br
         .markdown = @event.resume_html
-        .row.center
-          a.btn.btn-white-green.btn-large href="#join-us" = t("join_us")
+        - unless @event.join_us_code_html.blank?
+          .row.center
+            a.btn.btn-white-green.btn-large href="#join-us" = t("join_us")
           
 
   .row.section
