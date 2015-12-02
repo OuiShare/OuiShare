@@ -65,7 +65,7 @@ $(document).ready ->
     if (res_community.indexOf(value) == -1)
       res_community.push(value)
       $('#community_event_ids option[value="'+id+'"]').prop('selected', true)
-      $('.event_community').append("<div value='"+value+"' class='event-community-value'><span class='remove-event-community'>x</span>" +value+ "</div>")
+      $('.event_community').append("<div class='event-community-value' id='event-"+id+"'><span class='remove-event-community'>x</span>" +value+ "</div>")
   
   $('.event_community').on 'click', '.remove-event-community', (e) ->
     value = this.parentNode.getAttribute('id')
