@@ -4123,6 +4123,20 @@ a.list-group-item.active > .badge,
   background-color: #ffffff;
 }
 .alert {
+  margin-top: 50px;
+  margin-bottom: -50px;
+  color: #34495e;
+  padding: 16px 45px 16px 30px;
+  text-shadow: none;
+  background-color: #f9f8f3;
+  border: 2px solid #ebece8;
+  font-size: 16px;
+  line-height: 1.53875em;
+  border-radius: 6px;
+}
+.notice {
+  margin-top: 50px;
+  margin-bottom: -50px;
   color: #34495e;
   padding: 16px 45px 16px 30px;
   text-shadow: none;
