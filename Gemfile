@@ -39,6 +39,7 @@ gem 'enumerize'
 gem 'friendly_id'
 gem 'ranked-model'
 gem 'figaro'
+gem 'tagsinput-rails'
 
 # Geolocation
 gem 'geocoder'
@@ -66,6 +67,8 @@ gem 'feedjira'
 
 # Frontend stuff
 gem 'jquery-rails'
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
 gem 'slim-rails'
 gem 'initjs'
 gem 'flutie'
@@ -84,11 +87,15 @@ gem 'coffee-rails', '4.0.1'
 gem 'uglifier'
 #gem 'turbolinks'
 gem 'bootstrap-sass'
+gem 'bootstrap-select-rails'
 #gem 'zurb-foundation'
 #gem 'angular-rails'
 # gem 'font-awesome-sass'
 gem "font-awesome-rails"
 gem "byebug"
+
+# Search
+gem "ransack"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 group :production do

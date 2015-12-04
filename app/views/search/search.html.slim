@@ -1,0 +1,17 @@
+#search
+  = simple_form_for :search, url: search_path, method: :post do |f|
+    .row
+      .col-md-6.col-lg-6.col-sm-12.col-lg-offset-3.col-md-offset-3
+        .input-group
+          .input-group-addon
+            = f.input :type, input_html: { class: 'form-control selectpicker' }, collection: @search_types.sort.map { |k, v| [v, k] }, label: false, required: false, include_blank: false
+          = f.input :input, input_html: { class: 'form-control' }, label: false, required: false, disabled: true
+
+          .input-group-btn
+            button.btn#search_submit type="submit"
+              i.fa.fa-search
+    .row
+      .col-md-6.col-lg-6.col-sm-12.col-lg-offset-3.col-md-offset-3
+        = f.input :tags, input_html: { class: 'form-control tagsinput', value: @query_tags ? @query_tags.join(';') : '' }, label: false, required: false
+
+== render 'result'
