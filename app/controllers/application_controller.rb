@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def clean_description(description, length)
-    ActionController::Base.helpers.strip_tags(description).squish.truncate(length).gsub(/&\w+;/, '')
+    ActionController::Base.helpers.strip_tags(description).squish.truncate(length).gsub(/&\w+;/, '') unless description.blank?
   end
 
   def after_sign_in_path_for(resource)
