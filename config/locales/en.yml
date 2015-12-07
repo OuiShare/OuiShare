@@ -75,6 +75,8 @@ en:
         users: 'Members'
         events: 'Events'
         projects: 'Projects'
+      autocomplete:
+        no_entry: 'No entry found'
   newsletter:
     error: 'Could not subscribe to the newsletter, check your email address and try again'
     already_registered: "This email is already registered to our newsletter"

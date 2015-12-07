@@ -209,7 +209,7 @@ OuiShare::Application.routes.draw do
   get '/get_community_partial' => 'communities#get_community_partial'
 
   match '/search' => 'search#search', as: :search, via: [:get, :post]
-  get '/autocomplete_tags' => 'search#autocomplete_tags'
+  get '/autocomplete_query' => 'search#autocomplete_query'
 
 
   get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }
