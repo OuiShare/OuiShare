@@ -5,7 +5,7 @@
         .input-group
           .input-group-addon
             = f.input :type, input_html: { class: 'form-control selectpicker' }, collection: @search_types.sort.map { |k, v| [v, k] }, label: false, required: false, include_blank: false, selected: (@query_type) ? @query_type : 'all'
-          = f.input :query, input_html: { class: 'form-control', "data-url": autocomplete_query_path }, label: false, required: false
+          = f.input :query, input_html: { class: 'form-control', data: { url: autocomplete_query_path } }, label: false, required: false
           #autocomplete-container
             .row
               #autocomplete-content.col-md-6.col-lg-6.col-sm-12.col-lg-offset-3.col-md-offset-3
