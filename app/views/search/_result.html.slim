@@ -1,0 +1,26 @@
+section
+  .container
+    - unless @result.empty?
+      - if @result[:events] and @result[:events].size > 0
+        h1 Events
+        ul
+        - @result[:events].each do |event|
+          li
+            = event.title
+
+      - if @result[:projects] and @result[:projects].size > 0
+        h1 Projects
+        ul
+        - @result[:projects].each do |project|
+          li
+            = project.name
+
+      - if @result[:users] and @result[:users].size > 0
+        h1 Users
+        ul
+        - @result[:users].each do |user|
+          li
+            = user.name
+
+    - else
+      p Aucun résultat

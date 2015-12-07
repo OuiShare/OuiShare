@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require autocomplete-rails
+//= require jquery.tagsinput
 //= require bootstrap
+//= require bootstrap-select
 //= require ./jssor/jssor
 //= require ./jssor/jssor.slider
 //= require dataTables/jquery.dataTables
@@ -22,5 +25,6 @@
 //= require init.js
 //= require_tree ./lib
 //= require registration
+//= require search
 //= require oui_share/communities.js
 //= require oui_share/admin/users.js
