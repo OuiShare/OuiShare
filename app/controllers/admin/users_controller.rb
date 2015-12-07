@@ -12,6 +12,7 @@ module Admin
       respond_to do |format|
         format.html
         format.json { render json: UserDatatable.new(view_context) }
+        format.csv  { render csv: @users, only: [:id, :fname, :name, :gender, :email, :created_at, :admin, :birthday, :country, :city, :organization_name, :organization_url] }
       end
     end
 
