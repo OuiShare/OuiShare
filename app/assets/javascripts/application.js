@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require ./jssor/jssor
 //= require ./jssor/jssor.slider
+//= require dataTables/jquery.dataTables
 
 //= require oui_share/oui_share.js
 //= require oui_share/script.js
@@ -22,3 +23,4 @@
 //= require_tree ./lib
 //= require registration
 //= require oui_share/communities.js
+//= require oui_share/admin/users.js

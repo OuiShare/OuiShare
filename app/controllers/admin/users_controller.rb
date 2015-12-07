@@ -4,10 +4,14 @@ module Admin
 
     before_filter :verify_admin, except: :show
     def index
-      @users = User.all
+      # @users = User.all
+      # respond_to do |format|
+      #   format.html
+      #   format.csv  { render csv: @users, only: [:id, :fname, :name, :gender, :email, :created_at, :admin, :birthday, :country, :city, :organization_name, :organization_url] }
+      # end
       respond_to do |format|
         format.html
-        format.csv  { render csv: @users, only: [:id, :fname, :name, :gender, :email, :created_at, :admin, :birthday, :country, :city, :organization_name, :organization_url] }
+        format.json { render json: UserDatatable.new(view_context) }
       end
     end
 
@@ -36,6 +40,7 @@ module Admin
     def edit
       @user = User.friendly.find(params[:id])
     end
+
 
     protected
     def permitted_params

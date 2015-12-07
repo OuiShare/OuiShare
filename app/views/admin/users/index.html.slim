@@ -2,23 +2,31 @@
   div.row
     .col-lg-12
       h2.subheader Users
-      = link_to 'Users CSV Download', admin_users_path('csv')
-      br
-      br
-      table.table.table-hover
-        tr
-          th First Name
-          th Name
-          th Account email
-          th Type
-          th Admin?
-          th Show order
-        - User.all.order('name asc').each do |u|
+      / = link_to 'Users CSV Download', admin_users_path('csv')
+      / br
+      / br
+      / table.table.table-hover
+      /   tr
+      /     th First Name
+      /     th Name
+      /     th Account email
+      /     th Type
+      /     th Admin?
+      /     th Show order
+      /   - User.all.order('name asc').each do |u|
+      /     tr
+      /       td = u.fname
+      /       td = u.name
+      /       td = u.email
+      /       td = u.profile_type
+      /       td = u.admin? ? 'Yes' : 'No'
+      /       td = u.show_order
+      /       td = link_to "Edit", edit_admin_user_path(u)
+      table#users-table data-source="#{admin_users_path(format: :json)}" 
+        thead
           tr
-            td = u.fname
-            td = u.name
-            td = u.email
-            td = u.profile_type
-            td = u.admin? ? 'Yes' : 'No'
-            td = u.show_order
-            td = link_to "Edit", edit_admin_user_path(u)
+            th First Name
+            th Last Name
+            th Brief Bio
+        tbody
+
