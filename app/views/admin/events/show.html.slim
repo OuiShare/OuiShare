@@ -96,8 +96,8 @@
                       
                       .event-slide-title
                         = e.title
-                      - if !e.over?
-                        a.event-slide-link href=event_path(e)
+                      / - if !e.over?
+                      a.event-slide-link href=event_path(e)
 
                       .event-slider-place 
                         = e.place + ' | ' + I18n.l(e.date_start) + ' | ' + e.time.strftime("%H:%M")
