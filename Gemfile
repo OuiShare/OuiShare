@@ -60,9 +60,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
+# Admin datatable for users
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
+
 # Email/newsletter
 gem 'gibbon', '~> 1.1.6'
-
 gem 'feedjira'
 
 # Frontend stuff
