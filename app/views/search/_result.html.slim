@@ -1,26 +1,40 @@
-section
+section#search_result
   .container
     - unless @result.empty?
       - if @result[:events] and @result[:events].size > 0
-        h1 Events
-        ul
+        h3 Events
         - @result[:events].each do |event|
-          li
-            = event.title
+          .col-lg-4.center
+            = image_tag "#{event.image.list_thumb.url}", :class => "home-pictures"
+            a.new_projects href=event_path(event) = event.title+' >'
 
       - if @result[:projects] and @result[:projects].size > 0
-        h1 Projects
-        ul
-        - @result[:projects].each do |project|
-          li
-            = project.name
+        h3 Projects
+        .row
+          .col-lg-10.col-lg-offset-1
+            - @result[:projects].each do |project|
+              .col-lg-4.center
+                = image_tag "#{project.image.home_thumb}", :class => "home-pictures"
+                a.new_projects href=project_path(project) = project.name+' >'
 
       - if @result[:users] and @result[:users].size > 0
-        h1 Users
-        ul
-        - @result[:users].each do |user|
-          li
-            = user.name
+        h3 Users
+        .ch-grid
+          - @result[:users].each do |user|
+            .col-lg-4.individuals-list-display
+              li
+                .ch-item style= "background-image: url(#{user.avatar_url(220)})"
+                  .ch-info
+                    h4.info
+                      - if !user.title.blank?
+                        = link_to user do
+                            = user.title
+                      - else      
+                        = link_to user do
+                          = user.fname.to_s + " " +user.name.to_s 
+                h6
+                  b.center
+                    = user.fname.to_s + " " +user.name.to_s
 
     - else
       p Aucun résultat
