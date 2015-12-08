@@ -3,10 +3,12 @@ section#search_result
     - unless @result.empty?
       - if @result[:events] and @result[:events].size > 0
         h3 Events
-        - @result[:events].each do |event|
-          .col-lg-4.center
-            = image_tag "#{event.image.list_thumb.url}", :class => "home-pictures"
-            a.new_projects href=event_path(event) = event.title+' >'
+        .row
+          .col-lg-10.col-lg-offset-1
+            - @result[:events].each do |event|
+              .col-lg-4.center
+                = image_tag "#{event.image.list_thumb.url}", :class => "home-pictures"
+                a.new_projects href=event_path(event) = event.title+' >'
 
       - if @result[:projects] and @result[:projects].size > 0
         h3 Projects
