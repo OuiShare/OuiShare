@@ -62,19 +62,25 @@
           - if @user.topics.present?
             .tag-show.font-14
               - @user_topics.each do |topic|
-                = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
+                = link_to topic.name.to_s, search_path(search: { tags: topic.name.to_s, type: 'all' })
+                = topic != @user_topics.last ? " |" : ""
+                / = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
         .col-lg-4.col-sm-12
           .profile-title.center Skill
           - if @user_skills.present?
             .tag-show.font-14
               - @user_skills.each do |skill|
-                = skill.to_s + (skill != @user_skills.last ? " |" : "")
+                / = skill.to_s + (skill != @user_skills.last ? " |" : "")
+                = link_to skill.to_s, search_path(search: { tags: skill.to_s, type: 'all' })
+                = skill != @user_skills.last ? " |" : ""
         .col-lg-4.col-sm-12
           .profile-title.center Interest
           - if @user_interests.present?
             .tag-show.font-14
               - @user_interests.each do |interest|
-                = interest + (interest != @user_interests.last ? " |" : "")
+                / = interest + (interest != @user_interests.last ? " |" : "")
+                = link_to interest, search_path(search: { tags: interest, type: 'all' })
+                = interest != @user_interests.last ? " |" : ""
 
 
 

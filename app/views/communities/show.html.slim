@@ -58,7 +58,9 @@ section
                       = truncate(e.resume, length: 100)
                     .tag-show
                       - e.tags.each do |t|
-                        = t.name.to_s + "|"   
+                        = t.name.to_s + "|" 
+                        / = link_to t.name.to_s, search_path(search: { tags: t.name.to_s, type: 'all' })
+                        / = "|"  
               span.jssora13l style="width: 40px; height: 50px; top: 123px; left: -75px;" u="arrowleft"
               span.jssora13r style="width: 40px; height: 50px; top: 123px; right: -75px" u="arrowright"
 

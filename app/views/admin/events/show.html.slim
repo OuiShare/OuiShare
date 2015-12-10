@@ -8,7 +8,9 @@
         img.banner src="#{@event.image.event_page_thumb.url}"
         .tag-show.font-14
           - @event.tags.each do |e|
-            = e.name.to_s + (e != @event.tags.last ? " |" : "")
+            / = e.name.to_s + (e != @event.tags.last ? " |" : "")
+            = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
+            = e != @event.tags.last ? " |" : ""
         br
         .markdown = @event.resume_html
         - unless @event.join_us_code_html.blank?
@@ -24,7 +26,9 @@
         .markdown = @event.info_html
         .tag-show.font-14
           - @event.tags.each do |e|
-            = e.name.to_s + (e != @event.tags.last ? " |" : "")
+            / = e.name.to_s + (e != @event.tags.last ? " |" : "")
+            = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
+            = e != @event.tags.last ? " |" : ""
 
   .row.section
     .container
@@ -106,7 +110,9 @@
                         = truncate(e.resume, length: 100)
                       .tag-show
                         - e.tags.each do |t|
-                          = t.name.to_s + "|"   
+                          / = t.name.to_s + "|"  
+                          = link_to t.name.to_s, search_path(search: { tags: t.name.to_s, type: 'all' })
+                          = "|"
                             
                       / span.btn.btn-blue style="position:absolute; width: 100px; height: 50px; top: 70%; left: 40%;"
                       /   = link_to event_path(e) do 
