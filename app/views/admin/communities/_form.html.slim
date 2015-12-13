@@ -13,6 +13,7 @@
 
   br
   br
+  / = f.association :events, as: :check_boxes
   = f.association :events, as: :select
   | Events
   br
@@ -29,11 +30,30 @@
           = event.name_with_date_and_language  
   br
   br
-
-  / = f.association :events, as: :check_boxes
+  br
+  / = f.association :users, as: :check_boxes, :label_method => :full_name
+  = f.association :users, as: :select, :label_method => :full_name
+  | Users
+  br
+  br
+  = select :users, :community,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-community-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+  br
+  br
+  .user_community
+    - unless @community.users.nil?
+      - @community.users.each do |user| 
+        div class=("user-community-value") id=("user-#{user.id}")
+          span.remove-user-community id=("remove-user-#{user.id}")
+            | x
+          = user.full_name
+  br
+  br
+  br
+  br
+  
   = f.association :projects, as: :check_boxes, :label_method => :name_with_date
   
 
-  = f.association :users, as: :check_boxes, :label_method => :full_name
+  
   
   = f.submit

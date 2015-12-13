@@ -72,7 +72,66 @@ $(document).ready ->
     id = value.split('-')[1]
     $('#community_event_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
-   
+
+  # tag system for users on community page
+  $('.community_users').hide()
+  user_community = []
+  $('#community_user_ids option:selected').each (i, selected)->
+    user_community[i] = $(selected).text()
+  $('#users_community').click (e) ->
+    e.preventDefault()
+    value = $('#users_community option:selected').text()
+    id = $('#users_community option:selected').val()
+    if (user_community.indexOf(value) == -1)
+      user_community.push(value)
+      $('#community_user_ids option[value="'+id+'"]').prop('selected', true)
+      $('.user_community').append("<div class='user-community-value' id='user-"+id+"'><span class='remove-user-community'>x</span>" +value+ "</div>")
+  
+  $('.user_community').on 'click', '.remove-user-community', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#community_user_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
+
+  # tag system for users on event page
+  $('.event_users').hide()
+  user_event = []
+  $('#event_user_ids option:selected').each (i, selected)->
+    user_event[i] = $(selected).text()
+  $('#users_event').click (e) ->
+    e.preventDefault()
+    value = $('#users_event option:selected').text()
+    id = $('#users_event option:selected').val()
+    if (user_event.indexOf(value) == -1)
+      user_event.push(value)
+      $('#event_user_ids option[value="'+id+'"]').prop('selected', true)
+      $('.user_event').append("<div class='user-event-value' id='user-"+id+"'><span class='remove-user-event'>x</span>" +value+ "</div>")
+  
+  $('.user_event').on 'click', '.remove-user-event', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#event_user_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
+
+  # tag system for users on project page
+  $('.project_users').hide()
+  user_project = []
+  $('#project_user_ids option:selected').each (i, selected)->
+    user_project[i] = $(selected).text()
+  $('#users_project').click (e) ->
+    e.preventDefault()
+    value = $('#users_project option:selected').text()
+    id = $('#users_project option:selected').val()
+    if (user_project.indexOf(value) == -1)
+      user_project.push(value)
+      $('#project_user_ids option[value="'+id+'"]').prop('selected', true)
+      $('.user_project').append("<div class='user-project-value' id='user-"+id+"'><span class='remove-user-project'>x</span>" +value+ "</div>")
+  
+  $('.user_project').on 'click', '.remove-user-event', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#project_user_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
 
 
   remove_ctc_lang = (t) ->
