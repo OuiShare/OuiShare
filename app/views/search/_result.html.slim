@@ -1,26 +1,34 @@
-section
-  .container
-    - unless @result.empty?
-      - if @result[:events] and @result[:events].size > 0
-        h1 Events
-        ul
-        - @result[:events].each do |event|
-          li
-            = event.title
+- unless @result.empty?
+  - if @result[:events] and (@result[:events][:past].size > 0 or @result[:events][:future].size > 0)
+    h1 Events
 
-      - if @result[:projects] and @result[:projects].size > 0
-        h1 Projects
-        ul
-        - @result[:projects].each do |project|
-          li
-            = project.name
+    - if @result[:events][:future].size > 0
+      h2 Future
+      ul
+      - @result[:events][:future].each do |event|
+        li
+          = event.title
 
-      - if @result[:users] and @result[:users].size > 0
-        h1 Users
-        ul
-        - @result[:users].each do |user|
-          li
-            = user.name
+    - if @result[:events][:past].size > 0
+      h2 Past
+      ul
+      - @result[:events][:past].each do |event|
+        li
+          = event.title
 
-    - else
-      p Aucun résultat
+  - if @result[:projects] and @result[:projects].size > 0
+    h1 Projects
+    ul
+    - @result[:projects].each do |project|
+      li
+        = project.name
+
+  - if @result[:users] and @result[:users].size > 0
+    h1 Users
+    ul
+    - @result[:users].each do |user|
+      li
+        = user.name
+
+- else
+  p Aucun résultat

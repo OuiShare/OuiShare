@@ -11,17 +11,28 @@ class SearchController < ApplicationController
       if @query_type and @query_tags.size > 0
         case @query_type
         when 'all'
-          @result[:events] = event_search(@query_tags)
+          @result[:events] = {
+            past: event_search(@query_tags, nil, Time.zone.now),
+            future: event_search(@query_tags, Time.zone.now)
+          }
           @result[:projects] = project_search(@query_tags)
           @result[:users] = user_search(@query_tags)
         when 'events'
-          @result[:events] = event_search(@query_tags)
+          @result[:events] = {
+            past: event_search(@query_tags, nil, Time.zone.now),
+            future: event_search(@query_tags, Time.zone.now)
+          }
         when 'projects'
           @result[:projects] = project_search(@query_tags)
         when 'users'
           @result[:users] = user_search(@query_tags)
         end
       end
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => { :attachmentPartial => render_to_string('search/_result.html.slim', :layout => false, :locals => { :result => @result }) } }
     end
   end
 
@@ -73,22 +84,25 @@ class SearchController < ApplicationController
     (title + place).uniq
   end
 
-  def event_search(tags)
-    events_tags = search_events_by_tag(tags)
+  def event_search(tags, upper = nil, lower = nil)
+    events_tags = search_events_by_tag(tags, upper, lower)
     events_fields = []
     tags.each do |tag|
-      events_fields += search_events_by_field(tag)
+      events_fields += search_events_by_field(tag, upper, lower)
     end
 
-    (events_tags + events_fields).uniq
+    return (events_tags + events_fields).uniq.sort_by(&:date_start).reverse if upper
+    (events_tags + events_fields).uniq.sort_by(&:date_end).reverse
   end
 
-  def search_events_by_tag(tags)
-    Event.tagged_with(tags)
+  def search_events_by_tag(tags, upper, lower)
+    return Event.tagged_with(tags).where('date_start >= ?', upper) if upper
+    Event.tagged_with(tags).where('date_end < ?', lower)
   end
 
-  def search_events_by_field(field, limit = nil)
-    Event.ransack(title_cont: field, place_cont: field, m: 'or').result(distinct: true).order(:title).limit(limit)
+  def search_events_by_field(field, upper, lower, limit = nil)
+    return Event.ransack(title_or_place_cont: field, date_start_gteq: upper).result(distinct: true).order(:date_start).limit(limit) if upper
+    Event.ransack(title_or_place_cont: field, date_end_lt: lower).result(distinct: true).order(:date_end).limit(limit)
   end
 
   ### Projects ###
@@ -104,7 +118,7 @@ class SearchController < ApplicationController
       projects_fields += search_projects_by_field(tag)
     end
 
-    (projects_tags + projects_fields).uniq
+    (projects_tags + projects_fields).uniq.sort_by(&:name)
   end
 
   def search_projects_by_tag(tags)
@@ -136,7 +150,7 @@ class SearchController < ApplicationController
       users_fields += search_users_by_field(tag)
     end
 
-    (users_tags + users_fields).uniq
+    (users_tags + users_fields).uniq.sort_by(&:name)
   end
 
   def search_users_by_tag(tags)

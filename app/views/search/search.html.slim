@@ -1,5 +1,5 @@
 #search
-  = simple_form_for :search, url: search_path, method: :post do |f|
+  = simple_form_for :search, url: search_path, method: :post, html: { id: 'search_form' } do |f|
     .row
       .col-md-6.col-lg-6.col-sm-12.col-lg-offset-3.col-md-offset-3
         .input-group
@@ -17,4 +17,6 @@
       .col-md-6.col-lg-6.col-sm-12.col-lg-offset-3.col-md-offset-3
         = f.input :tags, input_html: { class: 'form-control tagsinput', value: @query_tags ? @query_tags.join(';') : '' }, label: false, required: false
 
-== render 'result'
+section#search_result
+  .container
+    == render 'result'
