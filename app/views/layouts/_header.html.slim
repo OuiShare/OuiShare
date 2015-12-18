@@ -39,7 +39,9 @@
             li
               = link_to t('menu.get_involved'), getinvolved_path
             li
-              = link_to t('menu.users'), members_path 
+              = link_to t('menu.users'), members_path
+            li
+              = link_to t('menu.ouishare_everywhere'), communities_live_path
             li
               = link_to t('menu.alumni'), about_alumni_path
 
@@ -79,7 +81,7 @@
           .header-main-logo
             a href=root_path
               = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")
-        
+
         li.dropdown
           a.dropdown-toggle href="http://magazine.ouishare.net" = t('menu.magazine')
           ul.dropdown-menu
@@ -118,24 +120,30 @@
           li.header-btn-li
             a.btn.header-btn href="#{new_user_session_path}" Login
 
-        li
-          .text-center.social-media-icons-header
-            a href="https://www.facebook.com/OuiShare" target="_blank"
-              img src="/assets/BT-facebook.png" width="24px" style="margin-top:-10px;"
-            a href="https://twitter.com/#{t('footer.twitter_link')}" target="_blank"
-              img src="/assets/BT-twitter.png" width="24px" style="margin-top:-10px;"
-            a href="https://plus.google.com/+OuishareNet" target="_blank"
-              img src="/assets/BT-googleplus.png" width="24px" style="margin-top:-10px;"
-            a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
-              img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
-            a.fa.fa-search href="../search" style="color:#fff;margin-left: 10px;font-size: 16px;"
-              / img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
+        li.header-form-li
+          = simple_form_for :search, url: search_path, method: :post, html: { id: 'search_form_header' } do |f|
+            = f.input :type, as: :hidden, input_html: { value: 'all', id: 'search_type_header' }
+            = f.input :tags, as: :hidden, input_html: { id: 'search_tags_header' }
+            .input-group
+              = f.input :query, input_html: { class: 'form-control', data: { url: autocomplete_query_path }, id: 'search_query_header' }, label: false, required: false
+              .input-group-btn
+                button.btn#search_submit type="submit"
+                  i.fa.fa-search
+          /.text-center.social-media-icons-header
+          /  a href="https://www.facebook.com/OuiShare" target="_blank"
+          /    img src="/assets/BT-facebook.png" width="24px" style="margin-top:-10px;"
+          /  a href="https://twitter.com/OuiShareFest" target="_blank"
+          /    img src="/assets/BT-twitter.png" width="24px" style="margin-top:-10px;"
+          /  a href="https://plus.google.com/+OuishareNet" target="_blank"
+          /    img src="/assets/BT-googleplus.png" width="24px" style="margin-top:-10px;"
+          /  a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
+          /    img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
 
         - Language.visible.each do |l|
           - if l.slug == I18n.locale.to_s
             li.dropdown.lang-dropdown
               .langage-select = l.slug
-              
+
               ul#lang.dropdown-menu
                 - Language.visible.each do |l|
                   - if l.slug == I18n.locale.to_s
