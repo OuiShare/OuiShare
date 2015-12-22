@@ -51,6 +51,12 @@ it:
       thank_you: 'Grazie per aver sostenuto OuiShare!'
     press:
       index: 'Sala stampa'
+    search:
+      types:
+        all: 'Tutti'
+        users: 'Membri'
+        events: 'Eventi'
+        projects: 'Progetti'
   newsletter:
     error: 'La registrazione non è andata a buon fine. Per favore, controlla il tuo indirizzo email e riprova.'
     already_registered: "Questo indirizzo è già registrato alla newsletter"

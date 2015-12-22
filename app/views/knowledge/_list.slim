@@ -12,5 +12,7 @@ section#list
             .markdown = p.text_html
             .tag-show
               - p.tags.each do |t|
-                = t.name
+                / = t.name
+                = link_to t.name, search_path(search: { tags: t.name, type: 'all' })
+                = "|"
               

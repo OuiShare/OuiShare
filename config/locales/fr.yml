@@ -68,6 +68,14 @@ fr:
       thank_you: 'Merci beaucoup de supporter OuiShare !'
     press:
       index: 'Presse'
+    search:
+      types:
+        all: 'Tous'
+        users: 'Membres'
+        events: 'Evénements'
+        projects: 'Projets'
+      autocomplete:
+        no_entry: 'Aucune entrée trouvée'
   newsletter:
     error: 'L''inscription à la newsletter n''a pas fonctionné. Regardez vos emails et essayez une nouvelle fois. '
     already_registered: "Cet email est déjà enregistré"

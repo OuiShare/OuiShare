@@ -1,0 +1,68 @@
+- unless @result.empty?
+  - if @result[:events] and (@result[:events][:past].size > 0 or @result[:events][:future].size > 0)
+    / h1 Events
+
+    - if @result[:events][:future].size > 0
+      h3 Future Events
+      .row
+        ul
+          - @result[:events][:future].each do |event|
+            li
+              .row.col-lg-12.col-lg-offset-1
+                .col-lg-2
+                  = image_tag "#{event.image.list_thumb.url}", :class => "home-pictures"
+                .col-lg-8
+                  = link_to event.title, event_path(event)
+                  br
+                  = truncate(event.resume, :omission => "...", :length => 250)
+
+    - if @result[:events][:past].size > 0
+      h3 Past Events
+      .row
+        ul
+          - @result[:events][:past].each do |event|
+            li
+              .row.col-lg-12.col-lg-offset-1
+                .col-lg-2
+                  = image_tag "#{event.image.list_thumb.url}", :class => "home-pictures"
+                .col-lg-8
+                  = link_to event.title, event_path(event)
+                  br
+                  = truncate(event.resume, :omission => "...", :length => 250)
+
+  - if @result[:projects] and @result[:projects].size > 0
+    h3 Projects
+    .row
+      ul
+        - @result[:projects].each do |project|
+          / li
+          /   = project.name
+          li
+            .row.col-lg-12.col-lg-offset-1
+              .col-lg-2
+                = image_tag "#{project.image.home_thumb}", :class => "home-pictures"
+              .col-lg-8
+                = link_to project.name, project_path(project)
+                br
+                = truncate(project.resume, :omission => "...", :length => 250)
+
+  - if @result[:users] and @result[:users].size > 0
+    h3 Users
+    .row
+      ul
+        - @result[:users].each do |user|
+          / li
+          /   = user.name
+          li
+            .row.col-lg-12.col-lg-offset-1
+              .col-lg-2
+                = image_tag "#{user.avatar_url(220)}", :class => "home-pictures"
+              .col-lg-8
+                = link_to user do
+                  = user.fname.to_s + " " +user.name.to_s 
+                br
+                = user.title unless user.title.blank?
+
+
+- else
+  h3 No Result

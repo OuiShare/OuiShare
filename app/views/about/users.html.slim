@@ -8,7 +8,7 @@
         .row
           .col-lg-6.col-lg-offset-3.col-sm-12
             .markdown = @users_page.text_html
-        .col-lg-12
+        .col-lg-12 style="text-align: center;"
           = alphabetical_paginate @alphaParams
           .ch-grid
             - @users.each do |a|

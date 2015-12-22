@@ -12,7 +12,9 @@ section#list
         .markdown.event = e.resume_html
         .tag-show
           - e.tags.each do |t|
-            = t.name.to_s + (e != e.tags.last ? " |" : "")
+            / = t.name.to_s + (e != e.tags.last ? " |" : "")
+            = link_to t.name.to_s, search_path(search: { tags: t.name.to_s, type: 'all' })
+            = e != e.tags.last ? " |" : ""
 
         - unless @past
           .row.center.top-buffer
