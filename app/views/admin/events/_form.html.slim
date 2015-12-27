@@ -47,10 +47,10 @@
       .col-lg-12
         h3.blue Join us
         hr.hr-large.blue 
-        = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)', class: 'form-control'
-    .row
-      .col-lg-12    
         = f.input :join_us_code_html, label: 'Join Event Integration code (html)', class: 'form-control'
+    .row.deprecated
+      .col-lg-12    
+        = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue Organizers
@@ -74,10 +74,9 @@
         br
         br
  
-    .row
+    .row.deprecated
       .col-lg-12
         h3 = "The following fields are no longer in use"
-    .row
       .col-lg-4
         = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
         = f.input :service1_link, label: 'External registration 1 link'
