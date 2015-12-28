@@ -21,6 +21,13 @@
                 = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, { }, { :class => 'form-control' }
             .row
               .col-lg-6.col-sm-12
+                = f.label :birthday, "Date of birth", :style => "width: 100%"
+                = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
+              .col-lg-6.col-sm-12
+                = f.label :occupation_id, "* Occupation"
+                = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
+            .row
+              .col-lg-6.col-sm-12
                 = f.input :title
               .col-lg-6.col-sm-12
                 = f.label :language_id, "* What is your language preference?"
@@ -32,23 +39,29 @@
               .col-lg-6.col-sm-12
                 = f.input :city, :required => true
             .row
+              .col-lg-6.col-sm-12
+                = f.input :organization_url, label: "Url of your organization"
+              .col-lg-6.col-sm-12
+                = f.input :organization_name, label: "Name of your organization"
+            .row
               .col-lg-12
                 = f.input :bio
             .row
-              .col-lg-6.col-sm-12
-                = f.label :birthday, "Date of birth", :style => "width: 100%"
-                = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
-              .col-lg-6.col-sm-12
-                = f.label :occupation_id, "* Occupation"
-                = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
-            .row
-              .col-lg-12
-                = f.label :topics, "Which of the following topics are you interested in?"
-                br
-                = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
-            .row
               .col-lg-12   
                 = f.input :image, as: :image_preview, input_html: {preview_version: :small}
+            .row
+              .col-lg-12
+                h4 = t(".contact_information")
+            .row
+              .col-lg-6.col-sm-12              
+                = f.input :contact_languages, as: :hidden             
+                |Contact me in
+                br
+                = select :contact, :user,  @language_list,{}, { :class => 'form-control contact-language-select', :style => "width: 80%; float: left;" }
+                a.btn.btn-green.add-contact-language.glyphicon.glyphicon-plus href="#"
+                .contact-languages
+                  - @user.contact_languages.each do |lang|
+                    = raw("<div value='"+ lang +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + lang + "</div>")
             .row
               .col-lg-6.col-sm-12
                 = f.input :facebook_url
@@ -65,26 +78,22 @@
               .col-lg-6.col-sm-12
                 = f.input :email_address, label: "Email address to display on profile"
             .row
-              .col-lg-6.col-sm-12
-                = f.input :organization_url, label: "Url of your organization"
-              .col-lg-6.col-sm-12
-                = f.input :organization_name, label: "Name of your organization"
+              .col-lg-12
+                h4 = t(".interests_title")
+            .row
+              .col-lg-12
+                = f.label :topics, "Which of the following topics are you interested in?"
+                br
+                = f.collection_check_boxes :topic_ids, Topic.all, :id, :name
+            .row
+              .col-lg-12
+                = f.input :skill_list, as: :text, label: "Skills (Tags, separated by comma and without #)"
             .row
               .col-lg-12
                 = f.input :tag_list, as: :text, label: "Interested in (Tags, separated by comma and without #)"
             .row
               .col-lg-12
-                = f.input :skill_list, as: :text, label: "Skills (Tags, separated by comma and without #)"
-            .row
-              .col-lg-6.col-sm-12              
-                = f.input :contact_languages, as: :hidden             
-                |Contact me in
-                br
-                = select :contact, :user,  @language_list,{}, { :class => 'form-control contact-language-select', :style => "width: 80%; float: left;" }
-                a.btn.btn-green.add-contact-language.glyphicon.glyphicon-plus href="#"
-                .contact-languages
-                  - @user.contact_languages.each do |lang|
-                    = raw("<div value='"+ lang +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + lang + "</div>")
+                h4 = t(".password_update")
             .row
               .col-lg-6.col-sm-12
                 = f.input :password, :autocomplete => "off", :required => false

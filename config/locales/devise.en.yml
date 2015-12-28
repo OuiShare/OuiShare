@@ -3,15 +3,18 @@ en:
   devise:
     registrations:
       edit:
+        contact_information: "Contact information displayed on profile"
+        interests_title: "Topics, skills, interests"
+        password_update: "Change my password"
         provider: "Provider"
-        connect_disconnect: "Connect/Disconect"
+        connect_disconnect: "Connect/Disconnect"
         unhappy: "Unhappy?"
         cancel_my_account: "Cancel my account"
         edit_devise_resource: "Edit %{resource_name}"
         connect_your_provider: "Connect your %{provider_name}"
         disconnect_from_provider: "Disconnect from %{provider_name}"
         back: "Back"
-        update: "Update"
+        update: "Update my profile"
         are_you_sure: "Are you sure?"
       new:
         sign_up: "Become a member"

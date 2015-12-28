@@ -58,7 +58,7 @@
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
         .col-lg-4.col-sm-12
-          .profile-title.center Topic
+          .profile-title.center = t("profile.topics")
           - if @user.topics.present?
             .tag-show.font-14
               - @user_topics.each do |topic|
@@ -66,7 +66,7 @@
                 = topic != @user_topics.last ? " |" : ""
                 / = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
         .col-lg-4.col-sm-12
-          .profile-title.center Skill
+          .profile-title.center = t("profile.skills")
           - if @user_skills.present?
             .tag-show.font-14
               - @user_skills.each do |skill|
@@ -74,7 +74,7 @@
                 = link_to skill.to_s, search_path(search: { tags: skill.to_s, type: 'all' })
                 = skill != @user_skills.last ? " |" : ""
         .col-lg-4.col-sm-12
-          .profile-title.center Interest
+          .profile-title.center = t("profile.interests")
           - if @user_interests.present?
             .tag-show.font-14
               - @user_interests.each do |interest|

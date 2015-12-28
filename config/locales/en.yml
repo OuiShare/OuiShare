@@ -108,6 +108,9 @@ en:
     all_knowledge_groups: 'All Knowledge Groups'
   profile:
     contact_me_in: 'Contact me in'
+    topics: 'Topics'
+    skills: 'Skills'
+    interests: 'Interests'
   menu:
     about: 'about'
     alumni: 'Alumni Connectors'

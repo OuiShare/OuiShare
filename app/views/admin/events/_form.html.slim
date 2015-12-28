@@ -4,11 +4,11 @@
   .form-inputs
     .row
       .col-lg-1.col-sm-2
-        = f.input :visible
+        = f.input :visible, class: 'nolabel'
       .col-lg-3.col-sm-10
         = f.label :visible, 'Visible in events list'
       .col-lg-1.col-sm-2
-        = f.input :display_on_menu
+        = f.input :display_on_menu, class: 'nolabel'
       .col-lg-3.col-sm-10
         = f.label :display_on_menu, 'Show in menu'
       .col-lg-4.col-sm-12
