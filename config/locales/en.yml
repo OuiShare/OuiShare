@@ -89,7 +89,11 @@ en:
     edit_profile: 'Edit profile'
     admin: 'Admin'
     leading_connectors: 'Leading Connectors'
+    leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
+    community_members: 'Community members'
+    community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
     associated_events: 'Associated events'
+    associated_events_how: 'Select events from the list to display them on the community page'
     associated_projects: 'Associated projects'
     update_community: 'Update community'
   payment:

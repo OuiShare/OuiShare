@@ -1,6 +1,5 @@
 = simple_form_for  [:admin, @community.language, @community] do |f|
-  h4 Listing language:
-    = @community.language.name
+  h4 Listing language: @community.language.name
   
   .row
     .col-md-6
@@ -22,7 +21,8 @@
       h4 = t("admin.leading_connectors")
       / = f.association :users, as: :check_boxes, :label_method => :full_name
       = f.association :users, as: :select, :label_method => :full_name
-      | Users
+      / | Users
+      p = t("admin.leading_connectors_how")
       br
       br
       = select :users, :community,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-community-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
@@ -40,12 +40,20 @@
       br
       br
   .row
+    .col-lg-12
+      h4 = t("admin.community_members")
+      p = t("admin.community_members_how")
+      br
+      br
+
+  .row
     .col-lg-12  
 
       h4 = t("admin.associated_events")
       / = f.association :events, as: :check_boxes
       = f.association :events, as: :select
-      | Events
+      / | Events
+      p = t("admin.associated_events_how")
       br
       br
       = select :event, :community,  Event.all.collect {|e| [ e.name_with_date_and_language, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
