@@ -1,7 +1,7 @@
 .container#admin
   div.row
     div.col-lg-12
-      h2.subheader Communities
+      h2.subheader = t('menu.local_communities')
       .communities
         - Language.all.each do |l|
           div.col-lg-12
@@ -11,7 +11,7 @@
               tr
                 th Name
                 th Text
-                th Link
+                / th Link
                 th Region
                 th
                 th
@@ -19,7 +19,7 @@
                 tr.sortable[data-update-path=sort_admin_language_community_path(l, c)]
                   td = c.name
                   td = truncate(c.text)
-                  td = c.link
+                  / td = c.link
                   td = c.region.title if c.region.present?
                   td = link_to "Edit", edit_admin_language_community_path(l, c)
                   td = link_to "Remove", [:admin, l, c], data: { confirm: 'Are you sure?' }, method: :delete

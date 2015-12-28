@@ -96,6 +96,7 @@ en:
     associated_events_how: 'Select events from the list to display them on the community page'
     associated_projects: 'Associated projects'
     update_community: 'Update community'
+    update_page: 'Update page'
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."

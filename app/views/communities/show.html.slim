@@ -37,7 +37,7 @@ section
     .container
       .row
         .col-lg-12
-          h3.blue Events
+          h3.blue = t('menu.events')
           hr.hr-large.blue
       .row
         .col-lg-10.col-lg-offset-1
@@ -74,10 +74,10 @@ section
           hr.hr-large.blue
       br
       br
-      .row
+      .row.projects
         .col-lg-10.col-lg-offset-1
           - @current_community.projects.rank(:row_order).each do |p|
-            .col-lg-4.center
+            .col-md-4.col-sm-6.center
               .thumb
                 = link_to p
                   = image_tag p.image.list_thumb.url
@@ -91,7 +91,7 @@ section
           hr.hr-large.blue
       .row
         - @current_community.members.limit(11).each do |u|
-          .col-lg-4.user
+          .col-sm-4.user
             .ch-item-show style= "background-image: url(#{u.avatar_url(220)})"
               .ch-info
                 .info
@@ -100,12 +100,12 @@ section
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s   
         - if !current_user || !current_user.member_of.include?(@current_community)
-          .col-lg-4.center
+          .col-sm-4.center
             .ch-item-btn
               = link_to join_community_path, method: :post
-                | Join US
+                | Join
         - elsif current_user
-          .col-lg-4.center
+          .col-sm-4.center
             .ch-item-btn
               = link_to leave_community_path, method: :post
                 | Leave
