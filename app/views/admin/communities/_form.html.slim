@@ -6,7 +6,7 @@
     .col-md-6
       = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Community image'
     .col-md-6
-      = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
+      = f.button :submit, t("admin.update_community"), class: 'btn btn-green btn-large'
   .row
     .col-md-6
       = f.association :region, collection: Region.where(language: @community.language)
@@ -19,7 +19,7 @@
       = f.input :text, label: 'About community text (Markdown)'
   .row
     .col-lg-12
-      h4 = t(".leading_connectors")
+      h4 = t("admin.leading_connectors")
       / = f.association :users, as: :check_boxes, :label_method => :full_name
       = f.association :users, as: :select, :label_method => :full_name
       | Users
@@ -42,7 +42,7 @@
   .row
     .col-lg-12  
 
-      h4 = t(".associated_events")
+      h4 = t("admin.associated_events")
       / = f.association :events, as: :check_boxes
       = f.association :events, as: :select
       | Events
@@ -64,9 +64,9 @@
 
   .row
     .col-lg-12  
-      h4 = t(".associated_projects")
+      h4 = t("admin.associated_projects")
       = f.association :projects, as: :check_boxes, :label_method => :name_with_date
   
   .row
     .col-lg-12
-      = f.submit
+      = f.button :submit, t("admin.update_community"), class: 'btn btn-green btn-large'

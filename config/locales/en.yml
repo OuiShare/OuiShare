@@ -88,6 +88,10 @@ en:
     view_profile: 'View my profile'
     edit_profile: 'Edit profile'
     admin: 'Admin'
+    leading_connectors: 'Leading Connectors'
+    associated_events: 'Associated events'
+    associated_projects: 'Associated projects'
+    update_community: 'Update community'
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
