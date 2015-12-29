@@ -1,14 +1,14 @@
 = simple_form_for  [:admin, @top_banner.language, @top_banner] do |f|
-  h4 = "#{l.name} page top banners"
+  / h4 = "#{l.name} page top banners"
   / h4 Language
-  / = @top_banner.language.name
+  h4 = @top_banner.language.name
   /= f.input :title1
   /= f.input :text1
   /= f.input :title2
   /= f.input :text2
   /= f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}
   .row.center
-    = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
+    = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
   .row
     .col-md-4
       h4 Slide 1
@@ -36,5 +36,5 @@
       = f.input :link5
       = f.input :link_text5
   .row.center
-    = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
-    / = f.submit
+      = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
+      / = f.submit

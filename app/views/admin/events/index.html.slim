@@ -11,7 +11,7 @@
             th Name
             th Image
             th Resume
-            th Info
+            / th Info
             th
             th
           - l.events.each do |e|
@@ -19,7 +19,7 @@
               td = e.title
               td = image_tag(e.image.thumb.url)
               td = truncate(e.resume)
-              td = truncate(e.info)
+              / td = truncate(e.info)
               td = link_to "Edit", edit_admin_language_event_path(l, e)
               td = link_to "Remove", [:admin, l, e], data: { confirm: 'Are you sure?' }, method: :delete
 

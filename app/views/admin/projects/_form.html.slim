@@ -1,12 +1,28 @@
 = simple_form_for  [:admin, @project.language, @project] do |f|
-  h4 This project will be displayed under the following language:
-  = @project.language.name
+  / h4 This project will be displayed under the following language:
+  h4 = @project.language.name
+  div.row
+    .col-lg-1.col-sm-2
+      = f.input :visible
+    .col-lg-3.col-sm-10
+      = f.label :visible, 'Visible in events list'
+    .col-lg-1.col-sm-2
+      = f.input :featured
+    .col-lg-3.col-sm-10
+      = f.label :featured, 'Featured in projects slider'
+    .col-lg-1.col-sm-2
+      = f.input :display_on_menu
+    .col-lg-3.col-sm-10
+      = f.label :display_on_menu, 'Show in menu'
+  .row.center
+    .col-lg-12
+      = f.submit    
   div.row
     div.col-lg-12
       = f.input :visible, label: 'Visible in projects list'
       = f.input :featured, label: 'Featured in projects slider'
       = f.input :display_on_menu, label: 'Show in menu'
-      = f.submit
+
   div.row
     div.col-lg-7
       = f.input :name, label: 'Project name'
@@ -18,6 +34,7 @@
   div.row
     div.col-lg-12
       = f.input :info, label: 'More information (Long description, Markdown)'
+    div.col-lg-12.deprecated
       = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
       / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
       / = f.input :service1_link
@@ -55,5 +72,6 @@
       br
       br
 
-
+  div.row.center
+    div.col-lg-12
       = f.submit

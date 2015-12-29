@@ -1,5 +1,5 @@
 = simple_form_for  [:admin, @community.language, @community] do |f|
-  h4 Listing language: @community.language.name
+  h4 = @community.language.name
   
   .row
     .col-md-6
@@ -12,6 +12,7 @@
       = f.input :name
     .col-md-6
       = f.input :address, label: 'Full address (will be used on the map)'
+    .col-md-6.deprecated
       = f.input :link, label: 'Link to Facebook group (not displayed any more)'
   .row
     .col-lg-12

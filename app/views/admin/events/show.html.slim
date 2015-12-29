@@ -15,13 +15,13 @@
         .markdown = @event.resume_html
         - unless @event.join_us_code_html.blank?
           .row.center
-            a.btn.btn-white-green.btn-large href="#join-us" = t("join_us")
+            a.btn.btn-white-green.btn-large href="#join-us" = t("event.join")
           
 
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        h3.blue About this event
+        h3.blue = t("event.about")
         hr.hr-large.blue
         .markdown = @event.info_html
         .tag-show.font-14
@@ -44,7 +44,7 @@
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        h3.blue Organizers
+        h3.blue = t("event.organizers")
         hr.hr-large.blue
         .avatars.center
           - @event.users.each do |u|
@@ -57,7 +57,7 @@
       .row.section#join-us
         .container
           .col-lg-6.col-lg-offset-3.col-sm-12
-            h3.blue Join us!
+            h3.blue = t("event.join")
             hr.hr-large.blue
             = raw @event.join_us_code_html
             / .markdown = @event.join_us_text_html
