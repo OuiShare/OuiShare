@@ -127,12 +127,31 @@ $(document).ready ->
       $('#project_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_project').append("<div class='user-project-value' id='user-"+id+"'><span class='remove-user-project'>x</span>" +value+ "</div>")
   
-  $('.user_project').on 'click', '.remove-user-event', (e) ->
+  $('.user_project').on 'click', '.remove-user-project', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
     $('#project_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
 
+  # tag system for users on expert_group page
+  $('.expert_group_users').hide()
+  expert_group = []
+  $('#expert_group_user_ids option:selected').each (i, selected)->
+    user_expert_group[i] = $(selected).text()
+  $('#users_expert_group').click (e) ->
+    e.preventDefault()
+    value = $('#users_expert_group option:selected').text()
+    id = $('#users_expert_group option:selected').val()
+    if (user_expert_group.indexOf(value) == -1)
+      user_expert_group.push(value)
+      $('#expert_group_user_ids option[value="'+id+'"]').prop('selected', true)
+      $('.expert_group_project').append("<div class='user-expert_group-value' id='user-"+id+"'><span class='remove-user-expert_group'>x</span>" +value+ "</div>")
+  
+  $('.user_expert_group').on 'click', '.remove-user-expert_group', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#expert_group_user_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
 
   remove_ctc_lang = (t) ->
     console.log(this)

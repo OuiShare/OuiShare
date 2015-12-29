@@ -6,6 +6,8 @@
   .col-md-6
     = f.input :link
   .col-lg-12
+    = f.input :text, label: 'Description (Markdown)'
+  .col-lg-12
     h3.blue = t("event.organizers")
     p Select members leading this group
     / = f.association :users, as: :check_boxes
@@ -25,9 +27,6 @@
     br
     br
     br
-
-  .col-lg-12
-    = f.input :text, label: 'Description (Markdown)'
   .col-lg-12
     / = f.submit
     = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
