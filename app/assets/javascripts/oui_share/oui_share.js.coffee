@@ -145,7 +145,7 @@ $(document).ready ->
     if (user_expertgroup.indexOf(value) == -1)
       user_expertgroup.push(value)
       $('#expertgroup_user_ids option[value="'+id+'"]').prop('selected', true)
-      $('.expertgroup_project').append("<div class='user-expertgroup-value' id='user-"+id+"'><span class='remove-user-expertgroup'>x</span>" +value+ "</div>")
+      $('.user_expertgroup').append("<div class='user-expertgroup-value' id='user-"+id+"'><span class='remove-user-expertgroup'>x</span>" +value+ "</div>")
   
   $('.user_expertgroup').on 'click', '.remove-user-expertgroup', (e) ->
     value = this.parentNode.getAttribute('id')
