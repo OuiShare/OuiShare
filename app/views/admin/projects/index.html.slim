@@ -6,7 +6,8 @@
       .col-lg-12
         .projects
           h3.subheader = "#{l.name} projects"
-          = link_to 'Create', new_admin_language_project_path(l.id)
+          a.btn.btn-green href="#{new_admin_language_project_path(l.id)}" = "Create new project on #{l.name} page"
+          / = link_to 'Create', new_admin_language_project_path(l.id)
           table.table.table-hover
             tr
               th Name

@@ -101,7 +101,7 @@ en:
     associated_projects: 'Associated projects'
     update_community: 'Update community'
     update_page: 'Update page'
-    update: "Update %{name}"
+    update: "Update"
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
@@ -137,7 +137,7 @@ en:
     advisors: 'Advisors'
     community: 'Community'
     local_communities: 'Local Communities'
-    knowledge_groups: 'knowledge Groups'
+    knowledge_groups: 'Knowledge Groups'
     connectors: 'Connectors'
     global_partners: 'Global Partners'
     users: 'Members'
