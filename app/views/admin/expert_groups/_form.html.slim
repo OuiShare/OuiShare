@@ -13,20 +13,18 @@
     / = f.association :users, as: :check_boxes
     = f.association :users, as: :select, :label_method => :full_name, collection: User.all(order: 'name')
     br
-    = select :users, :expert_group,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-expert_group-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+    = select :users, :expert_group,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-expertgroup-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
     br
     br
-    .user_expert_group
+    .user_expertgroup
       - unless @expert_group.users.nil?
         - @expert_group.users.each do |user| 
-          div class=("user-expert_group-value") id=("user-#{user.id}")
-            span.remove-user-expert_group id=("remove-user-#{user.id}")
+          div class=("user-expertgroup-value") id=("user-#{user.id}")
+            span.remove-user-expertgroup id=("remove-user-#{user.id}")
               | x
             = user.full_name
     br
     br
-    br
-    br
-  .col-lg-12
+  .col-lg-12.center
     / = f.submit
     = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
