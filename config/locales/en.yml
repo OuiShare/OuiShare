@@ -101,6 +101,7 @@ en:
     associated_projects: 'Associated projects'
     update_community: 'Update community'
     update_page: 'Update page'
+    update: "Update %{name}"
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
@@ -113,9 +114,9 @@ en:
     choose_currency: 'choose currency'
     donation: 'Donation'
     recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
-  projects:
+  project:
     join_us: 'Join us!'
-    info: 'More information'
+    about: 'About this project'
     organizers: 'Organizers'
   knowledge:
     all_knowledge_groups: 'All Knowledge Groups'

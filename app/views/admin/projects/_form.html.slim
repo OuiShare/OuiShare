@@ -16,13 +16,7 @@
       = f.label :display_on_menu, 'Show in menu'
   .row.center
     .col-lg-12
-      = f.submit    
-  div.row
-    div.col-lg-12
-      = f.input :visible, label: 'Visible in projects list'
-      = f.input :featured, label: 'Featured in projects slider'
-      = f.input :display_on_menu, label: 'Show in menu'
-
+      = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
   div.row
     div.col-lg-7
       = f.input :name, label: 'Project name'
@@ -33,28 +27,12 @@
       = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in projects list)'
   div.row
     div.col-lg-12
-      = f.input :info, label: 'More information (Long description, Markdown)'
-    div.col-lg-12.deprecated
-      = f.input :join_us_text, label: 'Join Us Text (Markdown, Deprecated)'
-      / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service1_link
-      / = f.input :service1_title
-      / = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service2_link
-      / = f.input :service2_title
-      / = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service3_link
-      / = f.input :service3_title
-      / = f.input :title1
-      / = f.input :text1, label: 'Text 1 (Markdown)'
-      / = f.input :title2
-      / = f.input :text2, label: 'Text 2 (Markdown)'
-  div.row
-    div.col-lg-12
+      h3.blue = t("project.organizers")
+      p Select members leading this project
       / = f.association :users, as: :check_boxes,  :label_method => :full_name, collection: User.all(order: 'name')
-      br
-      | Users
-      br
+      / br
+      / | Users
+      / br
       = f.association :users, as: :select, :label_method => :full_name, collection: User.all(order: 'name')
       br
       = select :users, :project,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-project-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
@@ -71,7 +49,28 @@
       br
       br
       br
+  div.row
+    div.col-lg-12
+      h3.blue = t("project.about")
+      = f.input :info, label: 'More information (Long description, Markdown)'
+    div.col-lg-12.deprecated
+      = f.input :join_us_text, label: 'Join Us Text (Old field, not displayed)'
+      / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service1_link
+      / = f.input :service1_title
+      / = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service2_link
+      / = f.input :service2_title
+      / = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
+      / = f.input :service3_link
+      / = f.input :service3_title
+      / = f.input :title1
+      / = f.input :text1, label: 'Text 1 (Markdown)'
+      / = f.input :title2
+      / = f.input :text2, label: 'Text 2 (Markdown)'
+
 
   div.row.center
     div.col-lg-12
-      = f.submit
+      / = f.submit
+      = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'

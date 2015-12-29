@@ -18,7 +18,7 @@
     .info
       .row.section
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.subtitle.black = t('projects.organizers')
+          h3.subtitle.black = t('project.organizers')
           .avatars.center
             - @project.users.each do |u|
               span.block.event-organizer-avatar
@@ -27,24 +27,24 @@
       br
       br
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.subtitle.black = t('projects.info')
+          h3.subtitle.black = t('project.about')
           .markdown = @project.info_html
 
-      .separator.black
+      / .separator.black
 
       .row.joinus
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.subtitle.black = t('projects.join_us')
+          h3.subtitle.black = t('project.join_us')
 
           .markdown = @project.join_us_text_html
 
-      .row.present
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          - if @project.title1.present?
-            h3.subtitle.black = @project.title1
-            .markdown = @project.text1_html
+      / .row.present
+      /   .col-lg-6.col-lg-offset-3.col-sm-12
+      /     - if @project.title1.present?
+      /       h3.subtitle.black = @project.title1
+      /       .markdown = @project.text1_html
 
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          - if @project.title2.present?
-            h3.subtitle.black = @project.title2
-            .markdown = @project.text2_html
+      /   .col-lg-6.col-lg-offset-3.col-sm-12
+      /     - if @project.title2.present?
+      /       h3.subtitle.black = @project.title2
+      /       .markdown = @project.text2_html
