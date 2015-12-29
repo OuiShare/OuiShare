@@ -6,7 +6,8 @@
       .col-lg-12
         .faq-questions
           h3.subheader = "#{l.name} FAQ questions"
-          = link_to 'Create', new_admin_language_faq_question_path(l.id)
+          / = link_to 'Create', new_admin_language_faq_question_path(l.id)
+          a.btn.btn-green href="#{new_admin_language_faq_question_path(l.id)}" = "Add new FAQ question"
           table.table.table-hover
             tr
               th Question

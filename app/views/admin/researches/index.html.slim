@@ -6,13 +6,14 @@
      .col-lg-12
         .researches
           h3.subheader = "#{l.name} researches"
-          = link_to 'Create', new_admin_language_research_path(l.id)
+          / = link_to 'Create', new_admin_language_research_path(l.id)
+          a.btn.btn-green href="#{new_admin_language_research_path(l.id)}" = "Add new research"
           table.table.table-hover
             tr
               th Name
               th Text
               th Image
-              th Link
+              / th Link
               th Tags
               th
               th
@@ -21,7 +22,7 @@
                 td = r.title
                 td = truncate(r.text)
                 td = image_tag(r.image.thumb.url)
-                td = r.link
+                / td = r.link
                 td = r.tags.join(', ')
                 td = link_to "Edit", edit_admin_language_research_path(l, r)
                 td = link_to "Remove", [:admin, l, r], data: { confirm: 'Are you sure?' }, method: :delete

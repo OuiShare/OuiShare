@@ -1,6 +1,6 @@
 = simple_form_for  @contact_page, url: admin_language_contact_page_path(@contact_page.language, @contact_page) do |f|
-  h4 Language
-  = @contact_page.language.name
+  / h4 Language
+  h4 = @contact_page.language.name
   = f.input :title
   = f.input :text
   = f.submit

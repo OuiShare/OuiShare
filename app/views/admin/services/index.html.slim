@@ -6,7 +6,8 @@
       - Language.all.each do |l|
         .col-lg-12
           h3.subheader = "#{l.name} services"
-          = link_to 'Create', new_admin_language_service_path(l.id)
+          / = link_to 'Create', new_admin_language_service_path(l.id)
+          a.btn.btn-green href="#{new_admin_language_service_path(l.id)}" = "Add new service"
           table.table.table-hover
             tr
               th Name

@@ -1,13 +1,13 @@
 = simple_form_for  @donation_page, url: admin_language_donation_page_path(@donation_page.language, @donation_page) do |f|
-  h4 Language
-  = @donation_page.language.name
+  / h4 Language
+  h4 = @donation_page.language.name
   = f.input :main_title
   = f.input :main_text, label: 'Main Text (Markdown)'
   = f.input :thanks_text, label: 'Thanks Text (Markdown)'
   = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :title1
   = f.input :text1, label: 'Text 1 (Markdown)'
-  /= f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
-  /= f.input :title2
-  /= f.input :text2, label: 'Text 2 (Markdown)'
+  = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+  = f.input :title2
+  = f.input :text2, label: 'Text 2 (Markdown)'
   = f.submit

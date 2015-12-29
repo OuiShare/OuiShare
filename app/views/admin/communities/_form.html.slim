@@ -36,12 +36,12 @@
               = user.full_name
       br
       br
-      br
-      br
   .row
     .col-lg-12
       h4 = t("admin.community_members")
       p = t("admin.community_members_how")
+      br
+      br
       br
       br
 
@@ -72,6 +72,6 @@
       h4 = t("admin.associated_projects")
       = f.association :projects, as: :check_boxes, :label_method => :name_with_date
   
-  .row
+  .row.center
     .col-lg-12
       = f.button :submit, t("admin.update_community"), class: 'btn btn-green btn-large'
