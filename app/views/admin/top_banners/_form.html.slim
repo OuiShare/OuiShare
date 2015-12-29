@@ -1,24 +1,40 @@
 = simple_form_for  [:admin, @top_banner.language, @top_banner] do |f|
-  h4 Language
-  = @top_banner.language.name
+  h4 = "#{l.name} page top banners"
+  / h4 Language
+  / = @top_banner.language.name
   /= f.input :title1
   /= f.input :text1
   /= f.input :title2
   /= f.input :text2
   /= f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :link1
-  = f.input :link_text1
-  = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :link2
-  = f.input :link_text2
-  = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :link3
-  = f.input :link_text3
-  = f.input :image4, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :link4
-  = f.input :link_text4
-  = f.input :image5, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :link5
-  = f.input :link_text5
-  = f.submit
+  .row.center
+    = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
+  .row
+    .col-md-4
+      h4 Slide 1
+      = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :link1
+      = f.input :link_text1
+    .col-md-4
+      h4 Slide 2
+      = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :link2
+      = f.input :link_text2
+    .col-md-4
+      h4 Slide 3
+      = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :link3
+      = f.input :link_text3
+    .col-md-4
+      h4 Slide 4
+      = f.input :image4, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :link4
+      = f.input :link_text4
+    .col-md-4
+      h4 Slide 5
+      = f.input :image5, as: :image_preview, input_html: {preview_version: :thumb}
+      = f.input :link5
+      = f.input :link_text5
+  .row.center
+    = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
+    / = f.submit
