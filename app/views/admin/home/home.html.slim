@@ -2,7 +2,7 @@
   div.row
     div.col-lg-12
       h2.subheader Landing page
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader Top Banner
       table.table.table-hover
         tr
@@ -28,7 +28,7 @@
               td = l.name
               td colspan='5' = link_to 'Create', new_admin_language_top_banner_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader What is OuiShare?
       table.table.table-hover.table-condensed
         tr
@@ -62,7 +62,7 @@
               td = l.name
               td colspan='6' = link_to 'Create', new_admin_language_what_is_section_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader New projects
       table.table.table-hover
         tr
@@ -86,7 +86,7 @@
               td = l.name
               td colspan='6' = link_to 'Create', new_admin_language_hot_projects_section_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader Upcoming events
       table.table.table-hover
         tr
@@ -108,7 +108,7 @@
               td = l.name
               td colspan='6' = link_to 'Create', new_admin_language_events_section_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader OuiShare Magazine
       table.table.table-hover
         tr
@@ -130,7 +130,7 @@
               td = l.name
               td colspan='6' = link_to 'Create', new_admin_language_articles_section_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader Join us
       table.table.table-hover.table-condensed
         tr
@@ -160,7 +160,7 @@
               td = l.name
               td colspan='6' = link_to 'Create', new_admin_language_take_part_section_path(l.id)
 
-    div.col-lg-12
+    div.col-lg-12.section
       h3.subheader Featured in (Media partners)
       table.table.table-hover
         tr
