@@ -133,24 +133,24 @@ $(document).ready ->
     $('#project_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
 
-  # tag system for users on expertgroup page
-  $('.expertgroup_users').hide()
-  expertgroup = []
-  $('#expertgroup_user_ids option:selected').each (i, selected)->
-    user_expertgroup[i] = $(selected).text()
-  $('#users_expertgroup').click (e) ->
+  # tag system for users on expert_group page
+  $('.expert_group_users').hide()
+  user_expert_group = []
+  $('#expert_group_user_ids option:selected').each (i, selected)->
+    user_expert_group[i] = $(selected).text()
+  $('#users_expert_group').click (e) ->
     e.preventDefault()
-    value = $('#users_expertgroup option:selected').text()
-    id = $('#users_expertgroup option:selected').val()
-    if (user_expertgroup.indexOf(value) == -1)
-      user_expertgroup.push(value)
-      $('#expertgroup_user_ids option[value="'+id+'"]').prop('selected', true)
-      $('.user_expertgroup').append("<div class='user-expertgroup-value' id='user-"+id+"'><span class='remove-user-expertgroup'>x</span>" +value+ "</div>")
+    value = $('#users_expert_group option:selected').text()
+    id = $('#users_expert_group option:selected').val()
+    if (user_expert_group.indexOf(value) == -1)
+      user_expert_group.push(value)
+      $('#expert_group_user_ids option[value="'+id+'"]').prop('selected', true)
+      $('.user_expert_group').append("<div class='user-expertgroup-value' id='user-"+id+"'><span class='remove-user-expertgroup'>x</span>" +value+ "</div>")
   
-  $('.user_expertgroup').on 'click', '.remove-user-expertgroup', (e) ->
+  $('.user_expert_group').on 'click', '.remove-user-expertgroup', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
-    $('#expertgroup_user_ids option[value="'+id+'"]').prop('selected', false)
+    $('#expert_group_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
 
   remove_ctc_lang = (t) ->
