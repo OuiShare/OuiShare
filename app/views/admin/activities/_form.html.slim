@@ -1,8 +1,9 @@
 = simple_form_for  [:admin, @activity.language, @activity] do |f|
-  h4 Language
-  = @activity.language.name
-  = f.input :name
-  = f.input :link
-  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :text, label: 'Text (Markdown)'
-  = f.submit
+  h4 = @activity.language.name
+  .col-lg-12
+    = f.input :name
+    = f.input :link
+    = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :text, label: 'Text (Markdown)'
+  .col-lg-12.center
+    = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'

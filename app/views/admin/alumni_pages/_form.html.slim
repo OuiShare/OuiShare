@@ -1,7 +1,7 @@
 = simple_form_for  @alumni_page, url: admin_language_alumni_page_path(@alumni_page.language, @alumni_page) do |f|
-  h4 Language
-  = @alumni_page.language.name
+  h4 = @alumni_page.language.name
   = f.input :title
   = f.input :text, label: 'Text (Markdown)'
   = f.input :link_text
-  = f.submit
+  .col-lg-12.center
+    = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'

@@ -1,6 +1,5 @@
 = simple_form_for  @about, url: admin_language_about_path(@about.language, @about) do |f|
-  h4 Language
-  = @about.language.name
+  h4 = @about.language.name
   = f.input :main_title
   = f.input :main_text1
   = f.input :main_text2
@@ -13,4 +12,5 @@
   = f.input :text3
   = f.input :title4
   = f.input :text4
-  = f.submit
+  .col-lg-12.center
+    = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
