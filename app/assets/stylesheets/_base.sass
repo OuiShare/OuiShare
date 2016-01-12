@@ -384,30 +384,31 @@ input.image_preview
     font-weight: bold
     padding: 15px 30px
     border-radius: 5px !important
-
-#edit
-
-  input.string
-    width: 100%
-
-  input.btn.btn-green
-    margin: 2em 0
-
-  input[type=submit]
-    margin: 2em 0
+    border: none
+    color: white
 
   label
     margin-top: 0.5em
     font-weight: bold
 
-  .event
-    label.boolean.optional.control-label
-      display: none
-
   textarea
     width: 100%
     min-height: 7em
     margin-bottom: 2em
+
+  .event,
+  .project
+    label.boolean.optional.control-label
+      display: none
+
+  .well
+    margin: 1em
+
+  .well-white
+    background-color: #fff
+
+
+#edit
 
   .add-event-user
     height: 35px
@@ -434,14 +435,6 @@ input.image_preview
     margin-right: 4px
     cursor: pointer
 
-  .btn-green
-    margin: 2em 0
-
-  .well
-    margin: 1em
-
-  .well-white
-    background-color: #fff
 
 #admin
   padding: 80px 1.5em 2em
@@ -452,22 +445,6 @@ input.image_preview
 
   h2
     font-siwe: 44px
-
-  input.string
-    width: 100%
-
-  label
-    margin-top: 0.5em
-    font-weight: bold
-
-  .project
-    label.boolean.optional.control-label
-      display: none
-
-  textarea
-    width: 100%
-    min-height: 7em
-    margin-bottom: 2em
 
   .add-user-project, 
   .add-user-expertgroup, 
@@ -506,8 +483,6 @@ input.image_preview
     margin-right: 4px
     cursor: pointer
 
-  .btn-green
-    margin: 2em 0
 
 //  .add-community-event
 //    height: 35px
