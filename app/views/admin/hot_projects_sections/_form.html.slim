@@ -1,7 +1,8 @@
 = simple_form_for  [:admin, @hot_projects_section.language, @hot_projects_section] do |f|
-  h4 Language
-  = @hot_projects_section.language.name
+  / h4 Language
+  h4 = @hot_projects_section.language.name
   = f.input :title
   = f.input :text, label: 'Text (Markdown)'
   = f.input :link_text
-  = f.submit
+  / = f.submit
+  = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
