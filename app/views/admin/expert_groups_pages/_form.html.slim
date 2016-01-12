@@ -1,6 +1,5 @@
 = simple_form_for  @expert_groups_page, url: admin_language_expert_groups_page_path(@expert_groups_page.language, @expert_groups_page) do |f|
-  h4 Language
-  = @expert_groups_page.language.name
+  h4 = @expert_groups_page.language.name
   = f.input :main_text, label: 'Main Text (Markdown)'
   = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
   = f.submit

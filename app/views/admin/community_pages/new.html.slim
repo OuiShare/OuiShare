@@ -3,8 +3,8 @@ div.row
     h1 New Community page
 
     = simple_form_for  @community_page, url: {:controller => "community_pages", :action => "create"} do |f|
-	  h4 Language
-	  = @community_page.language.name
+	  h4 = @community_page.language.name
 	  = f.input :main_text, label: 'Main Text (Markdown)'
 	  = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-	  = f.submit
+	  .col-lg-12.center
+        = f.button :submit

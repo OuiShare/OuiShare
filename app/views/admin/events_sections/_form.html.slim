@@ -1,7 +1,7 @@
 = simple_form_for  [:admin, @events_section.language, @events_section] do |f|
-  h4 Language
-  = @events_section.language.name
+  h4 = @events_section.language.name
   = f.input :title
   = f.input :text, label: 'Text (Markdown)'
   = f.input :link_text
-  = f.submit
+  .col-lg-12.center
+    = f.button :submit

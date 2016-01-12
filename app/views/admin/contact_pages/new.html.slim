@@ -3,8 +3,8 @@ div.row
     h1 New Contact Page
 
     = simple_form_for  @contact_page, url: {:controller => "contact_pages", :action => "create"} do |f|
-	  h4 Language
-	  = @contact_page.language.name
+	  h4 = @contact_page.language.name
 	  = f.input :title
 	  = f.input :text
-	  = f.submit
+      .col-lg-12.center
+        = f.button :submit

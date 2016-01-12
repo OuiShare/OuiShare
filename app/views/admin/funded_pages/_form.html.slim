@@ -1,5 +1,5 @@
 = simple_form_for  @funded_page, url: admin_language_funded_page_path(@funded_page.language, @funded_page) do |f|
-  h4 Language
+  h4 Not in use
   = @funded_page.language.name
   = f.input :main_text
   = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
