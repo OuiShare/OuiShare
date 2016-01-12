@@ -1,14 +1,18 @@
 = simple_form_for  @knowledge_page, url: admin_language_knowledge_page_path(@knowledge_page.language, @knowledge_page) do |f|
-  h4 Language
-  = @knowledge_page.language.name
+  h4 = @knowledge_page.language.name
   = f.input :main_text, label: 'Main Text (Markdown)'
   = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}
-  = f.input :title1
-  = f.input :text1, label: 'Text 1 (Markdown)'
-  = f.input :title2
-  = f.input :text2, label: 'Text 2 (Markdown)'
-  = f.input :title3
-  = f.input :text3, label: 'Text 3 (Markdown)'
-  = f.input :title4
-  = f.input :text4, label: 'Text 4 (Markdown)'
-  = f.submit
+  .well
+    = f.input :title1
+    = f.input :text1, label: 'Text 1 (Markdown)'
+  .well
+    = f.input :title2
+    = f.input :text2, label: 'Text 2 (Markdown)'
+  .well
+    = f.input :title3
+    = f.input :text3, label: 'Text 3 (Markdown)'
+  .well
+    = f.input :title4
+    = f.input :text4, label: 'Text 4 (Markdown)'
+  .col-lg-12.center
+    = f.submit
