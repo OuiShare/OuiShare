@@ -16,7 +16,7 @@
     = select :users, :expert_group,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-expertgroup-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
     br
     br
-    .user_expertgroup
+    .user_expert_group
       - unless @expert_group.users.nil?
         - @expert_group.users.each do |user| 
           div class=("user-expertgroup-value") id=("user-#{user.id}")
