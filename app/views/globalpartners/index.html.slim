@@ -8,38 +8,25 @@ div#page-about-internal
         section#banner
           .row
             div.banner
-                p = "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
-                p = "We do this by :"
+                p = t('global_partners.intro_p1')
+                p = t('global_partners.intro_p2')
           .row
             ul
-              li = "Working with them to understand the drivers and impacts of the transition toward a distributed and networked economy."
-              li = "Organizing thought-provoking events and building communities of intrapeneurs, entrepreneurs and researchers. We establish strong ties between startups, disruptive projects, innovators and traditional organizations to ignite new projects."
-                // Dynamic Content
-                // = image_tag(@partners.image.top_internal)
+              li = t('global_partners.intro_p3_1')
+              li = t('global_partners.intro_p3_2')
           .row
             div.col-lg-12
-              p = "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
-              a href= "http://bit.ly/OuiShareGlobalPartnershipTemplate" >> See detailed partnership agreements
+              p = t('global_partners.intro_p4')
+              a href= "http://bit.ly/OuiShareGlobalPartnershipTemplate" = t('global_partners.intro_p4_link_title')
 
 
 
           section#activities.section
             .services
-              // Dynamic Content
-              / - @services.rank(:row_order).each do |s|
-              /   div.row.actvity
-              /     div.col-lg-6
-              /       = link_to s.link do
-              /         h4 = s.name
-              /       .markdown = s.text_html
-              /     div.col-lg-6
-              /       = link_to s.link do
-              /         div.img-sample
-              /           = image_tag(s.image.list_thumb)
               // Partner n°1
               .row.actvity
                 h4 = "MAIF"
-                .markdown = "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
+                .markdown = t('global_partners.partner_maif')
                 div.img-sample.center
                   = link_to image_tag('/assets/maif.png'), "http://www.maif.fr/", :target => "_blank"
 

@@ -20,6 +20,15 @@ en:
     update: 'Update event'
     about: 'About this event'
     join: 'Join us!'
+  global_partners:
+    title: "Global Partners"
+    intro_p1: "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
+    intro_p2: "We do this by:"
+    intro_p3_1: "Working with them to understand the drivers and impacts of the transition toward a distributed and networked economy."
+    intro_p3_2: "Organizing thought-provoking events and building communities of intrapeneurs, entrepreneurs and researchers. We establish strong ties between startups, disruptive projects, innovators and traditional organizations to ignite new projects."
+    intro_p4: "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
+    intro_p4_link_title: ">> See detailed partnership agreements"
+    partner_maif: "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
   pages:
     globalpartners:
       index: "Global Partners"
