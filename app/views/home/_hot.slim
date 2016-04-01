@@ -38,7 +38,7 @@ section#hot
     .row
       .col-lg-10.col-lg-offset-1
         - @current_language.projects.visible.featured.each do |p|
-          .col-lg-4.center
+          .col-sm-4.center
             = image_tag "#{p.image.home_thumb}", :class => "home-pictures"
             a.new_projects href=project_path(p) = p.name+' >'
 

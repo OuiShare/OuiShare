@@ -47,21 +47,21 @@ section#bepart
     br
     .row
       .col-lg-10.col-lg-offset-1
-        .col-lg-4.center
+        .col-md-4.col-sm-6.center
           = image_tag '/assets/LOGO_discussion online.png', :class => "home-pictures"
           = link_to @take_part_section.link1 do
             h4 = @take_part_section.title1
             br
             p = @take_part_section.text1
 
-        .col-lg-4.center
+        .col-md-4.col-sm-6.center
           = image_tag '/assets/LOGO_unlok.png', :class => "home-pictures"
           = link_to @take_part_section.link2 do
             h4 = @take_part_section.title2
             br
             p = @take_part_section.text2
 
-        .col-lg-4.center
+        .col-md-4.col-sm-6.col-sm-offset-3.center
           = image_tag '/assets/LOGO_donate.png', :class => "home-pictures"
           = link_to @take_part_section.link3 do
             h4 = @take_part_section.title3

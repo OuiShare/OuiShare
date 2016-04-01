@@ -5,7 +5,7 @@ section#about
         h3.blue = @what_is_section.title
         hr.hr-large.blue
       .col-lg-10.col-lg-offset-1  
-        .col-lg-3
+        .col-md-3.col-sm-6
           .box.center
             = link_to about_mission_path do
               img.icon src="#{@what_is_section.image1}"
@@ -13,7 +13,7 @@ section#about
               hr.blue.hr-low
             p.text-justify 
               = @what_is_section.text1_html
-        .col-lg-3
+        .col-md-3.col-sm-6
           .box.center
             = link_to about_value_path do
               img.icon src="#{@what_is_section.image2}"
@@ -21,7 +21,7 @@ section#about
               hr.blue.hr-low
             p.text-justify
               = @what_is_section.text2_html
-        .col-lg-3
+        .col-md-3.col-sm-6
           .box.center
             = link_to about_team_path do
               img.icon src="#{@what_is_section.image3}"
@@ -29,7 +29,7 @@ section#about
               hr.blue.hr-low
             p.text-justify 
               = @what_is_section.text3_html
-        .col-lg-3
+        .col-md-3.col-sm-6
           .box.center
             = link_to events_path do
               img.icon src="#{@what_is_section.image4}"
