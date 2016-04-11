@@ -22,9 +22,9 @@
 
 /**** Header display corrective (because languages change his width) ******/
 
-@media (min-width: 1070px) and (max-width: 1999px){
+@media (min-width: 1024px) and (max-width: 1999px){
   .special-container-navbar{
-    width: 1200px;
+    width: 1023px;
   }
 }
 
@@ -35,7 +35,7 @@
 // }
 
 /** Navbar breakpoint override bootply/120604 */ 
-@media (max-width: 1200px) {
+@media (max-width: 1025px) {
     .navbar-header {
         float: none;
     }
