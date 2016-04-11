@@ -22,11 +22,11 @@
 
 /**** Header display corrective (because languages change his width) ******/
 
-@media (min-width: 1024px) and (max-width: 1999px){
+/*@media (min-width: 1025px) and (max-width: 1999px){
   .special-container-navbar{
-    width: 1023px;
+    width: 1024px;
   }
-}
+}*/
 
 // @media (max-width: 1069px){
 //   .navbar-header{
@@ -35,7 +35,7 @@
 // }
 
 /** Navbar breakpoint override bootply/120604 */ 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
     .navbar-header {
         float: none;
     }
