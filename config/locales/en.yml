@@ -156,10 +156,13 @@ en:
     projects: 'Projects'
     more_projects: 'All projects'
     knowledge: 'Knowledge'
-    research_and_publications: "Research & Publications"
+    research_and_publications: "Research Projects"
     cocreation_events: 'Co-Creation Events'
     wiki: 'Wiki'
     magazine: 'Magazine'
+    media: 'Media'
+    tv: 'TV'
+    radio: 'Radio'
     english: 'English'
     french: 'French'
     spanish: 'Spanish'

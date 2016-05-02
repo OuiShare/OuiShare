@@ -62,20 +62,25 @@
                 = link_to p.name, project_path(p)
             li
               = link_to t('menu.more_projects'), projects_path
-
-        li.dropdown
-          = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            li
-              = link_to t('menu.knowledge_groups'), expert_groups_path
             li
               = link_to t('menu.research_and_publications'), knowledge_research_path
+
+        / li.dropdown
+        /   = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
+        /   ul.dropdown-menu
+        /     li
+        /       = link_to t('menu.knowledge_groups'), expert_groups_path
+        /     li
+        /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
+        /     li
+        /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
+        li.dropdown
+          a.dropdown-toggle href="#" t('menu.media')
+          ul.dropdown-menu
             li
-              = link_to t('menu.cocreation_events'), knowledge_cocreation_path
+              a href="https://www.youtube.com/OuiShareTV" = t('menu.tv')
             li
-              = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
-            li
-              a href="http://magazine.ouishare.net/# @current_language.slug == 'en' ? '' : @current_language.slug" target="blank" = t('menu.magazine')
+              a href="https://www.spreaker.com/ouishare" = t('menu.radio')
 
         li
           .header-main-logo
@@ -103,7 +108,6 @@
               = image_tag(current_user.avatar_url(50), :class => "current-user")
             ul.dropdown-menu
               li
-                / a href="#" View my profile
                 = link_to t('admin.view_profile'), user_path(current_user)
               li
                 = link_to t("pages.registrations.edit"), edit_user_registration_path
