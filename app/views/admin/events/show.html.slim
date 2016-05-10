@@ -4,7 +4,7 @@
 #event
   .row.section
     .container
-      .col-lg-6.col-lg-offset-3.col-sm-12
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         img.banner src="#{@event.image.event_page_thumb.url}"
         .tag-show.font-14
           - @event.tags.each do |e|
@@ -20,7 +20,7 @@
 
   .row.section
     .container
-      .col-lg-6.col-lg-offset-3.col-sm-12
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         h3.blue = t("event.about")
         hr.hr-large.blue
         .markdown = @event.info_html
@@ -32,7 +32,7 @@
 
   .row.section
     .container
-      .col-lg-6.col-lg-offset-3.col-sm-12    
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1    
         = link_to "https://www.google.com/maps/place/#{CGI::escape(@event.address)}/@#{@event.latitude},#{@event.longitude},17z", class: 'address', target: "_blank" do
           .row.center
             .col-lg-12
@@ -43,7 +43,7 @@
 
   .row.section
     .container
-      .col-lg-6.col-lg-offset-3.col-sm-12
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         h3.blue = t("event.organizers")
         hr.hr-large.blue
         .avatars.center
@@ -56,7 +56,7 @@
     .separator.black
       .row.section#join-us
         .container
-          .col-lg-6.col-lg-offset-3.col-sm-12
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
             h3.blue = t("event.join")
             hr.hr-large.blue
             = raw @event.join_us_code_html
