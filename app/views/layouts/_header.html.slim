@@ -73,13 +73,6 @@
         /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
         /     li
         /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
-        li.dropdown
-          a.dropdown-toggle href="#" = t('menu.media')
-          ul.dropdown-menu
-            li
-              a href="https://www.youtube.com/OuiShareTV" = t('menu.tv')
-            li
-              a href="https://www.spreaker.com/ouishare" = t('menu.radio')
 
         li
           .header-main-logo
@@ -97,6 +90,14 @@
               a href="http://magazine.ouishare.net/es" = t('menu.spanish')
             li
               a href="http://magazine.ouishare.net/de" = t('menu.german')
+
+        li.dropdown
+          a.dropdown-toggle href="#" = t('menu.media')
+          ul.dropdown-menu
+            li
+              a href="https://www.youtube.com/OuiShareTV" = t('menu.tv')
+            li
+              a href="https://www.spreaker.com/ouishare" = t('menu.radio')
 
         / li.header-btn-li
         /   a.btn.header-btn href="#{donations_path}" Donate
