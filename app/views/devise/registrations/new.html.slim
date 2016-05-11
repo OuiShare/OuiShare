@@ -1,10 +1,6 @@
 == render partial: 'layouts/sub_header_title', locals: {title: 'Join Us'}
 section#signup
-  .container
-    .row
-      .col-lg-12
-        .col-lg-6.col-lg-offset-3.col-sm-8-col-sm-offset-2
-          p = t(".about_ouishare")
+  .container     
     .row
       .col-lg-12
         .sign_up_box style= "margin-top:20px;"
@@ -27,6 +23,8 @@ section#signup
             a href= @registration_page.link1 target="_blank" 
               = @registration_page.main_text2
           .col-lg-6.col-lg-offset-3.col-sm-8-col-sm-offset-2
+            p = t(".about_ouishare")
+            br
             h3.blue = t(".sign_up")
             hr.hr-large.blue
             .row
