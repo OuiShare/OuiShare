@@ -11,7 +11,7 @@ section#about
       .col-lg-10.col-lg-offset-1  
         .col-md-3.col-sm-6
           .box.center
-            = link_to about_mission_path do
+            = link_to events_path do
               img.icon src="#{@what_is_section.image1}"
               h4 = @what_is_section.title1
               hr.blue.hr-low
@@ -19,7 +19,7 @@ section#about
               = @what_is_section.text1_html
         .col-md-3.col-sm-6
           .box.center
-            = link_to about_value_path do
+            a href="https://www.loomio.org/g/inO27e3f/ouishare" target="_blank"
               img.icon src="#{@what_is_section.image2}"
               h4 = @what_is_section.title2
               hr.blue.hr-low
@@ -27,7 +27,7 @@ section#about
               = @what_is_section.text2_html
         .col-md-3.col-sm-6
           .box.center
-            = link_to about_team_path do
+            a href="http://ouiki.ouishare.net/index.php?title=Community" target="_blank"
               img.icon src="#{@what_is_section.image3}"
               h4 = @what_is_section.title3
               hr.blue.hr-low
@@ -35,7 +35,7 @@ section#about
               = @what_is_section.text3_html
         .col-md-3.col-sm-6
           .box.center
-            = link_to events_path do
+            a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
               img.icon src="#{@what_is_section.image4}"
               h4 = @what_is_section.title4
               hr.blue.hr-low
