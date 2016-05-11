@@ -23,7 +23,7 @@ section#hot
 
     .row
       .col-lg-12
-        h3.blue = @hot_projects_section.title
+        h2 = @hot_projects_section.title
         hr.hr-large.blue
 
         .col-lg-6.col-lg-offset-3.col-sm-12
@@ -32,8 +32,8 @@ section#hot
             = link_to t('pages.home.see_all_projects'), projects_path  
 
 
-    br
-    br
+    / br
+    / br
 
     .row
       .col-lg-10.col-lg-offset-1
@@ -42,16 +42,6 @@ section#hot
             = image_tag "#{p.image.home_thumb}", :class => "home-pictures"
             a.new_projects href=project_path(p) = p.name+' >'
 
+    br
 
-
-
-        / .col-lg-4.center
-        /   = image_tag '/assets/logo collaborative territoiries copie.png', :class => "home-pictures"
-        /   a.new_projects href=project_path(Project.where(name: 'Sharitories').first) Sharitories and the city >
-        / .col-lg-4.center
-        /   = image_tag '/assets/LOGO_OUISHARE_JOB-RGB.png', :class => "home-pictures"
-        /   a.new_projects href=project_path(Project.where(name: 'OuiShare Job Board').first) Ouishare Job Board >
-        / .col-lg-4.center
-        /   = image_tag '/assets/LOGO_ouisharefest.png', :class => "home-pictures"
-        /   a.new_projects href=project_path(Project.where(name: 'OuiShare Fest').first) Ouishare fest >
 

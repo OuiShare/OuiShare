@@ -3,26 +3,25 @@ section#about
     .row
       .col-lg-8.col-lg-offset-2
         h1.p.center = t('home.ouishare_is')
-        / p.center OuiShare is an international collective and think tank that explores collaborative economies and emerging paradigms around digital and cultural transformation.
 
     .row
       .col-lg-12
-        h3.blue = @what_is_section.title
+        h2 = @what_is_section.title
         hr.hr-large.blue
       .col-lg-10.col-lg-offset-1  
         .col-md-3.col-sm-6
           .box.center
             = link_to events_path do
               img.icon src="#{@what_is_section.image1}"
-              h4 = @what_is_section.title1
+              h3 = @what_is_section.title1
               hr.blue.hr-low
-            p.text-justify 
+            h4.text-justify 
               = @what_is_section.text1_html
         .col-md-3.col-sm-6
           .box.center
             a href="https://www.loomio.org/g/inO27e3f/ouishare" target="_blank"
               img.icon src="#{@what_is_section.image2}"
-              h4 = @what_is_section.title2
+              h3 = @what_is_section.title2
               hr.blue.hr-low
             p.text-justify
               = @what_is_section.text2_html
@@ -30,7 +29,7 @@ section#about
           .box.center
             a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
               img.icon src="#{@what_is_section.image3}"
-              h4 = @what_is_section.title3
+              h3 = @what_is_section.title3
               hr.blue.hr-low
             p.text-justify 
               = @what_is_section.text3_html
@@ -38,7 +37,7 @@ section#about
           .box.center
             a href="http://ouiki.ouishare.net/index.php?title=Community" target="_blank"
               img.icon src="#{@what_is_section.image4}"
-              h4 = @what_is_section.title4
+              h3 = @what_is_section.title4
               hr.blue.hr-low
             p.text-justify 
               = @what_is_section.text4_html

@@ -2,7 +2,7 @@ section#media-partners
   .container
     .row
       .col-lg-12
-        h3.blue Featured in
+        h2 = t('home.media_partners')
         hr.hr-large.blue
 
       - p = @current_language.partner || Partner.new
