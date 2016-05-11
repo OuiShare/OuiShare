@@ -1,6 +1,9 @@
-== render partial: 'layouts/sub_header_title', locals: {title: 'Join Us', text: "OuiShare is a global community with the mission to build and nurture a collaborative society. Our members are passionate individuals who spread the OuiShare vision, values and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today."}
+== render partial: 'layouts/sub_header_title', locals: {title: 'Join Us'}
 section#signup
   .container
+    .row
+      .col-lg-12
+        p = t(".about_ouishare")
     .row
       .col-lg-12
         .sign_up_box style= "margin-top:20px;"
