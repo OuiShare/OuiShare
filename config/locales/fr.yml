@@ -149,3 +149,6 @@ fr:
     follow_tw: 'OuiShare sur Twitter'
     open_source: 'Code Open Source par : '
     twitter_link: 'OuiShare_Fr'
+    jobs: 'Jobs'
+  home:
+    ouishare_is: 'OuiShare est un collectif, une communauté, un accélérateur d’idées et de projets dédié à l’émergence de la société collaborative: une société basée sur des principes d’ouverture, de collaboration, de confiance et de partage de la valeur.'
