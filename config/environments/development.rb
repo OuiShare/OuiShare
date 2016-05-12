@@ -47,7 +47,7 @@ OuiShare::Application.configure do
   :email => {
     :email_prefix => "[OuiShareNet ERR] ",
     :sender_address => %{"OuiShare Team" <no-reply@ouisharefest.com>},
-    :exception_recipients => %w{yann@kastelnik.com karol.arnaud@gmail.com}
+    :exception_recipients => %w{yann@kastelnik.com karol.arnaud@gmail.com auli@haldjas.org}
   }
   
 end
