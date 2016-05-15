@@ -9,7 +9,8 @@ section#list
             .thumb.center
               = link_to p
                 = image_tag p.image.url
-            p.markdown = p.resume_html
+            .project-preview
+              p.markdown = p.resume_html
             .tag-show
               - p.tags.each do |t|
                 / = t.name.to_s + (t != p.tags.last ? " |" : "")   
