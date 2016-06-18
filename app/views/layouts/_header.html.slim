@@ -10,70 +10,6 @@
     .navbar-collapse.collapse
       ul.nav.navbar-nav
 
-        li.dropdown
-          = link_to t('menu.about'), about_mission_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            li
-              = link_to t('menu.about_us'), about_mission_path
-            li
-              = link_to t('menu.story'), about_history_path
-            li
-              = link_to t('menu.values'), about_value_path
-            li
-              = link_to t('menu.organization'), about_organization_path
-            li
-              = link_to t('menu.team'), about_team_path
-            li
-              = link_to t('menu.advisors'), about_advisory_path
-            li
-              = link_to t('menu.collaborative_economy'), about_collaborative_economy_path
-
-        li.dropdown
-          = link_to t('menu.community'), communities_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            li
-              = link_to t('menu.local_communities'), communities_path
-            li
-              = link_to t('menu.knowledge_groups'), expert_groups_path
-            li
-              = link_to t('menu.get_involved'), getinvolved_path
-            / li
-            /   = link_to t('menu.users'), members_path
-            / li
-            /   = link_to t('menu.ouishare_everywhere'), communities_live_path
-            li
-              = link_to t('menu.alumni'), about_alumni_path
-
-        li.dropdown
-          = link_to t('menu.events'), events_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            - @current_language.events.visible.visible_on_menu.next.order('date_start desc').each do |e|
-              li
-                = link_to e.name, event_path(e)
-            li
-              = link_to t('menu.more_events'), events_path
-
-        li.dropdown
-          = link_to t('menu.projects'), projects_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            - @current_language.projects.visible.visible_on_menu.each do |p|
-              li
-                = link_to p.name, project_path(p)
-            li
-              = link_to t('menu.more_projects'), projects_path
-            li
-              = link_to t('menu.research_and_publications'), knowledge_research_path
-
-        / li.dropdown
-        /   = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
-        /   ul.dropdown-menu
-        /     li
-        /       = link_to t('menu.knowledge_groups'), expert_groups_path
-        /     li
-        /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
-        /     li
-        /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
-
         li
           .header-main-logo
             a href=root_path
@@ -90,6 +26,82 @@
               a href="http://magazine.ouishare.net/es" = t('menu.spanish')
             li
               a href="http://magazine.ouishare.net/de" = t('menu.german')
+
+        li.dropdown
+          = link_to t('menu.community'), communities_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
+            li
+              = link_to t('menu.local_communities'), communities_path
+            li
+              = link_to t('menu.events'), events_path
+            li
+              = link_to t('menu.knowledge_groups'), expert_groups_path
+            / li
+            /   = link_to t('menu.get_involved'), getinvolved_path
+            li
+              = link_to t('menu.become_member'), new_user_registration_path
+            / li
+            /   = link_to t('menu.users'), members_path
+            / li
+            /   = link_to t('menu.ouishare_everywhere'), communities_live_path
+            li
+              = link_to t('menu.alumni'), about_alumni_path
+
+        li.dropdown
+          a.dropdown-toggle href="http://ouisharefest.com" OuiShare Fest
+
+        li.dropdown
+          = link_to t('menu.about'), about_mission_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
+            li
+              = link_to t('menu.about_us'), about_mission_path
+            / li
+            /   = link_to t('menu.story'), about_history_path
+            li
+              = link_to t('menu.values'), about_value_path
+            li
+              = link_to t('menu.team'), about_team_path
+            li
+              = link_to t('menu.organization'), about_organization_path
+            li
+              = link_to t('menu.team'), about_team_path
+            li
+              = link_to t('menu.advisors'), about_advisory_path
+            li
+              = link_to t('menu.collaborative_economy'), about_collaborative_economy_path
+
+        / li.dropdown
+        /   = link_to t('menu.events'), events_path, :class => "dropdown-toggle"
+        /   ul.dropdown-menu
+        /     - @current_language.events.visible.visible_on_menu.next.order('date_start desc').each do |e|
+        /       li
+        /         = link_to e.name, event_path(e)
+        /     li
+        /       = link_to t('menu.more_events'), events_path
+
+        li.dropdown
+          = link_to t('menu.projects'), projects_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
+            - @current_language.projects.visible.visible_on_menu.each do |p|
+              li
+                = link_to p.name, project_path(p)
+            li
+              = link_to t('menu.research_and_publications'), knowledge_research_path
+            li
+              = link_to t('menu.more_projects'), projects_path
+
+
+        / li.dropdown
+        /   = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
+        /   ul.dropdown-menu
+        /     li
+        /       = link_to t('menu.knowledge_groups'), expert_groups_path
+        /     li
+        /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
+        /     li
+        /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
+
+
 
         li.dropdown
           a.dropdown-toggle href="#" = t('menu.media')
@@ -119,10 +131,10 @@
                 = link_to t('admin.logout'), destroy_user_session_path, method: :delete
         - else
           li.header-btn-li
-            a.btn.header-btn href="#{new_user_registration_path}" Join us!
+            a.btn.header-btn href="#{new_user_registration_path}" = t('menu.get_involved')
 
           li.header-btn-li
-            a.btn.header-btn href="#{new_user_session_path}" Login
+            a.btn.header-btn href="#{new_user_session_path}" = t('admin.login')
 
         li.header-form-li
           = simple_form_for :search, url: search_path, method: :post, html: { id: 'search_form_header' } do |f|
