@@ -19,13 +19,13 @@
           a.dropdown-toggle href="http://magazine.ouishare.net" = t('menu.magazine')
           ul.dropdown-menu
             li
-              a href="http://magazine.ouishare.net" = t('menu.english')
+              a href="http://magazine.ouishare.net" target="_blank" = t('menu.english')
             li
-              a href="http://magazine.ouishare.net/fr" = t('menu.french')
+              a href="http://magazine.ouishare.net/fr" target="_blank" = t('menu.french')
             li
-              a href="http://magazine.ouishare.net/es" = t('menu.spanish')
+              a href="http://magazine.ouishare.net/es" target="_blank" = t('menu.spanish')
             li
-              a href="http://magazine.ouishare.net/de" = t('menu.german')
+              a href="http://magazine.ouishare.net/de" target="_blank" = t('menu.german')
 
         li.dropdown
           = link_to t('menu.community'), communities_path, :class => "dropdown-toggle"
@@ -107,9 +107,9 @@
           a.dropdown-toggle href="#" = t('menu.media')
           ul.dropdown-menu
             li
-              a href="https://www.youtube.com/OuiShareTV" = t('menu.tv')
+              a href="https://www.youtube.com/OuiShareTV" target="_blank" = t('menu.tv')
             li
-              a href="https://www.spreaker.com/ouishare" = t('menu.radio')
+              a href="https://www.spreaker.com/ouishare" target="_blank" = t('menu.radio')
 
         / li.header-btn-li
         /   a.btn.header-btn href="#{donations_path}" Donate
