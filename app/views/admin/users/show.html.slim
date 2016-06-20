@@ -57,25 +57,25 @@
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
-        .col-lg-4.col-sm-12
-          .profile-title.center = t("profile.topics")
-          - if @user.topics.present?
+        - if @user.topics.present?
+          .col-lg-4.col-sm-12
+            .profile-title.center = t("profile.topics")
             .tag-show.font-14
               - @user_topics.each do |topic|
                 = link_to topic.name.to_s, search_path(search: { tags: topic.name.to_s, type: 'all' })
                 = topic != @user_topics.last ? " |" : ""
                 / = topic.name.to_s + (topic != @user_topics.last ? " |" : "")
-        .col-lg-4.col-sm-12
-          .profile-title.center = t("profile.skills")
-          - if @user_skills.present?
+        - if @user_skills.present?
+          .col-lg-4.col-sm-12
+            .profile-title.center = t("profile.skills")
             .tag-show.font-14
               - @user_skills.each do |skill|
                 / = skill.to_s + (skill != @user_skills.last ? " |" : "")
                 = link_to skill.to_s, search_path(search: { tags: skill.to_s, type: 'all' })
                 = skill != @user_skills.last ? " |" : ""
-        .col-lg-4.col-sm-12
-          .profile-title.center = t("profile.interests")
-          - if @user_interests.present?
+        - if @user_interests.present?
+          .col-lg-4.col-sm-12
+            .profile-title.center = t("profile.interests")
             .tag-show.font-14
               - @user_interests.each do |interest|
                 / = interest + (interest != @user_interests.last ? " |" : "")
@@ -83,47 +83,5 @@
                 = interest != @user_interests.last ? " |" : ""
 
 
-
-  / div.row.section
-  /   div.col-lg-5
-  /     div.large
-  /       h4 About
-  /       br
-  /       p.left From :
-  /       p.right 
-  /         = @user.city
-  /         = ", "
-  /         = @user.country
-  /       br
-  /       br
-  /       br
-  /       p.left Occupation :
-  /       p.right 
-  /         = @user_occupation.name unless @user_occupation.nil?
-  /       br
-  /       br
-  /       br
-  /       p.left Topics :
-  /       p style="margin-right:-20px;margin-top:17px;"
-  /         - if @user_topics.present?
-  /           - @user_topics.each do |topic|
-  /             span.label.blue.right style="display:block;"
-  /               = topic.name.to_s
-        
-
-  /   div.col-lg-5.col-lg-offset-1
-  /     div.large
-  /       h4 Organization
-  /       br
-  /       p.left Organization name :
-  /       p.right 
-  /         = @user.organization_name
-  /       br
-  /       br
-  /       br
-  /       - if @user.organization_url.present?
-  /         p.left Organization URL :
-  /         p.right 
-  /           = link_to @user.organization_url
 
 
