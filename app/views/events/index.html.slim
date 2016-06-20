@@ -1,5 +1,5 @@
-- content_for :page_title, t('menu.more_events')
-== render partial: 'layouts/sub_header_title', locals: {title: t('menu.more_events'), text: ""}
+- content_for :page_title, t('menu.events')
+== render partial: 'layouts/sub_header_title', locals: {title: t('menu.events'), text: ""}
 div#events
 
   = render 'events/list'
