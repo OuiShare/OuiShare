@@ -3,7 +3,8 @@
     .container
       .row
         .col-lg-12
-          h5 = t('global_partners.title')
+          = link_to global_partners_path do
+            h5 = t('global_partners.title')
           hr.hr-large.blue
 
         - p = @current_language.partner || Partner.new
