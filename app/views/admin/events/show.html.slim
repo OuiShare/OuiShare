@@ -40,6 +40,13 @@
           .row
             .col-lg-12.center  
               = @event.address
+  
+  - unless @event.join_us_code_html.blank?
+    .separator.black
+      .row.section#join-us
+        .container
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+            = raw @event.join_us_code_html
 
   .row.section
     .container
@@ -51,37 +58,6 @@
             span.block.event-organizer-avatar
               = link_to u do
                 = image_tag(u.avatar_url(140))
-  
-  - unless @event.join_us_code_html.blank?
-    .separator.black
-      .row.section#join-us
-        .container
-          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-            h3.blue = t("event.join")
-            hr.hr-large.blue
-            = raw @event.join_us_code_html
-            / .markdown = @event.join_us_text_html
-            / ul.unstyled
-            /   li
-            /     = link_to @event.service1_link do
-            /       = image_tag(@event.service1_image)
-            /       p.service = @event.service1_title
-            /   li
-            /     = link_to @event.service2_link do
-            /       = image_tag(@event.service2_image)
-            /       p.service = @event.service2_title
-            /   li
-            /     = link_to @event.service3_link do
-            /       = image_tag(@event.service3_image)
-            /       p.service = @event.service3_title
-
-            / - if @event.title1.present?
-            /   h4 = @event.title1
-            /   .markdown = @event.text1_html
-
-            / - if @event.title2.present?
-            /   h4 = @event.title2
-            /   .markdown = @event.text2_html
 
   .row.section
     .container
