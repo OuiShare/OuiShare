@@ -1,18 +1,17 @@
 section#grid
   .container
     - @current_language.projects.visible.rank(:row_order).each do |p|
-      .project
-        .col-md-6.col-lg-4.inline
-          a href="#{project_path(p)}"
-            h3.blue = p.name
-            hr.hr-large.blue
-            .thumb.center
-              = link_to p
-                = image_tag p.image.url
-            .project-preview
-              p.markdown = p.resume_html
-            .tags.tag-show
-              - p.tags.each do |t|
-                / = t.name.to_s + (t != p.tags.last ? " |" : "")   
-                = link_to t.name.to_s, search_path(search: { tags: t.name.to_s, type: 'all' }) 
+      .project.col-md-6.col-lg-4.inline
+        a href="#{project_path(p)}"
+          h3.blue = p.name
+          hr.hr-large.blue
+          .thumb.center
+            = link_to p
+              = image_tag p.image.url
+          .project-preview
+            p.markdown = p.resume_html
+          .tags.tag-show
+            - p.tags.each do |t|
+              / = t.name.to_s + (t != p.tags.last ? " |" : "")   
+              = link_to t.name.to_s, search_path(search: { tags: t.name.to_s, type: 'all' }) 
             
