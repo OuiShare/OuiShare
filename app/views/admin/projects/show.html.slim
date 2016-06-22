@@ -12,7 +12,7 @@
           - @project.tags.each do |p|
             / = p.name.to_s + (p != @project.tags.last ? " |" : "")
             = link_to p.name.to_s, search_path(search: { tags: p.name.to_s, type: 'all' })
-            = p != @project.tags.last ? " |" : ""
+            / = p != @project.tags.last ? " |" : ""
 
        
     .info

@@ -10,7 +10,7 @@
           - @event.tags.each do |e|
             / = e.name.to_s + (e != @event.tags.last ? " |" : "")
             = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
-            = e != @event.tags.last ? " |" : ""
+            / = e != @event.tags.last ? " |" : ""
         br
         .markdown = @event.resume_html
         - unless @event.join_us_code_html.blank?
