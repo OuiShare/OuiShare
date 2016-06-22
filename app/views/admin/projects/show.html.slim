@@ -8,7 +8,7 @@
         .center
           img.banner src="#{@project.image.project_page_thumb.url}"
         .markdown = @project.resume_html
-        .tag-show.font-14
+        .tags.tag-show.font-14
           - @project.tags.each do |p|
             / = p.name.to_s + (p != @project.tags.last ? " |" : "")
             = link_to p.name.to_s, search_path(search: { tags: p.name.to_s, type: 'all' })

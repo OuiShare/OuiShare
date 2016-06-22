@@ -6,7 +6,7 @@
     .container
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
         img.banner src="#{@event.image.event_page_thumb.url}"
-        .tag-show.font-14
+        .tags.tag-show.font-14
           - @event.tags.each do |e|
             / = e.name.to_s + (e != @event.tags.last ? " |" : "")
             = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
@@ -24,11 +24,11 @@
         h3.blue = t("event.about")
         hr.hr-large.blue
         .markdown = @event.info_html
-        .tag-show.font-14
-          - @event.tags.each do |e|
-            / = e.name.to_s + (e != @event.tags.last ? " |" : "")
-            = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
-            = e != @event.tags.last ? " |" : ""
+        / .tag-show.font-14
+        /   - @event.tags.each do |e|
+        /     / = e.name.to_s + (e != @event.tags.last ? " |" : "")
+        /     = link_to e.name.to_s, search_path(search: { tags: e.name.to_s, type: 'all' })
+        /     = e != @event.tags.last ? " |" : ""
 
   .row.section
     .container
