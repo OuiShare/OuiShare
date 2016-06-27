@@ -619,7 +619,7 @@ h6 {
 h6 {
   font-weight: normal;
 }
-h1,
+/*h1,
 .h1 {
   font-size: 61px;
 }
@@ -656,7 +656,7 @@ h3 small,
 h4 small,
 .h4 small {
   font-size: 14px;
-}
+}*/
 blockquote {
   position: relative;
   border-left: none;
