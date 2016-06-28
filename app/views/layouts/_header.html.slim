@@ -51,6 +51,28 @@
           a href="http://ouisharefest.com" target="_blank" OuiShare Fest
 
         li.dropdown
+          = link_to t('menu.projects'), projects_path, :class => "dropdown-toggle"
+          ul.dropdown-menu
+            - @current_language.projects.visible.visible_on_menu.each do |p|
+              li
+                = link_to p.name, project_path(p)
+            li
+              = link_to t('menu.research_and_publications'), knowledge_research_path
+            li
+              = link_to t('menu.more_projects'), projects_path
+
+        li.dropdown
+          a.dropdown-toggle href="#" = t('menu.media')
+          ul.dropdown-menu
+            li
+              a href="https://www.youtube.com/OuiShareTV" target="_blank" = t('menu.tv')
+            li
+              a href="https://www.spreaker.com/ouishare" target="_blank" = t('menu.radio')
+
+        li.dropdown
+          = link_to t('menu.services'), workus_path, :class => "dropdown-toggle"
+
+        li.dropdown
           = link_to t('menu.about'), about_mission_path, :class => "dropdown-toggle"
           ul.dropdown-menu
             li
@@ -78,19 +100,6 @@
         /         = link_to e.name, event_path(e)
         /     li
         /       = link_to t('menu.more_events'), events_path
-
-        li.dropdown
-          = link_to t('menu.projects'), projects_path, :class => "dropdown-toggle"
-          ul.dropdown-menu
-            - @current_language.projects.visible.visible_on_menu.each do |p|
-              li
-                = link_to p.name, project_path(p)
-            li
-              = link_to t('menu.research_and_publications'), knowledge_research_path
-            li
-              = link_to t('menu.more_projects'), projects_path
-
-
         / li.dropdown
         /   = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
         /   ul.dropdown-menu
@@ -100,17 +109,6 @@
         /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
         /     li
         /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
-
-
-
-        li.dropdown
-          a.dropdown-toggle href="#" = t('menu.media')
-          ul.dropdown-menu
-            li
-              a href="https://www.youtube.com/OuiShareTV" target="_blank" = t('menu.tv')
-            li
-              a href="https://www.spreaker.com/ouishare" target="_blank" = t('menu.radio')
-
         / li.header-btn-li
         /   a.btn.header-btn href="#{donations_path}" Donate
 
