@@ -3,7 +3,7 @@ section#grid
     - @current_language.projects.visible.rank(:row_order).each do |p|
       .project.col-md-6.col-lg-4.inline
         a href="#{project_path(p)}"
-          h3.blue = p.name
+          h2 = p.name
           hr.hr-large.blue
           .thumb.center
             = link_to p
