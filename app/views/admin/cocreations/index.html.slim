@@ -1,11 +1,11 @@
 .container#admin
   div.row
     div.col-lg-12
-      h2.subheader Co-creation events
+      h2.subheader OuiShare Media
     - Language.all.each do |l|
       div.col-lg-12
-        h3.subheader = "#{l.name} cocreation"
-        = link_to 'Create', new_admin_language_cocreation_path(l.id)
+        h3.subheader = "#{l.name} media"
+        a.btn.btn-green href="#{new_admin_language_cocreation_path(l.id)}" = "Add new media item on #{l.name} page"
         table.table.table-hover
           tr
             th Name
