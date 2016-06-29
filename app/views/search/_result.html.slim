@@ -3,7 +3,7 @@
     / h1 Events
 
     - if @result[:events][:future].size > 0
-      h3 Future Events
+      h3 Upcoming Events
       .row
         ul
           - @result[:events][:future].each do |event|
@@ -47,7 +47,7 @@
                 = truncate(project.resume, :omission => "...", :length => 250)
 
   - if @result[:users] and @result[:users].size > 0
-    h3 Users
+    h3 Members
     .row
       ul
         - @result[:users].each do |user|
