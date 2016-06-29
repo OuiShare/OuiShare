@@ -62,26 +62,22 @@
           a href="#{admin_events_path}" = t('menu.events')
         li
           a href="#{admin_projects_path}" = t('menu.projects')
-
-
-        li.dropdown
-          = link_to 'Knowledge', admin_knowledge_pages_path
           ul.dropdown-menu
-            li
-              a href="#{admin_expert_groups_path}" = t('menu.knowledge_groups')            
             li.dropdown-submenu
               a href="#{admin_research_pages_path}" = t('menu.research_and_publications')
               ul.dropdown-menu
                 li
-                  a href="#{admin_researches_path}" Researches            
-            li.dropdown-submenu
-              a href="#{admin_cocreation_pages_path}" Co-creations page
-              ul.dropdown-menu
-                li
-                  a href="#{admin_cocreations_path}" = t('menu.cocreation_events')
+                  a href="#{admin_researches_path}" Researches 
 
         li.dropdown
-          a href="#" Footer
+          a href="#{admin_cocreation_pages_path}" = t('media.title')
+          ul.dropdown-menu
+            li
+              a href="#{admin_cocreations_path}" Media items          
+           
+
+        li.dropdown
+          a Footer
           ul.dropdown-menu
             li
               = link_to 'Donation Page', admin_donation_pages_path            
@@ -106,18 +102,29 @@
                   a href="#{admin_faq_questions_path}" Questions
             li
               = link_to 'Terms & Service', admin_terms_pages_path            
-            li.divider
-            li
-              = link_to 'Registration Page', admin_registrations_pages_path
-            li
-              = link_to 'Testimonials', admin_testimonials_path
-        li.dropdown
-          a href="#{admin_users_path}" Users 
-          /ul.dropdown-menu
-            /li
-              /a href="#{admin_users_pages_path}" = t('menu.users')
 
-        li
-          = link_to "Languages", admin_languages_path
+
+
+        li.dropdown
+          a Meta
+          ul.dropdown-menu
+            li.dropdown-submenu
+              a href="#{admin_users_path}" Users 
+              /ul.dropdown-menu
+                /li
+                  /a href="#{admin_users_pages_path}" = t('menu.users')
+            li
+              = link_to "Languages", admin_languages_path
+            li.divider
+            li.dropdown-submenu Extinct pages
+              ul.dropdown-menu
+                li
+                  = link_to 'Knowledge', admin_knowledge_pages_path 
+                li.divider
+                li
+                  = link_to 'Registration Page', admin_registrations_pages_path
+                li
+                  = link_to 'Testimonials', admin_testimonials_path
+
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete

@@ -1,6 +1,6 @@
-- content_for :page_title, t('pages.knowledge.cocreation')
+- content_for :page_title, t('media.title')
 - content_for :description, clean_description(@cocreation_page.text_html, 150)
-== render partial: 'layouts/sub_header_title', locals: {title: t('pages.knowledge.cocreation'), text: ""}
+== render partial: 'layouts/sub_header_title', locals: {title: t('media.title'), text: ""}
 #page-communities
   .green
     section.explain
@@ -20,10 +20,11 @@
     .container
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12
-          h3.blue Events
-          hr.hr-large.blue
+          / h3.blue Events
+          / hr.hr-large.blue
           - @cocreations.each do |c|
-            h4.title.cente = c.name
+            h2 = c.name
+            hr.hr-large.blue
             - if c.link.present?
               = link_to c.link, target: '_blank' do
                 = image_tag c.image.list_thumb
