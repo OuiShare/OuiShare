@@ -29,6 +29,8 @@ en:
     intro_p4: "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
     intro_p4_link_title: ">> See detailed partnership agreements"
     partner_maif: "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
+  media:
+    title: "OuiShare Media"
   pages:
     globalpartners:
       index: "Global Partners"
