@@ -60,7 +60,8 @@
 
         li
           a href="#{admin_events_path}" = t('menu.events')
-        li
+
+        li.dropdown
           a href="#{admin_projects_path}" = t('menu.projects')
           ul.dropdown-menu
             li.dropdown-submenu
@@ -116,7 +117,8 @@
             li
               = link_to "Languages", admin_languages_path
             li.divider
-            li.dropdown-submenu Extinct pages
+            li.dropdown-submenu 
+              a Extinct pages
               ul.dropdown-menu
                 li
                   = link_to 'Knowledge', admin_knowledge_pages_path 
