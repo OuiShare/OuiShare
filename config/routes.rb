@@ -194,7 +194,7 @@ OuiShare::Application.routes.draw do
   get 'knowledge/ouiki' => 'knowledge#ouiki', as: 'knowledge_ouiki'
   get 'knowledge/cocreation' => 'knowledge#cocreation', as: 'knowledge_cocreation'
 
-  get 'media' => 'media#index', as: 'knowledge_cocreation'
+  get 'media' => 'media#index', as: 'media'
 
   get 'get-involved' => 'getinvolved#index', as: 'getinvolved'
   get 'press-room' => 'press#index', as: 'press'
