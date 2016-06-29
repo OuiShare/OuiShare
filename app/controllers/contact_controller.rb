@@ -9,7 +9,7 @@ class ContactController < ApplicationController
       redirect_to contact_path, alert: t('contact.missing_fields')
       return
     end
-    countries = {'France' => 'macabitbol@gmail.com',
+    countries = {'France' => 'france@ouishare.net',
                 'Germany' => 'dach@ouishare.net',
                 'Austria' => 'dach@ouishare.net',
                 'Switzerland' => 'dach@ouishare.net',
