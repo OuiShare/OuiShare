@@ -87,7 +87,7 @@ class ContactController < ApplicationController
     if countries.keys.include?(params[:contact][:country])
       params[:contact][:to] = countries[params[:contact][:country]]
     else
-      params[:contact][:to] = 'macabitbol@gmail.com'
+      params[:contact][:to] = 'hello@ouishare.net'
     end
     ContactMailer.contact(params).deliver!
     redirect_to root_path, notice: t('contact.success')
