@@ -1,38 +1,46 @@
-h3 = "Welcome to the OuiShare community!" 
-p = "You've successfully completed your OuiShare membership registration. We're thrilled that you have joined us :)" 
-p 
-  | As a member, you now have a 
-  b personal profile 
-  | that you can edit by logging in under 
-  a href="http://ouishare.net/en/users/edit" this link
-  | . To make it easier for other members to connect with you, make sure to 
-  a href="http://ouishare.net/en/users/edit" complete your profile
-  |  by adding a photo, short bio and social links. Keep an eye out for more advanced profile features coming soon!
+h3 = "Welcome to OuiShare!" 
+p = "This e-mail carries basic information you’ll need to start getting involved in our organization, who you can talk to, and answers to other questions that might be going through your mind." 
+p = "OuiShare is a collective and international community that connects people, organizations and ideas around fairness, openness, and trust. Thank you for joining us and becoming a member."
+p = "To get more involved in our organisation, getting in touch with a OuiShare Connector or a fellow member, is the best first step."
 
-p style="font-weight:bold" Some ways to get started as a member: 
-ul
+p = "You can do so in five ways:"
+ol
   li  
-    | Join a local group by browsing our 
-    a href="http://ouishare.net/communities" list of communities 
+    a href="http://ouishare.net/communities" Search for a community in your city
+    | and get in touch with the local team. 
   li 
-    | Find and get in touch with your 
-    a href="http://ouishare.net/about/team" local Connector 
+    a href="http://ouishare.net/about/team" Message any Connector from our directory.
+    | You can decide who to talk to by looking into the projects they’re working on, their interests, or by finding out
+    a href="https://twitter.com/OuiShare/lists/ouishare-connectors" what they write about
+    | .
+  li
+    a href="https://www.loomio.org/g/inO27e3f/ouishare" Join the OuiShare Members Loomio
+    | to start reading current discussions.
   li 
-    | Meet the community in real life at one of our next 
-    a href="http://ouishare.net/events" events! 
+    | Get directly in touch with one of our 
+    a href="http://ouiki.ouishare.net/index.php?title=Directory_of_Contacts#Community" Community Connectors.
+    | Community Connectors guide through the OuiShare universe, and handle newcomers and members who wish to become Connectors.
   li 
-    | Read up on our 
-    a href="http://ouishare.net/about/organization" management and governance principles
+    a href="http://ouishare.net/events" Visit OuiShare Events or Meetups
+    | to get to know people in real life.
 p
-  | Consult our 
-  a href="http://ouishare.net/faq" FAQ
-  |  and 
-  a href="http://ouiki.ouishare.net/" Wiki
-  |  for help. And don't hesitate to contact a 
-  a href="http://ouishare.net/about/team" Connector
-  |  near you for guidance and advice. They will be happy to help.
-p = "#OuiShareLove"
+  | If you want to start digging into content (or action!),
+  a href="http://magazine.ouishare.net/" spend some time in our magazine
+  |  , browse through
+  a href="http://ouishare.net/events" events happening all over the world,
+  | read about
+  a href="http://ouishare.net/projects" ongoing projects,
+  | or browse through
+  a href="http://ouishare.net/communities" our communities.
+p
+  | For a list of frequently asked questions,
+  a href="http://ouiki.ouishare.net/" visit our Ouiki.
+p = "We’ll be happy to see you anywhere!" 
+p
+  | With love,
+  br
+  | the OuiShare team
 
 tr
-  td.divider align="center"colspan= "2"style="border: 0px; width: 100%;"
+  td.divider align="center" colspan="2" style="border: 0px; width: 100%;"
     = link_to image_tag(attachments['ouishare-email'].url), "http://ouishare.net" unless attachments['ouishare-email'].nil?
