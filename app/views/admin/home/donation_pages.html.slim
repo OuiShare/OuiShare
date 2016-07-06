@@ -6,11 +6,11 @@
         tr
           th Language
           th Main Title
-          th Main Text
-          th Thanks text
-          th Image 1
+          / th Main Text
+          / th Thanks text
+          / th Image 1
           th Title 1
-          th Image2
+          / th Image2
           th Title2
           th
           th
@@ -19,11 +19,11 @@
             tr
               td = l.name
               td = l.donation_page.main_title
-              td = l.donation_page.main_text
-              td = l.donation_page.thanks_text
-              td = image_tag(l.donation_page.image1.thumb.url)
+              / td = l.donation_page.main_text
+              / td = l.donation_page.thanks_text
+              / td = image_tag(l.donation_page.image1.thumb.url)
               td = l.donation_page.title1
-              td = image_tag(l.donation_page.image2.thumb.url)
+              / td = image_tag(l.donation_page.image2.thumb.url)
               td = l.donation_page.title2
               td = link_to "Edit", edit_admin_language_donation_page_path(l, l.donation_page)
               td = link_to "Remove", [:admin, l, l.donation_page], data: { confirm: 'Are you sure?' }, method: :delete

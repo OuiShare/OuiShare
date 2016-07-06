@@ -1,12 +1,18 @@
 = simple_form_for  @donation_page, url: admin_language_donation_page_path(@donation_page.language, @donation_page) do |f|
   h4 = @donation_page.language.name
+  p
+    a href="/donations?" target="_blank" View the regular page >>
   = f.input :main_title
   = f.input :main_text, label: 'Main Text (Markdown)'
   = f.input :thanks_text, label: 'Thanks Text (Markdown)'
+  hr
   = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :title1
   = f.input :text1, label: 'Text 1 (Markdown)'
+  hr
   h4 Donation page text displayed after member registration
+  p
+    a href="/donations?sign_up=yes" target="_blank" View the page >>
   = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
   = f.input :title2
   = f.input :text2, label: 'Text 2 (Markdown)'
