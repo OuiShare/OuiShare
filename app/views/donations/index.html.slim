@@ -2,7 +2,7 @@
 #page-donations
   section.donate.section
     .container
-      .row
+      .row.content
         .col-lg-6.col-lg-offset-3.col-sm-12
           - if params[:sign_up] == 'yes'
             h3 = @donation_page.title2
@@ -12,6 +12,8 @@
             .markdown = @donation_page.main_text_html
             p = @donation_page.thanks_text_html
 
+      .row
+        .col-lg-6.col-lg-offset-3.col-sm-12
           .title-donation.center = t('donations.help_support_ouishare')
           .menu-currency
             table
