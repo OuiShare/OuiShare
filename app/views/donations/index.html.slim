@@ -103,7 +103,8 @@
             iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
 
       - if params[:sign_up] == 'yes'
-        a.btn.btn-green.btn-large href="register/thanks" Complete Registration
+        .row.center
+          a.btn.btn-green.btn-large href="register/thanks" Complete Registration
   - if !params[:sign_up]
     section.explain
       .container
