@@ -1,6 +1,6 @@
 section#grid
   .container
-    .col-lg-8.col-lg-8-offset-2.col-md-12
+    .col-lg-10.col-lg-offset-1
       - @current_language.projects.visible.rank(:row_order).each do |p|
         .project.col-md-6.inline
           a href="#{project_path(p)}"
