@@ -3,11 +3,11 @@
   .container
     .col-lg-6.col-lg-offset-3.col-sm-12
       .row style="margin-top: 40px;"
-        h3 = region.title
+        h2 = region.title
         hr.hr-large.blue
         - communities.each do |c|
           .row
-            h4 style="padding-top: 50px;"
+            h3 style="padding-top: 50px;"
               = c.name
             hr.hr-large.blue
           .row
@@ -26,5 +26,5 @@
                 .col-md-3
                   .ch-item-btn style="padding-top: 40px"
                     = link_to community_path(c)  
-                       = "See the community"
+                       = t('community.see')
 

@@ -21,7 +21,7 @@
   .row.section
     .container
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        h3.blue = t("event.about")
+        h2.blue = t("event.about")
         hr.hr-large.blue
         .markdown = @event.info_html
         / .tag-show.font-14
@@ -51,7 +51,7 @@
   .row.section
     .container
       .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
-        h3.blue = t("event.organizers")
+        h2.blue = t("event.organizers")
         hr.hr-large.blue
         .avatars.center
           - @event.users.each do |u|

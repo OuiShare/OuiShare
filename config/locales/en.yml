@@ -1,10 +1,24 @@
 en:
-  errors:
-    messages:
-      wrong_size: "is the wrong size (should be %{file_size})"
-      size_too_small: "is too small (should be at least %{file_size})"
-      size_too_big: "is too big (should be at most %{file_size})"
-  join_us: "Join us"
+  admin:
+    not_authorized: 'You are not allowed to do that.'
+    login: "Log in"
+    logout: "Log out"
+    view_profile: 'View my profile'
+    edit_profile: 'Edit profile'
+    admin: 'Admin'
+    leading_connectors: 'Leading Connectors'
+    leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
+    community_members: 'Community members'
+    community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
+    associated_events: 'Associated events'
+    associated_events_how: 'Select events from the list to display them on the community page'
+    associated_projects: 'Associated projects'
+    update_community: 'Update community'
+    update_page: 'Update page'
+    update: "Update"
+  community:
+    get_in_touch: "Get in touch"
+    see: "See the community"
   contact:
     email: 'Email'
     first_name: 'First name'
@@ -15,11 +29,38 @@ en:
     send: 'Send'
     success: 'Your email was sent!'
     missing_fields: 'Please fill the Email, Country and First name fields.'
+  donations:
+    thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
+    help_support_ouishare: 'Help support OuiShare!'
+    choose_currency: 'choose currency'
+    donation: 'Donation'
+    recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
+  errors:
+    messages:
+      wrong_size: "is the wrong size (should be %{file_size})"
+      size_too_small: "is too small (should be at least %{file_size})"
+      size_too_big: "is too big (should be at most %{file_size})"
   event:
     organizers: 'Organizers'
     update: 'Update event'
     about: 'About this event'
     join: 'Join us!'
+  footer:
+    about_ouishare: 'About OuiShare'
+    press_room: 'Press Room'
+    workus: 'Work with us'
+    globalpartners: 'Global Partners'
+    contact: 'Contact'
+    faqs: 'FAQs'
+    terms: 'Terms & Services'
+    your_email: 'Your email here'
+    email_required: 'An email address is required'
+    subscribe: 'Subscribe to our newsletter'
+    follow_fb: 'Follow us on facebook'
+    follow_tw: 'Follow us on twitter'
+    open_source: 'Open source code by'
+    twitter_link: 'OuiShare'
+    jobs: 'Jobs'
   global_partners:
     title: "Global Partners"
     intro_p1: "Global Partners are forward-looking organizations that we build long term relationships with. We experiment with them to transform their organizations by fostering a culture of collaboration and supporting meaningful projects within or outside their organization."
@@ -29,8 +70,70 @@ en:
     intro_p4: "Global partners provide us with financial support on an annual basis to fund all our organizational activities and are partners of OuiShare Fest."
     intro_p4_link_title: ">> See detailed partnership agreements"
     partner_maif: "MAIF is a leading cooperative insurance company in France. It has been dedicated to serve the interest of its members since 1934. MAIF is ruled by a shared governance and strong values: solidarity, social responsibility and human-centeredness."
+  home:
+    ouishare_is: 'OuiShare connects people and accelerates projects for systemic change. We question and experiment with social models based on collaboration, openness, and fairness.'
+    media_partners: 'In the press'
+  join_us: "Join us"
+  knowledge:
+    all_knowledge_groups: 'All Knowledge Groups'
   media:
     title: "OuiShare Media"
+  menu:
+    about: 'about'
+    alumni: 'Alumni Connectors'
+    about_us: 'About Us'
+    become_member: 'Become a member'
+    story: 'Our story'
+    values: 'Our values'
+    collaborative_economy: 'The Collaborative Economy'
+    organization: 'How we work'
+    team: 'Who we are'
+    advisors: 'Advisors'
+    community: 'Community'
+    local_communities: 'Local Communities'
+    knowledge_groups: 'Knowledge Groups'
+    connectors: 'Connectors'
+    global_partners: 'Global Partners'
+    users: 'Members'
+    ouishare_everywhere: 'OuiShare Everywhere'
+    events: 'Events'
+    more_events: 'More Events'
+    projects: 'Projects'
+    more_projects: 'See all projects'
+    knowledge: 'Knowledge'
+    research_and_publications: "Research Projects"
+    cocreation_events: 'Co-Creation Events'
+    wiki: 'Wiki'
+    magazine: 'Mag'
+    media: 'Media'
+    tv: 'OuiShare TV'
+    radio: 'OuiShare Radio'
+    services: 'Services'
+    english: 'English'
+    french: 'French'
+    spanish: 'Spanish'
+    german: 'German'
+    donate: 'Donate'
+    get_involved: 'Get Involved'
+  payment:
+    success: "Thank you! Your donation was successfuly recieved."
+    error: "Error getting the payment."
+  profile:
+    contact_me_in: 'Contact me in'
+    topics: 'Topics'
+    skills: 'Skills'
+    interests: 'Interests'
+  project:
+    join_us: 'Join us!'
+    about: 'About this project'
+    organizers: 'Organizers'
+  newsletter:
+    error: 'Could not subscribe to the newsletter, check your email address and try again'
+    already_registered: "This email is already registered to our newsletter"
+    successful: "Your address was successfuly registered in our newsletter!"
+  workus:
+    become_a_partner: 'Want to know more?'
+    contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
   pages:
     globalpartners:
       index: "Global Partners"
@@ -92,103 +195,4 @@ en:
         projects: 'Projects'
       autocomplete:
         no_entry: 'No entry found'
-  newsletter:
-    error: 'Could not subscribe to the newsletter, check your email address and try again'
-    already_registered: "This email is already registered to our newsletter"
-    successful: "Your address was successfuly registered in our newsletter!"
-  admin:
-    not_authorized: 'You are not allowed to do that.'
-    login: "Log in"
-    logout: "Log out"
-    view_profile: 'View my profile'
-    edit_profile: 'Edit profile'
-    admin: 'Admin'
-    leading_connectors: 'Leading Connectors'
-    leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
-    community_members: 'Community members'
-    community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
-    associated_events: 'Associated events'
-    associated_events_how: 'Select events from the list to display them on the community page'
-    associated_projects: 'Associated projects'
-    update_community: 'Update community'
-    update_page: 'Update page'
-    update: "Update"
-  payment:
-    success: "Thank you! Your donation was successfuly recieved."
-    error: "Error getting the payment."
-  workus:
-    become_a_partner: 'Want to know more?'
-    contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
-  donations:
-    thank_you_text: "Your donation will help us to continue our activities as a non-profit and contribute to building a more collaborative society.<br />#OuiShareLove"
-    help_support_ouishare: 'Help support OuiShare!'
-    choose_currency: 'choose currency'
-    donation: 'Donation'
-    recurring_donations: 'If you would like to make a recurring donation, please select "custom amount".'
-  project:
-    join_us: 'Join us!'
-    about: 'About this project'
-    organizers: 'Organizers'
-  knowledge:
-    all_knowledge_groups: 'All Knowledge Groups'
-  profile:
-    contact_me_in: 'Contact me in'
-    topics: 'Topics'
-    skills: 'Skills'
-    interests: 'Interests'
-  menu:
-    about: 'about'
-    alumni: 'Alumni Connectors'
-    about_us: 'About Us'
-    become_member: 'Become a member'
-    story: 'Our story'
-    values: 'Our values'
-    collaborative_economy: 'The Collaborative Economy'
-    organization: 'How we work'
-    team: 'Who we are'
-    advisors: 'Advisors'
-    community: 'Community'
-    local_communities: 'Local Communities'
-    knowledge_groups: 'Knowledge Groups'
-    connectors: 'Connectors'
-    global_partners: 'Global Partners'
-    users: 'Members'
-    ouishare_everywhere: 'OuiShare Everywhere'
-    events: 'Events'
-    more_events: 'More Events'
-    projects: 'Projects'
-    more_projects: 'See all projects'
-    knowledge: 'Knowledge'
-    research_and_publications: "Research Projects"
-    cocreation_events: 'Co-Creation Events'
-    wiki: 'Wiki'
-    magazine: 'Mag'
-    media: 'Media'
-    tv: 'OuiShare TV'
-    radio: 'OuiShare Radio'
-    services: 'Services'
-    english: 'English'
-    french: 'French'
-    spanish: 'Spanish'
-    german: 'German'
-    donate: 'Donate'
-    get_involved: 'Get Involved'
-  footer:
-    about_ouishare: 'About OuiShare'
-    press_room: 'Press Room'
-    workus: 'Work with us'
-    globalpartners: 'Global Partners'
-    contact: 'Contact'
-    faqs: 'FAQs'
-    terms: 'Terms & Services'
-    your_email: 'Your email here'
-    email_required: 'An email address is required'
-    subscribe: 'Subscribe to our newsletter'
-    follow_fb: 'Follow us on facebook'
-    follow_tw: 'Follow us on twitter'
-    open_source: 'Open source code by'
-    twitter_link: 'OuiShare'
-    jobs: 'Jobs'
-  home:
-    ouishare_is: 'OuiShare connects people and accelerates projects for systemic change. We question and experiment with social models based on collaboration, openness, and fairness.'
-    media_partners: 'In the press'
+

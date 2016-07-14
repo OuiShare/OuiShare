@@ -3,7 +3,7 @@
   .container
     .col-lg-6.col-lg-offset-3.col-sm-12
       .row style="margin-top: 40px;"
-        h3 = community.name
+        h2 = community.name
         hr.hr-large.blue
       .row
         .col-lg-12
@@ -21,7 +21,7 @@
             .col-md-3
               .ch-item-btn style="padding-top: 40px"                     
                 = link_to community_path(community)                       
-                    = "See the community"
+                    = t('community.see')
 
 
 /     h3.blue = r.title
