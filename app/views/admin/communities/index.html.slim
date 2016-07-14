@@ -5,7 +5,7 @@
       p Community pages are language-neutral. Only ENGLISH list is shown on the website, please make sure you add your community under this list!
       a href="http://ouiki.ouishare.net/index.php?title=How_to_use_the_OuiShare_Website#Adding_local_communities" >> Read tutorial on Ouiki to learn more
       .communities
-        - Language.all.each do |l|
+        - Language.where(name:'English') do |l|
           div.col-lg-12
             h3.subheader = "#{l.name} communities"
             a.btn.btn-green href="#{new_admin_language_community_path(l.id)}" = "Create new community on #{l.name} page"
