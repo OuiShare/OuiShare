@@ -22,19 +22,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :project_thumb, :if => :is_project? do
-    process :resize_to_fit => [540, 300]
+    process :resize_to_fit => [540, 255]
   end
 
   version :project_page_thumb, :if => :is_project? do
-    process :resize_to_fit => [800, 444]
+    process :resize_to_fit => [800, 377]
   end
 
   version :home_thumb, :if => :has_home_thumb? do
-    process :resize_to_fit => [540, 300]
+    process :resize_to_fit => [540, 255]
   end
 
   version :event_page_thumb, :if => :is_event? do
-    process :resize_to_fit => [800, 444]
+    process :resize_to_fit => [800, 377]
   end
 
   version :event_thumb, :if => :is_event? do
@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :list_thumb, :if => :has_list_thumb? do
-    process :resize_to_fill => [540, 300]
+    process :resize_to_fill => [540, 255]
   end
 
   version :partner, :inf => :is_partner? do
