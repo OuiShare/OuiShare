@@ -9,6 +9,9 @@
           = f.error_notification
           .form-inputs
             .row
+              .col-lg-12   
+                = f.input :image, as: :image_preview, input_html: {preview_version: :avatar}
+            .row
               .col-lg-6.col-sm-12
                   = f.input :fname, :label => 'First name', :autofocus => true
               .col-lg-6.col-sm-12
@@ -46,9 +49,6 @@
             .row
               .col-lg-12
                 = f.input :bio
-            .row
-              .col-lg-12   
-                = f.input :image, as: :image_preview, input_html: {preview_version: :normal}
             .row
               .col-lg-12
                 h4 = t(".contact_information")
