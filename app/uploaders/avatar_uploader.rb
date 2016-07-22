@@ -19,7 +19,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :normal do
-    process :resize_to_fill => [140, 140]
+    process :resize_to_fill => [400, 400]
   end
 
   version :avatar do
@@ -27,7 +27,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :small do
-    process :resize_to_fill => [50, 50]
+    process :resize_to_fill => [100, 100]
   end
 
 end

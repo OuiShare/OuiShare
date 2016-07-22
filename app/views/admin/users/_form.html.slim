@@ -3,7 +3,7 @@
     div.col-lg-4
       = f.input :fname, label: 'First Name'
       = f.input :name, label: 'Last Name'
-      = f.input :image, as: :image_preview, input_html: {preview_version: :small}
+      = f.input :image, as: :image_preview, input_html: {preview_version: :normal}
       = f.select :gender, { 'Male' => 0, 'Female' => 1, 'Other' => 2}, :required => true
       = f.input :email, :required => true
     div.col-lg-4
