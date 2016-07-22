@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :list_thumb, :if => :has_list_thumb? do
-    process :resize_to_fill => [550, 250]
+    process :resize_to_fill => [540, 300]
   end
 
   version :partner, :inf => :is_partner? do
