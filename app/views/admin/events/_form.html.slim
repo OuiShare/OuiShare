@@ -29,8 +29,8 @@
         = f.input :time
     .row
       .col-lg-6.col-sm-12
-        = f.input :image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Main image (555x250px, displayed on the event page)'
-      .col-lg-6.col-sm-12
+        = f.input :image, as: :image_preview, input_html: {preview_version: :event_thumb}, label: 'Main image (will be fit into 800x444px)'
+      .col-lg-6.col-sm-12.deprecated
         = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in events list)'
     .row
       .col-lg-12

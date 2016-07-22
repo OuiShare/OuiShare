@@ -26,7 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :project_page_thumb, :if => :is_project? do
-    process :resize_to_fit => [800, 500]
+    process :resize_to_fit => [800, 444]
   end
 
   version :home_thumb, :if => :has_home_thumb? do
@@ -34,7 +34,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :event_page_thumb, :if => :is_event? do
-    process :resize_to_fit => [800, 500]
+    process :resize_to_fit => [800, 444]
   end
 
   version :event_thumb, :if => :is_event? do
