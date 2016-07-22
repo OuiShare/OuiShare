@@ -22,23 +22,23 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :project_thumb, :if => :is_project? do
-    process :resize_to_fill => [300, 180]
+    process :resize_to_fit => [540, 300]
   end
 
   version :project_page_thumb, :if => :is_project? do
-    process :resize_to_fill => [555, 250]
+    process :resize_to_fit => [800, 500]
   end
 
   version :home_thumb, :if => :has_home_thumb? do
-    process :resize_to_fill => [300, 180]
+    process :resize_to_fit => [540, 300]
   end
 
   version :event_page_thumb, :if => :is_event? do
-    process :resize_to_fill => [555, 250]
+    process :resize_to_fit => [800, 500]
   end
 
   version :event_thumb, :if => :is_event? do
-    process :resize_to_fill => [300, 180]
+    process :resize_to_fit => [540, 300]
   end
 
   version :top_image, :if => :has_top_image? do
