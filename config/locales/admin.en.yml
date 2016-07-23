@@ -3,3 +3,4 @@ en:
     events:
       form:
         update: "Update event"
+    deprecated_page: "This page is not in use any more"
