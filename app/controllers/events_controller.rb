@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def past_events
 
-    @events = Event.visible.paginate(:page => params[:page]).order('date_start DESC')
+    @events = Event.visible.paginate(:page => params[:page]).order('date_start')
     @past = true
 
     render "index"
