@@ -22,15 +22,15 @@
                     li
                       .ch-item style= "background-image: url(#{a.avatar_url(220)})"
                         .ch-info
-                          / - if !a.twitter_url.blank?
-                          /   = link_to a.twitter_url, :target => "_blank"
-                          /     - if !a.title.blank?
-                          /       h4.info
-                          /         = link_to a do
-                          /           = a.title
-                                / br     
-                                /   = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
-                          / - else 
+                          - if !a.twitter_url.blank?
+                            = link_to a.twitter_url, :target => "_blank"
+                              - if !a.title.blank?
+                                h4.info
+                                  = link_to a do
+                                    = a.title
+                                br     
+                                  = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
+                          - else 
                           h4.info
                             - if !a.title.blank?
                               = link_to a do
@@ -43,6 +43,5 @@
                         b.center
                           = a.fname.to_s + " " +a.name.to_s
                       - if !a.title.blank?
-                        p
-                          = link_to a do
-                              = a.title                
+                        span
+                          = a.title                
