@@ -10,7 +10,7 @@ section#grid
               = link_to e
                 = image_tag e.image.list_thumb.url
             h4 = e.cta
-          .markdown.event = e.resume_html
+          .markdown = e.resume_html
           .tags.tag-show
             - e.tags.each do |t|
               / = t.name.to_s + (e != e.tags.last ? " |" : "")
