@@ -39,9 +39,8 @@
                               = link_to a do
                                 = a.fname.to_s + " " +a.name.to_s 
 
-                      h4
-                        b.center
-                          = a.fname.to_s + " " +a.name.to_s
+                      h5
+                        = a.fname.to_s + " " +a.name.to_s
                       - if !a.title.blank?
                         span
                           = a.title                
