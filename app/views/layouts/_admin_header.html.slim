@@ -55,8 +55,6 @@
               ul.dropdown-menu
                 li
                   a href="#{admin_expert_groups_path}" = t('menu.knowledge_groups')
-            li
-              = link_to t('menu.ouishare_everywhere'), admin_live_pages_path
 
         li
           a href="#{admin_events_path}" = t('menu.events')
@@ -117,16 +115,16 @@
             li
               = link_to "Languages", admin_languages_path
             li.divider
-            li.dropdown-submenu 
-              a Extinct pages
-              ul.dropdown-menu
-                li
-                  = link_to 'Knowledge', admin_knowledge_pages_path 
-                li.divider
-                li
-                  = link_to 'Registration Page', admin_registrations_pages_path
-                li
-                  = link_to 'Testimonials', admin_testimonials_path
+            li 
+              a Extinct pages:
+            li
+              = link_to 'Knowledge', admin_knowledge_pages_path 
+            li
+              = link_to 'Registration Page', admin_registrations_pages_path
+            li
+              = link_to 'Testimonials', admin_testimonials_path
+            li
+              = link_to t('menu.ouishare_everywhere'), admin_live_pages_path
 
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete

@@ -68,6 +68,8 @@
               a href="https://www.youtube.com/OuiShareTV" target="_blank" = t('menu.tv')
             li
               a href="https://www.spreaker.com/ouishare" target="_blank" = t('menu.radio')
+            li
+              a href="http://magazine.ouishare.net" target="_blank" = t('menu.magazine_ouishare')
 
         li.dropdown
           = link_to t('menu.services'), workus_path, :class => "dropdown-toggle"
@@ -77,8 +79,6 @@
           ul.dropdown-menu
             li
               = link_to t('menu.about_us'), about_mission_path
-            / li
-            /   = link_to t('menu.story'), about_history_path
             li
               = link_to t('menu.values'), about_value_path
             li
@@ -86,7 +86,7 @@
             li
               = link_to t('menu.organization'), about_organization_path
             li
-              = link_to t('menu.team'), about_team_path
+              = link_to t('menu.story'), about_history_path
             li
               = link_to t('menu.advisors'), about_advisory_path
             li
