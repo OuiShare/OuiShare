@@ -1,0 +1,14 @@
+section#magazine
+  .container
+    .row
+      .col-lg-10.col-lg-offset-1
+        - @magazines.each do |f|
+          .col-md-4.mag.center
+            .col-md-12
+              a href="#{f.url}" target="blank"
+                img.home-pictures src="#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")}" u="image"
+            .col-md-12
+              a.new_projects href="#{f.url}" target="blank"
+                = f.title
+
+
