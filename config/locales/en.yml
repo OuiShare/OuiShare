@@ -45,6 +45,8 @@ en:
     update: 'Update event'
     about: 'About this event'
     join: 'Join us!'
+  events:
+    past: 'See past events'
   footer:
     about_ouishare: 'About OuiShare'
     press_room: 'Press Room'
