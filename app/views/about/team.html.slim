@@ -41,4 +41,8 @@
 
                       h6
                         b.center
-                          = a.fname.to_s + " " +a.name.to_s                   
+                          = a.fname.to_s + " " +a.name.to_s
+                      - if !a.title.blank?
+                        p
+                          = link_to a do
+                              = a.title                
