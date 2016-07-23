@@ -36,14 +36,12 @@
               = link_to t('menu.events'), events_path
             li
               = link_to t('menu.knowledge_groups'), expert_groups_path
-            / li
-            /   = link_to t('menu.get_involved'), getinvolved_path
-            li
-              = link_to t('menu.become_member'), new_user_registration_path
-            / li
-            /   = link_to t('menu.users'), members_path
-            / li
-            /   = link_to t('menu.ouishare_everywhere'), communities_live_path
+            - if user_signed_in?
+              li
+                = link_to t('menu.get_involved'), getinvolved_path
+            - else
+              li
+                = link_to t('menu.become_member'), new_user_registration_path
             li
               = link_to t('menu.alumni'), about_alumni_path
 
@@ -92,48 +90,22 @@
             li
               = link_to t('menu.collaborative_economy'), about_collaborative_economy_path
 
-        / li.dropdown
-        /   = link_to t('menu.events'), events_path, :class => "dropdown-toggle"
-        /   ul.dropdown-menu
-        /     - @current_language.events.visible.visible_on_menu.next.order('date_start desc').each do |e|
-        /       li
-        /         = link_to e.name, event_path(e)
-        /     li
-        /       = link_to t('menu.more_events'), events_path
-        / li.dropdown
-        /   = link_to t('menu.knowledge'), knowledge_path, :class => "dropdown-toggle"
-        /   ul.dropdown-menu
-        /     li
-        /       = link_to t('menu.knowledge_groups'), expert_groups_path
-        /     li
-        /       = link_to t('menu.cocreation_events'), knowledge_cocreation_path
-        /     li
-        /       = link_to t('menu.wiki'), 'http://ouiki.ouishare.net/', target: :blank
-        / li.header-btn-li
-        /   a.btn.header-btn href="#{donations_path}" Donate
+        li.header-btn-li
+          a.btn.header-btn.green href="#{getinvolved_path}" = t('menu.get_involved')
 
         li.header-btn-li
-          a.btn.header-btn href="#{getinvolved_path}" = t('menu.get_involved')
+          a.btn.header-btn#search_submit href="#{search_path}"
+            i.fa.fa-search
 
-
-        li.header-form-li
-          = simple_form_for :search, url: search_path, method: :post, html: { id: 'search_form_header' } do |f|
-            = f.input :type, as: :hidden, input_html: { value: 'all', id: 'search_type_header' }
-            = f.input :tags, as: :hidden, input_html: { id: 'search_tags_header' }
-            .input-group
-              = f.input :query, input_html: { class: 'form-control', data: { url: autocomplete_query_path }, id: 'search_query_header' }, label: false, required: false
-              .input-group-btn
-                button.btn#search_submit type="submit"
-                  i.fa.fa-search
-          /.text-center.social-media-icons-header
-          /  a href="https://www.facebook.com/OuiShare" target="_blank"
-          /    img src="/assets/BT-facebook.png" width="24px" style="margin-top:-10px;"
-          /  a href="https://twitter.com/OuiShareFest" target="_blank"
-          /    img src="/assets/BT-twitter.png" width="24px" style="margin-top:-10px;"
-          /  a href="https://plus.google.com/+OuishareNet" target="_blank"
-          /    img src="/assets/BT-googleplus.png" width="24px" style="margin-top:-10px;"
-          /  a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
-          /    img src="/assets/BT-youtube.png" width="24px" style="margin-top:-10px;"
+        / li.header-form-li
+        /   = simple_form_for :search, url: search_path, method: :post, html: { id: 'search_form_header' } do |f|
+        /     = f.input :type, as: :hidden, input_html: { value: 'all', id: 'search_type_header' }
+        /     = f.input :tags, as: :hidden, input_html: { id: 'search_tags_header' }
+        /     .input-group
+        /       = f.input :query, input_html: { class: 'form-control', data: { url: autocomplete_query_path }, id: 'search_query_header' }, label: false, required: false
+        /       .input-group-btn
+        /         button.btn#search_submit type="submit"
+        /           i.fa.fa-search
 
         - Language.visible.each do |l|
           - if l.slug == I18n.locale.to_s
@@ -167,4 +139,4 @@
         - else
 
           li.header-btn-li
-            a.btn.header-btn href="#{new_user_session_path}" = t('admin.login')
+            a.btn.header-btn.white href="#{new_user_session_path}" = t('admin.login')
