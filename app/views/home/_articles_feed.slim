@@ -2,7 +2,7 @@ section#magazine
   .container
     .row
       .col-lg-10.col-lg-offset-1
-        - @magazines.each do |f|
+        - @magazines.limit(6).each do |f|
           .col-md-4.mag.center
             .col-md-12.article style="background-image:url(#{f.content.split(' ')[3].split('"')[1].gsub(/-150x150/, "")})"
               / a href="#{f.url}" target="blank"
@@ -10,5 +10,7 @@ section#magazine
             .col-md-12.article-title
               a href="#{f.url}" target="blank"
                 = f.title
+              br
+              = f.author
 
 
