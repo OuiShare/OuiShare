@@ -25,13 +25,13 @@
                           - if !a.twitter_url.blank?
                             = link_to a.twitter_url, :target => "_blank"
                               - if !a.title.blank?
-                                h4.info
+                                h6.info
                                   = link_to a do
                                     = a.title
                                 br     
                                   = link_to "@" + a.twitter_url.slice(20..-1).to_s, a.twitter_url, :target => "_blank"
                           - else 
-                          h4.info
+                          h6.info
                             - if !a.title.blank?
                               = link_to a do
                                   = a.title
@@ -39,7 +39,7 @@
                               = link_to a do
                                 = a.fname.to_s + " " +a.name.to_s 
 
-                      h6
+                      h4
                         b.center
                           = a.fname.to_s + " " +a.name.to_s
                       - if !a.title.blank?
