@@ -11,7 +11,8 @@ section#grid
                 = image_tag e.image.list_thumb.url
           .event-preview
             h4.date = e.cta
-            .markdown = e.resume_html
+            .markdown 
+              = truncate(e.resume_html, length: 300)
           .tags.tag-show
             - e.tags.each do |t|
               / = t.name.to_s + (e != e.tags.last ? " |" : "")
