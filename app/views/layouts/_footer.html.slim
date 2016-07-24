@@ -55,15 +55,15 @@
 #f
   .container
     .row
-      .col-lg-10
-        .col-lg-4.subscribe
+      .col-sm-10
+        .col-lg-4.col-sm-12.subscribe
           h5 Subscribe to our newsletter
           = form_tag newsletter_subscribe_path, :class => "form-inline" do
             .row
               .col-lg-12.text-field-newsletter
                 = text_field_tag :email_address, '', :class => "form-control-footer", :placeholder => "E-MAIL"
                 = submit_tag "OK", :class => "btn-footer submit-newsletter", :style => 'border-radius: 0px;'
-        .col-lg-4.infos
+        .col-lg-4.col-sm-6.infos
           = link_to about_mission_path do
             h6 = t('footer.about_ouishare')
           = link_to press_path do
@@ -81,7 +81,7 @@
           = link_to terms_path do
             h6 = t('footer.terms')
 
-        .col-lg-4.follow
+        .col-lg-4.col-sm-6.follow
           h5 Follow OuiShare
           a href="https://www.facebook.com/OuiShare" target="_blank"
             h6 Facebook
@@ -99,7 +99,7 @@
             h6 Slideshare
           / a href="https://www.spreaker.com/ouishare" target="_blank"
           /   h6 OuiShare Radio
-      .col-lg-2
+      .col-sm-2
         a href=root_path
           = image_tag('/assets/coeur-key-topic.png', :class => "header-main-logo")
     br
