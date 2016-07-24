@@ -10,7 +10,8 @@ section#grid
               = link_to p
                 = image_tag p.image.list_thumb.url
             .project-preview
-              p.markdown = p.resume_html
+              p.markdown 
+                = truncate(p.resume_html, length: 300)
             .tags.tag-show
               - p.tags.each do |t|
                 / = t.name.to_s + (t != p.tags.last ? " |" : "")   
