@@ -1,21 +1,4 @@
 en:
-  admin:
-    not_authorized: 'You are not allowed to do that.'
-    login: "Log in"
-    logout: "Log out"
-    view_profile: 'View my profile'
-    edit_profile: 'Edit profile'
-    admin: 'Admin'
-    leading_connectors: 'Leading Connectors'
-    leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
-    community_members: 'Community members'
-    community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
-    associated_events: 'Associated events'
-    associated_events_how: 'Select events from the list to display them on the community page'
-    associated_projects: 'Associated projects'
-    update_community: 'Update community'
-    update_page: 'Update page'
-    update: "Update"
   community:
     get_in_touch: "Get in touch"
     see: "See the community"
@@ -118,6 +101,10 @@ en:
     german: 'German'
     donate: 'Donate'
     get_involved: 'Get Involved'
+  newsletter:
+    error: 'Could not subscribe to the newsletter, check your email address and try again'
+    already_registered: "This email is already registered to our newsletter"
+    successful: "Your address was successfuly registered in our newsletter!"
   payment:
     success: "Thank you! Your donation was successfuly recieved."
     error: "Error getting the payment."
@@ -130,10 +117,6 @@ en:
     join_us: 'Join us!'
     about: 'About this project'
     organizers: 'Organizers'
-  newsletter:
-    error: 'Could not subscribe to the newsletter, check your email address and try again'
-    already_registered: "This email is already registered to our newsletter"
-    successful: "Your address was successfuly registered in our newsletter!"
   workus:
     become_a_partner: 'Want to know more?'
     contact_a_partner: 'If you are interested in OuiShare services, please get in touch. '
