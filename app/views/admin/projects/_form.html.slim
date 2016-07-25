@@ -25,11 +25,11 @@
     div.col-lg-5
       = f.input :image, as: :image_preview, input_html: {preview_version: :project_thumb}, label: 'Main image (will be fit into 800x377px)'
       div.deprecated
-        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in projects list)'
+        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (not in use)'
   div.row
     div.col-lg-12
       h3.blue = t("project.organizers")
-      p Select members leading this project
+      p = t(".organizers")
       / = f.association :users, as: :check_boxes,  :label_method => :full_name, collection: User.all(order: 'name')
       / br
       / | Users

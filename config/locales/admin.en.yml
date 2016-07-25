@@ -3,4 +3,6 @@ en:
     events:
       form:
         update: "Update event"
+        organizers: "Select members leading this project"
+    deprecated_fields: "The following fields are no longer in use"
     deprecated_page: "This page is not in use any more"
