@@ -31,13 +31,13 @@
       .col-lg-6.col-sm-12
         = f.input :image, as: :image_preview, input_html: {preview_version: :event_thumb}, label: 'Main image (will be fit into 800x377px)'
       .col-lg-6.col-sm-12.deprecated
-        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (300x180px, displayed in events list)'
+        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (not in use)'
     .row
       .col-lg-12
         = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #', class: 'form-control'
     .row
       .col-lg-12
-        = f.input :resume, label: 'Short teaser about the event (Markdown)', class: 'form-control'
+        = f.input :resume, label: 'Short, text-only teaser about the event (300 characters will be displayed in events listing, 100 characters in events slider)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue = t("event.about")
