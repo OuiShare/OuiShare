@@ -106,6 +106,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def has_home_thumb? picture
-    ['Project', 'Event'].include?(model.class.name)
+    ['Project', 'Event', 'Community'].include?(model.class.name)
   end
 end

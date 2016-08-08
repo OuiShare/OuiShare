@@ -31,6 +31,12 @@ section
             p.center.blue 
               = u.fname.to_s + " " +u.name.to_s    
 
+section
+  .container
+    .col-lg-6.col-lg-offset-3.col-sm-12
+      .row.center
+        = raw @current_community.embed_code_html
+
 - unless @community_events.empty?
 
   section

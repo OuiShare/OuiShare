@@ -3,27 +3,27 @@
   
   .row
     .col-md-6
-      = f.input :main_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'Community image'
+      = f.input :main_image, as: :image_preview, input_html: {preview_version: :home_thumb}, label: 'Community image'
     .col-md-6
-      = f.button :submit, t("admin.update_community"), class: 'btn btn-green btn-large'
-  .row
+      = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
+  .row.well.well-white
     .col-md-6
-      = f.association :region, collection: Region.where(language: @community.language)
       = f.input :name
+      = f.association :region, collection: Region.where(language: @community.language)
     .col-md-6
       = f.input :address, label: 'Full address (will be used on the map)'
     .col-md-6.deprecated
-      = f.input :link, label: 'Link to Facebook group (not displayed any more)'
-  .row
+      = f.input :link, label: 'Link to Facebook group (not displayed)'
+  .row.well
     .col-lg-12
       = f.input :text, label: 'About community text (Markdown)'
   .row
     .col-lg-12
-      h4 = t("admin.leading_connectors")
+      h3 = t(".leading_connectors")
       / = f.association :users, as: :check_boxes, :label_method => :full_name
       = f.association :users, as: :select, :label_method => :full_name
       / | Users
-      p = t("admin.leading_connectors_how")
+      p = t(".leading_connectors_how")
       = select :users, :community,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-community-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
       br
       br
@@ -37,22 +37,26 @@
       br
       br
   .row
+    .col-lg-12.well
+      p = t(".embed_code_how")
+      = f.input :embed_code_html, label: 'html only'
+  .row
     .col-lg-12
-      h4 = t("admin.community_members")
-      p = t("admin.community_members_how")
+      h3 = t(".community_members")
+      p.center = t(".community_members_how")
       br
       br
       br
       br
 
   .row
-    .col-lg-12  
+    .col-lg-12.well
 
-      h4 = t("admin.associated_events")
+      h3 = t(".associated_events")
       / = f.association :events, as: :check_boxes
       = f.association :events, as: :select
       / | Events
-      p = t("admin.associated_events_how")
+      p = t(".associated_events_how")
       = select :event, :community,  Event.all.collect {|e| [ e.name_with_date_and_language, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
       br
       br
@@ -68,10 +72,10 @@
       br
 
   .row
-    .col-lg-12  
-      h4 = t("admin.associated_projects")
+    .col-lg-12
+      h3 = t(".associated_projects")
       = f.association :projects, as: :check_boxes, :label_method => :name_with_date
   
   .row.center
     .col-lg-12
-      = f.button :submit, t("admin.update_community"), class: 'btn btn-green btn-large'
+      = f.button :submit, t(".update"), class: 'btn btn-green btn-large'

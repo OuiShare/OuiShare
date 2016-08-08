@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808143851) do
+ActiveRecord::Schema.define(version: 20160808163522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20160808143851) do
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "embed_code_html"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree

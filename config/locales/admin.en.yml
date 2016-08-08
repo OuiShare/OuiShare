@@ -6,19 +6,23 @@ en:
     view_profile: 'View my profile'
     edit_profile: 'Edit profile'
     admin: 'Admin'
-    leading_connectors: 'Leading Connectors'
-    leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
-    community_members: 'Community members'
-    community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
-    associated_events: 'Associated events'
-    associated_events_how: 'Select events from the list to display them on the community page'
-    associated_projects: 'Associated projects'
-    update_community: 'Update community'
     update_page: 'Update page'
     update: "Update"
     deprecated_fields: "The following fields are no longer in use"
     deprecated_page: "This page is not in use any more"
+    communities:
+      form:
+        associated_events: 'Associated events'
+        associated_events_how: 'Select events from the list to display them on the community page'
+        associated_projects: 'Associated projects'
+        community_members: 'Community members'
+        community_members_how: 'Ask your community members to add themselves by clicking JOIN on the community page!'
+        embed_code_how: "Embed code (html). You can add as many embedded items (social timelines, newsletter or event signups, or any other items) as you want."
+        leading_connectors: 'Leading Connectors'
+        leading_connectors_how: 'Select users from the list to display them as Connectors leading this community'
+        update: 'Update community'
     events:
       form:
         update: "Update event"
         organizers: "Select members leading this project"
+

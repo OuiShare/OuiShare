@@ -34,6 +34,7 @@ module Admin
       params.permit(community: [:name,
                                 :link,
                                 :text,
+                                :embed_code_html,
                                 :address,
                                 :latitude,
                                 :longitude,
