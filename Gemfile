@@ -66,7 +66,7 @@ gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 
 # Email/newsletter
-gem 'gibbon', '~> 1.1.6'
+gem 'gibbon', '1.1.5'
 gem 'feedjira'
 
 # Frontend stuff

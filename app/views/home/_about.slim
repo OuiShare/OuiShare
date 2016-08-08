@@ -2,7 +2,7 @@ section#about
   .container
     .row.center
       .col-lg-8.col-lg-offset-2
-        h1.about = t('home.ouishare_is')
+        h1.about = @what_is_section.description
         br
         br
 
@@ -13,7 +13,7 @@ section#about
       .col-lg-10.col-lg-offset-1  
         .col-md-3.col-sm-6
           .box.center
-            = link_to events_path do
+            = link_to @what_is_section.link1, target: "_blank"
               img.icon src="#{@what_is_section.image1}"
               h3 = @what_is_section.title1
               hr.blue.hr-low
@@ -21,7 +21,7 @@ section#about
               = @what_is_section.text1_html
         .col-md-3.col-sm-6
           .box.center
-            a href="https://www.loomio.org/g/inO27e3f/ouishare" target="_blank"
+            = link_to @what_is_section.link2, target: "_blank"
               img.icon src="#{@what_is_section.image2}"
               h3 = @what_is_section.title2
               hr.blue.hr-low
@@ -29,7 +29,7 @@ section#about
               = @what_is_section.text2_html
         .col-md-3.col-sm-6
           .box.center
-            a href="https://www.youtube.com/user/OuiShareTV" target="_blank"
+            = link_to @what_is_section.link3, target: "_blank"
               img.icon src="#{@what_is_section.image3}"
               h3 = @what_is_section.title3
               hr.blue.hr-low
@@ -37,7 +37,7 @@ section#about
               = @what_is_section.text3_html
         .col-md-3.col-sm-6
           .box.center
-            a href="http://ouiki.ouishare.net/index.php?title=Community" target="_blank"
+            = link_to @what_is_section.link4, target: "_blank"
               img.icon src="#{@what_is_section.image4}"
               h3 = @what_is_section.title4
               hr.blue.hr-low

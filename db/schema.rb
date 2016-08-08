@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130110654) do
+ActiveRecord::Schema.define(version: 20160808143851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1008,6 +1008,11 @@ ActiveRecord::Schema.define(version: 20151130110654) do
     t.text     "text2_html"
     t.text     "text3_html"
     t.text     "text4_html"
+    t.text     "description"
+    t.string   "link1"
+    t.string   "link2"
+    t.string   "link3"
+    t.string   "link4"
   end
 
   add_index "what_is_sections", ["language_id"], name: "index_what_is_sections_on_language_id", using: :btree

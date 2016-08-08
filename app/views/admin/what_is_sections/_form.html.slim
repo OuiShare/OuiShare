@@ -4,22 +4,28 @@
     = @what_is_section.language.name
 
   .col-lg-12
+    = f.input :description, as: :text, label: 'OuiShare description'
+  .col-lg-12
     = f.input :title
   div.col-lg-3.col-md-6
     = f.input :title1
     = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :link1, label: 'Link 1'
     = f.input :text1, label: 'Text 1 (Markdown)'
   div.col-lg-3.col-md-6
     = f.input :title2
     = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :link2, label: 'Link 2'
     = f.input :text2, label: 'Text 2 (Markdown)'
   div.col-lg-3.col-md-6
     = f.input :title3
     = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :link3, label: 'Link 3'
     = f.input :text3, label: 'Text 3 (Markdown)'
   div.col-lg-3.col-md-6
     = f.input :title4
     = f.input :image4, as: :image_preview, input_html: {preview_version: :thumb}
+    = f.input :link4, label: 'Link 4'
     = f.input :text4, label: 'Text 4 (Markdown)'
   .col-lg-12.center
     / = f.submit
