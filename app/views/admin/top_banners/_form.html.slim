@@ -16,30 +16,40 @@
         = f.input :image1, as: :image_preview, input_html: {preview_version: :thumb}
         = f.input :link1
         = f.input :link_text1
+        / = f.input :visible1, label: 'Visible'
+        br
     .col-lg-4.col-md-6
       .well.well-white
         h4 Slide 2
         = f.input :image2, as: :image_preview, input_html: {preview_version: :thumb}
         = f.input :link2
         = f.input :link_text2
+        = f.input :visible2, label: 'Visible'
+        br
     .col-lg-4.col-md-6
       .well
         h4 Slide 3
         = f.input :image3, as: :image_preview, input_html: {preview_version: :thumb}
         = f.input :link3
         = f.input :link_text3
+        = f.input :visible3, label: 'Visible'
+        br
     .col-lg-4.col-md-6
       .well.well-white
         h4 Slide 4
         = f.input :image4, as: :image_preview, input_html: {preview_version: :thumb}
         = f.input :link4
         = f.input :link_text4
+        = f.input :visible4, label: 'Visible'
+        br
     .col-lg-4.col-md-6
       .well
         h4 Slide 5
         = f.input :image5, as: :image_preview, input_html: {preview_version: :thumb}
         = f.input :link5
         = f.input :link_text5
+        = f.input :visible5, label: 'Visible'
+        br
   .row.center
       = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'
       / = f.submit
