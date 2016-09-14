@@ -25,15 +25,14 @@ section#hot
       .col-lg-12
         h2 = @hot_projects_section.title
         hr.hr-large.blue
+    .row.center
+      .col-lg-6.col-lg-offset-3.col-sm-12
+        = @hot_projects_section.text_html
+        .a.btn.btn-white-green.btn-large href="#{projects_path}" = t('pages.home.see_all_projects')
 
-        .col-lg-6.col-lg-offset-3.col-sm-12
-          = @hot_projects_section.text_html
-          p
-            = link_to t('pages.home.see_all_projects'), projects_path  
 
-
-    / br
-    / br
+    br
+    br
 
     .row
       .col-lg-10.col-lg-offset-1
