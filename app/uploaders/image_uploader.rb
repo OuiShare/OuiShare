@@ -17,7 +17,14 @@ class ImageUploader < CarrierWave::Uploader::Base
    process :resize_to_fit => [70, 70]
   end
 
+  version :normal do
+   process :resize_to_fit => [220, 220]
+  end
+
   # site image base size 1920x905px
+  # reduced size 800x377px fit
+  # list thumb size 540x255px fill
+
   version :top_banner, :if => :is_top_banner? do
     process :resize_to_fill => [1920, 905]
   end
@@ -43,7 +50,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :top_image, :if => :has_top_image? do
-    process :resize_to_fill => [970, 330]
+    process :resize_to_fill => [800, 377]
   end
 
   version :list_thumb, :if => :has_list_thumb? do
@@ -55,7 +62,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :top_internal, :if => :has_top_internal? do
-    process :resize_to_fill => [1800, 480]
+    process :resize_to_fill => [1600, 754]
   end
 
   version :donation, :if => :is_donation_page? do

@@ -27,8 +27,8 @@
             hr.hr-large.blue
             - if c.link.present?
               = link_to c.link, target: '_blank' do
-                = image_tag c.image.list_thumb
+                = image_tag c.image
             - else
-              = image_tag c.image.list_thumb
+              = image_tag c.image
             .markdown = c.text_html
             
