@@ -45,9 +45,9 @@ OuiShare::Application.configure do
 
   OuiShare::Application.config.middleware.use ExceptionNotification::Rack,
   :email => {
-    :email_prefix => "[OuiShareNet ERR] ",
+    :email_prefix => "[OuiShareNet dev ERR] ",
     :sender_address => %{"OuiShare Team" <no-reply@ouisharefest.com>},
-    :exception_recipients => %w{yann@kastelnik.com karol.arnaud@gmail.com auli@haldjas.org}
+    :exception_recipients => %w{auli@haldjas.org}
   }
   
 end
