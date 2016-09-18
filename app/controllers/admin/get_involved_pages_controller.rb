@@ -26,7 +26,7 @@ module Admin
 
     protected
     def permitted_params
-      params.permit(get_involved_page: [:main_text, :image, :title1, :text1, :link1, :link1_text, :title2, :text2, :link2, :link2_text, :title3, :text3, :link3, :link3_text, :title4, :text4, :link4, :link4_text, :title5, :text5, :link5, :link5_text, :title6, :text6, :link6, :link6_text, :title7, :text7, :link7, :link7_text])
+      params.permit(get_involved_page: [:main_text, :image, :title1, :text1, :link1, :link1_text, :title2, :text2, :link2, :link2_text, :title3, :text3, :link3, :link3_text, :title4, :text4, :link4, :link4_text, :title5, :text5, :link5, :link5_text, :title6, :text6, :link6, :link6_text, :title7, :text7, :link7, :link7_text, :image1, :image2, :image3, :image4, :image5, :image6, :image7])
     end
 
     def resource

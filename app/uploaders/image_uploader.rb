@@ -17,6 +17,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    process :resize_to_fit => [70, 70]
   end
 
+  # site image base size 1920x905px
   version :top_banner, :if => :is_top_banner? do
     process :resize_to_fill => [1920, 905]
   end
@@ -91,7 +92,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def has_list_thumb? picture
-    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service', 'Cocreation'].include?(model.class.name)
+    ['Project', 'Event', 'Activity', 'FundingInfo', 'Research', 'Service', 'Cocreation', 'GetInvolvedPage'].include?(model.class.name)
   end
 
   def is_partner? picture

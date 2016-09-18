@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914040316) do
+ActiveRecord::Schema.define(version: 20160917071046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -465,6 +465,13 @@ ActiveRecord::Schema.define(version: 20160914040316) do
     t.text     "text5_html"
     t.text     "text6_html"
     t.text     "text7_html"
+    t.string   "image1"
+    t.string   "image2"
+    t.string   "image3"
+    t.string   "image4"
+    t.string   "image5"
+    t.string   "image6"
+    t.string   "image7"
   end
 
   add_index "get_involved_pages", ["language_id"], name: "index_get_involved_pages_on_language_id", using: :btree

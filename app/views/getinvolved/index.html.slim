@@ -12,38 +12,52 @@
   section#grid
     .container
       .col-lg-10.col-lg-offset-1.activities.get-involved
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title1
-          .markdown = @get_involved_page.text1_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title2
-          .markdown = @get_involved_page.text2_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title3
-          .markdown = @get_involved_page.text3_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title4
-          .markdown = @get_involved_page.text4_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title5
-          .markdown = @get_involved_page.text5_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title6
-          .markdown = @get_involved_page.text6_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
-        .col-md-6.inline.item
-          h2 = @get_involved_page.title7
-          .markdown = @get_involved_page.text7_html
-          .row.center
-            a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
+        - unless @get_involved_page.link1_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title1
+            img src="#{@get_involved_page.image1.list_thumb}"
+            .markdown = @get_involved_page.text1_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link1}" = @get_involved_page.link1_text
+        - unless @get_involved_page.link2_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title2
+            img src="#{@get_involved_page.image2.list_thumb}"
+            .markdown = @get_involved_page.text2_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link2}" = @get_involved_page.link2_text
+        - unless @get_involved_page.link3_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title3
+            img src="#{@get_involved_page.image3.list_thumb}"
+            .markdown = @get_involved_page.text3_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link3}" = @get_involved_page.link3_text
+        - unless @get_involved_page.link4_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title4
+            img src="#{@get_involved_page.image4.list_thumb}"
+            .markdown = @get_involved_page.text4_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link4}" = @get_involved_page.link4_text
+        - unless @get_involved_page.link5_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title5
+            img src="#{@get_involved_page.image5.list_thumb}"
+            .markdown = @get_involved_page.text5_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link5}" = @get_involved_page.link5_text
+        - unless @get_involved_page.link6_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title6
+            img src="#{@get_involved_page.image6.list_thumb}"
+            .markdown = @get_involved_page.text6_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link6}" = @get_involved_page.link6_text
+        - unless @get_involved_page.link7_text.blank?
+          .col-md-6.inline.item
+            h2 = @get_involved_page.title7
+            img src="#{@get_involved_page.image7.list_thumb}"
+            .markdown = @get_involved_page.text7_html
+            .row.center
+              a.btn.get-involved-btn.uppercase href="#{@get_involved_page.link7}" = @get_involved_page.link7_text
