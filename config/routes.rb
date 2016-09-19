@@ -24,6 +24,7 @@ OuiShare::Application.routes.draw do
       resources :articles_sections
       resources :take_part_sections
       resources :partners
+      resources :navmap
       resources :about
       resources :projects do
         member do
@@ -109,6 +110,7 @@ OuiShare::Application.routes.draw do
     get 'events' => 'events#index'
     get 'activities' => 'activities#index'
     get 'missions' => 'home#missions'
+    get 'navmap' => 'home#navmap'
     get 'governances' => 'governances#index'
     get 'governance_pages' => 'home#governance_pages'
     get 'values' => 'values#index'

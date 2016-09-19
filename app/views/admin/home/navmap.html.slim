@@ -1,0 +1,119 @@
+.container#admin
+  div.row
+    div.col-lg-12
+      h2.subheader Navbar as a page
+      ul
+
+        li
+          a href="#{admin_home_path}" Home
+          ul
+            li
+              a href="#{admin_missions_path}" = t('menu.about_us')
+              ul
+                li
+                  a href="#{admin_activities_path}" Activities
+            li = t('menu.story')
+              ul
+                li
+                  a href="#{admin_timelines_path}" Timelines            
+            li
+              a href="#{admin_value_pages_path}" = t('menu.values')
+              ul
+                li
+                  a href="#{admin_values_path}" Values
+            li
+              a href="#{admin_collaborative_economy_pages_path}" = t('menu.collaborative_economy')            
+            li
+              = link_to t('menu.organization'), admin_organization_pages_path
+            li
+              = link_to t('menu.team'), admin_team_pages_path
+            li
+              = link_to t('menu.advisors'), admin_advisors_pages_path
+
+        li
+          a href="#{admin_community_pages_path}" = t('menu.community')
+          ul
+            li
+              a href="#{admin_communities_path}" = t('menu.local_communities')
+            li
+              = link_to 'Get Involved Page', admin_get_involved_pages_path             
+            li
+              a href="#{admin_users_pages_path}" = t('menu.users')
+            li
+              a href="#{admin_alumni_pages_path}" = t('menu.alumni')
+            li
+              a href="#{admin_regions_path}" Regions
+            li
+              a href="#{admin_expert_groups_pages_path}" Knowledge groups page
+              ul
+                li
+                  a href="#{admin_expert_groups_path}" = t('menu.knowledge_groups')
+
+        li
+          a href="#{admin_events_path}" = t('menu.events')
+
+        li
+          a href="#{admin_projects_path}" = t('menu.projects')
+          ul
+            li
+              a href="#{admin_research_pages_path}" = t('menu.research_and_publications')
+              ul
+                li
+                  a href="#{admin_researches_path}" Researches 
+
+        li
+          a href="#{admin_cocreation_pages_path}" = t('media.title')
+          ul
+            li
+              a href="#{admin_cocreations_path}" Media items          
+           
+
+        li
+          a Footer
+          ul
+            li
+              = link_to 'Donation Page', admin_donation_pages_path            
+            li
+              = link_to 'Get Involved Page', admin_get_involved_pages_path            
+            li.divider ------
+            li
+              = link_to t('footer.press_room'), admin_press_room_pages_path
+            li
+              a href="#{admin_workus_pages_path}" = t('footer.workus')
+              ul
+                li
+                  a href="#{admin_services_path}" Services
+            li = t('footer.globalpartners')
+            li
+              = link_to t('footer.contact'), admin_contact_pages_path
+            li
+              a href="#{admin_faq_pages_path}" = t('footer.faqs')
+              ul
+                li
+                  a href="#{admin_faq_questions_path}" Questions
+            li
+              = link_to 'Terms & Service', admin_terms_pages_path            
+
+
+
+        li
+          a Meta
+          ul
+            li
+              a href="#{admin_users_path}" Users
+            li
+              = link_to "Languages", admin_languages_path
+            li.divider ------
+            li Extinct pages:
+            li
+              = link_to 'Knowledge', admin_knowledge_pages_path 
+            li
+              = link_to 'Registration Page', admin_registrations_pages_path
+            li
+              = link_to 'Testimonials', admin_testimonials_path
+            li
+              = link_to t('menu.ouishare_everywhere'), admin_live_pages_path
+
+        li.right
+          = link_to t('admin.logout'), destroy_user_session_path, method: :delete
+

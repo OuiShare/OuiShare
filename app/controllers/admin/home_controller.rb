@@ -47,5 +47,8 @@ module Admin
 
     def contact_pages
     end
+
+    def navmap
+    end
   end
 end
