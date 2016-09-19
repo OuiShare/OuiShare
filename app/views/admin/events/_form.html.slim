@@ -28,10 +28,12 @@
       .col-lg-6.col-sm-12
         = f.input :time
     .row
-      .col-lg-6.col-sm-12
-        = f.input :image, as: :image_preview, input_html: {preview_version: :event_thumb}, label: 'Main image (will be fit into 800x377px)'
-      .col-lg-6.col-sm-12.deprecated
-        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (not in use)'
+      br
+      br
+      .col-lg-5.col-sm-12
+        = f.input :image, as: :image_preview, input_html: {preview_version: :event_page_thumb}, label: 'Main image (will be fit into 800x377px):'
+      .col-lg-5.col-lg-offset-1.col-sm-12
+        = f.input :home_image, as: :image_preview, input_html: {preview_version: :list_thumb}, label: 'List Image, shown on events grid (cropped to 540x255px):'
     .row
       .col-lg-12
         = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #', class: 'form-control'

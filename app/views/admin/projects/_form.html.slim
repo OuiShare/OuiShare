@@ -22,10 +22,10 @@
       = f.input :name, label: 'Project name'
       = f.input :resume, label: 'Short teaser about the project (Markdown)'
       = f.input :tag_list, as: :text, label: 'Tags, separated by comma and without #'
-    div.col-lg-5
-      = f.input :image, as: :image_preview, input_html: {preview_version: :project_thumb}, label: 'Main image (will be fit into 800x377px)'
-      div.deprecated
-        = f.input :home_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'List Image (not in use)'
+    div.col-lg-5.well.well-white
+      = f.input :image, as: :image_preview, input_html: {preview_version: :project_page_thumb}, label: 'Main image (will be fit into 800x377px):'
+      div
+        = f.input :home_image, as: :image_preview, input_html: {preview_version: :list_thumb}, label: 'List Image, shown on projects grid (cropped to 540x255px):'
   div.row
     div.col-lg-12
       h3.blue = t("project.organizers")
