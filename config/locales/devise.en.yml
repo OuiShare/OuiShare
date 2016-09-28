@@ -14,6 +14,9 @@ en:
         connect_your_provider: "Connect your %{provider_name}"
         disconnect_from_provider: "Disconnect from %{provider_name}"
         back: "Back"
+        profile_visibility: "Profile visibility"
+        profile_visible: "My profile is publicly visible on OuiShare website"
+        profile_hide: "Please uncheck the box if you wish to hide your profile from website visitors"
         update: "Update my profile"
         are_you_sure: "Are you sure?"
       new:

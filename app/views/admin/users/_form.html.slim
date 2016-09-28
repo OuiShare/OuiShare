@@ -28,18 +28,29 @@
   div.row
     div.col-lg-6    
       = f.input :tag_list, label: 'Interests (free tags, separated by comma and without #)'
+      br
+      br
     div.col-lg-6
       
   div.row
-    div.col-lg-12
+    div.col-lg-12.well
       h4 User rights (admin)
-  div.row
-    div.col-lg-4
-      = f.input :profile_type, label: 'Profile type (user class)'
-    div.col-lg-4
-      = f.input :admin
-    div.col-lg-4
-      = f.input :show_order, label: 'Display order (on Connectors list)'
+      .row
+        .col-lg-4
+          = f.input :profile_type, label: 'Profile type (user class)'
+        .col-lg-4
+          = f.input :admin
+        .col-lg-4
+          = f.input :show_order, label: 'Display order (on Connectors list)'
+  .row.well
+    .col-lg-12
+      h4 = t(".profile_visibility")
+    .col-xs-1
+      = f.check_box :visible
+    .col-xs-11
+      p = t(".profile_visible")
+      em = t(".profile_hide")
+
   div.row
     div.col-lg-12
       = f.submit
