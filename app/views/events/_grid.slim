@@ -4,7 +4,7 @@ section#grid
       - @events.each do |e|
         .event.col-md-6.inline  
           a href="#{event_path(e)}"
-            h2 = e.title
+            h3 = e.title
             hr.hr-large.blue
             .thumb.center
               = link_to e
