@@ -9,15 +9,17 @@
         table.table
           tr
             th Name
+            th Date
             th Image
             th Resume
             / th Info
             th
             th
-          - l.events.each do |e|
+          - l.events.order('date_start DESC').each do |e|
             tr
               td = e.title
-              td = image_tag(e.image.thumb.url)
+              td = e.date_start
+              td.image = image_tag(e.image.thumb.url)
               td = truncate(e.resume)
               / td = truncate(e.info)
               td = link_to "Edit", edit_admin_language_event_path(l, e)

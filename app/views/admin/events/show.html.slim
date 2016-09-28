@@ -72,6 +72,9 @@
                     .event-slide class=('event-inactive' if e.over?)
                       .event-slide-month
                         = I18n.t("date.month_names")[e.date_start.month]
+                        - if !e.over?
+                          = " "
+                          = e.date_start.day
                       hr.event-slide-hr                
                       
                       .event-slide-title
