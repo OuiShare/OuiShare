@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   validates_inclusion_of :gender, :in => 0..2
 
   before_validation do
-    add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url'])
+    add_url_protocol_to(['facebook_url', 'twitter_url', 'google_plus_url', 'github_url', 'linkedin_url', 'organization_url'])
   end
 
   mount_uploader :image, AvatarUploader
