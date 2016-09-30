@@ -64,19 +64,24 @@
                     = raw("<div value='"+ lang +"' class='contact-language-value'><span class='remove-contact-language'>x</span>" + lang + "</div>")
             .row
               .col-lg-6.col-sm-12
-                = f.input :facebook_url
-              .col-lg-6.col-sm-12
-                = f.input :twitter_url
-            .row
-              .col-lg-6.col-sm-12
-                = f.input :google_plus_url
-              .col-lg-6.col-sm-12
-                = f.input :github_url
-            .row
-              .col-lg-6.col-sm-12
-                = f.input :linkedin_url
-              .col-lg-6.col-sm-12
                 = f.input :email_address, label: "Email address to display on profile"
+              .col-lg-6.col-sm-12
+                = f.input :twitter_url, label: "Twitter URL"
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :google_plus_url, label: "Google+ URL"
+              .col-lg-6.col-sm-12
+                = f.input :github_url, label: "GitHub URL"
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :linkedin_url, label: "LinkedIn URL"
+              .col-lg-6.col-sm-12
+                = f.input :facebook_url, label: "Facebook profile URL"
+            .row
+              .col-lg-6.col-sm-12
+                = f.input :ostalents_url, label: "OuiShare Talents URL"
+              .col-lg-6.col-sm-12
+
             .row
               .col-lg-12
                 h4 = t(".interests_title")
@@ -99,15 +104,15 @@
                 = f.input :password, :autocomplete => "off", :required => false
               .col-lg-6.col-sm-12
                 = f.input :password_confirmation, :required => false
-            .row
-              .col-lg-12.well
-                h4 = t(".profile_visibility")
-                .row
-                  .col-xs-1
-                    = f.check_box :visible
-                  .col-xs-11
-                    p = t(".profile_visible")
-                    em = t(".profile_hide")
+            / .row
+            /   .col-lg-12.well
+            /     h4 = t(".profile_visibility")
+            /     .row
+            /       .col-xs-1
+            /         = f.check_box :visible
+            /       .col-xs-11
+            /         p = t(".profile_visible")
+            /         em = t(".profile_hide")
             .row.center
               = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
 

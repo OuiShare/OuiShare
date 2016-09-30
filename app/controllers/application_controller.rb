@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :name, :country, :language_id, :fname, :gender, :city, :occupation_id, :organization_name, :organization_url, :user_source_id, :birthday, :terms_of_service, {topic_ids: []})}
-    devise_parameter_sanitizer.for(:account_update) << [:fname, :name, :email, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email_address, :password, :password_confirmation, :bio, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :profile_type, :tag_list, :skill_list, :image, :title, :contact_languages, {sector_ids: []}, {:topic_ids => []}, :birthday]
+    devise_parameter_sanitizer.for(:account_update) << [:fname, :name, :email, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email_address, :password, :password_confirmation, :bio, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :ostalents_url, :profile_type, :tag_list, :skill_list, :image, :title, :contact_languages, {sector_ids: []}, {:topic_ids => []}, :birthday]
   end
 
   def set_locale

@@ -45,7 +45,7 @@ module Admin
 
     protected
     def permitted_params
-      params.require(:user).permit(:fname, :name, :slug, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :skills, :tag_list, :profile_type, :admin, :show_order, :contact_languages, :visible)
+      params.require(:user).permit(:fname, :name, :slug, :email_address, :country, :language_id, :occupation_id, :organization_url, :organization_name, :gender, :city, :email, :title, :bio, :image, :facebook_url, :twitter_url, :google_plus_url, :github_url, :linkedin_url, :skills, :tag_list, :profile_type, :admin, :show_order, :contact_languages, :visible, :ostalents_url)
     end
   end
 end

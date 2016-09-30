@@ -32,28 +32,32 @@
         ul.list-unstyled.center
           - if @user.email_address.present?
             li style="display: inline-block"
-              a.email href="mailto:#{@user.email_address}"
+              a.email href="mailto:#{@user.email_address}" title="E-mail"
                 i.fa.fa-envelope-o.fa-special
           - if @user.facebook_url.present?
             li style="display: inline-block"
-              a.facebook href=@user.facebook_url
+              a.facebook href=@user.facebook_url title="Facebook profile"
                 i.fa.fa-facebook.fa-special
           - if @user.twitter_url.present?
             li style="display: inline-block"
-              a.twitter href=@user.twitter_url
+              a.twitter href=@user.twitter_url title="Twitter"
                 i.fa.fa-twitter.fa-special
           - if @user.google_plus_url.present?
             li style="display: inline-block"
-              a.plus href=@user.google_plus_url
+              a.plus href=@user.google_plus_url title="Google+"
                 i.fa.fa-google-plus.fa-special
           - if @user.github_url.present?
             li style="display: inline-block"
-              a.github href=@user.github_url
+              a.github href=@user.github_url title="GitHub"
                 i.fa.fa-github-alt.fa-special
           - if @user.linkedin_url.present?
             li style="display: inline-block"
-              a.linkedin href=@user.linkedin_url
+              a.linkedin href=@user.linkedin_url title="LinkedIn"
                 i.fa.fa-linkedin.fa-special
+          - if @user.ostalents_url.present?
+            li style="display: inline-block"
+              a.ostalents href=@user.ostalents_url title="OuiShare Talents"
+                i.fa.fa-star-half-o.fa-special
   .row.section
     .container
       .col-lg-6.col-lg-offset-3.col-sm-12
