@@ -115,8 +115,8 @@
             li
               = link_to "Languages", admin_languages_path
             li.divider
-            li 
-              a Extinct pages:
+            li
+              a.red Extinct pages:
             li
               = link_to 'Knowledge', admin_knowledge_pages_path 
             li
@@ -125,6 +125,14 @@
               = link_to 'Testimonials', admin_testimonials_path
             li
               = link_to t('menu.ouishare_everywhere'), admin_live_pages_path
+            li
+              = link_to 'funding_infos', admin_funding_infos_path
+            li
+              = link_to 'governances', admin_governances_path
+            li
+              = link_to 'funded_pages', admin_funded_pages_path
+            li
+              = link_to 'governance_pages', admin_governance_pages_path
 
         li.right
           = link_to t('admin.logout'), destroy_user_session_path, method: :delete
