@@ -54,24 +54,23 @@
     div.col-lg-12
       h3.blue = t("project.about")
       = f.input :info, label: 'More information (Long description, Markdown)'
-    div.col-lg-12.deprecated
-      = f.input :join_us_text, label: 'Join Us Text (Old field, not displayed)'
-      / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service1_link
-      / = f.input :service1_title
-      / = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service2_link
-      / = f.input :service2_title
-      / = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
-      / = f.input :service3_link
-      / = f.input :service3_title
-      / = f.input :title1
-      / = f.input :text1, label: 'Text 1 (Markdown)'
-      / = f.input :title2
-      / = f.input :text2, label: 'Text 2 (Markdown)'
+    / div.col-lg-12.deprecated
+    /   = f.input :join_us_text, label: 'Join Us Text (Old field, not displayed)'
+    /   / = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}
+    /   / = f.input :service1_link
+    /   / = f.input :service1_title
+    /   / = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}
+    /   / = f.input :service2_link
+    /   / = f.input :service2_title
+    /   / = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}
+    /   / = f.input :service3_link
+    /   / = f.input :service3_title
+    /   / = f.input :title1
+    /   / = f.input :text1, label: 'Text 1 (Markdown)'
+    /   / = f.input :title2
+    /   / = f.input :text2, label: 'Text 2 (Markdown)'
 
 
   div.row.center
     div.col-lg-12
-      / = f.submit
       = f.button :submit, t("admin.update"), class: 'btn btn-green btn-large'

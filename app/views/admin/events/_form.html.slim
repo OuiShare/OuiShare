@@ -50,9 +50,9 @@
         h3.blue = t("event.join")
         hr.hr-large.blue 
         = f.input :join_us_code_html, label: 'Join Event Integration code (html)', class: 'form-control'
-    .row.deprecated
-      .col-lg-12    
-        = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)', class: 'form-control'
+    / .row.deprecated
+    /   .col-lg-12    
+    /     = f.input :join_us_text_html, label: 'Join Us Text (Markdown, Deprecated)', class: 'form-control'
     .row
       .col-lg-12
         h3.blue = t("event.organizers")
@@ -76,25 +76,25 @@
         br
         br
  
-    .row.deprecated
-      .col-lg-12
-        h3 = t('admin.deprecated_fields')
-      .col-lg-4
-        = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
-        = f.input :service1_link, label: 'External registration 1 link'
-        = f.input :service1_title, label: 'External registration 1 title'
-      .col-lg-4
-        = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 2 image'
-        = f.input :service2_link, label: 'External registration 2 link'
-        = f.input :service2_title, label: 'External registration 2 title'
-      .col-lg-4
-        = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 3 image'
-        = f.input :service3_link, label: 'External registration 3 link'
-        = f.input :service3_title, label: 'External registration 3 title'
-        / = f.input :title1, label: 'Title 1 (Deprecated)'
-        / = f.input :text1, label: 'Text 1 (Deprecated)'
-        / = f.input :title2, label: 'Title 2 (Deprecated)'
-        / = f.input :text2, label: 'Text 2 (Deprecated)'
+    / .row.deprecated
+    /   .col-lg-12
+    /     h3 = t('admin.deprecated_fields')
+    /   .col-lg-4
+    /     = f.input :service1_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 1 image'
+    /     = f.input :service1_link, label: 'External registration 1 link'
+    /     = f.input :service1_title, label: 'External registration 1 title'
+    /   .col-lg-4
+    /     = f.input :service2_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 2 image'
+    /     = f.input :service2_link, label: 'External registration 2 link'
+    /     = f.input :service2_title, label: 'External registration 2 title'
+    /   .col-lg-4
+    /     = f.input :service3_image, as: :image_preview, input_html: {preview_version: :thumb}, label: 'External registration service 3 image'
+    /     = f.input :service3_link, label: 'External registration 3 link'
+    /     = f.input :service3_title, label: 'External registration 3 title'
+    /     / = f.input :title1, label: 'Title 1 (Deprecated)'
+    /     / = f.input :text1, label: 'Text 1 (Deprecated)'
+    /     / = f.input :title2, label: 'Title 2 (Deprecated)'
+    /     / = f.input :text2, label: 'Text 2 (Deprecated)'
 
     .row.center
         = f.button :submit, t("event.update"), class: 'btn btn-green btn-large'
