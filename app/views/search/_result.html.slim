@@ -30,6 +30,23 @@
                   br
                   = truncate(event.resume, :omission => "...", :length => 250)
 
+  - if @result[:communities] and @result[:communities].size > 0
+    h3 Communities
+    .row
+      ul
+        - @result[:communities].each do |community|
+          / li
+          /   = community.name
+          li
+            .row.col-lg-12.col-lg-offset-1
+              .col-lg-2
+                / = image_tag "#{community.image.home_thumb}", :class => "home-pictures"
+              .col-lg-8
+                = link_to community.name, community_path(community)
+                br
+                = truncate(community.text, :omission => "...", :length => 250)
+
+
   - if @result[:projects] and @result[:projects].size > 0
     h3 Projects
     .row

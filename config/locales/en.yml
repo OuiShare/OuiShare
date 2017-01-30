@@ -179,6 +179,7 @@ en:
         users: 'Members'
         events: 'Events'
         projects: 'Projects'
+        communities: 'Communities'
       autocomplete:
         no_entry: 'No entry found'
 

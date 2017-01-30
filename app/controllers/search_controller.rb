@@ -17,6 +17,8 @@ class SearchController < ApplicationController
           }
           @result[:projects] = project_search(@query_tags)
           @result[:users] = user_search(@query_tags)
+        when 'communities'
+          @result[:communities] = community_search(@query_tags)
         when 'events'
           @result[:events] = {
             past: event_search(@query_tags, nil, Time.zone.now),
@@ -47,6 +49,7 @@ class SearchController < ApplicationController
   def init_search_types
     @search_types = {
       all: I18n.t('pages.search.types.all'),
+      communities: I18n.t('pages.search.types.communities'),
       users: I18n.t('pages.search.types.users'),
       events: I18n.t('pages.search.types.events'),
       projects: I18n.t('pages.search.types.projects')
@@ -63,11 +66,13 @@ class SearchController < ApplicationController
 
     case type
     when 'all'
-      result += event_autocompletion(term) + project_autocompletion(term) + user_autocompletion(term)
+      result += event_autocompletion(term) + community_autocompletion(term) + project_autocompletion(term) + user_autocompletion(term)
     when 'events'
       result += event_autocompletion(term)
     when 'projects'
       result += project_autocompletion(term)
+    when 'communities'
+      result += community_autocompletion(term)
     when 'users'
       result += user_autocompletion(term)
     end
@@ -128,6 +133,33 @@ class SearchController < ApplicationController
   def search_projects_by_field(field, limit = nil)
     Project.ransack(name_cont: field).result(distinct: true).order(:name).limit(limit)
   end
+
+
+  ### Communities ###
+
+  def community_autocompletion(term)
+    Community.ransack(name_cont: term).result(distinct: true).order(:name).map { |community| community.name }
+  end
+
+  def community_search(tags)
+    # communities_tags = search_communities_by_tag(tags)
+    communities_fields = []
+    tags.each do |tag|
+      communities_fields += search_communities_by_field(tag)
+    end
+
+    # (communities_tags + communities_fields).uniq.sort_by(&:name)
+    communities_fields.uniq.sort_by(&:name)
+  end
+
+  def search_communities_by_tag(tags)
+    Community.tagged_with(tags)
+  end
+
+  def search_communities_by_field(field, limit = nil)
+    Community.ransack(name_cont: field).result(distinct: true).order(:name).limit(limit)
+  end
+
 
   ### Users ###
 

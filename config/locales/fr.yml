@@ -74,6 +74,7 @@ fr:
         users: 'Membres'
         events: 'Evénements'
         projects: 'Projets'
+        communities: 'Communautés'
       autocomplete:
         no_entry: 'Aucune entrée trouvée'
   newsletter:
