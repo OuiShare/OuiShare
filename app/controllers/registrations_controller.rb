@@ -22,11 +22,15 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    ids_userssource = [1,2,3,5,8,4,6]
-    @sources = UserSource.all
-    @sources.each {|sources| ids_userssource[sources.id] = sources}
-    @user_sources = [UserSource.find(1).id,UserSource.find(2).id,UserSource.find(3).id,UserSource.find(5).id,UserSource.find(8).id,UserSource.find(4).id,UserSource.find(6).id].collect{ |id| ids_userssource[id] }
-    super
+    if verify_rucaptcha?(params[:user])
+      ids_userssource = [1,2,3,5,8,4,6]
+      @sources = UserSource.all
+      @sources.each {|sources| ids_userssource[sources.id] = sources}
+      @user_sources = [UserSource.find(1).id,UserSource.find(2).id,UserSource.find(3).id,UserSource.find(5).id,UserSource.find(8).id,UserSource.find(4).id,UserSource.find(6).id].collect{ |id| ids_userssource[id] }
+      super
+    else
+      redirect_to register_path, alert: 'Please fill in captcha'
+    end
   end
 
   def update

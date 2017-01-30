@@ -14,6 +14,7 @@ OuiShare::Application.routes.draw do
     get code, :to => "errors#show", :code => code
   end
 
+  mount RuCaptcha::Engine => "/rucaptcha"
 
   namespace :admin do
     resources :languages do

@@ -45,6 +45,8 @@ gem 'tagsinput-rails'
 # Geolocation
 gem 'geocoder'
 
+# Captcha
+gem 'rucaptcha'
 
 # Notification Exception
 gem 'exception_notification'

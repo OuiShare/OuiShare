@@ -9,8 +9,8 @@ class CommunitiesController < ApplicationController
     language = Language.where(name:'English').first
     @community_page = language.community_page || CommunityPage.new
     @communities = language.communities
-    @regions = Region.where(language: language)
-    @communities_for_select = Community.where(language: language)
+    @regions = Region.where(language: language).order(title: :asc)
+    @communities_for_select = Community.where(language: language).order(name: :asc)
   end
 
   def show
@@ -80,7 +80,8 @@ class CommunitiesController < ApplicationController
   private
 
   def set_community
-    @current_community = Community.find(params[:id])
+    # @current_community = Community.find(params[:id])
+    @current_community = Community.friendly.find(params[:id])
   end
 
   def community_params

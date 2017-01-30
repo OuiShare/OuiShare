@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930190207) do
+ActiveRecord::Schema.define(version: 20170130192908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,9 +160,11 @@ ActiveRecord::Schema.define(version: 20160930190207) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "embed_code_html"
+    t.string   "slug"
   end
 
   add_index "communities", ["language_id"], name: "index_communities_on_language_id", using: :btree
+  add_index "communities", ["slug"], name: "index_communities_on_slug", unique: true, using: :btree
 
   create_table "communities_events", force: true do |t|
     t.integer "community_id"

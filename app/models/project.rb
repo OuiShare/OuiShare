@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   include Shared::BeautifulText
-  extend FriendlyId
+
   belongs_to :language
   has_and_belongs_to_many :users
   has_and_belongs_to_many :communities
@@ -9,8 +9,6 @@ class Project < ActiveRecord::Base
   ranks :row_order
 
   beautiful_text_for [:resume, :info, :join_us_text, :text1, :text2]
-
-  friendly_id :name, use: [:slugged, :history, :finders]
 
   mount_uploader :image, ImageUploader
   mount_uploader :home_image, ImageUploader
@@ -23,6 +21,16 @@ class Project < ActiveRecord::Base
   scope :visible, ->{ where(visible: true) }
   scope :visible_on_menu, ->{ where(display_on_menu: true) }
   scope :featured, ->{ where(featured: true).order('created_at desc').limit(3) }
+
+  extend FriendlyId
+  friendly_id :slug_candidates, use: [:slugged, :history, :finders]
+  
+  def slug_candidates
+    [
+      :name,
+      [:name, :id],
+    ]
+  end
 
   def featured?
     featured

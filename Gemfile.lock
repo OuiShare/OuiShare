@@ -326,6 +326,8 @@ GEM
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
     ruby-hmac (0.4.0)
+    rucaptcha (2.0.0)
+      railties (>= 3.2)
     sass (3.4.5)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -454,6 +456,7 @@ DEPENDENCIES
   rmagick (= 2.15.3)
   routing-filter (~> 0.4.0.pre)
   rspec-rails
+  rucaptcha
   sass (= 3.4.5)
   sass-rails (= 4.0.1)
   shoulda-matchers
@@ -467,3 +470,6 @@ DEPENDENCIES
   thin
   uglifier
   will_paginate (~> 3.0.7)
+
+BUNDLED WITH
+   1.13.6

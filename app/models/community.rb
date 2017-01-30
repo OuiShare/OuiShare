@@ -16,16 +16,16 @@ class Community < ActiveRecord::Base
   # has_many :communities_users
   #has_many :users, through: :communities_users
  
-  # extend FriendlyId
-  # friendly_id :slug_candidates, use: :slugged
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
   
-  # def slug_candidates
-  #   [
-  #     :name,
-  #     [:name, :region_id],
-  #     [:name, :region_id, :id],
-  #   ]
-  # end
+  def slug_candidates
+    [
+      :name,
+      [:name, :region_id],
+      [:name, :region_id, :id],
+    ]
+  end
   mount_uploader :main_image, ImageUploader
 
 

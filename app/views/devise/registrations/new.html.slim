@@ -111,10 +111,17 @@ section#signup
                   = render "devise/shared/links"
 
                 br
+
                 .row
                   = f.check_box :terms_of_service, label: true, :style => "margin-right:5px;", :required => true
                   = f.label :terms_of_service, "I consent with and wish to support the OuiShare mission and values."
                 br
+
+                .row
+                  .col-lg-6.col-lg-offset-3
+                    = rucaptcha_input_tag(class: 'form-control', placeholder: 'Input Captcha')
+                    = rucaptcha_image_tag(alt: 'Captcha')
+
 
                 .row.center
                   = f.button :submit, t(".sign_up_submit"), class: 'btn btn-green btn-large'
