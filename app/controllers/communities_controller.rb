@@ -20,7 +20,7 @@ class CommunitiesController < ApplicationController
   end
 
   def join_us
-    community = Community.find(params[:community_id])
+    community = Community.friendly.find(params[:community_id])
     user = current_user
   end
 
@@ -51,7 +51,7 @@ class CommunitiesController < ApplicationController
   end
 
   def get_community_partial
-    community = Community.find(params[:community_id])
+    community = Community.friendly.find(params[:community_id])
     users = community.users
     render partial: 'communities/community', locals:{community: community}
   end

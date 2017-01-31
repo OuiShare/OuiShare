@@ -107,6 +107,17 @@
         /         button.btn#search_submit type="submit"
         /           i.fa.fa-search
 
+
+        / - a = ['Orange', 'Yellow', 'Blue', 'Orange', 'Yellow', 'Blue', 'Orange', 'Yellow', 'Blue']
+        / - order_array = ['Yellow', 'Blue']
+        / - x = a.sort_by { |arr| order_array.index(arr }
+        / - byebug
+
+        / - order_array = ['EN', 'FR', 'ES', 'IT']
+        / - ordered_languages = Language.visible.sort_by { |arr| arr }
+        
+
+
         - Language.visible.each do |l|
           - if l.slug == I18n.locale.to_s
             li.dropdown.lang-dropdown

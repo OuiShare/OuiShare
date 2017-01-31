@@ -1,5 +1,6 @@
 class Community < ActiveRecord::Base
   include Shared::BeautifulText
+
   belongs_to :language
   belongs_to :region
   has_and_belongs_to_many :users
@@ -17,7 +18,7 @@ class Community < ActiveRecord::Base
   #has_many :users, through: :communities_users
  
   extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: [:slugged, :finders]
   
   def slug_candidates
     [
@@ -26,6 +27,7 @@ class Community < ActiveRecord::Base
       [:name, :region_id, :id],
     ]
   end
+  
   mount_uploader :main_image, ImageUploader
 
 
