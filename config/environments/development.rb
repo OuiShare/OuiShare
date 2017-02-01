@@ -33,15 +33,16 @@ OuiShare::Application.configure do
   # number of complex assets.
   config.assets.debug = false
 
-  config.action_mailer.default_url_options = {:host => 'ouishare.net'}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => ENV['SMTP_ADDRESS'],
-    :port    => 25,
-    :domain  => ENV['SMTP_DOMAIN'],
-    :username => ENV['SMTP_USERNAME'],
-    :password => ENV['SMTP_PASSWORD']
-  }
+  #config.action_mailer.default_url_options = {:host => 'ouishare.net'}
+  #config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #  :address => ENV['SMTP_ADDRESS'],
+  #  :port    => 25,
+  #  :domain  => ENV['SMTP_DOMAIN'],
+  #  :username => ENV['SMTP_USERNAME'],
+  #  :password => ENV['SMTP_PASSWORD']
+  #}
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
   OuiShare::Application.config.middleware.use ExceptionNotification::Rack,
   :email => {
@@ -49,5 +50,5 @@ OuiShare::Application.configure do
     :sender_address => %{"OuiShare Team" <no-reply@ouisharefest.com>},
     :exception_recipients => %w{auli@haldjas.org}
   }
-  
+
 end
