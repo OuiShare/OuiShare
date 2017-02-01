@@ -18,13 +18,16 @@ module Admin
 
     def show
       @user = User.friendly.find(params[:id])
-        if @user.nil?
-          redirect_to '/errors/404', :code => '404'
-        else
-          @user_topics = @user.topics
-          @user_interests = @user.tag_list
-          @user_skills = @user.skill_list
-        end
+
+      redirect_to :root, alert: 'Member profile not found.' if @user.nil?
+
+      if @user.visible? || (@user.hidden? && current_user.present?)
+        @user_topics = @user.topics
+        @user_interests = @user.tag_list
+        @user_skills = @user.skill_list
+      else
+        redirect_to :root, alert: 'Member profile is publicly hidden on OuiShare website.'
+      end
     end
 
     def update

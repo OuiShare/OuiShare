@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   # has_many :connectors
   # has_many :communities, through: :connectors
-  
+
   # has_many :communities_users
   #has_many :communities, through: :communities_users
 
@@ -37,11 +37,11 @@ class User < ActiveRecord::Base
   end
 
   mount_uploader :image, AvatarUploader
-  # validates :image, 
-  #   :presence => true, 
-  #   :file_size => { 
-  #     :maximum => 1.megabytes.to_i 
-  #   } 
+  # validates :image,
+  #   :presence => true,
+  #   :file_size => {
+  #     :maximum => 1.megabytes.to_i
+  #   }
 
   acts_as_taggable_on :skill, :tag
 
@@ -96,6 +96,14 @@ class User < ActiveRecord::Base
 
   def is_admin?
     self.admin? || self.profile_type == 1
+  end
+
+  def visible?
+    self.visible == true
+  end
+
+  def hidden?
+    self.visible == false
   end
 
   protected

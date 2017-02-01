@@ -4,7 +4,7 @@ class CommunitiesController < ApplicationController
   before_action :set_community, :only => [:show, :join, :leave]
   before_action :authenticate_user!, :only => [:join, :leave]
   helper_method :clean_description
-  
+
   def index
     language = Language.where(name:'English').first
     @community_page = language.community_page || CommunityPage.new
@@ -37,7 +37,7 @@ class CommunitiesController < ApplicationController
   def get_communities_select
     region = Region.find(params[:region_id])
     # map to name and id for use in our options_for_select
-    @communities_for_select = region.communities.map{|a| [a.id, a.name]}
+    @communities_for_select = region.communities.order(:name).map{|a| [a.id, a.name]}
     respond_to do |format|
       format.json { render json: @communities_for_select.to_json}
     end
@@ -46,7 +46,7 @@ class CommunitiesController < ApplicationController
   def get_communities_partial
     region = Region.find(params[:region_id_2])
     # map to name and id for use in our options_for_select
-    communities = region.communities.all
+    communities = region.communities.order(:name)
     render partial: 'communities/communities', locals:{communities: communities, region: region}
   end
 
