@@ -56,12 +56,16 @@
     .row
       .col-lg-12
         h3.blue = t("event.organizers")
-        p Select members organising this event
-        / hr.hr-large.blue
-        / = f.association :users, as: :check_boxes, :label_method => :full_name, collection: User.all(order: 'name'), label: 'Select members organising this event'
-        = f.association :users, as: :select, :label_method => :full_name, collection: User.all(order: 'name')
-        br
-        = select :users, :event,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+
+        = f.input :user_name,
+          input_html: {value: '', data: {autocomplete_source: autocomplete_admin_language_events_path}},
+          placeholder: 'Type a user name',
+          label: 'Select members organising this event'
+
+        = hidden_field_tag "users[event]", @event.user_ids, id: 'event_users'
+        = hidden_field_tag 'add_users', '', id: 'add_users'
+        = hidden_field_tag 'remove_users', '', id: 'remove_users'
+
         br
         br
         .user_event

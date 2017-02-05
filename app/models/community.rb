@@ -16,10 +16,11 @@ class Community < ActiveRecord::Base
   # has_many :users, through: :connectors
   # has_many :communities_users
   #has_many :users, through: :communities_users
- 
+  acts_as_taggable
+
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
-  
+
   def slug_candidates
     [
       :name,
@@ -27,7 +28,7 @@ class Community < ActiveRecord::Base
       [:name, :region_id, :id],
     ]
   end
-  
+
   mount_uploader :main_image, ImageUploader
 
 
@@ -36,5 +37,4 @@ class Community < ActiveRecord::Base
   beautiful_text_for [:text]
 
   scope :without_region, ->{ where(region_id: nil) }
-
 end

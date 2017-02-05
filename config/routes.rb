@@ -32,7 +32,11 @@ OuiShare::Application.routes.draw do
           post :sort
         end
       end
-      resources :events
+      resources :events do
+        collection do
+          get 'autocomplete'
+        end
+      end
       resources :community_pages
       resources :faq_pages
       resources :faq_questions do
@@ -59,6 +63,9 @@ OuiShare::Application.routes.draw do
       resources :communities do
         member do
           post :sort
+        end
+        collection do
+          get 'autocomplete'
         end
       end
       resources :cocreation_pages

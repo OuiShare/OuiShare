@@ -42,7 +42,7 @@ $(document).ready ->
     if (res.indexOf(value) == -1)
       console.log res
       res.push(value)
-      console.log res 
+      console.log res
       $('#user_contact_languages').val("{"+res.toString()+"}")
       $('.contact-languages').append("<div value='"+value+"' class='contact-language-value'><span class='remove-contact-language'>x</span>" +value+ "</div>")
 
@@ -66,12 +66,17 @@ $(document).ready ->
       res_community.push(value)
       $('#community_event_ids option[value="'+id+'"]').prop('selected', true)
       $('.event_community').append("<div class='event-community-value' id='event-"+id+"'><span class='remove-event-community'>x</span>" +value+ "</div>")
-  
+
+  community_event_ids = []
   $('.event_community').on 'click', '.remove-event-community', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
     $('#community_event_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
+    community_event_ids.push(id)
+    $('#add_events').val ""
+    $('#remove_events').val "remove"
+    $('#community_events').val community_event_ids
 
   # tag system for users on community page
   $('.community_users').hide()
@@ -86,7 +91,7 @@ $(document).ready ->
       user_community.push(value)
       $('#community_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_community').append("<div class='user-community-value' id='user-"+id+"'><span class='remove-user-community'>x</span>" +value+ "</div>")
-  
+
   $('.user_community').on 'click', '.remove-user-community', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
@@ -106,12 +111,17 @@ $(document).ready ->
       user_event.push(value)
       $('#event_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_event').append("<div class='user-event-value' id='user-"+id+"'><span class='remove-user-event'>x</span>" +value+ "</div>")
-  
+
+  event_user_ids = []
   $('.user_event').on 'click', '.remove-user-event', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
     $('#event_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
+    event_user_ids.push(id)
+    $('#add_users').val ""
+    $('#remove_users').val "remove"
+    $('#event_users').val event_user_ids
 
   # tag system for users on project page
   $('.project_users').hide()
@@ -126,7 +136,7 @@ $(document).ready ->
       user_project.push(value)
       $('#project_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_project').append("<div class='user-project-value' id='user-"+id+"'><span class='remove-user-project'>x</span>" +value+ "</div>")
-  
+
   $('.user_project').on 'click', '.remove-user-project', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
@@ -146,7 +156,7 @@ $(document).ready ->
       user_expert_group.push(value)
       $('#expert_group_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_expert_group').append("<div class='user-expertgroup-value' id='user-"+id+"'><span class='remove-user-expertgroup'>x</span>" +value+ "</div>")
-  
+
   $('.user_expert_group').on 'click', '.remove-user-expertgroup', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
@@ -158,7 +168,7 @@ $(document).ready ->
 
   removetest = (t) ->
     console.log(test)
-  
+
 
 remove_ctc_lang = () ->
   console.log(this)
@@ -167,7 +177,7 @@ removetest = (t) ->
   console.log(test)
 
 jssor_slider1_starter = (containerId) ->
-  options = 
+  options =
     $AutoPlay: false
     $PauseOnHover: 1
     $ArrowKeyNavigation: true
@@ -180,7 +190,7 @@ jssor_slider1_starter = (containerId) ->
       $ChanceToShow: 2
       $AutoCenter: 2
       $Steps: 1
-    
+
   jssor_slider1 = new $JssorSlider$(containerId, options)
   #responsive code begin
   #you can remove responsive code if you don't want the slider scales while window resizes
@@ -201,7 +211,7 @@ jssor_slider1_starter = (containerId) ->
   return
 
 jssor_slider2_starter = (containerId) ->
-  options = 
+  options =
     $AutoPlay: false
     $PauseOnHover: 1
     $ArrowKeyNavigation: true
@@ -214,7 +224,7 @@ jssor_slider2_starter = (containerId) ->
       $ChanceToShow: 2
       $AutoCenter: 2
       $Steps: 1
-    
+
   jssor_slider2 = new $JssorSlider$(containerId, options)
   #responsive code begin
   #you can remove responsive code if you don't want the slider scales while window resizes
@@ -235,7 +245,7 @@ jssor_slider2_starter = (containerId) ->
   return
 
 jssor_slider3_starter = (containerId) ->
-  options = 
+  options =
     $AutoPlay: true
     $PauseOnHover: 1
     $ArrowKeyNavigation: true
@@ -248,7 +258,7 @@ jssor_slider3_starter = (containerId) ->
       $ChanceToShow: 2
       $AutoCenter: 2
       $Steps: 1
-    
+
   jssor_slider2 = new $JssorSlider$(containerId, options)
   #responsive code begin
   #you can remove responsive code if you don't want the slider scales while window resizes

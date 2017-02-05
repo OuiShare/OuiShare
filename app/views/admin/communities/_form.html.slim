@@ -54,10 +54,22 @@
 
       h3 = t(".associated_events")
       / = f.association :events, as: :check_boxes
-      = f.association :events, as: :select
+      //= f.association :events, as: :select
       / | Events
-      p = t(".associated_events_how")
-      = select :event, :community,  Event.all.collect {|e| [ e.name_with_date_and_language, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+      //p = t(".associated_events_how")
+      //= select :event, :community,  Event.all.collect {|e| [ e.name_with_date_and_language, e.id ] }, {}, { :class => 'form-control community-event-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+      = f.input :event_name,
+        input_html: {value: '', data: {autocomplete_source: autocomplete_admin_language_communities_path}},
+        placeholder: 'Type a event name',
+        label: 'Select events from the list to display them on the community page'
+
+      = hidden_field_tag "events[community]", @community.event_ids, id: 'community_events'
+      = hidden_field_tag 'add_events', '', id: 'add_events'
+      = hidden_field_tag 'remove_events', '', id: 'remove_events'
+
+      /- @community.event_ids.each do |event_id| 
+      /   = f.hidden_field :event_ids, :id => event_id, :value => event_id, :multiple => true
+
       br
       br
       .event_community

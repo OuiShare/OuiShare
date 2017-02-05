@@ -6,6 +6,16 @@ module Admin
     include AutoHtml
     skip_before_filter :verify_editor, only: [:show, :index]
 
+    def autocomplete
+      if params[:term].present?
+        users = User.order(:name).where("name ILIKE ? OR fname ILIKE ?", "%#{params[:term]}%", "%#{params[:term]}%")
+
+        respond_to do |format|
+          format.json { render json: users.map{|u| { :label => u.full_name, :value => u.id } } }
+        end
+      end
+    end
+
     def index
     end
 
@@ -14,8 +24,14 @@ module Admin
     end
 
     def update
-      params[:event][:slug] = nil
-      update! { admin_events_path }
+      if params[:add_users].present?
+        add_users
+      elsif params[:remove_users].present?
+        remove_users
+      else
+        params[:event][:slug] = nil
+        update! { admin_events_path }
+      end
     end
 
     def destroy
@@ -69,6 +85,21 @@ module Admin
                             :latitude,
                             :longitude,
                             :user_ids => []])
+    end
+
+    private
+    def add_users
+      user_ids = params[:users][:event].split(",")
+      users = User.find(user_ids)
+      resource.users << users
+      redirect_to admin_events_path, notice: 'Event was successfully updated.'
+    end
+
+    def remove_users
+      user_ids = params[:users][:event].split(",")
+      users = User.find(user_ids)
+      resource.users.delete(users)
+      redirect_to admin_events_path, notice: 'Event was successfully updated.'
     end
   end
 end
