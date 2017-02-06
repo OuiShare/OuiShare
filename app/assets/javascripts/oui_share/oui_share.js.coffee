@@ -74,9 +74,7 @@ $(document).ready ->
     $('#community_event_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
     community_event_ids.push(id)
-    $('#add_events').val ""
-    $('#remove_events').val "remove"
-    $('#community_events').val community_event_ids
+    $('#community_events_remove').val community_event_ids
 
   # tag system for users on community page
   $('.community_users').hide()
