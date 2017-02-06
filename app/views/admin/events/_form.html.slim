@@ -26,7 +26,7 @@
         = f.input :date_start, order: [:day, :month, :year]
         = f.input :date_end, order: [:day, :month, :year]
       .col-lg-6.col-sm-12
-        = f.input :time
+        //= f.input :time
     .row
       br
       br
@@ -58,13 +58,12 @@
         h3.blue = t("event.organizers")
 
         = f.input :user_name,
-          input_html: {value: '', data: {autocomplete_source: autocomplete_admin_language_events_path}},
+          input_html: {value: '', data: {autocomplete_source: autocomplete_users_admin_language_events_path}},
           placeholder: 'Type a user name',
-          label: 'Select members organising this event'
+          label: 'Select members organizing this event'
 
-        = hidden_field_tag "users[event]", @event.user_ids, id: 'event_users'
-        = hidden_field_tag 'add_users', '', id: 'add_users'
-        = hidden_field_tag 'remove_users', '', id: 'remove_users'
+        = hidden_field_tag "event_users_add", "", id: 'event_users_add'
+        = hidden_field_tag "event_users_remove", "", id: 'event_users_remove'
 
         br
         br
@@ -79,7 +78,33 @@
         br
         br
         br
- 
+
+    .row
+      .col-lg-12
+        h3.blue = t("pages.communities.index")
+
+        = f.input :community_name,
+          input_html: {value: '', data: {autocomplete_source: autocomplete_communities_admin_language_events_path}},
+          placeholder: 'Type a community name',
+          label: 'Select communities organizing this event'
+
+        = hidden_field_tag "event_communities_add", "", id: 'event_communities_add'
+        = hidden_field_tag "event_communities_remove", "", id: 'event_communities_remove'
+
+        br
+        br
+        .community_event
+          - unless @event.communities.nil?
+            - @event.communities.each do |community| 
+              div class=("user-community-value") id=("community-#{community.id}")
+                span.remove-community-event id=("remove-community-#{community.id}")
+                  | x
+                = community.name
+        br
+        br
+        br
+        br
+
     / .row.deprecated
     /   .col-lg-12
     /     h3 = t('admin.deprecated_fields')

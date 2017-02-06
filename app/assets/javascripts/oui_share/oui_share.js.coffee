@@ -119,9 +119,16 @@ $(document).ready ->
     $('#event_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
     event_user_ids.push(id)
-    $('#add_users').val ""
-    $('#remove_users').val "remove"
-    $('#event_users').val event_user_ids
+    $('#event_users_remove').val event_user_ids
+
+  event_community_ids = []
+  $('.community_event').on 'click', '.remove-community-event', (e) ->
+    value = this.parentNode.getAttribute('id')
+    id = value.split('-')[1]
+    $('#event_community_ids option[value="'+id+'"]').prop('selected', false)
+    $('#'+value+'').remove()
+    event_community_ids.push(id)
+    $('#event_communities_remove').val event_community_ids
 
   # tag system for users on project page
   $('.project_users').hide()

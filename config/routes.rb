@@ -34,7 +34,8 @@ OuiShare::Application.routes.draw do
       end
       resources :events do
         collection do
-          get 'autocomplete'
+          get 'autocomplete_users'
+          get 'autocomplete_communities'
         end
       end
       resources :community_pages
