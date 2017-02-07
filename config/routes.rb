@@ -3,6 +3,8 @@ OuiShare::Application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations"}
   root :to => "home#index"
 
+  get '/:id', to: 'communities#show', constraints: lambda { |request| Community.find_by(slug: request.path_parameters[:id]) }
+
   devise_scope :user do
     get 'register', :to => "registrations#new"
     get 'register/thanks', :to => "registrations#thank_you"
@@ -225,4 +227,5 @@ OuiShare::Application.routes.draw do
 
 
   get '/:id(/*path)' => redirect{ |params| 'http://magazine.ouishare.net/' + params[:id] + params[:path] }, :constraints => { :id => /[0-9]*/ }
+
 end
