@@ -6,12 +6,22 @@ module Admin
     include AutoHtml
     skip_before_filter :verify_editor, only: [:show, :index]
 
-    def autocomplete
+    def autocomplete_users
       if params[:term].present?
         users = User.order(:name).where("name ILIKE ? OR fname ILIKE ?", "%#{params[:term]}%", "%#{params[:term]}%")
 
         respond_to do |format|
           format.json { render json: users.map{|u| { :label => u.full_name, :value => u.id } } }
+        end
+      end
+    end
+
+    def autocomplete_communities
+      if params[:term].present?
+        communities = Community.order(:name).where("name ILIKE ?", "%#{params[:term]}%")
+
+        respond_to do |format|
+          format.json { render json: communities.map{|e| { :label => e.name, :value => e.id } } }
         end
       end
     end
@@ -24,14 +34,13 @@ module Admin
     end
 
     def update
-      if params[:add_users].present?
-        add_users
-      elsif params[:remove_users].present?
-        remove_users
-      else
-        params[:event][:slug] = nil
-        update! { admin_events_path }
-      end
+      add_users if params[:event_users_add].present?
+      remove_users if params[:event_users_remove].present?
+      add_communities if params[:event_communities_add].present?
+      remove_communities if params[:event_communities_remove].present?
+
+      params[:event][:slug] = nil
+      update! { admin_events_path }
     end
 
     def destroy
@@ -84,22 +93,33 @@ module Admin
                             :address,
                             :latitude,
                             :longitude,
-                            :user_ids => []])
+                            :user_ids => [],
+                            :community_ids => []])
     end
 
     private
     def add_users
-      user_ids = params[:users][:event].split(",")
+      user_ids = params[:event_users_add].split(",")
       users = User.find(user_ids)
       resource.users << users
-      redirect_to admin_events_path, notice: 'Event was successfully updated.'
     end
 
     def remove_users
-      user_ids = params[:users][:event].split(",")
+      user_ids = params[:event_users_remove].split(",")
       users = User.find(user_ids)
       resource.users.delete(users)
-      redirect_to admin_events_path, notice: 'Event was successfully updated.'
+    end
+
+    def add_communities
+      community_ids = params[:event_communities_add].split(",")
+      communities = Community.find(community_ids)
+      resource.communities << communities
+    end
+
+    def remove_communities
+      community_ids = params[:event_communities_remove].split(",")
+      communities = Community.find(community_ids)
+      resource.communities.delete(communities)
     end
   end
 end

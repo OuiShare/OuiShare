@@ -21,13 +21,10 @@ module Admin
     end
 
     def update
-      if params[:add_events].present?
-        add_events
-      elsif params[:remove_events].present?
-        remove_events
-      else
-        update! { admin_communities_path }
-      end
+      add_events if params[:community_events_add].present?
+      remove_events if params[:community_events_remove].present?
+
+      update! { admin_communities_path }
     end
 
     def destroy
@@ -65,17 +62,15 @@ module Admin
 
     private
     def add_events
-      event_ids = params[:events][:community].split(",")
+      event_ids = params[:community_events_add].split(",")
       events = Event.find(event_ids)
       resource.events << events
-      redirect_to admin_communities_path, notice: 'Community was successfully updated.'
     end
 
     def remove_events
-      event_ids = params[:events][:community].split(",")
+      event_ids = params[:community_events_remove].split(",")
       events = Event.find(event_ids)
       resource.events.delete(events)
-      redirect_to admin_communities_path, notice: 'Community was successfully updated.'
     end
   end
 end
