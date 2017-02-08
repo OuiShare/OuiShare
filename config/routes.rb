@@ -30,6 +30,9 @@ OuiShare::Application.routes.draw do
       resources :navmap
       resources :about
       resources :projects do
+        collection do
+          get 'autocomplete_users'
+        end
         member do
           post :sort
         end
@@ -68,7 +71,8 @@ OuiShare::Application.routes.draw do
           post :sort
         end
         collection do
-          get 'autocomplete'
+          get 'autocomplete_events'
+          get 'autocomplete_users'
         end
       end
       resources :cocreation_pages

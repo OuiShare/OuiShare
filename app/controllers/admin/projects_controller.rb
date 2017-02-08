@@ -6,6 +6,16 @@ module Admin
     include AutoHtml
     skip_before_filter :verify_editor, only: [:show, :index]
 
+    def autocomplete_users
+      if params[:term].present?
+        users = User.order(:name).where("name ILIKE ? OR fname ILIKE ?", "%#{params[:term]}%", "%#{params[:term]}%")
+
+        respond_to do |format|
+          format.json { render json: users.map{|u| { :label => u.full_name, :value => u.id } } }
+        end
+      end
+    end
+
     def index
     end
 
@@ -14,6 +24,9 @@ module Admin
     end
 
     def update
+      add_users if params[:project_users_add].present?
+      remove_users if params[:project_users_remove].present?
+
       params[:project][:slug] = nil
       update! { admin_projects_path }
     end
@@ -69,5 +82,17 @@ module Admin
                               :user_ids => []])
     end
 
+    private
+    def add_users
+      user_ids = params[:project_users_add].split(",")
+      users = User.find(user_ids)
+      resource.users << users
+    end
+
+    def remove_users
+      user_ids = params[:project_users_remove].split(",")
+      users = User.find(user_ids)
+      resource.users.delete(users)
+    end
   end
 end

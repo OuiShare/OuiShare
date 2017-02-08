@@ -20,11 +20,14 @@
   .row
     .col-lg-12
       h3 = t(".leading_connectors")
-      / = f.association :users, as: :check_boxes, :label_method => :full_name
-      = f.association :users, as: :select, :label_method => :full_name
-      / | Users
-      p = t(".leading_connectors_how")
-      = select :users, :community,  User.all.collect {|u| [ u.full_name, u.id ] }, {}, { :class => 'form-control user-community-select', :style => "width: 80%; float: left; margin-right: 20px; margin-top: 2px;" }
+
+      = f.input :user_name,
+        input_html: {value: '', data: {autocomplete_source: autocomplete_users_admin_language_communities_path}},
+        placeholder: 'Type a user name',
+        label: t(".leading_connectors_how")
+
+      = hidden_field_tag "community_users_add", "", id: 'community_users_add'
+      = hidden_field_tag "community_users_remove", "", id: 'community_users_remove'
       br
       br
       .user_community
@@ -54,9 +57,9 @@
 
       h3 = t(".associated_events")
       = f.input :event_name,
-        input_html: {value: '', data: {autocomplete_source: autocomplete_admin_language_communities_path}},
+        input_html: {value: '', data: {autocomplete_source: autocomplete_events_admin_language_communities_path}},
         placeholder: 'Type a event name',
-        label: 'Select events from the list to display them on the community page'
+        label: t(".associated_events_how")
 
       = hidden_field_tag "community_events_add", "", id: 'community_events_add'
       = hidden_field_tag "community_events_remove", "", id: 'community_events_remove'

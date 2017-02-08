@@ -60,7 +60,7 @@
         = f.input :user_name,
           input_html: {value: '', data: {autocomplete_source: autocomplete_users_admin_language_events_path}},
           placeholder: 'Type a user name',
-          label: 'Select members organizing this event'
+          label: t(".organizers")
 
         = hidden_field_tag "event_users_add", "", id: 'event_users_add'
         = hidden_field_tag "event_users_remove", "", id: 'event_users_remove'
@@ -86,7 +86,7 @@
         = f.input :community_name,
           input_html: {value: '', data: {autocomplete_source: autocomplete_communities_admin_language_events_path}},
           placeholder: 'Type a community name',
-          label: 'Select communities organizing this event'
+          label: t(".communities")
 
         = hidden_field_tag "event_communities_add", "", id: 'event_communities_add'
         = hidden_field_tag "event_communities_remove", "", id: 'event_communities_remove'

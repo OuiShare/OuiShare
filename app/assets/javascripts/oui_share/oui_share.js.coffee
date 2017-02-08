@@ -90,11 +90,13 @@ $(document).ready ->
       $('#community_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_community').append("<div class='user-community-value' id='user-"+id+"'><span class='remove-user-community'>x</span>" +value+ "</div>")
 
+  community_user_ids = []
   $('.user_community').on 'click', '.remove-user-community', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
-    $('#community_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
+    community_user_ids.push(id)
+    $('#community_users_remove').val community_user_ids
 
   # tag system for users on event page
   $('.event_users').hide()
@@ -142,11 +144,13 @@ $(document).ready ->
       $('#project_user_ids option[value="'+id+'"]').prop('selected', true)
       $('.user_project').append("<div class='user-project-value' id='user-"+id+"'><span class='remove-user-project'>x</span>" +value+ "</div>")
 
+  project_user_ids = []
   $('.user_project').on 'click', '.remove-user-project', (e) ->
     value = this.parentNode.getAttribute('id')
     id = value.split('-')[1]
-    $('#project_user_ids option[value="'+id+'"]').prop('selected', false)
     $('#'+value+'').remove()
+    project_user_ids.push(id)
+    $('#project_users_remove').val project_user_ids
 
   # tag system for users on expert_group page
   $('.expert_group_users').hide()
