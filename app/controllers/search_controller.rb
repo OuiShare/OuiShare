@@ -17,6 +17,7 @@ class SearchController < ApplicationController
           }
           @result[:projects] = project_search(@query_tags)
           @result[:users] = user_search(@query_tags)
+          @result[:communities] = community_search(@query_tags)
         when 'communities'
           @result[:communities] = community_search(@query_tags)
         when 'events'
