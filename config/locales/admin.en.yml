@@ -25,8 +25,12 @@ en:
       form:
         update: "Update event"
         organizers: "Select members leading this project"
+        communities: "Select communities from the list to display them in the event page"
     users:
       form:
         profile_visibility: "Member profile visibility"
         profile_visible: "Member profile is publicly visible on OuiShare website"
         profile_hide: "Please uncheck the box if you wish to hide the member profile from website visitors"
+    projects:
+      form:
+        project_members_how: 'Select users from the list to display them as Connectors leading this project'
