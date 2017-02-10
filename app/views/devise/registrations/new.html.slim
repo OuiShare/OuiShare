@@ -1,4 +1,4 @@
-== render partial: 'layouts/sub_header_title', locals: {title: 'Join Us'}
+== render partial: 'layouts/sub_header_title', locals: {title: 'Become a member'}
 section#signup
   .container     
     .row
@@ -23,15 +23,19 @@ section#signup
             a href= @registration_page.link1 target="_blank" 
               = @registration_page.main_text2
           .col-lg-6.col-lg-offset-3.col-sm-8-col-sm-offset-2
+            / .row
+            /   p = t(".about_ouishare")
+            / br
+            / h3.blue = t(".sign_up")
+            / hr.hr-large.blue
+            / .row
+            /   p = "We're pleased that you would like to become a member of OuiShare! "
+            /   p = "To complete your registration, please fill out the questions below. Your editable profile in the OuiShare member database will be automatically generated. "
+            /   p style="font-family: 'Naiv Bold';font-weight:bold" All personal information will be treated  with confidentiality.
             .row
-              p = t(".about_ouishare")
-            br
-            h3.blue = t(".sign_up")
-            hr.hr-large.blue
-            .row
-              p = "We're pleased that you would like to become a member of OuiShare! "
-              p = "To complete your registration, please fill out the questions below. Your editable profile in the OuiShare member database will be automatically generated. "
-              p style="font-family: 'Naiv Bold';font-weight:bold" All personal information will be treated  with confidentiality.
+              // Include first text block
+              = render "signup_1"
+
 
             / .omniauth
             /   - if resource.authorizations.any?
@@ -82,15 +86,15 @@ section#signup
                     = f.input :organization_name, placeholder: "Name of your organization:", label: false, label: false
                 .row  
                   .col-lg-12
-                    = f.input :organization_url, placeholder: "Url of your organization", label: false
-                .row.form-group
-                  .col-lg-12
-                    = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
-                    br
-                    = f.collection_check_boxes(:topic_ids, Topic.all, :id, :name, {} , { :class=>'checkbox' })
-                .row
-                  .col-lg-12
-                    = f.input :user_source_id, collection: @user_sources, prompt: "How did you first hear about OuiShare?", :label => false
+                    = f.input :organization_url, placeholder: "URL of your organization", label: false
+                / .row.form-group
+                /   .col-lg-12
+                /     = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
+                /     br
+                /     = f.collection_check_boxes(:topic_ids, Topic.all, :id, :name, {} , { :class=>'checkbox' })
+                / .row
+                /   .col-lg-12
+                /     = f.input :user_source_id, collection: @user_sources, prompt: "How did you first hear about OuiShare?", :label => false
                 .row
                   .col-lg-10.col-lg-offset-1
                     = f.input :password, :placeholder => 'Password', :required => true, :hint => false, label: false
@@ -98,17 +102,17 @@ section#signup
                   .col-lg-10.col-lg-offset-1
                     = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false                      
 
-                p.bold = "OuiShare Mission & Values"
+                = render "signup_1b"
 
-                p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
-                p
-                  | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
-                p 
-                  | By becoming a member of OuiShare, you express your consent for our mission and values. 
-                  a target="_blank" href="#{about_mission_url}" Read more
+                / p.bold = "OuiShare Mission & Values"
 
-                div.right
-                  = render "devise/shared/links"
+                / p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
+                / p
+                /   | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
+                / p 
+                /   | By becoming a member of OuiShare, you express your consent for our mission and values. 
+                /   a target="_blank" href="#{about_mission_url}" Read more
+
 
                 br
 
@@ -122,11 +126,15 @@ section#signup
                     = rucaptcha_input_tag(class: 'form-control', placeholder: 'Input Captcha')
                     = rucaptcha_image_tag(alt: 'Captcha')
 
+                / div.right
+                /   = render "devise/shared/links"
 
                 .row.center
                   = f.button :submit, t(".sign_up_submit"), class: 'btn btn-green btn-large'
 
-           
+
+
+         
 
             / h2 = "Support us"
             / p 
