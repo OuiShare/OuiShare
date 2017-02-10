@@ -18,8 +18,7 @@ module Admin
 
     def autocomplete_communities
       if params[:term].present?
-        communities = Community.order(:name).where("name ILIKE ?", "%#{params[:term]}%")
-
+        communities = Community.order(:name).where("name ILIKE ?", "%#{params[:term]}%").select{|c| c.language.name == "English"}
         respond_to do |format|
           format.json { render json: communities.map{|e| { :label => e.name, :value => e.id } } }
         end
