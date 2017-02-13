@@ -26,7 +26,7 @@ module Admin
         @user_interests = @user.tag_list
         @user_skills = @user.skill_list
       else
-        redirect_to :root, alert: 'Member profile is publicly hidden on OuiShare website.'
+        redirect_to :root, alert: 'Member profile is hidden from website visitors.'
       end
     end
 

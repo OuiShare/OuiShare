@@ -31,7 +31,7 @@
                 = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
             .row
               .col-lg-6.col-sm-12
-                = f.input :title
+                = f.input :title, "Profile title"
               .col-lg-6.col-sm-12
                 = f.label :language_id, "* What is your language preference?"
                 = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
@@ -104,15 +104,15 @@
                 = f.input :password, :autocomplete => "off", :required => false
               .col-lg-6.col-sm-12
                 = f.input :password_confirmation, :required => false
-            / .row
-            /   .col-lg-12.well
-            /     h4 = t(".profile_visibility")
-            /     .row
-            /       .col-xs-1
-            /         = f.check_box :visible
-            /       .col-xs-11
-            /         p = t(".profile_visible")
-            /         em = t(".profile_hide")
+            .row
+              .col-lg-12.well
+                h4 = t(".profile_visibility")
+                .row
+                  .col-xs-1
+                    = f.check_box :visible
+                  .col-xs-11
+                    p = t(".profile_visible")
+                    em = t(".profile_hide")
             .row.center
               = f.button :submit, t(".update"), class: 'btn btn-green btn-large'
 
