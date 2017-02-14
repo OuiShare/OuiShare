@@ -1,3 +1,6 @@
+h2 = "confirmation e-mail preview"
+/ The following code is copied from views/confirmation_mailer/confirmation
+hr
 h3 = "Welcome to the OuiShare community!" 
 p = "You've successfully completed your OuiShare membership registration. We're thrilled that you have joined us :)" 
 p
@@ -39,8 +42,6 @@ p
   a href="http://ouishare.net/about/team" Connector
   |  near you for guidance and advice. They will be happy to help.
 
-p = "#OuiShareLove"  
+p = "#OuiShareLove" 
 
-tr
-  td.divider align="center" colspan="2" style="border: 0px; width: 100%;"
-    = link_to image_tag(attachments['ouishare-email'].url), "http://ouishare.net" unless attachments['ouishare-email'].nil?
+
