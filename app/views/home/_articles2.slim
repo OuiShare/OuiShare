@@ -1,12 +1,13 @@
-section#articles
-  .container
-    .row
-      .col-lg-12
-        h2 = @articles_section.title
-        hr.hr-large.blue
-  .container
-    .row
-      .col-lg-6.col-lg-offset-3.col-sm-12
-        = @articles_section.text_html
-    .row.center
-      a.btn.btn-white-green.btn-large href="http://magazine.ouishare.net" = @articles_section.link_text
+- unless @articles_section.title.blank?
+  section#articles
+    .container
+      .row
+        .col-lg-12
+          h2 = @articles_section.title
+          hr.hr-large.blue
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          = @articles_section.text_html
+      .row.center
+        a.btn.btn-white-green.btn-large href="http://magazine.ouishare.net" = @articles_section.link_text
