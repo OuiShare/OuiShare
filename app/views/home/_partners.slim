@@ -1,60 +1,32 @@
-section#media-partners
-  .container
-    .row
-      .col-lg-12
-        h2 = t('home.media_partners')
-        hr.hr-large.blue
-
-      - p = @current_language.partner || Partner.new
-
-      / .col-lg-12
-      /   .col-md-2.col-md-offset-1.col-sm-4.center
-      /     = link_to p.link1
-      /       = image_tag(p.partner1.partner.url)
-      /   .col-md-2.col-sm-4.center
-      /     = link_to p.link2
-      /       = image_tag(p.partner2.partner.url)
-      /   .col-md-2.col-sm-4.center
-      /     = link_to p.link3
-      /       = image_tag(p.partner3.partner.url)
-      /   .col-md-2.col-sm-4.col-sm-offset-2.center
-      /     = link_to p.link4
-      /       = image_tag(p.partner4.partner.url)
-      /   .col-md-2.col-sm-4.center
-      /     = link_to p.link7
-      /       = image_tag(p.partner7.partner.url)    
-
-      / br
-      / .col-lg-12
-      /   .row
-      /     .col-md-2.col-md-offset-4.center
-      /       = link_to p.link5
-      /         = image_tag(p.partner5.partner.url)
-      /     .col-md-2.center
-      /       = link_to p.link6
-      /         = image_tag(p.partner6.partner.url)
-      .col-lg-12
-        ul.inline-list
-          - p = @current_language.partner || Partner.new
-          li
-            = link_to p.link1
-              = image_tag(p.partner1.partner.url)
-          li
-            = link_to p.link2
-              = image_tag(p.partner2.partner.url)
-          li
-            = link_to p.link3
-              = image_tag(p.partner3.partner.url)
-          li
-            = link_to p.link4
-              = image_tag(p.partner4.partner.url)
-          li
-            = link_to p.link5
-              = image_tag(p.partner5.partner.url)
-          li
-            = link_to p.link6
-              = image_tag(p.partner6.partner.url)
-          li
-            = link_to p.link7
-              = image_tag(p.partner7.partner.url)        
+- unless @partner.partner1.blank?
+  section#media-partners
+    .container
+      .row
+        .col-lg-12
+          h2 = t('home.media_partners')
+          hr.hr-large.blue
+        .col-lg-12
+          ul.inline-list
+            - p = @current_language.partner || Partner.new
+            li
+              = link_to p.link1
+                = image_tag(p.partner1.partner.url)
+            li
+              = link_to p.link2
+                = image_tag(p.partner2.partner.url)
+            li
+              = link_to p.link3
+                = image_tag(p.partner3.partner.url)
+            li
+              = link_to p.link4
+                = image_tag(p.partner4.partner.url)
+            li
+              = link_to p.link5
+                = image_tag(p.partner5.partner.url)
+            li
+              = link_to p.link6
+                = image_tag(p.partner6.partner.url)
+            li
+              = link_to p.link7
+                = image_tag(p.partner7.partner.url)        
 

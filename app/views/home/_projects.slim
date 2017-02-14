@@ -1,46 +1,26 @@
-section#hot
-  .container
-    / .row
-    /   .col-lg-4.columns
-    /     h3.subtitle.white = @hot_projects_section.title
-    /     p = @hot_projects_section.text_html
-    /     a.btn.white href="#{projects_path}" = @hot_projects_section.link_text
-
-    /   .col-lg-8.columns
-    /     ul.projects.large-block-grid-2
-    /       - @current_language.projects.visible.featured.each do |p|
-    /         li
-    /           = link_to project_path(p) do
-    /             p.title = p.name
-    /           = link_to project_path(p) do
-    /             img.project src="#{p.image.home_thumb}"
-    /           .seta
-    /           .avatars
-    /             - p.users[0..4].each do |u|
-    /               span.block
-    /                 = link_to u do
-    /                   = image_tag u.avatar_url
-
-    .row
-      .col-lg-12
-        h2 = @hot_projects_section.title
-        hr.hr-large.blue
-    .row.center
-      .col-lg-6.col-lg-offset-3.col-sm-12
-        = @hot_projects_section.text_html
-        a.btn.btn-white-green.btn-large href="#{projects_path}" = t('pages.home.see_all_projects')
+- unless @hot_projects_section.title.blank?
+  section#hot
+    .container
+      .row
+        .col-lg-12
+          h2 = @hot_projects_section.title
+          hr.hr-large.blue
+      .row.center
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          = @hot_projects_section.text_html
+          a.btn.btn-white-green.btn-large href="#{projects_path}" = t('pages.home.see_all_projects')
 
 
-    br
-    br
+      br
+      br
 
-    .row
-      .col-lg-10.col-lg-offset-1
-        - @current_language.projects.visible.featured.each do |p|
-          .col-sm-4.center
-            = image_tag "#{p.image.home_thumb}", :class => "home-pictures"
-            a.new_projects href=project_path(p) = p.name+' >'
+      .row
+        .col-lg-10.col-lg-offset-1
+          - @current_language.projects.visible.featured.each do |p|
+            .col-sm-4.center
+              = image_tag "#{p.image.home_thumb}", :class => "home-pictures"
+              a.new_projects href=project_path(p) = p.name+' >'
 
-    br
+      br
 
 
