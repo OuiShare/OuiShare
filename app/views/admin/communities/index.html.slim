@@ -17,7 +17,8 @@
                 th Region
                 th
                 th
-              - l.communities.rank(:row_order).each do |c|
+              / - l.communities.rank(:row_order).each do |c|
+              - l.communities.order('name').each do |c|
                 tr.sortable[data-update-path=sort_admin_language_community_path(l, c)]
                   td = c.name
                   td = truncate(c.text)

@@ -17,7 +17,7 @@
               th Featured?
               th
               th
-            - l.projects.rank(:row_order).each do |p|
+            - l.projects.order('name').each do |p|
               tr.sortable[data-update-path=sort_admin_language_project_path(l, p)]
                 td = p.name
                 td = image_tag(p.image.thumb.url)

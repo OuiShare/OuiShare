@@ -2,17 +2,22 @@
   div.row
     .col-lg-12
       h2.subheader Regions
-    - Language.all.each do |l|
+      = "Regions are language-neutral. This list is displayed in "
+      a href="/communities" target="_blank" "Select a country" dropdown on communities page >>
+      br
+      br
+    / - Language.all.each do |l|
+    - Language.where(name:'English').each do |l|
       .col-lg-12
         .regions
-          h3.subheader = "#{l.name} regions"
+          / h3.subheader = "#{l.name} regions"
           = link_to 'Create', new_admin_language_region_path(l.id)
           table.table.table-hover
             tr
               th Title
               th
               th
-            - l.regions.rank(:row_order).each do |r|
+            - l.regions.order('title').each do |r|
               tr.sortable[data-update-path=sort_admin_language_region_path(l, r)]
                 td = r.title
                 td = link_to "Edit", edit_admin_language_region_path(l, r)
