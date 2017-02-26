@@ -31,7 +31,7 @@
                 = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
             .row
               .col-lg-6.col-sm-12
-                = f.input :title, "Profile title"
+                = f.input :title
               .col-lg-6.col-sm-12
                 = f.label :language_id, "* What is your language preference?"
                 = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
