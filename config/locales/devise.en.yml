@@ -50,6 +50,7 @@ en:
         profile_visibility: "Profile visibility"
         profile_visible: "My profile is publicly visible on OuiShare website"
         profile_hide: "Please uncheck the box if you wish to hide your profile from website visitors"
+        profile_show: "Please check the box if you wish to show your profile on the public website"
         update: "Update my profile"
         are_you_sure: "Are you sure?"
       new:

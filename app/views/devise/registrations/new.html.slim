@@ -44,7 +44,7 @@ section#signup
             /     .description= t('.omniauth_description')
             /   - else
             /     = render "devise/shared/social_links"
-#login
+#login style= "margin-top:0;"
   .container
     .col-lg-8.col-lg-offset-2
       .row
@@ -87,16 +87,16 @@ section#signup
                 .row  
                   .col-lg-12
                     = f.input :organization_url, placeholder: t("devise.form.organization_url"), label: false
-                / .row
-                /   .col-lg-12.well
-                /     h4 = t("devise.registrations.edit.profile_visibility")
-                /     .row
-                /       .col-xs-1
-                /         = f.check_box :visible
-                /       .col-xs-11
-                /         p = t("devise.registrations.edit.profile_visible")
-                /         em = t("devise.registrations.edit.profile_hide")
-                /         em = t("devise.registrations.edit.profile_show")
+                .row
+                  .col-lg-12.well
+                    h4 = t("devise.registrations.edit.profile_visibility")
+                    .row
+                      .col-xs-1
+                        = f.check_box :visible
+                      .col-xs-11
+                        p = t("devise.registrations.edit.profile_visible")
+                        / em = t("devise.registrations.edit.profile_show")
+                        em = t("devise.registrations.edit.profile_hide")
                 / .row.form-group
                 /   .col-lg-12
                 /     = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"

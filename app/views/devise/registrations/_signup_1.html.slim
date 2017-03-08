@@ -6,7 +6,9 @@ p = t("devise.signup.a2")
 / h3.blue = @registration_page.main_title
 / p = @registration_page.main_text_html
 p = t("devise.signup.a3")
-/img photo
+= image_tag('/assets/membership.jpg')
+br
+br
 br
 h3 = t("devise.signup.b0_subtitle")
 br
@@ -18,5 +20,6 @@ p
   = t("devise.signup.b4")
 
 p style="font-weight:bold" = t("devise.signup.b5")
-p = t("devise.signup.b6_confidentiality")
+p 
+  em = t("devise.signup.b6_confidentiality")
 
