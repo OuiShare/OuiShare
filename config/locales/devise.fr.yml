@@ -1,5 +1,38 @@
 fr:
   devise:
+    signup:
+      title: "Devenez membre de OuiShare"
+      a1: "Depuis le premier jour, l'ADN de OuiShare s'est construit sur la participation de sa communauté et l'engagement de ses membres, des individus passionnés qui diffusent une vision, des valeurs et une culture communes."
+      a2: "Ces membres ont des parcours différents, ils viennent de partout dans le monde et n'en sont pas tous au même stade de leur vie. Cette diversité nous semble cruciale pour amener un véritable changement autour de nous."
+      a3: "Notre communauté est vivante et accueille chaque jour de nouveaux membres, chaque nouvelle voix renforce notre écho!"
+      b0_subtitle: "Rejoignez l'aventure en devenant membre"
+      b1: "L'adhésion est ouverte à tous. Après vous être enregistré.e, vous recevrez un profil que vous pourrez mettre à jour sur le portail OuiShare afin de permettre à tous les autres membres de vous connaitre. Nous envoyons chaque mois à tous nos membres les dernières nouvelles de notre travail, les moyens pour y participer ainsi que des accès privilégiés à nos événements."
+      b2: "Afin d'assurer la pérennité de OuiShare comme organisation indépendante et permettre le développement de nos biens communs"
+      b3: ", nous dépendons du don mensuel de nos membres de 1 € "
+      b4: "(12€ par an). Apprenez-en plus sur ce don à la page 2."
+      b5: "Soif de changement? Rejoignez-nous dans cette aventure collective et devenez membre en remplissant le formulaire ci-dessous."
+      b6_confidentiality: "Toutes les information personnelles seront traitées de façon confidentielle"
+      c0_subtitle: "OUISHARE : MISSION & VALEURS"
+      c1: "Les membres OuiShare se rassemblent autour de nos valeurs communes : Indépendance, Ouverture, Transparence, Impact, MPRL (Meet People in Real Life pour Rencontrer les gens hors-connexion), Bêta permanente, Action, Feedback, Inclusion, Fun"
+      c2: "... et notre mission de construire et entretenir la société collaborative: une société basée sur des principes d’ouverture, de collaboration, de confiance et de partage de la valeur."
+      c3: "En devenant un membre de OuiShare, vous exprimez votre adhésion à cette mission et ces valeurs."
+      read_more: "Apprenez-en plus"
+    form:
+        fname: "Prénom"
+        name: "Nom"
+        gender: "Genre"
+        email: "Email"
+        birthday: "Date de naissance"
+        country: "Pays"
+        country_select: "Select your country"
+        city: "Ville"
+        language_id: "Votre langue de prédilection"
+        occupation_id: "Choisissez une situation"
+        organization_name: "Nom de votre organisation"
+        organization_url: "Lien URL de votre organisation"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        terms_of_service: "J'adhère aux valeurs et à la mission de OuiShare et souhaite les supporter."
     confirmations:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
       send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.

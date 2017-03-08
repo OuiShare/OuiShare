@@ -13,12 +13,12 @@ class UserDatatable < AjaxDatatablesRails::Base
 
   def sortable_columns
     # Declare strings in this format: ModelName.column_name
-    @sortable_columns ||= ['User.fname', 'User.name', 'User.email', 'User.profile_type']
+    @sortable_columns ||= ['User.fname', 'User.name', 'User.email', 'User.created_at', 'User.profile_type']
   end
 
   def searchable_columns
     # Declare strings in this format: ModelName.column_name
-    @searchable_columns ||= ['User.fname', 'User.name', 'User.email', 'User.profile_type']
+    @searchable_columns ||= ['User.fname', 'User.name', 'User.email', 'User.created_at', 'User.profile_type']
   end
 
   private
@@ -29,6 +29,7 @@ class UserDatatable < AjaxDatatablesRails::Base
         record.fname,
         record.name,
         record.email,
+        record.created_at,
         record.profile_type,
         link_to('Edit', edit_resource_path(record))
       ]

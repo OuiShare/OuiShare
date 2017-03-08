@@ -14,20 +14,23 @@
 
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12
-          = render "helloasso"
         - if !params[:sign_up]
-          .col-lg-6.col-lg-offset-3.col-sm-12
-            br
-            p.center
-              iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
+          = render "helloasso_general"
+          br
+          p.center
+            iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
+        - else
+          = render "helloasso"
 
       - if params[:sign_up] == 'yes'
         .row.center
           .col-lg-6.col-lg-offset-3.col-sm-12
             p
-              | We understand that 1 € per month can be a financial burden for some. If you cannot support the community in this way, click the button below. 
+              br
+              em
+                | We understand that 1 € per month can be a financial burden for some. If you cannot support the community in this way, simply click "complete registration". 
         .row.center
-          a.btn.btn-green.btn-large href="register/thanks" I do not want to donate. Complete registration
+          a.btn.btn-green.btn-large href="register/thanks" Complete registration
   - if !params[:sign_up]
     section.explain
       .container
@@ -37,47 +40,3 @@
             hr.hr-large.blue
             .markdown = @donation_page.text1_html
             img src="#{@donation_page.image1.donation.url}"
-    .separator.black
-
-    - if @testimonial.call_to_action1.present? || @testimonial.call_to_action2.present? || @testimonial.call_to_action3.present? || @testimonial.call_to_action4.present?
-      .row.section
-        .container
-          .col-lg-12.center
-            h3.subtitle.black Testimonials
-          .col-lg-12
-            - if @testimonial.call_to_action1.present?
-              .col-lg-6
-                .box
-                  .avatar
-                    = image_tag @testimonial.user_picture1.testimonial_avatar
-                    span.small by #{@testimonial.author1}
-                  .content
-                    h4.subtitle = @testimonial.call_to_action1
-                    p = @testimonial.text1
-            - if @testimonial.call_to_action2.present?
-              .col-lg-6
-                .box
-                  .avatar
-                    = image_tag @testimonial.user_picture2.testimonial_avatar
-                    span.small by #{@testimonial.author2}
-                  .content
-                    h4.subtitle = @testimonial.call_to_action2
-                    p = @testimonial.text2
-            - if @testimonial.call_to_action3.present?
-              .col-lg-6
-                .box
-                  .avatar
-                    = image_tag @testimonial.user_picture3.testimonial_avatar
-                    span.small by #{@testimonial.author3}
-                  .content
-                    h4.subtitle = @testimonial.call_to_action3
-                    p = @testimonial.text3
-            - if @testimonial.call_to_action4.present?
-              .col-lg-6
-                .box
-                  .avatar
-                    = image_tag @testimonial.user_picture4.testimonial_avatar
-                    span.small by #{@testimonial.author4}
-                  .content
-                    h4.subtitle = @testimonial.call_to_action4
-                    p = @testimonial.text4

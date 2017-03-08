@@ -1,4 +1,4 @@
-== render partial: 'layouts/sub_header_title', locals: {title: 'Become a member'}
+== render partial: 'layouts/sub_header_title', locals: {title: t("devise.signup.title")}
 section#signup
   .container     
     .row
@@ -54,39 +54,49 @@ section#signup
             .row.form-inputs
                 .row
                   .col-lg-12
-                    = f.input :fname, :placeholder => "First name", :required => true, label: false
+                    = f.input :fname, :placeholder => t("devise.form.fname"), :required => true, label: false
                 .row  
                   .col-lg-12  
                     - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
-                      = f.input :name, :placeholder => "Last name", :required => true, label: false
+                      = f.input :name, :placeholder => t("devise.form.name"), :required => true, label: false
                 .row
                   .col-lg-12
                     = f.input :gender, as: :select, 
-                      collection: [["Male",0],["Female",1],["Other",2]] , :required => true, prompt: "Select a gender", label: false
+                      collection: [["Male",0],["Female",1],["Other",2]] , :required => true, prompt: t("devise.form.gender"), label: false
                 .row
                   .col-lg-12
-                    = f.input :email, :placeholder => 'E-MAIL', :required => true, label: false
+                    = f.input :email, :placeholder => t("devise.form.email"), :required => true, label: false
                     / - unless resource.email.present? and resource.authorizations.any? and not resource.errors.include? :email
                 .row.form-group
                   .col-lg-12
-                    = f.label :birthday, "Date of birth", :style => "width: 100%"
+                    = f.label :birthday, t("devise.form.birthday"), :style => "width: 100%"
                     = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
                 .row
                   .col-lg-6
-                    = f.input :country, as: :country, :placeholder => "Country", prompt: 'Select your country', label: false    
+                    = f.input :country, as: :country, :placeholder => t("devise.form.country"), prompt: t("devise.form.country_select"), label: false    
                   .col-lg-6   
-                    = f.input :city, :required => true, label: false, :placeholder => 'City'
+                    = f.input :city, :required => true, label: false, :placeholder => t("devise.form.city")
                 .row
                   .col-lg-6
-                    = f.input :language_id, collection: Language.all, prompt: "Select your language", label: false 
+                    = f.input :language_id, collection: Language.all, prompt: t("devise.form.language_id"), label: false 
                   .col-lg-6.left
-                    = f.input :occupation_id, collection: Occupation.all, prompt: "Select your occupation", label: false 
+                    = f.input :occupation_id, collection: Occupation.all, prompt: t("devise.form.occupation_id"), label: false 
                 .row
                   .col-lg-12
-                    = f.input :organization_name, placeholder: "Name of your organization:", label: false, label: false
+                    = f.input :organization_name, placeholder: t("devise.form.organization_name"), label: false, label: false
                 .row  
                   .col-lg-12
-                    = f.input :organization_url, placeholder: "URL of your organization", label: false
+                    = f.input :organization_url, placeholder: t("devise.form.organization_url"), label: false
+                / .row
+                /   .col-lg-12.well
+                /     h4 = t("devise.registrations.edit.profile_visibility")
+                /     .row
+                /       .col-xs-1
+                /         = f.check_box :visible
+                /       .col-xs-11
+                /         p = t("devise.registrations.edit.profile_visible")
+                /         em = t("devise.registrations.edit.profile_hide")
+                /         em = t("devise.registrations.edit.profile_show")
                 / .row.form-group
                 /   .col-lg-12
                 /     = f.label :topics, "Which of these topics are you interested in ?", :style => "margin-bottom:7px;"
@@ -97,28 +107,18 @@ section#signup
                 /     = f.input :user_source_id, collection: @user_sources, prompt: "How did you first hear about OuiShare?", :label => false
                 .row
                   .col-lg-10.col-lg-offset-1
-                    = f.input :password, :placeholder => 'Password', :required => true, :hint => false, label: false
+                    = f.input :password, :placeholder => t("devise.form.password"), :required => true, :hint => false, label: false
                 .row    
                   .col-lg-10.col-lg-offset-1
-                    = f.input :password_confirmation, :placeholder => 'Password confirmation',:required => true, :hint => false, label: false                      
+                    = f.input :password_confirmation, :placeholder => t("devise.form.password_confirmation"),:required => true, :hint => false, label: false                      
 
                 = render "signup_1b"
-
-                / p.bold = "OuiShare Mission & Values"
-
-                / p = "What connects the OuiShare community are our shared values: Openness, Transparency, Impact, MPRL (Meet People in Real Life), Permanent Beta, Action, Inclusion, Feedback, Play and Independence."
-                / p
-                /   | ...and our mission "to build and nurture a collaborative society by connecting people, organizations and ideas around fairness, openness and trust."  
-                / p 
-                /   | By becoming a member of OuiShare, you express your consent for our mission and values. 
-                /   a target="_blank" href="#{about_mission_url}" Read more
-
 
                 br
 
                 .row
                   = f.check_box :terms_of_service, label: true, :style => "margin-right:5px;", :required => true
-                  = f.label :terms_of_service, "I consent with and wish to support the OuiShare mission and values."
+                  = f.label :terms_of_service, t("devise.form.terms_of_service")
                 br
 
                 .row
