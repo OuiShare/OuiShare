@@ -1,10 +1,12 @@
-div.row
-  div.large-12.columns
-    br/
-    = image_tag('/assets/thankyou.jpg')
-    br
-    br
-    p = raw t('donations.thank_you_text')
-    br
-    br
-    br
+== render partial: 'layouts/sub_header_title', locals: {title: 'Thank you!', text: ""}
+#page-donations
+  section.donate.section
+    .container
+      div.row.content
+        .col-lg-6.col-lg-offset-3.col-sm-12
+          br
+          p = raw t('donations.thank_you_text')
+          br
+          br
+          = image_tag('/assets/thankyou.jpg')
+          br

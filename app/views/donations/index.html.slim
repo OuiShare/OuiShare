@@ -14,13 +14,13 @@
 
       .row
         .col-lg-6.col-lg-offset-3.col-sm-12
-        - if !params[:sign_up]
-          = render "helloasso_general"
-          br
-          p.center
-            iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
-        - else
-          = render "helloasso"
+          - if !params[:sign_up]
+            = render "helloasso_general"
+            br
+            p.center
+              iframe src="http://faircoin.ouishare.net/donate/" style="border: none;"
+          - else
+            = render "helloasso"
 
       - if params[:sign_up] == 'yes'
         .row.center
