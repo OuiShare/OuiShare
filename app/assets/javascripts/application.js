@@ -28,3 +28,5 @@
 //= require search
 //= require oui_share/communities.js
 //= require oui_share/admin/users.js
+//= require_self
+//= require_tree .

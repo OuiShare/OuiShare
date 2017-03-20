@@ -1,26 +1,26 @@
 == render partial: 'layouts/sub_header_title', locals: {title: t("devise.signup.title")}
 section#signup
-  .container     
+  .container
     .row
       .col-lg-12
         .sign_up_box style= "margin-top:20px;"
 
           - if @registration_page = RegistrationPage.new
-            / p style="font-family: 'Naiv Bold';font-weight:bold" 
+            / p style="font-family: 'Naiv Bold';font-weight:bold"
             /   | OuiShare is a global community with the mission to build and nurture a collaborative society. Our members are passionate individuals who spread the OuiShare
             /   a href="http://ouishare.net/about"target="_blank"  vision
             /   |,
-            /   a href="http://ouishare.net/values"target="_blank" values 
+            /   a href="http://ouishare.net/values"target="_blank" values
             /   | and culture. They are the key contributors to community activities such as events, projects and knowledge production. It is thanks to their participation and commitment that OuiShare is here today.
 
             / p = "OuiShare members come from different backgrounds, countries and life phases: entrepreneurs, researchers, activists, freelancers, business leaders, public officials and more. They live in 75 cities across Europe and the Americas, with a growing number in Africa and Asia. We see this diversity of perspectives and expertise as an enrichment that is crucial for achieving change. Each new voice is valuable!"
             / p style="font-family: 'Naiv Bold';font-weight:bold" Thirsty for change? Join us in this collective adventure and sign up as a member by filling out the form below.
             / p = "Membership is free and open to anyone. However as a non-profit, we encourage members to help support our community activities with a one-time or recurring donation."
-            
+
           - else
             p = @registration_page.main_text_html
 
-            a href= @registration_page.link1 target="_blank" 
+            a href= @registration_page.link1 target="_blank"
               = @registration_page.main_text2
           .col-lg-6.col-lg-offset-3.col-sm-8-col-sm-offset-2
             / .row
@@ -55,13 +55,13 @@ section#signup
                 .row
                   .col-lg-12
                     = f.input :fname, :placeholder => t("devise.form.fname"), :required => true, label: false
-                .row  
-                  .col-lg-12  
+                .row
+                  .col-lg-12
                     - unless resource.name.present? and resource.authorizations.any? and not resource.errors.include? :name
                       = f.input :name, :placeholder => t("devise.form.name"), :required => true, label: false
                 .row
                   .col-lg-12
-                    = f.input :gender, as: :select, 
+                    = f.input :gender, as: :select,
                       collection: [["Male",0],["Female",1],["Other",2]] , :required => true, prompt: t("devise.form.gender"), label: false
                 .row
                   .col-lg-12
@@ -73,18 +73,18 @@ section#signup
                     = f.date_select :birthday, { start_year: 1920, prompt: true }, :class => "form-control"
                 .row
                   .col-lg-6
-                    = f.input :country, as: :country, :placeholder => t("devise.form.country"), prompt: t("devise.form.country_select"), label: false    
-                  .col-lg-6   
+                    = f.input :country, as: :country, :placeholder => t("devise.form.country"), prompt: t("devise.form.country_select"), label: false
+                  .col-lg-6
                     = f.input :city, :required => true, label: false, :placeholder => t("devise.form.city")
                 .row
                   .col-lg-6
-                    = f.input :language_id, collection: Language.all, prompt: t("devise.form.language_id"), label: false 
+                    = f.input :language_id, collection: Language.all, prompt: t("devise.form.language_id"), label: false
                   .col-lg-6.left
-                    = f.input :occupation_id, collection: Occupation.all, prompt: t("devise.form.occupation_id"), label: false 
+                    = f.input :occupation_id, collection: Occupation.all, prompt: t("devise.form.occupation_id"), label: false
                 .row
                   .col-lg-12
-                    = f.input :organization_name, placeholder: t("devise.form.organization_name"), label: false, label: false
-                .row  
+                    = f.input :organization_name, placeholder: t("devise.form.organization_name"), label: false
+                .row
                   .col-lg-12
                     = f.input :organization_url, placeholder: t("devise.form.organization_url"), label: false
                 .row
@@ -108,9 +108,9 @@ section#signup
                 .row
                   .col-lg-10.col-lg-offset-1
                     = f.input :password, :placeholder => t("devise.form.password"), :required => true, :hint => false, label: false
-                .row    
+                .row
                   .col-lg-10.col-lg-offset-1
-                    = f.input :password_confirmation, :placeholder => t("devise.form.password_confirmation"),:required => true, :hint => false, label: false                      
+                    = f.input :password_confirmation, :placeholder => t("devise.form.password_confirmation"),:required => true, :hint => false, label: false
 
                 = render "signup_1b"
 
@@ -134,21 +134,21 @@ section#signup
 
 
 
-         
+
 
             / h2 = "Support us"
-            / p 
+            / p
             /   | We are a non-profit organization being built by passionate individuals around the world since 2012.
 
-            / p 
+            / p
             /   | As an open community, membership is free for individuals. However we ask you to help support our team with a one-time or recurring yearly donation to help us continue to provide value to our members by:
             / .list-sign_up
             /   ul
             /     li organizing local gatherings
             /     li hosting OuiShare Summits
             /     li producing and curating knowledge through our online magazine, newsletters and Facebook groups
-            
-            / p 
+
+            / p
             /   | ... and more!
 
             / p

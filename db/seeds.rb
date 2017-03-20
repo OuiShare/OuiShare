@@ -1,4 +1,4 @@
-#encoding: utf-8 
+#encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -70,7 +70,8 @@ user_sources = [
                   {name: "I joined a OuiShare Facebook group"},
                   {name: "I read about it in the media"},
                   {name: "A friend told me about it"},
-                  {name: "Other"}
+                  {name: "Other"},
+                  {name: "Other2"}
                ]
 
 user_sources.each do |s|
