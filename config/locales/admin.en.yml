@@ -1,10 +1,5 @@
 en:
   admin:
-    not_authorized: 'You are not allowed to do that.'
-    login: "Log in"
-    logout: "Log out"
-    view_profile: 'View my profile'
-    edit_profile: 'Edit profile'
     admin: 'Admin'
     update_page: 'Update page'
     update: "Update"
