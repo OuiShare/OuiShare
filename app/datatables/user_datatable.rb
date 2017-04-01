@@ -7,7 +7,7 @@ class UserDatatable < AjaxDatatablesRails::Base
   # def_delegator :@view, :mail_to
 
   # or define them in one pass
-  def_delegators :@view, :link_to, :h, :mailto, :edit_resource_path, :other_method
+  def_delegators :@view, :link_to, :h, :mailto, :edit_resource_path, :other_method, :resource_path
 
 
 
@@ -31,7 +31,8 @@ class UserDatatable < AjaxDatatablesRails::Base
         record.email,
         record.created_at,
         record.profile_type,
-        link_to('Edit', edit_resource_path(record))
+        link_to('Edit', edit_resource_path(record)),
+        link_to('Delete', resource_path(record.id), :method => :delete, :confirm => "Are you sure you want to delete this user?")
       ]
     end
   end
