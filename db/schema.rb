@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130192908) do
+ActiveRecord::Schema.define(version: 20170401112855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -969,7 +969,7 @@ ActiveRecord::Schema.define(version: 20170130192908) do
     t.integer  "show_order",             default: 1000
     t.string   "slug"
     t.text     "contact_languages",      default: [],                 array: true
-    t.boolean  "visible",                default: true,  null: false
+    t.boolean  "visible",                default: false, null: false
     t.string   "ostalents_url"
   end
 
