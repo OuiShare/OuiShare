@@ -45,6 +45,11 @@ module Admin
       @user = User.friendly.find(params[:id])
     end
 
+    # def destroy
+    #   super
+    #   # redirect_to admin_users_path, notice: 'User deleted.'
+    # end
+
 
     protected
     def permitted_params
