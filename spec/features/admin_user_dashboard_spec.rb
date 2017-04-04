@@ -6,6 +6,7 @@ RSpec.feature "Admin user dashboard", :type => :feature do
   let(:admin) {create(:admin)}
 
   scenario "Admin deletes a user in users list" do
+    p current_language
     visit "/en/users/sign_in"
     fill_in "user_email", :with => admin.email
     fill_in "user_password", :with => admin.password
