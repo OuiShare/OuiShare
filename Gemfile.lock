@@ -117,6 +117,8 @@ GEM
       activesupport (>= 3.0.4)
     excon (0.13.4)
     execjs (2.6.0)
+    factory_girl (4.7.0)
+      activesupport (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
@@ -417,6 +419,7 @@ DEPENDENCIES
   enumerize
   exception_notification
   execjs
+  factory_girl
   feedjira
   figaro
   flutie
@@ -470,6 +473,3 @@ DEPENDENCIES
   thin
   uglifier
   will_paginate (~> 3.0.7)
-
-BUNDLED WITH
-   1.13.6

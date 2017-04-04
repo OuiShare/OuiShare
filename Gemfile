@@ -119,6 +119,7 @@ group :development, :test do
   gem 'pry'
   gem 'awesome_print'
   gem "letter_opener"
+  gem 'factory_girl'
 end
 
 group :development do
